@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R. Kelly | Rap Stories</title>
+  <meta name="description" content="A Rap Stories profile on R. Kelly, covering his musical rise, influence on R&B and hip-hop, legal downfall, convictions, and cultural legacy." />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --radius: 20px;
+      --max: 1260px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 8, 0.76);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
+
+    .brand-text {
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
+    .hero { padding: 42px 0 28px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
+    .artist-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
+        url("images/r-kelly.jpg") center/cover no-repeat;
+    }
+
+    .artist-image-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    .artist-tag {
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-info h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .hero-info h1 span {
+      background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
+    .album, .related-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist.html" class="active">Artists</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> /
+          <a href="artist.html">Artists</a> /
+          <span>R. Kelly</span>
+        </div>
+
+        <div class="hero-layout">
+          <aside class="glass artist-image">
+            <div class="artist-image-content">
+              <span class="artist-tag">Artist Profile</span>
+              <h2>R. Kelly</h2>
+              <p>Singer, songwriter, and producer whose enormous musical influence was overshadowed by criminal convictions and a profound public downfall.</p>
+            </div>
+          </aside>
+
+          <section class="glass hero-info">
+            <span class="eyebrow">Rap Stories Profile</span>
+            <h1>The Story of <span>R. Kelly</span></h1>
+            <p class="summary">
+              Born Robert Sylvester Kelly, R. Kelly became one of the most commercially successful R&amp;B artists of his era. His career included chart-dominating hits, songwriting success, and major influence across R&amp;B, hip-hop, and pop. His legacy, however, is inseparable from years of abuse allegations, criminal prosecutions, and convictions.
+            </p>
+
+            <div class="quick-facts">
+              <div class="fact">
+                <span>Born</span>
+                <strong>January 8, 1967</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Chicago, Illinois</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>R&amp;B songwriting</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>Imprisoned</strong>
+              </div>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
+            </div>
+          </section>
+        </div>
+
+        <div class="content-layout">
+          <div class="content-stack">
+            <section class="glass panel" id="biography">
+              <h2>Biography</h2>
+
+              <h3>Early Life and Musical Formation</h3>
+              <p>Robert Sylvester Kelly was born on January 8, 1967, in Chicago, Illinois. He came out of a difficult upbringing and eventually developed a reputation for strong vocal ability, songwriting instinct, and musical versatility. His early rise began in the late 1980s and early 1990s, when he emerged first with the group Public Announcement and then as a solo artist.</p>
+              <p>As his career developed, Kelly built a reputation not only as a singer but as a writer and producer who could craft hits for himself and other performers. His style blended R&amp;B, soul, pop, gospel influence, and hip-hop-era production in a way that made him one of the most commercially recognizable names in Black popular music of the 1990s and 2000s.</p>
+
+              <h3>Rise to Stardom</h3>
+              <p>R. Kelly’s solo run made him one of the defining R&amp;B stars of his generation. He became known for major singles, blockbuster albums, and crossover appeal that reached beyond R&amp;B audiences. His catalog helped shape the sound of contemporary slow jams, radio-friendly ballads, and performance-driven R&amp;B songwriting.</p>
+              <p>He also built a reputation as a prolific songwriter and producer, contributing to a wide range of records across the industry. For a long stretch, his commercial power and visibility made him one of the most successful artists in American popular music.</p>
+
+              <div class="quote">R. Kelly’s musical influence was immense, but his public legacy is now defined as much by criminal accountability and abuse allegations as by his catalog.</div>
+
+              <h3>Influence and Cultural Reach</h3>
+              <p>Kelly’s work had a major effect on mainstream R&amp;B and hip-hop-adjacent popular music. His approach to melody, vocal layering, songwriting, and crossover record-making influenced multiple generations of artists. For years, his career was treated as an example of commercial durability and hit-making consistency.</p>
+              <p>That influence remains part of the historical record, but it is now discussed alongside the severe harm described by prosecutors, witnesses, and courts. Any serious account of his place in music has to hold both realities together: the scale of his musical impact and the gravity of the crimes for which he was convicted.</p>
+
+              <h3>Allegations, Investigations, and Collapse</h3>
+              <p>For years, allegations involving abuse and misconduct followed Kelly. As public scrutiny intensified, broader investigations and multiple prosecutions transformed the way his career and legacy were understood. What had long been treated by parts of the music industry as rumor or scandal eventually became the subject of major criminal cases.</p>
+              <p>That process marked one of the most dramatic reputational collapses in modern music. The conversation around R. Kelly shifted from celebrity controversy to documented criminal conduct, victim testimony, and institutional accountability.</p>
+
+              <h3>Convictions and Sentencing</h3>
+              <p>Kelly was convicted in federal court in Brooklyn in 2021 on racketeering and sex trafficking-related charges. In 2022, he was sentenced to 30 years in prison in that case. He was also convicted in a separate Chicago federal case involving child pornography and child enticement charges, resulting in an additional sentence that largely runs concurrently with the New York sentence.</p>
+              <p>Subsequent appeals did not reverse the New York conviction. By 2025, a federal appeals court had upheld the conviction and sentence, reinforcing the legal outcome that now defines the public end of his career.</p>
+
+              <h3>Legacy</h3>
+              <p>R. Kelly’s legacy is deeply divided. On one hand, he was a major commercial artist whose songwriting and production shaped a significant era of R&amp;B and influenced crossover music in the 1990s and 2000s. On the other hand, he is now identified publicly and legally with convictions for serious crimes involving the exploitation and abuse of women and underage girls.</p>
+              <p>Because of that, his story is no longer one of music alone. It is also a story about power, celebrity, harm, and the eventual legal consequences that followed years of allegations. In the context of music history, he remains important. In the context of public memory, that importance is inseparable from the criminal record that ended his career.</p>
+            </section>
+
+            <section class="glass panel" id="timeline">
+              <h2>Career Timeline</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <strong>1967 — Birth</strong>
+                  <p>Born Robert Sylvester Kelly in Chicago, Illinois.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1990s — Breakthrough</strong>
+                  <p>Rose from early group success into a major solo R&amp;B career.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1990s–2000s — Commercial Peak</strong>
+                  <p>Became one of the most commercially successful singers, songwriters, and producers in contemporary R&amp;B.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2021–2022 — Convictions and Sentencing</strong>
+                  <p>Convicted in federal criminal cases and sentenced to lengthy prison terms.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2025 — Appeal Rejected</strong>
+                  <p>A federal appeals court upheld his New York conviction and 30-year sentence.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="side-stack">
+            <section class="glass panel">
+              <h2>Profile Details</h2>
+              <div class="info-list">
+                <div class="info-row">
+                  <span class="info-label">Full Name</span>
+                  <div class="info-value">Robert Sylvester Kelly</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Stage Name</span>
+                  <div class="info-value">R. Kelly</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birthplace</span>
+                  <div class="info-value">Chicago, Illinois</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">R&amp;B / Soul / Pop</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Serving prison sentences</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Key Themes</h2>
+              <div class="tags">
+                <span class="tag">R&amp;B</span>
+                <span class="tag">Songwriting</span>
+                <span class="tag">Commercial Success</span>
+                <span class="tag">Fall From Grace</span>
+                <span class="tag">Convictions</span>
+                <span class="tag">Legacy Debate</span>
+              </div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Highlighted Eras</h2>
+              <div class="discography">
+                <div class="album">
+                  <strong>Early Rise</strong>
+                  <span>Public Announcement and the beginning of his solo breakthrough.</span>
+                </div>
+                <div class="album">
+                  <strong>Mainstream Dominance</strong>
+                  <span>Years of major hits, chart success, and industry influence.</span>
+                </div>
+                <div class="album">
+                  <strong>Legal Downfall</strong>
+                  <span>The period in which allegations turned into major federal convictions.</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Related Sections</h2>
+              <div class="related-list">
+                <a href="timeline.html" class="related-card">
+                  <h4>Rap History Timeline</h4>
+                  <p>Place this story within a wider music and culture timeline.</p>
+                </a>
+                <a href="category.html" class="related-card">
+                  <h4>Story Categories</h4>
+                  <p>Browse biographies, controversies, labels, and legacies.</p>
+                </a>
+                <a href="about.html" class="related-card">
+                  <h4>About Rap Stories</h4>
+                  <p>Learn how the archive is structured and why it exists.</p>
+                </a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
