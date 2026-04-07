@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artists | Rap Stories</title>
+  <meta name="description" content="Browse Rap Stories artist pages, including 2Pac, Biggie, DMX, Juice WRLD, Chief Keef, Young Dolph, and more." />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --radius: 20px;
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --max: 1260px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display:block; width:100%; }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+    
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 8, 0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+.nav {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  font-size: 1.02rem;
+}
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  color: #111;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+}
+.brand-text {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  position: relative;
+  color: var(--muted);
+  transition: color 0.25s ease;
+  font-size: 0.96rem;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { transform: scaleX(1); }
+.nav-btn {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #f5df8f);
+  color: #111;
+  font-weight: 800;
+  border: none;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+}
+footer {
+  padding: 24px 0 50px;
+  color: var(--muted);
+}
+.footer-wrap {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-links a:hover { color: var(--text); }
+@media (max-width: 820px) {
+  .nav { flex-direction: column; padding: 14px 0; }
+  .nav-links { justify-content: center; }
+}
+
+    .hero { padding: 48px 0 24px; }
+    .hero-card { padding: 32px; }
+    .eyebrow {
+      display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
+      background:var(--accent-soft); color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.5px;
+    }
+    .hero-card h1 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+    .hero-card h1 span {
+      background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .hero-card p { color: var(--muted); max-width: 820px; font-size: 1.04rem; }
+    .artist-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      margin: 28px 0 50px;
+    }
+    .artist-card {
+      overflow:hidden;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .artist-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .artist-thumb {
+      height: 280px;
+      overflow:hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .artist-thumb img { height:100%; object-fit:cover; }
+    .artist-card-body { padding: 18px; }
+    .artist-card-body h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .artist-card-body p { color: var(--muted); font-size: .95rem; margin-bottom: 14px; min-height: 72px; }
+    .artist-card-body span { color: var(--accent); font-weight: 800; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist.html" class="active">Artists</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Explore Stories</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="glass hero-card">
+          <span class="eyebrow">Artist Archive</span>
+          <h1>Explore <span>Rap Stories</span> Artists</h1>
+          <p>Browse premium artist profiles covering background, rise, impact, controversy, major works, and legacy. Each page is fully connected to the archive and styled to match the Rap Stories experience.</p>
+        </div>
+        <div class="artist-grid">
+          <a href="king-von.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/king-von.jpg" alt="King Von"></div>
+            <div class="artist-card-body">
+              <h3>King Von</h3>
+              <p>Chicago drill storyteller, O'Block figure, and one of the most compelling voices of his generation.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="lil-durk.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/lil-durk.jpg" alt="Lil Durk"></div>
+            <div class="artist-card-body">
+              <h3>Lil Durk</h3>
+              <p>Melodic drill star whose music, grief, and legal scrutiny shaped a defining modern rap story.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="mo3.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/mo3.jpg" alt="MO3"></div>
+            <div class="artist-card-body">
+              <h3>MO3</h3>
+              <p>Dallas artist whose raw honesty, pain, and vulnerability made him a singular Southern voice.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="pop-smoke.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/pop-smoke.jpg" alt="Pop Smoke"></div>
+            <div class="artist-card-body">
+              <h3>Pop Smoke</h3>
+              <p>Brooklyn drill star whose rise reshaped New York rap and left an outsized legacy.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="dmx.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/dmx.jpg" alt="DMX"></div>
+            <div class="artist-card-body">
+              <h3>DMX</h3>
+              <p>A historic voice of pain, faith, rage, and survival whose impact reached far beyond rap.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="r-kelly.html" class="artist-card glass">
+            <div class="artist-thumb">
+              <img src="images/r-kelly.jpg" alt="R. Kelly">
+            </div>
+            <div class="artist-card-body">
+              <h3>R. Kelly</h3>
+              <p>R&B superstar whose musical influence was overshadowed by criminal convictions and one of the most controversial downfalls in music history.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="nelly.html" class="artist-card glass">
+            <div class="artist-thumb">
+              <img src="images/nelly.jpeg" alt="Nelly">
+            </div>
+            <div class="artist-card-body">
+              <h3>Nelly</h3>
+              <p>St. Louis rap icon whose crossover hits and Country Grammar era helped define mainstream hip-hop in the early 2000s.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="tupac.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/tupac.jpg" alt="2Pac"></div>
+            <div class="artist-card-body">
+              <h3>2Pac</h3>
+              <p>Poet, rebel, actor, and cultural icon whose message transcended music.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="biggie.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/biggie.jpg" alt="The Notorious B.I.G."></div>
+            <div class="artist-card-body">
+              <h3>The Notorious B.I.G.</h3>
+              <p>Brooklyn narrator and lyrical giant who restored New York's dominance in rap.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="young-dolph.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/young-dolph.jpg" alt="Young Dolph"></div>
+            <div class="artist-card-body">
+              <h3>Young Dolph</h3>
+              <p>Independent Memphis mogul remembered for ownership, resilience, and loyalty.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="juice-wrld.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/juice-wrld.jpg" alt="Juice WRLD"></div>
+            <div class="artist-card-body">
+              <h3>Juice WRLD</h3>
+              <p>A generation's emotional voice whose songs made vulnerability central to modern rap.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="future.html" class="artist-card glass">
+            <div class="artist-thumb">
+              <img src="images/future.jpg" alt="Future">
+            </div>
+            <div class="artist-card-body">
+              <h3>Future</h3>
+              <p>Atlanta trap pioneer whose dark melodies, prolific output, and influence helped define modern hip-hop.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="chief-keef.html" class="artist-card glass">
+            <div class="artist-thumb"><img src="images/chief-keef.jpg" alt="Chief Keef"></div>
+            <div class="artist-card-body">
+              <h3>Chief Keef</h3>
+              <p>Architect of drill whose raw digital-era rise changed rap globally.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="dj-stancho.html" class="artist-card glass">
+            <div class="artist-thumb">
+              <img src="images/dj-stancho.jpg" alt="DJ Stancho">
+            </div>
+            <div class="artist-card-body">
+              <h3>DJ Stancho</h3>
+              <p>Nightlife DJ and crowd controller known for high-energy sets, open-format mixing, and turning every event into a full atmosphere.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
