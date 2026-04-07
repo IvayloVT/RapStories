@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Rap Stories</title>
+  <meta name="description" content="About Rap Stories — a digital archive preserving the stories, legacy, and culture of hip hop legends." />
+
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --radius: 20px;
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --max: 1260px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(5,5,8,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 70px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), #fff0a5);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #111;
+      font-weight: 900;
+    }
+    /* Remove underline from logo and header button */
+    .brand,
+    .brand-text,
+    .nav-btn {
+      text-decoration: none !important;
+    }
+
+    /* Also make sure links inside header never underline */
+    header a {
+      text-decoration: none !important;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 60px 0 30px;
+    }
+
+    .hero-box {
+      padding: 40px;
+    }
+
+    .eyebrow {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    section {
+      padding: 30px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 25px;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+    }
+
+    .panel p {
+      color: var(--muted);
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .value {
+      padding: 20px;
+    }
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    @media(max-width:900px){
+      .grid, .values {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+/* Premium header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 8, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  font-size: 1.02rem;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  color: #111;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+}
+
+.brand-text {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  position: relative;
+  color: var(--muted);
+  transition: color 0.25s ease, transform 0.25s ease;
+  font-size: 0.96rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+.nav-btn {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #f5df8f);
+  color: #111;
+  font-weight: 800;
+  border: none;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+}
+
+@media (max-width: 760px) {
+  .nav {
+    flex-direction: column;
+    padding: 14px 0;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .nav-links a::after {
+    bottom: -5px;
+  }
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 8, 0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+.nav {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  font-size: 1.02rem;
+}
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  color: #111;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+}
+.brand-text {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  position: relative;
+  color: var(--muted);
+  transition: color 0.25s ease;
+  font-size: 0.96rem;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { transform: scaleX(1); }
+.nav-btn {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #f5df8f);
+  color: #111;
+  font-weight: 800;
+  border: none;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+}
+footer {
+  padding: 24px 0 50px;
+  color: var(--muted);
+}
+.footer-wrap {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-links a:hover { color: var(--text); }
+@media (max-width: 820px) {
+  .nav { flex-direction: column; padding: 14px 0; }
+  .nav-links { justify-content: center; }
+}
+
+
+
+/* Mobile sticky header */
+header#mainHeader {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(0) !important;
+}
+</style>
+</head>
+
+<body>
+
+<header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist.html">Artists</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Explore Stories</a>
+    </div>
+  </header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="glass hero-box">
+      <span class="eyebrow">About The Project</span>
+      <h1>The <span>Vault</span> Explained</h1>
+      <p>
+        Rap Stories is a digital archive built to preserve the stories, legacy, and cultural impact of hip hop legends.
+        It is designed as a modern platform that documents not just music, but the full journey of artists — from their
+        upbringing to their influence on global culture.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container grid">
+    <div class="glass panel">
+      <h2>Our Mission</h2>
+      <p>
+        To document hip hop history with depth, accuracy, and respect. We aim to preserve artist stories as structured
+        narratives that future generations can explore, learn from, and understand.
+      </p>
+    </div>
+
+    <div class="glass panel">
+      <h2>Our Vision</h2>
+      <p>
+        To become a leading digital archive for hip hop culture — a platform that feels like a museum, a library,
+        and a storytelling hub combined into one modern experience.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container grid">
+    <div class="glass panel">
+      <h2>What This Site Covers</h2>
+      <p>
+        Each artist profile includes biography, career milestones, major releases, affiliations, controversies, and
+        long-term legacy. The goal is to go beyond surface-level content and provide a complete historical perspective.
+      </p>
+    </div>
+
+    <div class="glass panel">
+      <h2>Why This Matters</h2>
+      <p>
+        Hip hop is more than music — it is history, identity, and influence. Many stories are lost, misrepresented,
+        or incomplete. This archive exists to preserve them properly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 style="margin-bottom:20px;">Core Values</h2>
+
+    <div class="values">
+      <div class="glass value">
+        <h3>Authenticity</h3>
+        <p>Stories are presented with factual accuracy and respect for real events.</p>
+      </div>
+
+      <div class="glass value">
+        <h3>Depth</h3>
+        <p>We go beyond headlines to explore full narratives and context.</p>
+      </div>
+
+      <div class="glass value">
+        <h3>Culture First</h3>
+        <p>The focus is always on preserving hip hop culture and its impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="glass panel">
+      <h2>Future of the Archive</h2>
+      <p>
+        The platform will expand into timelines, regional histories, label archives, and interactive storytelling.
+        The long-term goal is to build a complete digital ecosystem that documents hip hop across generations.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+(function () {
+  const header = document.getElementById("mainHeader");
+  if (!header) return;
+
+  function updateHeaderOffset() {
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+
+  updateHeaderOffset();
+  window.addEventListener("load", updateHeaderOffset);
+  window.addEventListener("resize", updateHeaderOffset);
+})();
+</script>
+</body>
+</html>
