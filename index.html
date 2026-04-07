@@ -1123,34 +1123,76 @@ header#mainHeader {
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const searchBar = document.querySelector('.search-bar');
       const searchButton = document.querySelector('.search-bar button');
       const searchInput = document.querySelector('.search-bar input');
-      if (searchButton && searchInput) {
-        searchButton.addEventListener('click', function () {
-          const query = (searchInput.value || '').trim().toLowerCase();
-          if (!query) {
-            window.location.href = 'artist.html';
-            return;
+      const selects = document.querySelectorAll('.search-bar select');
+      const eraSelect = selects[0] || null;
+      const categorySelect = selects[1] || null;
+
+      if (!searchBar || !searchButton || !searchInput) return;
+
+      const routes = [
+        { terms: ['2pac', 'tupac', 'tupac shakur', 'pac'], href: 'tupac.html' },
+        { terms: ['biggie', 'notorious b.i.g.', 'notorious big', 'big', 'biggie smalls'], href: 'biggie.html' },
+        { terms: ['chief keef', 'keef', 'sosa'], href: 'chief-keef.html' },
+        { terms: ['dj stancho', 'stancho', 'stanislav peev'], href: 'dj-stancho.html' },
+        { terms: ['dmx', 'earl simmons'], href: 'dmx.html' },
+        { terms: ['future', 'pluto'], href: 'future.html' },
+        { terms: ['juice wrld', 'juice', 'jarad higgins'], href: 'juice-wrld.html' },
+        { terms: ['king von', 'von'], href: 'king-von.html' },
+        { terms: ['lil durk', 'durk', 'otf'], href: 'lil-durk.html' },
+        { terms: ['mo3', 'mo 3'], href: 'mo3.html' },
+        { terms: ['nba youngboy', 'youngboy', 'youngboy never broke again'], href: 'nba-youngboy.html' },
+        { terms: ['nelly', 'country grammar'], href: 'nelly.html' },
+        { terms: ['pop smoke', 'pop'], href: 'pop-smoke.html' },
+        { terms: ['quando rondo', 'quando'], href: 'quando-rondo.html' },
+        { terms: ['r. kelly', 'r kelly', 'kelly'], href: 'r-kelly.html' },
+        { terms: ['young dolph', 'dolph'], href: 'young-dolph.html' },
+        { terms: ['artist', 'artists', 'archive', 'vault'], href: 'artist.html' },
+        { terms: ['timeline', 'history'], href: 'timeline.html' },
+        { terms: ['category', 'categories'], href: 'category.html' },
+        { terms: ['about'], href: 'about.html' },
+        { terms: ['contact'], href: 'contact.html' }
+      ];
+
+      function findRoute(query) {
+        if (!query) return '';
+        const normalized = query.toLowerCase().replace(/[^a-z0-9.\s]/g, ' ').replace(/\s+/g, ' ').trim();
+        for (const entry of routes) {
+          if (entry.terms.some(term => normalized.includes(term))) {
+            return entry.href;
           }
-          const map = {
-            'timeline': 'timeline.html',
-            'history': 'timeline.html',
-            'category': 'category.html',
-            'categories': 'category.html',
-            'about': 'about.html',
-            'contact': 'contact.html',
-            'artist': 'artist.html',
-            'artists': 'artist.html'
-          };
-          for (const key in map) {
-            if (query.includes(key)) {
-              window.location.href = map[key];
-              return;
-            }
-          }
-          window.location.href = 'artist.html';
-        });
+        }
+        return '';
       }
+
+      function fallbackRoute() {
+        const era = eraSelect ? eraSelect.value : 'All Eras';
+        const category = categorySelect ? categorySelect.value : 'All Categories';
+
+        if (category && category !== 'All Categories') {
+          return 'category.html';
+        }
+        if (era && era !== 'All Eras') {
+          return 'timeline.html';
+        }
+        return 'artist.html';
+      }
+
+      function runVaultSearch() {
+        const query = (searchInput.value || '').trim();
+        const match = findRoute(query);
+        window.location.href = match || fallbackRoute();
+      }
+
+      searchButton.addEventListener('click', runVaultSearch);
+      searchInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          runVaultSearch();
+        }
+      });
     });
   </script>
 
