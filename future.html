@@ -508,11 +508,28 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  </style>
+  
+
+/* Mobile header: show only at top */
+header#mainHeader {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  header#mainHeader.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+</style>
 </head>
 <body>
 
-  <header>
+  <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
@@ -746,6 +763,38 @@
       </div>
     </div>
   </footer>
+
+
+
+<script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+
+  function scroll(){
+    if(window.innerWidth <= 768){
+      if(window.pageYOffset <= 5){
+        header.classList.remove("hidden");
+      } else {
+        header.classList.add("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+  }
+
+  offset();
+  scroll();
+
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", offset);
+  window.addEventListener("scroll", scroll, {passive:true});
+})();
+</script>
 
 </body>
 </html>
