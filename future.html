@@ -508,28 +508,11 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-
-/* Mobile header: show only at top */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-</style>
+  </style>
 </head>
 <body>
 
-  <header id="mainHeader">
+  <header>
     <div class="container nav">
       <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
@@ -593,7 +576,7 @@ header#mainHeader {
 
             <div class="hero-buttons">
               <a href="#biography" class="btn btn-primary">Read Biography</a>
-              <a href="timeline.html#future" class="btn">View Timeline</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
           </section>
         </div>
@@ -727,19 +710,19 @@ header#mainHeader {
             </section>
 
             <section class="glass panel">
-              <h2>Related Sections</h2>
+              <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="timeline.html#future" class="related-card">
-                  <h4>Rap History Timeline</h4>
-                  <p>Place Future’s story within wider hip-hop history.</p>
+                <a href="nba-youngboy.html" class="related-card">
+                  <h4>NBA YoungBoy</h4>
+                  <p>A modern streaming-era match built on nonstop output, emotional intensity, and prolific catalog building.</p>
                 </a>
-                <a href="category.html" class="related-card">
-                  <h4>Story Categories</h4>
-                  <p>Explore biographies, movements, labels, and legacies.</p>
+                <a href="young-dolph.html" class="related-card">
+                  <h4>Young Dolph</h4>
+                  <p>Another Southern force whose independence and regional power shaped the 2010s landscape.</p>
                 </a>
-                <a href="about.html" class="related-card">
-                  <h4>About Rap Stories</h4>
-                  <p>Learn how the archive is structured and why it exists.</p>
+                <a href="nelly.html" class="related-card">
+                  <h4>Nelly</h4>
+                  <p>A useful contrast story showing two very different ways Southern and Midwest artists crossed into mainstream dominance.</p>
                 </a>
               </div>
             </section>
@@ -763,38 +746,6 @@ header#mainHeader {
       </div>
     </div>
   </footer>
-
-
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function scroll(){
-    if(window.innerWidth <= 768){
-      if(window.pageYOffset <= 5){
-        header.classList.remove("hidden");
-      } else {
-        header.classList.add("hidden");
-      }
-    } else {
-      header.classList.remove("hidden");
-    }
-  }
-
-  offset();
-  scroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", offset);
-  window.addEventListener("scroll", scroll, {passive:true});
-})();
-</script>
 
 </body>
 </html>

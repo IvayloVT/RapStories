@@ -461,27 +461,10 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-
-/* Mobile header: show only at top */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-</style>
+  </style>
 </head>
 <body>
-  <header id="mainHeader">
+  <header>
     <div class="container nav">
       <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
@@ -545,7 +528,7 @@ header#mainHeader {
 
             <div class="hero-buttons">
               <a href="#biography" class="btn btn-primary">Read Biography</a>
-              <a href="timeline.html#lil-durk" class="btn">View Timeline</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
           </section>
         </div>
@@ -667,19 +650,19 @@ header#mainHeader {
             </section>
 
             <section class="glass panel">
-              <h2>Related Sections</h2>
+              <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="timeline.html#lil-durk" class="related-card">
-                  <h4>Rap History Timeline</h4>
-                  <p>See where Lil Durk fits into the wider arc of drill, trap, and modern rap.</p>
+                <a href="chief-keef.html" class="related-card">
+                  <h4>Chief Keef</h4>
+                  <p>A foundational Chicago drill connection that helps explain the movement Durk emerged from.</p>
                 </a>
-                <a href="category.html" class="related-card">
-                  <h4>Story Categories</h4>
-                  <p>Browse biographies, controversies, movements, and label histories.</p>
+                <a href="king-von.html" class="related-card">
+                  <h4>King Von</h4>
+                  <p>An essential linked story through personal ties, OTF history, and the emotional weight of loss.</p>
                 </a>
-                <a href="about.html" class="related-card">
-                  <h4>About Rap Stories</h4>
-                  <p>Learn how the archive is structured and how these profiles are built.</p>
+                <a href="quando-rondo.html" class="related-card">
+                  <h4>Quando Rondo</h4>
+                  <p>A major related story because public conflict and aftermath reshaped Durk’s later narrative.</p>
                 </a>
               </div>
             </section>
@@ -703,37 +686,5 @@ header#mainHeader {
       </div>
     </div>
   </footer>
-
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function scroll(){
-    if(window.innerWidth <= 768){
-      if(window.pageYOffset <= 5){
-        header.classList.remove("hidden");
-      } else {
-        header.classList.add("hidden");
-      }
-    } else {
-      header.classList.remove("hidden");
-    }
-  }
-
-  offset();
-  scroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", offset);
-  window.addEventListener("scroll", scroll, {passive:true});
-})();
-</script>
-
 </body>
 </html>

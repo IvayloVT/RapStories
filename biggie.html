@@ -612,25 +612,10 @@ footer {
   .nav-links { justify-content: center; }
 }
 
-
-/* Mobile header: show only at top */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
 </style>
 </head>
 <body>
-  <header id="mainHeader">
+  <header>
     <div class="container nav">
       <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
@@ -694,7 +679,7 @@ header#mainHeader {
 
             <div class="hero-buttons">
               <a href="#biography" class="btn btn-primary">Read Biography</a>
-              <a href="timeline.html#biggie" class="btn">View Timeline</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
           </section>
         </div>
@@ -829,19 +814,19 @@ header#mainHeader {
             </section>
 
             <section class="glass panel">
-              <h2>Related Sections</h2>
+              <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="timeline.html#biggie" class="related-card">
-                  <h4>Rap History Timeline</h4>
-                  <p>Place Biggie’s story within wider hip-hop history.</p>
+                <a href="tupac.html" class="related-card">
+                  <h4>2Pac</h4>
+                  <p>The most essential linked story from the same 1990s era, rivalry history, and cultural mythology.</p>
                 </a>
-                <a href="category.html" class="related-card">
-                  <h4>Story Categories</h4>
-                  <p>Explore biographies, controversies, labels, and legacies.</p>
+                <a href="dmx.html" class="related-card">
+                  <h4>DMX</h4>
+                  <p>A fellow New York titan whose rise helped keep East Coast rap at the center of the culture.</p>
                 </a>
-                <a href="about.html" class="related-card">
-                  <h4>About Rap Stories</h4>
-                  <p>Learn how the archive is structured and why it exists.</p>
+                <a href="pop-smoke.html" class="related-card">
+                  <h4>Pop Smoke</h4>
+                  <p>A modern Brooklyn continuation of the city energy and presence Biggie helped immortalize.</p>
                 </a>
               </div>
             </section>
@@ -865,36 +850,5 @@ header#mainHeader {
       </div>
     </div>
   </footer>
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function scroll(){
-    if(window.innerWidth <= 768){
-      if(window.pageYOffset <= 5){
-        header.classList.remove("hidden");
-      } else {
-        header.classList.add("hidden");
-      }
-    } else {
-      header.classList.remove("hidden");
-    }
-  }
-
-  offset();
-  scroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", offset);
-  window.addEventListener("scroll", scroll, {passive:true});
-})();
-</script>
-
 </body>
 </html>

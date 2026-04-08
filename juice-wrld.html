@@ -611,27 +611,10 @@ footer {
   .nav-links { justify-content: center; }
 }
 
-
-
-/* Mobile header: show only at top */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
 </style>
 </head>
 <body>
-  <header id="mainHeader">
+  <header>
     <div class="container nav">
       <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
@@ -695,7 +678,7 @@ header#mainHeader {
 
             <div class="hero-buttons">
               <a href="#biography" class="btn btn-primary">Read Biography</a>
-              <a href="timeline.html#juice-wrld" class="btn">View Timeline</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
           </section>
         </div>
@@ -825,19 +808,19 @@ header#mainHeader {
             </section>
 
             <section class="glass panel">
-              <h2>Related Sections</h2>
+              <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="timeline.html#juice-wrld" class="related-card">
-                  <h4>Rap History Timeline</h4>
-                  <p>Place Juice WRLD’s story within wider hip-hop history.</p>
+                <a href="mo3.html" class="related-card">
+                  <h4>MO3</h4>
+                  <p>A close emotional match built around pain, melody, vulnerability, and deeply personal songwriting.</p>
                 </a>
-                <a href="category.html" class="related-card">
-                  <h4>Story Categories</h4>
-                  <p>Explore biographies, controversies, labels, and legacies.</p>
+                <a href="dmx.html" class="related-card">
+                  <h4>DMX</h4>
+                  <p>An earlier icon whose raw honesty helps frame the emotional lineage that Juice WRLD carried forward.</p>
                 </a>
-                <a href="about.html" class="related-card">
-                  <h4>About Rap Stories</h4>
-                  <p>Learn how the archive is structured and why it exists.</p>
+                <a href="quando-rondo.html" class="related-card">
+                  <h4>Quando Rondo</h4>
+                  <p>A modern vault link through melodic expression, trauma, and public controversy.</p>
                 </a>
               </div>
             </section>
@@ -861,37 +844,5 @@ header#mainHeader {
       </div>
     </div>
   </footer>
-
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function scroll(){
-    if(window.innerWidth <= 768){
-      if(window.pageYOffset <= 5){
-        header.classList.remove("hidden");
-      } else {
-        header.classList.add("hidden");
-      }
-    } else {
-      header.classList.remove("hidden");
-    }
-  }
-
-  offset();
-  scroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", offset);
-  window.addEventListener("scroll", scroll, {passive:true});
-})();
-</script>
-
 </body>
 </html>
