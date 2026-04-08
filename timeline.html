@@ -1,13 +1,1544 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Connected Timeline | Rap Stories</title><meta name="description" content="Move through the Rap Stories vault by era and artist timeline connections." /><link rel="stylesheet" href="vault-system.css" /></head><body><header id="mainHeader">
-  <div class="container nav">
-    <a href="index.html" class="brand"><div class="brand-mark">RS</div><span class="brand-text">RAP STORIES</span></a>
-    <nav class="nav-links"><a href="index.html" class="">Home</a>
-<a href="artist-archive.html" class="">Archive</a>
-<a href="artist.html">Artist</a>
-<a href="category.html" class="">Categories</a>
-<a href="timeline.html" class="active">Timeline</a>
-<a href="map.html">Map</a>
-<a href="contact.html" class="">Contact</a></nav>
-    <a href="artist-archive.html" class="nav-btn">Explore Stories</a>
-  </div>
-</header><main><section class="hero"><div class="container"><div class="glass hero-card"><span class="eyebrow">History in Motion</span><h1>Connected <span>Timeline</span></h1><p>Track hip-hop eras and connected artist entries in one place. Every timeline card links back into the full story vault.</p></div></div></section><section class="section"><div class="container"><div class="section-head"><div><h2>Artist Timeline Network</h2><p>Use these anchor-linked entries to move between the historical timeline and full artist pages.</p></div></div><div class="timeline-stack" id="timelineEntries"></div></div></section></main><footer><div class="container footer-wrap"><div><strong style="color:white;">Rap Stories Timeline</strong><p>Connected artist history across the vault.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="artist-archive.html">Archive</a><a href="category.html">Categories</a><a href="contact.html">Contact</a></div></div></footer><script src="vault-data.js"></script><script src="vault-system.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connected Timeline | Rap Stories</title>
+  <meta name="description" content="Move through the Rap Stories vault by era and artist timeline connections." />
+  <style>
+    :root {
+      --bg: #0a0a0f; --panel: rgba(255,255,255,0.06); --panel-border: rgba(255,255,255,0.10);
+      --text: #f4f4f5; --muted: #a5a5b1; --accent: #d4af37; --accent-soft: rgba(212,175,55,0.15);
+      --radius: 20px; --shadow: 0 20px 50px rgba(0,0,0,0.45); --max: 1260px;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text); line-height: 1.65;
+    }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; width:100%; }
+    .container { width:min(92%, var(--max)); margin:0 auto; }
+    .glass { background:var(--panel); border:1px solid var(--panel-border); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:var(--shadow); border-radius:var(--radius); }
+    header#mainHeader { position:fixed; top:0; left:0; width:100%; z-index:1000; background:rgba(5,5,8,0.76); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,0.08); box-shadow:0 10px 30px rgba(0,0,0,0.22); transition:transform .3s ease; }
+    header#mainHeader.hidden { transform:translateY(-100%); }
+    .nav { min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.6px; font-size:1.02rem; }
+    .brand-mark { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg,#d4af37,#fff0a5); color:#111; font-weight:900; box-shadow:0 10px 24px rgba(212,175,55,.35); }
+    .brand-text { font-weight:900; letter-spacing:.5px; background:linear-gradient(135deg,#d4af37,#fff0a5,#ffffff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .nav-links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+    .nav-links a { position:relative; color:var(--muted); transition:color .25s ease; font-size:.96rem; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text); }
+    .nav-links a::after { content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#fff0a5); transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
+    .nav-btn { padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#f5df8f); color:#111; font-weight:800; border:none; box-shadow:0 10px 24px rgba(212,175,55,.22); }
+    .hero { padding:128px 0 24px; }
+    .hero-card { padding:32px; }
+    .eyebrow { display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px; background:var(--accent-soft); color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.5px; }
+    .eyebrow.small { margin-bottom:8px; font-size:.74rem; padding:6px 10px; }
+    .hero-card h1 { font-size:clamp(2.4rem,5vw,4.5rem); line-height:.98; letter-spacing:-2px; margin-bottom:14px; font-weight:900; }
+    .hero-card h1 span { background:linear-gradient(135deg,var(--accent),#fff0a5,#ffffff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero-card p { color:var(--muted); max-width:860px; font-size:1.04rem; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:22px; }
+    .stat { padding:18px; }
+    .stat strong { display:block; font-size:1.5rem; color:white; margin-bottom:4px; }
+    .stat span { color:var(--muted); font-size:.95rem; }
+    .section { padding:12px 0 56px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:20px; }
+    .section-head h2 { font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:6px; }
+    .section-head p { color:var(--muted); }
+    .timeline-stack { display:grid; gap:26px; }
+    .era-block { display:grid; gap:18px; }
+    .era-header { padding:22px; }
+    .era-header h3 { font-size:1.7rem; margin-bottom:6px; }
+    .era-header p { color:var(--muted); }
+    .timeline-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:20px; }
+    .timeline-card { overflow:hidden; transition:transform .25s ease, border-color .25s ease; }
+    .timeline-card:hover { transform:translateY(-5px); border-color:rgba(212,175,55,0.32); }
+    .timeline-thumb { height:260px; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .timeline-thumb img { height:100%; object-fit:cover; }
+    .timeline-card-body { padding:18px; }
+    .timeline-meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .pill { display:inline-block; padding:7px 10px; border-radius:999px; background:rgba(212,175,55,0.12); border:1px solid rgba(212,175,55,0.18); color:var(--accent); font-size:.78rem; font-weight:800; }
+    .pill.muted { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.10); color:var(--muted); }
+    .timeline-card h4 { font-size:1.22rem; margin-bottom:10px; }
+    .timeline-card p { color:var(--muted); font-size:.95rem; margin-bottom:14px; min-height:70px; }
+    .timeline-link { color:var(--accent); font-weight:800; }
+    footer { padding:24px 0 50px; color:var(--muted); }
+    .footer-wrap { border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+    .footer-links a:hover { color:var(--text); }
+    @media (max-width:1100px) { .stats { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:820px) { .nav { flex-direction:column; padding:14px 0; } .nav-links { justify-content:center; } }
+    @media (max-width:640px) { .stats { grid-template-columns:1fr; } .hero-card,.era-header,.timeline-card-body { padding:20px; } }
+  </style>
+</head>
+<body>
+  <header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
+        <a href="artist.html">Artist</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html" class="active">Timeline</a>
+        <a href="map.html">Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Explore Stories</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="glass hero-card">
+          <span class="eyebrow">History in Motion</span>
+          <h1>Connected <span>Timeline</span></h1>
+          <p>This timeline is now synced to the artist archive, grouping the current artist vault into linked era sections so visitors can move from historical lanes straight into full artist pages.</p>
+          <div class="stats">
+            <div class="glass stat"><strong>112</strong><span>artists connected</span></div>
+            <div class="glass stat"><strong>4</strong><span>timeline eras</span></div>
+            <div class="glass stat"><strong>100%</strong><span>synced from artist.html</span></div>
+            <div class="glass stat"><strong>Live</strong><span>vault-linked story navigation</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Artist Timeline Network</h2>
+            <p>Browse the archive by era and jump directly into each full artist page.</p>
+          </div>
+        </div>
+        <div class="timeline-stack" id="timelineEntries">
+          
+    <div class="era-block">
+      <div class="era-header glass">
+        <span class="eyebrow small">Era</span>
+        <h3>1990s</h3>
+        <p>12 connected artist entries from the archive.</p>
+      </div>
+      <div class="timeline-grid">
+        <a href="tupac.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/tupac.jpg" alt="2Pac"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>2Pac</h4>
+            <p>Poet, rebel, actor, and cultural icon whose message transcended music.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="da-brat.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/da-brat.jpg" alt="Da Brat"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Da Brat</h4>
+            <p>Trailblazing female MC who broke barriers in 90s hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="dr-dre.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/dr-dre.jpg" alt="Dr. Dre"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Dr. Dre</h4>
+            <p>Architect of West Coast sound, producer mastermind, and founder of multiple rap dynasties.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="ice-cube.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/ice-cube.jpg" alt="Ice Cube"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Ice Cube</h4>
+            <p>From N.W.A rebel to Hollywood figure, a voice of truth, resistance, and evolution.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="ll-cool-j.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/ll-cool-j.jpg" alt="LL Cool J"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>LL Cool J</h4>
+            <p>Pioneer who helped shape hip-hop superstardom.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="master-p.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/master-p.jpg" alt="Master P"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Master P</h4>
+            <p>No Limit mogul who revolutionized independent rap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="nate-dogg.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/nate-dogg.jpg" alt="Nate Dogg"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Nate Dogg</h4>
+            <p>Legendary hook king of West Coast hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="nelly.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/nelly.jpeg" alt="Nelly"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Nelly</h4>
+            <p>St. Louis rap icon whose crossover hits and Country Grammar era helped define mainstream hip-hop in the early 2000s.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="outkast.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/outkast.jpg" alt="OutKast"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>OutKast</h4>
+            <p>Legendary duo that reshaped Southern hip-hop forever.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="r-kelly.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/r-kelly.jpg" alt="R. Kelly"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>R. Kelly</h4>
+            <p>R&amp;B superstar whose musical influence was overshadowed by criminal convictions and one of the most controversial downfalls in music history.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="snoop-dogg.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/snoop-dogg.jpg" alt="Snoop Dogg"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Snoop Dogg</h4>
+            <p>West Coast icon whose laid-back style and longevity made him a global cultural figure.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="biggie.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/biggie.jpg" alt="The Notorious B.I.G."></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">1990s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>The Notorious B.I.G.</h4>
+            <p>Brooklyn narrator and lyrical giant who restored New York&#x27;s dominance in rap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a></div></div>
+    <div class="era-block">
+      <div class="era-header glass">
+        <span class="eyebrow small">Era</span>
+        <h3>2000s</h3>
+        <p>14 connected artist entries from the archive.</p>
+      </div>
+      <div class="timeline-grid">
+        <a href="bow-wow.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/bow-wow.jpg" alt="Bow Wow"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Bow Wow</h4>
+            <p>Child star turned mainstream figure who defined an era of early 2000s hip-hop youth culture.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="chingy.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/chingy.jpg" alt="Chingy"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Chingy</h4>
+            <p>St. Louis rapper who dominated early 2000s charts with club-driven hits.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="donell-jones.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/donell-jones.jpg" alt="Donell Jones"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>Donell Jones</h4>
+            <p>Smooth R&amp;B voice who defined late 90s and early 2000s soul with timeless hits.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="fat-joe.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/fat-joe.jpg" alt="Fat Joe"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Fat Joe</h4>
+            <p>Bronx legend bridging eras from street rap to mainstream hits.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="g-unit.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/g-unit.jpg" alt="G-Unit"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>G-Unit</h4>
+            <p>Influential collective led by 50 Cent that dominated 2000s hip-hop culture.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="ginuwine.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/ginuwine.jpg" alt="Ginuwine"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>Ginuwine</h4>
+            <p>R&amp;B icon known for smooth vocals, performance, and timeless records.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="j-holiday.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/j-holiday.jpg" alt="J. Holiday"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>J. Holiday</h4>
+            <p>Late-2000s R&amp;B voice known for emotional slow jams.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="ja-rule.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/ja-rule.jpg" alt="Ja Rule"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Ja Rule</h4>
+            <p>2000s hitmaker who fused rap with pop hooks.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="jagged-edge.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/jagged-edge.jpg" alt="Jagged Edge"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>Jagged Edge</h4>
+            <p>R&amp;B group known for timeless harmonies and love songs.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="jay-sean.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/jay-sean.jpg" alt="Jay Sean"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>Jay Sean</h4>
+            <p>Global R&amp;B-pop artist bridging UK and US markets.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="mike-jones.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/mike-jones.jpg" alt="Mike Jones"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Mike Jones</h4>
+            <p>Houston rapper who turned simplicity into dominance during the mid-2000s Southern explosion.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="pretty-ricky.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/pretty-ricky.jpg" alt="Pretty Ricky"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>Pretty Ricky</h4>
+            <p>R&amp;B group behind iconic 2000s sensual hits.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="the-game.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/the-game.jpg" alt="The Game"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>The Game</h4>
+            <p>Compton rapper who led the 2000s West Coast revival with cinematic storytelling and headline-making feuds.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="young-buck.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/young-buck.jpg" alt="Young Buck"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2000s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Young Buck</h4>
+            <p>Nashville rapper whose G-Unit era, Southern grit, and turbulent journey defined a major 2000s rap story.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a></div></div>
+    <div class="era-block">
+      <div class="era-header glass">
+        <span class="eyebrow small">Era</span>
+        <h3>2010s</h3>
+        <p>55 connected artist entries from the archive.</p>
+      </div>
+      <div class="timeline-grid">
+        <a href="a-boogie.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/a-boogie.jpg" alt="A Boogie wit da Hoodie"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>A Boogie wit da Hoodie</h4>
+            <p>Melodic Bronx star blending rap and R&amp;B into modern hit-making formulas.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="ace-hood.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/ace-hood.jpg" alt="Ace Hood"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Ace Hood</h4>
+            <p>Florida rapper whose hunger, independence, and resilience defined his career.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="august-alsina.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/august-alsina.jpg" alt="August Alsina"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>August Alsina</h4>
+            <p>R&amp;B voice shaped by pain, loss, and raw emotional storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="big-krit.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/big-krit.jpg" alt="Big K.R.I.T."></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Big K.R.I.T.</h4>
+            <p>Southern purist blending soul, storytelling, and independence into a timeless sound.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="big-sean.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/big-sean.jpg" alt="Big Sean"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Big Sean</h4>
+            <p>Detroit rapper whose introspection and success defined a major 2010s run.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="blueface.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/blueface.jpg" alt="Blueface"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Blueface</h4>
+            <p>Unconventional West Coast artist who broke norms with offbeat flow and viral energy.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="cardi-b.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/cardi-b.jpg" alt="Cardi B"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Cardi B</h4>
+            <p>Bronx superstar whose charisma and success reshaped female rap dominance.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="chief-keef.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/chief-keef.jpg" alt="Chief Keef"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Chief Keef</h4>
+            <p>Architect of drill whose raw digital-era rise changed rap globally.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="cypress-hill.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/cypress-hill.jpg" alt="Cypress Hill"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>Cypress Hill</h4>
+            <p>Legendary group blending Latin identity, dark production, and cultural influence.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="d-block-europe.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/d-block-europe.jpg" alt="D-Block Europe"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>D-Block Europe</h4>
+            <p>UK rap collective blending trap, melody, and lifestyle storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="dj-khaled.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/dj-khaled.jpg" alt="DJ Khaled"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>DJ Khaled</h4>
+            <p>Hitmaker and curator known for anthems, collaborations, and larger-than-life presence.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="dj-mustard.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/dj-mustard.jpg" alt="DJ Mustard"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>DJ Mustard</h4>
+            <p>West Coast producer behind countless club hits.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="drake.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/drake.jpg" alt="Drake"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>Drake</h4>
+            <p>Global superstar who blurred rap and R&amp;B, dominating charts for over a decade.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="fabolous.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/fabolous.jpg" alt="Fabolous"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Fabolous</h4>
+            <p>Brooklyn rapper known for smooth punchlines, mixtape dominance, and longevity.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="fetty-wap.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/fetty-wap.jpg" alt="Fetty Wap"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Fetty Wap</h4>
+            <p>New Jersey star whose melodic wave took over mid-2010s hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="finesse2tymes.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/finesse2tymes.jpg" alt="Finesse2Tymes"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Finesse2Tymes</h4>
+            <p>Memphis rapper whose comeback story reflects resilience and street authenticity.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="fivio-foreign.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/fivio-foreign.jpg" alt="Fivio Foreign"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Fivio Foreign</h4>
+            <p>Brooklyn drill leader who helped bring the sound to global attention.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="fl-dusa.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/fl-dusa.jpg" alt="FL Dusa"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>FL Dusa</h4>
+            <p>Emerging artist representing the next wave of underground street music.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="french-montana.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/french-montana.jpg" alt="French Montana"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>French Montana</h4>
+            <p>Hitmaker known for collaborations, global influence, and consistent chart success.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="future.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/future.jpg" alt="Future"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Future</h4>
+            <p>Atlanta trap pioneer whose dark melodies, prolific output, and influence helped define modern hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="g-herbo.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/g-herbo.jpg" alt="G Herbo"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>G Herbo</h4>
+            <p>Chicago voice bringing trauma and realism to drill.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="g-eazy.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/g-eazy.jpg" alt="G-Eazy"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>G-Eazy</h4>
+            <p>West Coast artist blending pop appeal with rap identity and lifestyle branding.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="glorilla.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/glorilla.jpg" alt="GloRilla"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>GloRilla</h4>
+            <p>Memphis breakout star bringing raw energy and authenticity to modern rap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="gucci-mane.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/gucci-mane.jpg" alt="Gucci Mane"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Gucci Mane</h4>
+            <p>Trap pioneer who shaped Atlanta’s dominance and mentored a new generation.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="gunna.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/gunna.jpg" alt="Gunna"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Gunna</h4>
+            <p>Melodic Atlanta star who defined modern luxury trap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="j-cole.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/j-cole.jpg" alt="J. Cole"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>J. Cole</h4>
+            <p>Lyrical powerhouse blending introspection with mainstream success.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="juice-wrld.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/juice-wrld.jpg" alt="Juice WRLD"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Juice WRLD</h4>
+            <p>A generation&#x27;s emotional voice whose songs made vulnerability central to modern rap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="kendrick-lamar.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/kendrick-lamar.jpg" alt="Kendrick Lamar"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Kendrick Lamar</h4>
+            <p>Compton lyricist redefining storytelling and artistry.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="kevin-gates.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/kevin-gates.jpg" alt="Kevin Gates"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Kevin Gates</h4>
+            <p>Baton Rouge artist known for emotional honesty, pain-driven lyrics, and introspective street storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="khalid.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/khalid.jpg" alt="Khalid"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">R&amp;B / Crossover</span>
+            </div>
+            <h4>Khalid</h4>
+            <p>Modern voice of emotional, youth-driven R&amp;B-pop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="kid-cudi.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/kid-cudi.jpg" alt="Kid Cudi"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Kid Cudi</h4>
+            <p>Influential artist who brought mental health into hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="king-von.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/king-von.jpg" alt="King Von"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>King Von</h4>
+            <p>Chicago drill storyteller, O&#x27;Block figure, and one of the most compelling voices of his generation.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="kodak-black.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/kodak-black.jpg" alt="Kodak Black"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Kodak Black</h4>
+            <p>Raw Florida voice with unpredictable storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-baby.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-baby.jpg" alt="Lil Baby"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Baby</h4>
+            <p>Atlanta superstar dominating modern trap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-durk.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-durk.jpg" alt="Lil Durk"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Durk</h4>
+            <p>Melodic drill star whose music, grief, and legal scrutiny shaped a defining modern rap story.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-loaded.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-loaded.jpg" alt="Lil Loaded"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Loaded</h4>
+            <p>Dallas rapper whose viral rise ended tragically.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-pump.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-pump.jpg" alt="Lil Pump"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Pump</h4>
+            <p>SoundCloud-era icon of viral chaos and energy.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-tecca.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-tecca.jpg" alt="Lil Tecca"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Tecca</h4>
+            <p>Youth-driven melodic rapper of the streaming era.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-tjay.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-tjay.jpg" alt="Lil Tjay"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Tjay</h4>
+            <p>Melodic Bronx star with pain-driven storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-uzi-vert.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-uzi-vert.jpg" alt="Lil Uzi Vert"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Uzi Vert</h4>
+            <p>Genre-bending superstar redefining modern rap style.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="max-b.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/max-b.jpg" alt="Max B"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Max B</h4>
+            <p>Harlem icon whose melodic style influenced a generation despite incarceration.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="meek-mill.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/meek-mill.jpg" alt="Meek Mill"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Meek Mill</h4>
+            <p>Philly rapper defined by hunger, pain, and resilience.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="megan-thee-stallion.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/megan-thee-stallion.jpg" alt="Megan Thee Stallion"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Megan Thee Stallion</h4>
+            <p>Houston superstar redefining women in hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="metro-boomin.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/metro-boomin.jpg" alt="Metro Boomin"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Metro Boomin</h4>
+            <p>Producer shaping the sound of modern trap music.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="migos.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/migos.jpg" alt="Migos"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>Migos</h4>
+            <p>Atlanta trio that changed rap flow worldwide.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="millyz.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/millyz.jpg" alt="Millyz"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Millyz</h4>
+            <p>Bars-focused rapper built on grind and consistency.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="moneybagg-yo.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/moneybagg-yo.jpg" alt="Moneybagg Yo"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Moneybagg Yo</h4>
+            <p>Memphis star dominating modern trap with consistency.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="nba-youngboy.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/nba-youngboy.jpg" alt="NBA YoungBoy"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>NBA YoungBoy</h4>
+            <p>Prolific Baton Rouge star whose emotional intensity and nonstop output dominate modern rap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="offset.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/offset.jpg" alt="Offset"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Offset</h4>
+            <p>Migos member turned solo superstar and trendsetter.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="polo-g.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/polo-g.jpg" alt="Polo G"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Polo G</h4>
+            <p>Melodic Chicago star blending pain and storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="pop-smoke.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/pop-smoke.jpg" alt="Pop Smoke"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Pop Smoke</h4>
+            <p>Brooklyn drill star whose rise reshaped New York rap and left an outsized legacy.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="post-malone.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/post-malone.jpg" alt="Post Malone"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Post Malone</h4>
+            <p>Genre-bending superstar crossing rap, pop, and rock.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="quando-rondo.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/quando-rondo.jpg" alt="Quando Rondo"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Quando Rondo</h4>
+            <p>Melodic Southern rapper whose pain-driven storytelling and controversy shaped his rise.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="the-kid-laroi.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/the-kid-laroi.jpg" alt="The Kid LAROI"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>The Kid LAROI</h4>
+            <p>Global rap-pop star driven by emotional storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="young-dolph.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/young-dolph.jpg" alt="Young Dolph"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">2010s</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Young Dolph</h4>
+            <p>Independent Memphis mogul remembered for ownership, resilience, and loyalty.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a></div></div>
+    <div class="era-block">
+      <div class="era-header glass">
+        <span class="eyebrow small">Era</span>
+        <h3>Legacy</h3>
+        <p>31 connected artist entries from the archive.</p>
+      </div>
+      <div class="timeline-grid">
+        <a href="21-savage.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/21-savage.jpg" alt="21 Savage"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>21 Savage</h4>
+            <p>Atlanta rapper known for cold delivery, street realism, and evolution into mainstream success.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="asap-rocky.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/asap-rocky.jpg" alt="A$AP Rocky"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>A$AP Rocky</h4>
+            <p>Harlem artist who blended fashion, psychedelia, and Southern influence into a global sound.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="birdman.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/birdman.jpg" alt="Birdman"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Birdman</h4>
+            <p>Cash Money mogul who built a rap empire, launched superstars, and reshaped the business of hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="da-baby.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/da-baby.jpg" alt="DaBaby"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>DaBaby</h4>
+            <p>Charlotte rapper whose rapid rise and controversies defined a modern era.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="dj-stancho.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/dj-stancho.jpg" alt="DJ Stancho"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>DJ Stancho</h4>
+            <p>The “Godfather” of Bulgarian hip-hop who helped build the scene from level zero—founder of Sniper Records and architect of the underground movement.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="dmx.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/dmx.jpg" alt="DMX"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>DMX</h4>
+            <p>A historic voice of pain, faith, rage, and survival whose impact reached far beyond rap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="doodie-lo.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/doodie-lo.jpg" alt="Doodie Lo"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Doodie Lo</h4>
+            <p>OTF affiliate whose rise reflects loyalty, street ties, and modern Chicago rap culture.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="eminem.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/eminem.jpg" alt="Eminem"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Eminem</h4>
+            <p>One of the greatest lyricists ever, redefining technical rap and global influence.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="en-vogue.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/en-vogue.jpg" alt="En Vogue"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Group</span>
+            </div>
+            <h4>En Vogue</h4>
+            <p>Legendary R&amp;B group whose harmonies and style shaped an era of music.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="jack-harlow.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/jack-harlow.jpg" alt="Jack Harlow"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Jack Harlow</h4>
+            <p>Charismatic crossover rapper with global appeal.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="jay-z.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/jay-z.jpg" alt="Jay-Z"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Jay-Z</h4>
+            <p>From Brooklyn’s Marcy Projects to billionaire mogul, redefining success in hip-hop and business.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="jelly-roll.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/jelly-roll.jpg" alt="Jelly Roll"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Jelly Roll</h4>
+            <p>Genre-blending artist telling stories of pain and redemption.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="ji-the-prince-of-ny.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/ji-the-prince-of-ny.jpg" alt="JI the Prince"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>JI the Prince</h4>
+            <p>Brooklyn artist blending melody and street emotion.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="kanye-west.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/kanye-west.jpg" alt="Kanye West"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>Kanye West</h4>
+            <p>Visionary producer and artist who reshaped hip-hop culture.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="khia.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/khia.jpg" alt="Khia"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Khia</h4>
+            <p>Bold Southern rapper with unapologetic presence.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="la-capone.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/la-capone.jpg" alt="LA Capone"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>LA Capone</h4>
+            <p>Chicago drill figure remembered for raw impact.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-reese.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-reese.jpg" alt="Lil Reese"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Reese</h4>
+            <p>Foundational voice in Chicago drill movement.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lil-wayne.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lil-wayne.jpg" alt="Lil Wayne"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lil Wayne</h4>
+            <p>New Orleans icon whose lyrical genius, mixtape dominance, and influence shaped modern hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="lupe-fiasco.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/lupe-fiasco.jpg" alt="Lupe Fiasco"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Lupe Fiasco</h4>
+            <p>Elite lyricist known for deep, intellectual storytelling.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="mase.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/mase.jpg" alt="Ma$e"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Ma$e</h4>
+            <p>Harlem icon of the shiny-suit era and smooth flows.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="mo3.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/mo3.jpg" alt="MO3"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>MO3</h4>
+            <p>Dallas artist whose raw honesty, pain, and vulnerability made him a singular Southern voice.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="nas.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/nas.jpg" alt="Nas"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Nas</h4>
+            <p>Queensbridge poet whose lyrical mastery and storytelling set the gold standard for hip-hop.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="nicki-minaj.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/nicki-minaj.jpg" alt="Nicki Minaj"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Nicki Minaj</h4>
+            <p>Global superstar who redefined female rap dominance.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="nipsey-hussle.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/nipsey-hussle.jpg" alt="Nipsey Hussle"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Nipsey Hussle</h4>
+            <p>Visionary leader of independence and community power.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="ot-genasis.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/ot-genasis.jpg" alt="O.T. Genasis"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>O.T. Genasis</h4>
+            <p>High-energy hitmaker known for viral anthems.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="p-diddy.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/p-diddy.jpg" alt="P. Diddy"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Producer / Mogul</span>
+            </div>
+            <h4>P. Diddy</h4>
+            <p>Bad Boy founder who shaped an era, built an empire, and became one of hip-hop’s most controversial figures.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="plies.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/plies.jpg" alt="Plies"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Plies</h4>
+            <p>Florida rapper known for raw emotion and street energy.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="pooh-shiesty.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/pooh-shiesty.jpg" alt="Pooh Shiesty"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Pooh Shiesty</h4>
+            <p>Memphis rapper whose explosive rise and raw street energy defined a new era of Southern rap.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="slim-400.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/slim-400.jpg" alt="Slim 400"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Slim 400</h4>
+            <p>Bompton rapper whose life, survival, and raw authenticity made him a respected West Coast street voice.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="yg.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/yg.jpg" alt="YG"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>YG</h4>
+            <p>Compton rapper who helped revive the West Coast sound with street realism, club energy, and political edge.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a>
+        <a href="z-ro.html" class="timeline-card glass">
+          <div class="timeline-thumb"><img src="images/z-ro.jpg" alt="Z-Ro"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-meta">
+              <span class="pill">Legacy</span>
+              <span class="pill muted">Rap Artist</span>
+            </div>
+            <h4>Z-Ro</h4>
+            <p>Houston legend known as the “Mo City Don,” blending pain, melody, and street realism.</p>
+            <span class="timeline-link">Open story →</span>
+          </div>
+        </a></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories Timeline</strong>
+        <p>Connected artist history across the vault.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
+        <a href="category.html">Categories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const header = document.getElementById("mainHeader");
+      if(!header) return;
+      let lastScrollY = window.pageYOffset;
+      function offset(){ document.body.style.paddingTop = header.offsetHeight + "px"; }
+      function handleScroll(){
+        const currentScrollY = window.pageYOffset;
+        if(window.innerWidth <= 768){
+          if(currentScrollY <= 8) header.classList.remove("hidden");
+          else if(currentScrollY > lastScrollY + 4) header.classList.add("hidden");
+          else if(currentScrollY < lastScrollY - 4) header.classList.remove("hidden");
+        } else {
+          header.classList.remove("hidden");
+        }
+        lastScrollY = currentScrollY;
+      }
+      offset(); handleScroll();
+      window.addEventListener("load", offset);
+      window.addEventListener("resize", () => { offset(); if(window.innerWidth > 768) header.classList.remove("hidden"); });
+      window.addEventListener("scroll", handleScroll, {passive:true});
+    })();
+  </script>
+</body>
+</html>

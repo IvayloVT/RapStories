@@ -1,42 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Message Sent | Rap Stories</title>
-<style>
-body{
-font-family:Arial;
-background:#0a0a0f;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-text-align:center;
-}
-.card{
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:20px;
-max-width:600px;
-}
-a{
-display:inline-block;
-margin-top:20px;
-padding:12px 20px;
-background:gold;
-color:black;
-border-radius:10px;
-text-decoration:none;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Sent | Rap Stories</title>
+  <meta name="description" content="Your message has been sent successfully to Rap Stories." />
+  <link rel="stylesheet" href="vault-system.css" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255,255,255,0.06);
+      --panel-border: rgba(255,255,255,0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212,175,55,0.15);
+      --radius: 20px;
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --max: 1260px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    header#mainHeader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5,5,8,0.76);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      transition: transform .3s ease;
+    }
+
+    header#mainHeader.hidden { transform: translateY(-100%); }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
+
+    .brand-text {
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color .25s ease;
+      font-size: .96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
+    .page {
+      min-height: calc(100vh - 82px);
+      display: flex;
+      align-items: center;
+      padding: 148px 0 60px;
+    }
+
+    .success-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .success-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .success-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 26%),
+        radial-gradient(circle at bottom left, rgba(139,92,246,0.12), transparent 24%);
+      pointer-events: none;
+    }
+
+    .success-card > * { position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .success-card h1 {
+      font-size: clamp(2.5rem, 5vw, 4.7rem);
+      line-height: .98;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+      font-weight: 900;
+    }
+
+    .success-card h1 span {
+      background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 700px;
+      margin-bottom: 24px;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .status-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(255,255,255,0.08));
+      border: 1px solid rgba(212,175,55,0.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .status-copy strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .status-copy span {
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .ghost-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .ghost-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.28);
+      color: var(--accent);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .info-box {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .info-box strong {
+      display: block;
+      color: white;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .info-box span {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .side-panel {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .mini-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    .side-panel h2 {
+      font-size: 1.6rem;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .side-panel p {
+      color: var(--muted);
+    }
+
+    .tips {
+      display: grid;
+      gap: 12px;
+    }
+
+    .tip {
+      padding: 15px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .tip strong {
+      display: block;
+      margin-bottom: 4px;
+      color: white;
+    }
+
+    .tip span {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1100px) {
+      .success-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 820px) {
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .success-card, .side-panel { padding: 22px; }
+      .page { padding-top: 138px; }
+    }
+  </style>
 </head>
 <body>
-<div class="card">
-<h1>Message Sent ✅</h1>
-<p>Your message has been successfully sent. We will get back to you soon.</p>
-<a href="index.html">Back to Home</a>
-</div>
+  <header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="artist-archive.html">Archive</a>
+        <a href="artist.html">Artist</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="map.html">Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist-archive.html" class="nav-btn">Explore Stories</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="success-layout">
+        <section class="glass success-card">
+          <span class="eyebrow">Contact Success</span>
+          <h1>Message <span>Sent</span></h1>
+          <p class="lead">Your message was successfully delivered to Rap Stories. Thanks for reaching out — your story, question, or idea is now in the vault.</p>
+
+          <div class="status-row">
+            <div class="status-icon">✓</div>
+            <div class="status-copy">
+              <strong>We got it.</strong>
+              <span>You should hear back soon if a reply is needed.</span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <a href="index.html" class="nav-btn">Back to Home</a>
+            <a href="artist-archive.html" class="ghost-btn">Open Archive</a>
+            <a href="contact.html" class="ghost-btn">Send Another Message</a>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-box">
+              <strong>Saved</strong>
+              <span>Your message has been submitted successfully.</span>
+            </div>
+            <div class="info-box">
+              <strong>Next Step</strong>
+              <span>Our team can review and respond if needed.</span>
+            </div>
+            <div class="info-box">
+              <strong>Explore</strong>
+              <span>Keep browsing artists, timelines, and category hubs.</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="glass side-panel">
+          <div>
+            <div class="mini-badge">Rap Stories • Vault System</div>
+            <h2>Keep moving through the archive.</h2>
+            <p>While your message is on its way, you can jump straight back into the premium Rap Stories experience.</p>
+          </div>
+
+          <div class="tips">
+            <div class="tip">
+              <strong>Browse the Archive</strong>
+              <span>Search artists, eras, cities, and themes like a real cultural vault.</span>
+            </div>
+            <div class="tip">
+              <strong>Explore Categories</strong>
+              <span>Move through controversy, legacy, regional scenes, and crossover lanes.</span>
+            </div>
+            <div class="tip">
+              <strong>Follow the Timeline</strong>
+              <span>Track artists through connected eras and story networks.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories Vault</strong>
+        <p>Built like a real archive system.</p>
+      </div>
+      <div class="footer-links">
+        <a href="artist-archive.html">Archive</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const header = document.getElementById("mainHeader");
+      if(!header) return;
+      let lastScrollY = window.pageYOffset;
+
+      function offset(){
+        document.body.style.paddingTop = header.offsetHeight + "px";
+      }
+
+      function handleScroll(){
+        const currentScrollY = window.pageYOffset;
+        if(window.innerWidth <= 768){
+          if(currentScrollY <= 8){
+            header.classList.remove("hidden");
+          } else if(currentScrollY > lastScrollY + 4){
+            header.classList.add("hidden");
+          } else if(currentScrollY < lastScrollY - 4){
+            header.classList.remove("hidden");
+          }
+        } else {
+          header.classList.remove("hidden");
+        }
+        lastScrollY = currentScrollY;
+      }
+
+      offset();
+      handleScroll();
+
+      window.addEventListener("load", offset);
+      window.addEventListener("resize", () => {
+        offset();
+        if(window.innerWidth > 768){
+          header.classList.remove("hidden");
+        }
+      });
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    })();
+  </script>
 </body>
 </html>
