@@ -736,10 +736,27 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Mobile header: hide on scroll down, show on scroll up */
+header#mainHeader {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  header#mainHeader.hidden {
+    transform: translateY(-100%);
+  }
+}
+
 </style>
 </head>
 <body>
-  <header>
+  <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
@@ -1023,5 +1040,49 @@ footer {
       </div>
     </div>
   </footer>
+
+<script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+
+  let lastScrollY = window.pageYOffset;
+
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+
+  function handleScroll(){
+    const currentScrollY = window.pageYOffset;
+
+    if(window.innerWidth <= 768){
+      if(currentScrollY <= 8){
+        header.classList.remove("hidden");
+      } else if(currentScrollY > lastScrollY + 4){
+        header.classList.add("hidden");
+      } else if(currentScrollY < lastScrollY - 4){
+        header.classList.remove("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  offset();
+  handleScroll();
+
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", () => {
+    offset();
+    if(window.innerWidth > 768){
+      header.classList.remove("hidden");
+    }
+  });
+  window.addEventListener("scroll", handleScroll, {passive:true});
+})();
+</script>
+
 </body>
 </html>
