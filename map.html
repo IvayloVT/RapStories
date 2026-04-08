@@ -281,6 +281,14 @@
   .artist-links {
     display:grid;
     gap:10px;
+    max-height:52vh;
+    overflow:auto;
+    padding-right:4px;
+  }
+  .artist-links::-webkit-scrollbar { width:8px; }
+  .artist-links::-webkit-scrollbar-thumb {
+    background:rgba(212,175,55,.35);
+    border-radius:999px;
   }
   .artist-link {
     padding:12px 14px;
@@ -352,9 +360,9 @@
     </a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-        <a href="artist-archive.html">Archive</a>
-        <a href="category.html">Categories</a>
-        <a href="timeline.html">Timeline</a>
+      <a href="artist.html">Artist</a>
+      <a href="category.html">Categories</a>
+      <a href="timeline.html">Timeline</a>
       <a href="map.html" class="active">Hip-Hop Map</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -369,7 +377,7 @@
         <span class="eyebrow">Interactive Discovery</span>
         <h1>The <span>Map</span> of Hip-Hop</h1>
         <p>
-          Explore the vault by city and movement. Zoom, pan, filter by era or region, and jump straight into artist stories through an interactive culture map.
+          Explore the full artist vault by city and movement. Every artist from the archive is now connected to the map, with richer city clusters, West Coast support, and direct story links.
         </p>
       </div>
     </div>
@@ -389,6 +397,7 @@
         </select>
         <select id="regionFilter">
           <option value="all">All Regions</option>
+          <option value="west">West Coast</option>
           <option value="midwest">Midwest</option>
           <option value="south">South</option>
           <option value="east">East Coast</option>
@@ -414,6 +423,7 @@
           <div class="map-stage" id="mapStage">
             <div class="focus-controls">
               <button type="button" data-focus="usa">USA</button>
+              <button type="button" data-focus="west">West</button>
               <button type="button" data-focus="midwest">Midwest</button>
               <button type="button" data-focus="south">South</button>
               <button type="button" data-focus="east">East Coast</button>
@@ -428,16 +438,15 @@
             <div class="map-world" id="mapWorld">
               <div class="grid-bg"></div>
 
-              <!-- broad abstract regions -->
-              <div class="region" style="left:12%; top:18%; width:58%; height:56%;"></div>
-              <div class="region" style="left:69%; top:18%; width:17%; height:20%;"></div>
+              <div class="region" style="left:10%; top:16%; width:60%; height:60%;"></div>
+              <div class="region" style="left:68%; top:16%; width:18%; height:22%;"></div>
+              <div class="region" style="left:7%; top:26%; width:14%; height:28%;"></div>
 
-              <!-- USA cities -->
-              <div class="city" data-city="Chicago" data-region="midwest" data-era="2010s late2010s" data-scene="drill legacy melodic" style="left:42%; top:33%;">
+              <div class="city" data-city="Chicago" data-region="midwest" data-era="2010s late2010s 2000s" data-scene="drill legacy melodic mainstream" style="left:42%; top:33%;">
                 <div class="city-label">Chicago</div>
               </div>
 
-              <div class="city" data-city="Atlanta" data-region="south" data-era="2010s" data-scene="trap mainstream" style="left:47%; top:49%;">
+              <div class="city" data-city="Atlanta" data-region="south" data-era="2010s" data-scene="trap mainstream melodic" style="left:47%; top:49%;">
                 <div class="city-label">Atlanta</div>
               </div>
 
@@ -445,16 +454,20 @@
                 <div class="city-label">Brooklyn / New York</div>
               </div>
 
-              <div class="city" data-city="Yonkers" data-region="east" data-era="90s" data-scene="legacy" style="left:61%; top:26%;">
+              <div class="city" data-city="Yonkers" data-region="east" data-era="90s" data-scene="legacy" style="left:60.5%; top:26%;">
                 <div class="city-label">Yonkers</div>
               </div>
 
-              <div class="city" data-city="Memphis" data-region="south" data-era="2010s" data-scene="legacy trap" style="left:38%; top:52%;">
+              <div class="city" data-city="Memphis" data-region="south" data-era="2010s late2010s" data-scene="legacy trap melodic" style="left:38%; top:52%;">
                 <div class="city-label">Memphis</div>
               </div>
 
-              <div class="city" data-city="Baton Rouge" data-region="south" data-era="2010s" data-scene="melodic mainstream" style="left:35%; top:60%;">
+              <div class="city" data-city="Baton Rouge" data-region="south" data-era="2010s late2010s" data-scene="melodic mainstream trap" style="left:35%; top:60%;">
                 <div class="city-label">Baton Rouge</div>
+              </div>
+
+              <div class="city" data-city="New Orleans" data-region="south" data-era="2000s 2010s" data-scene="legacy mainstream" style="left:33%; top:63%;">
+                <div class="city-label">New Orleans</div>
               </div>
 
               <div class="city" data-city="Dallas" data-region="south" data-era="2010s" data-scene="melodic legacy" style="left:29%; top:53%;">
@@ -465,15 +478,22 @@
                 <div class="city-label">St. Louis</div>
               </div>
 
+              <div class="city" data-city="Nashville" data-region="south" data-era="2000s" data-scene="legacy mainstream" style="left:41.5%; top:47%;">
+                <div class="city-label">Nashville</div>
+              </div>
+
               <div class="city" data-city="Savannah" data-region="south" data-era="late2010s" data-scene="melodic" style="left:54%; top:58%;">
                 <div class="city-label">Savannah</div>
               </div>
 
-              <div class="city" data-city="California / West Coast" data-region="west" data-era="90s" data-scene="legacy" style="left:16%; top:36%;">
+              <div class="city" data-city="Compton / Bompton" data-region="west" data-era="2000s 2010s" data-scene="legacy mainstream" style="left:15%; top:39%;">
+                <div class="city-label">Compton / Bompton</div>
+              </div>
+
+              <div class="city" data-city="California / West Coast" data-region="west" data-era="90s" data-scene="legacy" style="left:16%; top:34%;">
                 <div class="city-label">California / West Coast</div>
               </div>
 
-              <!-- International -->
               <div class="city" data-city="Sofia" data-region="intl" data-era="intl" data-scene="legacy" style="left:78%; top:32%;">
                 <div class="city-label">Sofia</div>
               </div>
@@ -488,12 +508,13 @@
           </div>
 
           <div class="legend">
+            <span>All Archive Artists</span>
             <span>Zoom + Pan</span>
             <span>City Filters</span>
             <span>Direct Story Links</span>
           </div>
 
-          <div class="count" id="resultCount">11 active map points</div>
+          <div class="count" id="resultCount">14 active map points</div>
 
           <div class="city-card" id="cityCard">
             <h3>Start Exploring</h3>
@@ -501,7 +522,7 @@
             <div class="artist-links">
               <a class="artist-link" href="artist.html">
                 <strong>Open the full archive</strong>
-                <span>Browse all stories if you want a full list first.</span>
+                <span>Browse all stories if you want the full artist list first.</span>
               </a>
             </div>
           </div>
@@ -530,106 +551,144 @@
   (function(){
     const header = document.getElementById("mainHeader");
     if(!header) return;
+    let lastScrollY = window.pageYOffset;
+
     function offset(){ document.body.style.paddingTop = header.offsetHeight + "px"; }
-    function scroll(){
+    function onScroll(){
+      const currentScrollY = window.pageYOffset;
       if(window.innerWidth <= 768){
-        if(window.pageYOffset <= 5) header.classList.remove("hidden");
-        else header.classList.add("hidden");
+        if(currentScrollY <= 8) header.classList.remove("hidden");
+        else if(currentScrollY > lastScrollY + 4) header.classList.add("hidden");
+        else if(currentScrollY < lastScrollY - 4) header.classList.remove("hidden");
       } else {
         header.classList.remove("hidden");
       }
+      lastScrollY = currentScrollY;
     }
-    offset(); scroll();
+    offset();
+    onScroll();
     window.addEventListener("load", offset);
-    window.addEventListener("resize", offset);
-    window.addEventListener("scroll", scroll, {passive:true});
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768) header.classList.remove("hidden");
+    });
+    window.addEventListener("scroll", onScroll, {passive:true});
   })();
 
   const cityData = {
     "Chicago": {
-      meta: "Midwest • Drill • 2010s",
-      text: "Chicago changed the modern sound of street rap and drill, connecting raw internet-era energy with mainstream impact.",
+      meta: "Midwest • Drill + Legacy • 5 artists",
+      text: "Chicago is the biggest node in this vault, linking drill, mainstream crossovers, emotional rap, and legacy controversy.",
       artists: [
-        { href: "lil-durk.html", name: "Lil Durk", desc: "Melodic drill leader, losses, mainstream rise, legal pressure." },
-        { href: "chief-keef.html", name: "Chief Keef", desc: "The architect of drill and one of the genre’s most influential catalysts." },
-        { href: "king-von.html", name: "King Von", desc: "A vivid drill storyteller whose short career left a heavy cultural mark." },
-        { href: "juice-wrld.html", name: "Juice WRLD", desc: "A different Chicago lane—melodic, emotional, and globally resonant." },
-        { href: "r-kelly.html", name: "R. Kelly", desc: "A controversial Chicago legacy story from an earlier era." }
+        { href: "chief-keef.html", name: "Chief Keef", desc: "Architect of drill whose rise changed rap globally." },
+        { href: "juice-wrld.html", name: "Juice WRLD", desc: "Melodic and emotionally raw voice of a generation." },
+        { href: "king-von.html", name: "King Von", desc: "O'Block storyteller with a vivid, cinematic drill style." },
+        { href: "lil-durk.html", name: "Lil Durk", desc: "Mainstream melodic drill leader shaped by grief and scrutiny." },
+        { href: "r-kelly.html", name: "R. Kelly", desc: "Earlier Chicago giant whose legacy became deeply controversial." }
       ]
     },
     "Atlanta": {
-      meta: "South • Trap • 2010s",
-      text: "Atlanta shaped the language of modern trap and turned regional style into global pop power.",
+      meta: "South • Trap • 1 artist",
+      text: "Atlanta remains one of hip-hop’s core innovation hubs, and here it anchors the trap lane through one of its defining stars.",
       artists: [
-        { href: "future.html", name: "Future", desc: "Dark melody, trap innovation, and chart-era dominance." }
+        { href: "future.html", name: "Future", desc: "Trap pioneer whose dark melodies and output helped define the era." }
       ]
     },
     "Brooklyn / New York": {
-      meta: "East Coast • Legacy + Drill",
-      text: "New York remains one of hip-hop’s central capitals—from golden-era dominance to modern drill revival.",
+      meta: "East Coast • Legacy + Drill • 3 artists",
+      text: "New York connects golden-era greatness, modern drill energy, and the early biographical roots of one of rap’s most mythic figures.",
       artists: [
-        { href: "biggie.html", name: "The Notorious B.I.G.", desc: "A Brooklyn legend who restored New York’s place at the top." },
-        { href: "pop-smoke.html", name: "Pop Smoke", desc: "The face of Brooklyn drill’s modern breakout." },
-        { href: "tupac.html", name: "2Pac", desc: "Born in New York, later tied to the West Coast and rap’s biggest mythology." }
+        { href: "biggie.html", name: "The Notorious B.I.G.", desc: "Brooklyn narrator and East Coast giant." },
+        { href: "pop-smoke.html", name: "Pop Smoke", desc: "Modern face of Brooklyn drill’s breakout." },
+        { href: "tupac.html", name: "2Pac", desc: "Born in New York before becoming tied to the West Coast story." }
       ]
     },
     "Yonkers": {
-      meta: "East Coast • Late 90s",
-      text: "Yonkers helped produce one of rap’s most unforgettable voices—raw, spiritual, and explosive.",
+      meta: "East Coast • Legacy • 1 artist",
+      text: "Yonkers gave rap one of its most unforgettable voices—intense, spiritual, and emotionally explosive.",
       artists: [
-        { href: "dmx.html", name: "DMX", desc: "Pain, faith, rage, and one of rap’s most intense catalogues." }
+        { href: "dmx.html", name: "DMX", desc: "Pain, prayer, rage, and one of rap’s rawest catalogues." }
       ]
     },
     "Memphis": {
-      meta: "South • Independent Legacy",
-      text: "Memphis stories often center ownership, grit, and a distinct local identity that stays powerful without compromise.",
+      meta: "South • Legacy + Street Energy • 2 artists",
+      text: "Memphis in this vault represents independent power, street charisma, and local identity that traveled nationally.",
       artists: [
-        { href: "young-dolph.html", name: "Young Dolph", desc: "Independent mogul, Paper Route Empire, and Memphis loyalty." }
+        { href: "pooh-shiesty.html", name: "Pooh Shiesty", desc: "Explosive Memphis breakout with raw street momentum." },
+        { href: "young-dolph.html", name: "Young Dolph", desc: "Independent mogul built on loyalty, resilience, and ownership." }
       ]
     },
     "Baton Rouge": {
-      meta: "South • Prolific Streaming Era",
-      text: "Baton Rouge produced one of the most relentless and emotionally volatile stars of the streaming era.",
+      meta: "South • Melodic + Mainstream • 2 artists",
+      text: "Baton Rouge supplies pain-driven storytelling, emotional volatility, and some of the most relentless output in modern rap.",
       artists: [
-        { href: "nba-youngboy.html", name: "NBA YoungBoy", desc: "Massive output, intense fanbase, and a defining modern rap presence." }
+        { href: "kevin-gates.html", name: "Kevin Gates", desc: "Introspective Baton Rouge voice known for emotional honesty." },
+        { href: "nba-youngboy.html", name: "NBA YoungBoy", desc: "Streaming-era powerhouse with nonstop output and intensity." }
+      ]
+    },
+    "New Orleans": {
+      meta: "South • Legacy + Mainstream • 2 artists",
+      text: "New Orleans represents a music-business empire and a generational lyrical force that pushed Southern rap to global prominence.",
+      artists: [
+        { href: "birdman.html", name: "Birdman", desc: "Cash Money mogul who built a rap empire." },
+        { href: "lil-wayne.html", name: "Lil Wayne", desc: "Mixtape titan and lyrical icon of modern hip-hop." }
       ]
     },
     "Dallas": {
-      meta: "South • Melodic Street Rap",
-      text: "Dallas added pain-heavy melodies and local realism through artists whose voices felt deeply personal.",
+      meta: "South • Melodic Street Rap • 1 artist",
+      text: "Dallas adds a pain-heavy, deeply personal lane to the map through one of the city’s most resonant voices.",
       artists: [
-        { href: "mo3.html", name: "MO3", desc: "A Dallas voice defined by vulnerability, pain, and regional loyalty." }
+        { href: "mo3.html", name: "MO3", desc: "Vulnerable, raw Dallas artist defined by pain and realism." }
       ]
     },
     "St. Louis": {
-      meta: "Midwest • Mainstream Crossover",
-      text: "St. Louis proved regional rap could go fully mainstream without losing its home identity.",
+      meta: "Midwest • Mainstream Crossover • 1 artist",
+      text: "St. Louis shows how regional rap could go fully mainstream while still sounding local and recognizable.",
       artists: [
-        { href: "nelly.html", name: "Nelly", desc: "Crossover giant whose hits defined the early 2000s." }
+        { href: "nelly.html", name: "Nelly", desc: "Crossover hitmaker who defined part of the early 2000s." }
+      ]
+    },
+    "Nashville": {
+      meta: "South • Legacy • 1 artist",
+      text: "Nashville’s place in the vault runs through Southern grit, G-Unit-era fame, and a turbulent solo path.",
+      artists: [
+        { href: "young-buck.html", name: "Young Buck", desc: "Southern force whose G-Unit years left a lasting mark." }
       ]
     },
     "Savannah": {
-      meta: "South • Melodic Street Realism",
-      text: "Savannah’s contribution here is emotional, conflicted, and heavily shaped by controversy and survival.",
+      meta: "South • Melodic • 1 artist",
+      text: "Savannah’s contribution here is emotionally charged, controversial, and tightly bound to street narratives and survival.",
       artists: [
-        { href: "quando-rondo.html", name: "Quando Rondo", desc: "Melodic Southern rap shaped by pain and public conflict." }
+        { href: "quando-rondo.html", name: "Quando Rondo", desc: "Pain-driven Southern melodic rapper shaped by controversy." }
+      ]
+    },
+    "Compton / Bompton": {
+      meta: "West Coast • Street Legacy • 3 artists",
+      text: "Compton and Bompton anchor the West Coast section of the vault with revival energy, survival stories, and era-defining street realism.",
+      artists: [
+        { href: "slim-400.html", name: "Slim 400", desc: "Bompton voice known for raw authenticity and survival." },
+        { href: "the-game.html", name: "The Game", desc: "West Coast revivalist with cinematic storytelling and big feuds." },
+        { href: "yg.html", name: "YG", desc: "Compton rapper who brought modern West Coast energy back to the front." }
       ]
     },
     "California / West Coast": {
-      meta: "West Coast • 90s Legacy",
-      text: "The West Coast turned rap mythology into something cinematic, political, and globally iconic.",
+      meta: "West Coast • 90s Legacy • 2 artists",
+      text: "The broad West Coast node holds the most mythic, cinematic, and politically charged stories in the archive.",
       artists: [
-        { href: "tupac.html", name: "2Pac", desc: "The defining revolutionary icon of rap’s most mythic era." }
+        { href: "tupac.html", name: "2Pac", desc: "Defining icon of rap’s most mythologized era." },
+        { href: "snoop-dummy.html", name: "West Coast Legacy", desc: "Reserved for future West Coast archive expansion." }
       ]
     },
     "Sofia": {
-      meta: "International • Bulgarian Hip-Hop",
-      text: "Sofia represents the international expansion of hip-hop culture into powerful local underground movements.",
+      meta: "International • Bulgarian Hip-Hop • 1 artist",
+      text: "Sofia shows the vault expanding beyond the U.S., connecting hip-hop to local underground history and scene-building abroad.",
       artists: [
-        { href: "dj-stancho.html", name: "DJ Stancho", desc: "A foundational architect of Bulgarian hip-hop culture." }
+        { href: "dj-stancho.html", name: "DJ Stancho", desc: "Foundational architect of Bulgarian hip-hop culture." }
       ]
     }
   };
+
+  cityData["California / West Coast"].artists = cityData["California / West Coast"].artists.filter(a => a.href !== "snoop-dummy.html");
 
   const stage = document.getElementById("mapStage");
   const world = document.getElementById("mapWorld");
@@ -697,7 +756,7 @@
         <div class="artist-links">
           <a class="artist-link" href="artist.html">
             <strong>Open the full archive</strong>
-            <span>Browse all stories if you want a full list first.</span>
+            <span>Browse all stories if you want the full artist list first.</span>
           </a>
         </div>
       `;
@@ -743,6 +802,7 @@
 
   const focusPresets = {
     usa: { scale: 1, x: 0, y: 0 },
+    west: { scale: 1.9, x: 220, y: 40 },
     midwest: { scale: 1.75, x: 70, y: 30 },
     south: { scale: 1.75, x: 90, y: -70 },
     east: { scale: 1.85, x: -160, y: 60 },
@@ -772,7 +832,7 @@
       const eraData = city.dataset.era;
       const sceneData = city.dataset.scene;
 
-      const matchesQ = !q || cityName.includes(q) || artistNames.includes(q);
+      const matchesQ = !q || cityName.includes(q) || artistNames.includes(q) || regionData.includes(q);
       const matchesEra = era === "all" || eraData.includes(era);
       const matchesRegion = region === "all" || regionData === region;
       const matchesScene = scene === "all" || sceneData.includes(scene);
