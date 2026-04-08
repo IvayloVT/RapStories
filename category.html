@@ -1,12 +1,531 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Vault Categories | Rap Stories</title><meta name="description" content="Explore Rap Stories through category hubs like biography, legacy, discography, controversies, and regional scenes." /><link rel="stylesheet" href="vault-system.css" /></head><body><header id="mainHeader">
-  <div class="container nav">
-    <a href="index.html" class="brand"><div class="brand-mark">RS</div><span class="brand-text">RAP STORIES</span></a>
-    <nav class="nav-links"><a href="index.html" class="">Home</a>
-<a href="artist-archive.html" class="">Archive</a>
-<a href="category.html" class="active">Categories</a>
-<a href="timeline.html" class="">Timeline</a>
-<a href="map.html">Hip-Hop Map</a>
-<a href="contact.html" class="">Contact</a></nav>
-    <a href="artist-archive.html" class="nav-btn">Explore Stories</a>
-  </div>
-</header><main><section class="hero"><div class="container"><div class="glass hero-card"><span class="eyebrow">Vault Navigation</span><h1>Explore by <span>Category</span></h1><p>Category hubs connect artists into bigger themes so the site feels like a full cultural database instead of isolated pages.</p></div></div></section><section class="section"><div class="container"><div class="section-head"><div><h2>Vault Categories</h2><p>Jump into story types, movements, controversies, scenes, and legacy lanes.</p></div></div><div class="category-grid" id="vaultCategories"></div></div></section></main><footer><div class="container footer-wrap"><div><strong style="color:white;">Rap Stories Categories</strong><p>Browse the vault by theme.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="artist-archive.html">Archive</a><a href="timeline.html">Timeline</a><a href="contact.html">Contact</a></div></div></footer><script src="vault-data.js"></script><script src="vault-system.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vault Categories | Rap Stories</title>
+  <meta name="description" content="Explore Rap Stories through category hubs, scenes, movements, controversies, and legacy lanes connected to the full artist archive." />
+  <style>
+    :root {
+      --bg: #0a0a0f; --panel: rgba(255,255,255,0.06); --panel-border: rgba(255,255,255,0.10);
+      --text: #f4f4f5; --muted: #a5a5b1; --accent: #d4af37; --accent-soft: rgba(212,175,55,0.15);
+      --radius: 20px; --shadow: 0 20px 50px rgba(0,0,0,0.45); --max: 1260px;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text); line-height: 1.65;
+    }
+    a { text-decoration:none; color:inherit; }
+    .container { width:min(92%, var(--max)); margin:0 auto; }
+    .glass { background:var(--panel); border:1px solid var(--panel-border); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:var(--shadow); border-radius:var(--radius); }
+    header#mainHeader { position:fixed; top:0; left:0; width:100%; z-index:1000; background:rgba(5,5,8,0.76); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,0.08); box-shadow:0 10px 30px rgba(0,0,0,0.22); transition:transform .3s ease; }
+    header#mainHeader.hidden { transform:translateY(-100%); }
+    .nav { min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.6px; font-size:1.02rem; }
+    .brand-mark { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg,#d4af37,#fff0a5); color:#111; font-weight:900; box-shadow:0 10px 24px rgba(212,175,55,.35); }
+    .brand-text { font-weight:900; letter-spacing:.5px; background:linear-gradient(135deg,#d4af37,#fff0a5,#ffffff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .nav-links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+    .nav-links a { position:relative; color:var(--muted); transition:color .25s ease; font-size:.96rem; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text); }
+    .nav-links a::after { content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#fff0a5); transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
+    .nav-btn { padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#f5df8f); color:#111; font-weight:800; border:none; box-shadow:0 10px 24px rgba(212,175,55,.22); }
+    .hero { padding:128px 0 26px; }
+    .hero-card { padding:32px; }
+    .eyebrow { display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px; background:var(--accent-soft); color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.5px; }
+    .eyebrow.small { margin-bottom:10px; font-size:.75rem; padding:7px 10px; }
+    .hero-card h1 { font-size:clamp(2.4rem,5vw,4.5rem); line-height:.98; letter-spacing:-2px; margin-bottom:14px; font-weight:900; }
+    .hero-card h1 span { background:linear-gradient(135deg,var(--accent),#fff0a5,#ffffff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero-card p { color:var(--muted); max-width:860px; font-size:1.04rem; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:22px; }
+    .stat { padding:18px; }
+    .stat strong { display:block; font-size:1.5rem; color:white; margin-bottom:4px; }
+    .stat span { color:var(--muted); font-size:.95rem; }
+    .toolbar-wrap { padding:8px 0 12px; }
+    .toolbar { display:grid; grid-template-columns:1.35fr auto; gap:14px; padding:16px; align-items:start; }
+    .toolbar input { width:100%; background:rgba(20,20,30,.95); border:1px solid rgba(255,255,255,.12); color:#f5f5f5; border-radius:14px; padding:14px 16px; outline:none; font:inherit; }
+    .toolbar input::placeholder { color:#8d8d96; }
+    .chip-row { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; }
+    .filter-chip { border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); color:var(--text); border-radius:999px; padding:11px 14px; cursor:pointer; font:inherit; transition:.2s ease; }
+    .filter-chip:hover, .filter-chip.active { border-color:rgba(212,175,55,.34); color:var(--accent); transform:translateY(-1px); }
+    .section { padding:12px 0 56px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:20px; }
+    .section-head h2 { font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:6px; }
+    .section-head p { color:var(--muted); }
+    .result-count { color:var(--accent); font-weight:800; white-space:nowrap; }
+    .category-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    .category-card { padding:22px; transition:transform .25s ease, border-color .25s ease, opacity .2s ease; }
+    .category-card:hover { transform:translateY(-4px); border-color:rgba(212,175,55,0.28); }
+    .category-card.hidden { display:none; }
+    .category-top { display:flex; justify-content:space-between; gap:16px; align-items:start; margin-bottom:12px; }
+    .category-card h3 { font-size:1.35rem; line-height:1.15; }
+    .category-card p { color:var(--muted); margin-bottom:18px; }
+    .count-pill { background:rgba(212,175,55,.12); color:var(--accent); border:1px solid rgba(212,175,55,.20); border-radius:999px; padding:8px 12px; font-size:.82rem; font-weight:800; white-space:nowrap; }
+    .artist-links { display:grid; gap:12px; }
+    .artist-link { display:block; padding:14px 15px; border-radius:16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); transition:transform .2s ease, border-color .2s ease, background .2s ease; }
+    .artist-link:hover { transform:translateY(-2px); border-color:rgba(212,175,55,.34); background:rgba(255,255,255,0.05); }
+    .artist-link strong { display:block; margin-bottom:4px; color:white; }
+    .artist-link span { color:var(--muted); font-size:.92rem; line-height:1.45; }
+    footer { padding:24px 0 50px; color:var(--muted); }
+    .footer-wrap { border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+    .footer-links a:hover { color:var(--text); }
+    @media (max-width:1100px) { .stats { grid-template-columns:repeat(2,1fr); } .toolbar { grid-template-columns:1fr; } .chip-row { justify-content:flex-start; } .category-grid { grid-template-columns:1fr; } }
+    @media (max-width:820px) { .nav { flex-direction:column; padding:14px 0; } .nav-links { justify-content:center; } }
+    @media (max-width:640px) { .stats { grid-template-columns:1fr; } .hero-card, .category-card { padding:20px; } .category-top { flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist.html">Artist</a>
+        <a href="category.html" class="active">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="map.html">Hip-Hop Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Explore Stories</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="glass hero-card">
+          <span class="eyebrow">Vault Navigation</span>
+          <h1>Explore by <span>Category</span></h1>
+          <p>These vault categories now reflect the full artist archive, grouping every uploaded artist into scenes, movements, legal-story lanes, legacy clusters, and regional hubs so the page feels connected to the rest of Rap Stories.</p>
+          <div class="stats">
+            <div class="glass stat"><strong>24</strong><span>artists connected</span></div>
+            <div class="glass stat"><strong>10</strong><span>category hubs</span></div>
+            <div class="glass stat"><strong>8</strong><span>regional scenes represented</span></div>
+            <div class="glass stat"><strong>100%</strong><span>artist coverage from artist.html</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="toolbar-wrap">
+      <div class="container">
+        <div class="glass toolbar">
+          <input id="searchInput" type="text" placeholder="Search category title or artist name..." />
+          <div class="chip-row">
+            <button type="button" class="filter-chip active" data-chip="all">All</button>
+            <button type="button" class="filter-chip" data-chip="chicago-drill-o-block">Chicago Drill &amp; O&#x27;Block</button><button type="button" class="filter-chip" data-chip="southern-street-voices">Southern Street Voices</button><button type="button" class="filter-chip" data-chip="west-coast-power">West Coast Power</button><button type="button" class="filter-chip" data-chip="east-coast-legends">East Coast Legends</button><button type="button" class="filter-chip" data-chip="trap-mainstream-dominance">Trap &amp; Mainstream Dominance</button><button type="button" class="filter-chip" data-chip="controversy-court-cases">Controversy &amp; Court Cases</button><button type="button" class="filter-chip" data-chip="independent-hustlers-moguls">Independent Hustlers &amp; Moguls</button><button type="button" class="filter-chip" data-chip="loss-tragedy-unfinished-stories">Loss, Tragedy &amp; Unfinished Stories</button><button type="button" class="filter-chip" data-chip="legacy-icons">Legacy Icons</button><button type="button" class="filter-chip" data-chip="global-international-reach">Global &amp; International Reach</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Vault Categories</h2>
+            <p>Jump into bigger themes instead of browsing one artist at a time.</p>
+          </div>
+          <div class="result-count" id="resultCount">10 categories visible</div>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <article class="glass category-card" data-category="chicago-drill-o-block" data-title="chicago drill &amp; o&#x27;block" data-artists="chief keef king von lil durk juice wrld r. kelly">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Scene</span>
+            <h3>🎤 Chicago Drill &amp; O&#x27;Block</h3>
+          </div>
+          <div class="count-pill">5 artists</div>
+        </div>
+        <p>The city where drill reshaped modern rap with stark storytelling, internet virality, and neighborhood mythology.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="chief-keef.html">
+            <strong>Chief Keef</strong>
+            <span>Architect of drill whose raw digital-era rise changed rap globally.</span>
+          </a>
+<a class="artist-link" href="king-von.html">
+            <strong>King Von</strong>
+            <span>Chicago drill storyteller, O&#x27;Block figure, and one of the most compelling voices of his generation.</span>
+          </a>
+<a class="artist-link" href="lil-durk.html">
+            <strong>Lil Durk</strong>
+            <span>Melodic drill star whose music, grief, and legal scrutiny shaped a defining modern rap story.</span>
+          </a>
+<a class="artist-link" href="juice-wrld.html">
+            <strong>Juice WRLD</strong>
+            <span>A generation&#x27;s emotional voice whose songs made vulnerability central to modern rap.</span>
+          </a>
+<a class="artist-link" href="r-kelly.html">
+            <strong>R. Kelly</strong>
+            <span>R&amp;B superstar whose musical influence was overshadowed by criminal convictions and one of the most controversial downfalls in music history.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="southern-street-voices" data-title="southern street voices" data-artists="kevin gates mo3 nba youngboy pooh shiesty quando rondo young dolph">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Region</span>
+            <h3>🌙 Southern Street Voices</h3>
+          </div>
+          <div class="count-pill">6 artists</div>
+        </div>
+        <p>Pain-heavy rap from Baton Rouge, Dallas, Memphis, Savannah, and beyond—raw, melodic, and rooted in survival.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="kevin-gates.html">
+            <strong>Kevin Gates</strong>
+            <span>Baton Rouge artist known for emotional honesty, pain-driven lyrics, and introspective street storytelling.</span>
+          </a>
+<a class="artist-link" href="mo3.html">
+            <strong>MO3</strong>
+            <span>Dallas artist whose raw honesty, pain, and vulnerability made him a singular Southern voice.</span>
+          </a>
+<a class="artist-link" href="nba-youngboy.html">
+            <strong>NBA YoungBoy</strong>
+            <span>Prolific Baton Rouge star whose emotional intensity and nonstop output dominate modern rap.</span>
+          </a>
+<a class="artist-link" href="pooh-shiesty.html">
+            <strong>Pooh Shiesty</strong>
+            <span>Memphis rapper whose explosive rise and raw street energy defined a new era of Southern rap.</span>
+          </a>
+<a class="artist-link" href="quando-rondo.html">
+            <strong>Quando Rondo</strong>
+            <span>Melodic Southern rapper whose pain-driven storytelling and controversy shaped his rise.</span>
+          </a>
+<a class="artist-link" href="young-dolph.html">
+            <strong>Young Dolph</strong>
+            <span>Independent Memphis mogul remembered for ownership, resilience, and loyalty.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="west-coast-power" data-title="west coast power" data-artists="2pac yg slim 400 the game">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Region</span>
+            <h3>🌴 West Coast Power</h3>
+          </div>
+          <div class="count-pill">4 artists</div>
+        </div>
+        <p>Compton and California stories built on street realism, spectacle, politics, and comeback energy.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="tupac.html">
+            <strong>2Pac</strong>
+            <span>Poet, rebel, actor, and cultural icon whose message transcended music.</span>
+          </a>
+<a class="artist-link" href="yg.html">
+            <strong>YG</strong>
+            <span>Compton rapper who helped revive the West Coast sound with street realism, club energy, and political edge.</span>
+          </a>
+<a class="artist-link" href="slim-400.html">
+            <strong>Slim 400</strong>
+            <span>Bompton rapper whose life, survival, and raw authenticity made him a respected West Coast street voice.</span>
+          </a>
+<a class="artist-link" href="the-game.html">
+            <strong>The Game</strong>
+            <span>Compton rapper who led the 2000s West Coast revival with cinematic storytelling and headline-making feuds.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="east-coast-legends" data-title="east coast legends" data-artists="the notorious b.i.g. dmx pop smoke 2pac">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Legacy</span>
+            <h3>🗽 East Coast Legends</h3>
+          </div>
+          <div class="count-pill">4 artists</div>
+        </div>
+        <p>Foundational New York voices whose influence still shapes rap language, charisma, and narrative weight.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="biggie.html">
+            <strong>The Notorious B.I.G.</strong>
+            <span>Brooklyn narrator and lyrical giant who restored New York&#x27;s dominance in rap.</span>
+          </a>
+<a class="artist-link" href="dmx.html">
+            <strong>DMX</strong>
+            <span>A historic voice of pain, faith, rage, and survival whose impact reached far beyond rap.</span>
+          </a>
+<a class="artist-link" href="pop-smoke.html">
+            <strong>Pop Smoke</strong>
+            <span>Brooklyn drill star whose rise reshaped New York rap and left an outsized legacy.</span>
+          </a>
+<a class="artist-link" href="tupac.html">
+            <strong>2Pac</strong>
+            <span>Poet, rebel, actor, and cultural icon whose message transcended music.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="trap-mainstream-dominance" data-title="trap &amp; mainstream dominance" data-artists="future lil wayne birdman nelly nba youngboy pop smoke">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Movement</span>
+            <h3>💿 Trap &amp; Mainstream Dominance</h3>
+          </div>
+          <div class="count-pill">6 artists</div>
+        </div>
+        <p>Artists who pushed regional sounds into global rap&#x27;s commercial center through hitmaking and nonstop output.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="future.html">
+            <strong>Future</strong>
+            <span>Atlanta trap pioneer whose dark melodies, prolific output, and influence helped define modern hip-hop.</span>
+          </a>
+<a class="artist-link" href="lil-wayne.html">
+            <strong>Lil Wayne</strong>
+            <span>New Orleans icon whose lyrical genius, mixtape dominance, and influence shaped modern hip-hop.</span>
+          </a>
+<a class="artist-link" href="birdman.html">
+            <strong>Birdman</strong>
+            <span>Cash Money mogul who built a rap empire, launched superstars, and reshaped the business of hip-hop.</span>
+          </a>
+<a class="artist-link" href="nelly.html">
+            <strong>Nelly</strong>
+            <span>St. Louis rap icon whose crossover hits and Country Grammar era helped define mainstream hip-hop in the early 2000s.</span>
+          </a>
+<a class="artist-link" href="nba-youngboy.html">
+            <strong>NBA YoungBoy</strong>
+            <span>Prolific Baton Rouge star whose emotional intensity and nonstop output dominate modern rap.</span>
+          </a>
+<a class="artist-link" href="pop-smoke.html">
+            <strong>Pop Smoke</strong>
+            <span>Brooklyn drill star whose rise reshaped New York rap and left an outsized legacy.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="controversy-court-cases" data-title="controversy &amp; court cases" data-artists="lil durk r. kelly young buck quando rondo birdman king von">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Case Files</span>
+            <h3>⚖️ Controversy &amp; Court Cases</h3>
+          </div>
+          <div class="count-pill">6 artists</div>
+        </div>
+        <p>Stories where legal trouble, public scrutiny, or collapse became central to the artist narrative.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="lil-durk.html">
+            <strong>Lil Durk</strong>
+            <span>Melodic drill star whose music, grief, and legal scrutiny shaped a defining modern rap story.</span>
+          </a>
+<a class="artist-link" href="r-kelly.html">
+            <strong>R. Kelly</strong>
+            <span>R&amp;B superstar whose musical influence was overshadowed by criminal convictions and one of the most controversial downfalls in music history.</span>
+          </a>
+<a class="artist-link" href="young-buck.html">
+            <strong>Young Buck</strong>
+            <span>Nashville rapper whose G-Unit era, Southern grit, and turbulent journey defined a major 2000s rap story.</span>
+          </a>
+<a class="artist-link" href="quando-rondo.html">
+            <strong>Quando Rondo</strong>
+            <span>Melodic Southern rapper whose pain-driven storytelling and controversy shaped his rise.</span>
+          </a>
+<a class="artist-link" href="birdman.html">
+            <strong>Birdman</strong>
+            <span>Cash Money mogul who built a rap empire, launched superstars, and reshaped the business of hip-hop.</span>
+          </a>
+<a class="artist-link" href="king-von.html">
+            <strong>King Von</strong>
+            <span>Chicago drill storyteller, O&#x27;Block figure, and one of the most compelling voices of his generation.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="independent-hustlers-moguls" data-title="independent hustlers &amp; moguls" data-artists="young dolph birdman lil wayne kevin gates dj stancho">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Business</span>
+            <h3>💼 Independent Hustlers &amp; Moguls</h3>
+          </div>
+          <div class="count-pill">5 artists</div>
+        </div>
+        <p>Ownership, labels, self-made empires, and artists who treated rap like infrastructure as much as music.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="young-dolph.html">
+            <strong>Young Dolph</strong>
+            <span>Independent Memphis mogul remembered for ownership, resilience, and loyalty.</span>
+          </a>
+<a class="artist-link" href="birdman.html">
+            <strong>Birdman</strong>
+            <span>Cash Money mogul who built a rap empire, launched superstars, and reshaped the business of hip-hop.</span>
+          </a>
+<a class="artist-link" href="lil-wayne.html">
+            <strong>Lil Wayne</strong>
+            <span>New Orleans icon whose lyrical genius, mixtape dominance, and influence shaped modern hip-hop.</span>
+          </a>
+<a class="artist-link" href="kevin-gates.html">
+            <strong>Kevin Gates</strong>
+            <span>Baton Rouge artist known for emotional honesty, pain-driven lyrics, and introspective street storytelling.</span>
+          </a>
+<a class="artist-link" href="dj-stancho.html">
+            <strong>DJ Stancho</strong>
+            <span>The “Godfather” of Bulgarian hip-hop who helped build the scene from level zero—founder of Sniper Records and architect of the underground movement.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="loss-tragedy-unfinished-stories" data-title="loss, tragedy &amp; unfinished stories" data-artists="king von mo3 pop smoke juice wrld young dolph slim 400 2pac the notorious b.i.g. dmx">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Vault</span>
+            <h3>🕯️ Loss, Tragedy &amp; Unfinished Stories</h3>
+          </div>
+          <div class="count-pill">9 artists</div>
+        </div>
+        <p>Artists whose stories carry grief, violence, or abrupt endings that changed how their music is remembered.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="king-von.html">
+            <strong>King Von</strong>
+            <span>Chicago drill storyteller, O&#x27;Block figure, and one of the most compelling voices of his generation.</span>
+          </a>
+<a class="artist-link" href="mo3.html">
+            <strong>MO3</strong>
+            <span>Dallas artist whose raw honesty, pain, and vulnerability made him a singular Southern voice.</span>
+          </a>
+<a class="artist-link" href="pop-smoke.html">
+            <strong>Pop Smoke</strong>
+            <span>Brooklyn drill star whose rise reshaped New York rap and left an outsized legacy.</span>
+          </a>
+<a class="artist-link" href="juice-wrld.html">
+            <strong>Juice WRLD</strong>
+            <span>A generation&#x27;s emotional voice whose songs made vulnerability central to modern rap.</span>
+          </a>
+<a class="artist-link" href="young-dolph.html">
+            <strong>Young Dolph</strong>
+            <span>Independent Memphis mogul remembered for ownership, resilience, and loyalty.</span>
+          </a>
+<a class="artist-link" href="slim-400.html">
+            <strong>Slim 400</strong>
+            <span>Bompton rapper whose life, survival, and raw authenticity made him a respected West Coast street voice.</span>
+          </a>
+<a class="artist-link" href="tupac.html">
+            <strong>2Pac</strong>
+            <span>Poet, rebel, actor, and cultural icon whose message transcended music.</span>
+          </a>
+<a class="artist-link" href="biggie.html">
+            <strong>The Notorious B.I.G.</strong>
+            <span>Brooklyn narrator and lyrical giant who restored New York&#x27;s dominance in rap.</span>
+          </a>
+<a class="artist-link" href="dmx.html">
+            <strong>DMX</strong>
+            <span>A historic voice of pain, faith, rage, and survival whose impact reached far beyond rap.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="legacy-icons" data-title="legacy icons" data-artists="2pac the notorious b.i.g. dmx lil wayne nelly">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Hall of Fame</span>
+            <h3>👑 Legacy Icons</h3>
+          </div>
+          <div class="count-pill">5 artists</div>
+        </div>
+        <p>Figures whose names sit above eras—artists who became symbols, not just discographies.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="tupac.html">
+            <strong>2Pac</strong>
+            <span>Poet, rebel, actor, and cultural icon whose message transcended music.</span>
+          </a>
+<a class="artist-link" href="biggie.html">
+            <strong>The Notorious B.I.G.</strong>
+            <span>Brooklyn narrator and lyrical giant who restored New York&#x27;s dominance in rap.</span>
+          </a>
+<a class="artist-link" href="dmx.html">
+            <strong>DMX</strong>
+            <span>A historic voice of pain, faith, rage, and survival whose impact reached far beyond rap.</span>
+          </a>
+<a class="artist-link" href="lil-wayne.html">
+            <strong>Lil Wayne</strong>
+            <span>New Orleans icon whose lyrical genius, mixtape dominance, and influence shaped modern hip-hop.</span>
+          </a>
+<a class="artist-link" href="nelly.html">
+            <strong>Nelly</strong>
+            <span>St. Louis rap icon whose crossover hits and Country Grammar era helped define mainstream hip-hop in the early 2000s.</span>
+          </a>
+        </div>
+      </article>
+<article class="glass category-card" data-category="global-international-reach" data-title="global &amp; international reach" data-artists="dj stancho">
+        <div class="category-top">
+          <div>
+            <span class="eyebrow small">Worldwide</span>
+            <h3>🌍 Global &amp; International Reach</h3>
+          </div>
+          <div class="count-pill">1 artists</div>
+        </div>
+        <p>The vault beyond one city—showing how hip-hop culture expands across countries, languages, and movements.</p>
+        <div class="artist-links">
+          <a class="artist-link" href="dj-stancho.html">
+            <strong>DJ Stancho</strong>
+            <span>The “Godfather” of Bulgarian hip-hop who helped build the scene from level zero—founder of Sniper Records and architect of the underground movement.</span>
+          </a>
+        </div>
+      </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories Categories</strong>
+        <p>Browse the vault by scene, controversy, legacy, and regional movement.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="artist.html">Artists</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      const header = document.getElementById("mainHeader");
+      if(!header) return;
+      let lastScrollY = window.pageYOffset;
+      function offset(){ document.body.style.paddingTop = header.offsetHeight + "px"; }
+      function handleScroll(){
+        const currentScrollY = window.pageYOffset;
+        if(window.innerWidth <= 768){
+          if(currentScrollY <= 8) header.classList.remove("hidden");
+          else if(currentScrollY > lastScrollY + 4) header.classList.add("hidden");
+          else if(currentScrollY < lastScrollY - 4) header.classList.remove("hidden");
+        } else {
+          header.classList.remove("hidden");
+        }
+        lastScrollY = currentScrollY;
+      }
+      offset(); handleScroll();
+      window.addEventListener("load", offset);
+      window.addEventListener("resize", () => { offset(); if(window.innerWidth > 768) header.classList.remove("hidden"); });
+      window.addEventListener("scroll", handleScroll, {passive:true});
+    })();
+    const searchInput = document.getElementById("searchInput");
+    const chips = Array.from(document.querySelectorAll(".filter-chip"));
+    const cards = Array.from(document.querySelectorAll(".category-card"));
+    const resultCount = document.getElementById("resultCount");
+    let activeChip = "all";
+    function applyFilters() {
+      const q = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const matchesSearch = !q || card.dataset.title.includes(q) || card.dataset.artists.includes(q);
+        const matchesChip = activeChip === "all" || card.dataset.category === activeChip;
+        const show = matchesSearch && matchesChip;
+        card.classList.toggle("hidden", !show);
+        if(show) visible++;
+      });
+      resultCount.textContent = `${visible} categor${visible === 1 ? "y" : "ies"} visible`;
+    }
+    searchInput.addEventListener("input", applyFilters);
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        activeChip = chip.dataset.chip;
+        chips.forEach(btn => btn.classList.toggle("active", btn === chip));
+        applyFilters();
+      });
+    });
+    applyFilters();
+  </script>
+</body>
+</html>
