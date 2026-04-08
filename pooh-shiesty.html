@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pooh Shiesty | Rap Stories</title>
+  <meta name="description" content="A premium Rap Stories profile on Pooh Shiesty, covering his Memphis roots, rapid rise through street rap, breakthrough with Shiesty Season, legal troubles, incarceration, and his place in modern Southern hip-hop." />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --radius: 20px;
+      --max: 1260px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 8, 0.76);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
+
+    .brand-text {
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
+    .hero { padding: 42px 0 28px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
+    .artist-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
+        url("images/pooh-shiesty.jpg") center/cover no-repeat;
+    }
+
+    .artist-image-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    .artist-tag {
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-info h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .hero-info h1 span {
+      background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
+    .album, .related-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+  
+/* Story Mode */
+.story-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 2000;
+  background: rgba(255,255,255,0.05);
+}
+.story-progress-bar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  box-shadow: 0 0 18px rgba(212,175,55,0.35);
+}
+.story-rail {
+  position: fixed;
+  top: 120px;
+  right: 18px;
+  z-index: 1200;
+  display: grid;
+  gap: 10px;
+}
+.story-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.10);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+.story-dot.active {
+  background: linear-gradient(135deg, #d4af37, #fff0a5);
+  border-color: transparent;
+  transform: scale(1.2);
+}
+.story-mode-toggle {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 1200;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10,10,15,0.88);
+  color: #f4f4f5;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+.story-mode-toggle:hover {
+  transform: translateY(-2px);
+}
+body.story-mode .story-section {
+  opacity: 0.45;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+  filter: saturate(0.8);
+}
+body.story-mode .story-section.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: saturate(1);
+}
+body.story-mode .story-section .glass {
+  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+}
+.story-kicker {
+  display:inline-block;
+  margin-bottom:12px;
+  padding:7px 11px;
+  border-radius:999px;
+  background: rgba(212,175,55,0.12);
+  color: #d4af37;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+@media (max-width: 920px) {
+  .story-rail { display:none; }
+}
+
+
+/* Stats Panels */
+.artist-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.stat-panel {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.stat-panel .label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+.stat-panel .value {
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.3;
+}
+@media (max-width: 980px) {
+  .artist-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .artist-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Music Integration */
+.music-panel {
+  margin-top: 24px;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.music-card {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.music-card h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.music-card p {
+  margin-bottom: 14px;
+}
+
+.music-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.music-link-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212,175,55,0.35);
+}
+
+.music-link-btn.primary {
+  background: linear-gradient(135deg, var(--accent), #f5df8f);
+  color: #111;
+  border: none;
+}
+
+.essential-tracks {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.essential-tracks h3 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.track-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.track-tag {
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.09);
+  color: #ededf1;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .music-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header#mainHeader.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+
+/* Mobile header: fixed and hide/show on scroll */
+header#mainHeader {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+header#mainHeader.hidden {
+  transform: translateY(-100%);
+}
+
+</style>
+</head>
+<body>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+  <header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist.html" class="active">Artist</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="map.html">Hip-Hop Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero story-section" data-story-title="Intro">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> /
+          <a href="artist.html">Artists</a> /
+          <span>Pooh Shiesty</span>
+        </div>
+
+        <div class="hero-layout">
+          <aside class="glass artist-image">
+            <div class="artist-image-content">
+              <span class="artist-tag">Artist Profile</span>
+              <h2>Pooh Shiesty</h2>
+              <p>Memphis rapper whose raw delivery, street-heavy storytelling, and breakout momentum turned him into one of the most talked-about Southern artists of the early 2020s.</p>
+            </div>
+          </aside>
+
+          <section class="glass hero-info">
+            <span class="eyebrow">Rap Stories Profile</span>
+            <h1>The Story of <span>Pooh Shiesty</span></h1>
+            <p class="summary">
+              Born Lontrell Donell Williams Jr., Pooh Shiesty built his name through raw honesty, melodic pain rap, and a persona shaped by hardship, prison, hustle, and self-analysis. His music blends Southern street realism with introspection, spirituality, and blunt emotional confession, helping him become one of the most recognizable Louisiana artists of the modern mixtape era.
+            </p>
+
+            <div class="quick-facts">
+              <div class="fact">
+                <span>Born</span>
+                <strong>November 8, 1999</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Memphis, Tennessee</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Street rap and Memphis trap</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>Active</strong>
+              </div>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
+            </div>
+            <div class="artist-stats">
+              <div class="stat-panel">
+                <span class="label">Born</span>
+                <div class="value">1999</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Home</span>
+                <div class="value">Memphis</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Era</span>
+                <div class="value">2020s</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Known For</span>
+                <div class="value">Raw breakout street energy</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="content-layout">
+          <div class="content-stack">
+            
+
+<section class="glass panel" id="biography">
+              <h2>Biography</h2>
+
+              <h3>Early Life and Memphis Background</h3>
+              <p>Pooh Shiesty, born Lontrell Donell Williams Jr. on November 8, 1999, came out of Memphis, Tennessee, a city with one of the most distinctive rap identities in America. Memphis rap has long been defined by darkness, urgency, regional slang, and street realism, and Pooh Shiesty arrived carrying that tradition into a new generation. His voice, delivery, and image fit the city’s hard-edged lineage while also sounding current enough to break nationally.</p>
+              <p>Like many fast-rising street rappers, his story was shaped by instability, neighborhood pressures, and the realities of survival in environments where reputation, loyalty, and danger often overlap. Those conditions became central to his music. He did not build his identity around polish or crossover softness. Instead, he came forward with force, making records that sounded tense, direct, and uncompromising.</p>
+
+              <h3>Breakout Momentum</h3>
+              <p>Pooh Shiesty’s rise happened quickly. He began building regional attention through a string of street records and videos that spread online, then accelerated into a broader national conversation when major rap audiences started responding to his intensity and charisma. His breakthrough coincided with a moment when Memphis was once again asserting itself as a key center of rap innovation, and he became one of the artists symbolizing that wave.</p>
+              <p>A major part of his visibility came through his connection to Gucci Mane and 1017, a co-sign that immediately placed him in a serious Southern rap lineage. That affiliation helped expand his reach, but his appeal was not dependent on it. What made listeners remember him was the energy of the records themselves: aggressive delivery, stripped-down menace, and a style that felt genuinely connected to where he came from.</p>
+
+              <div class="quote">Pooh Shiesty’s appeal came from impact and immediacy—his records often felt like pure momentum captured in real time.</div>
+
+              <h3>Shiesty Season and National Recognition</h3>
+              <p>The project <em>Shiesty Season</em> helped confirm that his early buzz was not a fluke. By that point, Pooh Shiesty had become one of the most visible young street rappers in the country, with songs circulating heavily online and a persona that translated into major audience interest. He represented a kind of new-era Southern rap star: regional to the core, but scalable at national level.</p>
+              <p>His music leaned on intimidation, urgency, and pressure, but there was also a sharp instinct for memorable hooks and momentum-building phrasing. That combination helped him cross from street attention into mainstream conversation without losing the roughness that made him stand out in the first place.</p>
+
+              <h3>Legal Trouble and Interruption</h3>
+              <p>As his fame increased, legal trouble became one of the defining interruptions in his career. What had looked like the beginning of a long commercial ascent was sharply disrupted by incarceration, and that shift changed the public narrative around him. Instead of being discussed only as a breakout star, he became part of a familiar modern rap storyline in which momentum, street reputation, success, and legal consequence collide.</p>
+              <p>This interruption did not erase his impact, but it did freeze part of his rise in a specific historical moment. For many fans, Pooh Shiesty came to represent both the explosive possibilities of fast digital-era rap fame and the fragility of that rise when legal pressure enters the picture.</p>
+
+              <h3>Style and Identity</h3>
+              <p>Pooh Shiesty’s style is built around directness. He rarely sounded overcomplicated or abstract. His best material worked by hitting hard, fast, and memorably. That quality made him highly effective in an era where short-form attention, quotable lines, and instantly recognizable delivery all matter. At the same time, his music stayed anchored to Memphis tradition rather than flattening itself into generic streaming-era rap.</p>
+              <p>He became closely associated with a kind of raw young-star presence—someone whose music felt like a live transmission from a local scene that had suddenly broken wide open. That is part of why his run remains memorable even though it was interrupted. The impact was concentrated, but real.</p>
+
+              <h3>Legacy and Position in Modern Rap</h3>
+              <p>Pooh Shiesty’s legacy is tied to the early 2020s Memphis surge and to the way regional rap can still reshape the mainstream when the voice is strong enough. He became one of the central names in that period, helping push Memphis energy into broader national circulation. Even with legal setbacks, his breakout remains a key part of the story of modern Southern rap.</p>
+              <p>He stands as a symbol of rapid ascent, undeniable local identity, and a career path shaped as much by interruption as by momentum. In that sense, Pooh Shiesty’s story is not just about success—it is about how quickly rap can elevate a voice, and how quickly outside pressures can change the direction of that rise.</p>
+            </section>
+
+            
+<section class="glass panel" id="timeline">
+              <h2>Career Timeline</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <strong>1999 — Birth</strong>
+                  <p>Born Lontrell Donell Williams Jr. in Memphis, Tennessee.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 2010s — Early Rise</strong>
+                  <p>Began gaining attention through Memphis street records and online momentum.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2020 — Breakout Visibility</strong>
+                  <p>Built major buzz with a run of songs and visuals that pushed him into national rap conversation.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2021 — Shiesty Season Era</strong>
+                  <p>Reached a new level of prominence with <em>Shiesty Season</em> and his wider 1017 association.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2020s — Legal Interruption and Ongoing Interest</strong>
+                  <p>Legal troubles interrupted his rise, but his breakout remains a defining part of the modern Memphis wave.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="side-stack">
+            
+
+<section class="glass panel">
+              <h2>Profile Details</h2>
+              <div class="info-list">
+                <div class="info-row">
+                  <span class="info-label">Full Name</span>
+                  <div class="info-value">Lontrell Donell Williams Jr.</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Stage Name</span>
+                  <div class="info-value">Pooh Shiesty</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birthplace</span>
+                  <div class="info-value">Memphis, Tennessee</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Southern Hip-Hop / Memphis Trap / Street Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Active artist whose breakout legacy remains highly visible</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Key Themes</h2>
+              <div class="tags">
+                <span class="tag">Memphis</span>
+                <span class="tag">Street Rap</span>
+                <span class="tag">Momentum</span>
+                <span class="tag">Incarceration</span>
+                <span class="tag">Regional Identity</span>
+                <span class="tag">Breakout Era</span>
+              </div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Highlighted Eras</h2>
+              <div class="discography">
+                <div class="album">
+                  <strong>Memphis Build-Up</strong>
+                  <span>The local rise that introduced his voice and image to a wider rap audience.</span>
+                </div>
+                <div class="album">
+                  <strong>Breakout and Shiesty Season</strong>
+                  <span>The explosive period that turned him into one of the most discussed young street rappers.</span>
+                </div>
+                <div class="album">
+                  <strong>Interrupted Momentum</strong>
+                  <span>The period where legal trouble complicated what looked like a major long-term ascent.</span>
+                </div>
+              </div>
+            </section>
+          <section class="glass panel music-panel">
+            <h2>Music Integration</h2>
+            <p>
+              Move from reading to listening with direct artist music links and a quick essential-listening guide for Pooh Shiesty.
+            </p>
+
+            <div class="music-grid">
+              <div class="music-card">
+                <h3>Spotify</h3>
+                <p>Open a curated search for Pooh Shiesty on Spotify and keep the story moving with the music.</p>
+                <a href="https://open.spotify.com/search/Pooh%20Shiesty" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+              </div>
+
+              <div class="music-card">
+                <h3>YouTube</h3>
+                <p>Jump into official videos, performances, and major records related to Pooh Shiesty on YouTube.</p>
+                <a href="https://www.youtube.com/results?search_query=Pooh+Shiesty+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              </div>
+            </div>
+
+            <div class="essential-tracks">
+              <h3>Essential Listening</h3>
+              <div class="track-list">
+                <span class="track-tag">Back in Blood</span>
+                <span class="track-tag">Neighbors</span>
+                <span class="track-tag">Twerksum</span>
+                <span class="track-tag">Guard Up</span>
+              </div>
+            </div>
+          </section>
+
+
+            
+
+<section class="glass panel">
+              <h2>Related Stories</h2>
+              <div class="related-list">
+                <a href="young-dolph.html" class="related-card">
+                  <h4>Young Dolph</h4>
+                  <p>A Memphis figure whose independent presence and city identity shaped the lane Pooh Shiesty entered.</p>
+                </a>
+                <a href="chief-keef.html" class="related-card">
+                  <h4>Chief Keef</h4>
+                  <p>Another artist whose regional sound broke nationally with a raw, uncompromising street aesthetic.</p>
+                </a>
+                <a href="nba-youngboy.html" class="related-card">
+                  <h4>NBA YoungBoy</h4>
+                  <p>A similarly intense modern Southern star whose momentum and legal pressure defined parallel themes.</p>
+                </a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+  <script src="story-mode.js"></script>
+
+
+
+
+
+
+
+<script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+
+  let lastScrollY = window.pageYOffset;
+
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+
+  function handleScroll(){
+    const currentScrollY = window.pageYOffset;
+
+    if(window.innerWidth <= 768){
+      if(currentScrollY <= 8){
+        header.classList.remove("hidden");
+      } else if(currentScrollY > lastScrollY + 4){
+        header.classList.add("hidden");
+      } else if(currentScrollY < lastScrollY - 4){
+        header.classList.remove("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  offset();
+  handleScroll();
+
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", () => {
+    offset();
+    if(window.innerWidth > 768){
+      header.classList.remove("hidden");
+    }
+  });
+  window.addEventListener("scroll", handleScroll, {passive:true});
+})();
+</script>
+</body>
+</html>

@@ -194,7 +194,8 @@ footer {
     .artist-card-body p { color: var(--muted); font-size: .95rem; margin-bottom: 14px; min-height: 72px; }
     .artist-card-body span { color: var(--accent); font-weight: 800; }
   
-/* Mobile header: hide on scroll down, show on scroll up */
+
+/* Mobile header: fixed and hide/show on scroll */
 header#mainHeader {
   position: fixed !important;
   top: 0;
@@ -257,6 +258,26 @@ header#mainHeader.hidden {
             <div class="artist-card-body">
               <h3>MO3</h3>
               <p>Dallas artist whose raw honesty, pain, and vulnerability made him a singular Southern voice.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="kevin-gates.html" class="artist-card glass">
+            <div class="artist-thumb">
+              <img src="images/kevin-gates.jpg" alt="Kevin Gates">
+            </div>
+            <div class="artist-card-body">
+              <h3>Kevin Gates</h3>
+              <p>Baton Rouge artist known for emotional honesty, pain-driven lyrics, and introspective street storytelling.</p>
+              <span>Open story →</span>
+            </div>
+          </a>
+          <a href="pooh-shiesty.html" class="artist-card glass">
+            <div class="artist-thumb">
+              <img src="images/pooh-shiesty.jpg" alt="Pooh Shiesty">
+            </div>
+            <div class="artist-card-body">
+              <h3>Pooh Shiesty</h3>
+              <p>Memphis rapper whose explosive rise and raw street energy defined a new era of Southern rap.</p>
               <span>Open story →</span>
             </div>
           </a>
@@ -450,6 +471,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach(card => grid.appendChild(card));
 });
+</script>
+
+
+<script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+
+  let lastScrollY = window.pageYOffset;
+
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+
+  function handleScroll(){
+    const currentScrollY = window.pageYOffset;
+
+    if(window.innerWidth <= 768){
+      if(currentScrollY <= 8){
+        header.classList.remove("hidden");
+      } else if(currentScrollY > lastScrollY + 4){
+        header.classList.add("hidden");
+      } else if(currentScrollY < lastScrollY - 4){
+        header.classList.remove("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  offset();
+  handleScroll();
+
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", () => {
+    offset();
+    if(window.innerWidth > 768){
+      header.classList.remove("hidden");
+    }
+  });
+  window.addEventListener("scroll", handleScroll, {passive:true});
+})();
 </script>
 
 </body>
