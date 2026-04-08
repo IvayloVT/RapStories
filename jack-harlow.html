@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack Harlow | Rap Stories</title>
+  <meta name="description" content="A Rap Stories premium profile on Jack Harlow, covering background, rise, impact, controversy, major works, and legacy." />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --radius: 20px;
+      --max: 1260px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(5, 5, 8, 0.76);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      transition: transform 0.3s ease;
+    }
+    header.hidden { transform: translateY(-100%); }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 900; letter-spacing: 0.6px; font-size: 1.02rem;
+    }
+    .brand-mark {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      color: #111; font-weight: 900; box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
+    .brand-text {
+      font-weight: 900; letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .nav-links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+    .nav-links a { position:relative; color: var(--muted); transition: color 0.25s ease; font-size:0.96rem; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a::after {
+      content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-btn {
+      padding: 12px 20px; border-radius: 999px; background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111; font-weight: 800; border:none; box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(212,175,55,0.28); }
+    .hero { padding: 42px 0 28px; }
+    .breadcrumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 18px; }
+    .hero-layout { display:grid; grid-template-columns:370px 1fr; gap:28px; align-items:stretch; }
+    .artist-image { overflow:hidden; position:relative; min-height:560px; }
+    .artist-image::before {
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
+        url("images/jack-harlow.jpg") center/cover no-repeat;
+    }
+    .artist-image-content {
+      position:relative; z-index:1; height:100%; display:flex; flex-direction:column;
+      justify-content:flex-end; padding:28px;
+    }
+    .artist-tag {
+      align-self:flex-start; padding:8px 12px; border-radius:999px;
+      background: rgba(10,10,15,0.76); border:1px solid rgba(255,255,255,0.10);
+      font-size:0.8rem; font-weight:800; margin-bottom:14px;
+    }
+    .artist-image h2 { font-size:2rem; margin-bottom:8px; }
+    .artist-image p { color:#d7d7df; font-size:0.95rem; }
+    .hero-info { padding:28px; }
+    .eyebrow {
+      display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
+      background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px;
+    }
+    .hero-info h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 0.98; letter-spacing: -2px; margin-bottom: 14px; font-weight: 900;
+    }
+    .hero-info h1 span {
+      background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
+      -webkit-background-clip:text; background-clip:text; color: transparent;
+    }
+    .summary { color: var(--muted); font-size:1.05rem; margin-bottom:22px; max-width:760px; }
+    .quick-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:22px; }
+    .fact {
+      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    }
+    .fact span { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
+    .fact strong { font-size:1rem; color: var(--text); }
+    .hero-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn {
+      padding:14px 18px; border-radius:14px; border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04); color: var(--text); font-weight: 800; transition:0.25s ease; cursor:pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
+    main { padding-bottom:50px; }
+    .content-layout { display:grid; grid-template-columns:1.6fr 0.9fr; gap:24px; margin-top:26px; }
+    .content-stack, .side-stack { display:grid; gap:22px; }
+    .side-stack { align-self:start; position:sticky; top:96px; }
+    .panel { padding:28px; }
+    .panel h2 { font-size:1.7rem; margin-bottom:16px; letter-spacing:-0.5px; }
+    .panel h3 { font-size:1.15rem; margin:22px 0 10px; color: var(--text); }
+    .panel p { color:#dadade; margin-bottom:14px; }
+    .quote {
+      margin-top:14px; padding:18px 20px; border-left:3px solid var(--accent);
+      border-radius:14px; background: rgba(255,255,255,0.03); color:#e5e5ea; font-style:italic;
+    }
+    .timeline { position:relative; padding-left:18px; }
+    .timeline::before {
+      content:""; position:absolute; top:6px; left:5px; bottom:6px; width:2px;
+      background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
+    }
+    .timeline-item { position:relative; padding-left:24px; margin-bottom:20px; }
+    .timeline-item::before {
+      content:""; position:absolute; left:-1px; top:7px; width:12px; height:12px; border-radius:50%;
+      background: var(--accent); box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+    }
+    .timeline-item strong { display:block; margin-bottom:6px; font-size:1rem; }
+    .timeline-item p { color: var(--muted); margin:0; font-size:0.95rem; }
+    .info-list, .discography, .related-list { display:grid; gap:14px; }
+    .info-row { padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .info-row:last-child { border-bottom:none; padding-bottom:0; }
+    .info-label { display:block; color: var(--muted); font-size:0.84rem; margin-bottom:4px; }
+    .info-value { color: var(--text); font-weight:700; }
+    .album, .related-card {
+      padding:16px; border-radius:16px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    }
+    .album strong, .related-card h4 { display:block; margin-bottom:6px; }
+    .album span, .related-card p { color: var(--muted); font-size:0.92rem; }
+    .related-card:hover { transform: translateY(-3px); border-color: rgba(212,175,55,0.25); }
+    .tags { display:flex; flex-wrap:wrap; gap:10px; }
+    .tag {
+      padding:9px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.85rem; font-weight:700;
+    }
+    .artist-stats {
+      display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:14px; margin-top:20px;
+    }
+    .stat-panel {
+      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
+    .stat-panel .value { color: var(--text); font-weight:800; line-height:1.3; }
+    .music-panel { margin-top:24px; }
+    .music-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+    .music-card {
+      padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 { margin-bottom:10px; font-size:1rem; }
+    .music-card p { margin-bottom:14px; }
+    .music-link-btn {
+      display:inline-flex; align-items:center; justify-content:center; padding:13px 16px; border-radius:14px;
+      border:1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.05); color: var(--text); font-weight:800; transition:0.25s ease;
+    }
+    .music-link-btn:hover { transform: translateY(-2px); border-color: rgba(212,175,55,0.35); }
+    .music-link-btn.primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
+    .essential-tracks {
+      margin-top:20px; padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    }
+    .track-list { display:flex; flex-wrap:wrap; gap:10px; }
+    .track-tag {
+      padding:10px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.86rem; font-weight:700;
+    }
+    footer { padding:24px 0 50px; color: var(--muted); }
+    .footer-wrap {
+      border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+    .footer-links a:hover { color: var(--text); }
+    @media (max-width:1150px) {
+      .hero-layout, .content-layout { grid-template-columns:1fr; }
+      .side-stack { position:static; }
+    }
+    @media (max-width:980px) {
+      .artist-stats { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:860px) {
+      .music-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:820px) {
+      .quick-facts { grid-template-columns:1fr 1fr; }
+      .nav { flex-direction:column; padding:14px 0; }
+      .nav-links { justify-content:center; }
+      .artist-image { min-height:420px; }
+    }
+    @media (max-width:560px) {
+      .quick-facts, .artist-stats { grid-template-columns:1fr; }
+      .panel, .hero-info { padding:22px; }
+      .hero { padding-top:34px; }
+      .hero-info h1 { letter-spacing:-1px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist.html" class="active">Artist</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="map.html">Hip-Hop Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> /
+          <a href="artist.html">Artists</a> /
+          <span>Jack Harlow</span>
+        </div>
+
+        <div class="hero-layout">
+          <aside class="glass artist-image">
+            <div class="artist-image-content">
+              <span class="artist-tag">Artist Profile</span>
+              <h2>Jack Harlow</h2>
+              <p>Louisville rapper who turned charisma, timing, and crossover instinct into stardom.</p>
+            </div>
+          </aside>
+
+          <section class="glass hero-info">
+            <span class="eyebrow">Rap Stories Profile</span>
+            <h1>The Story of <span>Jack Harlow</span></h1>
+            <p class="summary">Jack Harlow rose from Kentucky mixtape beginnings to become one of the most visible rap stars of the 2020s. His appeal combines approachability, wit, polished delivery, and pop crossover ability.</p>
+
+            <div class="quick-facts">
+              <div class="fact"><span>Born</span><strong>March 13, 1998</strong></div>
+              <div class="fact"><span>From</span><strong>Louisville, Kentucky</strong></div>
+              <div class="fact"><span>Known For</span><strong>Crossover rap, mainstream hits</strong></div>
+              <div class="fact"><span>Status</span><strong>Active</strong></div>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
+            </div>
+
+            <div class="artist-stats">
+              <div class="stat-panel"><span class="label">Era</span><div class="value">2010s–2020s</div></div>
+              <div class="stat-panel"><span class="label">Home</span><div class="value">Kentucky</div></div>
+              <div class="stat-panel"><span class="label">Style</span><div class="value">Crossover rap, mainstream hits</div></div>
+              <div class="stat-panel"><span class="label">Legacy</span><div class="value">Charisma</div></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="content-layout">
+          <div class="content-stack">
+            <section class="glass panel" id="biography">
+              <h2>Biography</h2>
+              <h3>Early Development</h3><p>Coming from Louisville, Jack Harlow entered national rap without the advantage of belonging to a traditional major-city rap mythology. That outsider position became part of his appeal: he was polished, witty, and visibly aware of image and presentation from the start.</p>
+<h3>Breakout Moment</h3><p>His rise accelerated through strong singles and viral momentum, but his staying power came from an ability to function as both rapper and mainstream celebrity. He balanced technical moments with conversational ease, making his music accessible without being anonymous.</p>
+<h3>Crossing Into Pop Culture</h3><p>Harlow’s career reflects modern entertainment logic as much as rap history. He operates across music, fashion, interviews, and broader celebrity culture. That flexibility made him especially effective in the streaming era, where personality amplifies songs.</p>
+<h3>Place in Rap</h3><p>He represents a new model of rap stardom: less defined by hardness or mythology and more by timing, versatility, and wide cultural comfort.</p>
+              <div class="quote">Jack Harlow represents a distinct lane in rap and popular music: a figure whose story joins talent, pressure, image, and cultural timing.</div>
+            </section>
+
+            <section class="glass panel" id="timeline">
+              <h2>Career Timeline</h2>
+              <div class="timeline">
+                <div class="timeline-item"><strong>1998</strong><p>Born in Louisville.</p></div>
+<div class="timeline-item"><strong>2010s</strong><p>Developed through independent releases.</p></div>
+<div class="timeline-item"><strong>2020</strong><p>Broke into the mainstream with major singles.</p></div>
+<div class="timeline-item"><strong>2020s</strong><p>Expanded into full celebrity status.</p></div>
+<div class="timeline-item"><strong>Ongoing</strong><p>Remains a high-visibility crossover rap figure.</p></div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="side-stack">
+            <section class="glass panel">
+              <h2>Profile Details</h2>
+              <div class="info-list">
+                <div class="info-row"><span class="info-label">Full Name / Credit</span><div class="info-value">Jack Harlow</div></div>
+                <div class="info-row"><span class="info-label">Birthplace / Origin</span><div class="info-value">Louisville, Kentucky</div></div>
+                <div class="info-row"><span class="info-label">Genres</span><div class="info-value">Hip-Hop / Rap / R&amp;B</div></div>
+                <div class="info-row"><span class="info-label">Known For</span><div class="info-value">Crossover rap, mainstream hits</div></div>
+                <div class="info-row"><span class="info-label">Current Status</span><div class="info-value">Active</div></div>
+              </div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Key Themes</h2>
+              <div class="tags"><span class="tag">Charisma</span><span class="tag">Crossover</span><span class="tag">Humor</span><span class="tag">Mainstream</span><span class="tag">Branding</span><span class="tag">Modern Stardom</span></div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Highlighted Eras</h2>
+              <div class="discography">
+                <div class="album"><strong>Origins</strong><span>How Jack Harlow emerged and built an identity.</span></div>
+                <div class="album"><strong>Breakthrough</strong><span>The phase that turned regional momentum into wider recognition.</span></div>
+                <div class="album"><strong>Legacy</strong><span>Why Jack Harlow remains important in the wider story of rap and modern music.</span></div>
+              </div>
+            </section>
+
+            <section class="glass panel music-panel">
+              <h2>Music Integration</h2>
+              <p>Move from reading to listening with direct artist music links and a quick essential-listening guide for Jack Harlow.</p>
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Jack Harlow on Spotify and keep the story moving with the music.</p>
+                  <a href="https://open.spotify.com/search/Jack%20Harlow" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Jump into official videos, performances, and major records related to Jack Harlow on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Jack+Harlow+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
+              </div>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Greatest Hits</span>
+                  <span class="track-tag">Breakthrough Era</span>
+                  <span class="track-tag">Fan Favorites</span>
+                  <span class="track-tag">Deep Cuts</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel">
+              <h2>Related Stories</h2>
+              <div class="related-list"><a href="drake.html" class="related-card"><h4>Drake</h4><p>Another artist who mastered the intersection of rap and broad pop culture presence.</p></a>
+<a href="g-eazy.html" class="related-card"><h4>G-Eazy</h4><p>A prior example of rap positioned through style and crossover branding.</p></a>
+<a href="big-sean.html" class="related-card"><h4>Big Sean</h4><p>A polished mainstream rapper whose accessibility helped define a generation.</p></a></div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+  let lastScrollY = window.pageYOffset;
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+  function handleScroll(){
+    const currentScrollY = window.pageYOffset;
+    if(window.innerWidth <= 768){
+      if(currentScrollY <= 8){
+        header.classList.remove("hidden");
+      } else if(currentScrollY > lastScrollY + 4){
+        header.classList.add("hidden");
+      } else if(currentScrollY < lastScrollY - 4){
+        header.classList.remove("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+    lastScrollY = currentScrollY;
+  }
+  offset();
+  handleScroll();
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", () => {
+    offset();
+    if(window.innerWidth > 768) header.classList.remove("hidden");
+  });
+  window.addEventListener("scroll", handleScroll, {passive:true});
+})();
+</script>
+</body>
+</html>
