@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ice Cube | Rap Stories</title>
-  <meta name="description" content="Writer, rapper, actor, and provocateur, Ice Cube brought fierce social critique and street realism into mainstream rap culture." />
+  <meta name="description" content="A Rap Stories premium profile on Ice Cube, covering his South Central roots, N.W.A. era, solo revolution, film career, business empire, and lasting impact on hip-hop culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,213 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +676,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +701,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Ice Cube</h2>
-              <p>Writer, rapper, actor, and provocateur, Ice Cube brought fierce social critique and street realism into mainstream rap culture.</p>
+              <p>West Coast rap legend, cultural critic, filmmaker, and business force whose voice helped redefine hip-hop’s political and commercial possibilities.</p>
             </div>
           </aside>
 
@@ -735,25 +709,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Ice Cube</span></h1>
             <p class="summary">
-              Born O’Shea Jackson Sr., Ice Cube emerged as one of hip-hop’s sharpest writers and most forceful personalities. His music, film work, and political edge made him a major cultural figure whose influence extended far beyond one era.
+              Ice Cube stands as one of the most important figures in hip-hop history. Emerging from South Central Los Angeles with a pen full of anger, precision, social commentary, and street realism, he helped shape gangsta rap’s political edge, transformed himself into a solo star, and later expanded into film, television, and business. His career is one of the clearest examples of how rap could become a platform for power far beyond music.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>June 15, 1969</strong>
+                <strong>1969</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Los Angeles, California</strong>
+                <strong>South Central Los Angeles</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Writing, N.W.A, and film crossover</strong>
+                <strong>N.W.A, solo classics, films, business ventures</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Hip-Hop Icon</strong>
               </div>
             </div>
 
@@ -761,22 +735,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1969</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Los Angeles, California</div>
+                <span class="label">Origin</span>
+                <div class="value">Los Angeles</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">1980s–Present</div>
+                <div class="value">1980s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Writer and provocateur</div>
+                <div class="value">Political gangsta rap</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Expanded rap into media empire</div>
               </div>
             </div>
           </section>
@@ -784,149 +759,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>South Central Perspective</h3>
-              <p>Ice Cube grew up in Los Angeles and developed a writing style built on observation, anger, detail, and confrontation. He had a talent for turning local reality into direct, memorable language. Even early on, he sounded like a writer intent on documenting a system as much as a neighborhood.</p>
-              <h3>N.W.A and National Shock</h3>
-              <p>As a key lyricist in N.W.A, Ice Cube helped deliver some of the most confrontational and politically explosive rap of the late 1980s. The group’s music challenged policing, censorship, and mainstream comfort, and Cube’s writing was central to that impact.</p>
-              <h3>Solo Career and Expansion</h3>
-              <p>His solo work preserved the same sharpness while expanding into social commentary, identity politics, and community criticism. He was not content to be only an entertainer. His work often pushed, provoked, and forced response.</p>
-              <p>Beyond music, Ice Cube built a major acting and film career, becoming one of the clearest examples of a rapper successfully moving into Hollywood without abandoning his original cultural identity.</p>
+              <h3>South Central Roots and Early Perspective</h3>
+              <p>Born O'Shea Jackson, Ice Cube came out of South Central Los Angeles during a period of deep social tension, aggressive policing, economic inequality, and rising street violence. That environment shaped his writing early. What made Cube special from the beginning was not only his willingness to be confrontational, but his ability to articulate lived frustration with precision. He sounded intelligent, furious, observant, and unafraid. That combination would define his career.</p>
+
+              <h3>N.W.A and the Shock of Reality Rap</h3>
+              <p>Ice Cube first rose to national prominence as a core member and major writer of N.W.A, the group that brought West Coast gangsta rap into mainstream American consciousness. His role was crucial because he helped turn raw street reporting into sharp, memorable, politically charged songwriting. N.W.A did not simply shock people with profanity and violence. It forced America to hear a version of urban reality it had long preferred to ignore, and Cube’s pen was central to that force.</p>
+
+              <h3>Breaking Away and Solo Greatness</h3>
+              <p>When Cube left N.W.A, he did something rare: he proved he was not only an important group member, but a full-scale solo artist of extraordinary power. His early solo work is still regarded as some of the most intense, politically urgent, and musically important rap ever made. These records were angry, analytical, humorous, paranoid, and culturally sharp all at once. He was not simply making diss records or street records. He was building a worldview through rap.</p>
+
+              <div class="quote">Ice Cube made rage sound intelligent and street realism sound historic — turning rap into both a weapon and a document of American contradiction.</div>
+
+              <h3>West Coast Voice, National Reach</h3>
+              <p>One reason Ice Cube remains so important is that he never stayed confined to one lane. He represented Los Angeles and West Coast identity strongly, but his themes reached much further: race, class, media, masculinity, power, community, and self-determination. He became one of rap’s clearest public intellectuals without ever losing the rawness that made him credible.</p>
+
+              <h3>Film, Business, and Reinvention</h3>
+              <p>Cube’s expansion into film was another major turning point. He did not simply appear in movies. He helped create cultural moments through writing, producing, and shaping projects that reached audiences far beyond rap. This moved him into a rare category: artist as multi-platform force. He showed that hip-hop credibility did not need to disappear when crossing into Hollywood or business. It could be translated, extended, and monetized without fully losing its origin.</p>
+
               <h3>Legacy</h3>
-              <p>Ice Cube’s legacy lies in authorship and force. He helped establish rap as a vehicle for direct political anger, vivid realism, and cultural critique, then extended that influence across entertainment.</p>
+              <p>Ice Cube’s legacy is vast. He helped define gangsta rap’s most politically potent form, proved himself as a solo master, expanded into film and business with unusual success, and remained a major voice in cultural conversation across decades. He is not only a rap legend. He is one of the clearest examples of how hip-hop can produce a full-spectrum cultural power figure.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1969 — Birth</strong>
-                  <p>Born O’Shea Jackson in Los Angeles, California.</p>
+                  <strong>Late 1980s — N.W.A Emergence</strong>
+                  <p>Ice Cube rose to prominence as a key writer and voice inside one of the most revolutionary groups in rap history.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 1980s — N.W.A Rise</strong>
-                  <p>Became central to one of rap’s most controversial and influential groups.</p>
+                  <strong>Early 1990s — Solo Mastery</strong>
+                  <p>Established himself as one of rap’s greatest solo artists through politically charged and culturally devastating albums.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Solo Greatness</strong>
-                  <p>Built a major solo catalog and strong political reputation.</p>
+                  <strong>1990s / 2000s — Film Expansion</strong>
+                  <p>Successfully moved into acting, writing, and producing, becoming a major force in entertainment beyond music.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s–2000s — Film Expansion</strong>
-                  <p>Transitioned into acting and screenwriting while maintaining music influence.</p>
+                  <strong>2000s / 2010s — Business and Cultural Longevity</strong>
+                  <p>Expanded his influence through media, entrepreneurship, and ongoing public presence.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Present — Elder Statesman</strong>
-                  <p>Remains one of rap’s most respected and recognizable veterans.</p>
+                  <strong>Legacy Phase — Hip-Hop Statesman</strong>
+                  <p>Remains one of the most important and multidimensional figures to ever come out of rap culture.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">O’Shea Jackson Sr.</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Ice Cube</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">Los Angeles, California</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">O'Shea Jackson</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">South Central Los Angeles, California</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / West Coast Rap</div>
+                  <div class="info-value">Hip-Hop / Gangsta Rap / West Coast Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; veteran rapper, actor, and creator</div>
+                  <div class="info-value">Legendary rapper, actor, writer, producer, and entrepreneur</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">West Coast</span>
+                <span class="tag">N.W.A</span>
                 <span class="tag">Politics</span>
-                <span class="tag">Anger</span>
-                <span class="tag">Writing</span>
-                <span class="tag">Reality</span>
-                <span class="tag">Authority</span>
-                <span class="tag">Expansion</span>
+                <span class="tag">Street Reality</span>
+                <span class="tag">Film</span>
+                <span class="tag">Legacy</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>N.W.A Firestorm</strong>
-                  <span>The explosive chapter of controversy, realism, and institutional challenge.</span>
+                  <strong>N.W.A Revolutionary Era</strong>
+                  <span>The early stage where Ice Cube helped turn gangsta rap into a national cultural flashpoint.</span>
                 </div>
                 <div class="album">
-                  <strong>Solo Force</strong>
-                  <span>The era where Ice Cube became a major artist in his own right.</span>
+                  <strong>Solo Political Mastery</strong>
+                  <span>The period where his solo records established him as one of rap’s most powerful and intelligent voices.</span>
                 </div>
                 <div class="album">
-                  <strong>Cultural Expansion</strong>
-                  <span>The phase where music influence extended into film and broader media.</span>
+                  <strong>Media Empire Phase</strong>
+                  <span>A later chapter defined by film success, entrepreneurship, and cross-industry cultural influence.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Ice Cube on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Ice%20Cube" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Ice Cube.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Ice Cube on Spotify and revisit one of the most essential catalogs in rap history.</p>
+                  <a href="https://open.spotify.com/search/Ice%20Cube" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Ice Cube releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Ice+Cube+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Ice Cube on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Ice+Cube+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">It Was a Good Day</span>
+                  <span class="track-tag">No Vaseline</span>
+                  <span class="track-tag">Check Yo Self</span>
+                  <span class="track-tag">Today Was a Good Day</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">It Was a Good Day</span>
-                <span class="track-tag">Check Yo Self</span>
-                <span class="track-tag">No Vaseline</span>
-                <span class="track-tag">You Know How We Do It</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="dr-dre.html" class="related-card">
                   <h4>Dr. Dre</h4>
-                  <p>A fellow N.W.A architect whose production and influence reshaped the West Coast.</p>
+                  <p>A central N.W.A collaborator whose production and West Coast vision helped define Cube’s early era.</p>
                 </a>
-                <a href="nas.html" class="related-card">
-                  <h4>Nas</h4>
-                  <p>Another elite rap writer whose authority comes through language and viewpoint.</p>
+                <a href="eazy-e.html" class="related-card">
+                  <h4>Eazy-E</h4>
+                  <p>A foundational N.W.A figure whose partnership and later conflict with Cube shaped one of rap’s defining stories.</p>
                 </a>
                 <a href="snoop-dogg.html" class="related-card">
                   <h4>Snoop Dogg</h4>
-                  <p>A later West Coast icon who carried another side of California rap into the mainstream.</p>
+                  <p>A later West Coast icon whose mainstream expansion mirrors Cube’s broader cultural reach in another form.</p>
                 </a>
               </div>
             </section>
@@ -953,95 +938,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

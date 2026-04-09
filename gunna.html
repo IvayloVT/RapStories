@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gunna | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on Gunna, covering background, rise, impact, controversy, major works, and legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Gunna, covering his Atlanta roots, melodic trap rise, YSL era, fashion-forward image, legal controversy, and influence on modern rap." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -18,8 +18,10 @@
       --radius: 20px;
       --max: 1260px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
@@ -29,9 +31,12 @@
       color: var(--text);
       line-height: 1.7;
     }
+
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
+
     .container { width: min(92%, var(--max)); margin: 0 auto; }
+
     .glass {
       background: var(--panel);
       border: 1px solid var(--panel-border);
@@ -40,18 +45,18 @@
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
+
     header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
+      position: sticky;
+      top: 0;
       z-index: 1000;
       background: rgba(5, 5, 8, 0.76);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-      transition: transform 0.3s ease;
     }
-    header.hidden { transform: translateY(-100%); }
+
     .nav {
       min-height: 82px;
       display: flex;
@@ -59,182 +64,610 @@
       align-items: center;
       gap: 24px;
     }
+
     .brand {
-      display: flex; align-items: center; gap: 12px;
-      font-weight: 900; letter-spacing: 0.6px; font-size: 1.02rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
     }
+
     .brand-mark {
-      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      color: #111; font-weight: 900; box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
     }
+
     .brand-text {
-      font-weight: 900; letter-spacing: 0.5px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
       background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .nav-links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-    .nav-links a { position:relative; color: var(--muted); transition: color 0.25s ease; font-size:0.96rem; }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
     .nav-links a::after {
-      content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
     }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
     .nav-btn {
-      padding: 12px 20px; border-radius: 999px; background: linear-gradient(135deg, #d4af37, #f5df8f);
-      color: #111; font-weight: 800; border:none; box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(212,175,55,0.28); }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
     .hero { padding: 42px 0 28px; }
-    .breadcrumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 18px; }
-    .hero-layout { display:grid; grid-template-columns:370px 1fr; gap:28px; align-items:stretch; }
-    .artist-image { overflow:hidden; position:relative; min-height:560px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
     .artist-image::before {
-      content:""; position:absolute; inset:0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/gunna.jpg") center/cover no-repeat;
     }
+
     .artist-image-content {
-      position:relative; z-index:1; height:100%; display:flex; flex-direction:column;
-      justify-content:flex-end; padding:28px;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
     }
+
     .artist-tag {
-      align-self:flex-start; padding:8px 12px; border-radius:999px;
-      background: rgba(10,10,15,0.76); border:1px solid rgba(255,255,255,0.10);
-      font-size:0.8rem; font-weight:800; margin-bottom:14px;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
-    .artist-image h2 { font-size:2rem; margin-bottom:8px; }
-    .artist-image p { color:#d7d7df; font-size:0.95rem; }
-    .hero-info { padding:28px; }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
     .eyebrow {
-      display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
-      background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
+
     .hero-info h1 {
-      font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 0.98; letter-spacing: -2px; margin-bottom: 14px; font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
     }
+
     .hero-info h1 span {
       background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
-      -webkit-background-clip:text; background-clip:text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .summary { color: var(--muted); font-size:1.05rem; margin-bottom:22px; max-width:760px; }
-    .quick-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:22px; }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
     .fact {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .fact span { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .fact strong { font-size:1rem; color: var(--text); }
-    .hero-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
     .btn {
-      padding:14px 18px; border-radius:14px; border:1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04); color: var(--text); font-weight: 800; transition:0.25s ease; cursor:pointer;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
     }
+
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
-    main { padding-bottom:50px; }
-    .content-layout { display:grid; grid-template-columns:1.6fr 0.9fr; gap:24px; margin-top:26px; }
-    .content-stack, .side-stack { display:grid; gap:22px; }
-    .side-stack { align-self:start; position:sticky; top:96px; }
-    .panel { padding:28px; }
-    .panel h2 { font-size:1.7rem; margin-bottom:16px; letter-spacing:-0.5px; }
-    .panel h3 { font-size:1.15rem; margin:22px 0 10px; color: var(--text); }
-    .panel p { color:#dadade; margin-bottom:14px; }
-    .quote {
-      margin-top:14px; padding:18px 20px; border-left:3px solid var(--accent);
-      border-radius:14px; background: rgba(255,255,255,0.03); color:#e5e5ea; font-style:italic;
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
     }
-    .timeline { position:relative; padding-left:18px; }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
     .timeline::before {
-      content:""; position:absolute; top:6px; left:5px; bottom:6px; width:2px;
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
       background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
     }
-    .timeline-item { position:relative; padding-left:24px; margin-bottom:20px; }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
     .timeline-item::before {
-      content:""; position:absolute; left:-1px; top:7px; width:12px; height:12px; border-radius:50%;
-      background: var(--accent); box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
     }
-    .timeline-item strong { display:block; margin-bottom:6px; font-size:1rem; }
-    .timeline-item p { color: var(--muted); margin:0; font-size:0.95rem; }
-    .info-list, .discography, .related-list { display:grid; gap:14px; }
-    .info-row { padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .info-row:last-child { border-bottom:none; padding-bottom:0; }
-    .info-label { display:block; color: var(--muted); font-size:0.84rem; margin-bottom:4px; }
-    .info-value { color: var(--text); font-weight:700; }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
     .album, .related-card {
-      padding:16px; border-radius:16px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .album strong, .related-card h4 { display:block; margin-bottom:6px; }
-    .album span, .related-card p { color: var(--muted); font-size:0.92rem; }
-    .related-card:hover { transform: translateY(-3px); border-color: rgba(212,175,55,0.25); }
-    .tags { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .tag {
-      padding:9px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.85rem; font-weight:700;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
+
     .artist-stats {
-      display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:14px; margin-top:20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
     }
     .stat-panel {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .stat-panel .label { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .stat-panel .value { color: var(--text); font-weight:800; line-height:1.3; }
-    .music-panel { margin-top:24px; }
-    .music-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
+
+    .music-panel {
+      margin-top: 24px;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
     .music-card {
-      padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .music-card h3 { margin-bottom:10px; font-size:1rem; }
-    .music-card p { margin-bottom:14px; }
+
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .music-card p {
+      margin-bottom: 14px;
+    }
+
     .music-link-btn {
-      display:inline-flex; align-items:center; justify-content:center; padding:13px 16px; border-radius:14px;
-      border:1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.05); color: var(--text); font-weight:800; transition:0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
     }
-    .music-link-btn:hover { transform: translateY(-2px); border-color: rgba(212,175,55,0.35); }
-    .music-link-btn.primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
+
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
     .essential-tracks {
-      margin-top:20px; padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .track-list { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .track-tag {
-      padding:10px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.86rem; font-weight:700;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
     }
-    footer { padding:24px 0 50px; color: var(--muted); }
-    .footer-wrap {
-      border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
     }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
-    .footer-links a:hover { color: var(--text); }
-    @media (max-width:1150px) {
-      .hero-layout, .content-layout { grid-template-columns:1fr; }
-      .side-stack { position:static; }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
     }
-    @media (max-width:980px) {
-      .artist-stats { grid-template-columns:1fr 1fr; }
+
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
     }
-    @media (max-width:860px) {
-      .music-grid { grid-template-columns:1fr; }
-    }
-    @media (max-width:820px) {
-      .quick-facts { grid-template-columns:1fr 1fr; }
-      .nav { flex-direction:column; padding:14px 0; }
-      .nav-links { justify-content:center; }
-      .artist-image { min-height:420px; }
-    }
-    @media (max-width:560px) {
-      .quick-facts, .artist-stats { grid-template-columns:1fr; }
-      .panel, .hero-info { padding:22px; }
-      .hero { padding-top:34px; }
-      .hero-info h1 { letter-spacing:-1px; }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
     }
   </style>
 </head>
 <body>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -243,10 +676,11 @@
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -254,7 +688,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -267,20 +701,34 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Gunna</h2>
-              <p>Atlanta hitmaker who turned melodic trap into chart-dominating polish.</p>
+              <p>Atlanta rapper whose smooth melodic flow, luxurious image, and modern trap instincts made him one of the defining voices of his generation.</p>
             </div>
           </aside>
 
           <section class="glass hero-info">
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Gunna</span></h1>
-            <p class="summary">Born Sergio Giavanni Kitchens, Gunna emerged from Atlanta’s trap ecosystem as one of the defining melodic voices of late-2010s rap. His music blends luxury, rhythm, street perspective, and effortless flow, helping shape a sleek new era of Southern rap.</p>
+            <p class="summary">
+              Gunna emerged from Atlanta with a sound that felt slick, fluid, and highly modern. He became one of the clearest representatives of trap music’s melodic evolution, bringing together fashion, atmosphere, repetition, and polished flow. His rise was shaped by the Atlanta lineage around him, but his success came from how effortlessly he made luxurious, floating trap music feel like a natural language.
+            </p>
 
             <div class="quick-facts">
-              <div class="fact"><span>Born</span><strong>June 14, 1993</strong></div>
-              <div class="fact"><span>From</span><strong>College Park, Georgia</strong></div>
-              <div class="fact"><span>Known For</span><strong>Melodic trap, YSL era, chart success</strong></div>
-              <div class="fact"><span>Status</span><strong>Active</strong></div>
+              <div class="fact">
+                <span>Born</span>
+                <strong>1993</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Atlanta, Georgia</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Melodic trap, fashion image, smooth flow</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>Modern Trap Star</strong>
+              </div>
             </div>
 
             <div class="hero-buttons">
@@ -289,94 +737,183 @@
             </div>
 
             <div class="artist-stats">
-              <div class="stat-panel"><span class="label">Era</span><div class="value">2010s–2020s</div></div>
-              <div class="stat-panel"><span class="label">Home</span><div class="value">Atlanta</div></div>
-              <div class="stat-panel"><span class="label">Style</span><div class="value">Melodic trap, YSL era, chart success</div></div>
-              <div class="stat-panel"><span class="label">Legacy</span><div class="value">Melody</div></div>
+              <div class="stat-panel">
+                <span class="label">Origin</span>
+                <div class="value">Atlanta</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Era</span>
+                <div class="value">2010s–present</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Known For</span>
+                <div class="value">Silky melodic trap</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Refined luxury trap aesthetics</div>
+              </div>
             </div>
           </section>
         </div>
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
-              <h3>Early Life</h3><p>Gunna was born Sergio Giavanni Kitchens and raised in College Park, Georgia, in the wider Atlanta environment that would become central to his musical identity. He came up during an era when Atlanta was expanding from regional powerhouse into the most influential rap city in America. That environment shaped his instincts: fluid flows, bass-heavy production, and a focus on both survival and status.</p>
-<h3>Rise Through Atlanta’s Rap Machine</h3><p>His ascent accelerated through connections to Young Thug and the YSL orbit, where he quickly distinguished himself with an unusually smooth delivery. Rather than rapping with aggression alone, Gunna specialized in glide, pocket, and melody. Mixtapes and collaborations built momentum, and by the late 2010s he had become one of the most commercially potent artists in modern trap.</p>
-<h3>Mainstream Breakthrough</h3><p>Projects like Drip Season 3, Drip Harder, and Wunna pushed him from respected insider to mainstream star. His sound helped define a broader industry trend: polished trap records that felt luxurious, catchy, and endlessly replayable. He became a major feature artist as well, capable of fitting into radio-ready hits without losing his signature style.</p>
-<h3>Controversy and Reinvention</h3><p>His career entered a more complicated phase during the YSL legal saga, which triggered intense scrutiny and debate around loyalty, reputation, and public narrative. Yet Gunna remained commercially visible and artistically active, showing how modern rap careers can survive controversy while being reshaped by it. His story is one of talent, pressure, and adaptation in a hyper-public era.</p>
-              <div class="quote">Gunna represents a distinct lane in rap and popular music: a figure whose story joins talent, pressure, image, and cultural timing.</div>
+
+              <h3>Atlanta Roots and Modern Trap Lineage</h3>
+              <p>Born Sergio Giavanni Kitchens, Gunna came out of Atlanta, a city whose influence on modern rap has been immense. By the time he began rising, Atlanta had already produced several generations of trap innovators, so the challenge was not simply to join the tradition, but to distinguish himself inside it. Gunna did that by leaning into smoothness, atmosphere, and rhythm. He sounded less jagged than many of his peers, more fluid, more luxurious, and more deliberately melodic.</p>
+
+              <h3>Melody, Glide, and Controlled Cool</h3>
+              <p>One of the defining qualities of Gunna’s music is how effortless it feels. His flow often moves like it is gliding across the beat rather than attacking it. This style became central to his appeal because it made his records feel immersive and replayable. He did not rely on shouting, chaos, or lyrical density to create impact. Instead, he built mood through precision, repetition, and a highly controlled sense of cool.</p>
+
+              <h3>YSL, Association, and Visibility</h3>
+              <p>Gunna’s rise was also connected to a powerful Atlanta network, especially through his association with Young Thug and the YSL orbit. That connection gave him visibility, but it was not enough on its own to explain his success. What mattered is that he converted affiliation into a distinct identity. He absorbed parts of the Atlanta experimental lineage while becoming his own kind of star: cleaner, smoother, more fashion-conscious, and more obviously built for luxury-driven modern trap.</p>
+
+              <div class="quote">Gunna made trap feel polished without making it weak — turning repetition, glide, luxury, and melody into a full artistic identity.</div>
+
+              <h3>Fashion, Image, and Lifestyle Music</h3>
+              <p>Another major part of Gunna’s appeal lies in image. His music often feels deeply tied to fashion, texture, and lifestyle. The clothes, the pacing, the atmosphere, and the vocal choices all align into a coherent aesthetic. This matters because in modern rap, identity is often communicated as much through feel and presentation as through lyrical content. Gunna understood that and made it part of the music itself.</p>
+
+              <h3>Legal Controversy and Public Reframing</h3>
+              <p>Gunna’s story also became entangled with legal controversy and intense public scrutiny, especially around the YSL case and the cultural reaction that followed. That moment shifted the public conversation around him, moving part of his story away from sound and success and toward loyalty, perception, and debate. In rap, public framing matters deeply, and this period changed how many people interpreted his place in the culture, even as the music continued.</p>
+
+              <h3>Legacy in Progress</h3>
+              <p>Gunna’s legacy is still unfolding, but he has already become a major figure in the story of modern melodic trap. He helped define a smoother, more polished lane inside Atlanta rap and influenced how luxury, rhythm, and fashion could merge into a singular sound. His story is one of style, atmosphere, affiliation, controversy, and the ongoing power of refined trap music in the streaming era.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
-                <div class="timeline-item"><strong>1993</strong><p>Born in Georgia.</p></div>
-<div class="timeline-item"><strong>Mid-2010s</strong><p>Built momentum through mixtapes and Atlanta collaborations.</p></div>
-<div class="timeline-item"><strong>2018</strong><p>Drip Harder expanded his national reach.</p></div>
-<div class="timeline-item"><strong>2020</strong><p>Wunna confirmed his superstar status.</p></div>
-<div class="timeline-item"><strong>2020s</strong><p>Continued chart success amid public controversy and reinvention.</p></div>
+                <div class="timeline-item">
+                  <strong>Mid / Late 2010s — Atlanta Rise</strong>
+                  <p>Gunna emerged from the Atlanta trap ecosystem with a smoother, melodic approach that began setting him apart.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Breakthrough Era — Mainstream Momentum</strong>
+                  <p>Built a strong audience through flowing trap records, major collaborations, and a highly polished image.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2020s — Established Star</strong>
+                  <p>Became one of the defining figures in modern luxury-oriented melodic trap.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legal Controversy Phase</strong>
+                  <p>His public image became heavily debated as legal issues and cultural scrutiny shifted the narrative around him.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy in Motion</strong>
+                  <p>His place continues to evolve within the story of Atlanta trap, YSL, and modern rap aesthetics.</p>
+                </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row"><span class="info-label">Full Name / Credit</span><div class="info-value">Gunna</div></div>
-                <div class="info-row"><span class="info-label">Birthplace / Origin</span><div class="info-value">College Park, Georgia</div></div>
-                <div class="info-row"><span class="info-label">Genres</span><div class="info-value">Hip-Hop / Rap / R&amp;B</div></div>
-                <div class="info-row"><span class="info-label">Known For</span><div class="info-value">Melodic trap, YSL era, chart success</div></div>
-                <div class="info-row"><span class="info-label">Current Status</span><div class="info-value">Active</div></div>
+                <div class="info-row">
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">Gunna</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Sergio Giavanni Kitchens</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Atlanta, Georgia</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / Trap / Melodic Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">A major modern trap artist with a highly recognizable melodic style</div>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
-              <div class="tags"><span class="tag">Melody</span><span class="tag">Trap</span><span class="tag">Luxury</span><span class="tag">Atlanta</span><span class="tag">Resilience</span><span class="tag">Reinvention</span></div>
+              <div class="tags">
+                <span class="tag">Atlanta</span>
+                <span class="tag">Melody</span>
+                <span class="tag">Trap</span>
+                <span class="tag">Fashion</span>
+                <span class="tag">Luxury</span>
+                <span class="tag">YSL</span>
+              </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
-                <div class="album"><strong>Origins</strong><span>How Gunna emerged and built an identity.</span></div>
-                <div class="album"><strong>Breakthrough</strong><span>The phase that turned regional momentum into wider recognition.</span></div>
-                <div class="album"><strong>Legacy</strong><span>Why Gunna remains important in the wider story of rap and modern music.</span></div>
+                <div class="album">
+                  <strong>Melodic Trap Emergence</strong>
+                  <span>The early stage where Gunna developed a polished, flowing sound inside the Atlanta lineage.</span>
+                </div>
+                <div class="album">
+                  <strong>Luxury Trap Peak</strong>
+                  <span>The period where his image, fashion, and highly replayable records made him a central modern rap figure.</span>
+                </div>
+                <div class="album">
+                  <strong>Controversy and Continuation</strong>
+                  <span>An ongoing chapter defined by both major visibility and a shifting public narrative around his place in the culture.</span>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel music-panel">
+            <section class="glass panel music-panel story-section" data-story-title="Music">
               <h2>Music Integration</h2>
-              <p>Move from reading to listening with direct artist music links and a quick essential-listening guide for Gunna.</p>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Gunna.
+              </p>
+
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Gunna on Spotify and keep the story moving with the music.</p>
+                  <p>Open a curated search for Gunna on Spotify and revisit one of the smoothest and most atmospheric catalogs in modern trap.</p>
                   <a href="https://open.spotify.com/search/Gunna" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, performances, and major records related to Gunna on YouTube.</p>
+                  <p>Watch official videos, performances, and major Gunna releases on YouTube.</p>
                   <a href="https://www.youtube.com/results?search_query=Gunna+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
+
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">Greatest Hits</span>
-                  <span class="track-tag">Breakthrough Era</span>
-                  <span class="track-tag">Fan Favorites</span>
-                  <span class="track-tag">Deep Cuts</span>
+                  <span class="track-tag">Drip Too Hard</span>
+                  <span class="track-tag">fukumean</span>
+                  <span class="track-tag">Skybox</span>
+                  <span class="track-tag">Pushin P</span>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
-              <div class="related-list"><a href="young-thug.html" class="related-card"><h4>Young Thug</h4><p>A defining collaborator and one of the key architects behind Gunna’s rise.</p></a>
-<a href="lil-baby.html" class="related-card"><h4>Lil Baby</h4><p>Another Atlanta star whose era overlaps with Gunna’s dominance.</p></a>
-<a href="future.html" class="related-card"><h4>Future</h4><p>A prior Atlanta titan whose influence shaped the melodic trap landscape.</p></a></div>
+              <div class="related-list">
+                <a href="young-thug.html" class="related-card">
+                  <h4>Young Thug</h4>
+                  <p>The Atlanta innovator whose creative orbit and YSL network were crucial to Gunna’s rise.</p>
+                </a>
+                <a href="future.html" class="related-card">
+                  <h4>Future</h4>
+                  <p>A fellow Atlanta giant whose melodic trap legacy helped make Gunna’s smoother lane possible.</p>
+                </a>
+                <a href="lil-baby.html" class="related-card">
+                  <h4>Lil Baby</h4>
+                  <p>A contemporary Atlanta star whose rise alongside Gunna helped define a major era in modern trap.</p>
+                </a>
+              </div>
             </section>
           </aside>
         </div>
@@ -399,38 +936,141 @@
     </div>
   </footer>
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-  let lastScrollY = window.pageYOffset;
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
+
+    if (!rail || !toggle || !progressBar || !sections.length) return;
+
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
+
+    rail.innerHTML = "";
+
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
+
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
-    lastScrollY = currentScrollY;
-  }
-  offset();
-  handleScroll();
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
+
     offset();
-    if(window.innerWidth > 768) header.classList.remove("hidden");
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -1,16 +1,1076 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G Unit | Rap Stories</title>
-<style>
-body{background:#0a0a0f;color:white;font-family:Arial;padding:40px}
-h1{color:#d4af37}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G-Unit | Rap Stories</title>
+  <meta name="description" content="A Rap Stories premium profile on G-Unit, covering their New York roots, 50 Cent-led rise, mixtape domination, street-certified image, and lasting impact on 2000s rap culture." />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --radius: 20px;
+      --max: 1260px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 8, 0.76);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
+
+    .brand-text {
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
+    .hero { padding: 42px 0 28px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
+    .artist-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
+        url("images/g-unit.jpg") center/cover no-repeat;
+    }
+
+    .artist-image-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    .artist-tag {
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-info h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .hero-info h1 span {
+      background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
+    .album, .related-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
+
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
+
+    .music-panel {
+      margin-top: 24px;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .music-card p {
+      margin-bottom: 14px;
+    }
+
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
-<h1>G Unit</h1>
-<p>Premium Rap Stories artist page.</p>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
+  <header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
+        <a href="artist.html" class="active">Artist</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="map.html">Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero story-section" data-story-title="Intro">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> /
+          <a href="artist.html">Artists</a> /
+          <span>G-Unit</span>
+        </div>
+
+        <div class="hero-layout">
+          <aside class="glass artist-image">
+            <div class="artist-image-content">
+              <span class="artist-tag">Group Profile</span>
+              <h2>G-Unit</h2>
+              <p>New York rap collective led by 50 Cent whose mixtape dominance, street image, and commercial explosion made them one of the defining crews of the 2000s.</p>
+            </div>
+          </aside>
+
+          <section class="glass hero-info">
+            <span class="eyebrow">Rap Stories Profile</span>
+            <h1>The Story of <span>G-Unit</span></h1>
+            <p class="summary">
+              G-Unit was more than a rap group. It was a movement built on momentum, hunger, loyalty, and branding. Led by 50 Cent and powered by the chemistry of Lloyd Banks, Tony Yayo, and later Young Buck, the crew turned mixtape heat into a commercial empire and helped define the image of early-2000s street rap in America.
+            </p>
+
+            <div class="quick-facts">
+              <div class="fact">
+                <span>Origin</span>
+                <strong>New York</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Mixtapes, street anthems, 50 Cent era</strong>
+              </div>
+              <div class="fact">
+                <span>Era</span>
+                <strong>2000s</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>Legendary Rap Crew</strong>
+              </div>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
+            </div>
+
+            <div class="artist-stats">
+              <div class="stat-panel">
+                <span class="label">Base</span>
+                <div class="value">New York</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Core Identity</span>
+                <div class="value">Street movement</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Known For</span>
+                <div class="value">Mixtape domination</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Defined 2000s rap-crew culture</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="content-layout">
+          <div class="content-stack">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
+              <h2>Biography</h2>
+
+              <h3>The Birth of a Movement</h3>
+              <p>G-Unit emerged from the hard edge of New York street rap at a time when mixtapes were functioning like warfare, marketing, and mythology all at once. Built around the gravitational force of 50 Cent, the group quickly became one of the most powerful crew identities in rap. Lloyd Banks brought cold technical punchlines, Tony Yayo embodied raw loyalty and aggression, and Young Buck later added Southern firepower that expanded the crew’s sound and reach.</p>
+
+              <h3>Mixtape Domination and Street Credibility</h3>
+              <p>Before full commercial takeover, G-Unit made itself unavoidable through mixtapes. This was crucial to their story. They did not simply arrive through label machinery. They built fear, anticipation, and loyalty through a flood of street records, freestyles, and remixed industry beats. That era created the sense that G-Unit was everywhere, and more importantly, that they were hungry in a way many other artists were not.</p>
+
+              <h3>50 Cent at the Center</h3>
+              <p>Although G-Unit functioned as a group, 50 Cent was its engine, strategist, and public face. His charisma, survival story, and relentless competitive instinct gave the crew an identity that was both musical and psychological. Around him, G-Unit became a symbol of dominance, revenge, loyalty, and expansion. It was not just about songs. It was about conquest.</p>
+
+              <div class="quote">G-Unit turned street momentum into an empire, making the crew itself feel like a weapon — organized, branded, and impossible to ignore.</div>
+
+              <h3>Commercial Explosion</h3>
+              <p>Once G-Unit crossed fully into the mainstream, they became one of the defining rap brands of the era. Albums, solo careers, group records, clothing lines, and media visibility all reinforced the sense that G-Unit was bigger than music. Their rise showed how a rap crew could function like a larger cultural machine, where music, fashion, persona, and affiliation all fed the same image.</p>
+
+              <h3>Tension, Loyalty, and Fragmentation</h3>
+              <p>Like many powerful rap collectives, G-Unit’s story also includes internal strain, ego, business conflict, and eventual fragmentation. These tensions are part of what makes rap groups so compelling: the same chemistry that creates momentum can also create collapse. Even as the lineup changed and relationships became more complicated, the mythology of G-Unit remained strong because the original run had been so culturally overwhelming.</p>
+
+              <h3>Legacy</h3>
+              <p>G-Unit’s legacy lies in how completely they embodied the 2000s rap-crew ideal: street-certified, commercially dominant, visually unified, and built around relentless momentum. They helped define what a rap movement could look like when mixtape power met industry scale, and their influence still lives in the way artists think about affiliation, branding, and collective identity.</p>
+            </section>
+
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
+              <h2>Career Timeline</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <strong>Early 2000s — Formation and Mixtape Rise</strong>
+                  <p>G-Unit built early power through street records, freestyles, and an increasingly feared mixtape presence.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2003–2005 — Commercial Peak</strong>
+                  <p>The crew exploded into mainstream rap culture as one of the most recognizable and powerful movements in music.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Mid / Late 2000s — Solo Expansion and Tension</strong>
+                  <p>Members pursued individual careers while internal pressure and changing industry dynamics began to reshape the group.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Later Years — Legacy and Reunion Energy</strong>
+                  <p>The name retained weight even as the original era passed, with the group’s myth staying strong in rap memory.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Phase — Crew Canon</strong>
+                  <p>G-Unit remains one of the defining rap collectives of the 2000s and a blueprint for movement-based branding.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="side-stack">
+            <section class="glass panel story-section" data-story-title="Details">
+              <h2>Profile Details</h2>
+              <div class="info-list">
+                <div class="info-row">
+                  <span class="info-label">Group Name</span>
+                  <div class="info-value">G-Unit</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Core Members</span>
+                  <div class="info-value">50 Cent, Lloyd Banks, Tony Yayo, Young Buck</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">New York, United States</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Gangsta Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">One of the most iconic rap collectives of the 2000s</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Themes">
+              <h2>Key Themes</h2>
+              <div class="tags">
+                <span class="tag">New York</span>
+                <span class="tag">50 Cent</span>
+                <span class="tag">Mixtapes</span>
+                <span class="tag">Crew Loyalty</span>
+                <span class="tag">Street Rap</span>
+                <span class="tag">Brand Empire</span>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Eras">
+              <h2>Highlighted Eras</h2>
+              <div class="discography">
+                <div class="album">
+                  <strong>Mixtape War Era</strong>
+                  <span>The stage where G-Unit built fear and excitement through constant street-level output.</span>
+                </div>
+                <div class="album">
+                  <strong>Mainstream Takeover</strong>
+                  <span>The period where the group became one of the most dominant and visible forces in rap culture.</span>
+                </div>
+                <div class="album">
+                  <strong>Legacy Crew Status</strong>
+                  <span>An ongoing chapter where the name still carries major symbolic weight in hip-hop history.</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct group music links and a quick essential-listening guide for G-Unit.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for G-Unit on Spotify and revisit one of the most powerful rap-group runs of the 2000s.</p>
+                  <a href="https://open.spotify.com/search/G-Unit" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and classic G-Unit-era records on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=G-Unit+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
+              </div>
+
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Stunt 101</span>
+                  <span class="track-tag">Poppin' Them Thangs</span>
+                  <span class="track-tag">Wanna Get to Know You</span>
+                  <span class="track-tag">G'd Up</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Related">
+              <h2>Related Stories</h2>
+              <div class="related-list">
+                <a href="50-cent.html" class="related-card">
+                  <h4>50 Cent</h4>
+                  <p>The leader and central force whose rise made G-Unit one of rap’s defining movements.</p>
+                </a>
+                <a href="lloyd-banks.html" class="related-card">
+                  <h4>Lloyd Banks</h4>
+                  <p>A core lyrical pillar of the crew, known for punchlines and cold technical precision.</p>
+                </a>
+                <a href="the-game.html" class="related-card">
+                  <h4>The Game</h4>
+                  <p>A key figure in the wider G-Unit orbit whose conflicts and connections shaped the group’s history.</p>
+                </a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
+
+    if (!rail || !toggle || !progressBar || !sections.length) return;
+
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
+
+    rail.innerHTML = "";
+
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
+
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
