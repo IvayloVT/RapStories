@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>21 Savage | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on 21 Savage, covering his London birth, Atlanta upbringing, street trauma, rise in rap, mainstream success, legal issues, and evolving legacy."
-  />
+  <meta name="description" content="A Rap Stories premium profile on 21 Savage, covering his roots, trauma, rise in Atlanta rap, evolution as an artist, and lasting cultural impact." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/21-savage.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -466,6 +462,7 @@
       .hero-info h1 { letter-spacing: -1px; }
     }
 
+    /* Story Mode */
     .story-progress {
       position: fixed;
       top: 0;
@@ -475,14 +472,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +486,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +495,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,36 +514,51 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
     }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    /* Stats Panels */
     .artist-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,13 +566,23 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
     }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    /* Music Integration */
     .music-panel {
       margin-top: 24px;
     }
@@ -589,7 +606,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +663,18 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +682,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +692,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +723,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>21 Savage</h2>
-              <p>Cold delivery, traumatic history, and sharp growth turned 21 Savage into one of the defining voices of modern Atlanta rap.</p>
+              <p>Cold-toned Atlanta star whose trauma-shaped realism, sharp writing, and evolving perspective made him one of rap’s defining modern voices.</p>
             </div>
           </aside>
 
@@ -725,7 +731,7 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>21 Savage</span></h1>
             <p class="summary">
-              Born Shéyaa Bin Abraham-Joseph, 21 Savage emerged from Atlanta with a detached, menacing delivery that reflected survival, grief, and street realism. Over time, he evolved from a local rap figure associated with violence and loss into a major mainstream artist known for chart success, memorable collaborations, and a more thoughtful public image.
+              Born Shéyaa Bin Abraham-Joseph, 21 Savage emerged through Atlanta with a stripped-back, haunting style that turned pain, danger, and emotional distance into a powerful rap identity. Over time, he evolved from a feared street narrator into a more layered artist whose music also reflected survival, intelligence, and personal growth.
             </p>
 
             <div class="quick-facts">
@@ -734,22 +740,22 @@
                 <strong>October 22, 1992</strong>
               </div>
               <div class="fact">
-                <span>Raised In</span>
+                <span>From</span>
                 <strong>Atlanta, Georgia</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Cold realism & trap storytelling</strong>
+                <strong>Deadpan delivery, street realism, sharp lyricism</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>2010s–Present</strong>
+                <span>Status</span>
+                <strong>Active</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
@@ -759,15 +765,15 @@
               </div>
               <div class="stat-panel">
                 <span class="label">Home</span>
-                <div class="value">Atlanta</div>
+                <div class="value">Atlanta, Georgia</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Dark, minimal, precise</div>
+                <span class="label">Era</span>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Trap realism</div>
+                <div class="value">Cold realism</div>
               </div>
             </div>
           </section>
@@ -778,57 +784,25 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Survival</h3>
-              <p>
-                21 Savage was born Shéyaa Bin Abraham-Joseph in London, but his life and identity as an artist were formed in Atlanta, Georgia. He grew up in an environment shaped by hardship, instability, and violence, conditions that would later define both the content and emotional tone of his music. Unlike artists whose early image was built around flashy ambition, 21 Savage entered rap sounding emotionally stripped down, as if the drama had already happened and all that remained was the cold truth afterward.
-              </p>
-              <p>
-                His youth was marked by serious exposure to street violence and personal loss. Those experiences were not just marketing material for his later music; they became the core of his voice. He developed a style built on detachment, menace, and blunt observation, delivering traumatic material with an almost expressionless calm that made it hit harder.
-              </p>
+              <h3>Trauma and Survival</h3>
+              <p>21 Savage’s story begins with violence, instability, and survival. His public persona was shaped by real loss and danger, and that reality gave his music a sense of authenticity that could not be manufactured. He did not sound like someone imagining the streets from a distance. He sounded like someone reporting from inside them after enduring permanent damage.</p>
 
-              <div class="quote">
-                21 Savage’s music often sounded less like performance and more like testimony delivered without decoration.
-              </div>
+              <h3>Atlanta Rise</h3>
+              <p>As he emerged in Atlanta, 21 Savage stood apart because of how little he seemed to exaggerate. His delivery was controlled, cold, and often emotionally flat in a way that made the content hit harder. While many artists chased energy through volume or speed, he used stillness, tension, and detail to create impact.</p>
 
-              <h3>Rise in Atlanta Rap</h3>
-              <p>
-                21 Savage began gaining attention in Atlanta during a period when the city remained one of the most powerful engines in rap music. But even within that crowded and highly competitive scene, his tone stood out. He did not rely on speed, vocal acrobatics, or extravagant personality. Instead, he built momentum through minimalism. His verses felt unhurried, grim, and specific, often focusing on violence, paranoia, loyalty, and loss.
-              </p>
-              <p>
-                That style gave him a distinct identity in trap music. His songs felt dark and direct, and his image matched the music: controlled, serious, unflashy, and threatening. This helped him build a strong local reputation before expanding into a larger national audience.
-              </p>
+              <h3>A New Type of Street Voice</h3>
+              <p>What made 21 Savage important was not just that he described violence, but that he often framed it with numbness, reflection, and calculation. His music presented trauma not as dramatic spectacle but as a condition people learn to live inside. That perspective gave his work a psychological weight that helped define his generation’s darker rap storytelling.</p>
 
-              <h3>Breakthrough and Mainstream Success</h3>
-              <p>
-                As his profile grew, 21 Savage moved from underground momentum into mainstream recognition. His collaborations, solo releases, and steadily growing commercial visibility transformed him from a local Atlanta name into a national rap star. What made the rise compelling was that he did not abandon the qualities that first made him distinctive. Even when his platform became much larger, his music often retained the same deadpan clarity and dark texture that defined his early records.
-              </p>
-              <p>
-                He proved especially effective in collaborations, where his icy restraint could balance more melodic or energetic artists. This made him a valuable feature artist and helped expand his reach beyond traditional street rap audiences. Over time, his catalog grew to include both brutal street records and more reflective material, showing that his appeal was broader than shock value or atmosphere alone.
-              </p>
+              <div class="quote">21 Savage made restraint feel dangerous—his calm delivery often carried more threat, pain, and truth than louder performances ever could.</div>
 
-              <h3>Growth, Reflection, and Rebranding</h3>
-              <p>
-                One of the most interesting parts of 21 Savage’s career has been his evolution. While his early image was tightly linked to violence and street survival, later work showed increasing emotional depth, maturity, and introspection. He began discussing money, trauma, discipline, betrayal, and self-preservation in ways that suggested a more layered public identity.
-              </p>
-              <p>
-                This shift did not make him seem softer. Instead, it made him appear more complete. He was still capable of sounding threatening and emotionally distant, but he also became more articulate about the consequences of the life he came from. That evolution helped move him from being seen as a one-note dark trap artist to being recognized as a durable and intelligent rapper with range.
-              </p>
+              <h3>Growth and Artistic Expansion</h3>
+              <p>Over time, 21 evolved into a more complex artist. He maintained his core identity while showing stronger writing, more humor, more self-awareness, and a broader emotional range. That growth helped him move from being seen primarily as a street figure to being recognized as one of rap’s most effective contemporary songwriters.</p>
 
-              <h3>Immigration Shock and Public Attention</h3>
-              <p>
-                A major turning point in his public story came when his immigration status became a national headline. For many people, the revelation that 21 Savage had been born in the United Kingdom created a wave of surprise, jokes, and media fascination. But beneath the internet reaction was a serious issue involving identity, paperwork, and legal vulnerability.
-              </p>
-              <p>
-                The episode complicated his public image in unexpected ways. It introduced a new narrative around nationality, belonging, and how celebrity can collide with state power. Instead of ending his momentum, however, the controversy became part of a broader story about resilience and reinvention.
-              </p>
+              <h3>Public Complexity</h3>
+              <p>His public story also expanded beyond music, especially as larger conversations emerged around identity, immigration status, fame, and responsibility. Those moments made clear that 21 Savage was more layered than his cold exterior suggested. He increasingly came to represent not just survival, but maturity under scrutiny.</p>
 
-              <h3>Legacy and Position in Modern Rap</h3>
-              <p>
-                21 Savage now holds a major place in modern rap. He represents a version of trap music that is less about excess than control: less about spectacle than tone. His influence can be heard in the way many later artists approach sparse delivery, grim detail, and emotionally flattened storytelling.
-              </p>
-              <p>
-                His legacy is still unfolding, but he has already proven that a rapper can begin as a symbol of street trauma and grow into a mainstream figure without losing the darkness that made the music believable in the first place. That balance is what makes his story compelling. He did not simply escape his origins; he turned them into a style, then into a career, and eventually into a broader identity that continues to evolve.
-              </p>
+              <h3>Legacy</h3>
+              <p>21 Savage’s legacy lies in precision. He helped define a lane where street rap became psychological, minimalist, and emotionally scarred without losing mainstream power. His influence can be heard in the many artists who now value understatement, directness, and lived realism over performance-heavy excess.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
@@ -836,23 +810,23 @@
               <div class="timeline">
                 <div class="timeline-item">
                   <strong>1992 — Birth</strong>
-                  <p>Born Shéyaa Bin Abraham-Joseph in London, later raised in Atlanta, Georgia.</p>
+                  <p>Born Shéyaa Bin Abraham-Joseph.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 2010s — Local Emergence</strong>
-                  <p>Began building a name in Atlanta through dark, sparse, street-centered music.</p>
+                  <strong>2000s / Early 2010s — Survival Years</strong>
+                  <p>Lived through violence and hardship that would later deeply shape his music and identity.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>Mid-2010s — Breakthrough</strong>
-                  <p>Rose from regional momentum into national recognition with a distinct trap voice and image.</p>
+                  <p>Rose in Atlanta rap with a cold, stripped-down style that immediately stood out.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2010s — Mainstream Expansion</strong>
-                  <p>Became a major commercial rap star through solo success and high-profile collaborations.</p>
+                  <strong>Late 2010s — Mainstream Growth</strong>
+                  <p>Became one of rap’s biggest stars while expanding his writing and artistic reach.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020s — Matured Public Figure</strong>
-                  <p>Continued evolving musically while expanding his reputation as one of modern rap’s most recognizable voices.</p>
+                  <strong>2020s — Established Force</strong>
+                  <p>Continued as a major voice in modern rap with growing respect for both craft and longevity.</p>
                 </div>
               </div>
             </section>
@@ -872,15 +846,15 @@
                 </div>
                 <div class="info-row">
                   <span class="info-label">Birthplace</span>
-                  <div class="info-value">London, England</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Raised In</span>
-                  <div class="info-value">Atlanta, Georgia</div>
+                  <div class="info-value">Associated publicly with Atlanta, Georgia</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Trap</div>
+                  <div class="info-value">Hip-Hop / Trap / Southern Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Active; major rap artist and defining modern voice</div>
                 </div>
               </div>
             </section>
@@ -888,11 +862,11 @@
             <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Trap</span>
-                <span class="tag">Street Trauma</span>
+                <span class="tag">Trauma</span>
                 <span class="tag">Atlanta</span>
-                <span class="tag">Minimalism</span>
                 <span class="tag">Survival</span>
+                <span class="tag">Minimalism</span>
+                <span class="tag">Restraint</span>
                 <span class="tag">Growth</span>
               </div>
             </section>
@@ -901,16 +875,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Dark Emergence</strong>
-                  <span>The early period where loss, violence, and grim realism defined his identity.</span>
+                  <strong>Street Emergence</strong>
+                  <span>The early phase where raw survival and cold realism defined his image.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream Breakthrough</strong>
-                  <span>The era that transformed him from an Atlanta standout into a national rap force.</span>
+                  <strong>Mainstream Precision</strong>
+                  <span>The period where 21 Savage became one of the most effective major artists in rap.</span>
                 </div>
                 <div class="album">
-                  <strong>Matured Voice</strong>
-                  <span>The later phase where reflection, restraint, and wider cultural visibility deepened his image.</span>
+                  <strong>Mature Architect</strong>
+                  <span>A later era marked by sharper writing, broader reflection, and lasting influence.</span>
                 </div>
               </div>
             </section>
@@ -924,23 +898,24 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for 21 Savage on Spotify and follow the sound behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/21%20Savage" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for 21 Savage on Spotify and explore the records that made him a defining voice of modern Atlanta rap.</p>
+                  <a href="https://open.spotify.com/search/21%20Savage" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, performances, and major records connected to 21 Savage.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=21+Savage+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, live performances, and major 21 Savage releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=21+Savage+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
+                  <span class="track-tag">No Heart</span>
                   <span class="track-tag">Bank Account</span>
                   <span class="track-tag">a lot</span>
                   <span class="track-tag">Runnin</span>
-                  <span class="track-tag">No Heart</span>
                 </div>
               </div>
             </section>
@@ -948,17 +923,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="young-nudy.html">
-                  <h4>Young Nudy</h4>
-                  <p>Another Atlanta figure whose music reflects the city’s darker and more unfiltered street energy.</p>
+                <a href="metro-boomin.html" class="related-card">
+                  <h4>Metro Boomin</h4>
+                  <p>A key collaborator whose dark production helped shape the sound world around 21 Savage.</p>
                 </a>
-                <a class="related-card" href="future.html">
+                <a href="future.html" class="related-card">
                   <h4>Future</h4>
-                  <p>A defining Atlanta star whose broader influence helped shape the trap landscape 21 Savage entered.</p>
+                  <p>Another Atlanta giant whose music also turned pain, excess, and emotional distance into modern rap language.</p>
                 </a>
-                <a class="related-card" href="gucci-mane.html">
-                  <h4>Gucci Mane</h4>
-                  <p>An earlier architect of Atlanta trap whose legacy looms over later street-rap generations.</p>
+                <a href="lil-baby.html" class="related-card">
+                  <h4>Lil Baby</h4>
+                  <p>A later Atlanta star whose rise reflects another path from street credibility to major rap dominance.</p>
                 </a>
               </div>
             </section>
@@ -983,146 +958,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

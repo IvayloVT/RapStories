@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>August Alsina | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on August Alsina, covering his New Orleans roots, trauma, breakthrough R&amp;B success, and emotional storytelling." />
+  <meta name="description" content="A Rap Stories premium profile on August Alsina, covering his New Orleans roots, emotional R&B storytelling, family struggles, breakout success, and resilient legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,236 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    /* Story Mode */
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Stats Panels */
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    /* Music Integration */
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    /* Mobile header: fixed and hide/show on scroll */
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +699,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +724,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>August Alsina</h2>
-              <p>New Orleans singer whose emotional realism, grief, and struggle shaped a raw and intimate modern R&B career.</p>
+              <p>Emotionally raw R&amp;B storyteller whose voice, pain, and resilience made him one of the most vulnerable artists of his generation.</p>
             </div>
           </aside>
 
@@ -735,7 +732,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>August Alsina</span></h1>
             <p class="summary">
-              Born August Anthony Alsina Jr., August Alsina built his career through emotionally exposed songwriting that drew from grief, family instability, and survival. His voice carried pain, vulnerability, and intensity, making him one of the more personal artists of his generation’s R&B-rap crossover space.
+              Born August Anthony Alsina Jr., August Alsina emerged from New Orleans carrying grief, family pressure, and a gift for turning pain into melody. His music connected because it felt unfiltered—combining R&amp;B, Southern grit, confession, and survival in a way that made his personal struggles central to his artistic identity.
             </p>
 
             <div class="quick-facts">
@@ -749,7 +746,7 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Pain-driven R&B storytelling</strong>
+                <strong>Emotional R&amp;B, confessional songwriting</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
@@ -761,6 +758,7 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
                 <span class="label">Born</span>
@@ -776,7 +774,7 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Emotional honesty</div>
+                <div class="value">Pain-driven R&amp;B</div>
               </div>
             </div>
           </section>
@@ -784,56 +782,59 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Loss</h3>
-              <p>August Alsina grew up in New Orleans amid instability, addiction, and repeated personal loss. His story was shaped by grief at a young age, and those experiences became the emotional core of his music. Rather than hide trauma, he often placed it directly at the center of his art.</p>
+              <h3>New Orleans Roots</h3>
+              <p>August Alsina’s early life was shaped by instability, trauma, and the emotional weight of family loss. Growing up in New Orleans exposed him to pressures that would later define the tone of his music. His story was never built around fantasy or distance; from the beginning, it was tied to grief, struggle, and the search for control in a chaotic world.</p>
 
-              <h3>Breakthrough in R&B</h3>
-              <p>Alsina emerged during an era when R&B was becoming darker, more confessional, and more influenced by hip-hop textures. His breakthrough came through songs that felt diaristic and emotionally urgent, giving listeners the sense that he was documenting struggle in real time.</p>
+              <h3>Music as Survival</h3>
+              <p>What separated August from many of his peers was the intensity of his honesty. He sang as if the songs were acts of release rather than simply performances. His music became a place where pain, addiction, loyalty, heartbreak, and survival could exist without being cleaned up for comfort. That rawness gave him a distinct lane in modern R&amp;B.</p>
 
-              <div class="quote">August Alsina became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>Breakthrough and Visibility</h3>
+              <p>As he rose in the 2010s, August Alsina stood out because he made vulnerability feel forceful rather than soft. His records carried Southern texture, emotional exhaustion, and spiritual tension. He appealed to listeners who wanted more than polished love songs—they wanted scars, complexity, and a sense that the artist was telling the truth even when it was uncomfortable.</p>
 
-              <h3>Public Vulnerability</h3>
-              <p>What separated August Alsina from many peers was how openly he discussed pain, relationships, and mental pressure. His image was not built on invulnerability, but on directness. That honesty helped him connect strongly with listeners who heard real-life hardship in his music.</p>
+              <div class="quote">August Alsina’s power came from how little distance he kept between the wound and the song.</div>
 
-              <h3>Health and Personal Challenges</h3>
-              <p>His career also unfolded alongside health issues and periods of public difficulty, reinforcing the sense that his life and music were closely intertwined. The instability in his story became part of his artistic identity rather than a separate background detail.</p>
+              <h3>Burden, Health, and Public Struggle</h3>
+              <p>His career also unfolded under heavy public scrutiny, personal loss, and health challenges. Those realities did not sit outside the music; they became part of it. Over time, his image came to represent not just heartbreak, but endurance—someone continuing to create while carrying emotional and physical weight in public view.</p>
+
+              <h3>Beyond Romance</h3>
+              <p>Although often categorized through relationship-driven narratives, August’s music has always been broader than romance. It reaches into family responsibility, trust, betrayal, inner conflict, masculinity, and survival. His strongest work feels less like performance and more like testimony.</p>
 
               <h3>Legacy</h3>
-              <p>August Alsina’s importance lies in emotional transparency. He brought a raw, exposed quality to contemporary R&B, turning survival, grief, and vulnerability into the foundation of his voice.</p>
+              <p>August Alsina’s legacy lives in emotional transparency. He helped define a lane of modern R&amp;B where pain was not stylized into abstraction but delivered directly, with Southern texture and lived intensity. His story matters because it shows how vulnerability, when fully committed, can become its own form of strength.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
                   <strong>1992 — Birth</strong>
-                  <p>Born August Anthony Alsina Jr. in New Orleans.</p>
+                  <p>Born August Anthony Alsina Jr. in New Orleans, Louisiana.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Youth — Personal Hardship</strong>
-                  <p>Experienced instability and loss that later shaped his songwriting.</p>
+                  <strong>2000s — Hardship and Development</strong>
+                  <p>Moved through family struggle and personal loss while turning more seriously toward music.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>Early 2010s — Breakthrough</strong>
-                  <p>Built attention through emotionally direct R&B records.</p>
+                  <p>Gained attention as a deeply emotional R&amp;B voice with a confessional edge.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2010s — Mainstream Visibility</strong>
-                  <p>Expanded into a widely recognized voice in modern R&B.</p>
+                  <strong>Mid-2010s — Mainstream Recognition</strong>
+                  <p>Became known for raw, pain-centered records that connected strongly with younger listeners.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Later Career — Continued Expression</strong>
-                  <p>Remained identified with honesty, struggle, and resilience.</p>
+                  <strong>Later Years — Resilience</strong>
+                  <p>Continued navigating public scrutiny, health challenges, and personal evolution while maintaining artistic presence.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
@@ -850,90 +851,90 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">R&B / Hip-Hop Soul</div>
+                  <div class="info-value">R&amp;B / Hip-Hop Soul / Southern R&amp;B</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; emotionally driven artist</div>
+                  <div class="info-value">Active; emotionally driven R&amp;B artist</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Grief</span>
-                <span class="tag">Vulnerability</span>
                 <span class="tag">Pain</span>
+                <span class="tag">Vulnerability</span>
+                <span class="tag">New Orleans</span>
+                <span class="tag">Loss</span>
+                <span class="tag">Healing</span>
                 <span class="tag">Resilience</span>
-                <span class="tag">Family</span>
-                <span class="tag">Honesty</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Early Survival</strong>
-                  <span>The formative years where trauma and instability shaped his voice.</span>
+                  <strong>Survival Voice</strong>
+                  <span>The early stage where hardship and honesty shaped his emotional identity.</span>
                 </div>
                 <div class="album">
-                  <strong>Breakthrough Exposure</strong>
-                  <span>The era that introduced him as a major emotional voice in R&B.</span>
+                  <strong>Breakthrough Confession</strong>
+                  <span>The period where August Alsina became a defining raw voice in modern R&amp;B.</span>
                 </div>
                 <div class="album">
-                  <strong>Personal Reckoning</strong>
-                  <span>A later phase where health, scrutiny, and reflection remained central.</span>
+                  <strong>Resilient Reflection</strong>
+                  <span>A later phase shaped by endurance, healing, and continued openness.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for August Alsina on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/August%20Alsina" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for August Alsina.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for August Alsina on Spotify and explore the records that turned private pain into public connection.</p>
+                  <a href="https://open.spotify.com/search/August%20Alsina" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live performances, and major August Alsina releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=August+Alsina+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to August Alsina on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=August%20Alsina+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">I Luv This Shit</span>
+                  <span class="track-tag">No Love</span>
+                  <span class="track-tag">Benediction</span>
+                  <span class="track-tag">Song Cry</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">I Luv This Shit</span>
-                <span class="track-tag">No Love</span>
-                <span class="track-tag">Song Cry</span>
-                <span class="track-tag">Kissin' On My Tattoos</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="trey-songz.html" class="related-card">
-                  <h4>Trey Songz</h4>
-                  <p>A mainstream R&B figure from the same era of emotionally charged crossover records.</p>
-                </a>
-                <a href="chris-brown.html" class="related-card">
-                  <h4>Chris Brown</h4>
-                  <p>Another singer whose career moved across R&B, rap influence, and celebrity intensity.</p>
-                </a>
                 <a href="kevin-gates.html" class="related-card">
                   <h4>Kevin Gates</h4>
-                  <p>A Southern artist whose music similarly blends vulnerability, pain, and survival.</p>
+                  <p>Another Southern artist whose music is powered by pain, confession, and survival.</p>
+                </a>
+                <a href="rod-wave.html" class="related-card">
+                  <h4>Rod Wave</h4>
+                  <p>A later-generation emotional artist whose music also turns vulnerability into strength.</p>
+                </a>
+                <a href="the-weeknd.html" class="related-card">
+                  <h4>The Weeknd</h4>
+                  <p>A contrasting modern R&amp;B figure who also built a career from darkness, intimacy, and emotional complexity.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +961,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

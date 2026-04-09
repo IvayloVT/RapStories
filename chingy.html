@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chingy | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on Chingy, covering his St. Louis roots, early 2000s breakout, and club-driven mainstream fame." />
+  <meta name="description" content="A Rap Stories premium profile on Chingy, covering his St. Louis roots, early 2000s breakout, club-hit dominance, crossover appeal, and lasting legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,235 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    /* Story Mode */
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Stats Panels */
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    /* Music Integration */
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +698,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +723,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Chingy</h2>
-              <p>St. Louis rapper whose catchy hooks and early-2000s momentum made him a major crossover hitmaker.</p>
+              <p>St. Louis hitmaker whose catchy hooks, club-ready flow, and early-2000s crossover appeal made him one of rap’s most recognizable voices of his era.</p>
             </div>
           </aside>
 
@@ -735,7 +731,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Chingy</span></h1>
             <p class="summary">
-              Born Howard Bailey Jr., Chingy became one of the defining hitmakers of the early 2000s through catchy hooks, St. Louis swagger, and a run of club-friendly records that quickly made him a mainstream presence.
+              Born Howard Bailey Jr., Chingy rose from St. Louis with a melodic, conversational style that helped define the sound of early-2000s radio rap. His success came through instantly memorable hooks, regional identity, and a run of hits that made him a major crossover figure during one of commercial hip-hop’s most dominant eras.
             </p>
 
             <div class="quick-facts">
@@ -749,7 +745,7 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Club hits, early 2000s rap</strong>
+                <strong>Club hits, melodic flow, crossover success</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
@@ -761,6 +757,7 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
                 <span class="label">Born</span>
@@ -768,7 +765,7 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Home</span>
-                <div class="value">St. Louis</div>
+                <div class="value">St. Louis, Missouri</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
@@ -776,7 +773,7 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Catchy crossover hits</div>
+                <div class="value">Radio-ready rap hits</div>
               </div>
             </div>
           </section>
@@ -784,61 +781,64 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>St. Louis Beginnings</h3>
-              <p>Howard Bailey Jr. grew up in St. Louis and came into rap with the confidence and bounce that would define his music. He represented a Midwestern perspective at a time when rap’s commercial spotlight often shifted between coasts and the South.</p>
+              <h3>St. Louis Roots</h3>
+              <p>Chingy came out of St. Louis during a period when regional rap scenes were becoming more visible on a national level. His city already had strong momentum in the mainstream, and Chingy emerged with a style that felt distinct within that environment—lighter on aggression, stronger on rhythm, and built around phrasing that stayed in listeners’ heads.</p>
 
-              <h3>Explosive Breakthrough</h3>
-              <p>Chingy’s rise was rapid. His breakout records were instantly memorable, driven by catchy phrasing and a sound built for radio, clubs, and mass appeal. He became one of the early-2000s artists who seemed to appear everywhere at once.</p>
+              <h3>Breakthrough in the Early 2000s</h3>
+              <p>What made Chingy stand out was how easily his songs connected. He had a conversational cadence, a playful confidence, and a knack for records that worked equally well in clubs, on radio, and in everyday pop culture. His breakthrough hits arrived at exactly the right time, when rap was dominating mainstream music and catchy personality-driven records could travel everywhere quickly.</p>
 
-              <div class="quote">Chingy became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>Hitmaker Appeal</h3>
+              <p>Chingy’s rise was tied to accessibility. He sounded street-aware but not overly dense or intimidating, which gave him strong crossover power. His music often centered bounce, flirtation, swagger, and momentum, allowing him to become one of the most commercially visible rappers of the moment. He represented a lane where melody, charisma, and memorable slang could do as much work as lyrical complexity.</p>
 
-              <h3>Hitmaker Identity</h3>
-              <p>Chingy’s public image centered on charisma and accessibility. He occupied the commercial lane effectively, making music that was direct, replayable, and easy to recognize. That made him a strong symbol of a very specific radio-dominant era in rap.</p>
+              <div class="quote">Chingy’s biggest strength was making rap feel instantly usable—his music lived easily in clubs, cars, radio rotations, and the larger pop culture atmosphere of the 2000s.</div>
 
-              <h3>Shifts in Visibility</h3>
-              <p>As mainstream rap changed, Chingy’s profile evolved with it, but his early success remained a defining marker of his career. His catalog continued to represent a moment when catchy singles could rapidly create national fame.</p>
+              <h3>Commercial Era and Public Recognition</h3>
+              <p>During his peak years, Chingy became one of those artists whose voice and phrases were recognizable well beyond his core fanbase. He was part of a generation of rappers who thrived in the CD-and-radio era, where hit records could quickly make an artist feel omnipresent. That visibility helped define his legacy even as the industry began changing around him.</p>
+
+              <h3>Career Challenges and Shifts</h3>
+              <p>Like many artists whose rise was deeply tied to a specific commercial moment, Chingy later had to navigate changing sounds, shifting label structures, and the rapid evolution of digital music culture. Even so, the records that made him famous continued to hold cultural memory because they were so tightly linked to a particular era of hip-hop and nightlife.</p>
 
               <h3>Legacy</h3>
-              <p>Chingy’s place in hip-hop history is tied to the early-2000s crossover boom. He remains remembered for helping shape that era’s mainstream sound with hooks, humor, and regional flavor.</p>
+              <p>Chingy’s legacy lives in his run of undeniable early-2000s rap hits and in the way he helped represent St. Louis on a national level. He stands as an artist whose strength was immediacy: catchy, quotable, melodic, and perfectly calibrated for the commercial rap moment he helped define.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
                   <strong>1980 — Birth</strong>
-                  <p>Born Howard Bailey Jr. in St. Louis.</p>
+                  <p>Born Howard Bailey Jr. in St. Louis, Missouri.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 1990s / Early 2000s — Development</strong>
+                  <p>Began building momentum within the St. Louis rap scene as the city gained national attention.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>Early 2000s — Breakthrough</strong>
-                  <p>Exploded into mainstream rap with a string of recognizable hits.</p>
+                  <p>Exploded into mainstream rap through catchy club and radio records.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2000s — Peak Visibility</strong>
-                  <p>Became a major commercial artist of the radio era.</p>
+                  <strong>Mid-2000s — Commercial Peak</strong>
+                  <p>Became one of the most recognizable hitmakers of his era with strong crossover visibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Later Years — Catalog Legacy</strong>
-                  <p>Remained associated with one of rap’s most memorable crossover periods.</p>
-                </div>
-                <div class="timeline-item">
-                  <strong>Ongoing Presence</strong>
-                  <p>Continued as a recognizable name tied to 2000s rap nostalgia and legacy.</p>
+                  <strong>Later Years — Legacy Phase</strong>
+                  <p>Remained associated with one of the defining mainstream rap sounds of the 2000s.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
                   <span class="info-label">Full Name</span>
-                  <div class="info-value">Howard Earl Bailey Jr.</div>
+                  <div class="info-value">Howard Bailey Jr.</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
@@ -850,90 +850,90 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Midwest Rap</div>
+                  <div class="info-value">Hip-Hop / Pop Rap / Midwestern Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; early-2000s hitmaker legacy</div>
+                  <div class="info-value">Active; early-2000s rap hitmaker with lasting recognition</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Hitmaking</span>
                 <span class="tag">St. Louis</span>
-                <span class="tag">Radio Era</span>
-                <span class="tag">Club Music</span>
+                <span class="tag">Club Rap</span>
                 <span class="tag">Crossover</span>
+                <span class="tag">Melody</span>
                 <span class="tag">Charisma</span>
+                <span class="tag">2000s</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Breakout Singles</strong>
-                  <span>The explosive start that made him a household rap name.</span>
+                  <strong>St. Louis Emergence</strong>
+                  <span>The early phase where local momentum and city identity helped shape his rise.</span>
                 </div>
                 <div class="album">
-                  <strong>Commercial Peak</strong>
-                  <span>An era of strong radio and club visibility.</span>
+                  <strong>Mainstream Hit Run</strong>
+                  <span>The period where Chingy became one of rap’s most radio-friendly stars.</span>
                 </div>
                 <div class="album">
-                  <strong>Legacy Recall</strong>
-                  <span>A later period where his catalog remained tied to 2000s rap memory.</span>
+                  <strong>2000s Legacy Marker</strong>
+                  <span>A later phase where his biggest records remained tied to the sound and memory of their era.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Chingy on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Chingy" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Chingy.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Chingy on Spotify and revisit the records that helped define early-2000s rap radio.</p>
+                  <a href="https://open.spotify.com/search/Chingy" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Chingy releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Chingy+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Chingy on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Chingy+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Right Thurr</span>
+                  <span class="track-tag">Holidae In</span>
+                  <span class="track-tag">One Call Away</span>
+                  <span class="track-tag">Balla Baby</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Right Thurr</span>
-                <span class="track-tag">Holidae In</span>
-                <span class="track-tag">One Call Away</span>
-                <span class="track-tag">Pullin' Me Back</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="nelly.html" class="related-card">
                   <h4>Nelly</h4>
-                  <p>Another Midwestern crossover giant who helped open national space for St. Louis rap.</p>
+                  <p>A fellow St. Louis superstar whose crossover success helped open national doors for the city’s rap scene.</p>
                 </a>
                 <a href="ludacris.html" class="related-card">
                   <h4>Ludacris</h4>
-                  <p>A peer from the same radio-heavy commercial era.</p>
+                  <p>Another early-2000s hitmaker known for charisma, radio impact, and memorable mainstream rap records.</p>
                 </a>
                 <a href="bow-wow.html" class="related-card">
                   <h4>Bow Wow</h4>
-                  <p>Another early-2000s mainstream rap star built through youth appeal and big singles.</p>
+                  <p>A contemporary figure from the same era whose music also thrived on catchy hooks and youthful crossover appeal.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +960,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

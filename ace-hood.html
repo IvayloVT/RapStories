@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ace Hood | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on Ace Hood, covering his Florida roots, hard-charging rise, motivational themes, and independent evolution." />
+  <meta name="description" content="A Rap Stories premium profile on Ace Hood, covering his Florida roots, hard-earned rise, motivational energy, and lasting place in Southern hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,236 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    /* Story Mode */
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Stats Panels */
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    /* Music Integration */
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    /* Mobile header: fixed and hide/show on scroll */
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +699,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +724,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Ace Hood</h2>
-              <p>Florida rapper known for motivational anthems, raw delivery, and a grind-centered story built on resilience and determination.</p>
+              <p>Florida rap force whose hunger, motivational spirit, and relentless energy made him a defining voice of grind-focused Southern hip-hop.</p>
             </div>
           </aside>
 
@@ -735,7 +732,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Ace Hood</span></h1>
             <p class="summary">
-              Born Antoine McColister, Ace Hood built his name through relentless energy, motivational street records, and a determined rise out of Broward County. He became known for intensity, hunger, and a work ethic that kept him relevant even as the industry shifted around him.
+              Born Antoine McColister, Ace Hood rose out of Florida with a style built on intensity, ambition, and survival-minded determination. His music turned struggle into fuel, building a reputation as a rapper whose records carried urgency, motivation, and a deep belief in self-made success.
             </p>
 
             <div class="quick-facts">
@@ -745,11 +742,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Deerfield Beach, Florida</strong>
+                <strong>Port St. Lucie, Florida</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Motivational street rap</strong>
+                <strong>Motivational rap, street hunger, intensity</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
@@ -761,6 +758,7 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
                 <span class="label">Born</span>
@@ -772,11 +770,11 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">Late 2000s–present</div>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Hunger and drive</div>
+                <div class="value">Hustle anthems</div>
               </div>
             </div>
           </section>
@@ -784,61 +782,64 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Setback</h3>
-              <p>Antoine McColister grew up in South Florida and originally dreamed of sports before injury redirected his path. That shift became decisive: music turned from possibility into mission. His story carried the mentality of an athlete who lost one route to success and rebuilt himself through another.</p>
+              <h3>Florida Foundation</h3>
+              <p>Ace Hood came out of Florida carrying the sound of urgency. His background shaped a rapper who sounded hungry from the beginning, driven by the pressure to rise rather than simply participate. That energy became one of his clearest trademarks: his verses often felt like declarations made from the middle of struggle, not reflections written after comfort.</p>
 
-              <h3>Rise Under DJ Khaled</h3>
-              <p>Ace Hood’s career accelerated after linking with DJ Khaled, whose platform helped introduce him to a national audience. His records emphasized drive, hustle, and upward momentum, making him a natural fit for music centered on ambition and overcoming pressure.</p>
+              <h3>From Setback to Direction</h3>
+              <p>Before fully committing to rap, Ace Hood had athletic ambitions, but injury and changing circumstances pushed him deeper toward music. That shift gave his story an important theme that would follow him throughout his career: adversity becoming fuel. Instead of softening his approach, those setbacks sharpened his focus and made ambition central to both his image and his sound.</p>
 
-              <div class="quote">Ace Hood became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>Breakthrough Energy</h3>
+              <p>As he gained momentum, Ace Hood built a reputation for records centered on momentum, determination, and self-belief. His music was not built around irony or distance. It was direct, forceful, and motivational, often sounding like someone trying to outrun limitation in real time. That sincerity helped him connect with listeners who heard more than flexing in his music—they heard drive.</p>
 
-              <h3>Signature Sound</h3>
-              <p>Ace Hood built his identity through forceful delivery and motivational themes. He was often at his strongest when turning struggle into forward motion, making tracks that felt like declarations of survival rather than casual entertainment.</p>
+              <div class="quote">Ace Hood’s strongest records feel like motivation under pressure: not luxury after the climb, but hunger during it.</div>
+
+              <h3>Street Motivation and Commercial Reach</h3>
+              <p>What made Ace Hood stand apart was his ability to combine street-rooted themes with broadly accessible intensity. His music could work as anthem rap, gym music, survival talk, or personal motivation. He became associated with forward motion, with songs that treated success as something chased daily rather than already secured.</p>
 
               <h3>Independence and Reinvention</h3>
-              <p>As the industry changed, Ace Hood increasingly leaned into independence and self-definition. That stage of his career highlighted endurance: he was no longer simply chasing a breakout, but shaping a sustainable lane based on discipline and consistency.</p>
+              <p>Over time, Ace Hood’s career also came to represent resilience in the music business itself. As the industry changed, he leaned further into independence, self-definition, and spiritual growth. That evolution kept him relevant to supporters who saw him not just as a hitmaker from one era, but as an artist whose whole identity centered on persistence.</p>
 
               <h3>Legacy</h3>
-              <p>Ace Hood represents one of rap’s clearest examples of perseverance as identity. His story is about determination, self-belief, and the ability to keep pushing even when trends move elsewhere.</p>
+              <p>Ace Hood’s legacy lives in the lane of motivational hip-hop. He represents a type of rapper whose power comes from conviction, discipline, and refusal to fold. His story resonates because it reflects a broader truth in rap culture: sometimes the most lasting voice is the one that keeps sounding hungry even after success arrives.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
                   <strong>1988 — Birth</strong>
-                  <p>Born Antoine McColister in Florida.</p>
+                  <p>Born Antoine Franklin McColister in Florida.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2000s — Career Shift</strong>
-                  <p>Turned toward music after athletic ambitions were disrupted.</p>
+                  <strong>2000s — Early Development</strong>
+                  <p>Shifted focus toward rap and began building a reputation through local grind and intense delivery.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2000s — Breakthrough</strong>
-                  <p>Signed and gained major exposure through DJ Khaled’s platform.</p>
+                  <strong>Late 2000s — National Breakthrough</strong>
+                  <p>Reached wider attention with hard-driving records centered on hunger, ambition, and momentum.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s — National Recognition</strong>
-                  <p>Released high-energy records that built his reputation for hunger and intensity.</p>
+                  <strong>2010s — Anthem Era</strong>
+                  <p>Became known for motivational street records and mainstream Southern rap visibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Later Career — Independent Era</strong>
-                  <p>Continued evolving through independent releases and a self-driven approach.</p>
+                  <strong>2020s — Independent Growth</strong>
+                  <p>Continued evolving with a more self-defined, disciplined, and spiritually grounded direction.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
                   <span class="info-label">Full Name</span>
-                  <div class="info-value">Antoine McColister</div>
+                  <div class="info-value">Antoine Franklin McColister</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
@@ -846,7 +847,7 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Birthplace</span>
-                  <div class="info-value">Port St. Lucie / South Florida roots</div>
+                  <div class="info-value">Port St. Lucie, Florida</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
@@ -854,86 +855,86 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; independent-minded artist</div>
+                  <div class="info-value">Active; independent-minded motivational artist</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Hunger</span>
                 <span class="tag">Motivation</span>
-                <span class="tag">Grind</span>
                 <span class="tag">Florida</span>
                 <span class="tag">Resilience</span>
                 <span class="tag">Discipline</span>
-                <span class="tag">Ambition</span>
+                <span class="tag">Growth</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Breakout Hunger</strong>
-                  <span>The period where raw ambition defined his music and image.</span>
+                  <strong>Florida Rise</strong>
+                  <span>The early stage where raw hunger and local pressure shaped his identity.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream Momentum</strong>
-                  <span>The era of major-label visibility and big motivational records.</span>
+                  <strong>Motivation Anthem Run</strong>
+                  <span>The period where Ace Hood became known for ambitious, high-energy records.</span>
                 </div>
                 <div class="album">
                   <strong>Independent Discipline</strong>
-                  <span>A later phase centered on self-mastery and sustained output.</span>
+                  <span>A later era marked by personal control, growth, and continued self-belief.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Ace Hood on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Ace%20Hood" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Ace Hood.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Ace Hood on Spotify and follow the records built on grind, hunger, and determination.</p>
+                  <a href="https://open.spotify.com/search/Ace%20Hood" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Ace Hood releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Ace+Hood+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Ace Hood on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Ace%20Hood+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Hustle Hard</span>
+                  <span class="track-tag">Bugatti</span>
+                  <span class="track-tag">We Outchea</span>
+                  <span class="track-tag">Cash Flow</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Hustle Hard</span>
-                <span class="track-tag">Bugatti</span>
-                <span class="track-tag">We Outchea</span>
-                <span class="track-tag">Go N Get It</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="rick-ross.html" class="related-card">
                   <h4>Rick Ross</h4>
-                  <p>Another Florida heavyweight whose rise helped define Southern rap power.</p>
-                </a>
-                <a href="dj-khaled.html" class="related-card">
-                  <h4>DJ Khaled</h4>
-                  <p>The curator and hitmaker closely tied to Ace Hood’s breakthrough era.</p>
+                  <p>A fellow Florida heavyweight whose music also turned ambition and power into identity.</p>
                 </a>
                 <a href="meek-mill.html" class="related-card">
                   <h4>Meek Mill</h4>
-                  <p>A rapper whose music similarly channels determination, survival, and ambition.</p>
+                  <p>Another rapper known for intensity, hunger, and success-driven street motivation.</p>
+                </a>
+                <a href="yo-gotti.html" class="related-card">
+                  <h4>Yo Gotti</h4>
+                  <p>A Southern rap figure whose catalog also reflects grind, survival, and business-minded persistence.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +961,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cypress Hill | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on Cypress Hill, covering their Los Angeles roots, Latin influence, smoky sound, and long-term cultural impact." />
+  <meta name="description" content="A Rap Stories premium profile on Cypress Hill, covering their Los Angeles roots, Latin rap identity, smoky psychedelic sound, crossover success, and lasting legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,235 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    /* Story Mode */
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Stats Panels */
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    /* Music Integration */
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +698,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +723,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Cypress Hill</h2>
-              <p>Pioneering rap group whose eerie sound, Latino identity, and countercultural edge made them one of hip-hop’s most distinctive acts.</p>
+              <p>Los Angeles rap pioneers whose smoky production, Latin identity, and psychedelic edge made them one of hip-hop’s most distinctive and enduring groups.</p>
             </div>
           </aside>
 
@@ -735,25 +731,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Cypress Hill</span></h1>
             <p class="summary">
-              Cypress Hill emerged from Los Angeles as one of the most distinctive groups in hip-hop history, blending dark production, Latino identity, weed culture, and instantly recognizable vocals into a sound that felt unmistakably their own.
+              Cypress Hill emerged from Los Angeles with a sound and image unlike anyone else in rap. Blending Latin identity, West Coast atmosphere, heavy bass, eerie production, and a psychedelic rebelliousness, the group became one of hip-hop’s most recognizable acts and one of the earliest rap groups to build a strong crossover following in both rap and rock culture.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
-                <span>Born</span>
-                <strong>Formed 1988</strong>
+                <span>Formed</span>
+                <strong>Late 1980s</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>South Gate, California</strong>
+                <strong>South Gate / Los Angeles, California</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Dark sound, Latin influence, weed culture</strong>
+                <strong>Latin rap identity, smoky sound, dark beats</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Legendary Group</strong>
               </div>
             </div>
 
@@ -761,14 +757,11 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1988</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Los Angeles</div>
+                <span class="label">Origin</span>
+                <div class="value">Los Angeles Area</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
@@ -776,7 +769,11 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Distinctive group identity</div>
+                <div class="value">Psychedelic rap sound</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Hip-hop + rock crossover</div>
               </div>
             </div>
           </section>
@@ -784,156 +781,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Origins and Formation</h3>
-              <p>Cypress Hill formed in Southern California with a lineup and chemistry that quickly felt different from the rest of rap. Their background as Latino artists in hip-hop gave them a distinct cultural presence at a time when representation still felt limited in major mainstream spaces.</p>
+              <h3>Los Angeles and Latin Identity</h3>
+              <p>Cypress Hill’s rise mattered for many reasons, but one of the biggest was representation. As a Latino-led group emerging from the Los Angeles area, they brought a perspective and identity into rap that was both regionally grounded and culturally distinct. They were not simply following an East Coast or mainstream template. They were building something stranger, heavier, and more specific to their own world.</p>
 
-              <h3>A Unique Sound</h3>
-              <p>What made Cypress Hill stand out most was atmosphere. Their music was eerie, smoky, heavy, and unmistakable. B-Real’s nasal delivery and the group’s production choices created a sonic identity that could not easily be confused with anyone else.</p>
+              <h3>A Sound Like No One Else</h3>
+              <p>From the beginning, Cypress Hill stood apart sonically. Their records were dark, hazy, bass-heavy, and often built around eerie loops that felt almost cinematic. B-Real’s high, instantly recognizable voice and Sen Dog’s grounded contrast helped create a group chemistry that listeners could identify in seconds. DJ Muggs’ production gave the group an atmosphere that felt narcotic, rebellious, and psychologically immersive.</p>
 
-              <div class="quote">Cypress Hill became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>Breaking Through in the 1990s</h3>
+              <p>As hip-hop expanded in the early 1990s, Cypress Hill found success by refusing to sound safe. They leaned into menace, humor, paranoia, anti-authority energy, and cannabis culture without apology. That honesty made them stand out in mainstream rap and also helped them reach listeners beyond traditional hip-hop audiences, especially fans drawn to alternative and rock-adjacent intensity.</p>
 
-              <h3>Counterculture and Visibility</h3>
-              <p>The group also became deeply associated with cannabis culture, rebellion, and outsider identity. That made them more than just a rap act; they became part of a wider alternative and countercultural image that reached beyond hip-hop alone.</p>
+              <div class="quote">Cypress Hill did not just make songs—they built a world: smoky, sinister, loud, political, funny, and impossible to mistake for anybody else.</div>
 
-              <h3>Longevity and Cross-Genre Reach</h3>
-              <p>Cypress Hill maintained relevance through touring, loyal audiences, and cross-genre respect. Their sound appealed not only to rap fans but to rock, festival, and alternative audiences, giving them unusual durability.</p>
+              <h3>Crossover Without Losing Identity</h3>
+              <p>One of the group’s biggest achievements was crossing into wider popular culture without giving up what made them unique. They appealed to rap fans, rock fans, festival audiences, and listeners drawn to outsider energy. That crossover mattered because it showed that hip-hop could expand outward without becoming generic. Cypress Hill remained fully themselves even as their reach widened.</p>
+
+              <h3>Culture, Rebellion, and Durability</h3>
+              <p>The group also became deeply associated with cannabis advocacy and a broader countercultural attitude, but reducing them only to that would miss their larger importance. Cypress Hill helped expand the emotional and sonic vocabulary of rap. They made room for psychedelic mood, horror textures, political edge, and alternative identity inside mainstream visibility.</p>
 
               <h3>Legacy</h3>
-              <p>Cypress Hill’s legacy lies in originality. They carved out an unmistakable lane, broadened Latino visibility in rap, and proved that distinct atmosphere could be as powerful as mainstream formula.</p>
+              <p>Cypress Hill’s legacy is lasting because they created a template no one else could fully copy. They are foundational not only as West Coast innovators, but as a group that broadened hip-hop’s sound, strengthened Latino representation, and proved that rap could be both deeply regional and radically cross-genre at the same time.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1988 — Formation</strong>
-                  <p>Cypress Hill formed in Southern California.</p>
+                  <strong>Late 1980s — Formation</strong>
+                  <p>Cypress Hill formed in the Los Angeles area, building a sound rooted in dark beats, Latin identity, and underground intensity.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>Early 1990s — Breakthrough</strong>
-                  <p>Became a major force through a unique sound and cultural identity.</p>
+                  <p>Rose to national prominence with a distinctive sound and instantly recognizable group identity.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Cultural Expansion</strong>
-                  <p>Built a powerful image tied to weed culture, rebellion, and alternative crossover.</p>
+                  <strong>Mid-1990s — Major Expansion</strong>
+                  <p>Became one of rap’s most visible groups while crossing into rock and alternative audiences.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s–2010s — Lasting Durability</strong>
-                  <p>Maintained visibility through touring and a devoted fan base.</p>
+                  <strong>2000s — Enduring Relevance</strong>
+                  <p>Maintained cultural visibility through touring, catalog strength, and a loyal fan base.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Present — Legacy Status</strong>
-                  <p>Remain one of hip-hop’s most recognizable group brands.</p>
+                  <strong>2010s / 2020s — Legacy Phase</strong>
+                  <p>Remained respected as pioneers whose sound and identity continue to influence artists across genres.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
+                  <span class="info-label">Group Name</span>
                   <div class="info-value">Cypress Hill</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
-                  <div class="info-value">Cypress Hill</div>
+                  <span class="info-label">Core Members</span>
+                  <div class="info-value">B-Real, Sen Dog, DJ Muggs</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">South Gate, California</div>
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Los Angeles Area, California</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / West Coast Rap</div>
+                  <div class="info-value">Hip-Hop / West Coast Rap / Alternative Hip-Hop</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; legendary group</div>
+                  <div class="info-value">Legendary rap group with enduring crossover influence</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Latino Identity</span>
-                <span class="tag">Atmosphere</span>
-                <span class="tag">Weed Culture</span>
+                <span class="tag">Los Angeles</span>
+                <span class="tag">Latin Identity</span>
+                <span class="tag">Psychedelia</span>
                 <span class="tag">Rebellion</span>
-                <span class="tag">Originality</span>
-                <span class="tag">Longevity</span>
+                <span class="tag">Crossover</span>
+                <span class="tag">Atmosphere</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Distinctive Arrival</strong>
-                  <span>The period where their unusual sound made them impossible to ignore.</span>
+                  <strong>Dark Underground Rise</strong>
+                  <span>The early phase where Cypress Hill built a sound unlike anyone else in rap.</span>
                 </div>
                 <div class="album">
-                  <strong>Countercultural Peak</strong>
-                  <span>An era of expanded visibility and alternative crossover appeal.</span>
+                  <strong>Mainstream Smoke Era</strong>
+                  <span>The period where the group became one of hip-hop’s most recognizable crossover acts.</span>
                 </div>
                 <div class="album">
-                  <strong>Legacy Touring Era</strong>
-                  <span>A long phase of durability, recognition, and iconic status.</span>
+                  <strong>Enduring Counterculture Legacy</strong>
+                  <span>A later phase defined by respect, longevity, and influence across scenes.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Cypress Hill on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Cypress%20Hill" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Cypress Hill.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Cypress Hill on Spotify and explore the records that made them one of rap’s most distinctive groups.</p>
+                  <a href="https://open.spotify.com/search/Cypress%20Hill" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live performances, and major Cypress Hill releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Cypress+Hill+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Cypress Hill on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Cypress%20Hill+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">How I Could Just Kill a Man</span>
+                  <span class="track-tag">Insane in the Brain</span>
+                  <span class="track-tag">Hits from the Bong</span>
+                  <span class="track-tag">Throw Your Set in the Air</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Insane in the Brain</span>
-                <span class="track-tag">Hits from the Bong</span>
-                <span class="track-tag">How I Could Just Kill a Man</span>
-                <span class="track-tag">Rock Superstar</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="snoop-dogg.html" class="related-card">
-                  <h4>Snoop Dogg</h4>
-                  <p>Another West Coast icon deeply tied to rap’s weed culture and mainstream reach.</p>
-                </a>
                 <a href="ice-cube.html" class="related-card">
                   <h4>Ice Cube</h4>
-                  <p>A major California voice whose era overlapped with Cypress Hill’s rise.</p>
+                  <p>A fellow West Coast giant whose music also fused street realism, politics, and cultural force.</p>
+                </a>
+                <a href="snoop-dogg.html" class="related-card">
+                  <h4>Snoop Dogg</h4>
+                  <p>Another California icon whose sound and persona helped define West Coast rap in a different way.</p>
                 </a>
                 <a href="wu-tang-clan.html" class="related-card">
                   <h4>Wu-Tang Clan</h4>
-                  <p>Another group whose distinct identity and world-building made them unforgettable.</p>
+                  <p>A group comparison in how a collective can create an entire mythic world through sound, identity, and style.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +960,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

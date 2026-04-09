@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cardi B | Rap Stories</title>
-  <meta
-    name="description"
-    content="A Rap Stories premium profile on Cardi B, covering her Bronx roots, social-media rise, reality TV breakthrough, rap superstardom, cultural influence, controversies, and legacy."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Cardi B, covering her Bronx roots, reality TV rise, breakout rap success, cultural influence, and lasting legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(236, 72, 153, 0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/cardi-b.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -476,14 +472,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -492,7 +486,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -502,13 +495,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -523,24 +514,36 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
     }
-
     body.story-mode .story-section .glass {
       box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     /* Stats Panels */
@@ -550,14 +553,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -565,19 +566,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
     }
-
     @media (max-width: 980px) {
       .artist-stats {
         grid-template-columns: 1fr 1fr;
       }
     }
-
     @media (max-width: 560px) {
       .artist-stats {
         grid-template-columns: 1fr;
@@ -585,7 +583,9 @@
     }
 
     /* Music Integration */
-    .music-panel { margin-top: 24px; }
+    .music-panel {
+      margin-top: 24px;
+    }
 
     .music-grid {
       display: grid;
@@ -606,7 +606,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -662,11 +664,15 @@
     }
 
     @media (max-width: 860px) {
-      .music-grid { grid-template-columns: 1fr; }
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
     }
 
     header#mainHeader {
@@ -676,35 +682,30 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
     }
   </style>
 </head>
 <body>
-  <div class="story-progress">
-    <div class="story-progress-bar" id="storyProgressBar"></div>
-  </div>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
@@ -722,7 +723,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Cardi B</h2>
-              <p>Bronx-raised star whose charisma, blunt honesty, and chart power helped redefine what rap superstardom could look like in the social-media era.</p>
+              <p>Bronx superstar whose charisma, honesty, and crossover power turned viral fame into one of the biggest rap careers of her generation.</p>
             </div>
           </aside>
 
@@ -730,7 +731,7 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Cardi B</span></h1>
             <p class="summary">
-              Born Belcalis Marlenis Almánzar, Cardi B rose from the Bronx through internet fame, reality television, and a breakout rap run that turned her into one of the most visible and commercially dominant artists of her generation. Her story is about reinvention, hunger, spectacle, and the ability to turn raw personality into cultural power.
+              Born Belcalis Marlenis Almánzar, Cardi B rose from the Bronx through internet personality, reality television, and sheer force of character before becoming a chart-dominating rap star. Her success came from a rare combination of humor, raw transparency, star power, and the ability to turn personal voice into cultural momentum.
             </p>
 
             <div class="quick-facts">
@@ -740,21 +741,21 @@
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>The Bronx, New York</strong>
+                <strong>Bronx, New York</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Rap, charisma, crossover impact</strong>
+                <strong>Charisma, hit records, cultural impact</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>2010s–Present</strong>
+                <span>Status</span>
+                <strong>Active</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
@@ -768,11 +769,11 @@
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">Digital era rap</div>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Hitmaker & cultural force</div>
+                <div class="value">Rap superstardom</div>
               </div>
             </div>
           </section>
@@ -783,57 +784,25 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Bronx Beginnings</h3>
-              <p>
-                Cardi B was born Belcalis Marlenis Almánzar in Manhattan and raised in the Bronx, a borough with a long and foundational relationship to hip-hop culture. Her background reflected the energy, tension, humor, and survival instincts of New York street life. Before global fame, she was known for speaking plainly, thinking fast, and understanding how attention works in environments where being overlooked can mean being left behind.
-              </p>
-              <p>
-                Her early life was shaped by working-class pressure, instability, and the need to hustle. That reality later became part of her public appeal. Cardi did not present herself as polished from the beginning; she presented herself as someone who knew how to survive, talk back, adapt, and turn pressure into momentum.
-              </p>
+              <h3>Bronx Roots</h3>
+              <p>Cardi B came out of the Bronx with a personality too strong to stay contained by ordinary pathways. Her upbringing shaped a public voice that felt immediate, funny, blunt, and emotionally direct. That honesty later became one of her biggest artistic advantages, because audiences believed her before they even fully understood her as a musician.</p>
 
-              <h3>From Social Media to Public Recognition</h3>
-              <p>
-                Before music made her a superstar, Cardi B built an audience online. Her short videos, blunt delivery, comedic timing, and total lack of filter made her instantly recognizable. She understood the value of personality in the digital age better than many traditional entertainers. She was funny, confrontational, self-aware, and unpredictable, which helped her stand out in a crowded internet culture driven by virality.
-              </p>
-              <p>
-                That online notoriety opened the door to mainstream visibility, including reality television. Her time on <em>Love &amp; Hip Hop</em> introduced her to a wider audience and gave her a national platform. But more importantly, it showed that she was not content to remain a supporting character in someone else’s format. Even then, Cardi projected ambition bigger than television drama.
-              </p>
+              <h3>Internet Presence and Reality TV</h3>
+              <p>Before rap superstardom, Cardi built visibility through social media and reality television, where her humor, unpredictability, and openness made her instantly memorable. She understood attention in a modern way: not just how to get it, but how to hold it. What could have stayed internet fame instead became the foundation for a much larger career.</p>
 
-              <div class="quote">
-                Cardi B’s rise showed that in modern rap, personality is not separate from artistry—it can be the engine that drives the entire career.
-              </div>
+              <h3>Rap Breakthrough</h3>
+              <p>When Cardi B broke through in music, she did it with the same force that defined her public image. Her records carried confidence, sharp delivery, quotable lines, and a sense of real-life perspective that connected with a huge mainstream audience. She did not arrive sounding cautious—she arrived sounding like a star who already understood her own scale.</p>
 
-              <h3>The Breakout</h3>
-              <p>
-                Cardi’s move into rap transformed her from a viral figure into a major music force. Once she found the right records, delivery, and momentum, her breakthrough felt explosive rather than gradual. Her music carried the same confidence and directness that made her famous online, but now it was sharpened into hooks, quotable lines, and songs built for clubs, radio, and cultural takeover.
-              </p>
-              <p>
-                What made Cardi B’s breakthrough different was the scale of it. She was not simply accepted as a personality trying music; she became one of the biggest rappers in the world. Her records turned into events, and her presence began to shape conversations across hip-hop, pop culture, fashion, celebrity media, and social platforms all at once.
-              </p>
+              <div class="quote">Cardi B’s rise worked because she turned personality into power and power into records people could not ignore.</div>
 
-              <h3>Superstardom and Cultural Weight</h3>
-              <p>
-                As her career accelerated, Cardi B developed into a crossover star without losing the sharp edge that made her distinctive. She could dominate mainstream platforms while still sounding aggressive, funny, bold, and unapologetically herself. Her image blended glamour with confrontation: luxury and rawness, celebrity and internet chaos, fashion-week visibility and Bronx attitude.
-              </p>
-              <p>
-                She also arrived at a time when women in rap were once again reshaping the center of the genre. Cardi’s success helped intensify industry attention around female rap stars, competition, branding, and chart power. She became part of a broader shift in which women were not being treated as side stories in hip-hop but as headline-making, market-moving central figures.
-              </p>
+              <h3>Mainstream Dominance</h3>
+              <p>Once she reached the top tier of rap, Cardi proved she was more than a viral figure. She became a major hitmaker capable of dominating charts, pop culture conversations, and fashion spaces at once. Her crossover appeal came from range: she could be aggressive, glamorous, playful, vulnerable, and commercially massive without losing the directness that made audiences first pay attention.</p>
 
-              <h3>Controversy, Criticism, and Public Scrutiny</h3>
-              <p>
-                Like many major stars, Cardi B’s career has also unfolded under constant scrutiny. Her interviews, social-media presence, legal headlines, personal relationships, and feuds have all fed a nonstop public narrative around her. In Cardi’s case, controversy often became part of the brand itself: people watched not only for the music, but to see what she would say, post, defend, or ignite next.
-              </p>
-              <p>
-                Yet that volatility also reinforced her relevance. She remained difficult to ignore because she was never fully packaged into something safe. Even at the height of commercial success, she kept the sense of unpredictability that first made audiences pay attention.
-              </p>
+              <h3>Cultural Influence</h3>
+              <p>Cardi B also became a major cultural presence beyond music. Her opinions, humor, visibility, and style made her part of broader conversations around celebrity, womanhood, class, politics, and fame. She represents a modern type of rap superstar whose influence moves across platforms rather than staying confined to songs alone.</p>
 
-              <h3>Legacy in Motion</h3>
-              <p>
-                Cardi B’s legacy is still being written, but her impact is already clear. She helped prove that the modern rap star can be built through multiple systems at once: neighborhood credibility, internet fluency, reality-TV visibility, hit records, fashion access, meme culture, and celebrity spectacle. Few artists have combined all of those worlds as effectively.
-              </p>
-              <p>
-                More than just a chart star, Cardi became a symbol of a certain kind of modern fame—loud, self-authored, deeply online, and impossible to flatten into one category. Her story sits at the intersection of rap, entertainment, gender politics, and digital-era identity. That is what makes her more than a celebrity moment. It makes her a defining figure of her era.
-              </p>
+              <h3>Legacy</h3>
+              <p>Cardi B’s legacy lies in how completely she converted authenticity into superstardom. She helped redefine what a female rap star could look like in the streaming and social media era: unfiltered, dominant, funny, stylish, commercially powerful, and impossible to mistake for anyone else.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
@@ -841,23 +810,23 @@
               <div class="timeline">
                 <div class="timeline-item">
                   <strong>1992 — Birth</strong>
-                  <p>Born Belcalis Marlenis Almánzar in New York City and raised in the Bronx.</p>
+                  <p>Born Belcalis Marlenis Almánzar in New York City.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2010s — Internet and Reality TV Rise</strong>
-                  <p>Built major visibility through viral social-media clips and reality television appearances.</p>
+                  <strong>2010s — Rising Visibility</strong>
+                  <p>Built a major following through social media presence and reality television exposure.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2017 — Breakout Rap Stardom</strong>
-                  <p>Crossed into the mainstream with a breakout run that turned her into one of rap’s biggest new stars.</p>
+                  <strong>Late 2010s — Breakthrough</strong>
+                  <p>Exploded into rap superstardom with major hits and immediate mainstream impact.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2018–2020 — Award-Winning Global Success</strong>
-                  <p>Expanded into full-scale superstardom through major singles, high-profile collaborations, and cultural dominance.</p>
+                  <strong>Late 2010s / Early 2020s — Cultural Peak</strong>
+                  <p>Became one of the biggest names in rap, pop culture, fashion, and entertainment.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020s — Established Power Player</strong>
-                  <p>Remained one of the most visible names in rap, pop culture, fashion, and internet-era celebrity.</p>
+                  <strong>2020s — Ongoing Influence</strong>
+                  <p>Remained a defining celebrity-artist figure with lasting relevance and cross-industry power.</p>
                 </div>
               </div>
             </section>
@@ -877,15 +846,15 @@
                 </div>
                 <div class="info-row">
                   <span class="info-label">Birthplace</span>
-                  <div class="info-value">New York City, New York</div>
+                  <div class="info-value">Bronx, New York</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Mainstream Rap</div>
+                  <div class="info-value">Hip-Hop / Pop Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active artist and cultural figure</div>
+                  <div class="info-value">Active; rap superstar and cultural figure</div>
                 </div>
               </div>
             </section>
@@ -894,11 +863,11 @@
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Bronx</span>
-                <span class="tag">Social Media</span>
-                <span class="tag">Female Rap</span>
-                <span class="tag">Superstardom</span>
-                <span class="tag">Controversy</span>
-                <span class="tag">Crossover Fame</span>
+                <span class="tag">Charisma</span>
+                <span class="tag">Femininity</span>
+                <span class="tag">Fame</span>
+                <span class="tag">Style</span>
+                <span class="tag">Power</span>
               </div>
             </section>
 
@@ -906,16 +875,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Internet Persona</strong>
-                  <span>The raw, funny, highly shareable phase that made Cardi B a recognizable digital personality.</span>
+                  <strong>Internet Force</strong>
+                  <span>The early phase where Cardi B’s personality created momentum before music fully took over.</span>
                 </div>
                 <div class="album">
-                  <strong>Breakout Hitmaker</strong>
-                  <span>The period where charisma converted into chart success and undeniable rap momentum.</span>
+                  <strong>Rap Superstar</strong>
+                  <span>The breakout period where major hits turned her into one of the biggest artists in the world.</span>
                 </div>
                 <div class="album">
-                  <strong>Global Celebrity</strong>
-                  <span>The era where music, fashion, media attention, and controversy merged into full-scale superstardom.</span>
+                  <strong>Cultural Mainstay</strong>
+                  <span>A later era defined by celebrity scale, influence, and long-term public visibility.</span>
                 </div>
               </div>
             </section>
@@ -929,14 +898,14 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Cardi B on Spotify and follow the music behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Cardi%20B" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Cardi B on Spotify and revisit the records that pushed her into global rap superstardom.</p>
+                  <a href="https://open.spotify.com/search/Cardi%20B" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
 
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, major singles, and live moments connected to Cardi B.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Cardi+B+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, live performances, and major Cardi B releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Cardi+B+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
@@ -945,7 +914,7 @@
                 <div class="track-list">
                   <span class="track-tag">Bodak Yellow</span>
                   <span class="track-tag">I Like It</span>
-                  <span class="track-tag">WAP</span>
+                  <span class="track-tag">Money</span>
                   <span class="track-tag">Up</span>
                 </div>
               </div>
@@ -954,17 +923,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="nicki-minaj.html">
+                <a href="nicki-minaj.html" class="related-card">
                   <h4>Nicki Minaj</h4>
-                  <p>A defining modern rap superstar whose career shaped the landscape Cardi B entered.</p>
+                  <p>Another dominant female rap superstar whose influence shaped modern mainstream rap culture.</p>
                 </a>
-                <a class="related-card" href="glorilla.html">
-                  <h4>GloRilla</h4>
-                  <p>A later breakout voice showing how women’s rap continued expanding in the post-social-media era.</p>
+                <a href="megan-thee-stallion.html" class="related-card">
+                  <h4>Megan Thee Stallion</h4>
+                  <p>A major contemporary whose confidence, star power, and crossover reach connect to Cardi B’s era.</p>
                 </a>
-                <a class="related-card" href="foxy-brown.html">
-                  <h4>Foxy Brown</h4>
-                  <p>An earlier New York figure whose legacy helps frame the long history of women commanding rap attention.</p>
+                <a href="remy-ma.html" class="related-card">
+                  <h4>Remy Ma</h4>
+                  <p>A Bronx-linked rap figure representing another powerful New York female voice.</p>
                 </a>
               </div>
             </section>
@@ -989,77 +958,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
-  <script src="story-mode.js"></script>
-
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
 
-      offset();
-      handleScroll();
+      rail.appendChild(dot);
+    });
 
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
         }
       });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
   </script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
 
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
-      });
+    let lastScrollY = window.pageYOffset;
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
         }
-      });
+      } else {
+        header.classList.remove("hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
     });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>
