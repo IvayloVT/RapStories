@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juice WRLD | Rap Stories</title>
-  <meta name="description" content="A detailed Rap Stories profile on Juice WRLD, covering his upbringing, emotional songwriting, rise through Lucid Dreams, cultural impact, inner struggles, death, and legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Juice WRLD, covering his Chicago-area roots, emotional freestyle-driven rise, genre-blending sound, and lasting impact on modern hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -35,10 +35,7 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
 
     .glass {
       background: var(--panel);
@@ -113,9 +110,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
+    .nav-links a.active { color: var(--text); }
 
     .nav-links a::after {
       content: "";
@@ -132,9 +127,7 @@
     }
 
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-      transform: scaleX(1);
-    }
+    .nav-links a.active::after { transform: scaleX(1); }
 
     .nav-btn {
       padding: 12px 20px;
@@ -152,17 +145,13 @@
       box-shadow: 0 14px 28px rgba(212,175,55,0.28);
     }
 
-    .hero {
-      padding: 42px 0 28px;
-    }
+    .hero { padding: 42px 0 28px; }
 
     .breadcrumb {
       color: var(--muted);
       font-size: 0.92rem;
       margin-bottom: 18px;
     }
-
-    .breadcrumb a:hover { color: var(--text); }
 
     .hero-layout {
       display: grid;
@@ -207,15 +196,8 @@
       margin-bottom: 14px;
     }
 
-    .artist-image h2 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .artist-image p {
-      color: #d7d7df;
-      font-size: 0.95rem;
-    }
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
 
     .hero-info { padding: 28px; }
 
@@ -274,16 +256,9 @@
       margin-bottom: 6px;
     }
 
-    .fact strong {
-      font-size: 1rem;
-      color: var(--text);
-    }
+    .fact strong { font-size: 1rem; color: var(--text); }
 
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 
     .btn {
       padding: 14px 18px;
@@ -313,10 +288,7 @@
       margin-top: 26px;
     }
 
-    .content-stack, .side-stack {
-      display: grid;
-      gap: 22px;
-    }
+    .content-stack, .side-stack { display: grid; gap: 22px; }
 
     .side-stack {
       align-self: start;
@@ -398,10 +370,7 @@
       font-size: 0.95rem;
     }
 
-    .info-list, .discography, .related-list {
-      display: grid;
-      gap: 14px;
-    }
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
 
     .info-row {
       padding-bottom: 12px;
@@ -417,10 +386,7 @@
       margin-bottom: 4px;
     }
 
-    .info-value {
-      color: var(--text);
-      font-weight: 700;
-    }
+    .info-value { color: var(--text); font-weight: 700; }
 
     .album, .related-card {
       padding: 16px;
@@ -474,12 +440,7 @@
       flex-wrap: wrap;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
     .footer-links a:hover { color: var(--text); }
 
     @media (max-width: 1150px) {
@@ -500,351 +461,221 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(5, 5, 8, 0.76);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-}
-.nav {
-  min-height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-  font-size: 1.02rem;
-}
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  color: #111;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
-}
-.brand-text {
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.nav-links a {
-  position: relative;
-  color: var(--muted);
-  transition: color 0.25s ease;
-  font-size: 0.96rem;
-}
-.nav-links a:hover,
-.nav-links a.active { color: var(--text); }
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-.nav-links a:hover::after,
-.nav-links a.active::after { transform: scaleX(1); }
-.nav-btn {
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #f5df8f);
-  color: #111;
-  font-weight: 800;
-  border: none;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.nav-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
-}
-footer {
-  padding: 24px 0 50px;
-  color: var(--muted);
-}
-.footer-wrap {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-.footer-links a:hover { color: var(--text); }
-@media (max-width: 820px) {
-  .nav { flex-direction: column; padding: 14px 0; }
-  .nav-links { justify-content: center; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -853,10 +684,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -875,9 +707,9 @@ header#mainHeader.hidden {
         <div class="hero-layout">
           <aside class="glass artist-image">
             <div class="artist-image-content">
-              <span class="artist-tag">Legend Profile</span>
+              <span class="artist-tag">Artist Profile</span>
               <h2>Juice WRLD</h2>
-              <p>Emotionally open, melodically gifted, and one of the defining voices of a generation shaped by vulnerability and pain.</p>
+              <p>A Chicago-area artist whose melodic confession, freestyle brilliance, and emotional openness reshaped modern rap for a generation.</p>
             </div>
           </aside>
 
@@ -885,7 +717,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Juice WRLD</span></h1>
             <p class="summary">
-              Born Jarad Anthony Higgins, Juice WRLD emerged from suburban Chicago to become a global symbol of emotional honesty in modern rap. His music captured heartbreak, anxiety, fame, and inner conflict with a rare openness that deeply connected with millions.
+              Juice WRLD emerged as one of the defining voices of late-2010s hip-hop by turning pain, heartbreak, anxiety, addiction, and fantasy into songs that felt immediate and intensely personal. He fused rap, emo influence, rock textures, melody, and freestyle instinct into a style that sounded both vulnerable and effortless. His impact was enormous not simply because of his success, but because he made emotional transparency central to mainstream rap in a new way.
             </p>
 
             <div class="quick-facts">
@@ -895,15 +727,15 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Chicago / Homewood, Illinois</strong>
+                <strong>Chicago Area, Illinois</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Melodic emo rap</strong>
+                <strong>Melodic rap, freestyling, emotional honesty</strong>
               </div>
               <div class="fact">
-                <span>Breakthrough</span>
-                <strong>“Lucid Dreams”</strong>
+                <span>Status</span>
+                <strong>Generational Voice</strong>
               </div>
             </div>
 
@@ -911,22 +743,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1998</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Chicago</div>
+                <span class="label">Origin</span>
+                <div class="value">Chicago Area, Illinois</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">Late 2010s</div>
+                <div class="value">2010s–2019</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Melodic vulnerability</div>
+                <div class="value">Emotion-driven melodic rap</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Reshaped youth rap culture</div>
               </div>
             </div>
           </section>
@@ -934,173 +767,160 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Upbringing</h3>
-              <p>Jarad Anthony Higgins, known professionally as Juice WRLD, was born on December 2, 1998, in Chicago, Illinois. He was raised in the suburb of Homewood, where his upbringing contrasted with the harsher environments often associated with Chicago’s inner city. Despite this relative stability, his life was shaped by emotional complexity, strict parenting, and early exposure to internal struggles.</p>
-              <p>Raised by his mother, who was deeply religious and attempted to shield him from negative influences, Higgins grew up without access to certain forms of music and media. However, he found ways to explore music independently. He taught himself to play instruments such as piano, guitar, and drums, developing a musical foundation that would later distinguish him from many of his peers.</p>
+              <h3>Early Life and Musical Formation</h3>
+              <p>Born Jarad Anthony Higgins, Juice WRLD grew up in the Chicago area and developed a musical identity shaped by rap, rock, and emotional songwriting. He belonged to a generation that consumed genres without strict boundaries, and that freedom became central to his sound. Instead of approaching rap as only competition or bravado, he used it as a space for emotional release, self-examination, and melodic storytelling.</p>
 
-              <h3>Early Influences and Creative Development</h3>
-              <p>Juice WRLD’s musical influences were wide-ranging, blending hip-hop with rock, emo, and alternative sounds. Artists like Kid Cudi and others known for emotional openness shaped his artistic direction. Unlike traditional rappers who focused primarily on external storytelling, Higgins turned inward, using music to process feelings of heartbreak, anxiety, and isolation.</p>
-              <p>He began recording music during his teenage years, uploading songs to online platforms. His early work demonstrated a natural ability to freestyle, often creating entire songs off the top of his head. This improvisational skill became one of his defining traits, allowing him to produce music at a remarkable pace.</p>
+              <h3>Melody, Pain, and Instant Connection</h3>
+              <p>What made Juice WRLD so powerful to listeners was the directness of his feeling. His songs often sounded like thoughts captured in motion: heartbreak, dependency, paranoia, longing, confidence, numbness, and self-destruction all moving together. He could make a record catchy without draining it of pain. That balance gave him enormous reach, especially among young listeners who heard in his music a level of honesty they felt was rare in mainstream spaces.</p>
 
-              <h3>Breakthrough and Rise to Fame</h3>
-              <p>Juice WRLD’s breakthrough came with the release of <em>Lucid Dreams</em> in 2018. The track, built around a melodic and emotionally driven structure, resonated widely with a generation navigating similar feelings of heartbreak and vulnerability. The song became a global hit, propelling him into mainstream success almost overnight.</p>
-              <p>His debut album, <em>Goodbye &amp; Good Riddance</em>, further established his place in the industry. It presented a cohesive narrative centered on relationships, emotional turmoil, and introspection. His ability to articulate pain in a relatable way set him apart and made him one of the most influential young artists of his time.</p>
+              <h3>The Freestyle Phenomenon</h3>
+              <p>Juice WRLD’s talent was not limited to writing records. He also became widely recognized for his extraordinary freestyle ability. Long-form freestyles helped reveal just how instinctive his musical mind was. He could generate lines, hooks, moods, and melodies in real time with unusual fluidity. That gift made him feel less like a manufactured star and more like a genuine natural—someone whose creativity seemed to move faster than the format around him.</p>
 
-              <div class="quote">Juice WRLD did not just make music — he translated emotion into sound, giving a voice to feelings many struggled to express.</div>
+              <div class="quote">Juice WRLD made sadness sound musical, immediate, and dangerously relatable—turning inner chaos into anthems for an entire generation.</div>
 
-              <h3>Artistic Style and Cultural Impact</h3>
-              <p>Juice WRLD’s style blended rap with melody in a way that felt both modern and deeply personal. His music often explored themes of love, heartbreak, mental health, and substance use, presented with a level of honesty that resonated strongly with listeners.</p>
-              <p>He became a central figure in the evolution of melodic rap and emo-influenced hip-hop. His songs were not just popular; they were emotionally impactful, often serving as a form of comfort or understanding for fans facing similar struggles.</p>
+              <h3>Genre-Blending and Cultural Shift</h3>
+              <p>Juice WRLD helped solidify a form of rap that openly welcomed emo influence, rock feeling, melody, and emotional collapse without apology. In his music, vulnerability was not separate from coolness; it was part of it. That was a major cultural shift. He helped normalize a style in which pain, addiction, loneliness, and romantic obsession were not hidden behind toughness, but expressed as central themes.</p>
 
-              <h3>Fame, Pressure, and Inner Struggles</h3>
-              <p>As his fame grew, so did the pressures that came with it. Juice WRLD was open about his struggles with anxiety, depression, and substance use. He often spoke about using drugs as a coping mechanism, a theme that appeared frequently in his lyrics.</p>
-              <p>While his openness created a strong connection with fans, it also highlighted the darker side of his reality. His music became both an outlet and a reflection of ongoing internal battles, making his success deeply intertwined with his personal challenges.</p>
-
-              <h3>Productivity and Musical Output</h3>
-              <p>One of Juice WRLD’s most remarkable qualities was his productivity. He was known for recording hundreds, if not thousands, of songs in a relatively short period. Much of his work was created through freestyle sessions, where he would construct entire tracks in real time.</p>
-              <p>This creative process contributed to a vast body of work, much of which continues to be released posthumously. It also reinforced his reputation as a uniquely gifted artist capable of translating emotion into music almost instantaneously.</p>
-
-              <h3>The Day He Lost His Life</h3>
-              <p>On December 8, 2019, Juice WRLD died at the age of 21 after suffering a medical emergency at Chicago’s Midway International Airport. His sudden passing shocked fans and the music industry, as he was widely seen as one of the most promising artists of his generation.</p>
-              <p>His death highlighted broader conversations about mental health, substance use, and the pressures faced by young artists in the modern music industry.</p>
+              <h3>Fame and Fragility</h3>
+              <p>Part of what makes Juice WRLD’s story so affecting is the tension between his immense gift and the fragility running through his work. His music often sounded aware of danger even while caught inside it. That awareness gave many of his songs a haunting quality. They were not abstract fantasies of self-destruction; they often felt like direct transmissions from someone trying to survive overwhelming pressure, fame, and internal struggle at once.</p>
 
               <h3>Legacy</h3>
-              <p>Juice WRLD’s legacy lies in his ability to connect emotionally with listeners. He represented a shift in hip-hop, where vulnerability and openness became central rather than secondary. His music continues to resonate with millions, offering both comfort and reflection.</p>
-              <p>Despite his short career, his impact remains significant. He is remembered not only for his talent but for his honesty, his emotional depth, and his role in shaping a new direction in contemporary music.</p>
+              <p>Juice WRLD’s legacy is profound. He changed the emotional language of modern rap, expanded the role of melody and confession, and influenced a generation of artists who saw no reason to separate hip-hop from grief, rock texture, or inner turmoil. His catalog remains important because it captured youth pain with rare immediacy. He was not just a star of his moment—he became one of the central emotional voices of his era.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1998 — Birth</strong>
-                  <p>Born Jarad Anthony Higgins in Chicago, Illinois.</p>
+                  <strong>Mid-2010s — Early Development</strong>
+                  <p>Built his sound through melodic experimentation, internet-era distribution, and emotionally direct songwriting.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Teen Years — Early Uploads</strong>
-                  <p>Began making music online, developing his freestyle-based recording style.</p>
+                  <strong>Late 2010s — Breakthrough</strong>
+                  <p>Exploded into mainstream visibility with a style that fused melody, heartbreak, and rap accessibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2018 — Breakthrough</strong>
-                  <p><em>Lucid Dreams</em> and <em>Goodbye &amp; Good Riddance</em> made him a global star.</p>
+                  <strong>Late 2010s — Freestyle and Cultural Dominance</strong>
+                  <p>Became one of the most talked-about young artists in music through songs, features, and remarkable freestyle performances.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Rapid Output</strong>
-                  <p>Became known for prolific recording sessions and emotionally direct songwriting.</p>
+                  <strong>2019 — Final Chapter</strong>
+                  <p>His life ended tragically while his artistic influence was still rapidly expanding.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2019 — Death in Chicago</strong>
-                  <p>Died at age 21 after a medical emergency at Midway Airport.</p>
+                  <strong>Legacy Era</strong>
+                  <p>Remains one of the most influential emotional and melodic voices in modern hip-hop.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Jarad Anthony Higgins</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Juice WRLD</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Base</span>
-                  <div class="info-value">Homewood, Illinois</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Jarad Anthony Higgins</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Genre</span>
-                  <div class="info-value">Melodic Rap / Emo Rap</div>
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Chicago Area, Illinois</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Breakout Era</span>
-                  <div class="info-value">2018</div>
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / Melodic Rap / Emo Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Late artist whose influence remains central in modern rap</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Heartbreak</span>
-                <span class="tag">Mental Health</span>
-                <span class="tag">Melodic Rap</span>
+                <span class="tag">Melody</span>
                 <span class="tag">Freestyle</span>
+                <span class="tag">Addiction</span>
                 <span class="tag">Vulnerability</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">Youth Culture</span>
               </div>
             </section>
 
-            <section class="glass panel">
-              <h2>Highlighted Works</h2>
+            <section class="glass panel story-section" data-story-title="Eras">
+              <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Lucid Dreams</strong>
-                  <span>The global hit that introduced his voice to the world.</span>
+                  <strong>Breakout Pain Rap Era</strong>
+                  <span>The early phase where Juice WRLD turned heartbreak and emotional overload into mainstream rap language.</span>
                 </div>
                 <div class="album">
-                  <strong>Goodbye &amp; Good Riddance</strong>
-                  <span>The breakout project that defined his emotional style.</span>
+                  <strong>Freestyle Superstar Era</strong>
+                  <span>The period where his natural talent, versatility, and emotional reach made him a defining young star.</span>
                 </div>
                 <div class="album">
-                  <strong>Freestyle Legacy</strong>
-                  <span>His prolific output became part of his legend.</span>
+                  <strong>Enduring Legacy Era</strong>
+                  <span>A lasting phase defined by deep influence on melodic rap, youth expression, and genre-blending songwriting.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Juice WRLD.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Juice WRLD on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Juice+WRLD" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Juice WRLD.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Juice WRLD on Spotify and explore the songs that made him one of the most influential voices of his generation.</p>
+                  <a href="https://open.spotify.com/search/Juice%20WRLD" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live performances, and major Juice WRLD releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Juice+WRLD+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Juice WRLD on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Juice+WRLD+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Lucid Dreams</span>
+                  <span class="track-tag">All Girls Are the Same</span>
+                  <span class="track-tag">Robbery</span>
+                  <span class="track-tag">Lean Wit Me</span>
+                  <span class="track-tag">Wishing Well</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Lucid Dreams</span>
-                <span class="track-tag">All Girls Are the Same</span>
-                <span class="track-tag">Robbery</span>
-                <span class="track-tag">Wishing Well</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="mo3.html" class="related-card">
-                  <h4>MO3</h4>
-                  <p>A close emotional match built around pain, melody, vulnerability, and deeply personal songwriting.</p>
+                <a href="xxxtentacion.html" class="related-card">
+                  <h4>XXXTentacion</h4>
+                  <p>A fellow generational figure whose music also turned vulnerability and emotional intensity into cultural force.</p>
                 </a>
-                <a href="dmx.html" class="related-card">
-                  <h4>DMX</h4>
-                  <p>An earlier icon whose raw honesty helps frame the emotional lineage that Juice WRLD carried forward.</p>
+                <a href="trippie-redd.html" class="related-card">
+                  <h4>Trippie Redd</h4>
+                  <p>Another artist working in the space between melody, pain, rock influence, and modern rap experimentation.</p>
                 </a>
-                <a href="quando-rondo.html" class="related-card">
-                  <h4>Quando Rondo</h4>
-                  <p>A modern vault link through melodic expression, trauma, and public controversy.</p>
+                <a href="future.html" class="related-card">
+                  <h4>Future</h4>
+                  <p>An earlier influence in pain-drenched melodic rap whose emotional darkness helped shape the lane Juice WRLD transformed.</p>
                 </a>
               </div>
             </section>
@@ -1127,95 +947,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

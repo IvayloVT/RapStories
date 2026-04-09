@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>J. Holiday | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on J. Holiday, covering background, rise, impact, controversy, major works, and legacy." />
+  <meta name="description" content="A Rap Stories premium profile on J. Holiday, covering his Washington, D.C. roots, breakthrough R&B success, signature slow jams, and lasting place in 2000s urban music culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -18,8 +18,10 @@
       --radius: 20px;
       --max: 1260px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
@@ -29,9 +31,12 @@
       color: var(--text);
       line-height: 1.7;
     }
+
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
+
     .container { width: min(92%, var(--max)); margin: 0 auto; }
+
     .glass {
       background: var(--panel);
       border: 1px solid var(--panel-border);
@@ -40,18 +45,18 @@
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
+
     header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
+      position: sticky;
+      top: 0;
       z-index: 1000;
       background: rgba(5, 5, 8, 0.76);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-      transition: transform 0.3s ease;
     }
-    header.hidden { transform: translateY(-100%); }
+
     .nav {
       min-height: 82px;
       display: flex;
@@ -59,182 +64,618 @@
       align-items: center;
       gap: 24px;
     }
+
     .brand {
-      display: flex; align-items: center; gap: 12px;
-      font-weight: 900; letter-spacing: 0.6px; font-size: 1.02rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
     }
+
     .brand-mark {
-      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      color: #111; font-weight: 900; box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
     }
+
     .brand-text {
-      font-weight: 900; letter-spacing: 0.5px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
       background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .nav-links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-    .nav-links a { position:relative; color: var(--muted); transition: color 0.25s ease; font-size:0.96rem; }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
     .nav-links a::after {
-      content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
     }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
     .nav-btn {
-      padding: 12px 20px; border-radius: 999px; background: linear-gradient(135deg, #d4af37, #f5df8f);
-      color: #111; font-weight: 800; border:none; box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(212,175,55,0.28); }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
     .hero { padding: 42px 0 28px; }
-    .breadcrumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 18px; }
-    .hero-layout { display:grid; grid-template-columns:370px 1fr; gap:28px; align-items:stretch; }
-    .artist-image { overflow:hidden; position:relative; min-height:560px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
     .artist-image::before {
-      content:""; position:absolute; inset:0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/j-holiday.jpg") center/cover no-repeat;
     }
+
     .artist-image-content {
-      position:relative; z-index:1; height:100%; display:flex; flex-direction:column;
-      justify-content:flex-end; padding:28px;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
     }
+
     .artist-tag {
-      align-self:flex-start; padding:8px 12px; border-radius:999px;
-      background: rgba(10,10,15,0.76); border:1px solid rgba(255,255,255,0.10);
-      font-size:0.8rem; font-weight:800; margin-bottom:14px;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
-    .artist-image h2 { font-size:2rem; margin-bottom:8px; }
-    .artist-image p { color:#d7d7df; font-size:0.95rem; }
-    .hero-info { padding:28px; }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
     .eyebrow {
-      display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
-      background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
+
     .hero-info h1 {
-      font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 0.98; letter-spacing: -2px; margin-bottom: 14px; font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
     }
+
     .hero-info h1 span {
       background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
-      -webkit-background-clip:text; background-clip:text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .summary { color: var(--muted); font-size:1.05rem; margin-bottom:22px; max-width:760px; }
-    .quick-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:22px; }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
     .fact {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .fact span { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .fact strong { font-size:1rem; color: var(--text); }
-    .hero-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
     .btn {
-      padding:14px 18px; border-radius:14px; border:1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04); color: var(--text); font-weight: 800; transition:0.25s ease; cursor:pointer;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
     }
+
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
-    main { padding-bottom:50px; }
-    .content-layout { display:grid; grid-template-columns:1.6fr 0.9fr; gap:24px; margin-top:26px; }
-    .content-stack, .side-stack { display:grid; gap:22px; }
-    .side-stack { align-self:start; position:sticky; top:96px; }
-    .panel { padding:28px; }
-    .panel h2 { font-size:1.7rem; margin-bottom:16px; letter-spacing:-0.5px; }
-    .panel h3 { font-size:1.15rem; margin:22px 0 10px; color: var(--text); }
-    .panel p { color:#dadade; margin-bottom:14px; }
-    .quote {
-      margin-top:14px; padding:18px 20px; border-left:3px solid var(--accent);
-      border-radius:14px; background: rgba(255,255,255,0.03); color:#e5e5ea; font-style:italic;
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
     }
-    .timeline { position:relative; padding-left:18px; }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
     .timeline::before {
-      content:""; position:absolute; top:6px; left:5px; bottom:6px; width:2px;
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
       background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
     }
-    .timeline-item { position:relative; padding-left:24px; margin-bottom:20px; }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
     .timeline-item::before {
-      content:""; position:absolute; left:-1px; top:7px; width:12px; height:12px; border-radius:50%;
-      background: var(--accent); box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
     }
-    .timeline-item strong { display:block; margin-bottom:6px; font-size:1rem; }
-    .timeline-item p { color: var(--muted); margin:0; font-size:0.95rem; }
-    .info-list, .discography, .related-list { display:grid; gap:14px; }
-    .info-row { padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .info-row:last-child { border-bottom:none; padding-bottom:0; }
-    .info-label { display:block; color: var(--muted); font-size:0.84rem; margin-bottom:4px; }
-    .info-value { color: var(--text); font-weight:700; }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
     .album, .related-card {
-      padding:16px; border-radius:16px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .album strong, .related-card h4 { display:block; margin-bottom:6px; }
-    .album span, .related-card p { color: var(--muted); font-size:0.92rem; }
-    .related-card:hover { transform: translateY(-3px); border-color: rgba(212,175,55,0.25); }
-    .tags { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .tag {
-      padding:9px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.85rem; font-weight:700;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
+
     .artist-stats {
-      display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:14px; margin-top:20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
     }
     .stat-panel {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .stat-panel .label { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .stat-panel .value { color: var(--text); font-weight:800; line-height:1.3; }
-    .music-panel { margin-top:24px; }
-    .music-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .music-panel {
+      margin-top: 24px;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
     .music-card {
-      padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .music-card h3 { margin-bottom:10px; font-size:1rem; }
-    .music-card p { margin-bottom:14px; }
+
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .music-card p {
+      margin-bottom: 14px;
+    }
+
     .music-link-btn {
-      display:inline-flex; align-items:center; justify-content:center; padding:13px 16px; border-radius:14px;
-      border:1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.05); color: var(--text); font-weight:800; transition:0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
     }
-    .music-link-btn:hover { transform: translateY(-2px); border-color: rgba(212,175,55,0.35); }
-    .music-link-btn.primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
+
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
     .essential-tracks {
-      margin-top:20px; padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .track-list { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .track-tag {
-      padding:10px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.86rem; font-weight:700;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
     }
-    footer { padding:24px 0 50px; color: var(--muted); }
-    .footer-wrap {
-      border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
     }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
-    .footer-links a:hover { color: var(--text); }
-    @media (max-width:1150px) {
-      .hero-layout, .content-layout { grid-template-columns:1fr; }
-      .side-stack { position:static; }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
     }
-    @media (max-width:980px) {
-      .artist-stats { grid-template-columns:1fr 1fr; }
+
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
     }
-    @media (max-width:860px) {
-      .music-grid { grid-template-columns:1fr; }
-    }
-    @media (max-width:820px) {
-      .quick-facts { grid-template-columns:1fr 1fr; }
-      .nav { flex-direction:column; padding:14px 0; }
-      .nav-links { justify-content:center; }
-      .artist-image { min-height:420px; }
-    }
-    @media (max-width:560px) {
-      .quick-facts, .artist-stats { grid-template-columns:1fr; }
-      .panel, .hero-info { padding:22px; }
-      .hero { padding-top:34px; }
-      .hero-info h1 { letter-spacing:-1px; }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
     }
   </style>
 </head>
 <body>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -243,10 +684,11 @@
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -254,7 +696,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -267,20 +709,34 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>J. Holiday</h2>
-              <p>Smooth R&amp;B singer whose breakthrough records defined late-2000s slow jams.</p>
+              <p>An R&B voice of the late 2000s whose smooth delivery, emotional songwriting, and slow-jam appeal made him a defining figure of that era’s radio sound.</p>
             </div>
           </aside>
 
           <section class="glass hero-info">
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>J. Holiday</span></h1>
-            <p class="summary">Known for emotional, romantic R&amp;B and a memorable late-2000s breakthrough, J. Holiday became associated with an era when vocal intimacy and radio crossover still carried major mainstream weight.</p>
+            <p class="summary">
+              J. Holiday emerged as one of the standout R&B voices of the late 2000s, bringing polished vocals, romantic intensity, and a classic slow-jam sensibility into an era that was rapidly evolving. With a sound that balanced mainstream accessibility and emotional sincerity, he carved out a place in urban music through songs built for radio, relationships, and late-night reflection.
+            </p>
 
             <div class="quick-facts">
-              <div class="fact"><span>Born</span><strong>November 29, 1984</strong></div>
-              <div class="fact"><span>From</span><strong>Washington, D.C.</strong></div>
-              <div class="fact"><span>Known For</span><strong>Late-2000s R&amp;B hits</strong></div>
-              <div class="fact"><span>Status</span><strong>Active</strong></div>
+              <div class="fact">
+                <span>Born</span>
+                <strong>November 29, 1984</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Washington, D.C.</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Smooth R&B vocals, slow jams, radio hits</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>2000s R&B Standout</strong>
+              </div>
             </div>
 
             <div class="hero-buttons">
@@ -289,94 +745,183 @@
             </div>
 
             <div class="artist-stats">
-              <div class="stat-panel"><span class="label">Era</span><div class="value">2000s–2010s</div></div>
-              <div class="stat-panel"><span class="label">Home</span><div class="value">Washington, D.C.</div></div>
-              <div class="stat-panel"><span class="label">Style</span><div class="value">Late-2000s R&amp;B hits</div></div>
-              <div class="stat-panel"><span class="label">Legacy</span><div class="value">R&amp;B</div></div>
+              <div class="stat-panel">
+                <span class="label">Origin</span>
+                <div class="value">Washington, D.C.</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Era</span>
+                <div class="value">2000s–present</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Known For</span>
+                <div class="value">Romantic R&B records</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Late-2000s urban radio presence</div>
+              </div>
             </div>
           </section>
         </div>
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
-              <h3>Background</h3><p>J. Holiday came out of Washington, D.C., bringing a polished but emotionally direct style into mainstream R&amp;B. He entered an industry still shaped by CDs, radio, and the fading dominance of traditional slow-jam culture.</p>
-<h3>Breakthrough</h3><p>His biggest rise came with records that connected through simple but effective songwriting, memorable hooks, and intimate vocal performance. He fit into a lane where vulnerability, seduction, and melody still drove major commercial success.</p>
-<h3>R&amp;B Context</h3><p>Holiday’s era was transitional: digital distribution was rising, but traditional label systems still mattered. His career reflects the final phase of a mainstream R&amp;B model centered on radio-friendly romance and major-label rollout.</p>
-<h3>Legacy</h3><p>Though not as omnipresent as some of his peers, he remains part of the soundtrack of late-2000s R&amp;B and is remembered for his vocal tone and emotionally accessible style.</p>
-              <div class="quote">J. Holiday represents a distinct lane in rap and popular music: a figure whose story joins talent, pressure, image, and cultural timing.</div>
+
+              <h3>Washington, D.C. Roots</h3>
+              <p>Born Nahum Grymes, J. Holiday came out of Washington, D.C. with a musical identity shaped by melody, polish, and emotional directness. Rather than building his name through shock or reinvention, he leaned into a more traditional R&B strength: singing about desire, heartbreak, intimacy, and vulnerability in a way that felt immediate and accessible.</p>
+
+              <h3>Finding a Lane in Modern R&B</h3>
+              <p>J. Holiday arrived at a time when R&B was balancing between older vocal traditions and newer commercial trends. His music fit into that transition by offering a smooth, radio-friendly sound without fully abandoning the genre’s slower, more intimate roots. His voice carried warmth and control, and his records often emphasized mood as much as vocal technique.</p>
+
+              <h3>Breakthrough and Recognition</h3>
+              <p>His rise was tied to records that connected strongly with mainstream urban audiences, especially listeners drawn to romantic songwriting and late-night atmosphere. He quickly became associated with a style of R&B built around memorable hooks, emotional openness, and polished production. That formula helped him stand out in a crowded field and gave him a recognizable presence during the late 2000s.</p>
+
+              <div class="quote">J. Holiday’s music worked because it understood a timeless R&B truth: sometimes intimacy, melody, and sincerity are stronger than spectacle.</div>
+
+              <h3>A Voice for the Slow Jam Era</h3>
+              <p>What made J. Holiday distinct was his ability to carry the tradition of the slow jam into a newer generation. His records were designed for mood, closeness, and replay value. In that sense, he helped preserve a lane in contemporary R&B that remained centered on vocal emotion and romantic storytelling rather than pure crossover experimentation.</p>
+
+              <h3>Style and Appeal</h3>
+              <p>J. Holiday’s appeal rested in familiarity done well. He did not need to sound radically unconventional to connect. His strength was in execution: expressive singing, accessible writing, and records that listeners could place inside real emotional situations. That gave his music staying power beyond the initial radio cycle.</p>
+
+              <h3>Legacy</h3>
+              <p>J. Holiday’s legacy is tied to a very specific and important chapter in modern R&B. He remains a recognizable figure from an era when urban radio still made room for romantic male vocalists with strong hooks and emotional clarity. His music represents a lane of R&B that valued intimacy, melody, and sincerity—and for many listeners, that makes his catalog timeless.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
-                <div class="timeline-item"><strong>1984</strong><p>Born in Washington, D.C.</p></div>
-<div class="timeline-item"><strong>2000s</strong><p>Pursued recording career and industry breakthrough.</p></div>
-<div class="timeline-item"><strong>2007–2009</strong><p>Reached mainstream visibility with major singles and album success.</p></div>
-<div class="timeline-item"><strong>2010s</strong><p>Continued performing and recording.</p></div>
-<div class="timeline-item"><strong>Legacy</strong><p>Remains identified with a key era of modern R&amp;B slow jams.</p></div>
+                <div class="timeline-item">
+                  <strong>Early 2000s — Development Phase</strong>
+                  <p>Worked on his sound and vocal identity while building toward a professional recording career.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Mid-2000s — Industry Emergence</strong>
+                  <p>Entered the broader R&B conversation with polished records and increasing label-backed visibility.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 2000s — Breakthrough Era</strong>
+                  <p>Became a major urban radio presence through romantic, slow-jam-driven hits.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 2000s / Early 2010s — Established Name</strong>
+                  <p>Maintained recognition as one of the more familiar male R&B voices of his era.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Phase</strong>
+                  <p>Remains associated with the emotional, melodic sound that defined a memorable period in modern R&B.</p>
+                </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row"><span class="info-label">Full Name / Credit</span><div class="info-value">J. Holiday</div></div>
-                <div class="info-row"><span class="info-label">Birthplace / Origin</span><div class="info-value">Washington, D.C.</div></div>
-                <div class="info-row"><span class="info-label">Genres</span><div class="info-value">Hip-Hop / Rap / R&amp;B</div></div>
-                <div class="info-row"><span class="info-label">Known For</span><div class="info-value">Late-2000s R&amp;B hits</div></div>
-                <div class="info-row"><span class="info-label">Current Status</span><div class="info-value">Active</div></div>
+                <div class="info-row">
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">J. Holiday</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Nahum Thorton Grymes</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Washington, D.C.</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">R&B / Contemporary R&B / Urban Soul</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Recognized late-2000s R&B artist</div>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
-              <div class="tags"><span class="tag">R&amp;B</span><span class="tag">Romance</span><span class="tag">Vocals</span><span class="tag">Radio Hits</span><span class="tag">Emotion</span><span class="tag">Late 2000s</span></div>
+              <div class="tags">
+                <span class="tag">Romance</span>
+                <span class="tag">Slow Jams</span>
+                <span class="tag">Emotion</span>
+                <span class="tag">Urban Radio</span>
+                <span class="tag">Melody</span>
+                <span class="tag">Late 2000s</span>
+              </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
-                <div class="album"><strong>Origins</strong><span>How J. Holiday emerged and built an identity.</span></div>
-                <div class="album"><strong>Breakthrough</strong><span>The phase that turned regional momentum into wider recognition.</span></div>
-                <div class="album"><strong>Legacy</strong><span>Why J. Holiday remains important in the wider story of rap and modern music.</span></div>
+                <div class="album">
+                  <strong>Come-Up Era</strong>
+                  <span>The early phase where J. Holiday refined his sound and positioned himself in modern R&B.</span>
+                </div>
+                <div class="album">
+                  <strong>Breakthrough Slow Jam Era</strong>
+                  <span>The period where he became widely recognized for emotional, radio-friendly R&B records.</span>
+                </div>
+                <div class="album">
+                  <strong>Enduring 2000s R&B Legacy</strong>
+                  <span>A later phase defined by nostalgia, recognition, and continued appreciation from R&B listeners.</span>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel music-panel">
+            <section class="glass panel music-panel story-section" data-story-title="Music">
               <h2>Music Integration</h2>
-              <p>Move from reading to listening with direct artist music links and a quick essential-listening guide for J. Holiday.</p>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for J. Holiday.
+              </p>
+
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for J. Holiday on Spotify and keep the story moving with the music.</p>
+                  <p>Open a curated search for J. Holiday on Spotify and explore the songs that made him one of late-2000s R&B’s memorable voices.</p>
                   <a href="https://open.spotify.com/search/J.%20Holiday" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, performances, and major records related to J. Holiday on YouTube.</p>
-                  <a href="https://www.youtube.com/results?search_query=J.+Holiday+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                  <p>Watch official videos, live performances, and major J. Holiday releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=J+Holiday+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
+
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">Greatest Hits</span>
-                  <span class="track-tag">Breakthrough Era</span>
-                  <span class="track-tag">Fan Favorites</span>
-                  <span class="track-tag">Deep Cuts</span>
+                  <span class="track-tag">Bed</span>
+                  <span class="track-tag">Suffocate</span>
+                  <span class="track-tag">Back of My Lac'</span>
+                  <span class="track-tag">It's Yours</span>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
-              <div class="related-list"><a href="ginuwine.html" class="related-card"><h4>Ginuwine</h4><p>Another major R&amp;B presence associated with smooth, emotionally direct records.</p></a>
-<a href="jay-sean.html" class="related-card"><h4>Jay Sean</h4><p>A fellow crossover-friendly singer from a similar era.</p></a>
-<a href="khalid.html" class="related-card"><h4>Khalid</h4><p>A later R&amp;B/pop figure with a very different but comparably accessible sound.</p></a></div>
+              <div class="related-list">
+                <a href="trey-songz.html" class="related-card">
+                  <h4>Trey Songz</h4>
+                  <p>A fellow late-2000s R&B figure whose music also thrived on intimacy, radio appeal, and melodic polish.</p>
+                </a>
+                <a href="chris-brown.html" class="related-card">
+                  <h4>Chris Brown</h4>
+                  <p>Another major voice from the same era who helped define the sound and commercial reach of modern R&B.</p>
+                </a>
+                <a href="ginuwine.html" class="related-card">
+                  <h4>Ginuwine</h4>
+                  <p>An earlier R&B star whose romantic sensibility and slow-jam identity connect to the lane J. Holiday continued.</p>
+                </a>
+              </div>
             </section>
           </aside>
         </div>
@@ -399,38 +944,141 @@
     </div>
   </footer>
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-  let lastScrollY = window.pageYOffset;
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
+
+    if (!rail || !toggle || !progressBar || !sections.length) return;
+
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
+
+    rail.innerHTML = "";
+
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
+
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
-    lastScrollY = currentScrollY;
-  }
-  offset();
-  handleScroll();
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
+
     offset();
-    if(window.innerWidth > 768) header.classList.remove("hidden");
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ja Rule | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on Ja Rule, covering background, rise, impact, controversy, major works, and legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Ja Rule, covering his Queens roots, Murder Inc. rise, chart-dominating hits, rap-R&B crossover era, and lasting place in hip-hop history." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -18,8 +18,10 @@
       --radius: 20px;
       --max: 1260px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
@@ -29,9 +31,12 @@
       color: var(--text);
       line-height: 1.7;
     }
+
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
+
     .container { width: min(92%, var(--max)); margin: 0 auto; }
+
     .glass {
       background: var(--panel);
       border: 1px solid var(--panel-border);
@@ -40,18 +45,18 @@
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
+
     header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
+      position: sticky;
+      top: 0;
       z-index: 1000;
       background: rgba(5, 5, 8, 0.76);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-      transition: transform 0.3s ease;
     }
-    header.hidden { transform: translateY(-100%); }
+
     .nav {
       min-height: 82px;
       display: flex;
@@ -59,182 +64,618 @@
       align-items: center;
       gap: 24px;
     }
+
     .brand {
-      display: flex; align-items: center; gap: 12px;
-      font-weight: 900; letter-spacing: 0.6px; font-size: 1.02rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
     }
+
     .brand-mark {
-      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      color: #111; font-weight: 900; box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
     }
+
     .brand-text {
-      font-weight: 900; letter-spacing: 0.5px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
       background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .nav-links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-    .nav-links a { position:relative; color: var(--muted); transition: color 0.25s ease; font-size:0.96rem; }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
     .nav-links a::after {
-      content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
     }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
     .nav-btn {
-      padding: 12px 20px; border-radius: 999px; background: linear-gradient(135deg, #d4af37, #f5df8f);
-      color: #111; font-weight: 800; border:none; box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(212,175,55,0.28); }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
     .hero { padding: 42px 0 28px; }
-    .breadcrumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 18px; }
-    .hero-layout { display:grid; grid-template-columns:370px 1fr; gap:28px; align-items:stretch; }
-    .artist-image { overflow:hidden; position:relative; min-height:560px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
     .artist-image::before {
-      content:""; position:absolute; inset:0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/ja-rule.jpg") center/cover no-repeat;
     }
+
     .artist-image-content {
-      position:relative; z-index:1; height:100%; display:flex; flex-direction:column;
-      justify-content:flex-end; padding:28px;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
     }
+
     .artist-tag {
-      align-self:flex-start; padding:8px 12px; border-radius:999px;
-      background: rgba(10,10,15,0.76); border:1px solid rgba(255,255,255,0.10);
-      font-size:0.8rem; font-weight:800; margin-bottom:14px;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
-    .artist-image h2 { font-size:2rem; margin-bottom:8px; }
-    .artist-image p { color:#d7d7df; font-size:0.95rem; }
-    .hero-info { padding:28px; }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
     .eyebrow {
-      display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
-      background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
+
     .hero-info h1 {
-      font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 0.98; letter-spacing: -2px; margin-bottom: 14px; font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
     }
+
     .hero-info h1 span {
       background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
-      -webkit-background-clip:text; background-clip:text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .summary { color: var(--muted); font-size:1.05rem; margin-bottom:22px; max-width:760px; }
-    .quick-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:22px; }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
     .fact {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .fact span { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .fact strong { font-size:1rem; color: var(--text); }
-    .hero-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
     .btn {
-      padding:14px 18px; border-radius:14px; border:1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04); color: var(--text); font-weight: 800; transition:0.25s ease; cursor:pointer;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
     }
+
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
-    main { padding-bottom:50px; }
-    .content-layout { display:grid; grid-template-columns:1.6fr 0.9fr; gap:24px; margin-top:26px; }
-    .content-stack, .side-stack { display:grid; gap:22px; }
-    .side-stack { align-self:start; position:sticky; top:96px; }
-    .panel { padding:28px; }
-    .panel h2 { font-size:1.7rem; margin-bottom:16px; letter-spacing:-0.5px; }
-    .panel h3 { font-size:1.15rem; margin:22px 0 10px; color: var(--text); }
-    .panel p { color:#dadade; margin-bottom:14px; }
-    .quote {
-      margin-top:14px; padding:18px 20px; border-left:3px solid var(--accent);
-      border-radius:14px; background: rgba(255,255,255,0.03); color:#e5e5ea; font-style:italic;
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
     }
-    .timeline { position:relative; padding-left:18px; }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
     .timeline::before {
-      content:""; position:absolute; top:6px; left:5px; bottom:6px; width:2px;
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
       background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
     }
-    .timeline-item { position:relative; padding-left:24px; margin-bottom:20px; }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
     .timeline-item::before {
-      content:""; position:absolute; left:-1px; top:7px; width:12px; height:12px; border-radius:50%;
-      background: var(--accent); box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
     }
-    .timeline-item strong { display:block; margin-bottom:6px; font-size:1rem; }
-    .timeline-item p { color: var(--muted); margin:0; font-size:0.95rem; }
-    .info-list, .discography, .related-list { display:grid; gap:14px; }
-    .info-row { padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .info-row:last-child { border-bottom:none; padding-bottom:0; }
-    .info-label { display:block; color: var(--muted); font-size:0.84rem; margin-bottom:4px; }
-    .info-value { color: var(--text); font-weight:700; }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
     .album, .related-card {
-      padding:16px; border-radius:16px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .album strong, .related-card h4 { display:block; margin-bottom:6px; }
-    .album span, .related-card p { color: var(--muted); font-size:0.92rem; }
-    .related-card:hover { transform: translateY(-3px); border-color: rgba(212,175,55,0.25); }
-    .tags { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .tag {
-      padding:9px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.85rem; font-weight:700;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
+
     .artist-stats {
-      display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:14px; margin-top:20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
     }
     .stat-panel {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .stat-panel .label { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .stat-panel .value { color: var(--text); font-weight:800; line-height:1.3; }
-    .music-panel { margin-top:24px; }
-    .music-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .music-panel {
+      margin-top: 24px;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
     .music-card {
-      padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .music-card h3 { margin-bottom:10px; font-size:1rem; }
-    .music-card p { margin-bottom:14px; }
+
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .music-card p {
+      margin-bottom: 14px;
+    }
+
     .music-link-btn {
-      display:inline-flex; align-items:center; justify-content:center; padding:13px 16px; border-radius:14px;
-      border:1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.05); color: var(--text); font-weight:800; transition:0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
     }
-    .music-link-btn:hover { transform: translateY(-2px); border-color: rgba(212,175,55,0.35); }
-    .music-link-btn.primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
+
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
     .essential-tracks {
-      margin-top:20px; padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .track-list { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .track-tag {
-      padding:10px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.86rem; font-weight:700;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
     }
-    footer { padding:24px 0 50px; color: var(--muted); }
-    .footer-wrap {
-      border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
     }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
-    .footer-links a:hover { color: var(--text); }
-    @media (max-width:1150px) {
-      .hero-layout, .content-layout { grid-template-columns:1fr; }
-      .side-stack { position:static; }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
     }
-    @media (max-width:980px) {
-      .artist-stats { grid-template-columns:1fr 1fr; }
+
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
     }
-    @media (max-width:860px) {
-      .music-grid { grid-template-columns:1fr; }
-    }
-    @media (max-width:820px) {
-      .quick-facts { grid-template-columns:1fr 1fr; }
-      .nav { flex-direction:column; padding:14px 0; }
-      .nav-links { justify-content:center; }
-      .artist-image { min-height:420px; }
-    }
-    @media (max-width:560px) {
-      .quick-facts, .artist-stats { grid-template-columns:1fr; }
-      .panel, .hero-info { padding:22px; }
-      .hero { padding-top:34px; }
-      .hero-info h1 { letter-spacing:-1px; }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
     }
   </style>
 </head>
 <body>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -243,10 +684,11 @@
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -254,7 +696,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -267,20 +709,34 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Ja Rule</h2>
-              <p>Queens rapper who fused street energy with crossover hooks at the turn of the millennium.</p>
+              <p>A Queens rapper whose raspy voice, street edge, and melodic crossover instincts made him one of the biggest stars of the early 2000s.</p>
             </div>
           </aside>
 
           <section class="glass hero-info">
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Ja Rule</span></h1>
-            <p class="summary">Ja Rule became one of the biggest stars of the early 2000s by merging rough-voiced rap delivery with melodic hooks and major pop collaborations. His career captures both massive mainstream success and one of rap’s most famous downswings.</p>
+            <p class="summary">
+              Ja Rule became one of the defining rap stars of the early 2000s by blending street-oriented energy with radio-ready hooks and major R&B collaborations. Emerging from Queens and rising through the Murder Inc. machine, he helped shape an era where rap and melodic crossover records dominated charts, clubs, and mainstream culture. His run was intense, commercially massive, and impossible to ignore.
+            </p>
 
             <div class="quick-facts">
-              <div class="fact"><span>Born</span><strong>February 29, 1976</strong></div>
-              <div class="fact"><span>From</span><strong>Queens, New York</strong></div>
-              <div class="fact"><span>Known For</span><strong>Early-2000s crossover rap</strong></div>
-              <div class="fact"><span>Status</span><strong>Active</strong></div>
+              <div class="fact">
+                <span>Born</span>
+                <strong>February 29, 1976</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Queens, New York</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Raspy delivery, crossover hits, Murder Inc.</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>Early-2000s Rap Icon</strong>
+              </div>
             </div>
 
             <div class="hero-buttons">
@@ -289,94 +745,184 @@
             </div>
 
             <div class="artist-stats">
-              <div class="stat-panel"><span class="label">Era</span><div class="value">1990s–2000s</div></div>
-              <div class="stat-panel"><span class="label">Home</span><div class="value">Queens</div></div>
-              <div class="stat-panel"><span class="label">Style</span><div class="value">Early-2000s crossover rap</div></div>
-              <div class="stat-panel"><span class="label">Legacy</span><div class="value">Crossover</div></div>
+              <div class="stat-panel">
+                <span class="label">Origin</span>
+                <div class="value">Queens, New York</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Era</span>
+                <div class="value">1990s–present</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Known For</span>
+                <div class="value">Rap-R&B crossover anthems</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Defined early-2000s chart rap</div>
+              </div>
             </div>
           </section>
         </div>
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
-              <h3>Origins</h3><p>Ja Rule came out of Queens with a voice that felt immediately distinctive—gravelly, urgent, and recognizable. He emerged in a New York rap environment that still valued toughness, but he soon expanded that formula in a more melodic direction.</p>
-<h3>Mainstream Peak</h3><p>At his height, he was one of the defining hitmakers of the early 2000s. His records often paired street aesthetics with radio-sized choruses, making him one of the most commercially dominant rappers of the era. Collaborations helped him cross into wider pop audiences.</p>
-<h3>Feuds and Decline</h3><p>His public image changed sharply during high-profile rap conflicts, especially the feud with 50 Cent. In hip-hop, narrative can matter as much as music, and those clashes heavily reshaped how audiences viewed him. Industry pressure and changing tastes deepened the downturn.</p>
-<h3>Reassessment</h3><p>Over time, Ja Rule’s catalog has received more balanced recognition. He remains a major figure in the story of crossover rap, representing a period when melody, hooks, and urban-pop hybrids increasingly defined the mainstream.</p>
-              <div class="quote">Ja Rule represents a distinct lane in rap and popular music: a figure whose story joins talent, pressure, image, and cultural timing.</div>
+
+              <h3>Queens Beginnings</h3>
+              <p>Born Jeffrey Bruce Atkins, Ja Rule came out of Queens, New York, with a style that combined aggression, charisma, and emotional immediacy. His voice alone made him distinct: rough, urgent, and instantly recognizable. That vocal identity helped him stand apart in a crowded rap landscape and gave his music a built-in intensity that worked just as well on street records as it did on mainstream singles.</p>
+
+              <h3>From Hardcore Roots to Commercial Force</h3>
+              <p>Ja Rule’s early image was more rugged than romantic. He emerged with a harder edge, shaped by the New York rap tradition and street-oriented aesthetics. But one of his greatest career moves was recognizing that melody and emotion could expand his range. Instead of staying in a single lane, he evolved into an artist who could deliver tough verses and still carry major hooks built for radio and crossover appeal.</p>
+
+              <h3>The Murder Inc. Era</h3>
+              <p>His rise became inseparable from Murder Inc., the label environment that helped turn him into a centerpiece of early-2000s popular rap. In that period, Ja Rule was not just successful—he was everywhere. He became a fixture on radio, music television, club playlists, and chart-driven collaborations. His music captured a moment when rap was becoming even more central to pop culture, and he was one of the artists leading that expansion.</p>
+
+              <div class="quote">Ja Rule helped define an era where rap could be gritty, emotional, melodic, and massively commercial all at once.</div>
+
+              <h3>The Crossover Formula</h3>
+              <p>One of Ja Rule’s biggest contributions was helping normalize the rap-and-R&B collaboration formula that dominated the era. By pairing his raw voice with smoother sung choruses and romantic themes, he became a specialist in songs that crossed demographic lines without fully losing their hip-hop core. Those records helped shape the sound of mainstream urban music in the early 2000s.</p>
+
+              <h3>Conflict, Backlash, and Reassessment</h3>
+              <p>Ja Rule’s career also became tied to one of rap’s most visible feud eras, and the backlash that followed affected how his catalog was viewed for years. But with distance, his place in hip-hop has become easier to assess more clearly. He was not a minor figure of his era—he was one of its central stars, with a run of records that captured the sound, ambition, and crossover instincts of the time.</p>
+
+              <h3>Legacy</h3>
+              <p>Ja Rule’s legacy rests in scale and influence. He helped define a commercially powerful period in rap where melody, collaboration, and emotional directness became central to chart success. Whether viewed through hits, cultural impact, or era-defining presence, he remains one of the most recognizable artists of early-2000s hip-hop.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
-                <div class="timeline-item"><strong>1976</strong><p>Born in Queens.</p></div>
-<div class="timeline-item"><strong>Late 1990s</strong><p>Entered rap’s national spotlight.</p></div>
-<div class="timeline-item"><strong>2000–2003</strong><p>Reached peak commercial success with major crossover records.</p></div>
-<div class="timeline-item"><strong>Mid-2000s</strong><p>Feuds and industry shifts damaged his momentum.</p></div>
-<div class="timeline-item"><strong>Legacy</strong><p>Remains central to the story of early-2000s rap crossover culture.</p></div>
+                <div class="timeline-item">
+                  <strong>1990s — Early Rise</strong>
+                  <p>Began building a name in New York rap with a rough-edged style and recognizable voice.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 1990s / Early 2000s — Breakthrough</strong>
+                  <p>Rose into mainstream visibility and became a major figure in rap’s expanding commercial era.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Early 2000s — Chart-Dominating Peak</strong>
+                  <p>Delivered hit records, major collaborations, and one of the most visible runs in popular rap.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Mid-2000s — Backlash and Decline</strong>
+                  <p>Faced intense public and industry pressure during a turbulent period shaped by rap conflict and changing trends.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Phase</strong>
+                  <p>Remains remembered as one of the defining crossover rap stars of his generation.</p>
+                </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row"><span class="info-label">Full Name / Credit</span><div class="info-value">Ja Rule</div></div>
-                <div class="info-row"><span class="info-label">Birthplace / Origin</span><div class="info-value">Queens, New York</div></div>
-                <div class="info-row"><span class="info-label">Genres</span><div class="info-value">Hip-Hop / Rap / R&amp;B</div></div>
-                <div class="info-row"><span class="info-label">Known For</span><div class="info-value">Early-2000s crossover rap</div></div>
-                <div class="info-row"><span class="info-label">Current Status</span><div class="info-value">Active</div></div>
+                <div class="info-row">
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">Ja Rule</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Jeffrey Bruce Atkins</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Queens, New York</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Commercial Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Recognized early-2000s rap star and crossover hitmaker</div>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
-              <div class="tags"><span class="tag">Crossover</span><span class="tag">Hooks</span><span class="tag">Murder Inc.</span><span class="tag">Rivalry</span><span class="tag">Commercial Rap</span><span class="tag">Reputation</span></div>
+              <div class="tags">
+                <span class="tag">Queens</span>
+                <span class="tag">Murder Inc.</span>
+                <span class="tag">Crossover</span>
+                <span class="tag">Chart Hits</span>
+                <span class="tag">R&B Collaborations</span>
+                <span class="tag">2000s Era</span>
+              </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
-                <div class="album"><strong>Origins</strong><span>How Ja Rule emerged and built an identity.</span></div>
-                <div class="album"><strong>Breakthrough</strong><span>The phase that turned regional momentum into wider recognition.</span></div>
-                <div class="album"><strong>Legacy</strong><span>Why Ja Rule remains important in the wider story of rap and modern music.</span></div>
+                <div class="album">
+                  <strong>Street Rise Era</strong>
+                  <span>The early phase where Ja Rule established his voice, image, and New York rap credibility.</span>
+                </div>
+                <div class="album">
+                  <strong>Crossover Domination Era</strong>
+                  <span>The period where he became one of the most commercially successful and visible rappers in the world.</span>
+                </div>
+                <div class="album">
+                  <strong>Legacy and Reappraisal Era</strong>
+                  <span>A later phase where his catalog and era-defining impact continue to be reassessed and appreciated.</span>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel music-panel">
+            <section class="glass panel music-panel story-section" data-story-title="Music">
               <h2>Music Integration</h2>
-              <p>Move from reading to listening with direct artist music links and a quick essential-listening guide for Ja Rule.</p>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Ja Rule.
+              </p>
+
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Ja Rule on Spotify and keep the story moving with the music.</p>
+                  <p>Open a curated search for Ja Rule on Spotify and explore the records that made him one of the biggest names of the early 2000s.</p>
                   <a href="https://open.spotify.com/search/Ja%20Rule" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, performances, and major records related to Ja Rule on YouTube.</p>
+                  <p>Watch official videos, live performances, and major Ja Rule releases on YouTube.</p>
                   <a href="https://www.youtube.com/results?search_query=Ja+Rule+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
+
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">Greatest Hits</span>
-                  <span class="track-tag">Breakthrough Era</span>
-                  <span class="track-tag">Fan Favorites</span>
-                  <span class="track-tag">Deep Cuts</span>
+                  <span class="track-tag">Always On Time</span>
+                  <span class="track-tag">Livin' It Up</span>
+                  <span class="track-tag">Put It on Me</span>
+                  <span class="track-tag">Mesmerize</span>
+                  <span class="track-tag">Holla Holla</span>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
-              <div class="related-list"><a href="fat-joe.html" class="related-card"><h4>Fat Joe</h4><p>A fellow New York veteran from a neighboring era.</p></a>
-<a href="g-unit.html" class="related-card"><h4>G-Unit</h4><p>A major force in the rivalry that shaped Ja Rule’s public decline.</p></a>
-<a href="jay-z.html" class="related-card"><h4>Jay-Z</h4><p>Another New York giant whose era intersected with Ja Rule’s rise.</p></a></div>
+              <div class="related-list">
+                <a href="nelly.html" class="related-card">
+                  <h4>Nelly</h4>
+                  <p>Another major crossover rap figure whose mainstream run helped define the same commercial era.</p>
+                </a>
+                <a href="50-cent.html" class="related-card">
+                  <h4>50 Cent</h4>
+                  <p>A central rival in one of hip-hop’s most visible feud periods, shaping Ja Rule’s public narrative.</p>
+                </a>
+                <a href="ashanti.html" class="related-card">
+                  <h4>Ashanti</h4>
+                  <p>A key collaborator whose melodic chemistry with Ja Rule helped create some of the era’s biggest records.</p>
+                </a>
+              </div>
             </section>
           </aside>
         </div>
@@ -399,38 +945,141 @@
     </div>
   </footer>
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-  let lastScrollY = window.pageYOffset;
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
+
+    if (!rail || !toggle || !progressBar || !sections.length) return;
+
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
+
+    rail.innerHTML = "";
+
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
+
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
-    lastScrollY = currentScrollY;
-  }
-  offset();
-  handleScroll();
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
+
     offset();
-    if(window.innerWidth > 768) header.classList.remove("hidden");
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
