@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fat Joe | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Fat Joe, covering his Bronx roots, D.I.T.C. beginnings, Terror Squad era, street credibility, mainstream crossover, and lasting legacy in New York hip-hop."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Fat Joe, covering his Bronx roots, D.I.T.C. beginnings, Terror Squad era, mainstream crossover success, and lasting impact on New York hip-hop culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(22, 163, 74, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/fat-joe.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Fat Joe</h2>
-              <p>Bronx heavyweight whose career spans gritty New York rap, Terror Squad leadership, mainstream crossover, and long-term cultural relevance.</p>
+              <p>Bronx rapper, Terror Squad leader, and New York rap mainstay whose career bridged hardcore street credibility and major crossover success.</p>
             </div>
           </aside>
 
@@ -725,13 +709,13 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Fat Joe</span></h1>
             <p class="summary">
-              Born Joseph Antonio Cartagena, Fat Joe emerged from the Bronx with deep ties to New York street rap and built a career that stretched from hard-edged lyricism to commercial crossover success. His story is about survival, loyalty, mentorship, Bronx identity, and the rare ability to remain relevant across multiple generations of hip-hop.
+              Fat Joe built one of the most durable careers in hip-hop by combining Bronx authenticity, crew leadership, industry relationships, and an ability to evolve with changing eras. From his early ties to D.I.T.C. through the rise of Terror Squad and his later crossover hits, he became a central figure in the story of New York rap continuity.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>August 19, 1970</strong>
+                <strong>1970</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -739,35 +723,35 @@
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Terror Squad and crossover hits</strong>
+                <strong>Terror Squad, Bronx rap, crossover hits</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>1990s–Present</strong>
+                <span>Status</span>
+                <strong>New York Rap Veteran</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1970</div>
+                <span class="label">Origin</span>
+                <div class="value">Bronx</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">The Bronx</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Street rap to crossover</div>
+                <span class="label">Era</span>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Longevity</div>
+                <div class="value">Crew leadership</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Kept New York rap connected across eras</div>
               </div>
             </div>
           </section>
@@ -778,81 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Bronx Origins</h3>
-              <p>
-                Fat Joe was born Joseph Antonio Cartagena and raised in the Bronx, one of the foundational boroughs of hip-hop culture. That geography matters because Bronx rap identity has always carried a special historical weight. To come from the Bronx is to come from one of the genre’s birthplaces, and Fat Joe’s story reflects that legacy of hardness, hustle, and cultural authority.
-              </p>
-              <p>
-                His early life was shaped by poverty, street pressure, and the kinds of survival instincts that later defined much of his music and persona. Unlike artists introduced primarily through polish or novelty, Fat Joe entered rap with the energy of someone whose credibility came from environment and experience first. That grounded his image from the beginning.
-              </p>
+              <h3>Bronx Roots and Street Identity</h3>
+              <p>Born Joseph Cartagena, Fat Joe emerged from the Bronx, a place with symbolic importance in hip-hop history and a deep tradition of lyrical toughness, neighborhood pride, and survival. That origin mattered because Joe’s career always carried the weight of borough identity. Even as his music moved toward wider commercial spaces, he remained strongly associated with the Bronx as a cultural and personal foundation.</p>
 
-              <div class="quote">
-                Fat Joe’s career shows how a rapper can move from street credibility to mainstream visibility without fully losing the weight of where he came from.
-              </div>
+              <h3>D.I.T.C. and Early Credibility</h3>
+              <p>Fat Joe’s early placement around Diggin’ in the Crates helped establish his credibility within a respected New York rap lineage. This was important because it tied him to a tradition of bars, street knowledge, and serious hip-hop craftsmanship. Before the major crossover records and broad public visibility, Joe had already earned recognition as someone connected to a harder, more respected side of East Coast rap culture.</p>
 
-              <h3>D.I.T.C. and Early Reputation</h3>
-              <p>
-                Fat Joe’s early rise was tied to the Diggin’ in the Crates circle, a respected New York rap collective known for lyricism, authenticity, and East Coast identity. That association positioned him inside a serious rap tradition. It gave him credibility among listeners who valued bars, rawness, and a close connection to New York’s underground sound.
-              </p>
-              <p>
-                In this period, Fat Joe built his identity as a large, imposing, direct rapper whose presence felt grounded in real-world pressure. His voice, delivery, and subject matter all reinforced the image of someone who belonged to a harder side of New York rap, where toughness was not just performance but a form of public language.
-              </p>
+              <h3>Terror Squad and Leadership</h3>
+              <p>One of Fat Joe’s greatest contributions to hip-hop was not only his own catalog, but his role as a crew leader and connector. Through Terror Squad, he helped create a larger cultural presence around loyalty, affiliation, and New York street identity. He understood that rap was not only about solo star power. It was also about movements, crews, alliances, and giving space for other voices to emerge within a shared brand.</p>
 
-              <h3>Terror Squad and Expansion</h3>
-              <p>
-                One of the defining chapters of Fat Joe’s career came through Terror Squad. More than just a crew, Terror Squad became a key part of his public mythology, representing loyalty, collective strength, and a distinctly New York street-rap energy. Through that banner, Joe expanded his role from solo rapper to leader and connector.
-              </p>
-              <p>
-                This was important because it allowed him to become not only an artist, but a figure who could elevate others, build alliances, and shape a wider ecosystem. In rap, leadership often matters as much as solo success, and Fat Joe understood how to turn group identity into cultural power.
-              </p>
+              <div class="quote">Fat Joe’s career was built on more than records. It was built on presence, alliances, credibility, and the ability to move from the corner to the mainstream without fully leaving either behind.</div>
 
-              <h3>Mainstream Success and Crossover Records</h3>
-              <p>
-                Fat Joe’s career also stands out because he successfully crossed into mainstream hit-making without fully abandoning his street image. He made records that worked in clubs, on radio, and in broader popular culture, but his core identity remained tied to the Bronx and to a sense of earned toughness. That balance is difficult. Many artists either lose their edge in crossover success or remain too rigid to expand. Fat Joe managed to do both.
-              </p>
-              <p>
-                This versatility made him durable. He could appear on aggressive street records, commercial singles, posse tracks, and collaborations with major singers and rappers. His adaptability did not erase his identity; it extended it.
-              </p>
+              <h3>Mainstream Reach and Adaptability</h3>
+              <p>As hip-hop changed, Fat Joe proved unusually adaptable. He could make harder records rooted in New York toughness, but he could also pivot into songs built for broader radio and club success. That adaptability helped extend his career across decades. He did not remain frozen in one sound or one era. Instead, he kept finding ways to stay relevant while preserving enough authenticity to remain recognizable as himself.</p>
 
-              <h3>Conflict, Loyalty, and Survival</h3>
-              <p>
-                Like many long-running rap figures, Fat Joe’s story includes feuds, legal and business complications, and the challenge of surviving through shifting eras. He has long projected the values of loyalty and memory, often speaking about those he came up with, those he lost, and the cost of staying visible in a culture where relevance changes quickly.
-              </p>
-              <p>
-                That survival is part of his importance. Fat Joe has lasted through multiple eras of hip-hop: the gritty 1990s, the shiny 2000s, the blog era, the streaming age, and the current landscape of legacy and reinvention. Few artists maintain that kind of continuity without becoming culturally irrelevant. Joe never fully disappeared.
-              </p>
+              <h3>Relationships, Influence, and Longevity</h3>
+              <p>Another major part of Fat Joe’s importance lies in his relationships across the culture. He became known not only as a rapper, but as a respected figure with deep ties to multiple generations of artists. That made him a bridge between different periods of hip-hop. He was not just a product of one moment. He was someone who helped connect moments to one another.</p>
 
               <h3>Legacy</h3>
-              <p>
-                Fat Joe’s legacy is larger than individual hits. He represents Bronx endurance, New York legitimacy, and a version of rap success rooted in persistence. He was able to remain both familiar and adaptable, a bridge between older East Coast traditions and newer commercial realities.
-              </p>
-              <p>
-                In hip-hop history, he matters as a rapper, crew leader, collaborator, and cultural witness to multiple generations of the genre. His story is about staying power. In a culture obsessed with the new, Fat Joe built a career on proving that presence, memory, and resilience still count.
-              </p>
+              <p>Fat Joe’s legacy lies in endurance, leadership, and the ability to embody New York authenticity while navigating mainstream success. He stands as a figure who kept the Bronx present in the evolving story of rap, helped build crew-based identity through Terror Squad, and remained culturally relevant long after many of his early peers had faded. His story is one of survival, adaptation, and continuing influence.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1970 — Birth</strong>
-                  <p>Born Joseph Antonio Cartagena in The Bronx, New York.</p>
+                  <strong>1990s — Bronx and D.I.T.C. Foundations</strong>
+                  <p>Fat Joe built his reputation through New York street credibility and ties to respected East Coast rap circles.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Early Rise</strong>
-                  <p>Built credibility through New York street rap and connections to the D.I.T.C. world.</p>
-                </div>
-                <div class="timeline-item">
-                  <strong>Late 1990s–2000s — Terror Squad Era</strong>
-                  <p>Expanded his profile as both a solo artist and leader of a visible rap collective.</p>
+                  <strong>Late 1990s / Early 2000s — Terror Squad Rise</strong>
+                  <p>Expanded his presence through crew leadership, major collaborations, and a stronger cultural footprint.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>2000s — Mainstream Crossover</strong>
-                  <p>Scored major commercial hits while retaining Bronx identity and street credibility.</p>
+                  <p>Reached wider audiences through radio records and broader commercial visibility while maintaining Bronx identity.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s–2020s — Veteran Presence</strong>
-                  <p>Remained a respected voice in rap culture through commentary, collaborations, and legacy status.</p>
+                  <strong>2010s — Veteran Relevance</strong>
+                  <p>Remained active and visible through industry relationships, media presence, and continued participation in rap culture.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Phase — Bronx Elder Statesman</strong>
+                  <p>Recognized as one of the durable connectors between New York rap’s golden-age values and later mainstream eras.</p>
                 </div>
               </div>
             </section>
@@ -863,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Joseph Antonio Cartagena</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Fat Joe</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Joseph Cartagena</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">The Bronx, New York</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Collective</span>
-                  <div class="info-value">Terror Squad</div>
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Mainstream Rap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / East Coast Rap</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Veteran rapper, crew leader, and longstanding cultural figure</div>
                 </div>
               </div>
             </section>
@@ -890,10 +842,10 @@
               <div class="tags">
                 <span class="tag">Bronx</span>
                 <span class="tag">Terror Squad</span>
-                <span class="tag">Street Rap</span>
-                <span class="tag">Loyalty</span>
-                <span class="tag">Crossover</span>
+                <span class="tag">Crew Culture</span>
                 <span class="tag">Longevity</span>
+                <span class="tag">Street Credibility</span>
+                <span class="tag">Crossover</span>
               </div>
             </section>
 
@@ -901,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Bronx Foundations</strong>
-                  <span>The early period where street credibility and New York identity defined his rise.</span>
+                  <strong>Street-Cred Foundation Era</strong>
+                  <span>The early stage where Fat Joe built respect through Bronx identity and serious New York rap roots.</span>
                 </div>
                 <div class="album">
-                  <strong>Terror Squad Power</strong>
-                  <span>The era that expanded Fat Joe from solo rapper into leader and cultural connector.</span>
+                  <strong>Terror Squad and Crossover Peak</strong>
+                  <span>The period where he combined crew power with broader mainstream visibility.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream and Legacy</strong>
-                  <span>The later chapter where crossover success and veteran status solidified his historical place.</span>
+                  <strong>Veteran Connector Legacy</strong>
+                  <span>A later chapter defined by influence, industry presence, and long-term cultural relevance.</span>
                 </div>
               </div>
             </section>
@@ -924,13 +876,14 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Fat Joe on Spotify and revisit the music behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Fat%20Joe" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Fat Joe on Spotify and revisit the records that helped define his Bronx-to-mainstream journey.</p>
+                  <a href="https://open.spotify.com/search/Fat%20Joe" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, collaborations, and major records connected to Fat Joe.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Fat+Joe+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, performances, and major Fat Joe releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Fat+Joe+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
@@ -939,8 +892,8 @@
                 <div class="track-list">
                   <span class="track-tag">Lean Back</span>
                   <span class="track-tag">What's Luv?</span>
-                  <span class="track-tag">All the Way Up</span>
                   <span class="track-tag">Make It Rain</span>
+                  <span class="track-tag">All the Way Up</span>
                 </div>
               </div>
             </section>
@@ -948,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="big-pun.html">
+                <a href="big-pun.html" class="related-card">
                   <h4>Big Pun</h4>
-                  <p>A crucial collaborator and Bronx legend whose story is deeply connected to Fat Joe’s rise and legacy.</p>
+                  <p>A central Bronx counterpart whose association with Fat Joe helped define an important chapter in New York rap.</p>
                 </a>
-                <a class="related-card" href="remy-ma.html">
+                <a href="remy-ma.html" class="related-card">
                   <h4>Remy Ma</h4>
-                  <p>A major Terror Squad figure whose career reflects the collective world Fat Joe helped build.</p>
+                  <p>A key Terror Squad figure whose rise reflects Joe’s role in building collective identity and crew legacy.</p>
                 </a>
-                <a class="related-card" href="jadakiss.html">
+                <a href="jadakiss.html" class="related-card">
                   <h4>Jadakiss</h4>
-                  <p>Another New York veteran whose longevity and regional credibility mirror Fat Joe’s enduring presence.</p>
+                  <p>A fellow New York veteran whose longevity and lyrical credibility reflect a similar East Coast endurance.</p>
                 </a>
               </div>
             </section>
@@ -983,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

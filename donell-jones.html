@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donell Jones | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Donell Jones, covering his Chicago roots, songwriting talent, R&B rise, emotional storytelling, and lasting legacy in modern soul."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Donell Jones, covering his Chicago roots, smooth songwriting, late-1990s and 2000s R&B success, emotional storytelling, and lasting influence on soul-infused urban music." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(59, 130, 246, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/donell-jones.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Donell Jones</h2>
-              <p>Smooth Chicago singer-songwriter whose emotional honesty and understated style made him one of R&amp;B’s most memorable voices.</p>
+              <p>Chicago singer-songwriter whose smooth vocals, emotional honesty, and timeless records made him one of the defining R&amp;B voices of his era.</p>
             </div>
           </aside>
 
@@ -725,13 +709,13 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Donell Jones</span></h1>
             <p class="summary">
-              Donell Jones built his reputation through smooth vocals, sharp songwriting, and emotionally direct R&amp;B records that captured heartbreak, romance, regret, and devotion. Emerging from Chicago, he became one of the defining male R&amp;B voices of the late 1990s and early 2000s, with music that blended soul tradition, contemporary polish, and deeply relatable storytelling.
+              Donell Jones built his legacy through subtlety, songwriting, and emotional clarity. Emerging from Chicago, he became one of the most recognizable voices in late-1990s and early-2000s R&amp;B, crafting songs about love, regret, loyalty, and heartbreak that still feel personal and replayable decades later.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>May 22, 1973</strong>
+                <strong>1973</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -739,35 +723,35 @@
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Smooth R&amp;B and songwriting</strong>
+                <strong>Smooth vocals, songwriting, emotional R&amp;B classics</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>1990s–2000s</strong>
+                <span>Status</span>
+                <strong>R&amp;B Favorite</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1973</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Chicago</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Soulful, romantic, reflective</div>
+                <span class="label">Era</span>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">R&amp;B storytelling</div>
+                <div class="value">Romantic slow jams</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Classic modern R&amp;B voice</div>
               </div>
             </div>
           </section>
@@ -778,73 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Chicago Roots and Musical Foundations</h3>
-              <p>
-                Donell Jones was born in Chicago, a city with a deep musical history stretching across gospel, blues, soul, house, and R&amp;B. That environment mattered. His sound would later reflect a classic emotional discipline often associated with earlier Black music traditions: the ability to sound intimate without oversinging, vulnerable without sounding weak, and stylish without losing sincerity.
-              </p>
-              <p>
-                Before becoming a star, Jones developed as both a singer and songwriter, an important distinction in understanding his career. He was not simply a vocalist handed finished material; he was involved in shaping the emotional logic of his records. That gave his music a sense of personal control and helped make his songs feel lived-in rather than manufactured.
-              </p>
+              <h3>Chicago Roots and Musical Foundation</h3>
+              <p>Donell Jones came out of Chicago, a city with a deep musical history stretching through soul, gospel, blues, and R&amp;B. That environment mattered because his music always carried a certain warmth and sincerity that felt connected to older traditions while still sounding modern. He did not build his identity around spectacle. He built it around feeling, melody, and the ability to make personal experiences sound universal.</p>
 
-              <div class="quote">
-                Donell Jones mastered a kind of quiet intensity — music that did not need to shout to leave a lasting emotional impact.
-              </div>
+              <h3>Songwriting and Emotional Clarity</h3>
+              <p>One of Donell Jones’s greatest strengths was songwriting. His records often centered on relationships, longing, mistakes, reconciliation, and vulnerability, but they rarely felt overworked or overly theatrical. Instead, he made songs that sounded direct and lived-in. That simplicity gave his music its staying power. He was able to say things plainly, but with enough emotion and melody to make them unforgettable.</p>
 
-              <h3>Breakthrough in R&amp;B</h3>
-              <p>
-                Donell Jones rose during a period when male R&amp;B was highly competitive, filled with major voices, polished production, and a strong emphasis on emotional connection. What distinguished him was subtlety. He did not rely on overwhelming theatrics. Instead, he leaned into warmth, melody, and direct writing, building songs that felt conversational and close.
-              </p>
-              <p>
-                His breakthrough records gave listeners stories they recognized: unstable relationships, longing, devotion, mistakes, and the emotional aftershocks of love. That relatability helped him stand out. Jones made songs that felt personal enough for headphones and polished enough for radio, a balance that helped define the strongest R&amp;B artists of that era.
-              </p>
+              <h3>Breakthrough in the R&amp;B Landscape</h3>
+              <p>As R&amp;B evolved during the late 1990s and early 2000s, Donell Jones established himself as one of the genre’s most dependable voices. He fit comfortably in an era filled with polished songwriting, romantic storytelling, and crossover appeal, yet he retained a sense of intimacy that kept his music from sounding generic. His songs worked because they felt personal, and because his voice carried the exact balance of calm, ache, and confidence that the material required.</p>
 
-              <h3>Songwriting and Emotional Precision</h3>
-              <p>
-                One of the key reasons Donell Jones endured was his songwriting. His records often captured emotional complexity without becoming overly abstract. He understood how to write songs that felt intimate but accessible, poetic but plainspoken. In many ways, his greatest strength was translation: he could turn messy emotional experiences into clean, memorable melodies and lyrics.
-              </p>
-              <p>
-                This made him especially effective within late-1990s and early-2000s R&amp;B, a time when audiences still strongly valued slow jams, romantic vulnerability, and male singers capable of sounding both confident and hurt. Jones occupied that lane with ease. His music carried a mature emotional tone that appealed to listeners looking for honesty rather than spectacle.
-              </p>
+              <div class="quote">Donell Jones did not need to overpower a song. His gift was making emotion feel smooth, natural, and deeply believable.</div>
 
-              <h3>Mainstream Success and Recognition</h3>
-              <p>
-                As his profile grew, Donell Jones became one of the most recognizable names in contemporary R&amp;B. His records circulated widely and helped define a moment when urban radio, slow-burn love songs, and crossover soul records still held major cultural weight. His best work sounded elegant without losing its street-level emotional realism.
-              </p>
-              <p>
-                He also became part of a broader lineage of Black male singers whose appeal depended not only on vocal ability but on emotional credibility. In Donell Jones’s case, that credibility came from restraint. He made heartbreak sound reflective instead of theatrical. He made romance sound grounded instead of fantasy-driven.
-              </p>
+              <h3>A Voice for Love, Loss, and Reflection</h3>
+              <p>Donell’s records often lived in emotional gray areas. He was not only the confident lover or the wounded ex. He often sounded reflective, uncertain, and human. That complexity gave his music depth. His best songs captured the feeling of relationships as they really are: messy, romantic, hopeful, and sometimes painful. Listeners connected with that honesty because it did not feel forced or exaggerated.</p>
 
-              <h3>Legacy in Modern R&amp;B</h3>
-              <p>
-                Donell Jones occupies an important place in modern R&amp;B history. He represents a generation of artists who bridged classic soul sensitivity with late-1990s contemporary production. His music still resonates because the themes never expire: love, distance, memory, temptation, regret, and emotional vulnerability.
-              </p>
-              <p>
-                His legacy is also tied to craft. Long after trends change, songwriting and emotional clarity remain valuable, and Jones delivered both. He may not always be discussed with the loudest mythology, but his catalog continues to matter because it captured a style of R&amp;B built on feeling, precision, and timeless mood.
-              </p>
+              <h3>Consistency Over Flash</h3>
+              <p>Unlike some artists whose careers were driven by huge public personas, Donell Jones built his reputation through consistency and song quality. He became the kind of artist people returned to for mood, memory, and real emotion. That kind of career can sometimes look quieter from a distance, but it often ages better, because it is built on records that remain meaningful long after trends pass.</p>
+
+              <h3>Legacy</h3>
+              <p>Donell Jones’s legacy is rooted in timeless songwriting and understated excellence. He helped define a period of modern R&amp;B where emotional storytelling, smooth production, and sincerity mattered deeply. His catalog remains important because it still speaks clearly to love, heartbreak, and longing. In that sense, his music has outlasted eras and trends by staying close to human feeling.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1973 — Birth</strong>
-                  <p>Born in Chicago, Illinois, in a city rich with Black musical traditions.</p>
-                </div>
-                <div class="timeline-item">
-                  <strong>1990s — Early Development</strong>
-                  <p>Built his reputation as a singer-songwriter with strong melodic instincts and emotional range.</p>
+                  <strong>1990s — Emergence</strong>
+                  <p>Donell Jones rose out of Chicago and began building recognition as a gifted singer-songwriter in modern R&amp;B.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>Late 1990s — Breakthrough</strong>
-                  <p>Emerged as a major R&amp;B voice with records centered on romance, heartbreak, and reflection.</p>
+                  <p>Established himself as one of the era’s key romantic R&amp;B voices with emotionally resonant records.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 2000s — Mainstream Recognition</strong>
-                  <p>Reached wider visibility and became one of the defining male R&amp;B artists of the era.</p>
+                  <strong>Early 2000s — Peak Recognition</strong>
+                  <p>Became widely known for smooth, reflective songs that helped define the mood of mainstream R&amp;B.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Legacy Era</strong>
-                  <p>Remained respected for timeless songwriting, smooth vocals, and enduring slow-jam appeal.</p>
+                  <strong>2000s / 2010s — Enduring Appreciation</strong>
+                  <p>Maintained respect as a reliable and influential voice whose catalog continued to resonate with listeners.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Phase — Timeless R&amp;B</strong>
+                  <p>Remembered as an artist whose songwriting and delivery gave emotional depth to an important era of soul-infused urban music.</p>
                 </div>
               </div>
             </section>
@@ -855,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Donell Jones</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Birth Name</span>
                   <div class="info-value">Donell Jones</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Chicago, Illinois</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">R&amp;B / Soul</div>
+                  <div class="info-value">R&amp;B / Soul / Urban Contemporary</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Known For</span>
-                  <div class="info-value">Romantic slow jams and songwriting</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Respected R&amp;B singer-songwriter with a lasting catalog</div>
                 </div>
               </div>
             </section>
@@ -881,11 +841,11 @@
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Chicago</span>
-                <span class="tag">R&amp;B</span>
-                <span class="tag">Love</span>
+                <span class="tag">Love Songs</span>
                 <span class="tag">Heartbreak</span>
                 <span class="tag">Songwriting</span>
-                <span class="tag">Soul</span>
+                <span class="tag">Smooth R&amp;B</span>
+                <span class="tag">Reflection</span>
               </div>
             </section>
 
@@ -893,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Early Promise</strong>
-                  <span>The period where songwriting and vocal refinement shaped his artistic identity.</span>
+                  <strong>Early Soulful Rise</strong>
+                  <span>The opening stage where Donell Jones developed a reputation for polished, emotional songwriting.</span>
                 </div>
                 <div class="album">
-                  <strong>Breakthrough R&amp;B Star</strong>
-                  <span>The era that made him one of the most recognizable romantic voices in modern R&amp;B.</span>
+                  <strong>Classic R&amp;B Peak</strong>
+                  <span>The era where his biggest songs made him a defining voice of romantic urban music.</span>
                 </div>
                 <div class="album">
-                  <strong>Enduring Catalog</strong>
-                  <span>The phase where timeless records continued to define his reputation and influence.</span>
+                  <strong>Enduring Quiet Legacy</strong>
+                  <span>A later chapter defined by respect, replay value, and timeless emotional connection.</span>
                 </div>
               </div>
             </section>
@@ -916,23 +876,24 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Donell Jones on Spotify and revisit the smooth sound behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Donell%20Jones" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Donell Jones on Spotify and revisit the smooth R&amp;B records that made him a standout voice of his era.</p>
+                  <a href="https://open.spotify.com/search/Donell%20Jones" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, classic performances, and fan-favorite Donell Jones records.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Donell+Jones+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, live performances, and major Donell Jones releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Donell+Jones+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">U Know What’s Up</span>
+                  <span class="track-tag">U Know What's Up</span>
                   <span class="track-tag">Where I Wanna Be</span>
                   <span class="track-tag">This Luv</span>
-                  <span class="track-tag">Knocks Me Off My Feet</span>
+                  <span class="track-tag">Shorty (Got Her Eyes on Me)</span>
                 </div>
               </div>
             </section>
@@ -940,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="joe.html">
+                <a href="joe.html" class="related-card">
                   <h4>Joe</h4>
-                  <p>Another smooth R&amp;B voice whose emotional records helped define the same era.</p>
+                  <p>Another defining R&amp;B voice of the same era whose music carried romance, vulnerability, and polish.</p>
                 </a>
-                <a class="related-card" href="ginuwine.html">
-                  <h4>Ginuwine</h4>
-                  <p>A major contemporary figure in male R&amp;B whose style and romantic catalog shaped the late 1990s landscape.</p>
+                <a href="avant.html" class="related-card">
+                  <h4>Avant</h4>
+                  <p>A fellow Chicago-linked R&amp;B figure whose emotional style and songwriting moved in a related lane.</p>
                 </a>
-                <a class="related-card" href="jagged-edge.html">
+                <a href="jagged-edge.html" class="related-card">
                   <h4>Jagged Edge</h4>
-                  <p>A related harmony-driven R&amp;B story from the same emotional and radio-friendly era.</p>
+                  <p>A comparison in how turn-of-the-century R&amp;B balanced heartbreak, devotion, and mainstream appeal.</p>
                 </a>
               </div>
             </section>
@@ -975,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

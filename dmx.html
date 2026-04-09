@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DMX | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on DMX, covering his difficult upbringing, explosive rise in rap, defining albums, legal struggles, and enduring cultural legacy." />
+  <meta name="description" content="A Rap Stories premium profile on DMX, covering his Yonkers roots, explosive rise, raw spiritual intensity, mainstream dominance, personal struggles, and lasting impact on hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,213 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +676,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +701,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>DMX</h2>
-              <p>Rough-voiced rap icon whose pain, faith, aggression, and vulnerability made him one of the most distinctive artists of his generation.</p>
+              <p>Yonkers rap icon whose raw pain, spiritual conflict, and explosive delivery made him one of the most unforgettable voices in hip-hop history.</p>
             </div>
           </aside>
 
@@ -735,13 +709,13 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>DMX</span></h1>
             <p class="summary">
-              Born Earl Simmons, DMX became one of the most explosive and emotionally raw figures in hip-hop history. His music blended aggression, grief, prayer, trauma, and survival, helping him rise from Yonkers hardship to global rap superstardom while also enduring years of addiction, legal trouble, and personal struggle.
+              DMX was one of the most emotionally powerful figures ever to enter rap. He did not sound polished, distant, or carefully controlled. He sounded wounded, hungry, furious, faithful, broken, and unstoppable all at once. Emerging from Yonkers, New York, he turned pain into art and became one of the defining stars of late-1990s hip-hop.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>December 18, 1970</strong>
+                <strong>1970</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -749,11 +723,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Hard-edged rap storytelling</strong>
+                <strong>Raw emotion, prayer, aggression, gravel voice</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Deceased (2021)</strong>
+                <strong>Hip-Hop Legend</strong>
               </div>
             </div>
 
@@ -761,22 +735,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1970</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Yonkers</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">Late 1990s</div>
+                <div class="value">1990s–2021</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Raw intensity</div>
+                <div class="value">Spiritual street intensity</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">One of rap’s rawest voices</div>
               </div>
             </div>
           </section>
@@ -784,165 +759,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Trauma</h3>
-              <p>Earl Simmons was born on December 18, 1970, in Mount Vernon, New York, and raised largely in Yonkers. His childhood was marked by instability, abuse, neglect, and repeated time in group homes. Those early experiences became central to the emotional force of his music. Few rappers turned pain into art as directly as DMX did; his records sounded lived-in because they were.</p>
-              <p>As a teenager, Simmons drifted into street crime, spent time in juvenile institutions, and developed the hardened survival instincts that later shaped his public image. Music became both an outlet and an identity. The name DMX eventually became inseparable from a voice that sounded wounded, ferocious, and spiritually restless all at once.</p>
+              <h3>Early Life and Pain</h3>
+              <p>Born Earl Simmons, DMX came from a childhood marked by instability, abuse, poverty, and trauma. Raised largely in Yonkers after being born in Mount Vernon, he experienced hardship from an early age and spent time in group homes, on the streets, and in the criminal justice system. Those early experiences did not merely shape his lyrics later on. They became the emotional core of everything he made. DMX did not rap about pain as performance. He rapped as someone who had lived inside it.</p>
 
-              <h3>Rise From the Underground</h3>
-              <p>DMX built his reputation through battle rap energy, gritty street records, and a presence that felt different from the glossy commercial rap dominating parts of the 1990s. After years of setbacks and label frustrations, he finally broke through with a style that was raw rather than polished. When he emerged nationally, he did not sound like a trend. He sounded like a rupture.</p>
-              <p>That breakthrough turned him into one of the most important rap stars of the late 1990s. His arrival restored a darker, hungrier energy to mainstream hip-hop and made him one of the few artists capable of combining commercial success with a street-level emotional realism that fans immediately trusted.</p>
+              <h3>A Voice Like No One Else</h3>
+              <p>From the moment he emerged, DMX sounded different. His voice was cracked, forceful, and instantly recognizable. His delivery felt like a bark, a sermon, a confession, and a threat all at once. While many rappers built personas around cool detachment, DMX offered the opposite. He was fully exposed. He shouted, cried, prayed, doubted, and raged in public, and that emotional openness made him one of the most compelling artists of his generation.</p>
 
-              <div class="quote">DMX was not just a hitmaker. He was the sound of anguish, prayer, fury, and survival pushed directly into rap form.</div>
+              <h3>Breakthrough and Stardom</h3>
+              <p>When DMX broke through in the late 1990s, he hit with extraordinary force. He became one of the biggest stars in rap because he brought intensity back to the center of mainstream hip-hop. His records felt urgent and dangerous, but also deeply human. Listeners heard not only violence and aggression, but guilt, vulnerability, loyalty, betrayal, and spiritual struggle. That balance made him unique. He was not simply a street rapper. He was a deeply conflicted figure speaking in a language millions understood.</p>
 
-              <h3>Commercial Peak and Cultural Power</h3>
-              <p>With albums such as <em>It’s Dark and Hell Is Hot</em>, <em>Flesh of My Flesh, Blood of My Blood</em>, and <em>...And Then There Was X</em>, DMX became a dominant force in hip-hop. His music mixed threats, confessions, religious imagery, and desperate honesty in a way that made him both intimidating and deeply human. He could deliver street anthems, club records, and spiritual monologues without sounding like he was changing character.</p>
-              <p>His commercial success extended into film and pop culture. At his height, DMX was one of the most recognizable rappers in the world, known for his unmistakable bark-like delivery, intense live performances, and songs that gave voice to conflict within the self as much as conflict in the streets.</p>
+              <div class="quote">DMX made rap feel like survival. Every verse sounded like a fight between anger, faith, memory, and the need to keep going.</div>
 
-              <h3>Addiction, Legal Problems, and Personal Struggle</h3>
-              <p>Even as his fame grew, DMX’s life remained marked by addiction and legal trouble. Arrests, probation problems, tax issues, and repeated attempts at recovery became part of the public story surrounding him. Unlike many artists who hid their pain behind celebrity polish, DMX often spoke openly about his suffering, his relationship with God, and the damage addiction had done to his life and family.</p>
-              <p>Those struggles complicated his legacy but also explained why so many listeners felt a personal connection to him. His music did not simply describe hardship; it carried the emotional texture of someone trying to survive it in real time.</p>
+              <h3>Prayer, Conflict, and Humanity</h3>
+              <p>One of the most important dimensions of DMX’s music was spirituality. He could move from intimidation to prayer in a way that felt natural rather than contradictory. His songs often sounded like internal battles between sin and redemption, fear and faith, rage and mercy. That made him especially powerful because he did not present himself as a superhero. He presented himself as flawed, struggling, and searching for God in the middle of chaos.</p>
 
-              <h3>Death and Public Mourning</h3>
-              <p>In April 2021, DMX suffered a drug-related medical emergency and died at the age of 50. His death prompted widespread mourning across hip-hop and beyond. Tributes focused not only on his chart success, but on the emotional honesty that made him unique. He was remembered as an artist whose work spoke to people dealing with fear, grief, guilt, faith, and inner conflict.</p>
-              <p>His passing closed one of the most turbulent and compelling stories in rap history: a life of immense talent, public pain, extraordinary fame, and unresolved personal battle.</p>
+              <h3>Success and Personal Struggles</h3>
+              <p>DMX’s career was also marked by repeated personal struggles, including addiction, legal trouble, and the heavy consequences of unresolved trauma. Those battles complicated his life and interrupted his career, but they also became inseparable from how the public understood him. He was a star, but he was never distant from suffering. Even at his peak, there was always a sense that he was fighting something larger than fame could solve.</p>
 
               <h3>Legacy</h3>
-              <p>DMX remains one of the most distinctive rappers ever to reach the top of the mainstream. He helped define a harsher and more emotionally exposed era of hip-hop, proving that vulnerability could exist inside aggression and that spiritual tension could sit at the center of rap music without weakening its force.</p>
-              <p>His legacy lives in the artists he influenced, the albums that reshaped late-1990s rap, and the raw emotional standard he set. More than most stars, DMX left behind not just a catalog, but a feeling: the sound of a man fighting himself in public and turning that struggle into unforgettable music.</p>
+              <p>DMX remains one of the most important and emotionally truthful artists in rap history. He gave voice to people who felt broken, enraged, ashamed, faithful, or abandoned. His music endures not because it was polished, but because it was real. Few artists have ever sounded as alive, as damaged, or as spiritually urgent as DMX. His legacy is one of raw truth, unforgettable presence, and deep human impact.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1970 — Birth</strong>
-                  <p>Born Earl Simmons in Mount Vernon, New York, and raised in Yonkers.</p>
+                  <strong>1980s / Early 1990s — Underground Grind</strong>
+                  <p>DMX built his reputation through local battles, rough street credibility, and a style that felt more intense than almost anyone else in rap.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Industry Breakthrough</strong>
-                  <p>Built a name through raw street records and a uniquely intense delivery before breaking into the mainstream.</p>
+                  <strong>Late 1990s — Explosive Breakthrough</strong>
+                  <p>Rose to stardom as one of hip-hop’s biggest and most emotionally powerful figures.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1998–1999 — Peak Ascent</strong>
-                  <p>Released landmark albums and became one of the biggest rappers in the world.</p>
+                  <strong>Late 1990s / Early 2000s — Cultural Dominance</strong>
+                  <p>Became one of rap’s defining stars through major albums, unforgettable singles, and overwhelming presence.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Film, Fame, and Turbulence</strong>
-                  <p>Expanded his profile through music and acting while facing ongoing addiction and legal problems.</p>
+                  <strong>2000s / 2010s — Struggle and Survival</strong>
+                  <p>Faced personal and legal difficulties while remaining an iconic and deeply respected figure in hip-hop.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2021 — Death</strong>
-                  <p>Died in April 2021 after a medical emergency, prompting tributes across hip-hop culture.</p>
+                  <strong>Legacy Era — Eternal Voice</strong>
+                  <p>Remembered as one of the rawest, most human, and most spiritually intense artists the genre has ever produced.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Robert Sylvester Kelly</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">DMX</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Earl Simmons</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Yonkers, New York</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Hardcore Rap</div>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Hardcore Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Deceased; legacy endures</div>
+                  <div class="info-value">Legendary and enduring voice in rap history</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Yonkers</span>
                 <span class="tag">Pain</span>
                 <span class="tag">Faith</span>
-                <span class="tag">Street Survival</span>
-                <span class="tag">Addiction</span>
-                <span class="tag">Intensity</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">Aggression</span>
+                <span class="tag">Redemption</span>
+                <span class="tag">Raw Emotion</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Street Hunger</strong>
-                  <span>The period that forged his raw style and underground reputation.</span>
+                  <strong>Street Hunger Era</strong>
+                  <span>The early period where DMX sharpened his identity as a desperate, unforgettable underground force.</span>
                 </div>
                 <div class="album">
                   <strong>Mainstream Explosion</strong>
-                  <span>Back-to-back albums and a commercial run that made him a rap superstar.</span>
+                  <span>The phase where his pain, charisma, and spiritual intensity made him one of rap’s biggest stars.</span>
                 </div>
                 <div class="album">
-                  <strong>Struggle and Reflection</strong>
-                  <span>Years defined by addiction, legal trouble, public honesty, and enduring fan loyalty.</span>
+                  <strong>Legacy of Truth</strong>
+                  <span>A later chapter defined by survival, struggle, and deep respect for his honesty and emotional power.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for DMX.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for DMX on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/DMX" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for DMX.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for DMX on Spotify and revisit the songs that made him one of the most powerful voices in rap history.</p>
+                  <a href="https://open.spotify.com/search/DMX" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live performances, and major DMX releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=DMX+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to DMX on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=DMX+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Ruff Ryders' Anthem</span>
+                  <span class="track-tag">Slippin'</span>
+                  <span class="track-tag">Party Up (Up in Here)</span>
+                  <span class="track-tag">X Gon' Give It to Ya</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Ruff Ryders' Anthem</span>
-                <span class="track-tag">Party Up</span>
-                <span class="track-tag">X Gon' Give It to Ya</span>
-                <span class="track-tag">Slippin'</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
+                <a href="jay-z.html" class="related-card">
+                  <h4>Jay-Z</h4>
+                  <p>A fellow late-1990s giant whose rise marked a different side of New York rap power and strategy.</p>
+                </a>
+                <a href="50-cent.html" class="related-card">
+                  <h4>50 Cent</h4>
+                  <p>Another artist whose pain, survival story, and aggressive presence reshaped mainstream rap energy.</p>
+                </a>
                 <a href="tupac.html" class="related-card">
                   <h4>2Pac</h4>
-                  <p>A natural vault pairing through emotional intensity, public struggle, and icon-level legacy.</p>
-                </a>
-                <a href="biggie.html" class="related-card">
-                  <h4>The Notorious B.I.G.</h4>
-                  <p>A fellow New York legend whose rise belongs to the same larger golden-era story.</p>
-                </a>
-                <a href="juice-wrld.html" class="related-card">
-                  <h4>Juice WRLD</h4>
-                  <p>A later artist whose pain-driven writing echoes how vulnerability became central in rap.</p>
+                  <p>A comparison in emotional honesty, spiritual conflict, and the ability to make pain central to rap greatness.</p>
                 </a>
               </div>
             </section>
@@ -969,95 +938,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

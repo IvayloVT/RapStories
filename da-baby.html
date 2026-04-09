@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DaBaby | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on DaBaby, covering his North Carolina rise, breakout intensity, controversy, and commercial peak." />
+  <meta name="description" content="A Rap Stories premium profile on DaBaby, covering his North Carolina roots, breakout rise, aggressive flow, commercial dominance, controversy, and lasting impact on modern rap." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,213 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +676,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +701,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>DaBaby</h2>
-              <p>North Carolina rapper whose intense delivery and rapid breakout made him a major star before controversy reshaped his public image.</p>
+              <p>North Carolina rap star whose explosive charisma, sharp delivery, and hitmaking run made him one of the biggest names of his generation.</p>
             </div>
           </aside>
 
@@ -735,25 +709,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>DaBaby</span></h1>
             <p class="summary">
-              Born Jonathan Kirk, DaBaby rose rapidly from North Carolina street rap to national stardom through forceful charisma, memorable delivery, and a run of explosive records. His career also became a case study in how quickly success and controversy can collide.
+              DaBaby rose from the Charlotte scene with a style built on confidence, aggression, humor, and instantly recognizable energy. For a period, he became one of the most visible rappers in mainstream music, turning viral attention, relentless output, and hard-edged charisma into a major commercial run that helped define a moment in late-2010s and early-2020s rap.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>December 22, 1991</strong>
+                <strong>1991</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Cleveland, Ohio / Charlotte raised</strong>
+                <strong>Charlotte, North Carolina</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>High-energy delivery, rapid rise</strong>
+                <strong>Explosive flow, charisma, mainstream hits</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Modern Rap Star</strong>
               </div>
             </div>
 
@@ -761,22 +735,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1991</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Charlotte</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">Late 2010s–present</div>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Explosive mainstream breakout</div>
+                <div class="value">Punchy performance style</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Mainstream crossover dominance</div>
               </div>
             </div>
           </section>
@@ -784,156 +759,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Southern Identity</h3>
-              <p>Jonathan Kirk was born in Ohio but became culturally rooted in Charlotte, North Carolina, where he developed the confidence and edge that later defined his music. His early image was built around fearlessness, directness, and local credibility.</p>
+              <h3>From North Carolina to National Attention</h3>
+              <p>Born Jonathan Lyndale Kirk, DaBaby built his name through persistence, local grind, and a larger-than-life presence that made him difficult to ignore. Representing Charlotte, North Carolina, he emerged at a time when rap was increasingly shaped by internet virality, fast-moving momentum, and bold personal branding. He understood how to command attention, and he used that instinct to force his way into conversations far beyond his region.</p>
 
-              <h3>Explosive Breakthrough</h3>
-              <p>DaBaby’s ascent was remarkably fast. He broke through with songs and visuals that felt highly energetic, humorous, aggressive, and instantly recognizable. In a crowded field, he stood out because his delivery and screen presence were difficult to ignore.</p>
+              <h3>Style, Energy, and Identity</h3>
+              <p>DaBaby’s music worked because it felt immediate. His delivery was forceful, rhythmic, and packed with punchlines, while his beat choices often gave him space to sound animated and fully in control. He mixed intimidation with humor, aggression with playfulness, and technical precision with a street-ready confidence. That formula helped him stand out in a crowded mainstream era.</p>
 
-              <div class="quote">DaBaby became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>Breakout and Commercial Run</h3>
+              <p>Once DaBaby broke through, his rise was fast. He turned street buzz into mainstream success through a series of high-profile records, features, and projects that performed strongly on charts and streaming platforms. For a stretch, he became one of the most in-demand rappers in the industry, appearing everywhere from pop collaborations to major rap records. His image, flow, and personality felt instantly marketable without losing the sharpness that made his music hit.</p>
 
-              <h3>Mainstream Peak</h3>
-              <p>For a period, DaBaby became one of the most visible rappers in the industry. He was everywhere: solo records, features, viral visuals, and major performances. His style fit the streaming era’s appetite for strong personality and repeatable hit formulas.</p>
+              <div class="quote">DaBaby’s rise was built on pressure: loud personality, direct delivery, nonstop visibility, and a performance style that felt impossible to overlook.</div>
 
-              <h3>Controversy and Backlash</h3>
-              <p>His public image later became heavily shaped by controversy, showing how fast momentum can reverse in the digital age. Questions about accountability, public speech, and celebrity consequence became central to how audiences discussed him.</p>
+              <h3>Performance and Star Power</h3>
+              <p>A major part of DaBaby’s appeal was not just the music, but the sense of performance behind it. His videos, interviews, stage presence, and public persona all contributed to the feeling that he was bigger than the average rapper. He knew how to turn a verse into a moment and a moment into a larger narrative. That star instinct helped drive his rapid commercial ascent.</p>
 
-              <h3>Legacy</h3>
-              <p>DaBaby remains a key figure of late-2010s mainstream rap because his rise captured the speed of modern fame. His story is about charisma, volatility, and the fragile balance between popularity and public backlash.</p>
+              <h3>Controversy and Career Challenges</h3>
+              <p>Like many highly visible artists, DaBaby’s public career also became shaped by controversy. Legal issues, public disputes, and backlash around comments and behavior affected how he was perceived and complicated his mainstream momentum. Those moments became part of his story, not only because they generated headlines, but because they tested whether his musical success could survive reputational damage and industry fallout.</p>
+
+              <h3>Legacy and Place in Modern Rap</h3>
+              <p>DaBaby’s place in rap history is tied to a specific modern era of commercial rap, where personality, internet presence, and rapid-fire hitmaking could launch an artist into superstardom almost overnight. At his peak, he was one of the defining voices of that moment. His legacy rests in how forcefully he arrived, how visible he became, and how strongly his sound shaped the texture of mainstream rap during his run.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1991 — Birth</strong>
-                  <p>Born Jonathan Kirk and later raised in Charlotte.</p>
-                </div>
-                <div class="timeline-item">
-                  <strong>2010s — Local Grind</strong>
-                  <p>Built a reputation through persistence and forceful presentation.</p>
+                  <strong>Mid-2010s — Independent Grind</strong>
+                  <p>DaBaby built local momentum through independent releases, strong visuals, and a rapidly growing reputation in North Carolina.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>Late 2010s — Breakthrough</strong>
-                  <p>Exploded nationally with a high-energy signature style.</p>
+                  <p>His energy, delivery, and viral momentum pushed him into the national spotlight as one of rap’s fastest-rising names.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Peak Mainstream Era</strong>
-                  <p>Became one of rap’s most visible commercial figures.</p>
+                  <strong>2019–2020 — Mainstream Peak</strong>
+                  <p>Became one of the biggest rappers in popular music through hit records, major features, and dominant streaming performance.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Controversy Phase</strong>
-                  <p>Faced backlash that reshaped his public standing.</p>
+                  <strong>2020s — High Visibility and Backlash</strong>
+                  <p>Continued to remain publicly visible while career momentum became more complicated by controversy and criticism.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Phase — Modern Era Marker</strong>
+                  <p>Remains a defining figure of a rap era shaped by charisma, viral power, and fast commercial acceleration.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Jonathan Lyndale Kirk</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">DaBaby</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">Cleveland, Ohio / Charlotte raised</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Jonathan Lyndale Kirk</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Charlotte, North Carolina</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Southern Rap</div>
+                  <div class="info-value">Hip-Hop / Trap / Modern Mainstream Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; controversial mainstream-era figure</div>
+                  <div class="info-value">Major modern rap figure with a high-profile career arc</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Energy</span>
                 <span class="tag">Charlotte</span>
+                <span class="tag">Charisma</span>
+                <span class="tag">Hitmaking</span>
+                <span class="tag">Aggression</span>
                 <span class="tag">Virality</span>
                 <span class="tag">Controversy</span>
-                <span class="tag">Mainstream</span>
-                <span class="tag">Charisma</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Breakout Force</strong>
-                  <span>The period when raw energy made him a standout new star.</span>
+                  <strong>Independent Rise</strong>
+                  <span>The period where DaBaby built pressure through local momentum and standout personality.</span>
                 </div>
                 <div class="album">
-                  <strong>Commercial Peak</strong>
-                  <span>An era of heavy mainstream visibility and repeated hits.</span>
+                  <strong>Mainstream Explosion</strong>
+                  <span>The phase where his sound, energy, and features made him one of rap’s biggest stars.</span>
                 </div>
                 <div class="album">
-                  <strong>Public Reckoning</strong>
-                  <span>A later phase shaped by backlash and image conflict.</span>
+                  <strong>High-Profile Turning Point</strong>
+                  <span>A later chapter shaped by fame, scrutiny, and questions about long-term momentum.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for DaBaby on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/DaBaby" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for DaBaby.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for DaBaby on Spotify and revisit the records that made him one of the defining rap stars of his era.</p>
+                  <a href="https://open.spotify.com/search/DaBaby" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live performances, and major DaBaby releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=DaBaby+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to DaBaby on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=DaBaby+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Suge</span>
+                  <span class="track-tag">BOP</span>
+                  <span class="track-tag">Rockstar</span>
+                  <span class="track-tag">Intro</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Suge</span>
-                <span class="track-tag">BOP</span>
-                <span class="track-tag">Rockstar</span>
-                <span class="track-tag">Intro</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="lil-baby.html" class="related-card">
                   <h4>Lil Baby</h4>
-                  <p>Another major star of the same mainstream period, though with a different style.</p>
+                  <p>Another dominant figure from the same mainstream era, built on consistency and chart power.</p>
+                </a>
+                <a href="roddy-ricch.html" class="related-card">
+                  <h4>Roddy Ricch</h4>
+                  <p>A contemporary artist whose melodic success also helped define late-2010s commercial rap.</p>
                 </a>
                 <a href="megan-thee-stallion.html" class="related-card">
                   <h4>Megan Thee Stallion</h4>
-                  <p>A peer whose era similarly blended viral visibility and major chart success.</p>
-                </a>
-                <a href="blueface.html" class="related-card">
-                  <h4>Blueface</h4>
-                  <p>Another artist whose fame and public perception were closely shaped by controversy.</p>
+                  <p>A major star from the same period whose crossover presence shaped modern rap’s mainstream landscape.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +938,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Da Brat | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on Da Brat, covering her Chicago roots, breakout success, and role in women’s rap history." />
+  <meta name="description" content="A Rap Stories premium profile on Da Brat, covering her Chicago roots, So So Def breakthrough, historic commercial success, lyrical style, and lasting legacy in hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,213 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +676,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +701,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Da Brat</h2>
-              <p>Chicago rapper whose bold style and breakthrough success helped define a major era for women in hip-hop.</p>
+              <p>Chicago rapper and So So Def star whose sharp delivery, swagger, and breakthrough success made her one of the most important women in hip-hop history.</p>
             </div>
           </aside>
 
@@ -735,13 +709,13 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Da Brat</span></h1>
             <p class="summary">
-              Born Shawntae Harris, Da Brat became one of the most commercially successful women rappers of the 1990s through charismatic delivery, crossover visibility, and a style that felt both street-rooted and radio-ready. Her rise marked a major chapter in women’s rap history.
+              Da Brat entered rap with confidence, charisma, and a flow that felt playful, hard-edged, and unmistakably her own. Emerging from Chicago and reaching national fame through Jermaine Dupri’s So So Def movement, she became one of the most commercially successful female rappers of her era and helped expand the place of women in mainstream hip-hop.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>April 14, 1974</strong>
+                <strong>1974</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -749,11 +723,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Women’s rap breakthrough, 1990s success</strong>
+                <strong>Fast flow, attitude, So So Def era</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Hip-Hop Pioneer</strong>
               </div>
             </div>
 
@@ -761,13 +735,10 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1974</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Chicago</div>
               </div>
               <div class="stat-panel">
@@ -776,7 +747,11 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Pioneering women’s rap success</div>
+                <div class="value">Lyrical swagger</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Female rap trailblazer</div>
               </div>
             </div>
           </section>
@@ -784,156 +759,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Chicago Foundations</h3>
-              <p>Shawntae Harris grew up in Chicago, bringing Midwestern edge and confidence into a rap world still offering limited space for women to dominate on their own terms. Her style felt assertive, playful, and unmistakably self-possessed.</p>
+              <h3>Chicago Beginnings</h3>
+              <p>Born Shawntae Harris in Chicago, Da Brat grew up in a city with a deep musical tradition and a hard sense of local identity. Before becoming a national rap star, she developed the confidence, vocal sharpness, and rhythmic personality that would later define her style. Her early image was bold, tomboyish, energetic, and self-assured, making her feel different from many of the women being marketed in rap at the time.</p>
 
-              <h3>Breakthrough Success</h3>
-              <p>Da Brat broke through in the 1990s and quickly became one of the genre’s most visible female rappers. Her success was important not only commercially, but symbolically: it showed that women in rap could command attention at the highest level without being reduced to background roles.</p>
+              <h3>The So So Def Breakthrough</h3>
+              <p>Da Brat’s career changed dramatically when she connected with Jermaine Dupri, who helped introduce her to a larger audience through the So So Def label. That partnership mattered because it gave her strong production, major industry support, and a lane where her energy could stand out. She did not arrive as a background presence or novelty act. She arrived as a true rapper with punchlines, swagger, and technical control.</p>
 
-              <div class="quote">Da Brat became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>A Historic Commercial Success</h3>
+              <p>Once Da Brat broke through, she became one of the most successful female rappers of the 1990s. Her rise was significant not only because of chart performance, but because it showed that women in rap could succeed commercially while still sounding aggressive, funny, stylish, and lyrically sharp. She represented confidence without apology and brought a distinct personality that helped separate her from every comparison around her.</p>
 
-              <h3>Style and Presence</h3>
-              <p>She balanced hard-edged rap energy with mainstream accessibility, making her a standout figure in a period when personality and crossover mattered heavily. Her image felt confident, mobile, and built for visibility.</p>
+              <div class="quote">Da Brat brought playful aggression, lyrical confidence, and star power to an era when female rappers still had to fight for every inch of mainstream space.</div>
 
-              <h3>Challenges and Public Life</h3>
-              <p>Like many artists with long careers, Da Brat’s path included personal and legal difficulties that shaped public perception. Yet her place in rap history remained secure because of what her breakthrough represented.</p>
+              <h3>Style, Personality, and Presence</h3>
+              <p>Da Brat’s style was one of her strongest advantages. She could sound rugged and witty at the same time, mixing speed, confidence, and charisma in a way that made verses memorable. She also had crossover appeal, moving comfortably between solo records, label collaborations, and feature appearances. That adaptability helped her stay visible across different moments in hip-hop and R&amp;B culture.</p>
+
+              <h3>Challenges and Visibility</h3>
+              <p>Like many artists with long careers, Da Brat’s public story included both success and setbacks. Yet even through difficult chapters, she remained a known and respected figure in hip-hop culture. Her name continued to carry weight because of what she had already achieved and because her importance to women’s rap history was firmly established.</p>
 
               <h3>Legacy</h3>
-              <p>Da Brat remains an important figure in women’s hip-hop. Her legacy is tied to barrier-breaking visibility, commercial success, and the proof that female rap stars could carry national recognition in their own right.</p>
+              <p>Da Brat’s legacy rests on impact, originality, and timing. She helped break barriers in an era when female rappers had fewer commercial pathways and even fewer chances to define themselves on their own terms. Her presence helped widen the space for future generations, and her success remains part of the foundation of modern women’s rap history.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1974 — Birth</strong>
-                  <p>Born Shawntae Harris in Chicago.</p>
+                  <strong>Early 1990s — Discovery</strong>
+                  <p>Da Brat emerged from Chicago and caught attention with her charisma, delivery, and star potential.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Breakthrough</strong>
-                  <p>Rose to major fame as one of the most visible women in rap.</p>
+                  <strong>Mid-1990s — So So Def Rise</strong>
+                  <p>Her partnership with Jermaine Dupri and So So Def pushed her into mainstream visibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Peak Era — Mainstream Success</strong>
-                  <p>Built a strong crossover presence and lasting public profile.</p>
+                  <strong>1990s — Commercial Breakthrough</strong>
+                  <p>Became one of the most commercially successful female rappers of her era and a major name in hip-hop culture.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Later Career — Continued Recognition</strong>
-                  <p>Remained a recognized figure in hip-hop and media.</p>
+                  <strong>2000s — Continued Presence</strong>
+                  <p>Maintained relevance through collaborations, features, and continued visibility in music and media.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Legacy Phase</strong>
-                  <p>Solidified her place as a pioneering commercial presence for women’s rap.</p>
+                  <strong>Legacy Era — Cultural Respect</strong>
+                  <p>Recognized as a pioneer whose success helped shape the path for future women in rap.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Shawntae Harris</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Da Brat</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Shawntae Harris</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Chicago, Illinois</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Midwest Rap</div>
+                  <div class="info-value">Hip-Hop / Rap / So So Def Era Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; pioneering rapper and media figure</div>
+                  <div class="info-value">Pioneering female rap figure with enduring legacy</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Women in Rap</span>
                 <span class="tag">Chicago</span>
-                <span class="tag">Confidence</span>
-                <span class="tag">Crossover</span>
-                <span class="tag">Visibility</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">So So Def</span>
+                <span class="tag">Female Rap</span>
+                <span class="tag">Swagger</span>
+                <span class="tag">Mainstream Breakthrough</span>
+                <span class="tag">Pioneer</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>1990s Breakthrough</strong>
-                  <span>The period that established her as a major commercial force.</span>
+                  <strong>Breakout Era</strong>
+                  <span>The early rise that turned Da Brat into one of rap’s most exciting new voices.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream Recognition</strong>
-                  <span>An era of expanded celebrity and crossover presence.</span>
+                  <strong>So So Def Prime</strong>
+                  <span>The period where her visibility, charisma, and hit-making power defined her mainstream success.</span>
                 </div>
                 <div class="album">
-                  <strong>Legacy Visibility</strong>
-                  <span>A later phase where her pioneering role remained central.</span>
+                  <strong>Legacy and Recognition</strong>
+                  <span>A later chapter shaped by cultural respect and recognition of her place in hip-hop history.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Da Brat on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Da%20Brat" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Da Brat.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Da Brat on Spotify and revisit the records that made her one of rap’s most important female pioneers.</p>
+                  <a href="https://open.spotify.com/search/Da%20Brat" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live performances, and major Da Brat releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Da+Brat+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Da Brat on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Da%20Brat+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Funkdafied</span>
+                  <span class="track-tag">Give It 2 You</span>
+                  <span class="track-tag">Sittin' on Top of the World</span>
+                  <span class="track-tag">What'Chu Like</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Funkdafied</span>
-                <span class="track-tag">Give It 2 You</span>
-                <span class="track-tag">Not Tonight</span>
-                <span class="track-tag">What'chu Like</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="missy-elliott.html" class="related-card">
                   <h4>Missy Elliott</h4>
-                  <p>Another boundary-breaking woman whose originality reshaped rap.</p>
+                  <p>Another groundbreaking female rap figure whose originality reshaped hip-hop culture.</p>
                 </a>
                 <a href="lil-kim.html" class="related-card">
                   <h4>Lil' Kim</h4>
-                  <p>A defining female rap star from the same broad era of expansion.</p>
+                  <p>A major contemporary whose visibility helped redefine women’s presence in 1990s rap.</p>
                 </a>
-                <a href="eve.html" class="related-card">
-                  <h4>Eve</h4>
-                  <p>A later star who helped continue women’s rap mainstream visibility.</p>
+                <a href="queen-latifah.html" class="related-card">
+                  <h4>Queen Latifah</h4>
+                  <p>A foundational pioneer whose path helped create space for future female rap stars.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +938,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

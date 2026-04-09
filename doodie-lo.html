@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doodie Lo | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Doodie Lo, covering his Chicago roots, OTF affiliation, street-centered rap, loyalty, controversy, and modern drill-era visibility."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Doodie Lo, covering his Chicago roots, OTF affiliation, street survival, melodic drill energy, and rise within modern rap culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(220, 38, 38, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/doodie-lo.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Doodie Lo</h2>
-              <p>Chicago rapper and OTF affiliate whose music reflects loyalty, drill-era pressure, and the hard edges of street survival.</p>
+              <p>Chicago rapper whose street-rooted storytelling, OTF affiliation, and survival-driven music made him a recognizable figure in the modern drill era.</p>
             </div>
           </aside>
 
@@ -725,7 +709,7 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Doodie Lo</span></h1>
             <p class="summary">
-              Doodie Lo emerged from Chicago’s drill environment as a rapper closely associated with the OTF circle and the wider street-centered world around Lil Durk. His story is tied to loyalty, neighborhood identity, controversy, and the difficult balance between music ambition and the constant scrutiny that follows artists tied to real-life street reputations.
+              Doodie Lo emerged from Chicago with music shaped by pain, loyalty, survival, and the emotional pressure of street life. Closely associated with Lil Durk’s Only The Family movement, he built his name through raw energy, hard-earned credibility, and records that reflected both trauma and determination.
             </p>
 
             <div class="quick-facts">
@@ -734,40 +718,40 @@
                 <strong>Chicago, Illinois</strong>
               </div>
               <div class="fact">
+                <span>Affiliation</span>
+                <strong>OTF</strong>
+              </div>
+              <div class="fact">
                 <span>Known For</span>
-                <strong>OTF affiliation and street rap</strong>
+                <strong>Street rap, pain music, drill-era presence</strong>
               </div>
               <div class="fact">
-                <span>Style</span>
-                <strong>Drill / street realism</strong>
-              </div>
-              <div class="fact">
-                <span>Era</span>
-                <strong>2010s–Present</strong>
+                <span>Status</span>
+                <strong>Modern Chicago Voice</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">City</span>
+                <span class="label">Origin</span>
                 <div class="value">Chicago</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Collective</span>
-                <div class="value">OTF orbit</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Raw, street-centered</div>
+                <span class="label">Era</span>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Loyalty & intensity</div>
+                <div class="value">OTF street energy</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Part of Chicago drill lineage</div>
               </div>
             </div>
           </section>
@@ -778,73 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Chicago Background</h3>
-              <p>
-                Doodie Lo comes from Chicago, a city whose rap scene has been shaped for more than a decade by drill music, neighborhood politics, loss, and social-media visibility. Artists from that world often carry a different type of scrutiny than traditional rap stars. The music is judged not only as art, but as an extension of alliances, conflicts, reputations, and lived environments. Doodie Lo’s public identity developed inside that reality.
-              </p>
-              <p>
-                His style reflects the core qualities of Chicago street rap: direct language, emotional pressure, hardened tone, and loyalty to one’s circle. Rather than presenting himself as highly polished or theatrical, he belongs to a lane where authenticity is measured by association, consistency, and how believable the records feel to listeners already familiar with the culture around them.
-              </p>
+              <h3>Chicago and Street Survival</h3>
+              <p>Doodie Lo’s music comes from the same broader environment that shaped a large part of modern Chicago rap: neighborhoods defined by pressure, grief, loyalty, loss, and the need to survive. That context matters because artists from this world often make records that are not just entertainment, but testimony. Doodie Lo’s style reflects that reality. His delivery carries urgency, and his music often feels rooted in lived experience rather than detached performance.</p>
 
-              <div class="quote">
-                In drill-era rap, affiliation can be as important to public identity as the music itself — and Doodie Lo’s name became known through both.
-              </div>
+              <h3>Only The Family and Visibility</h3>
+              <p>A major factor in Doodie Lo’s rise was his connection to Only The Family, the collective associated with Lil Durk. That affiliation gave him visibility, but it also placed him within a powerful and emotionally charged branch of Chicago rap culture. Inside that world, music often carried themes of loyalty, pain, trauma, fallen friends, and the burden of representing a community under constant pressure. Doodie Lo’s presence within that movement helped define how listeners understood him.</p>
 
-              <h3>Connection to OTF</h3>
-              <p>
-                A major part of Doodie Lo’s visibility comes from his connection to Only The Family, the collective associated with Lil Durk. That connection placed him inside one of the most watched street-rap ecosystems in modern hip-hop. OTF is not simply a label in the ordinary sense; to many fans it represents a wider world of loyalty, grief, ambition, and conflict that extends beyond music.
-              </p>
-              <p>
-                Being attached to that circle helped elevate his profile, but it also meant being judged against a very specific standard. Listeners expected authenticity, aggression, and a certain emotional weight. Doodie Lo’s music fit into that environment by leaning into hard-edged storytelling and the coded language of street loyalty.
-              </p>
+              <h3>A Style Built on Pain and Pressure</h3>
+              <p>Doodie Lo’s records often blend aggression with wounded reflection. Like many artists shaped by drill and post-drill street rap, he works in a lane where toughness and vulnerability exist side by side. He can sound confrontational one moment and deeply burdened the next. That emotional duality gives his music a degree of realism. The voice is not simply trying to intimidate; it is trying to survive, explain, and endure.</p>
 
-              <h3>Music and Presence</h3>
-              <p>
-                Musically, Doodie Lo is associated with the darker side of contemporary street rap. His records tend to emphasize pressure, betrayal, resilience, and the importance of standing firm in unstable environments. Like many artists emerging from drill culture, his power is not built on technical flash alone. It comes from tone, posture, and the suggestion that the music is closely tied to real-world experience.
-              </p>
-              <p>
-                That type of appeal can be powerful because it makes the artist feel immediate. The audience is not only consuming songs; they are reading personality, alliances, and coded reputation into every verse. Doodie Lo’s work sits inside that tradition, where image and music feed each other constantly.
-              </p>
+              <div class="quote">Doodie Lo’s music carries the sound of pressure — loyalty tested by pain, survival sharpened by loss, and street identity turned into testimony.</div>
 
-              <h3>Controversy and Public Scrutiny</h3>
-              <p>
-                Like many artists connected to high-visibility street rap circles, Doodie Lo’s name has also circulated through controversy. In the social-media era, allegations, disputes, and personal conflicts can reshape public attention very quickly, especially for artists whose brand is already built around real-life credibility. This means that music careers can become inseparable from public narrative battles.
-              </p>
-              <p>
-                In that environment, an artist is often forced to navigate both music promotion and reputation management at the same time. For Doodie Lo, this has been part of the broader story: the challenge of maintaining career momentum while public conversation extends far beyond the records themselves.
-              </p>
+              <h3>Reputation and Resilience</h3>
+              <p>Artists in Doodie Lo’s lane are often judged not only by records, but by authenticity, loyalty, and how they move through public scrutiny. That makes his career story part music, part reputation, part survival narrative. His audience often connects with him because he sounds close to the reality he describes. That connection matters in modern street rap, where listeners are often drawn as much to emotional credibility as to hooks or production style.</p>
 
-              <h3>Place in the Drill Era</h3>
-              <p>
-                Doodie Lo’s importance is tied less to crossover superstardom than to representation of a specific rap ecosystem. He reflects the way drill-era artists can become visible through a combination of local authenticity, collective affiliation, online attention, and raw street-centered music. His story is part of a broader Chicago narrative in which rap, reputation, grief, and neighborhood politics remain tightly connected.
-              </p>
-              <p>
-                Whether discussed as a rapper, affiliate, or controversial public figure, Doodie Lo represents a lane of modern hip-hop where music is only one part of the total story. That is what makes his profile significant within the broader Rap Stories universe: he belongs to a generation of artists whose identities are built in the overlap between sound, loyalty, and survival.
-              </p>
+              <h3>Part of a Larger Chicago Legacy</h3>
+              <p>Doodie Lo belongs to a generation shaped by the legacy of Chicago drill, but his story also reflects the later evolution of that scene — one where melody, reflection, grief, and inner conflict became more central. In that sense, he sits inside a lineage that moved from pure confrontation toward more emotionally layered street music. His catalog contributes to that ongoing shift in how Chicago rap is heard.</p>
+
+              <h3>Legacy in Progress</h3>
+              <p>Doodie Lo’s story is still being written, but his significance lies in how clearly he represents a modern form of street rap shaped by collective identity, personal struggle, and emotional realism. He stands as part of a broader movement where music functions not only as ambition, but as memory, pressure release, and proof of survival.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>Chicago Origins</strong>
-                  <p>Raised in Chicago within the social and musical environment that produced drill music.</p>
+                  <strong>2010s — Chicago Emergence</strong>
+                  <p>Doodie Lo began building recognition through Chicago street rap and his growing presence around the city’s evolving drill culture.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Emergence in Street Rap</strong>
-                  <p>Began building recognition through local visibility and street-centered records.</p>
+                  <strong>Late 2010s — OTF Affiliation</strong>
+                  <p>His association with Only The Family helped raise his profile and place him within one of modern Chicago rap’s most visible circles.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>OTF Association</strong>
-                  <p>Gained wider attention through his connection to Lil Durk’s OTF circle.</p>
+                  <strong>2020s — Wider Recognition</strong>
+                  <p>Continued to gain attention through emotionally heavy street music and growing recognition among drill and OTF audiences.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Online Visibility</strong>
-                  <p>Became increasingly discussed as music, affiliation, and controversy merged in the public eye.</p>
+                  <strong>Modern Era — Identity and Survival</strong>
+                  <p>Remained part of a rap lane defined by pain, resilience, public scrutiny, and the burden of representing real experience.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Modern Drill-Era Presence</strong>
-                  <p>Remained part of the wider conversation around Chicago rap, loyalty, and reputation-driven music culture.</p>
+                  <strong>Legacy in Motion</strong>
+                  <p>His role continues to develop within the longer story of post-drill Chicago rap and survival-driven street music.</p>
                 </div>
               </div>
             </section>
@@ -855,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Doodie Lo</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">From</span>
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Chicago, Illinois</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Scene</span>
-                  <div class="info-value">Chicago Drill / Street Rap</div>
-                </div>
-                <div class="info-row">
                   <span class="info-label">Affiliation</span>
-                  <div class="info-value">OTF-associated</div>
+                  <div class="info-value">Only The Family (OTF)</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Known For</span>
-                  <div class="info-value">Raw street-centered records</div>
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / Drill / Street Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Chicago street rap figure with a growing legacy</div>
                 </div>
               </div>
             </section>
@@ -881,11 +841,11 @@
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Chicago</span>
-                <span class="tag">Drill</span>
                 <span class="tag">OTF</span>
+                <span class="tag">Survival</span>
+                <span class="tag">Pain</span>
                 <span class="tag">Loyalty</span>
-                <span class="tag">Controversy</span>
-                <span class="tag">Street Identity</span>
+                <span class="tag">Street Reality</span>
               </div>
             </section>
 
@@ -893,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Local Formation</strong>
-                  <span>The early period shaped by Chicago’s drill environment and street-centered identity.</span>
+                  <strong>Street Foundation</strong>
+                  <span>The early stage where Doodie Lo developed his identity inside Chicago’s pressure-filled rap environment.</span>
                 </div>
                 <div class="album">
-                  <strong>OTF Visibility</strong>
-                  <span>The phase where collective affiliation raised his profile beyond local rap audiences.</span>
+                  <strong>OTF Visibility Era</strong>
+                  <span>The period where affiliation, loyalty, and emotional street music brought him wider recognition.</span>
                 </div>
                 <div class="album">
-                  <strong>Scrutiny and Presence</strong>
-                  <span>The era where music and public controversy became tightly linked in his story.</span>
+                  <strong>Survival Narrative Phase</strong>
+                  <span>An ongoing chapter shaped by resilience, public scrutiny, and music rooted in lived experience.</span>
                 </div>
               </div>
             </section>
@@ -916,23 +876,24 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Doodie Lo on Spotify and explore the music behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Doodie%20Lo" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Doodie Lo on Spotify and explore the records that shaped his presence in modern Chicago street rap.</p>
+                  <a href="https://open.spotify.com/search/Doodie%20Lo" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into videos, performances, and major tracks connected to Doodie Lo.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Doodie+Lo+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, performances, and major Doodie Lo releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Doodie+Lo+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">Don't Get in My Way</span>
                   <span class="track-tag">ISTG, Pt. 2</span>
+                  <span class="track-tag">Don't Trip</span>
                   <span class="track-tag">Hanging With Wolves</span>
-                  <span class="track-tag">Mystery</span>
+                  <span class="track-tag">PSTD</span>
                 </div>
               </div>
             </section>
@@ -940,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="lil-durk.html">
+                <a href="lil-durk.html" class="related-card">
                   <h4>Lil Durk</h4>
-                  <p>The central OTF figure whose rise shaped the wider circle Doodie Lo is associated with.</p>
+                  <p>The central OTF figure whose rise helped define the emotional and strategic lane of modern Chicago street rap.</p>
                 </a>
-                <a class="related-card" href="king-von.html">
+                <a href="king-von.html" class="related-card">
                   <h4>King Von</h4>
-                  <p>A major Chicago street-rap figure whose story reflects the same high-pressure cultural landscape.</p>
+                  <p>A nearby figure in the same broader world of loyalty, trauma, street realism, and Chicago rap mythology.</p>
                 </a>
-                <a class="related-card" href="quando-rondo.html">
+                <a href="quando-rondo.html" class="related-card">
                   <h4>Quando Rondo</h4>
-                  <p>Another modern rap figure whose public identity became inseparable from controversy and street narrative.</p>
+                  <p>A comparison in how pain, regional identity, and survival narratives shape modern street rap careers.</p>
                 </a>
               </div>
             </section>
@@ -975,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drake | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Drake, covering his Toronto roots, acting beginnings, rap and R&B crossover success, era-defining dominance, controversy, and cultural legacy."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Drake, covering his Toronto roots, early breakthrough, emotional songwriting, chart dominance, cultural influence, and lasting impact on modern rap and R&B." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(59, 130, 246, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/drake.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Drake</h2>
-              <p>Toronto superstar whose blend of rap, melody, vulnerability, and dominance reshaped the sound and business of modern hip-hop.</p>
+              <p>Toronto superstar whose emotional songwriting, genre blending, and chart dominance made him one of the defining artists of modern music.</p>
             </div>
           </aside>
 
@@ -725,49 +709,49 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Drake</span></h1>
             <p class="summary">
-              Born Aubrey Drake Graham, Drake rose from Toronto actor to one of the most commercially powerful and culturally influential artists of the 21st century. His career fused rap, R&amp;B, confession, status, heartbreak, and luxury into a sound that defined an era and changed what a rap superstar could look and sound like.
+              Drake changed the emotional vocabulary of mainstream rap. Emerging from Toronto with a style built on vulnerability, melody, ambition, and sharp self-awareness, he became one of the most commercially dominant artists of his generation and one of the most influential figures in the modern relationship between rap, R&amp;B, and global pop culture.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>October 24, 1986</strong>
+                <strong>1986</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Toronto, Canada</strong>
+                <strong>Toronto, Ontario</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Rap, melody, crossover dominance</strong>
+                <strong>Emotional rap, melody, chart dominance</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>2000s–Present</strong>
+                <span>Status</span>
+                <strong>Global Rap Icon</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1986</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Toronto</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Rap + melody</div>
+                <span class="label">Era</span>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Era-defining dominance</div>
+                <div class="value">Melodic introspection</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Redefined mainstream rap emotion</div>
               </div>
             </div>
           </section>
@@ -778,81 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Toronto Beginnings</h3>
-              <p>
-                Drake was born Aubrey Drake Graham in Toronto, a city that would eventually become central to his identity and brand. Before music made him a global superstar, he was known as a young actor, a background that shaped how many people first viewed him. That early visibility mattered because Drake’s later career would often revolve around performance in multiple senses: not only making songs, but also controlling mood, image, narrative, and emotional tone with unusual precision.
-              </p>
-              <p>
-                His upbringing was more layered than the mythology that later surrounded him. He was not introduced as a traditional street-rap figure, and that distinction became one of the defining tensions of his career. Drake’s power came partly from refusing older ideas about what a rapper had to be. Instead of arriving as a hardened archetype, he arrived as someone emotionally articulate, self-aware, ambitious, and strategically polished.
-              </p>
+              <h3>Toronto Beginnings and Early Visibility</h3>
+              <p>Born Aubrey Drake Graham, Drake’s rise was unusual from the start. Before becoming one of rap’s biggest stars, he was already publicly visible through acting, which gave him a different kind of entry point into entertainment than many rappers. Yet what ultimately mattered was not that background, but the way he used music to build a completely different identity. Coming out of Toronto, he represented a city that had not yet fully taken its place at the center of mainstream rap. His success would help change that permanently.</p>
 
-              <div class="quote">
-                Drake did not simply dominate rap — he helped redraw its emotional and commercial boundaries.
-              </div>
+              <h3>A New Kind of Rap Star</h3>
+              <p>Drake’s breakthrough mattered because he helped normalize emotional openness at the very center of rap’s commercial world. He was ambitious, competitive, and status-conscious, but he was also reflective, wounded, romantic, insecure, and self-analytical. That mix became his signature. He did not sound like he was hiding behind invulnerability. He sounded like someone documenting ambition and loneliness at the same time.</p>
 
-              <h3>From Mixtape Momentum to Breakthrough</h3>
-              <p>
-                Drake’s early music built attention because it sounded different from much of the mainstream rap around him. He leaned into introspection, late-night atmosphere, melodic hooks, and confessional writing. He could rap competitively, but he was equally interested in mood, longing, insecurity, status anxiety, and romantic fallout. That combination made him stand out in a genre that had often treated vulnerability as secondary to toughness.
-              </p>
-              <p>
-                His breakthrough was not only about catchy music. It was about the arrival of a new kind of male rap star: emotionally open, image-conscious, internet-savvy, and capable of moving between rap and R&amp;B without sounding like he was changing genres. He turned softness into leverage and self-exposure into a commercial weapon.
-              </p>
+              <h3>Melody, Rap, and Mainstream Expansion</h3>
+              <p>One of Drake’s most important achievements was the way he blurred the lines between rapping and singing without losing credibility in either lane. He helped make melodic rap emotionally softer and more commercially fluid. That shift changed the sound of mainstream hip-hop and influenced a generation of artists who saw no reason to keep rap and R&amp;B strictly separated. His records often moved effortlessly between confession, flexing, heartbreak, and catchiness.</p>
 
-              <h3>Dominance and Reinvention</h3>
-              <p>
-                Once Drake reached the top tier of the industry, he stayed there through constant reinvention. He adapted to changing sounds, absorbed regional influences, collaborated widely, and maintained relevance across multiple generations of listeners. Few artists have been as effective at reading the emotional weather of popular music and then placing themselves at its center.
-              </p>
-              <p>
-                His records often blended braggadocio with loneliness, luxury with suspicion, and intimacy with control. That formula allowed him to appeal across audiences: rap fans, pop listeners, R&amp;B audiences, streaming-era playlists, and global markets. He became not just a successful rapper, but a system unto himself.
-              </p>
+              <div class="quote">Drake turned introspection into mainstream power, proving that vulnerability, melody, and ambition could dominate rap at the highest level.</div>
 
-              <h3>Power, Influence, and Criticism</h3>
-              <p>
-                Drake’s scale of success also made him a target. The larger he became, the more debates followed him: about authenticity, ghostwriting accusations, cultural borrowing, artistic opportunism, feuds, and the costs of constant dominance. For many critics, Drake represented both the brilliance and the calculation of the streaming era — an artist whose instincts were so sharp that his music sometimes felt inseparable from strategy.
-              </p>
-              <p>
-                Yet even the criticism confirmed his importance. Artists who do not matter are not argued over at that scale. Drake became one of the few figures in rap whose choices could shift conversation across the entire genre, whether through an album, a feud, a feature, a style pivot, or a single line.
-              </p>
+              <h3>Dominance and Cultural Reach</h3>
+              <p>Over time, Drake became not just a star, but a near-constant presence in popular music. His chart success, streaming dominance, collaborations, and public visibility made him one of the central figures of the digital era. He understood the value of timing, mood, and adaptability, and he was able to shift with trends while still keeping his own brand at the center. That flexibility helped him remain relevant across multiple eras of rap and pop.</p>
 
-              <h3>Feuds, Persona, and the Public Gaze</h3>
-              <p>
-                Public conflict has always played a major role in Drake’s story. He has been involved in some of the most widely discussed rap rivalries of the modern era, and those moments often intensified interest in the contradictions at the center of his image: sensitive yet calculating, wounded yet dominant, accessible yet remote, hyper-visible yet elusive. Drake’s persona works partly because it contains all of those tensions at once.
-              </p>
-              <p>
-                He also mastered the aesthetics of the modern superstar: captions, subliminals, curated cool, emotional ambiguity, and carefully staged access. In that sense, he became one of the defining celebrity figures of the social-media age, not just because he was famous, but because he seemed to understand how fame itself now operates.
-              </p>
+              <h3>Success, Scrutiny, and Competition</h3>
+              <p>With that level of dominance came constant scrutiny. Drake’s career has been shaped not only by records, but by public rivalries, debates about authenticity, questions of influence, and intense cultural conversation around his place in hip-hop. Yet those tensions are part of what defines his significance. He became too big to ignore, and once an artist reaches that scale, even criticism becomes evidence of centrality.</p>
 
               <h3>Legacy</h3>
-              <p>
-                Drake’s legacy is enormous. He changed the emotional language of mainstream rap, normalized melodic vulnerability at the highest level, helped expand Toronto’s place in global music culture, and proved that a rap artist could sustain long-term chart dominance in the streaming era while remaining central to conversation. His influence can be heard in countless artists who now move easily between rapping, singing, confession, and mood-driven songwriting.
-              </p>
-              <p>
-                More than most artists of his generation, Drake became an era. His catalog, image, and methods helped define how hip-hop sounded, how it scaled, and how it circulated in the digital age. Whether admired, criticized, or constantly debated, he remains one of the most consequential figures in modern music.
-              </p>
+              <p>Drake’s legacy lies in how thoroughly he reshaped the emotional and commercial center of rap. He helped make melody, confession, and personal reflection central to mainstream success while also proving that a rapper from Toronto could become one of the biggest music stars in the world. His influence extends across sound, persona, release strategy, and the global ambition of modern rap itself.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1986 — Birth</strong>
-                  <p>Born Aubrey Drake Graham in Toronto, Ontario, Canada.</p>
+                  <strong>2000s — Early Transition</strong>
+                  <p>Drake moved from public entertainment visibility into music, using mixtapes and online momentum to build his reputation.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Acting and Early Music</strong>
-                  <p>Built early public recognition as an actor before shifting into music and mixtape culture.</p>
+                  <strong>Late 2000s / Early 2010s — Breakthrough</strong>
+                  <p>Rose rapidly through emotional rap records, major co-signs, and a style that felt new inside mainstream hip-hop.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2000s–Early 2010s — Breakthrough</strong>
-                  <p>Emerged as a major rap star through emotionally direct music and crossover appeal.</p>
+                  <strong>2010s — Dominant Era</strong>
+                  <p>Became one of the most commercially successful and culturally visible artists in rap and popular music.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s — Era-Defining Dominance</strong>
-                  <p>Became one of the most commercially successful and culturally visible artists in the world.</p>
+                  <strong>Late 2010s / 2020s — Global Power</strong>
+                  <p>Expanded his reach even further through streaming dominance, major collaborations, and constant public relevance.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020s — Legacy and Debate</strong>
-                  <p>Remained central to music conversation through chart power, influence, and high-profile rivalries.</p>
+                  <strong>Legacy Phase — Modern Rap Blueprint</strong>
+                  <p>Remains one of the defining figures of the era that fused rap, melody, introspection, and global chart ambition.</p>
                 </div>
               </div>
             </section>
@@ -863,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Aubrey Drake Graham</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Drake</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Aubrey Drake Graham</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Toronto, Ontario, Canada</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / R&amp;B / Pop Rap</div>
+                  <div class="info-value">Hip-Hop / Rap / R&amp;B / Pop Rap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Known For</span>
-                  <div class="info-value">Rap and melodic crossover dominance</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">One of the most influential and commercially dominant artists of his era</div>
                 </div>
               </div>
             </section>
@@ -889,11 +841,11 @@
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Toronto</span>
-                <span class="tag">Vulnerability</span>
-                <span class="tag">Dominance</span>
-                <span class="tag">Luxury</span>
-                <span class="tag">Fame</span>
-                <span class="tag">Reinvention</span>
+                <span class="tag">Introspection</span>
+                <span class="tag">Melody</span>
+                <span class="tag">Ambition</span>
+                <span class="tag">Chart Power</span>
+                <span class="tag">Modern Rap</span>
               </div>
             </section>
 
@@ -901,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Mixtape Ascension</strong>
-                  <span>The early period where introspection and melody made him feel like a new kind of rap star.</span>
+                  <strong>Breakthrough Emotional Rap Era</strong>
+                  <span>The early stage where Drake introduced a more vulnerable and melodic mainstream rap style.</span>
                 </div>
                 <div class="album">
-                  <strong>Global Dominance</strong>
-                  <span>The era where Drake became one of the most commercially powerful artists of his generation.</span>
+                  <strong>Global Domination Phase</strong>
+                  <span>The period where he became one of the defining chart and streaming powers in modern music.</span>
                 </div>
                 <div class="album">
-                  <strong>Legacy and Conflict</strong>
-                  <span>The later chapter where influence, debate, and high-profile rivalry deepened his mythology.</span>
+                  <strong>Legacy and Influence Era</strong>
+                  <span>An ongoing chapter shaped by scale, scrutiny, and lasting influence across rap and pop.</span>
                 </div>
               </div>
             </section>
@@ -924,13 +876,14 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Drake on Spotify and follow the music behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Drake" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Drake on Spotify and explore the records that made him one of the biggest artists of the modern era.</p>
+                  <a href="https://open.spotify.com/search/Drake" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into videos, performances, and major records connected to Drake.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Drake+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, performances, and major Drake releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Drake+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
@@ -938,8 +891,8 @@
                 <h3>Essential Listening</h3>
                 <div class="track-list">
                   <span class="track-tag">Best I Ever Had</span>
-                  <span class="track-tag">Started From the Bottom</span>
                   <span class="track-tag">Marvins Room</span>
+                  <span class="track-tag">Started From the Bottom</span>
                   <span class="track-tag">God's Plan</span>
                 </div>
               </div>
@@ -948,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="kendrick-lamar.html">
-                  <h4>Kendrick Lamar</h4>
-                  <p>A defining contemporary rival whose artistry and public clashes helped shape Drake’s era.</p>
+                <a href="lil-wayne.html" class="related-card">
+                  <h4>Lil Wayne</h4>
+                  <p>The major mentor and co-sign figure who helped usher Drake into the highest level of rap visibility.</p>
                 </a>
-                <a class="related-card" href="future.html">
-                  <h4>Future</h4>
-                  <p>A major collaborator and fellow era-defining figure who intersected with Drake’s evolution repeatedly.</p>
+                <a href="the-weeknd.html" class="related-card">
+                  <h4>The Weeknd</h4>
+                  <p>A fellow Toronto giant whose rise also helped reshape the city’s place in global music culture.</p>
                 </a>
-                <a class="related-card" href="j-cole.html">
-                  <h4>J. Cole</h4>
-                  <p>Another central voice of Drake’s generation, often discussed alongside him in modern rap’s elite tier.</p>
+                <a href="kanye-west.html" class="related-card">
+                  <h4>Kanye West</h4>
+                  <p>A comparison in how vulnerability, ambition, and genre-blending changed the emotional scope of rap stardom.</p>
                 </a>
               </div>
             </section>
@@ -983,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

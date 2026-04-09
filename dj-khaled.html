@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJ Khaled | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on DJ Khaled, covering his Miami roots, radio rise, all-star collaborations, and mogul persona." />
+  <meta name="description" content="A Rap Stories premium profile on DJ Khaled, covering his Miami roots, radio and DJ career, rise as a hitmaking executive, anthem-building sound, and lasting impact on hip-hop culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,213 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +676,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +701,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>DJ Khaled</h2>
-              <p>Miami hitmaker and personality who turned curation, branding, and major collaborations into a rap empire of constant visibility.</p>
+              <p>Miami hit architect whose anthemic collaborations, executive instincts, and larger-than-life personality turned him into one of hip-hop’s biggest cultural brands.</p>
             </div>
           </aside>
 
@@ -735,25 +709,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>DJ Khaled</span></h1>
             <p class="summary">
-              Born Khaled Mohamed Khaled, DJ Khaled turned radio, networking, curation, and relentless self-branding into one of hip-hop’s most recognizable success stories. He became less a traditional rapper or producer than a master organizer of visibility, energy, and blockbuster collaboration.
+              DJ Khaled built a career not by fitting the traditional image of a rapper, but by becoming one of hip-hop’s most visible connectors, motivators, and hitmakers. Emerging from Miami radio and DJ culture, he transformed relationships, branding, and anthem-building into a lasting empire that stretched across rap, pop, business, and internet culture.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>November 26, 1975</strong>
+                <strong>1975</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>New Orleans, Louisiana / Miami rooted</strong>
+                <strong>New Orleans / Miami</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>All-star collaborations, branding, anthems</strong>
+                <strong>Anthem records, major collaborations, executive vision</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Hip-Hop Mogul</strong>
               </div>
             </div>
 
@@ -761,14 +735,11 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1975</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Miami</div>
+                <span class="label">Origin</span>
+                <div class="value">Miami scene</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
@@ -776,7 +747,11 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Curating major hits</div>
+                <div class="value">Big-collab anthem building</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Executive and brand power</div>
               </div>
             </div>
           </section>
@@ -784,156 +759,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Miami Foundation</h3>
-              <p>Khaled’s career was shaped by radio, DJ culture, and Miami’s role as a crossroads in rap and nightlife. He understood early that influence in music could come not only from performing, but from connecting people, shaping momentum, and controlling attention.</p>
+              <h3>Early Roots and Miami Culture</h3>
+              <p>Born Khaled Mohamed Khaled, DJ Khaled’s path began long before he became a global catchphrase machine and chart fixture. His family background was deeply connected to music, and his eventual rise was shaped by years inside DJ culture, radio, and the club scene. While he was born in New Orleans, Miami became the city most closely tied to his public identity and industry ascent. There, he learned how records moved, how audiences responded, and how to build influence through presence as much as through music itself.</p>
 
-              <h3>From Radio to Hitmaking</h3>
-              <p>His rise from behind-the-scenes figure to front-facing star was unusual. Khaled turned his name into a brand and his presence into a guarantee of event-level collaboration. He specialized in records that felt oversized, motivational, and built for mass recognition.</p>
+              <h3>From DJ to Industry Force</h3>
+              <p>Khaled’s earliest success came from being a visible, connected figure in hip-hop infrastructure. He was not only playing music, he was building relationships. That skill became one of his greatest strengths. He understood artists, labels, streets, radio, and spectacle, and he positioned himself at the center of all of it. In time, that made him more than a DJ. He became a curator, an organizer, and eventually a brand powerful enough to headline projects through his own name.</p>
 
-              <div class="quote">DJ Khaled became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>The Art of the Anthem</h3>
+              <p>What made DJ Khaled important was not lyrical ability or production in the traditional auteur sense. It was his gift for assembling moments. He specialized in records that felt big, motivational, luxurious, and highly visible. His albums often functioned like event programming, bringing together major stars, blockbuster hooks, and themes of victory, struggle, hustle, and celebration. He became one of the defining architects of the all-star rap anthem.</p>
 
-              <h3>The Power of Curation</h3>
-              <p>DJ Khaled’s strongest skill has been assembly. He understands how to gather major artists, build anticipation, and make a collaboration feel like a cultural moment. In that sense, he functions as a curator, facilitator, and hype architect all at once.</p>
+              <div class="quote">DJ Khaled’s genius was not in doing everything himself. It was in making scale, energy, and collaboration feel like a signature style of their own.</div>
 
-              <h3>Persona and Self-Branding</h3>
-              <p>His public personality became central to his success. Slogans, optimism, visibility, and constant self-promotion helped make him an internet-age mogul whose fame reached well beyond radio or club spaces.</p>
+              <h3>Branding, Personality, and Internet Power</h3>
+              <p>Khaled’s rise also showed how modern fame could be built through personality. He turned motivational slogans, humor, exaggerated confidence, and constant visibility into a second career as a cultural personality. On social media and in interviews, he made himself unforgettable. That helped transform him from a behind-the-scenes music figure into a mainstream celebrity whose name itself carried commercial weight.</p>
+
+              <h3>Hits, Influence, and Criticism</h3>
+              <p>Over time, DJ Khaled became associated with success on a huge scale. His projects featured major stars, crossed between rap and pop, and routinely aimed for broad commercial impact. At the same time, his approach also drew criticism from people who saw him as more brand than artist. Yet even that criticism reflected his unusual position in music: he had become impossible to ignore. Whether praised as an elite connector or dismissed as a self-marketer, he remained central to the conversation.</p>
 
               <h3>Legacy</h3>
-              <p>DJ Khaled represents a modern form of rap power built on branding, curation, and connection. His legacy is tied to spectacle, collaboration, and the ability to turn energy itself into a career.</p>
+              <p>DJ Khaled’s legacy lies in how he expanded the definition of what hip-hop stardom could look like. He proved that a figure rooted in DJ culture, executive instincts, networking, and branding could become one of the most recognizable names in popular music. His story is about influence, orchestration, and scale. He did not simply follow the rap industry. He learned how to make it revolve around his presence.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1975 — Birth</strong>
-                  <p>Born Khaled Mohamed Khaled in Louisiana.</p>
+                  <strong>1990s — DJ and Radio Foundation</strong>
+                  <p>Built his reputation through club work, radio presence, and deep ties within the Miami hip-hop scene.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s–2000s — DJ and Radio Rise</strong>
-                  <p>Built influence through Miami radio and DJ culture.</p>
+                  <strong>2000s — Emergence as a Public Brand</strong>
+                  <p>Moved from behind-the-scenes industry work to a visible role as a hitmaking DJ and executive personality.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Breakthrough as Curator</strong>
-                  <p>Transitioned into a hitmaking public figure with major collaborations.</p>
+                  <strong>2010s — Major Anthem Era</strong>
+                  <p>Became one of music’s most recognizable names through blockbuster collaborations and chart-focused releases.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s — Mainstream Brand Power</strong>
-                  <p>Became one of the most visible names in rap entertainment.</p>
+                  <strong>Late 2010s / 2020s — Global Celebrity Status</strong>
+                  <p>Expanded beyond music into branding, social media fame, entrepreneurship, and full-scale pop culture presence.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020s — Enduring Visibility</strong>
-                  <p>Remained a major personality, curator, and symbol of motivational excess.</p>
+                  <strong>Legacy Phase — Connector and Mogul</strong>
+                  <p>Remains a symbol of hip-hop ambition, large-scale networking, and mainstream cultural reach.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Khaled Mohamed Khaled</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">DJ Khaled</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">New Orleans, Louisiana</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Khaled Mohamed Khaled</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">New Orleans, Louisiana / Miami, Florida</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / DJ / Curator</div>
+                  <div class="info-value">Hip-Hop / Rap / Mainstream Anthem Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; mogul and hit curator</div>
+                  <div class="info-value">Hitmaking mogul, curator, and hip-hop media personality</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Branding</span>
                 <span class="tag">Miami</span>
+                <span class="tag">Anthems</span>
                 <span class="tag">Networking</span>
-                <span class="tag">Hits</span>
+                <span class="tag">Brand Power</span>
                 <span class="tag">Motivation</span>
-                <span class="tag">Curation</span>
+                <span class="tag">Mogul</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Radio Foundation</strong>
-                  <span>The early stage that established his industry leverage.</span>
+                  <strong>Street and Radio Build-Up</strong>
+                  <span>The early phase where Khaled established credibility in Miami’s music ecosystem.</span>
                 </div>
                 <div class="album">
-                  <strong>Hit Curator Era</strong>
-                  <span>A period defined by major collaborations and mainstream success.</span>
+                  <strong>Anthem Architect Era</strong>
+                  <span>The period where giant collaborations and motivational branding made him a mainstream force.</span>
                 </div>
                 <div class="album">
-                  <strong>Personality-Mogul Phase</strong>
-                  <span>A later era where his public brand became inseparable from his music.</span>
+                  <strong>Celebrity Mogul Phase</strong>
+                  <span>A later chapter defined by media visibility, business power, and full cultural saturation.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for DJ Khaled on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/DJ%20Khaled" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for DJ Khaled.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for DJ Khaled on Spotify and explore the anthem-driven records that made him one of hip-hop’s biggest hit curators.</p>
+                  <a href="https://open.spotify.com/search/DJ%20Khaled" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, collaborations, and major DJ Khaled releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=DJ+Khaled+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to DJ Khaled on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=DJ%20Khaled+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">We Takin' Over</span>
+                  <span class="track-tag">I'm on One</span>
+                  <span class="track-tag">All I Do Is Win</span>
+                  <span class="track-tag">Wild Thoughts</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">We Takin' Over</span>
-                <span class="track-tag">All I Do Is Win</span>
-                <span class="track-tag">I'm the One</span>
-                <span class="track-tag">Wild Thoughts</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="rick-ross.html" class="related-card">
                   <h4>Rick Ross</h4>
-                  <p>A Miami giant whose rise overlaps with Khaled’s world of Southern power.</p>
+                  <p>A major Miami-associated figure whose collaborations and larger-than-life image often overlapped with Khaled’s world.</p>
                 </a>
-                <a href="ace-hood.html" class="related-card">
-                  <h4>Ace Hood</h4>
-                  <p>An artist whose breakthrough was closely connected to Khaled’s platform.</p>
+                <a href="fat-joe.html" class="related-card">
+                  <h4>Fat Joe</h4>
+                  <p>Another hip-hop personality known for connecting artists, building records, and carrying cultural influence beyond rapping alone.</p>
                 </a>
-                <a href="drake.html" class="related-card">
-                  <h4>Drake</h4>
-                  <p>One of the superstar collaborators most associated with Khaled’s blockbuster formula.</p>
+                <a href="diddy.html" class="related-card">
+                  <h4>Diddy</h4>
+                  <p>A mogul comparison in how branding, executive vision, and personality can become a defining music strategy.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +938,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fabolous | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Fabolous, covering his Brooklyn roots, mixtape rise, radio success, punchline-heavy style, longevity, and legacy in New York rap."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Fabolous, covering his Brooklyn roots, mixtape and radio rise, punchline lyricism, fashionable image, and lasting influence on New York rap." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/fabolous.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Fabolous</h2>
-              <p>Brooklyn rapper known for smooth punchlines, street polish, radio-friendly records, and one of the most consistent runs in New York rap.</p>
+              <p>Brooklyn rapper whose slick punchlines, smooth delivery, mixtape consistency, and fashion-forward persona made him one of New York rap’s most durable stars.</p>
             </div>
           </aside>
 
@@ -725,13 +709,13 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Fabolous</span></h1>
             <p class="summary">
-              Born John David Jackson, Fabolous built his reputation on cool delivery, sharp punchlines, and a style that balanced commercial accessibility with street credibility. Emerging from Brooklyn in the late 1990s and early 2000s, he became one of the most recognizable New York rappers of his generation, admired for consistency, mixtape excellence, and an effortless sense of style.
+              Fabolous built his name through style, precision, and consistency. Emerging from Brooklyn with a polished flow and a gift for punchlines, he became one of the defining voices of early-2000s New York rap while also developing a long-lasting reputation through mixtapes, radio records, and an image that blended street confidence with fashion-conscious cool.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>November 18, 1977</strong>
+                <strong>1977</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -739,35 +723,35 @@
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Punchlines and smooth delivery</strong>
+                <strong>Punchlines, mixtapes, radio hits, style</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>2000s–Present</strong>
+                <span>Status</span>
+                <strong>New York Rap Mainstay</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1977</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Brooklyn</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Punchline-heavy, smooth</div>
+                <span class="label">Era</span>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Mixtape and radio balance</div>
+                <div class="value">Slick punchline rap</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Mixtape and mainstream balance</div>
               </div>
             </div>
           </section>
@@ -778,73 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Brooklyn Roots and Early Image</h3>
-              <p>
-                Fabolous was born John David Jackson and came out of Brooklyn at a time when New York rap was still intensely competitive, image-conscious, and technically demanding. His appeal was immediate because he carried himself with unusual calm. He did not rely on shouting, chaos, or exaggerated aggression. Instead, he built his identity around coolness: a slick voice, polished appearance, sharp one-liners, and a sense that he was always in control of the room.
-              </p>
-              <p>
-                That controlled style became a major part of his brand. Fabolous sounded like someone who understood both the street and the spotlight. He could make records for radio, but he also spoke in a language that felt credible to listeners who wanted edge, hustle, and New York swagger. That balance helped him last longer than many artists who were more one-dimensional.
-              </p>
+              <h3>Brooklyn Roots and Early Promise</h3>
+              <p>Born John David Jackson, Fabolous emerged from Brooklyn with the kind of smooth confidence that immediately fit the New York rap tradition. He came into a scene that still valued bars, swagger, and local identity, and he quickly made his mark with a delivery that felt cool, effortless, and highly controlled. Even early on, what stood out was not shouting or chaos, but composure. He sounded like someone who knew exactly how he wanted to be heard.</p>
 
-              <div class="quote">
-                Fabolous mastered a difficult rap art: sounding effortless while writing with precision.
-              </div>
+              <h3>Punchlines and Precision</h3>
+              <p>Fabolous became especially known for punchline rap — witty, stylish, quotable lines delivered with restraint rather than force. That approach helped separate him from more explosive personalities. He did not need to overwhelm a beat to dominate it. Instead, he glided across tracks with confidence, using wordplay, timing, and understated charisma to make verses memorable. His skill set made him especially effective in an era where radio records and lyrical reputation could still coexist.</p>
 
-              <h3>Breakthrough and Mainstream Success</h3>
-              <p>
-                Fabolous rose in the early 2000s, a period when hit singles, strong guest verses, and visible style were all central to building a rap career. He fit that era perfectly. His records were memorable, his hooks were accessible, and his verses were filled with quotable lines that made his music easy to replay and easy to repeat. He became one of the most commercially reliable New York rappers of the time.
-              </p>
-              <p>
-                What made his breakthrough lasting was that he never sounded desperate for crossover success. Even when the records were polished and radio-ready, he kept the demeanor of a rapper whose credibility mattered. That gave his catalog a wider reach without making it feel overly softened.
-              </p>
+              <h3>Mainstream Success and Radio Presence</h3>
+              <p>As his career developed, Fabolous established himself as one of the more reliable hitmakers in New York rap. He understood how to make records that worked on the radio without fully abandoning his street or lyrical identity. That balance was important. Many rappers either remained underground or moved too far into commercial softness. Fabolous was able to occupy a middle zone, keeping enough lyrical sharpness to earn respect while still making music with broad replay value.</p>
 
-              <h3>Punchlines, Mixtapes, and Reputation</h3>
-              <p>
-                While mainstream success helped build Fabolous’s public profile, a major part of his reputation came from mixtape culture. In that arena, rappers were judged less by chart position and more by bars, consistency, and how sharp they sounded over borrowed or unexpected production. Fabolous thrived there. Many listeners came to see him as one of the strongest mixtape rappers of his era, someone capable of elevating nearly any beat with clean structure and clever writing.
-              </p>
-              <p>
-                His punchline style became one of his signatures. He did not necessarily aim for the most emotionally explosive material; instead, he specialized in polished wordplay, stylish metaphors, and verses that sounded smooth even when they were technically dense. That combination gave him longevity because it rewarded close listening while still sounding easy.
-              </p>
+              <div class="quote">Fabolous made coolness into a rap language — smooth delivery, sharp lines, polished image, and the ability to sound effortless while staying technically precise.</div>
 
-              <h3>Fashion, Persona, and New York Cool</h3>
-              <p>
-                Fabolous also mattered culturally because of how well he embodied a certain version of New York cool. Fashion, confidence, understated bravado, and visual polish all played important roles in his image. He represented a lane of rap stardom where style was not an accessory but part of the art itself. His image reinforced what the music already suggested: discipline, taste, control, and composure.
-              </p>
-              <p>
-                This helped him remain visible even as rap styles shifted. He did not need to transform radically every few years because his persona was built on timeless qualities rather than a single passing trend.
-              </p>
+              <h3>The Mixtape Legacy</h3>
+              <p>One of the strongest dimensions of Fabolous’s career is his mixtape work. In many ways, his mixtapes became central to how fans judged his artistry. They allowed him to rap more freely, showcase punchlines without commercial pressure, and maintain credibility among listeners who cared deeply about bars. This dual identity — mainstream artist and respected mixtape rapper — helped give his career unusual longevity.</p>
 
-              <h3>Longevity and Legacy</h3>
-              <p>
-                Fabolous’s legacy is tied to consistency. He may not always be placed at the center of rap mythology in the same way as some more dramatic figures, but his durability is part of what makes him important. He lasted through multiple industry eras, remained respected by peers, and continued to be valued for bars, style, and versatility.
-              </p>
-              <p>
-                In the history of New York rap, he represents a distinctive type of artist: commercially successful but still respected by lyric-focused audiences, polished without seeming fake, and adaptable without losing identity. That is a hard balance to maintain, and Fabolous maintained it for years. That is why his story matters.
-              </p>
+              <h3>Style, Image, and Cultural Presence</h3>
+              <p>Fabolous also became known for fashion and presentation. His image was carefully maintained: stylish, urban, expensive, but not exaggerated to the point of parody. That mattered because it reinforced the musical persona. He was not just a rapper with nice clothes; the elegance and polish of his image mirrored the smoothness of his flow. In that sense, fashion was part of the larger performance of who Fabolous was as an artist.</p>
+
+              <h3>Legacy</h3>
+              <p>Fabolous’s legacy lies in consistency, style, and the ability to move between mainstream and street respect without losing his identity. He represents a particular kind of New York rapper — witty, composed, fashionable, technically clean, and built for longevity rather than shock. His career shows that control, polish, and lyrical cool can have just as much staying power as louder forms of rap stardom.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1977 — Birth</strong>
-                  <p>Born John David Jackson in Brooklyn, New York.</p>
+                  <strong>Late 1990s / Early 2000s — Breakthrough</strong>
+                  <p>Fabolous emerged from Brooklyn with a polished flow, quick recognition, and a reputation for slick punchlines.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 1990s–Early 2000s — Emergence</strong>
-                  <p>Built momentum as a smooth, punchline-oriented New York rapper with strong commercial instincts.</p>
+                  <strong>2000s — Mainstream and Radio Run</strong>
+                  <p>Became a reliable New York rap star through successful singles, strong features, and broad commercial visibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Mainstream Breakthrough</strong>
-                  <p>Became a major radio and mixtape presence, balancing street appeal and chart success.</p>
+                  <strong>2000s / 2010s — Mixtape Respect</strong>
+                  <p>Built deeper credibility through consistent mixtape work that highlighted his lyrical sharpness and versatility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s — Mixtape Reputation</strong>
-                  <p>Strengthened his standing as one of the era’s most consistent and respected mixtape rappers.</p>
+                  <strong>2010s — Enduring Cultural Presence</strong>
+                  <p>Maintained influence through fashion, catalog strength, and continued respect as a polished New York voice.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Legacy Era</strong>
-                  <p>Remained a durable New York rap figure known for style, bars, and long-term relevance.</p>
+                  <strong>Legacy Phase — Stylish Consistency</strong>
+                  <p>Remains recognized as one of the most durable and distinctive rappers of his generation.</p>
                 </div>
               </div>
             </section>
@@ -855,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">John David Jackson</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Fabolous</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">John David Jackson</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Brooklyn, New York</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / East Coast Rap</div>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Mainstream New York Rap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Known For</span>
-                  <div class="info-value">Punchlines, style, mixtapes</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Established rapper with lasting mixtape and mainstream legacy</div>
                 </div>
               </div>
             </section>
@@ -884,8 +844,8 @@
                 <span class="tag">Punchlines</span>
                 <span class="tag">Style</span>
                 <span class="tag">Mixtapes</span>
-                <span class="tag">Longevity</span>
                 <span class="tag">New York Rap</span>
+                <span class="tag">Consistency</span>
               </div>
             </section>
 
@@ -893,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Early Arrival</strong>
-                  <span>The period where Fabolous established a polished New York rap identity and breakout momentum.</span>
+                  <strong>Early Brooklyn Breakthrough</strong>
+                  <span>The opening phase where Fabolous became known for his smooth delivery and mainstream potential.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream and Mixtape Balance</strong>
-                  <span>The era where he proved he could own both radio and bar-heavy rap spaces.</span>
+                  <strong>Hitmaking and Mixtape Balance</strong>
+                  <span>The period where he balanced commercial success with lyrical credibility and underground respect.</span>
                 </div>
                 <div class="album">
-                  <strong>Consistent Veteran</strong>
-                  <span>The later phase where longevity and style secured his place in rap history.</span>
+                  <strong>Enduring Stylish Legacy</strong>
+                  <span>A later chapter defined by consistency, fashion influence, and catalog replay value.</span>
                 </div>
               </div>
             </section>
@@ -916,23 +876,24 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Fabolous on Spotify and revisit the music behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Fabolous" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Fabolous on Spotify and revisit the records that made him one of New York rap’s most stylish and reliable voices.</p>
+                  <a href="https://open.spotify.com/search/Fabolous" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, freestyles, and major records connected to Fabolous.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Fabolous+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, performances, and major Fabolous releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Fabolous+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">Can't Let You Go</span>
                   <span class="track-tag">Breathe</span>
+                  <span class="track-tag">Can't Let You Go</span>
                   <span class="track-tag">Into You</span>
-                  <span class="track-tag">You Be Killin Em</span>
+                  <span class="track-tag">Young'n (Holla Back)</span>
                 </div>
               </div>
             </section>
@@ -940,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="jadakiss.html">
+                <a href="jadakiss.html" class="related-card">
                   <h4>Jadakiss</h4>
-                  <p>Another New York lyricist whose street polish and verbal skill define the same broader East Coast tradition.</p>
+                  <p>A fellow New York lyricist whose sharp bars and city identity shaped a related era of East Coast rap.</p>
                 </a>
-                <a class="related-card" href="lloyd-banks.html">
-                  <h4>Lloyd Banks</h4>
-                  <p>A fellow punchline-heavy New York rapper known for calm delivery and mixtape-era respect.</p>
-                </a>
-                <a class="related-card" href="camron.html">
+                <a href="camron.html" class="related-card">
                   <h4>Cam'ron</h4>
-                  <p>A major stylist in New York rap whose swagger and regional influence shaped the era Fabolous entered.</p>
+                  <p>Another stylish New York figure whose image and wordplay helped define early-2000s rap cool.</p>
+                </a>
+                <a href="lloyd-banks.html" class="related-card">
+                  <h4>Lloyd Banks</h4>
+                  <p>A comparison in punchline-heavy New York rap and the continued importance of mixtape culture.</p>
                 </a>
               </div>
             </section>
@@ -975,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

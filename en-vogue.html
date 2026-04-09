@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>En Vogue | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on En Vogue, covering their formation, Oakland roots, vocal excellence, fashion-forward image, mainstream success, lineup changes, and lasting R&B legacy."
-  />
+  <meta name="description" content="A Rap Stories premium profile on En Vogue, covering their Oakland roots, powerhouse harmonies, fashion-forward image, crossover success, and lasting influence on R&B and pop culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(236, 72, 153, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/en-vogue.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -715,9 +699,9 @@
         <div class="hero-layout">
           <aside class="glass artist-image">
             <div class="artist-image-content">
-              <span class="artist-tag">Group Profile</span>
+              <span class="artist-tag">Artist Profile</span>
               <h2>En Vogue</h2>
-              <p>Elegant, powerful, and vocally elite, En Vogue became one of the defining female R&amp;B groups of their era.</p>
+              <p>Oakland vocal icons whose rich harmonies, polished style, and bold image made them one of the most important R&amp;B groups of their era.</p>
             </div>
           </aside>
 
@@ -725,7 +709,7 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>En Vogue</span></h1>
             <p class="summary">
-              En Vogue emerged as one of the most stylish and vocally accomplished female groups in modern R&amp;B. Blending harmonies rooted in classic soul traditions with contemporary production, they built a legacy on excellence, sophistication, attitude, and crossover success. Their story is about group chemistry, vocal precision, industry longevity, and the challenge of sustaining greatness through lineup changes and shifting musical eras.
+              En Vogue emerged from Oakland with a blend of vocal power, elegance, and attitude that helped redefine the girl group in modern R&amp;B. They combined classic harmony traditions with contemporary production, fashion-forward presentation, and strong pop crossover appeal, creating one of the most recognizable and influential group identities of the 1990s.
             </p>
 
             <div class="quick-facts">
@@ -739,17 +723,17 @@
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Harmony, style, vocal power</strong>
+                <strong>Harmonies, style, crossover R&amp;B classics</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>1990s–Present</strong>
+                <span>Status</span>
+                <strong>Legendary Vocal Group</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
@@ -758,16 +742,16 @@
                 <div class="value">Oakland</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Format</span>
-                <div class="value">Female vocal group</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">R&amp;B, soul, pop</div>
+                <span class="label">Era</span>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Elite harmonies</div>
+                <div class="value">Elite vocal blend</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Redefined modern girl-group R&amp;B</div>
               </div>
             </div>
           </section>
@@ -778,49 +762,25 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Formation and Vision</h3>
-              <p>
-                En Vogue was formed with a clear concept: a female group that could combine classic harmony-group discipline with modern sophistication. From the beginning, they were designed to stand apart. Their music drew from deep soul traditions, but their presentation felt sharp, contemporary, and fashion-conscious. That balance became essential to their appeal. They could sound timeless without seeming old-fashioned, and glamorous without sacrificing vocal seriousness.
-              </p>
-              <p>
-                Emerging from the Bay Area, En Vogue entered the industry at a time when female groups were being reimagined for a new generation. They were not introduced merely as personalities or trend pieces; they were introduced as vocalists. That distinction gave them authority from the start.
-              </p>
+              <h3>Oakland Roots and Vocal Identity</h3>
+              <p>En Vogue emerged from California with a concept that was clear from the beginning: sophistication, strength, precision, and vocal excellence. At a time when R&amp;B and pop were evolving quickly, the group stood out by emphasizing harmony as a central identity. Their records were not only catchy; they were vocally rich. That made them feel connected to a longer lineage of soul and girl-group tradition while still sounding entirely current.</p>
 
-              <div class="quote">
-                En Vogue proved that a group could be stylish, commercially powerful, and vocally uncompromising all at once.
-              </div>
+              <h3>Style, Elegance, and Attitude</h3>
+              <p>One of En Vogue’s greatest strengths was the balance they struck between polish and personality. They could appear glamorous and controlled without ever sounding passive. Their image communicated discipline, class, and confidence, but their songs often carried edge, wit, and emotional force. This combination helped make them feel aspirational without feeling distant. They were stylish, but never hollow.</p>
 
-              <h3>Vocal Identity and Breakthrough</h3>
-              <p>
-                What separated En Vogue from many of their contemporaries was precision. Their harmonies were tight, their arrangements were polished, and each member brought a distinctive presence without weakening the group identity. They understood how to use restraint, blend, and controlled power. As a result, their songs felt both classy and emotionally immediate.
-              </p>
-              <p>
-                Their breakthrough came through records that were catchy enough for mainstream success but grounded enough in vocal excellence to command respect. They became known not just for hits, but for sound quality in the deepest sense: tone, layering, phrasing, and the confidence of singers who knew exactly how strong they were.
-              </p>
+              <h3>Breakthrough and Crossover Success</h3>
+              <p>As En Vogue rose to prominence, they became one of the most successful vocal groups of their era by appealing across R&amp;B and pop audiences. Their crossover mattered because it showed that vocal sophistication and mainstream success did not need to be opposites. They could deliver songs that worked on urban radio, on pop charts, and in broader cultural circulation without losing the group’s core identity.</p>
 
-              <h3>Image, Fashion, and Cultural Presence</h3>
-              <p>
-                En Vogue also transformed what a female R&amp;B group could look like in the public imagination. Their image was bold, elegant, and self-possessed. They projected intelligence, glamour, and control. This mattered because image in popular music is never separate from power. En Vogue’s presentation told audiences that they were not simply performers in matching outfits; they were stars with poise, edge, and command.
-              </p>
-              <p>
-                That visual strength worked alongside the music rather than overshadowing it. They were admired for beauty and fashion, but the vocals made the image feel earned. Their style amplified their credibility instead of substituting for it.
-              </p>
+              <div class="quote">En Vogue made harmony feel modern, glamorous, and powerful all at once, proving that vocal precision could be just as commanding as attitude or image.</div>
 
-              <h3>Lineup Changes and Industry Pressure</h3>
-              <p>
-                Like many successful groups, En Vogue also had to navigate the internal and external pressures that come with fame. Lineup changes, contractual tensions, evolving priorities, and the passage of time complicated the group’s trajectory. These shifts are part of the reality of ensemble music: a group may become iconic as a single image, but behind that image are real artists with different goals, personalities, and business realities.
-              </p>
-              <p>
-                For En Vogue, those changes did not erase the legacy. Instead, they became part of the story of endurance. The group’s name remained meaningful because the core achievements were too significant to disappear. Their catalog and cultural imprint survived even as the group itself evolved.
-              </p>
+              <h3>The Group as Cultural Statement</h3>
+              <p>En Vogue’s influence was not only musical. Their visual presentation, confidence, and collective presence helped shape ideas about femininity, professionalism, and elegance in Black pop culture during the 1990s. They were not presented as a novelty or a temporary trend. They looked and sounded like stars with discipline, purpose, and artistic control, and that mattered deeply in how audiences received them.</p>
+
+              <h3>Longevity and Respect</h3>
+              <p>Many groups achieve a moment; fewer achieve lasting respect. En Vogue endured because their catalog remained strong and their vocal identity stayed distinctive. Even as the music industry changed, they continued to be remembered not just for hits, but for excellence. Their songs still resonate because they were built on craft, not just timing.</p>
 
               <h3>Legacy</h3>
-              <p>
-                En Vogue remains one of the most respected female groups in modern R&amp;B history. Their influence lives in later vocal groups, solo artists, and the broader idea that commercial music can still demand technical excellence. They helped set a high standard for harmony, image, stage presence, and professionalism.
-              </p>
-              <p>
-                Their story is not just one of hits. It is a story about quality. En Vogue endures because they represented a rare convergence of elements: elite singing, memorable songs, strong visual identity, and long-term cultural importance. In the history of modern Black music, that combination makes them essential.
-              </p>
+              <p>En Vogue’s legacy lies in the way they fused vocal mastery, style, and mainstream visibility. They helped modernize the girl-group tradition for a new era while maintaining a deep connection to soul and harmony-based R&amp;B. Their influence can still be heard in later vocal groups, in fashion-forward female performance, and in the continuing value placed on blend, control, and presence in R&amp;B music.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
@@ -828,23 +788,23 @@
               <div class="timeline">
                 <div class="timeline-item">
                   <strong>Late 1980s — Formation</strong>
-                  <p>En Vogue is formed with a vision rooted in vocal excellence and modern sophistication.</p>
+                  <p>En Vogue formed with a strong focus on harmony, image, and a polished yet modern take on classic girl-group power.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>Early 1990s — Breakthrough</strong>
-                  <p>The group rises to major recognition through powerful harmonies and crossover R&amp;B success.</p>
+                  <p>Rose rapidly through standout vocals, stylish presentation, and songs that connected with both R&amp;B and pop audiences.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Peak Visibility</strong>
-                  <p>Becomes one of the defining female groups of the decade through music, image, and cultural presence.</p>
+                  <strong>1990s — Peak Influence</strong>
+                  <p>Became one of the defining vocal groups of the decade, known for harmony, sophistication, and broad mainstream appeal.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Later Years — Transitions</strong>
-                  <p>Navigates lineup changes and industry shifts while preserving the group’s identity and catalog.</p>
+                  <strong>2000s / 2010s — Enduring Legacy</strong>
+                  <p>Maintained cultural respect as one of the era’s most important and vocally accomplished groups.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Legacy Era</strong>
-                  <p>Remains widely respected as one of R&amp;B’s most important and vocally accomplished groups.</p>
+                  <strong>Legacy Phase — Canonical R&amp;B Group</strong>
+                  <p>Remain recognized as one of the most influential vocal groups in modern R&amp;B history.</p>
                 </div>
               </div>
             </section>
@@ -863,16 +823,16 @@
                   <div class="info-value">Oakland, California</div>
                 </div>
                 <div class="info-row">
+                  <span class="info-label">Known For</span>
+                  <div class="info-value">Harmony-driven R&amp;B, crossover appeal, polished image</div>
+                </div>
+                <div class="info-row">
                   <span class="info-label">Genres</span>
                   <div class="info-value">R&amp;B / Soul / Pop</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Known For</span>
-                  <div class="info-value">Harmony, image, vocal excellence</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Format</span>
-                  <div class="info-value">Female vocal group</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Legendary vocal group with enduring cultural importance</div>
                 </div>
               </div>
             </section>
@@ -880,12 +840,12 @@
             <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Oakland</span>
                 <span class="tag">Harmony</span>
-                <span class="tag">Style</span>
-                <span class="tag">Soul</span>
+                <span class="tag">Elegance</span>
+                <span class="tag">Girl Group Legacy</span>
                 <span class="tag">R&amp;B</span>
-                <span class="tag">Legacy</span>
-                <span class="tag">Sisterhood</span>
+                <span class="tag">Style</span>
               </div>
             </section>
 
@@ -893,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Arrival and Impact</strong>
-                  <span>The period where En Vogue established itself as a group built on elite harmony and modern polish.</span>
+                  <strong>Breakthrough Harmony Era</strong>
+                  <span>The early stage where En Vogue established themselves as a modern vocal powerhouse.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream Height</strong>
-                  <span>The era that made them one of the most visible and respected female groups in R&amp;B.</span>
+                  <strong>Mainstream Crossover Peak</strong>
+                  <span>The period where their sound and image made them one of the biggest groups of the 1990s.</span>
                 </div>
                 <div class="album">
-                  <strong>Enduring Reputation</strong>
-                  <span>The later phase where catalog, influence, and vocal reputation secured their place in music history.</span>
+                  <strong>Enduring Vocal Legacy</strong>
+                  <span>A lasting chapter defined by respect, replay value, and long-term influence on R&amp;B performance culture.</span>
                 </div>
               </div>
             </section>
@@ -916,23 +876,24 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for En Vogue on Spotify and explore the harmonies behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/En%20Vogue" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for En Vogue on Spotify and revisit the songs that made them one of R&amp;B’s most iconic vocal groups.</p>
+                  <a href="https://open.spotify.com/search/En%20Vogue" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, live performances, and classic En Vogue records.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=En+Vogue+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, live performances, and major En Vogue releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=En+Vogue+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">Hold On</span>
                   <span class="track-tag">My Lovin' (You're Never Gonna Get It)</span>
+                  <span class="track-tag">Hold On</span>
+                  <span class="track-tag">Giving Him Something He Can Feel</span>
                   <span class="track-tag">Free Your Mind</span>
-                  <span class="track-tag">Don't Let Go (Love)</span>
                 </div>
               </div>
             </section>
@@ -940,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="swv.html">
-                  <h4>SWV</h4>
-                  <p>Another defining female R&amp;B group whose era and influence intersect with En Vogue’s legacy.</p>
-                </a>
-                <a class="related-card" href="tlc.html">
+                <a href="tlc.html" class="related-card">
                   <h4>TLC</h4>
-                  <p>A landmark group whose cultural visibility helped define the wider landscape of 1990s female music groups.</p>
+                  <p>Another defining female group of the era whose identity and impact helped shape the 1990s R&amp;B landscape.</p>
                 </a>
-                <a class="related-card" href="destinys-child.html">
+                <a href="destinys-child.html" class="related-card">
                   <h4>Destiny's Child</h4>
-                  <p>A later generation group that benefited from the standard of excellence groups like En Vogue helped establish.</p>
+                  <p>A later vocal group whose success also built on harmony, image, and female-group power.</p>
+                </a>
+                <a href="mary-j-blige.html" class="related-card">
+                  <h4>Mary J. Blige</h4>
+                  <p>A contemporary soul and R&amp;B force who similarly helped define emotional and stylistic excellence in the era.</p>
                 </a>
               </div>
             </section>
@@ -975,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

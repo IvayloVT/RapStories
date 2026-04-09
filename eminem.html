@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eminem | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Eminem, covering his Detroit roots, battle-rap rise, Dr. Dre breakthrough, controversy, lyrical dominance, addiction struggles, recovery, and lasting legacy."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Eminem, covering his Detroit roots, battle rap rise, lyrical innovation, controversy, mainstream domination, and lasting impact on hip-hop history." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(147, 197, 253, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/eminem.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Eminem</h2>
-              <p>Detroit rap icon whose technical skill, controversy, pain, and reinvention made him one of hip-hop’s most dominant and debated figures.</p>
+              <p>Detroit rap giant whose technical brilliance, autobiographical intensity, and cultural controversy made him one of the most significant artists in hip-hop history.</p>
             </div>
           </aside>
 
@@ -725,13 +709,13 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Eminem</span></h1>
             <p class="summary">
-              Born Marshall Bruce Mathers III, Eminem rose from Detroit’s battle-rap scene to become one of the most commercially successful and technically celebrated artists in music history. His career fused trauma, comedy, rage, narrative writing, celebrity scandal, and lyrical precision into a body of work that permanently changed the scale and sound of rap.
+              Eminem emerged from Detroit with a style that felt explosive, technically overwhelming, painfully personal, and impossible to ignore. Through battle rap roots, shocking wit, emotional self-exposure, and extraordinary lyrical control, he became one of the most commercially successful and culturally debated artists hip-hop has ever produced.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>October 17, 1972</strong>
+                <strong>1972</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -739,35 +723,35 @@
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Lyrical precision and controversy</strong>
+                <strong>Lyricism, controversy, autobiographical rap</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>1990s–Present</strong>
+                <span>Status</span>
+                <strong>Hip-Hop Legend</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1972</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Detroit</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Technical, aggressive, narrative</div>
+                <span class="label">Era</span>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Rap icon status</div>
+                <div class="value">Elite lyrical technique</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Changed rap’s mainstream possibilities</div>
               </div>
             </div>
           </section>
@@ -778,81 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Detroit Childhood and Hardship</h3>
-              <p>
-                Eminem was born Marshall Bruce Mathers III and raised in conditions marked by instability, poverty, and repeated upheaval. His early life has become central to his mythology, not simply because it was difficult, but because he turned that difficulty into one of the most recognizable narrative engines in rap history. The chaos of his upbringing, family tension, social isolation, and constant movement later became raw material for some of his most vivid writing.
-              </p>
-              <p>
-                Detroit mattered profoundly to his identity. The city’s economic hardship, working-class environment, and intense local rap culture helped shape both his hunger and his style. Eminem did not emerge as a polished pop figure. He came from battle circuits and underground spaces where technical ability, wit, endurance, and humiliation were part of the craft. That made his rise feel earned through combat rather than handed down by industry design.
-              </p>
+              <h3>Detroit, Poverty, and Battle Foundations</h3>
+              <p>Born Marshall Bruce Mathers III, Eminem’s story began in instability, poverty, and social marginality. Raised largely in and around Detroit, he developed his craft in a battle rap environment where technical ability, humiliation, wit, and verbal precision mattered intensely. That background shaped him deeply. Before he was a global superstar, he was a rapper trying to prove himself in one of the most unforgiving forms of hip-hop competition.</p>
 
-              <div class="quote">
-                Eminem turned private pain, public provocation, and verbal precision into one of the most explosive careers rap has ever seen.
-              </div>
+              <h3>A Voice That Could Not Be Ignored</h3>
+              <p>What made Eminem break through was not just speed or rhyme density. It was the force of personality inside the writing. His music could be funny, violent, self-loathing, cartoonish, brilliant, ugly, vulnerable, and emotionally devastating sometimes within the same verse. He created a style that felt both theatrical and confessional, and that combination made him stand apart from nearly everyone around him.</p>
 
-              <h3>Battle Rap and the Slim Shady Persona</h3>
-              <p>
-                Before superstardom, Eminem built his name through local competition and underground persistence. He developed a style based on multisyllabic rhyme, rapid shifts in tone, intricate structure, and a willingness to say things other artists would never risk. That technical skill alone made him formidable, but what truly separated him was the invention of Slim Shady — a chaotic alter ego that allowed him to mix horror, satire, self-hatred, fantasy, and dark comedy into something unforgettable.
-              </p>
-              <p>
-                Slim Shady gave Eminem a framework for exaggeration and provocation, but it also created one of the central tensions of his career: the question of where performance ended and personal confession began. That ambiguity helped fascinate audiences and outrage critics at the same time.
-              </p>
+              <h3>Dr. Dre, Breakthrough, and Mainstream Shock</h3>
+              <p>Eminem’s rise accelerated dramatically after his connection to Dr. Dre, whose co-sign helped bring him into the center of the rap industry. Once there, he exploded into public consciousness through music that mixed technical excellence with controversy. He shocked audiences, offended critics, fascinated fans, and dominated attention. For many listeners, he was unlike any rapper who had ever reached that level of mainstream visibility.</p>
 
-              <h3>Dr. Dre and the Breakthrough</h3>
-              <p>
-                Eminem’s career changed decisively when Dr. Dre recognized his talent and helped bring him into the mainstream. That partnership was historic. Dre gave Eminem a platform, but Eminem’s rise also expanded what mainstream rap could look like commercially and culturally. He was a white rapper entering a Black art form at the highest level, and while that reality brought attention and advantage in some spaces, it also intensified scrutiny around credibility, appropriation, and acceptance.
-              </p>
-              <p>
-                Yet once the music landed, technical excellence made dismissal difficult. Eminem was too skilled, too vivid, and too commercially explosive to ignore. His albums became events, his singles became controversies, and his persona became one of the most recognizable in the world.
-              </p>
+              <div class="quote">Eminem turned technical skill into spectacle and self-destruction into art, forcing mainstream culture to confront how far rap could go emotionally, lyrically, and socially.</div>
 
-              <h3>Superstardom, Scandal, and Personal Exposure</h3>
-              <p>
-                Eminem’s peak years were defined by massive sales, cultural panic, and extraordinary visibility. He wrote openly about family conflict, addiction, celebrity pressure, his relationship with Kim, and his role as a father, often with shocking intensity. The result was a catalog that felt both theatrical and painfully intimate. He could be cartoonish one moment and devastatingly personal the next.
-              </p>
-              <p>
-                That duality was key to his power. He was not just controversial for the sake of headlines; he was often using extremity to stage deeper anxieties about violence, fame, masculinity, instability, and self-destruction. Still, the backlash was real, and it made him one of the most polarizing artists of his era even as he became one of its biggest stars.
-              </p>
+              <h3>Autobiography, Anger, and Emotional Exposure</h3>
+              <p>One of Eminem’s defining strengths has always been his willingness to turn his own life into material. Family trauma, addiction, fame, paranoia, shame, and rage all became central themes in his work. That autobiographical openness gave his music unusual power. Even when the songs were exaggerated or theatrical, they were driven by real emotional tension. He sounded like someone trying to out-rap pain before it consumed him.</p>
 
-              <h3>Addiction, Collapse, and Recovery</h3>
-              <p>
-                Eminem’s story also includes serious decline. The pressures of fame, grief, and substance dependence pushed him into a period where his life and career seemed at risk. This part of his biography is essential because it transformed the arc of his public image. He was no longer only the brilliant provocateur or battle-rap monster; he became a survivor of self-destruction.
-              </p>
-              <p>
-                His recovery marked another phase of reinvention. Later Eminem often sounded more reflective, self-aware, technically obsessive, and conscious of his own legacy. Even when critics debated the direction of his later work, few doubted the scale of what he had already accomplished.
-              </p>
+              <h3>Controversy and Cultural Weight</h3>
+              <p>Eminem’s career has never been separable from controversy. His lyrics triggered debates about censorship, morality, violence, misogyny, celebrity, race, and the limits of artistic expression. Those debates helped make him one of the most discussed figures in modern music. Yet controversy alone does not explain his endurance. He remained central because the technical skill, emotional force, and narrative intensity were too substantial to dismiss.</p>
 
               <h3>Legacy</h3>
-              <p>
-                Eminem remains one of the most important rappers ever recorded. He helped globalize rap for new audiences, raised expectations for lyrical technique, and proved that intensely personal writing could reach mass audiences without losing sharpness. His influence can be heard in technical rappers, emotionally exposed artists, horrorcore descendants, battle-rap stylists, and countless others shaped by his pacing, rhyme density, and fearless confession.
-              </p>
-              <p>
-                More than most rap stars, Eminem became a symbol of contradiction: comic and tragic, technically cold and emotionally raw, commercially gigantic yet deeply paranoid. That complexity is why his story endures. He is not just a successful rapper. He is one of the defining figures in the history of the genre.
-              </p>
+              <p>Eminem’s legacy rests on the combination of technical mastery and emotional exposure. He expanded what mainstream rap could sound like, how personal it could be, and how aggressively language could be used as both weapon and confession. Whether viewed as a battle genius, a troubled autobiographical writer, or a cultural lightning rod, he remains one of the most important and unmistakable voices hip-hop has ever produced.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1972 — Birth</strong>
-                  <p>Born Marshall Bruce Mathers III in St. Joseph, Missouri, later raised in Detroit, Michigan.</p>
+                  <strong>1990s — Detroit Battle Era</strong>
+                  <p>Eminem sharpened his style through Detroit’s competitive rap scene and built a reputation for technical skill and verbal ferocity.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Underground Rise</strong>
-                  <p>Built his name in Detroit’s battle-rap and underground scene through technical skill and persistence.</p>
+                  <strong>Late 1990s — Breakthrough</strong>
+                  <p>His connection with Dr. Dre launched him into the mainstream as one of rap’s most startling new voices.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 1990s–Early 2000s — Breakthrough</strong>
-                  <p>Reached global fame after his partnership with Dr. Dre and the explosive success of the Slim Shady era.</p>
+                  <strong>2000s — Global Dominance</strong>
+                  <p>Became one of the biggest artists in the world through hit records, intense autobiographical writing, and massive cultural visibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Peak, Scandal, and Crisis</strong>
-                  <p>Became one of the biggest artists in music while navigating controversy, fame, and addiction struggles.</p>
+                  <strong>2010s — Reinvention and Endurance</strong>
+                  <p>Continued to release major projects while maintaining respect for lyrical ability and a uniquely personal catalog.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s–2020s — Recovery and Legacy</strong>
-                  <p>Continued releasing major music while solidifying his reputation as one of rap’s all-time greats.</p>
+                  <strong>Legacy Phase — Canonical Figure</strong>
+                  <p>Remains recognized as one of rap’s most technically gifted, commercially successful, and culturally impactful artists.</p>
                 </div>
               </div>
             </section>
@@ -863,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Marshall Bruce Mathers III</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Eminem</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Alter Ego</span>
-                  <div class="info-value">Slim Shady</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Marshall Bruce Mathers III</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Base</span>
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Detroit, Michigan</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Hardcore Rap</div>
+                  <div class="info-value">Hip-Hop / Rap / Hardcore Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Legendary lyricist and one of rap’s most influential artists</div>
                 </div>
               </div>
             </section>
@@ -889,11 +841,11 @@
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Detroit</span>
-                <span class="tag">Battle Rap</span>
-                <span class="tag">Trauma</span>
+                <span class="tag">Lyricism</span>
+                <span class="tag">Pain</span>
                 <span class="tag">Controversy</span>
-                <span class="tag">Recovery</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">Autobiography</span>
+                <span class="tag">Battle Rap</span>
               </div>
             </section>
 
@@ -901,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Underground Hunger</strong>
-                  <span>The early period where battle skill and desperation forged his rap identity.</span>
+                  <strong>Battle Rap Emergence</strong>
+                  <span>The early stage where Eminem built the technical foundation that would define his career.</span>
                 </div>
                 <div class="album">
-                  <strong>Slim Shady Explosion</strong>
-                  <span>The era that transformed Eminem into a global phenomenon and controversy magnet.</span>
+                  <strong>Mainstream Shockwave Era</strong>
+                  <span>The period where his lyricism, controversy, and personality made him one of music’s biggest stars.</span>
                 </div>
                 <div class="album">
-                  <strong>Recovery and Canon</strong>
-                  <span>The later phase where survival, longevity, and legacy became central to his story.</span>
+                  <strong>Legacy and Endurance Phase</strong>
+                  <span>A later chapter defined by continued relevance, respect, and canonical status in rap history.</span>
                 </div>
               </div>
             </section>
@@ -924,13 +876,14 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Eminem on Spotify and revisit the music behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Eminem" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Eminem on Spotify and revisit the records that made him one of the most important rappers ever.</p>
+                  <a href="https://open.spotify.com/search/Eminem" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into videos, performances, and major records connected to Eminem.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Eminem+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, performances, and major Eminem releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Eminem+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
@@ -948,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="dr-dre.html">
+                <a href="dr-dre.html" class="related-card">
                   <h4>Dr. Dre</h4>
-                  <p>The mentor and collaborator whose support helped launch Eminem into superstardom.</p>
+                  <p>The mentor and executive force whose belief in Eminem helped change rap history.</p>
                 </a>
-                <a class="related-card" href="50-cent.html">
+                <a href="50-cent.html" class="related-card">
                   <h4>50 Cent</h4>
-                  <p>A major ally from the Shady/Aftermath world whose rise intersected with Eminem’s power era.</p>
+                  <p>A major collaborator and label counterpart whose rise was also shaped by the Dre-Eminem power structure.</p>
                 </a>
-                <a class="related-card" href="dmx.html">
-                  <h4>DMX</h4>
-                  <p>Another era-defining voice whose intensity, pain, and larger-than-life presence shaped rap’s emotional landscape.</p>
+                <a href="tupac.html" class="related-card">
+                  <h4>2Pac</h4>
+                  <p>A comparison in emotional honesty, personal conflict, and the use of rap as intense self-expression.</p>
                 </a>
               </div>
             </section>
@@ -983,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

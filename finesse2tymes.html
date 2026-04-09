@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finesse2Tymes | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Finesse2Tymes, covering his Memphis roots, prison setbacks, comeback, street realism, and modern Southern rap legacy."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Finesse2Tymes, covering his Memphis roots, prison-to-rap comeback, gritty delivery, street realism, and modern Southern rap impact." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(168, 85, 247, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/finesse2tymes.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Finesse2Tymes</h2>
-              <p>Memphis rapper whose comeback story, blunt realism, and hard-earned presence made him one of Southern rap’s most compelling later-breaking voices.</p>
+              <p>Memphis rapper whose gritty realism, prison-to-music comeback, and commanding Southern delivery made him one of the most striking voices of his era.</p>
             </div>
           </aside>
 
@@ -725,7 +709,7 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Finesse2Tymes</span></h1>
             <p class="summary">
-              Finesse2Tymes emerged from Memphis with a style rooted in pain, survival, and hard truth. His story is defined by interruption as much as momentum: years lost to prison, a difficult climb back, and a later breakthrough that turned him into one of the most recognizable comeback figures in modern Southern rap.
+              Finesse2Tymes emerged from Memphis with music shaped by survival, incarceration, ambition, and hard-earned authority. His voice carries the sound of someone who has lived through pressure rather than merely describing it, and his rise reflects a distinctly Southern story of comeback, grit, and street-rooted reinvention.
             </p>
 
             <div class="quick-facts">
@@ -735,39 +719,39 @@
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Street realism and comeback</strong>
+                <strong>Gritty delivery, prison comeback, Southern street realism</strong>
               </div>
               <div class="fact">
                 <span>Style</span>
-                <strong>Southern street rap</strong>
+                <strong>Memphis street rap</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>2010s–Present</strong>
+                <span>Status</span>
+                <strong>Modern Southern Voice</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">City</span>
+                <span class="label">Origin</span>
                 <div class="value">Memphis</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Region</span>
-                <div class="value">South</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Raw and direct</div>
+                <span class="label">Era</span>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Comeback narrative</div>
+                <div class="value">Commanding street realism</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Comeback-driven Southern rap presence</div>
               </div>
             </div>
           </section>
@@ -778,73 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Memphis Foundations</h3>
-              <p>
-                Finesse2Tymes comes from Memphis, a city whose rap history is marked by darkness, grit, rhythm, and emotional bluntness. Memphis rap has long made room for artists who sound less polished and more lived-in, and Finesse2Tymes fits that lineage. His voice carries wear, pressure, and survival in a way that feels native to the city’s harder traditions.
-              </p>
-              <p>
-                His music is shaped by hardship, and that hardship never feels decorative. Instead of performing struggle as a fashionable pose, he often sounds like someone reporting from inside it. That quality gave him credibility early, even before larger fame arrived.
-              </p>
+              <h3>Memphis Roots and Hard Reality</h3>
+              <p>Finesse2Tymes comes out of Memphis, a city whose rap tradition has long been marked by darkness, rhythm, street tension, and an unapologetic sense of local identity. That environment shaped his music deeply. His delivery sounds grounded in lived experience, and his songs often feel less like performance than testimony. He does not present struggle from a distance. He speaks from inside it.</p>
 
-              <div class="quote">
-                Finesse2Tymes does not rap like someone inventing pain for effect. He raps like someone who already paid for it.
-              </div>
+              <h3>Voice, Presence, and Authority</h3>
+              <p>One of the things that makes Finesse2Tymes stand out is the authority in his voice. He sounds commanding without sounding theatrical. His tone carries weight because it feels earned. That kind of presence matters in street rap, where listeners are often listening not only for bars, but for conviction, experience, and emotional truth. Finesse2Tymes’s records often land because they feel grounded, direct, and unembellished in the right ways.</p>
 
-              <h3>Interrupted Momentum</h3>
-              <p>
-                One of the defining features of Finesse2Tymes’s story is interruption. Like many artists from environments shaped by instability and legal pressure, his path was not a clean upward climb. Prison changed the timeline of his career and turned potential momentum into delay. In rap, that kind of interruption can end a career before it fully begins.
-              </p>
-              <p>
-                But in his case, the interruption later became part of the power of the comeback. When he returned, he did not sound like someone trying to chase youth or manufacture a new image. He sounded older, more focused, and more credible because the story had already tested him.
-              </p>
+              <h3>Prison, Setback, and Comeback</h3>
+              <p>A major dimension of his public story is the prison-to-rap comeback arc. In hip-hop, comeback stories often carry extra power because they speak to reinvention under pressure. For Finesse2Tymes, incarceration became part of the larger narrative of survival, interruption, and return. When he re-emerged, the comeback itself gave the music added gravity. He was not arriving as a fresh-faced newcomer. He was returning with scars, experience, and urgency.</p>
 
-              <h3>The Comeback</h3>
-              <p>
-                Finesse2Tymes’s return to public attention worked because it felt earned. Audiences were not just hearing songs; they were hearing survival, lost time, and renewed hunger. That kind of return carries a different emotional weight than a standard breakout. It turns the artist into a symbol of resilience as much as talent.
-              </p>
-              <p>
-                His music during this phase leaned into directness. He did not rely on elaborate conceptual tricks or heavily polished pop structures. The appeal came from the truthfulness of the tone, the force of the delivery, and the sense that every line had lived experience behind it.
-              </p>
+              <div class="quote">Finesse2Tymes raps like someone who has already seen consequences up close — every line carries the pressure of survival, return, and hard-earned perspective.</div>
 
-              <h3>Street Realism and Southern Identity</h3>
-              <p>
-                Finesse2Tymes belongs to a broader Southern rap tradition where confession, warning, bravado, and pain can exist in the same verse. His records often deal with consequences, loyalty, betrayal, responsibility, and the difficulty of staying solid in unstable conditions. He sounds like someone trying to hold onto himself while speaking from a life that keeps applying pressure.
-              </p>
-              <p>
-                This makes him part of a larger Memphis and Southern lineage, but with a voice distinct enough to stand out. He is not simply repeating a regional formula. He is using it to tell a more personal story about recovery, hunger, and scars.
-              </p>
+              <h3>Street Rap with Emotional Weight</h3>
+              <p>Though his music is rooted in toughness, it also carries emotional complexity. Like many strong Southern street rappers, he can sound intimidating one moment and reflective the next. That balance gives the music credibility and replay value. The records do not just talk about winning. They also carry the memory of loss, risk, and the cost of getting to that point.</p>
 
-              <h3>Legacy in Motion</h3>
-              <p>
-                Finesse2Tymes’s legacy is still being written, but his importance is already visible. He represents a type of rap narrative that audiences continue to believe in deeply: the comeback built on pain, prison, persistence, and hard-won opportunity. In an era full of quick virality, his story carries a different kind of weight because it is tied to time, consequence, and endurance.
-              </p>
-              <p>
-                Whether discussed as a Memphis voice, a comeback figure, or a modern Southern street rapper, Finesse2Tymes stands out because his music sounds lived rather than assembled. That is what makes his story compelling — and why his name continues to matter.
-              </p>
+              <h3>Memphis Lineage and Modern Relevance</h3>
+              <p>Finesse2Tymes belongs to a larger Memphis lineage, but he represents a more recent stage in the city’s evolution, where the old darkness and street realism remain present while newer industry visibility creates bigger opportunities. He fits into a Southern rap tradition that values authenticity, but he also reflects the modern era’s hunger for artists whose stories feel undeniable and immediate.</p>
+
+              <h3>Legacy in Progress</h3>
+              <p>His legacy is still unfolding, but Finesse2Tymes already represents something important in contemporary rap: the power of return, the authority of lived experience, and the durability of Memphis street music as a source of serious cultural force. His story is about survival, re-entry, and making pain sound disciplined rather than defeated.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>Memphis Origins</strong>
-                  <p>Raised in Memphis, Tennessee, in a city with a long and influential street-rap tradition.</p>
+                  <strong>2010s — Memphis Build-Up</strong>
+                  <p>Finesse2Tymes developed his identity within Memphis street rap, shaped by local realism and regional energy.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early Music Development</strong>
-                  <p>Began building a local reputation through direct, pain-driven Southern rap.</p>
+                  <strong>Interruption and Incarceration</strong>
+                  <p>His career path was deeply affected by prison, becoming a central part of the larger public narrative around his life and music.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Career Interruption</strong>
-                  <p>Lost important years to incarceration, delaying broader momentum.</p>
+                  <strong>Comeback Era — Re-emergence</strong>
+                  <p>Returned to rap with added visibility and a more powerful sense of personal narrative and authority.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Comeback Era</strong>
-                  <p>Returned with stronger visibility, turning survival and lost time into a new narrative of legitimacy.</p>
+                  <strong>Modern Southern Recognition</strong>
+                  <p>Earned growing attention as one of the harder, more believable voices in contemporary Southern street rap.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Modern Recognition</strong>
-                  <p>Became one of the more recognizable Memphis comeback voices in contemporary rap.</p>
+                  <strong>Legacy in Motion</strong>
+                  <p>His story continues to develop as part of the modern Memphis and comeback-rap tradition.</p>
                 </div>
               </div>
             </section>
@@ -855,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Finesse2Tymes</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">From</span>
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Memphis, Tennessee</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Scene</span>
-                  <div class="info-value">Southern / Memphis Rap</div>
-                </div>
-                <div class="info-row">
                   <span class="info-label">Known For</span>
-                  <div class="info-value">Comeback and realism</div>
+                  <div class="info-value">Comeback story, Memphis realism, commanding delivery</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Style</span>
-                  <div class="info-value">Street-centered and direct</div>
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / Southern Rap / Street Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Contemporary Memphis rapper with a strong comeback narrative</div>
                 </div>
               </div>
             </section>
@@ -882,10 +842,10 @@
               <div class="tags">
                 <span class="tag">Memphis</span>
                 <span class="tag">Comeback</span>
-                <span class="tag">Prison</span>
                 <span class="tag">Survival</span>
-                <span class="tag">Southern Rap</span>
-                <span class="tag">Resilience</span>
+                <span class="tag">Prison</span>
+                <span class="tag">Street Rap</span>
+                <span class="tag">Authority</span>
               </div>
             </section>
 
@@ -893,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Early Grit</strong>
-                  <span>The local phase where hard experience and Memphis roots shaped his identity.</span>
+                  <strong>Memphis Foundation Era</strong>
+                  <span>The early stage where Finesse2Tymes developed inside the raw atmosphere of local street rap.</span>
                 </div>
                 <div class="album">
-                  <strong>Interrupted Path</strong>
-                  <span>The period where prison altered the pace and structure of his career.</span>
+                  <strong>Comeback and Re-entry Phase</strong>
+                  <span>The chapter where prison and return became central to the meaning of the music.</span>
                 </div>
                 <div class="album">
-                  <strong>Return and Recognition</strong>
-                  <span>The era where comeback energy and lived truth brought national visibility.</span>
+                  <strong>Modern Southern Presence</strong>
+                  <span>An ongoing era defined by growing visibility, authority, and hard-earned credibility.</span>
                 </div>
               </div>
             </section>
@@ -916,13 +876,14 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Finesse2Tymes on Spotify and explore the music behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Finesse2Tymes" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Finesse2Tymes on Spotify and explore the records that define his comeback and Memphis-rooted style.</p>
+                  <a href="https://open.spotify.com/search/Finesse2Tymes" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into videos, performances, and major tracks connected to Finesse2Tymes.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Finesse2Tymes+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, performances, and major Finesse2Tymes releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Finesse2Tymes+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
@@ -931,8 +892,8 @@
                 <div class="track-list">
                   <span class="track-tag">Back End</span>
                   <span class="track-tag">Get Even</span>
-                  <span class="track-tag">Humble</span>
-                  <span class="track-tag">Overdose</span>
+                  <span class="track-tag">Gangsta's Paradise</span>
+                  <span class="track-tag">Black Visa</span>
                 </div>
               </div>
             </section>
@@ -940,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="glorilla.html">
-                  <h4>GloRilla</h4>
-                  <p>Another Memphis voice helping carry the city’s modern rap identity into a wider mainstream.</p>
-                </a>
-                <a class="related-card" href="moneybagg-yo.html">
+                <a href="moneybagg-yo.html" class="related-card">
                   <h4>Moneybagg Yo</h4>
-                  <p>A major Memphis figure whose career reflects the same regional emphasis on pressure, ambition, and realism.</p>
+                  <p>A fellow Memphis star whose music also reflects local realism, ambition, and Southern authority.</p>
                 </a>
-                <a class="related-card" href="young-dolph.html">
-                  <h4>Young Dolph</h4>
-                  <p>A defining Memphis independent icon whose legacy shaped the lane later artists continue to move through.</p>
+                <a href="yo-gotti.html" class="related-card">
+                  <h4>Yo Gotti</h4>
+                  <p>A key Memphis figure whose long-term impact shaped the environment later artists like Finesse2Tymes entered.</p>
+                </a>
+                <a href="est-gee.html" class="related-card">
+                  <h4>EST Gee</h4>
+                  <p>A comparison in how prison, survival, and hard realism can become central to a rapper’s modern identity.</p>
                 </a>
               </div>
             </section>
@@ -975,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

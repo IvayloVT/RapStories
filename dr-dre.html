@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Dre | Rap Stories</title>
-  <meta name="description" content="Producer, architect, and industry builder, Dr. Dre helped shape multiple eras of hip-hop through sound, talent discovery, and executive vision." />
+  <meta name="description" content="A Rap Stories premium profile on Dr. Dre, covering his Compton roots, N.W.A era, G-funk innovation, Aftermath rise, executive legacy, and lasting impact on hip-hop history." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,213 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +676,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +701,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Dr. Dre</h2>
-              <p>Producer, architect, and industry builder, Dr. Dre helped shape multiple eras of hip-hop through sound, talent discovery, and executive vision.</p>
+              <p>Compton icon whose production, executive vision, and sonic innovation helped build the architecture of modern hip-hop.</p>
             </div>
           </aside>
 
@@ -735,13 +709,13 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Dr. Dre</span></h1>
             <p class="summary">
-              Born Andre Young, Dr. Dre became one of the most influential producers in music history. From West Coast street realism to glossy studio precision, his career changed how rap sounded and who the genre’s next stars would be.
+              Dr. Dre stands as one of the most influential figures in hip-hop history. From the revolutionary force of N.W.A to the polished power of G-funk and the empire-building vision of Aftermath, he helped shape not only how rap sounds, but how it is produced, marketed, and remembered across generations.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>February 18, 1965</strong>
+                <strong>1965</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -749,11 +723,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Production and talent discovery</strong>
+                <strong>N.W.A, G-funk, Aftermath, elite production</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Hip-Hop Architect</strong>
               </div>
             </div>
 
@@ -761,22 +735,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1965</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Compton, California</div>
+                <span class="label">Origin</span>
+                <div class="value">Compton</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">1980s–Present</div>
+                <div class="value">1980s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Producer architect</div>
+                <div class="value">Precision production</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Changed hip-hop’s sound</div>
               </div>
             </div>
           </section>
@@ -784,61 +759,71 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Compton and Early Music</h3>
-              <p>Andre Young grew up in Southern California and became drawn to DJ culture, sound systems, and the technical side of music-making. That interest in sonics would become his defining advantage. Even before he was seen as a mogul, Dre was focused on how music should feel physically and how records should hit.</p>
-              <h3>N.W.A and the West Coast Shift</h3>
-              <p>Dr. Dre helped transform rap through his work in N.W.A, a group whose aggression, realism, and controversy permanently altered the genre’s mainstream trajectory. His production gave hard street narratives cinematic force.</p>
-              <p>Later, his solo work and the development of G-funk reshaped West Coast rap into a smoother but equally commanding sound. Dre’s beats were clean, heavy, and instantly identifiable, making him not just a producer but an architect of era-defining atmosphere.</p>
-              <h3>Builder of Stars</h3>
-              <p>Few figures in hip-hop discovered and elevated talent at Dre’s level. His role in launching or shaping major artists made him one of the most important gatekeepers and builders in the history of the genre.</p>
+              <h3>Compton, DJ Culture, and Early Formation</h3>
+              <p>Born Andre Young, Dr. Dre emerged from Southern California at a time when DJ culture, street reality, and regional musical identity were colliding in new ways. Before becoming one of rap’s most important producers, he developed his ear through DJing and an obsessive attention to sound. That foundation mattered because Dre’s greatness has always depended on more than beats alone. He understood texture, arrangement, atmosphere, and the emotional force of sonic detail.</p>
+
+              <h3>N.W.A and a New Era of Rap</h3>
+              <p>Dr. Dre’s early fame became inseparable from N.W.A, one of the most important and disruptive groups in hip-hop history. The group’s music helped force national attention toward the realities of police violence, street tension, and West Coast urban life. Dre’s production during this era was central to their power. He helped give rage structure. The beats sounded hard, direct, and dangerous, but they were also disciplined. That combination helped define a new level of intensity in rap.</p>
+
+              <h3>The Invention of G-Funk</h3>
+              <p>After the N.W.A era, Dre reinvented himself and the sound of West Coast rap through G-funk. This was one of the great production shifts in hip-hop history. Drawing on funk influences, heavy bass, melodic synth lines, and cinematic smoothness, he created records that felt luxurious, threatening, hypnotic, and unmistakably Californian. G-funk was not just a style. It became an era, and Dre was its central architect.</p>
+
+              <div class="quote">Dr. Dre did not just produce songs. He designed worlds — polished, powerful, immersive soundscapes that changed what rap could feel like.</div>
+
+              <h3>Aftermath and Executive Legacy</h3>
+              <p>Dre’s influence expanded even further through his work as an executive and talent builder. Through Aftermath, he helped introduce and shape some of the most important figures of later rap generations. That side of his legacy matters because it shows that his genius was not only technical, but strategic. He understood talent, timing, sonic branding, and how to build an artist for longevity and cultural scale.</p>
+
+              <h3>Perfectionism and Power</h3>
+              <p>One of the reasons Dre became so respected is that his name came to symbolize quality control. He developed a reputation for perfectionism, and while that sometimes meant long gaps between projects, it also meant his work carried unusual weight. A Dr. Dre record did not feel rushed. It felt engineered. That level of discipline helped shape industry expectations around what major rap production could be.</p>
+
               <h3>Legacy</h3>
-              <p>Dr. Dre’s legacy rests on sound design, executive instinct, and influence across generations. He changed rap from the inside out: how it was produced, how it was marketed, and how stars were built.</p>
+              <p>Dr. Dre’s legacy is difficult to overstate. He helped redefine West Coast rap, elevate the producer as a central creative force, and influence multiple generations of artists through both sound and executive vision. His story is not only the story of one man’s success. It is the story of hip-hop becoming more cinematic, more expansive, and more sonically ambitious through his ear and direction.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1965 — Birth</strong>
-                  <p>Born Andre Romelle Young in California.</p>
+                  <strong>1980s — DJ and Early West Coast Development</strong>
+                  <p>Dr. Dre built his foundation through DJ culture and early rap work in Southern California.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1980s — Early Career</strong>
-                  <p>Developed as a DJ and producer before national rap dominance.</p>
+                  <strong>Late 1980s — N.W.A Breakthrough</strong>
+                  <p>Became a defining force in rap through the revolutionary rise of N.W.A and its confrontational West Coast sound.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 1980s–Early 1990s — N.W.A Era</strong>
-                  <p>Helped redefine rap with confrontational West Coast realism.</p>
+                  <strong>1990s — G-Funk Dominance</strong>
+                  <p>Reinvented mainstream rap production with a smooth, heavy, funk-driven California style that became iconic.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s–2000s — Producer Empire</strong>
-                  <p>Created signature sounds and helped launch major artists.</p>
+                  <strong>Late 1990s / 2000s — Aftermath Era</strong>
+                  <p>Expanded his legacy through executive leadership, major artist development, and continued production influence.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s–Present — Enduring Authority</strong>
-                  <p>Remained one of music’s most respected producers and executives.</p>
+                  <strong>Legacy Phase — Hip-Hop Architect</strong>
+                  <p>Remains recognized as one of the genre’s most important producers, executives, and sonic visionaries.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Andre Romelle Young</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Dr. Dre</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Andre Young</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Compton, California</div>
                 </div>
                 <div class="info-row">
@@ -847,86 +832,86 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; legendary producer and executive</div>
+                  <div class="info-value">Legendary producer, executive, and cultural architect</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Sound</span>
-                <span class="tag">Precision</span>
-                <span class="tag">Authority</span>
-                <span class="tag">Innovation</span>
-                <span class="tag">Mentorship</span>
+                <span class="tag">Compton</span>
+                <span class="tag">N.W.A</span>
+                <span class="tag">G-Funk</span>
+                <span class="tag">Production</span>
+                <span class="tag">Aftermath</span>
                 <span class="tag">Legacy</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>West Coast Upheaval</strong>
-                  <span>The explosive period of N.W.A and rap’s political confrontation.</span>
+                  <strong>Revolutionary West Coast Rise</strong>
+                  <span>The early phase where Dre helped make West Coast rap impossible to ignore.</span>
                 </div>
                 <div class="album">
                   <strong>G-Funk Mastery</strong>
-                  <span>The era where Dre’s sound became synonymous with West Coast dominance.</span>
+                  <span>The period where his polished funk-driven sound reshaped mainstream hip-hop.</span>
                 </div>
                 <div class="album">
-                  <strong>Executive Builder</strong>
-                  <span>The long-term chapter defined by production, discovery, and institutional influence.</span>
+                  <strong>Executive and Legacy Power</strong>
+                  <span>A later chapter defined by artist development, business strength, and enduring influence.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Dr. Dre on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Dr.%20Dre" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Dr. Dre.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Dr. Dre on Spotify and revisit the records that helped define the sound of modern hip-hop.</p>
+                  <a href="https://open.spotify.com/search/Dr.%20Dre" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, collaborations, and major Dr. Dre releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Dr.+Dre+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Dr. Dre on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Dr+Dre+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Nuthin' but a 'G' Thang</span>
+                  <span class="track-tag">Still D.R.E.</span>
+                  <span class="track-tag">The Next Episode</span>
+                  <span class="track-tag">Forgot About Dre</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Nuthin’ but a ‘G’ Thang</span>
-                <span class="track-tag">Still D.R.E.</span>
-                <span class="track-tag">The Next Episode</span>
-                <span class="track-tag">Forgot About Dre</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="snoop-dogg.html" class="related-card">
-                  <h4>Snoop Dogg</h4>
-                  <p>The defining collaborator whose rise is closely tied to Dre’s production world.</p>
-                </a>
                 <a href="ice-cube.html" class="related-card">
                   <h4>Ice Cube</h4>
-                  <p>Another N.W.A-linked architect of West Coast storytelling and impact.</p>
+                  <p>A foundational N.W.A counterpart whose writing and West Coast presence shaped the same historic era.</p>
                 </a>
-                <a href="jay-z.html" class="related-card">
-                  <h4>Jay-Z</h4>
-                  <p>A fellow industry-builder who transformed rap influence into executive power.</p>
+                <a href="snoop-dogg.html" class="related-card">
+                  <h4>Snoop Dogg</h4>
+                  <p>A defining collaborator whose rise was deeply tied to Dre’s G-funk vision and executive instincts.</p>
+                </a>
+                <a href="eminem.html" class="related-card">
+                  <h4>Eminem</h4>
+                  <p>One of the most important artists Dre helped elevate, showing the scale of his executive and production influence.</p>
                 </a>
               </div>
             </section>
@@ -953,95 +938,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

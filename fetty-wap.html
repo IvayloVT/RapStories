@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fetty Wap | Rap Stories</title>
-  <meta
-    name="description"
-    content="A premium Rap Stories profile on Fetty Wap, covering his Paterson roots, melodic breakthrough, chart run, personal resilience, legal troubles, and legacy in modern rap."
-  />
+  <meta name="description" content="A Rap Stories premium profile on Fetty Wap, covering his Paterson roots, melodic breakthrough, hitmaking peak, personal struggle, and lasting influence on melodic street rap." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -28,7 +25,7 @@
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(249, 115, 22, 0.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
         radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
         linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
       color: var(--text);
@@ -174,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/fetty-wap.jpg") center/cover no-repeat;
     }
 
@@ -396,7 +393,6 @@
       border-radius: 16px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .album strong, .related-card h4 {
@@ -475,14 +471,12 @@
       z-index: 2000;
       background: rgba(255,255,255,0.05);
     }
-
     .story-progress-bar {
       width: 0;
       height: 100%;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       box-shadow: 0 0 18px rgba(212,175,55,0.35);
     }
-
     .story-rail {
       position: fixed;
       top: 120px;
@@ -491,7 +485,6 @@
       display: grid;
       gap: 10px;
     }
-
     .story-dot {
       width: 12px;
       height: 12px;
@@ -501,13 +494,11 @@
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .story-dot.active {
       background: linear-gradient(135deg, #d4af37, #fff0a5);
       border-color: transparent;
       transform: scale(1.2);
     }
-
     .story-mode-toggle {
       position: fixed;
       bottom: 22px;
@@ -522,20 +513,25 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-
-    .story-mode-toggle:hover { transform: translateY(-2px); }
-
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
     body.story-mode .story-section {
       opacity: 0.45;
       transform: translateY(18px);
       transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
       filter: saturate(0.8);
     }
-
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
       filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
     }
 
     .artist-stats {
@@ -544,14 +540,12 @@
       gap: 14px;
       margin-top: 20px;
     }
-
     .stat-panel {
       padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
     }
-
     .stat-panel .label {
       display: block;
       color: var(--muted);
@@ -559,11 +553,16 @@
       margin-bottom: 6px;
       letter-spacing: 0.2px;
     }
-
     .stat-panel .value {
       color: var(--text);
       font-weight: 800;
       line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
     }
 
     .music-panel {
@@ -589,7 +588,9 @@
       font-size: 1rem;
     }
 
-    .music-card p { margin-bottom: 14px; }
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
     .music-link-btn {
       display: inline-flex;
@@ -644,6 +645,14 @@
       font-weight: 700;
     }
 
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+
     header#mainHeader {
       position: fixed !important;
       top: 0;
@@ -651,31 +660,8 @@
       width: 100%;
       transition: transform 0.3s ease;
     }
-
     header#mainHeader.hidden {
       transform: translateY(-100%);
-    }
-
-    @media (max-width: 980px) {
-      .artist-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 920px) {
-      .story-rail { display:none; }
-    }
-
-    @media (max-width: 860px) {
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .artist-stats {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -684,27 +670,25 @@
 
   <header id="mainHeader">
     <div class="container nav">
-      <a class="brand" href="index.html">
+      <a href="index.html" class="brand">
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
-        <a href="artist.html">Artist</a>
+        <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <a class="nav-btn" href="artist.html">Back to Artists</a>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
     </div>
   </header>
 
   <main>
-    <section class="hero story-section active" data-story-title="Intro">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -717,7 +701,7 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Fetty Wap</h2>
-              <p>Melodic New Jersey star whose breakout run reshaped radio rap and made him one of the most unforgettable voices of the 2010s.</p>
+              <p>Paterson rapper and melodic hitmaker whose emotional hooks and street-pop energy helped define a major mid-2010s rap moment.</p>
             </div>
           </aside>
 
@@ -725,13 +709,13 @@
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Fetty Wap</span></h1>
             <p class="summary">
-              Born Willie Junior Maxwell II, Fetty Wap rose from Paterson, New Jersey, with a raw melodic style that blurred rap and singing into emotionally immediate street-pop anthems. His breakthrough felt sudden and massive, turning him into one of the defining voices of mid-2010s rap. His story is one of pain, charisma, resilience, rapid fame, and a career later shadowed by serious legal trouble.
+              Fetty Wap rose from Paterson, New Jersey, with a style built on melody, vulnerability, street storytelling, and unforgettable hooks. For a moment, his voice was everywhere — carrying a raw, singable energy that made him one of the most distinctive breakout stars of the mid-2010s and a key figure in the evolution of melodic street rap.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>June 7, 1991</strong>
+                <strong>1991</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -739,35 +723,35 @@
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Melodic rap breakthrough</strong>
+                <strong>Melodic hooks, emotional street rap, breakout hits</strong>
               </div>
               <div class="fact">
-                <span>Era</span>
-                <strong>2010s</strong>
+                <span>Status</span>
+                <strong>Melodic Rap Trail Figure</strong>
               </div>
             </div>
 
             <div class="hero-buttons">
-              <a class="btn btn-primary" href="#biography">Read Biography</a>
-              <a class="btn" href="#timeline">View Timeline</a>
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
             </div>
 
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1991</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Paterson</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Style</span>
-                <div class="value">Melodic street rap</div>
+                <span class="label">Era</span>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Hook-heavy crossover sound</div>
+                <div class="value">Hook-heavy melodic street music</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Helped push melody deeper into rap</div>
               </div>
             </div>
           </section>
@@ -778,81 +762,49 @@
             <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Paterson Roots and Early Hardship</h3>
-              <p>
-                Fetty Wap was born Willie Junior Maxwell II and came out of Paterson, New Jersey, carrying a story shaped by adversity and distinctiveness from the beginning. One of the most recognizable parts of his public image was his eye, the result of childhood medical complications. Rather than allowing that to define him as a point of weakness, he turned it into part of a broader story of survival, identity, and unmistakability. In a music industry built around recognition, Fetty Wap was impossible to confuse with anyone else.
-              </p>
-              <p>
-                His early life reflected the pressures common to many artists from economically strained environments: instability, hustle, and the constant search for a way out. But what separated him from many of his peers was not just background — it was sound. He did not arrive primarily as a technical rapper or a conventional singer. He arrived with emotion, melody, and instinct.
-              </p>
+              <h3>Paterson Roots and Personal Struggle</h3>
+              <p>Born Willie Maxwell II, Fetty Wap emerged from Paterson, New Jersey, with a life story marked by adversity, resilience, and a strong sense of self. His presence in rap always felt personal because the music carried real vulnerability. He did not sound emotionally distant or strategically guarded. He sounded open, melodic, bruised, and determined. That honesty helped listeners connect with him quickly and deeply.</p>
 
-              <div class="quote">
-                Fetty Wap’s breakout was powered by a rare combination: street credibility, vulnerability, and melodies so immediate they felt unforgettable after one listen.
-              </div>
+              <h3>A Voice That Changed the Mood</h3>
+              <p>What made Fetty Wap feel so distinctive was the emotional quality of his voice. He approached rap through melody, but not in a polished pop way that erased struggle. Instead, his songs sounded street-rooted, romantic, wounded, and celebratory all at once. He could deliver hooks that felt instantly memorable while still carrying the weight of lived experience. That combination made him feel different from both traditional rappers and conventional singers.</p>
 
-              <h3>The Breakthrough</h3>
-              <p>
-                Fetty Wap’s rise was explosive. At a time when melodic rap was becoming increasingly central to the mainstream, he delivered songs that felt emotional, catchy, and personal without losing their rough edges. His voice carried pain, affection, desperation, joy, and hunger all at once. The result was music that could work in the street, in clubs, on radio, and in everyday life.
-              </p>
-              <p>
-                What made the breakthrough so striking was how complete it felt. He was not simply a one-record curiosity. For a period, it seemed like he could not miss. Song after song connected, and his voice became inseparable from a particular moment in popular music. He captured the emotional immediacy of the streaming era while still sounding grounded in lived experience.
-              </p>
+              <h3>Breakthrough and Hitmaking Run</h3>
+              <p>When Fetty Wap broke through, his rise was unusually explosive. He became one of the most recognizable voices in popular music through a run of records that blended singable hooks with street context and emotional immediacy. His success mattered because it showed how strongly melody had moved into rap’s center. He was not just borrowing from R&amp;B. He was helping redefine what mainstream rap records could feel like.</p>
 
-              <h3>Melody as Identity</h3>
-              <p>
-                Fetty Wap helped show how rap could become even more melodic without fully turning into traditional R&amp;B or pop. His records often relied on repetition, emotional phrasing, and memorable hooks rather than dense lyrical structure. But that did not make the music shallow. In many ways, his greatest strength was emotional clarity. He knew how to make feeling travel quickly through a song.
-              </p>
-              <p>
-                His sound fit into a broader shift in rap, where melody became central rather than secondary. Yet Fetty’s approach still felt singular because it carried a raw, wounded sincerity. He sounded like someone singing through scars, not just someone chasing a trend.
-              </p>
+              <div class="quote">Fetty Wap made pain sound catchy without making it shallow — turning melody into a street language of love, loss, hope, and survival.</div>
 
-              <h3>Fame, Pressure, and Decline in Momentum</h3>
-              <p>
-                The same speed that made Fetty Wap’s rise so exciting also created difficulty. Artists who explode into massive fame quickly are often forced to sustain impossible momentum while also managing money, pressure, attention, and industry demands. For Fetty Wap, the challenge was not simply making more songs. It was preserving the magic of a moment that had felt organic and unrepeatable.
-              </p>
-              <p>
-                As the musical landscape shifted and new waves of artists emerged, his position changed. He remained recognizable, but the intensity of his cultural dominance faded. This is a common pattern in modern music, where explosive breakthroughs can be followed by equally rapid transitions in public focus.
-              </p>
+              <h3>Emotion, Romance, and Street Energy</h3>
+              <p>One of Fetty Wap’s defining strengths was that his music could feel intimate and public at the same time. His songs often dealt with romance, desire, loyalty, struggle, and aspiration, but they never felt detached from his environment. The emotion came wrapped in street energy. That made his records powerful because they felt both universal and specific: love songs, survival songs, and celebration songs all living in the same voice.</p>
 
-              <h3>Legal Trouble and Reputation</h3>
-              <p>
-                Later chapters of Fetty Wap’s story were shaped heavily by legal problems, which changed how the public talked about his career. In cases like this, the music can no longer be separated easily from the legal narrative, and the artist’s legacy becomes more complicated. His story moved from one of unstoppable melodic breakthrough to one shaped by consequence and lost momentum.
-              </p>
-              <p>
-                That shift is part of what makes his biography significant. Fetty Wap represents both the heights and fragility of modern rap fame: how quickly a voice can become inescapable, and how quickly larger forces can reshape the story around it.
-              </p>
+              <h3>Challenges and Career Complexity</h3>
+              <p>Like many artists whose rise is rapid and highly visible, Fetty Wap’s career has also been shaped by challenges, legal issues, and difficult transitions. Those complications affected his momentum and changed the public framing of his story. Yet even beyond those later difficulties, his musical significance remains clear. For a period, his voice captured a very specific emotional and sonic shift in rap that many others would continue to build on.</p>
 
               <h3>Legacy</h3>
-              <p>
-                Fetty Wap’s place in rap history is secure because of what his breakthrough changed. He helped define a period when melody, street feeling, and emotional immediacy could fully dominate mainstream rap. His hits were not just successful records; they were cultural atmosphere. They sounded like a specific era and helped shape it.
-              </p>
-              <p>
-                Even with the complications that followed, his music remains important to the history of the 2010s. Fetty Wap was one of the clearest examples of how a new voice, if powerful enough, could alter the entire center of popular rap almost overnight.
-              </p>
+              <p>Fetty Wap’s legacy lies in how naturally he fused melody, pain, and street realism into a mainstream rap sound that felt fresh and emotionally direct. He helped create a template for a softer yet still tough form of rap expression, where hooks could carry real vulnerability without losing credibility. His best music remains a major part of the story of melodic rap’s rise in the 2010s.</p>
             </section>
 
             <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1991 — Birth</strong>
-                  <p>Born Willie Junior Maxwell II in Paterson, New Jersey.</p>
+                  <strong>Early 2010s — Local Build-Up</strong>
+                  <p>Fetty Wap began building attention through a voice and style that stood apart from conventional rap formulas.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 2010s — Local Development</strong>
-                  <p>Began shaping a melodic style that blended rap, singing, and street emotionality.</p>
+                  <strong>Mid-2010s — Breakthrough Explosion</strong>
+                  <p>Rose rapidly into national prominence through a huge run of melodic street-pop hits and mass recognition.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2010s — Breakthrough</strong>
-                  <p>Exploded into mainstream success with a string of defining hits and a unique vocal identity.</p>
+                  <strong>2010s — Mainstream Visibility</strong>
+                  <p>Became one of the defining voices of a moment when melody and emotional openness were transforming rap.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2010s — Shift in Momentum</strong>
-                  <p>Remained recognizable, but the intensity of his chart dominance faded as the landscape changed.</p>
+                  <strong>Later Years — Public Challenges</strong>
+                  <p>Faced a more complicated career path shaped by legal and personal difficulties.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Later Years — Legal Fallout</strong>
-                  <p>Serious legal issues reshaped public discussion of his career and legacy.</p>
+                  <strong>Legacy Phase — Melodic Influence</strong>
+                  <p>Remains associated with a major stylistic shift in rap toward hook-driven, emotionally expressive street music.</p>
                 </div>
               </div>
             </section>
@@ -863,24 +815,24 @@
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Willie Junior Maxwell II</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Fetty Wap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Willie Maxwell II</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Paterson, New Jersey</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Melodic Rap</div>
+                  <div class="info-value">Hip-Hop / Melodic Rap / Street Rap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Known For</span>
-                  <div class="info-value">Hook-driven melodic crossover</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">A defining melodic rap voice of the mid-2010s era</div>
                 </div>
               </div>
             </section>
@@ -890,10 +842,10 @@
               <div class="tags">
                 <span class="tag">Paterson</span>
                 <span class="tag">Melody</span>
+                <span class="tag">Pain</span>
+                <span class="tag">Hooks</span>
+                <span class="tag">Street Emotion</span>
                 <span class="tag">Breakthrough</span>
-                <span class="tag">Resilience</span>
-                <span class="tag">Fame</span>
-                <span class="tag">Legal Trouble</span>
               </div>
             </section>
 
@@ -901,16 +853,16 @@
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Melodic Arrival</strong>
-                  <span>The early phase where Fetty Wap introduced a voice that felt instantly different and emotionally vivid.</span>
+                  <strong>Melodic Emergence</strong>
+                  <span>The early stage where Fetty Wap introduced a fresh voice rooted in both vulnerability and street texture.</span>
                 </div>
                 <div class="album">
-                  <strong>Breakout Dominance</strong>
-                  <span>The era where his sound became one of the defining forces in mainstream rap.</span>
+                  <strong>Breakout Hit Era</strong>
+                  <span>The period where his hooks and emotional immediacy made him one of the biggest names in rap.</span>
                 </div>
                 <div class="album">
-                  <strong>Complicated Aftermath</strong>
-                  <span>The later chapter where legal issues and changing momentum altered the public story around his career.</span>
+                  <strong>Enduring Influence</strong>
+                  <span>A lasting chapter defined by his role in shaping the emotional sound of melodic street rap.</span>
                 </div>
               </div>
             </section>
@@ -924,13 +876,14 @@
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for Fetty Wap on Spotify and revisit the songs behind the story.</p>
-                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Fetty%20Wap" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                  <p>Open a curated search for Fetty Wap on Spotify and revisit the records that made him one of melodic rap’s defining breakout stars.</p>
+                  <a href="https://open.spotify.com/search/Fetty%20Wap" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, performances, and major records connected to Fetty Wap.</p>
-                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Fetty+Wap+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                  <p>Watch official videos, performances, and major Fetty Wap releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Fetty+Wap+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
 
@@ -948,17 +901,17 @@
             <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a class="related-card" href="french-montana.html">
-                  <h4>French Montana</h4>
-                  <p>Another artist whose hook-driven records and crossover visibility shaped the same broader era.</p>
-                </a>
-                <a class="related-card" href="future.html">
+                <a href="future.html" class="related-card">
                   <h4>Future</h4>
-                  <p>A defining figure in the melodic turn of rap that helped frame the environment Fetty Wap broke into.</p>
+                  <p>A major figure in melodic rap whose emotional tone helped shape the same broader era.</p>
                 </a>
-                <a class="related-card" href="speaker-knockerz.html">
+                <a href="rod-wave.html" class="related-card">
+                  <h4>Rod Wave</h4>
+                  <p>A later artist whose music also blends pain, melody, and street realism into emotionally heavy rap.</p>
+                </a>
+                <a href="speaker-knockerz.html" class="related-card">
                   <h4>Speaker Knockerz</h4>
-                  <p>A key melodic influence in street rap whose legacy helps explain the emotional soundscape of the 2010s.</p>
+                  <p>A comparison in how melody and personal feeling opened new space inside street rap culture.</p>
                 </a>
               </div>
             </section>
@@ -983,146 +936,141 @@
     </div>
   </footer>
 
-  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
 
   <script>
-    (function(){
-      const header = document.getElementById("mainHeader");
-      if(!header) return;
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-      let lastScrollY = window.pageYOffset;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-      function offset(){
-        document.body.style.paddingTop = header.offsetHeight + "px";
-      }
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-      function handleScroll(){
-        const currentScrollY = window.pageYOffset;
+    rail.innerHTML = "";
 
-        if(window.innerWidth <= 768){
-          if(currentScrollY <= 8){
-            header.classList.remove("hidden");
-          } else if(currentScrollY > lastScrollY + 4){
-            header.classList.add("hidden");
-          } else if(currentScrollY < lastScrollY - 4){
-            header.classList.remove("hidden");
-          }
-        } else {
-          header.classList.remove("hidden");
-        }
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-        lastScrollY = currentScrollY;
-      }
-
-      offset();
-      handleScroll();
-
-      window.addEventListener("load", offset);
-      window.addEventListener("resize", () => {
-        offset();
-        if(window.innerWidth > 768){
-          header.classList.remove("hidden");
-        }
-      });
-      window.addEventListener("scroll", handleScroll, {passive:true});
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = document.querySelectorAll(".nav-links a");
-
-      links.forEach(link => {
-        link.classList.remove("active");
-        const href = link.getAttribute("href");
-        if (current === href) link.classList.add("active");
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       });
 
-      if (!Array.from(links).some(link => link.classList.contains("active"))) {
-        const specialPages = [
-          "index.html","artist-archive.html","artist.html","category.html",
-          "timeline.html","map.html","contact.html","thank-you.html",
-          "thank-you-premium.html","intro.html"
-        ];
-        if (!specialPages.includes(current)) {
-          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-          if (artistLink) artistLink.classList.add("active");
-        }
-      }
+      rail.appendChild(dot);
     });
-  </script>
 
-  <script>
-    (function(){
-      const body = document.body;
-      const sections = [...document.querySelectorAll(".story-section")];
-      const rail = document.getElementById("storyRail");
-      const toggle = document.getElementById("storyModeToggle");
-      const progressBar = document.getElementById("storyProgressBar");
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-      if (!sections.length || !rail || !toggle || !progressBar) return;
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-      rail.innerHTML = sections.map((section, index) => {
-        const title = section.dataset.storyTitle || `Section ${index + 1}`;
-        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
-      }).join("");
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-      const dots = [...rail.querySelectorAll(".story-dot")];
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-      function setActiveSection(index) {
-        sections.forEach((section, i) => {
-          section.classList.toggle("active", i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
 
-      function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + "%";
-      }
-
-      function detectActiveSection() {
-        let activeIndex = 0;
-        const trigger = window.innerHeight * 0.35;
-
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= trigger) activeIndex = index;
-        });
-
-        setActiveSection(activeIndex);
-      }
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
 
       dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        dot.classList.toggle("active", index === activeIndex);
       });
+    }
 
-      let storyModeOn = true;
-      body.classList.add("story-mode");
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
 
-      toggle.addEventListener("click", () => {
-        storyModeOn = !storyModeOn;
-        body.classList.toggle("story-mode", storyModeOn);
-        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
-      });
+    applyMode();
+    updateProgress();
+    updateActiveSection();
 
-      function handleScroll() {
-        updateProgress();
-        detectActiveSection();
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
       }
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", handleScroll);
-      handleScroll();
-    })();
+      lastScrollY = currentScrollY;
+    }
+
+    offset();
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
   </script>
 </body>
 </html>

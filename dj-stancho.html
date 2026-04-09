@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJ Stancho | Rap Stories</title>
-  <meta name="description" content="A dark premium Rap Stories artist profile for DJ Stancho (Stanislav Peev), styled like lil-durk.html." />
+  <meta name="description" content="A Rap Stories premium profile on DJ Stancho, covering his role as a Bulgarian hip-hop pioneer, founder of Sniper Records, architect of the underground, and one of the central builders of rap culture in Bulgaria." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -35,10 +35,7 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
 
     .glass {
       background: var(--panel);
@@ -113,9 +110,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
+    .nav-links a.active { color: var(--text); }
 
     .nav-links a::after {
       content: "";
@@ -132,9 +127,7 @@
     }
 
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-      transform: scaleX(1);
-    }
+    .nav-links a.active::after { transform: scaleX(1); }
 
     .nav-btn {
       padding: 12px 20px;
@@ -152,17 +145,13 @@
       box-shadow: 0 14px 28px rgba(212,175,55,0.28);
     }
 
-    .hero {
-      padding: 42px 0 28px;
-    }
+    .hero { padding: 42px 0 28px; }
 
     .breadcrumb {
       color: var(--muted);
       font-size: 0.92rem;
       margin-bottom: 18px;
     }
-
-    .breadcrumb a:hover { color: var(--text); }
 
     .hero-layout {
       display: grid;
@@ -207,19 +196,10 @@
       margin-bottom: 14px;
     }
 
-    .artist-image h2 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
 
-    .artist-image p {
-      color: #d7d7df;
-      font-size: 0.95rem;
-    }
-
-    .hero-info {
-      padding: 28px;
-    }
+    .hero-info { padding: 28px; }
 
     .eyebrow {
       display: inline-block;
@@ -276,16 +256,9 @@
       margin-bottom: 6px;
     }
 
-    .fact strong {
-      font-size: 1rem;
-      color: var(--text);
-    }
+    .fact strong { font-size: 1rem; color: var(--text); }
 
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 
     .btn {
       padding: 14px 18px;
@@ -315,10 +288,7 @@
       margin-top: 26px;
     }
 
-    .content-stack, .side-stack {
-      display: grid;
-      gap: 22px;
-    }
+    .content-stack, .side-stack { display: grid; gap: 22px; }
 
     .side-stack {
       align-self: start;
@@ -400,10 +370,7 @@
       font-size: 0.95rem;
     }
 
-    .info-list, .discography, .related-list {
-      display: grid;
-      gap: 14px;
-    }
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
 
     .info-row {
       padding-bottom: 12px;
@@ -419,10 +386,7 @@
       margin-bottom: 4px;
     }
 
-    .info-value {
-      color: var(--text);
-      font-weight: 700;
-    }
+    .info-value { color: var(--text); font-weight: 700; }
 
     .album, .related-card {
       padding: 16px;
@@ -476,28 +440,17 @@
       flex-wrap: wrap;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
     .footer-links a:hover { color: var(--text); }
 
     @media (max-width: 1150px) {
-      .hero-layout,
-      .content-layout {
-        grid-template-columns: 1fr;
-      }
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
       .side-stack { position: static; }
     }
 
     @media (max-width: 820px) {
       .quick-facts { grid-template-columns: 1fr 1fr; }
-      .nav {
-        flex-direction: column;
-        padding: 14px 0;
-      }
+      .nav { flex-direction: column; padding: 14px 0; }
       .nav-links { justify-content: center; }
       .artist-image { min-height: 420px; }
     }
@@ -508,237 +461,217 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
@@ -751,10 +684,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -775,7 +709,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>DJ Stancho</h2>
-              <p>Nightlife selector, crowd reader, and high-energy performer known for turning parties into full-scale moments.</p>
+              <p>Bulgarian hip-hop pioneer, Sniper Records founder, and underground architect who helped build an entire culture from the ground up.</p>
             </div>
           </aside>
 
@@ -783,25 +717,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>DJ Stancho</span></h1>
             <p class="summary">
-              Stanislav Peev, known professionally as DJ Stancho.
+              This is the story of Stanislav Peev, known to the world as DJ Stancho — a foundational figure in Bulgarian hip-hop and a cultural architect who did not merely enter the scene, but helped create it. From breakdance television appearances in the final years of socialism to the rise of Sniper Records and the great label wars of the 2000s, his influence shaped the identity, sound, and soul of Bulgarian rap.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
-                <span>Real Name</span>
+                <span>Birth Name</span>
                 <strong>Stanislav Peev</strong>
               </div>
               <div class="fact">
-                <span>Stage Name</span>
+                <span>Known As</span>
                 <strong>DJ Stancho</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>DJ sets / nightlife</strong>
+                <strong>Bulgarian hip-hop pioneer, Sniper Records, underground leadership</strong>
               </div>
               <div class="fact">
-                <span>Style</span>
-                <strong>Club, hip-hop, open format</strong>
+                <span>Status</span>
+                <strong>Godfather of Bulgarian Hip-Hop</strong>
               </div>
             </div>
 
@@ -809,22 +743,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Name</span>
-                <div class="value">Stanislav Peev</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Sofia</div>
+                <span class="label">Origin</span>
+                <div class="value">Bulgaria</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">1990s–2000s</div>
+                <div class="value">1980s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Bulgarian hip-hop architect</div>
+                <div class="value">Building the underground</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Helped create Bulgarian hip-hop culture</div>
               </div>
             </div>
           </section>
@@ -832,157 +767,162 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Identity and Presence</h3>
-              <p>DJ Stancho, born Stanislav Peev, is framed as an artist whose strength lies in atmosphere, timing, and control of energy. In a music world often dominated by recorded releases, the DJ remains one of the purest live architects of emotion — someone who can transform a room in real time. This page presents DJ Stancho through that lens: not simply as a playlist operator, but as a performer whose identity is built on selection, pacing, and connection with the audience.</p>
-              <p>His image fits the modern nightlife era, where the DJ is no longer hidden behind the booth. The role now combines music curation, branding, crowd psychology, and stage presence. DJ Stancho belongs naturally to that type of performer — someone whose value is measured not only by tracks played, but by the feeling left behind after the night ends.</p>
+              <h3>The Architect of the Underground</h3>
+              <p>The story begins in the fading years of the socialist era, when hip-hop in Bulgaria was virtually nonexistent — what many would call “level zero.” At just 14 years old, Stanislav Peev was already operating as a pioneer. Alongside Petar Somov, he co-founded <strong>Break Group Dynamic</strong>, one of the first visible expressions of hip-hop culture in the country. In a Bulgaria where Western cultural forms still felt distant and half-mythical, Stancho helped turn curiosity into participation.</p>
 
-              <h3>Sound and Style</h3>
-              <p>As a performer, DJ Stancho’s style can be presented as energetic, flexible, and crowd-aware. Rather than being limited to one narrow lane, his profile suits an open-format identity: hip-hop, club anthems, party records, late-night transitions, and the kind of momentum that keeps a set moving without losing shape. That versatility is one of the most important traits a working DJ can have.</p>
-              <p>Great DJs understand more than music taste. They understand timing. They know when to build, when to pause, when to surprise the room, and when to deliver the record everyone was waiting for. This page positions DJ Stancho as that kind of artist — someone whose craft is based on reading people as much as reading BPMs.</p>
+              <p>He was among the first to bring breakdance choreography to national television, making an underground movement visible to a wider public. Through projects such as <strong>Hip-Hop: The Fashionable Dance</strong> and the provocatively titled <strong>I’ll Swap Your Suit for a Wooden One</strong>, he helped guide a generation away from passive fascination and into active cultural involvement. He was not simply performing. He was laying foundations.</p>
 
-              <h3>The Modern DJ Role</h3>
-              <p>In the current entertainment landscape, DJs often function as more than musicians. They are hosts, tastemakers, atmosphere designers, and social brands. Their audience does not only consume the music; it consumes the mood, the visuals, the reputation, and the event identity built around them. A strong DJ profile therefore needs more than a short bio. It needs a story.</p>
-              <p>For DJ Stancho, that story can be told through consistency, nightlife credibility, and the ability to bring impact to every appearance. Whether the setting is a club, a special event, a private party, or a branded venue night, the underlying promise remains the same: energy, confidence, and crowd control.</p>
+              <h3>The Birth of an Empire: Sniper Records</h3>
+              <p>As the 1990s unfolded, Stancho evolved from breakdance pioneer into producer, organizer, and visionary. His most important institutional creation was <strong>Sniper Records</strong>, a label that became the spiritual home of “real” Bulgarian rap. At a time when much of the local scene leaned toward softer or more commercial “rap-dance,” Stancho pushed for something harder, grittier, and more authentic. He wanted substance, lyrical sharpness, and a sound that could speak to the streets rather than simply entertain the market.</p>
 
-              <h3>Performance Energy</h3>
-              <p>What separates a memorable DJ from a technically capable one is presence. A technically correct set can keep music playing. A real performer can make the room feel alive. DJ Stancho’s profile is written to emphasize that second category. The emphasis is on movement, confidence, transitions, and the instinct to keep the audience locked in.</p>
-              <p>That makes this page especially useful for a modern artist website. It gives DJ Stancho not just a name and a photo, but a narrative identity — one that looks premium, current, and suitable for a serious music or nightlife brand.</p>
+              <p>Under his leadership, Sniper Records became a major force in Bulgarian music culture. It was more than a label. It was an ideology. Stancho helped develop and elevate some of the most legendary names in the industry, most notably <strong>Spens</strong> and <strong>Slim</strong>. He also extended the label’s influence beyond music releases, launching the magazine <strong>Knockout</strong> and helping connect Bulgarian rap to the wider global hip-hop world, including by bringing members of the <strong>Wu-Tang Clan</strong> to Bulgarian soil.</p>
 
-              <h3>Brand and Future Direction</h3>
-              <p>Every artist page also acts as a statement of positioning. In this version, DJ Stancho is placed as a premium nightlife figure with room to grow into larger bookings, collaborations, event branding, and a broader public profile. The dark glass style, gold highlights, and structured layout all support that image.</p>
-              <p>As a result, the page does more than describe DJ Stancho. It presents him. It creates an impression of seriousness, taste, and momentum — exactly what a strong artist profile should do.</p>
+              <div class="quote">DJ Stancho did not wait for a scene to appear. He helped create the conditions for one to exist, then defended its identity when it came under pressure.</div>
 
-              <div class="quote">“A real DJ does not just play records — he controls the mood, the pace, and the memory of the night.”</div>
+              <h3>The Great Divide: The War of the Labels</h3>
+              <p>The early 2000s placed Stancho at the center of one of the most explosive rivalries in Bulgarian music history: <strong>The Battle of the Cities</strong>. On one side stood Stancho’s <strong>Sniper Records</strong> in Sofia, representing lyrical depth, hardcore underground values, and street authenticity. On the other stood <strong>Misho Shamara’s RNB Records</strong> in Varna, which embraced commercial appeal, flashy presentation, and a more radio-friendly “G-Funk” lifestyle image.</p>
+
+              <p>This was not just business competition. It was a cultural civil war over what Bulgarian hip-hop should be. The rivalry produced diss tracks, divided the youth into opposing camps, and turned label affiliation into a question of identity. While RNB Records often dominated clubs and charts, Stancho remained the stubborn general of the Sofia underground. He refused to water down the culture simply to chase airplay, and that refusal became part of his legend.</p>
+
+              <h3>A Builder, Not Just a Participant</h3>
+              <p>What makes Stancho such an important figure is that his role was never limited to a single lane. He was dancer, organizer, producer, label founder, strategist, and guardian of a larger cultural vision. He moved from the earliest moments of local hip-hop experimentation into the era of institutional building, and then into the period of ideological defense, when the culture risked being overtaken by commercial dilution.</p>
+
+              <h3>Legacy</h3>
+              <p>From one of the first B-boys in a country with only a handful of clubs to the leader of a national movement, DJ Stancho’s influence is enormous. He helped transform hip-hop from a foreign novelty into a local language of identity, competition, rebellion, and authenticity. He remains the ultimate symbol of the era when Bulgarian rap was defined by message, soul, and sniper-like aim — and of the idea that even from “level zero,” one person with vision can build an entire world.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>Early Years — Musical Interest</strong>
-                  <p>Began building a connection to party music, live environments, and crowd-focused performance culture.</p>
+                  <strong>Late Socialist Era — Breakdance Pioneer</strong>
+                  <p>As a teenager, Stancho co-founded Break Group Dynamic and helped introduce breakdance and hip-hop movement culture to Bulgaria.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Development Phase — Craft Building</strong>
-                  <p>Refined set structure, transitions, crowd reading, and the performance instincts needed for live DJ work.</p>
+                  <strong>Early 1990s — Public Hip-Hop Visibility</strong>
+                  <p>Brought hip-hop choreography to national television and helped move the scene from curiosity into participation.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Nightlife Identity — Public Presence</strong>
-                  <p>Established a recognizable artist image centered on energy, event atmosphere, and club-ready delivery.</p>
+                  <strong>1990s — Founding of Sniper Records</strong>
+                  <p>Established Sniper Records as a central home for authentic Bulgarian rap and a reaction against lighter commercial trends.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Brand Growth — Premium Positioning</strong>
-                  <p>Expanded into a polished, premium visual identity suitable for bookings, promotion, and artist branding.</p>
+                  <strong>Early 2000s — The Label Wars</strong>
+                  <p>Became a central figure in the rivalry between Sniper Records and RNB Records, representing the Sofia underground against commercial opposition.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Era — Godfather Status</strong>
+                  <p>Remains recognized as one of the foundational architects of Bulgarian hip-hop culture and underground identity.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Stanislav Peev</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">DJ Stancho</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Role</span>
-                  <div class="info-value">DJ / Performer</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Stanislav Peev</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Genre Space</span>
-                  <div class="info-value">Hip-hop / Club / Open Format</div>
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Bulgaria</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Brand Focus</span>
-                  <div class="info-value">Nightlife, energy, crowd control</div>
+                  <span class="info-label">Known For</span>
+                  <div class="info-value">Sniper Records, Bulgarian hip-hop foundation, underground leadership</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Foundational figure and enduring symbol of Bulgarian rap authenticity</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Nightlife</span>
-                <span class="tag">DJ Culture</span>
-                <span class="tag">Open Format</span>
-                <span class="tag">Live Energy</span>
-                <span class="tag">Club Sound</span>
-                <span class="tag">Artist Branding</span>
+                <span class="tag">Bulgaria</span>
+                <span class="tag">Sniper Records</span>
+                <span class="tag">Underground</span>
+                <span class="tag">Hip-Hop Pioneer</span>
+                <span class="tag">Authenticity</span>
+                <span class="tag">Cultural Builder</span>
               </div>
             </section>
 
-            <section class="glass panel">
-              <h2>Highlighted Focus</h2>
+            <section class="glass panel story-section" data-story-title="Eras">
+              <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Live Sets</strong>
-                  <span>Performance-driven selections designed to control mood and keep energy high.</span>
+                  <strong>Breakdance Foundation Era</strong>
+                  <span>The earliest stage where Stancho helped introduce hip-hop movement culture to Bulgaria.</span>
                 </div>
                 <div class="album">
-                  <strong>Nightlife Presence</strong>
-                  <span>A premium artist identity suited for clubs, events, and branded experiences.</span>
+                  <strong>Sniper Records Empire</strong>
+                  <span>The period where he institutionalized Bulgarian underground rap and shaped major artists and ideas.</span>
                 </div>
                 <div class="album">
-                  <strong>Audience Connection</strong>
-                  <span>Crowd awareness, timing, and atmosphere as core performance strengths.</span>
+                  <strong>Battle of the Cities Legacy</strong>
+                  <span>The era where he stood as the uncompromising symbol of the Sofia underground during Bulgaria’s great label war.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for DJ Stancho.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for DJ Stancho on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/DJ+Stancho+Bulgarian+hip+hop" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick guide into the world around DJ Stancho.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Explore DJ Stancho-related interviews, archival clips, and music connected to the Sniper Records era on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=DJ+Stancho+Sniper+Records" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Watch on YouTube →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>Scene Archive</h3>
+                  <p>Search for performances, documentaries, and classic Bulgarian hip-hop moments connected to the culture Stancho helped build.</p>
+                  <a href="https://www.youtube.com/results?search_query=Bulgarian+hip-hop+Sniper+Records+Spens+Slim" target="_blank" rel="noopener noreferrer" class="music-link-btn">Explore the Era →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to DJ Stancho on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=DJ+Stancho+Bulgarian+hip+hop" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Legacy Points</h3>
+                <div class="track-list">
+                  <span class="track-tag">Break Group Dynamic</span>
+                  <span class="track-tag">Sniper Records</span>
+                  <span class="track-tag">Spens &amp; Slim Era</span>
+                  <span class="track-tag">Battle of the Cities</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Sniper Records era</span>
-                <span class="track-tag">Bulgarian rap sets</span>
-                <span class="track-tag">Underground classics</span>
-                <span class="track-tag">Scene-building anthems</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="tupac.html" class="related-card">
-                  <h4>2Pac</h4>
-                  <p>A strong archive link through era-building influence, movement identity, and cultural leadership.</p>
+                <a href="spens.html" class="related-card">
+                  <h4>Spens</h4>
+                  <p>One of the most important artists shaped within the Sniper Records world and a major voice of Bulgarian rap.</p>
                 </a>
-                <a href="dmx.html" class="related-card">
-                  <h4>DMX</h4>
-                  <p>Another story centered on intensity, authenticity, and a larger-than-life imprint on a rap scene.</p>
+                <a href="slim.html" class="related-card">
+                  <h4>Slim</h4>
+                  <p>A central figure in the same movement, representing the lyrical and underground direction Stancho helped build.</p>
                 </a>
-                <a href="biggie.html" class="related-card">
-                  <h4>The Notorious B.I.G.</h4>
-                  <p>A vault match through foundational-era impact and the creation of a long-lasting rap legacy.</p>
+                <a href="wu-tang-clan.html" class="related-card">
+                  <h4>Wu-Tang Clan</h4>
+                  <p>A global comparison point and symbolic link to Stancho’s efforts to connect Bulgarian hip-hop to the wider rap universe.</p>
                 </a>
               </div>
             </section>
@@ -1007,98 +947,141 @@ header#mainHeader.hidden {
     </div>
   </footer>
 
-
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
