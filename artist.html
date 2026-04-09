@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <nav class="nav-links">
 <a href="index.html">Home</a>
 <a href="artist-archive.html">Archive</a>
-<a class="active" href="artist.html">Artist</a>
+<a href="artist.html">Artist</a>
 <a href="category.html">Categories</a>
 <a href="timeline.html">Timeline</a>
 <a href="map.html">Map</a>
@@ -562,6 +562,22 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="artist-card-body">
 <h3>Khalid</h3>
 <p>Modern voice of emotional, youth-driven R&amp;B-pop.</p>
+<span>Open story →</span>
+</div>
+</a>
+<a class="artist-card glass" href="6ix9ine.html">
+<div class="artist-thumb"><img alt="6ix9ine" src="images/6ix9ine.jpg"/></div>
+<div class="artist-card-body">
+<h3>6ix9ine</h3>
+<p>Controversial Brooklyn rapper whose viral rise, legal cases, and persona reshaped internet-era hip-hop.</p>
+<span>Open story →</span>
+</div>
+</a>
+<a class="artist-card glass" href="foolio.html">
+<div class="artist-thumb"><img alt="Foolio" src="images/foolio.jpg"/></div>
+<div class="artist-card-body">
+<h3>Foolio</h3>
+<p>Jacksonville rapper known for raw diss culture, street narratives, and one of rap’s most intense rivalries.</p>
 <span>Open story →</span>
 </div>
 </a>
@@ -1196,8 +1212,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 </footer>
-
-
 <script>(function(){
   const header = document.getElementById("mainHeader");
   if(!header) return;
@@ -1226,5 +1240,26 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", offset);
   window.addEventListener("resize", offset);
   window.addEventListener("scroll", handleScroll, { passive: true });
-})();</script></body>
+})();</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const current = window.location.pathname.split("/").pop() || "index.html";
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(link => {
+    link.classList.remove("active");
+    const href = link.getAttribute("href");
+    if (current === href) {
+      link.classList.add("active");
+    }
+  });
+  if (!Array.from(links).some(link => link.classList.contains("active"))) {
+    if (current.endsWith(".html")) {
+      const isArtistPage = !["index.html","artist-archive.html","artist.html","category.html","timeline.html","map.html","contact.html","thank-you.html","thank-you-premium.html","intro.html"].includes(current);
+      if (isArtistPage) {
+        const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
+        if (artistLink) artistLink.classList.add("active");
+      }
+    }
+  }
+});
+</script></body>
 </html>
