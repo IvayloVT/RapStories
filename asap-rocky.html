@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A$AP Rocky | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on A$AP Rocky, covering his Harlem roots, A$AP Mob rise, fashion influence, legal controversies, and cultural legacy." />
+  <meta name="description" content="A Rap Stories premium profile on A$AP Rocky, covering his Harlem roots, fashion influence, A$AP Mob rise, artistic evolution, and cultural legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,236 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    /* Story Mode */
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Stats Panels */
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    /* Music Integration */
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    /* Mobile header: fixed and hide/show on scroll */
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -727,7 +723,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>A$AP Rocky</h2>
-              <p>Harlem rapper and style icon whose music, fashion influence, and celebrity profile made him one of the most visible figures of 2010s hip-hop.</p>
+              <p>Harlem trendsetter whose music, fashion vision, and artistic ambition made him one of hip-hop’s most stylish and culturally influential modern stars.</p>
             </div>
           </aside>
 
@@ -735,7 +731,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>A$AP Rocky</span></h1>
             <p class="summary">
-              Born Rakim Athelaston Mayers, A$AP Rocky emerged from Harlem as one of the defining style leaders of his generation. His career fused cloud rap aesthetics, downtown fashion, street mythology, and mainstream star power, turning him into both a recording artist and a global cultural figure.
+              Born Rakim Athelaston Mayers, A$AP Rocky emerged from Harlem as both a rapper and a style architect. He turned regional identity, internet-era aesthetics, Southern production influence, and luxury fashion sensibility into a distinct artistic world that helped redefine what a modern rap star could look and sound like.
             </p>
 
             <div class="quick-facts">
@@ -749,7 +745,7 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Fashion-forward hip-hop, A$AP Mob</strong>
+                <strong>Fashion influence, psychedelic rap, style</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
@@ -761,6 +757,7 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
                 <span class="label">Born</span>
@@ -776,7 +773,7 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Style and influence</div>
+                <div class="value">Rap + fashion crossover</div>
               </div>
             </div>
           </section>
@@ -784,28 +781,31 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Harlem Foundations</h3>
-              <p>Rakim Mayers was born in Harlem and raised in an environment shaped by instability, housing pressure, and the realities of street survival. The death of his older brother deeply affected him, and Harlem’s sound, swagger, and neighborhood codes shaped both his identity and his sense of ambition. Even before rap fame, Rocky was developing the cool, detached confidence that would later define his image.</p>
+              <h3>Harlem Origins</h3>
+              <p>Rakim Mayers grew up in Harlem in an environment shaped by instability, ambition, and cultural richness. His early life included hardship and family trauma, and those experiences helped build the hunger and self-invention that later became part of his public image. Even before fame, Rocky had a strong visual and musical identity that set him apart from more conventional New York rap archetypes.</p>
 
               <h3>A$AP Mob and Breakthrough</h3>
-              <p>Rocky’s rise came through A$AP Mob, the Harlem collective that helped create a new kind of New York rap star. His early records mixed Southern production influences, hazy atmospheres, and fashion-aware charisma, making him feel different from the city’s older traditions. His breakout momentum quickly made him one of the most discussed new artists of the early 2010s.</p>
+              <p>Rocky first rose to wider attention through the A$AP Mob collective, a movement that blended Harlem roots with a more internet-fluent, fashion-forward, genre-bending sensibility. He quickly stood out because he looked different, sounded different, and carried himself with the confidence of someone who understood celebrity as both music and image.</p>
 
-              <div class="quote">A$AP Rocky became a distinctive figure because the music, image, and story all moved together—turning biography into identity and identity into lasting cultural presence.</div>
+              <h3>A New Sound for New York</h3>
+              <p>At a time when many expected New York rappers to sound traditionally local, Rocky embraced Southern-influenced production, hazy atmospheres, and luxury-minded aesthetics. That move was controversial to some purists, but it also made him one of the defining artists of a new era—one where regional borders mattered less than taste, influence, and cultural fluency.</p>
 
-              <h3>Music, Style, and Global Profile</h3>
-              <p>As his career expanded, Rocky became more than a rapper. He became a bridge between hip-hop, luxury fashion, and contemporary art culture. He moved easily between music videos, runway circles, festival stages, and brand campaigns, helping redefine what mainstream rap stardom could look like in the social-media era.</p>
+              <div class="quote">A$AP Rocky helped turn rap stardom into a full design language—where the music, the clothes, the visuals, and the attitude all formed one recognizable world.</div>
 
-              <h3>Legal Problems and Public Scrutiny</h3>
-              <p>Rocky’s public life also brought controversy, especially through high-profile legal cases and celebrity-level attention. These moments tested his image and intensified debate around fame, race, and the way artists are judged in public. Even so, he remained a major cultural name whose relevance extended beyond album cycles.</p>
+              <h3>Fashion, Art, and Celebrity</h3>
+              <p>Rocky became more than a musician. He developed into a high-profile fashion figure, collaborator, tastemaker, and public celebrity whose reach extended into luxury brands, magazines, and global pop culture. He represented a version of hip-hop stardom where aesthetic control was as important as hit records.</p>
+
+              <h3>Evolution and Maturity</h3>
+              <p>As his career developed, Rocky’s music became more introspective, experimental, and visually cinematic. He balanced mainstream appeal with artistic risk, often leaning into mood, texture, and style over simple chart formulas. That helped preserve his reputation as a figure of taste rather than just trend-following popularity.</p>
 
               <h3>Legacy</h3>
-              <p>A$AP Rocky’s significance lies in how he changed rap aesthetics. He helped normalize a more fashion-conscious, globally connected, and visually curated form of hip-hop stardom. His legacy is tied not only to music, but to the look, mood, and presentation of an era.</p>
+              <p>A$AP Rocky’s legacy lies in how he fused rap, fashion, visual art, and cultural branding into one identity. He helped redefine masculinity, luxury, and cool in mainstream hip-hop, and his influence can be seen in the generation of artists who treat image, sound, and design as inseparable.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
@@ -813,27 +813,27 @@ header#mainHeader.hidden {
                   <p>Born Rakim Athelaston Mayers in Harlem, New York.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2000s–2011 — Formation</strong>
-                  <p>Developed his sound within A$AP Mob and built local and online momentum.</p>
+                  <strong>2000s — Early Development</strong>
+                  <p>Built his identity through Harlem culture, underground music, and fashion awareness.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2011–2013 — Breakthrough</strong>
-                  <p>Became one of rap’s most talked-about new stars through mixtape success and major-label attention.</p>
+                  <strong>Early 2010s — Breakthrough</strong>
+                  <p>Rose with A$AP Mob momentum and quickly became one of rap’s most talked-about new stars.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2010s — Global Expansion</strong>
-                  <p>Expanded into fashion, touring, and a broader celebrity profile.</p>
+                  <strong>Mid-2010s — Cultural Expansion</strong>
+                  <p>Established himself as both a major rapper and an influential fashion figure.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020s — Continued Relevance</strong>
-                  <p>Remained a visible figure across music, style, and pop culture.</p>
+                  <strong>2020s — Established Icon</strong>
+                  <p>Remained a globally recognized artist whose influence extends beyond music into style and celebrity culture.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
@@ -850,90 +850,90 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Cloud Rap</div>
+                  <div class="info-value">Hip-Hop / Psychedelic Rap / Cloud Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; major cultural figure</div>
+                  <div class="info-value">Active; artist, style icon, cultural tastemaker</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Style</span>
                 <span class="tag">Harlem</span>
                 <span class="tag">Fashion</span>
-                <span class="tag">Celebrity</span>
-                <span class="tag">A$AP Mob</span>
+                <span class="tag">Luxury</span>
+                <span class="tag">Experimentation</span>
+                <span class="tag">Aesthetics</span>
                 <span class="tag">Influence</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Harlem Emergence</strong>
-                  <span>The early period where A$AP Mob energy and internet buzz made Rocky a breakout figure.</span>
+                  <strong>Harlem Innovator</strong>
+                  <span>The breakout phase where Rocky introduced a stylish, internet-era version of New York rap.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream and Fashion Power</strong>
-                  <span>The era that turned him into a global style and music icon.</span>
+                  <strong>Fashion Powerhouse</strong>
+                  <span>The era where music success expanded into luxury fashion and global visibility.</span>
                 </div>
                 <div class="album">
-                  <strong>Modern Celebrity Phase</strong>
-                  <span>A period defined by cross-industry visibility, scrutiny, and sustained influence.</span>
+                  <strong>Art-World Mainstay</strong>
+                  <span>A later phase defined by prestige, experimentation, and long-term cultural relevance.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for A$AP Rocky on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/A%24AP%20Rocky" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for A$AP Rocky.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for A$AP Rocky on Spotify and explore the records that shaped his sound and image.</p>
+                  <a href="https://open.spotify.com/search/A%24AP%20Rocky" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major visual statements from A$AP Rocky on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=A%24AP+Rocky+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to A$AP Rocky on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=A%24AP%20Rocky+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Peso</span>
+                  <span class="track-tag">Goldie</span>
+                  <span class="track-tag">L$D</span>
+                  <span class="track-tag">Praise the Lord</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Peso</span>
-                <span class="track-tag">Goldie</span>
-                <span class="track-tag">Fashion Killa</span>
-                <span class="track-tag">L$D</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="kendrick-lamar.html" class="related-card">
                   <h4>Kendrick Lamar</h4>
-                  <p>Another defining 2010s voice whose artistry expanded what modern rap could be.</p>
+                  <p>Another artist who turned rap into a broader artistic and conceptual statement.</p>
                 </a>
-                <a href="drake.html" class="related-card">
-                  <h4>Drake</h4>
-                  <p>A dominant contemporary star whose crossover reach shaped the same era.</p>
+                <a href="kanye-west.html" class="related-card">
+                  <h4>Kanye West</h4>
+                  <p>A major influence in blending hip-hop, fashion, ego, and creative world-building.</p>
                 </a>
-                <a href="travis-scott.html" class="related-card">
-                  <h4>Travis Scott</h4>
-                  <p>A later superstar whose image, mood, and aesthetics evolved within a similar visual age.</p>
+                <a href="tyler-the-creator.html" class="related-card">
+                  <h4>Tyler, The Creator</h4>
+                  <p>A peer figure whose career also expanded from rap into design, taste, and cultural authorship.</p>
                 </a>
               </div>
             </section>
@@ -960,95 +960,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
