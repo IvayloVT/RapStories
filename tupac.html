@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2Pac | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on 2Pac, covering his upbringing, political roots, rise in hip-hop, legal controversies, Death Row era, death, and enduring cultural legacy." />
+  <meta name="description" content="A Rap Stories premium profile on 2Pac, covering his upbringing, rise to rap greatness, legal troubles, Death Row era, and lasting legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,236 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    /* Story Mode */
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    .story-kicker {
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Stats Panels */
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    /* Music Integration */
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    /* Mobile header: fixed and hide/show on scroll */
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -727,7 +723,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>2Pac</h2>
-              <p>Revolutionary rapper and actor whose poetry, political edge, and contradictions made him one of the most iconic figures in hip-hop history.</p>
+              <p>Revolutionary rapper, poet, actor, and cultural symbol whose music turned pain, politics, and street reality into timeless art.</p>
             </div>
           </aside>
 
@@ -735,7 +731,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>2Pac</span></h1>
             <p class="summary">
-              Born Tupac Amaru Shakur, 2Pac became one of the most influential and intensely discussed artists in rap history. His music fused street realism, political consciousness, vulnerability, anger, and charisma, allowing him to become both a cultural symbol and a central figure in one of hip-hop’s most turbulent eras.
+              Born Tupac Amaru Shakur, 2Pac became one of the most influential figures in music history. His life moved through activism, art, hardship, legal controversy, superstardom, and violent conflict, leaving behind a legacy that still defines hip-hop culture across generations.
             </p>
 
             <div class="quick-facts">
@@ -749,11 +745,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Political and street rap</strong>
+                <strong>Conscious rap, intensity, storytelling</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Deceased (1996)</strong>
+                <strong>Legend</strong>
               </div>
             </div>
 
@@ -761,6 +757,7 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
                 <span class="label">Born</span>
@@ -768,7 +765,7 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Home</span>
-                <div class="value">New York / California</div>
+                <div class="value">New York / Oakland</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
@@ -776,7 +773,7 @@ header#mainHeader.hidden {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Revolutionary icon</div>
+                <div class="value">Rap icon & activist spirit</div>
               </div>
             </div>
           </section>
@@ -784,37 +781,31 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Political Roots</h3>
-              <p>Tupac Amaru Shakur was born on June 16, 1971, in East Harlem, New York, into a family deeply connected to Black political struggle. His mother, Afeni Shakur, had been involved with the Black Panther Party, and that legacy of resistance, surveillance, hardship, and political consciousness shaped the atmosphere around his early life. Long before he became a rap icon, Tupac was growing up around ideas of injustice, state power, Black identity, and survival.</p>
-              <p>His childhood was marked by instability, poverty, frequent moves, and exposure to adults navigating addiction, incarceration, and structural pressure. Yet he also developed an early love for literature, acting, poetry, and performance. This combination—political inheritance and artistic sensitivity—would become central to who he was. Tupac did not emerge as a rapper from only one tradition; he carried both revolutionary language and street experience into the same voice.</p>
+              <h3>Roots in Struggle and Resistance</h3>
+              <p>Tupac Amaru Shakur was born into a family deeply connected to Black political activism. His mother, Afeni Shakur, had been involved with the Black Panther Party, and that political environment shaped his understanding of oppression, identity, and survival from an early age. Even as a child, Tupac lived close to both hardship and purpose.</p>
 
-              <h3>From Performing Arts to Hip-Hop Breakthrough</h3>
-              <p>As a teenager, Tupac attended the Baltimore School for the Arts, where he studied acting, poetry, jazz, and theatre. That training sharpened his sense of stagecraft and language. Even when his music sounded raw or confrontational, it was driven by a performer’s command of emotion and dramatic tension. After relocating to the West Coast, he eventually entered the rap world through Digital Underground, where he first gained exposure before launching a solo career.</p>
-              <p>His early solo records immediately set him apart. Songs addressed police brutality, poverty, teenage pregnancy, inner-city trauma, and the emotional contradictions of manhood. He could sound militant, reflective, compassionate, and explosive—sometimes within the same verse. That complexity helped make him one of the most compelling new voices of the early 1990s.</p>
+              <h3>Art Before Stardom</h3>
+              <p>Before he became a rap legend, Tupac studied performance, poetry, and theater. He had a rare ability to combine street realism with emotional intelligence, which later became one of his defining strengths. He did not only rap about violence, ambition, or pain—he dramatized them, questioned them, and humanized the people living through them.</p>
 
-              <div class="quote">2Pac stood at the intersection of poetry and violence, politics and celebrity, tenderness and threat—few artists ever carried so many contradictions so powerfully.</div>
+              <h3>Rise in Hip-Hop</h3>
+              <p>In the early 1990s, Tupac emerged as one of the most commanding new voices in rap. His music balanced militant energy with vulnerability. He could make records about systemic injustice, personal trauma, street life, women, and ambition, often within the same era of work. That range made him larger than a typical rap star; he felt like a full cultural force.</p>
 
-              <h3>Rise to Superstardom</h3>
-              <p>Tupac’s rise accelerated through landmark albums, memorable guest appearances, and a larger-than-life public presence. He also built an acting career, appearing in films that expanded his profile beyond music. By the mid-1990s, he was not just a successful rapper but one of the most recognizable young stars in American popular culture.</p>
-              <p>His music connected because it spoke across audiences. He could make songs for women, songs for the streets, songs about paranoia, songs about death, and songs about structural oppression, all while remaining unmistakably himself. That range made him a singular figure: a rapper whose catalog could be intimate and political, commercial and confrontational, all at once.</p>
+              <div class="quote">2Pac’s gift was not just that he spoke loudly—it was that he made millions feel that their pain, anger, hope, and contradictions finally had a voice.</div>
 
-              <h3>Legal Troubles, Prison, and Death Row</h3>
-              <p>Tupac’s career unfolded alongside legal problems, public feuds, and escalating controversy. In 1995, he entered prison after a sexual abuse conviction while continuing to maintain his innocence regarding the most serious allegations. During that period, his case, his image, and his place in rap culture became even more volatile. After being released, he signed with Death Row Records, a move that reshaped the final chapter of his career.</p>
-              <p>At Death Row, Tupac entered an environment defined by fame, pressure, rivalry, and conflict. He released major music, intensified his public persona, and became deeply associated with the East Coast–West Coast feud that came to symbolize the most combustible side of 1990s hip-hop. Whether through interviews, diss records, or public appearances, he became both artist and symbol in a widening cultural war.</p>
+              <h3>Conflict, Pressure, and Public Turmoil</h3>
+              <p>As his fame grew, so did the chaos around him. Legal troubles, media pressure, violent incidents, and personal betrayals became part of the public narrative. Tupac’s life turned into a constant collision between art and danger. His words became sharper, his image more intense, and his place in rap history more mythic in real time.</p>
 
-              <h3>Death and Unfinished Story</h3>
-              <p>On September 7, 1996, Tupac was shot in Las Vegas after attending a boxing match. He died from his injuries on September 13, 1996, at the age of 25. His killing became one of the most famous unsolved crimes in music history and helped cement his transformation from star into legend. The circumstances of his death, the mythology around his final days, and the later investigations all kept his story alive in public memory for decades.</p>
-              <p>His death was not experienced as the end of an ordinary career. It felt like an abrupt rupture in hip-hop itself. Tupac had become too large, too symbolic, and too emotionally present in the culture for his absence to feel complete.</p>
+              <h3>Death Row Era</h3>
+              <p>After prison, Tupac joined Death Row Records and entered the most commercially explosive phase of his career. He released aggressive, emotional, and deeply memorable music that made him the dominant figure of the moment. Yet this period also intensified the East Coast-West Coast conflict and tied his public image even more closely to the violence surrounding the industry.</p>
 
-              <h3>Legacy</h3>
-              <p>2Pac remains one of the most influential rappers ever recorded. His work shaped how later artists approached vulnerability, political expression, emotional contradiction, and autobiographical storytelling. He proved that rap could be popular without becoming emotionally flat and political without becoming artistically rigid.</p>
-              <p>His legacy survives through classic songs, posthumous releases, film performances, academic discussion, and the ongoing global fascination with his life and death. More than most figures in hip-hop, Tupac became larger than biography. He endures as artist, symbol, argument, and myth.</p>
+              <h3>Legacy Beyond Music</h3>
+              <p>2Pac’s legacy extends far beyond chart success. He became a symbol of contradiction: revolutionary and vulnerable, artistic and confrontational, deeply thoughtful and impulsive. His work still resonates because it captured not only a specific moment in hip-hop, but something universal about survival, identity, injustice, and ambition.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
@@ -822,27 +813,27 @@ header#mainHeader.hidden {
                   <p>Born Tupac Amaru Shakur in East Harlem, New York.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 1980s–Early 1990s — Artistic Formation</strong>
-                  <p>Studied performance, entered hip-hop through Digital Underground, and began building a solo identity.</p>
+                  <strong>1980s — Artistic Development</strong>
+                  <p>Studied poetry, acting, and performance while moving through difficult social environments.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1991–1994 — Breakthrough</strong>
-                  <p>Released influential solo music and emerged as one of rap’s most powerful new voices.</p>
+                  <strong>Early 1990s — Breakthrough</strong>
+                  <p>Rose as one of rap’s most powerful young voices through politically charged and emotional records.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1995–1996 — Prison and Death Row Era</strong>
-                  <p>Served prison time, signed with Death Row Records, and became central to hip-hop’s biggest feud.</p>
+                  <strong>Mid-1990s — Superstar Status</strong>
+                  <p>Became one of the defining artists of the decade, with music, films, controversy, and global influence.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1996 — Death</strong>
-                  <p>Died on September 13, 1996, after being shot in Las Vegas, leaving one of music’s most enduring legacies.</p>
+                  <strong>1996 — Final Chapter</strong>
+                  <p>Was fatally shot in Las Vegas, sealing one of the most legendary and tragic stories in hip-hop history.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
@@ -851,7 +842,7 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
-                  <div class="info-value">2Pac / Tupac Shakur</div>
+                  <div class="info-value">2Pac / Makaveli</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Birthplace</span>
@@ -859,90 +850,90 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / West Coast Rap</div>
+                  <div class="info-value">Hip-Hop / Conscious Rap / West Coast Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Deceased; legacy remains global</div>
+                  <div class="info-value">Legendary cultural icon</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Rebellion</span>
                 <span class="tag">Poetry</span>
+                <span class="tag">Pain</span>
                 <span class="tag">Politics</span>
-                <span class="tag">Street Reality</span>
-                <span class="tag">Contradiction</span>
-                <span class="tag">Fame</span>
+                <span class="tag">Survival</span>
                 <span class="tag">Legacy</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Political Emergence</strong>
-                  <span>The early period where poetry, activism, and social commentary shaped his voice.</span>
+                  <strong>Conscious Fire</strong>
+                  <span>The early era where Tupac fused political awareness with raw street reporting.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream Ascension</strong>
-                  <span>The years that turned him into one of the biggest and most complex stars in rap.</span>
+                  <strong>National Superstar</strong>
+                  <span>The period where his fame crossed music, film, and controversy.</span>
                 </div>
                 <div class="album">
-                  <strong>Death Row and Myth</strong>
-                  <span>The intense final era that transformed Tupac from superstar into cultural legend.</span>
+                  <strong>Makaveli Myth</strong>
+                  <span>The final phase of intensity, paranoia, brilliance, and immortal legend-building.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for 2Pac on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/2Pac" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for 2Pac on Spotify and follow the story through the records that defined a generation.</p>
+                  <a href="https://open.spotify.com/search/2Pac" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch classic videos, live moments, interviews, and major records tied to 2Pac’s life and legacy.</p>
+                  <a href="https://www.youtube.com/results?search_query=2Pac+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to 2Pac on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=2Pac+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Dear Mama</span>
+                  <span class="track-tag">Changes</span>
+                  <span class="track-tag">Ambitionz Az a Ridah</span>
+                  <span class="track-tag">California Love</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">California Love</span>
-                <span class="track-tag">Dear Mama</span>
-                <span class="track-tag">Changes</span>
-                <span class="track-tag">Ambitionz Az a Ridah</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="biggie.html" class="related-card">
+                <a href="notorious-big.html" class="related-card">
                   <h4>The Notorious B.I.G.</h4>
-                  <p>A defining companion story from the same era of East Coast–West Coast tension and 1990s rap dominance.</p>
+                  <p>The East Coast giant forever linked to one of rap’s most famous rivalries.</p>
+                </a>
+                <a href="snoop-dogg.html" class="related-card">
+                  <h4>Snoop Dogg</h4>
+                  <p>A Death Row contemporary whose career also helped define the 1990s West Coast era.</p>
                 </a>
                 <a href="dmx.html" class="related-card">
                   <h4>DMX</h4>
-                  <p>Another larger-than-life New York voice whose intensity, pain, and legacy shaped rap’s emotional core.</p>
-                </a>
-                <a href="pop-smoke.html" class="related-card">
-                  <h4>Pop Smoke</h4>
-                  <p>A later New York figure whose rise shows how legacy and regional identity kept evolving after the 1990s.</p>
+                  <p>Another intensely emotional rap icon whose pain and power reached millions.</p>
                 </a>
               </div>
             </section>
@@ -969,95 +960,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
