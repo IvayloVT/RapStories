@@ -210,6 +210,20 @@ header#mainHeader.hidden {
 }
 
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.querySelector(".artist-grid");
+  const cards = Array.from(grid.children);
+
+  cards.sort((a, b) => {
+    const nameA = a.querySelector("h3").innerText.toLowerCase();
+    const nameB = b.querySelector("h3").innerText.toLowerCase();
+    return nameA.localeCompare(nameB);
+  });
+
+  cards.forEach(card => grid.appendChild(card));
+});
+</script>
 </head>
 <body>
 <header id="mainHeader">
