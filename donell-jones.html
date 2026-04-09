@@ -1,16 +1,1120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donell Jones | Rap Stories</title>
-<style>
-body{background:#0a0a0f;color:white;font-family:Arial;padding:40px}
-h1{color:#d4af37}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donell Jones | Rap Stories</title>
+  <meta
+    name="description"
+    content="A premium Rap Stories profile on Donell Jones, covering his Chicago roots, songwriting talent, R&B rise, emotional storytelling, and lasting legacy in modern soul."
+  />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.10);
+      --text: #f4f4f5;
+      --muted: #a5a5b1;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --shadow: 0 20px 50px rgba(0,0,0,0.45);
+      --radius: 20px;
+      --max: 1260px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
+        linear-gradient(180deg, #09090d, #0a0a0f 52%, #050507 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 8, 0.76);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
+
+    .brand-text {
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
+    .hero { padding: 42px 0 28px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
+    .artist-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        url("images/donell-jones.jpg") center/cover no-repeat;
+    }
+
+    .artist-image-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    .artist-tag {
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-info h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .hero-info h1 span {
+      background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
+    .album, .related-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    .story-mode-toggle:hover { transform: translateY(-2px); }
+
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .music-panel {
+      margin-top: 24px;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .music-card p { margin-bottom: 14px; }
+
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
+
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-<h1>Donell Jones</h1>
-<p>Premium Rap Stories artist page.</p>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
+  <header id="mainHeader">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
+        <a href="artist.html">Artist</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="map.html">Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a class="nav-btn" href="artist.html">Back to Artists</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero story-section active" data-story-title="Intro">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> /
+          <a href="artist.html">Artists</a> /
+          <span>Donell Jones</span>
+        </div>
+
+        <div class="hero-layout">
+          <aside class="glass artist-image">
+            <div class="artist-image-content">
+              <span class="artist-tag">Artist Profile</span>
+              <h2>Donell Jones</h2>
+              <p>Smooth Chicago singer-songwriter whose emotional honesty and understated style made him one of R&amp;B’s most memorable voices.</p>
+            </div>
+          </aside>
+
+          <section class="glass hero-info">
+            <span class="eyebrow">Rap Stories Profile</span>
+            <h1>The Story of <span>Donell Jones</span></h1>
+            <p class="summary">
+              Donell Jones built his reputation through smooth vocals, sharp songwriting, and emotionally direct R&amp;B records that captured heartbreak, romance, regret, and devotion. Emerging from Chicago, he became one of the defining male R&amp;B voices of the late 1990s and early 2000s, with music that blended soul tradition, contemporary polish, and deeply relatable storytelling.
+            </p>
+
+            <div class="quick-facts">
+              <div class="fact">
+                <span>Born</span>
+                <strong>May 22, 1973</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Chicago, Illinois</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Smooth R&amp;B and songwriting</strong>
+              </div>
+              <div class="fact">
+                <span>Era</span>
+                <strong>1990s–2000s</strong>
+              </div>
+            </div>
+
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="#biography">Read Biography</a>
+              <a class="btn" href="#timeline">View Timeline</a>
+            </div>
+
+            <div class="artist-stats">
+              <div class="stat-panel">
+                <span class="label">Born</span>
+                <div class="value">1973</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Home</span>
+                <div class="value">Chicago</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Style</span>
+                <div class="value">Soulful, romantic, reflective</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Known For</span>
+                <div class="value">R&amp;B storytelling</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="content-layout">
+          <div class="content-stack">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
+              <h2>Biography</h2>
+
+              <h3>Chicago Roots and Musical Foundations</h3>
+              <p>
+                Donell Jones was born in Chicago, a city with a deep musical history stretching across gospel, blues, soul, house, and R&amp;B. That environment mattered. His sound would later reflect a classic emotional discipline often associated with earlier Black music traditions: the ability to sound intimate without oversinging, vulnerable without sounding weak, and stylish without losing sincerity.
+              </p>
+              <p>
+                Before becoming a star, Jones developed as both a singer and songwriter, an important distinction in understanding his career. He was not simply a vocalist handed finished material; he was involved in shaping the emotional logic of his records. That gave his music a sense of personal control and helped make his songs feel lived-in rather than manufactured.
+              </p>
+
+              <div class="quote">
+                Donell Jones mastered a kind of quiet intensity — music that did not need to shout to leave a lasting emotional impact.
+              </div>
+
+              <h3>Breakthrough in R&amp;B</h3>
+              <p>
+                Donell Jones rose during a period when male R&amp;B was highly competitive, filled with major voices, polished production, and a strong emphasis on emotional connection. What distinguished him was subtlety. He did not rely on overwhelming theatrics. Instead, he leaned into warmth, melody, and direct writing, building songs that felt conversational and close.
+              </p>
+              <p>
+                His breakthrough records gave listeners stories they recognized: unstable relationships, longing, devotion, mistakes, and the emotional aftershocks of love. That relatability helped him stand out. Jones made songs that felt personal enough for headphones and polished enough for radio, a balance that helped define the strongest R&amp;B artists of that era.
+              </p>
+
+              <h3>Songwriting and Emotional Precision</h3>
+              <p>
+                One of the key reasons Donell Jones endured was his songwriting. His records often captured emotional complexity without becoming overly abstract. He understood how to write songs that felt intimate but accessible, poetic but plainspoken. In many ways, his greatest strength was translation: he could turn messy emotional experiences into clean, memorable melodies and lyrics.
+              </p>
+              <p>
+                This made him especially effective within late-1990s and early-2000s R&amp;B, a time when audiences still strongly valued slow jams, romantic vulnerability, and male singers capable of sounding both confident and hurt. Jones occupied that lane with ease. His music carried a mature emotional tone that appealed to listeners looking for honesty rather than spectacle.
+              </p>
+
+              <h3>Mainstream Success and Recognition</h3>
+              <p>
+                As his profile grew, Donell Jones became one of the most recognizable names in contemporary R&amp;B. His records circulated widely and helped define a moment when urban radio, slow-burn love songs, and crossover soul records still held major cultural weight. His best work sounded elegant without losing its street-level emotional realism.
+              </p>
+              <p>
+                He also became part of a broader lineage of Black male singers whose appeal depended not only on vocal ability but on emotional credibility. In Donell Jones’s case, that credibility came from restraint. He made heartbreak sound reflective instead of theatrical. He made romance sound grounded instead of fantasy-driven.
+              </p>
+
+              <h3>Legacy in Modern R&amp;B</h3>
+              <p>
+                Donell Jones occupies an important place in modern R&amp;B history. He represents a generation of artists who bridged classic soul sensitivity with late-1990s contemporary production. His music still resonates because the themes never expire: love, distance, memory, temptation, regret, and emotional vulnerability.
+              </p>
+              <p>
+                His legacy is also tied to craft. Long after trends change, songwriting and emotional clarity remain valuable, and Jones delivered both. He may not always be discussed with the loudest mythology, but his catalog continues to matter because it captured a style of R&amp;B built on feeling, precision, and timeless mood.
+              </p>
+            </section>
+
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
+              <h2>Career Timeline</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <strong>1973 — Birth</strong>
+                  <p>Born in Chicago, Illinois, in a city rich with Black musical traditions.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1990s — Early Development</strong>
+                  <p>Built his reputation as a singer-songwriter with strong melodic instincts and emotional range.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 1990s — Breakthrough</strong>
+                  <p>Emerged as a major R&amp;B voice with records centered on romance, heartbreak, and reflection.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Early 2000s — Mainstream Recognition</strong>
+                  <p>Reached wider visibility and became one of the defining male R&amp;B artists of the era.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Legacy Era</strong>
+                  <p>Remained respected for timeless songwriting, smooth vocals, and enduring slow-jam appeal.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="side-stack">
+            <section class="glass panel story-section" data-story-title="Details">
+              <h2>Profile Details</h2>
+              <div class="info-list">
+                <div class="info-row">
+                  <span class="info-label">Full Name</span>
+                  <div class="info-value">Donell Jones</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Stage Name</span>
+                  <div class="info-value">Donell Jones</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birthplace</span>
+                  <div class="info-value">Chicago, Illinois</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">R&amp;B / Soul</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Known For</span>
+                  <div class="info-value">Romantic slow jams and songwriting</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Themes">
+              <h2>Key Themes</h2>
+              <div class="tags">
+                <span class="tag">Chicago</span>
+                <span class="tag">R&amp;B</span>
+                <span class="tag">Love</span>
+                <span class="tag">Heartbreak</span>
+                <span class="tag">Songwriting</span>
+                <span class="tag">Soul</span>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Eras">
+              <h2>Highlighted Eras</h2>
+              <div class="discography">
+                <div class="album">
+                  <strong>Early Promise</strong>
+                  <span>The period where songwriting and vocal refinement shaped his artistic identity.</span>
+                </div>
+                <div class="album">
+                  <strong>Breakthrough R&amp;B Star</strong>
+                  <span>The era that made him one of the most recognizable romantic voices in modern R&amp;B.</span>
+                </div>
+                <div class="album">
+                  <strong>Enduring Catalog</strong>
+                  <span>The phase where timeless records continued to define his reputation and influence.</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Donell Jones.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Donell Jones on Spotify and revisit the smooth sound behind the story.</p>
+                  <a class="music-link-btn primary" href="https://open.spotify.com/search/Donell%20Jones" target="_blank" rel="noopener noreferrer">Open on Spotify →</a>
+                </div>
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Jump into official videos, classic performances, and fan-favorite Donell Jones records.</p>
+                  <a class="music-link-btn" href="https://www.youtube.com/results?search_query=Donell+Jones+official+music+videos" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+                </div>
+              </div>
+
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">U Know What’s Up</span>
+                  <span class="track-tag">Where I Wanna Be</span>
+                  <span class="track-tag">This Luv</span>
+                  <span class="track-tag">Knocks Me Off My Feet</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Related">
+              <h2>Related Stories</h2>
+              <div class="related-list">
+                <a class="related-card" href="joe.html">
+                  <h4>Joe</h4>
+                  <p>Another smooth R&amp;B voice whose emotional records helped define the same era.</p>
+                </a>
+                <a class="related-card" href="ginuwine.html">
+                  <h4>Ginuwine</h4>
+                  <p>A major contemporary figure in male R&amp;B whose style and romantic catalog shaped the late 1990s landscape.</p>
+                </a>
+                <a class="related-card" href="jagged-edge.html">
+                  <h4>Jagged Edge</h4>
+                  <p>A related harmony-driven R&amp;B story from the same emotional and radio-friendly era.</p>
+                </a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div aria-label="Story chapters" class="story-rail" id="storyRail"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+
+  <script>
+    (function(){
+      const header = document.getElementById("mainHeader");
+      if(!header) return;
+
+      let lastScrollY = window.pageYOffset;
+
+      function offset(){
+        document.body.style.paddingTop = header.offsetHeight + "px";
+      }
+
+      function handleScroll(){
+        const currentScrollY = window.pageYOffset;
+
+        if(window.innerWidth <= 768){
+          if(currentScrollY <= 8){
+            header.classList.remove("hidden");
+          } else if(currentScrollY > lastScrollY + 4){
+            header.classList.add("hidden");
+          } else if(currentScrollY < lastScrollY - 4){
+            header.classList.remove("hidden");
+          }
+        } else {
+          header.classList.remove("hidden");
+        }
+
+        lastScrollY = currentScrollY;
+      }
+
+      offset();
+      handleScroll();
+
+      window.addEventListener("load", offset);
+      window.addEventListener("resize", () => {
+        offset();
+        if(window.innerWidth > 768){
+          header.classList.remove("hidden");
+        }
+      });
+      window.addEventListener("scroll", handleScroll, {passive:true});
+    })();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const current = window.location.pathname.split("/").pop() || "index.html";
+      const links = document.querySelectorAll(".nav-links a");
+
+      links.forEach(link => {
+        link.classList.remove("active");
+        const href = link.getAttribute("href");
+        if (current === href) link.classList.add("active");
+      });
+
+      if (!Array.from(links).some(link => link.classList.contains("active"))) {
+        const specialPages = [
+          "index.html","artist-archive.html","artist.html","category.html",
+          "timeline.html","map.html","contact.html","thank-you.html",
+          "thank-you-premium.html","intro.html"
+        ];
+        if (!specialPages.includes(current)) {
+          const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
+          if (artistLink) artistLink.classList.add("active");
+        }
+      }
+    });
+  </script>
+
+  <script>
+    (function(){
+      const body = document.body;
+      const sections = [...document.querySelectorAll(".story-section")];
+      const rail = document.getElementById("storyRail");
+      const toggle = document.getElementById("storyModeToggle");
+      const progressBar = document.getElementById("storyProgressBar");
+
+      if (!sections.length || !rail || !toggle || !progressBar) return;
+
+      rail.innerHTML = sections.map((section, index) => {
+        const title = section.dataset.storyTitle || `Section ${index + 1}`;
+        return `<button class="story-dot ${index === 0 ? 'active' : ''}" type="button" aria-label="${title}" title="${title}" data-index="${index}"></button>`;
+      }).join("");
+
+      const dots = [...rail.querySelectorAll(".story-dot")];
+
+      function setActiveSection(index) {
+        sections.forEach((section, i) => {
+          section.classList.toggle("active", i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+      }
+
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + "%";
+      }
+
+      function detectActiveSection() {
+        let activeIndex = 0;
+        const trigger = window.innerHeight * 0.35;
+
+        sections.forEach((section, index) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= trigger) activeIndex = index;
+        });
+
+        setActiveSection(activeIndex);
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      let storyModeOn = true;
+      body.classList.add("story-mode");
+
+      toggle.addEventListener("click", () => {
+        storyModeOn = !storyModeOn;
+        body.classList.toggle("story-mode", storyModeOn);
+        toggle.textContent = `Story Mode: ${storyModeOn ? "On" : "Off"}`;
+      });
+
+      function handleScroll() {
+        updateProgress();
+        detectActiveSection();
+      }
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener("resize", handleScroll);
+      handleScroll();
+    })();
+  </script>
 </body>
 </html>
