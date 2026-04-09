@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Gates | Rap Stories</title>
-  <meta name="description" content="A premium Rap Stories profile on Kevin Gates, covering his Baton Rouge roots, hard-lived upbringing, emotional honesty, breakthrough mixtape era, commercial success, legal troubles, and lasting influence." />
+  <meta name="description" content="A Rap Stories premium profile on Kevin Gates, covering his Baton Rouge roots, pain-driven storytelling, independent rise, and lasting impact on Southern hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,221 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +684,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +709,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Kevin Gates</h2>
-              <p>Baton Rouge rapper, singer, and songwriter whose confessional style, survival themes, and intense emotional delivery made him one of the most distinctive Southern voices of his era.</p>
+              <p>A Baton Rouge rapper whose raw honesty, emotional intensity, and Southern realism made him one of the most distinctive voices in modern street rap.</p>
             </div>
           </aside>
 
@@ -735,7 +717,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Kevin Gates</span></h1>
             <p class="summary">
-              Born Kevin Jerome Gilyard, Kevin Gates built his name through raw honesty, melodic pain rap, and a persona shaped by hardship, prison, hustle, and self-analysis. His music blends Southern street realism with introspection, spirituality, and blunt emotional confession, helping him become one of the most recognizable Louisiana artists of the modern mixtape era.
+              Kevin Gates built his career on truth told without much cushioning. Emerging from Baton Rouge with a voice full of gravity and a style rooted in pain, survival, loyalty, and self-examination, he became known for music that felt as confessional as it was street-centered. His songs could move between toughness and vulnerability in the same breath, which helped him stand apart in a crowded rap landscape.
             </p>
 
             <div class="quick-facts">
@@ -745,15 +727,15 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>New Orleans / Baton Rouge, Louisiana</strong>
+                <strong>Baton Rouge, Louisiana</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Pain rap and Southern trap</strong>
+                <strong>Emotional street rap, intensity, honesty</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Southern Rap Standout</strong>
               </div>
             </div>
 
@@ -761,22 +743,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1986</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Louisiana</div>
+                <span class="label">Origin</span>
+                <div class="value">Baton Rouge, Louisiana</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2010s–Present</div>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Confessional street realism</div>
+                <div class="value">Pain-driven storytelling</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Emotionally raw Southern voice</div>
               </div>
             </div>
           </section>
@@ -784,169 +767,160 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            
-<section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Baton Rouge Formation</h3>
-              <p>Kevin Jerome Gilyard, known professionally as Kevin Gates, was born on February 5, 1986, in Louisiana and spent his formative years in Baton Rouge after an early childhood split between New Orleans and the capital city. His upbringing was marked by instability, poverty, family disruption, and repeated exposure to the pressures that shape many artists who emerge from hard urban environments. In Gates’ case, those early realities did not simply become background detail—they became the foundation of his entire artistic language.</p>
-              <p>From the beginning, his music drew from lived tension rather than performance alone. He developed a voice that sounded personal, confessional, and bruised, often speaking about betrayal, incarceration, violence, depression, loyalty, ambition, and survival with unusual directness. That emotional bluntness would later separate him from many peers. Gates did not present himself as polished or distant; he built his identity around intensity, self-examination, and the feeling that every line came from actual experience.</p>
+              <h3>Baton Rouge Roots</h3>
+              <p>Kevin Gates came out of Baton Rouge, a city with a deep and often unforgiving rap tradition. His music reflects that environment: hard-edged, emotionally charged, suspicious, loyal, wounded, and deeply aware of the stakes of street life. But what made him stand out was not only that he came from difficulty. It was that he spoke about it with unusual openness, often exposing fear, trauma, contradiction, and psychological strain rather than hiding behind one-dimensional toughness.</p>
 
-              <h3>Mixtape Grind and Local Reputation</h3>
-              <p>Before national fame, Kevin Gates spent years building a following through regional buzz, features, and relentless mixtape work. In Southern rap tradition, the mixtape was not merely promotional—it was the proving ground where work ethic, storytelling, and street credibility were tested. Gates used that lane to sharpen his sound, developing a style that mixed Baton Rouge rawness with melody, pain, and surprisingly vulnerable reflection.</p>
-              <p>He gained traction because he could move between toughness and introspection without sounding forced. One song might feel like a prison letter, another like a hustler’s diary, another like a confession about emotional damage. That range helped him attract listeners who were looking for more than club records. Even early in his rise, he sounded like someone trying to document his psychology as much as his environment.</p>
+              <h3>Pain as the Core of the Music</h3>
+              <p>From early in his career, Gates sounded like an artist who understood that pain could be a language as powerful as aggression. His records often deal with incarceration, betrayal, family pressure, mental strain, ambition, and the emotional consequences of survival. That directness gave his music unusual weight. He did not simply narrate street life as performance; he often presented it as something heavy, exhausting, and spiritually costly.</p>
 
-              <div class="quote">Kevin Gates built his name on confession as much as aggression—his music often sounds like survival turned into testimony.</div>
+              <h3>Voice, Delivery, and Presence</h3>
+              <p>Kevin Gates also has one of the more recognizable deliveries in modern Southern rap. His voice carries force, but it also carries wear. He can sound reflective and threatening in the same verse, calm and intense in the same song. That tonal complexity gives his records a sense of lived experience. The words matter, but the weight behind them matters just as much.</p>
 
-              <h3>The Luca Brasi Era and Breakthrough</h3>
-              <p>His breakthrough accelerated through the <em>Luca Brasi</em> mixtape run, which helped turn him from a respected regional figure into a national name. Those projects showcased the formula that would define his public appeal: relentless output, memorable hooks, hard autobiographical detail, and a voice capable of sounding threatening, wounded, reflective, and motivational within the same record. By this stage, Kevin Gates was no longer just building buzz—he was building a cult following.</p>
-              <p>The momentum eventually led into his major commercial phase, with <em>Islah</em> becoming the centerpiece of his mainstream breakthrough. The project gave him chart visibility while preserving the emotional and biographical honesty that had made fans connect with him in the first place. Rather than smoothing his edges, success amplified them. Gates remained a rapper whose appeal came from sounding deeply personal, even when the audience around him became much larger.</p>
+              <div class="quote">Kevin Gates’ greatest strength is that he made raw confession feel compatible with street credibility, turning inner conflict into a central part of his power.</div>
 
-              <h3>Legal Trouble, Incarceration, and Public Complexity</h3>
-              <p>Like many artists whose biographies are tightly bound to hardship, Gates’ ascent was repeatedly interrupted by legal issues and time behind bars. Those interruptions became part of his public image, but they also reinforced one of the core themes in his catalog: the idea that success does not erase damage, trauma, or consequence. His music often returns to discipline, paranoia, pain, and the cost of survival, and those themes resonate in part because his life has repeatedly moved between advancement and setback.</p>
-              <p>He also became known for a public persona that could be provocative, controversial, philosophical, and unpredictable. Interviews, social media moments, and offbeat statements added to his mystique. For supporters, that unpredictability made him feel authentic and unfiltered. For critics, it made him polarizing. Either way, Kevin Gates remained difficult to ignore, because he consistently projected the sense that his art and his life were inseparable.</p>
+              <h3>Independence and Self-Made Momentum</h3>
+              <p>A major part of Gates’ story is the way he built momentum through persistence, mixtape work, and a fiercely loyal fan base. His rise felt earned rather than manufactured. Listeners connected not only to the music itself, but to the sense that he had lived what he described. That authenticity helped him thrive in a period when audiences increasingly valued artists who sounded personally invested in every line.</p>
 
-              <h3>Family, Faith, and Self-Reinvention</h3>
-              <p>A major part of Kevin Gates’ long-term appeal lies in the way he frames transformation. His work frequently touches on discipline, family responsibility, mental pressure, spiritual searching, loyalty, and the desire to become more controlled than the environment that formed him. He has often positioned himself not just as a rapper recounting street life, but as someone trying to understand the emotional and moral consequences of it.</p>
-              <p>This dimension gives his story an unusual tone. Gates is not only interested in victory; he is interested in inner conflict, self-mastery, and the tension between impulse and growth. That is why his records can feel motivational and damaged at the same time. He speaks in the language of struggle, but often with the cadence of somebody trying to rebuild himself while still carrying the scars.</p>
+              <h3>Spirituality, Reflection, and Contradiction</h3>
+              <p>Another reason Kevin Gates remains compelling is that his music often lives inside contradiction. He can sound disciplined and unstable, spiritually searching and consumed by earthly pressure, deeply loyal and profoundly distrustful. Rather than flatten those tensions, he often lets them remain unresolved. That gives his catalog emotional realism and makes his songs feel psychologically alive.</p>
 
-              <h3>Legacy and Position in Rap</h3>
-              <p>Kevin Gates occupies a distinctive place in modern Southern rap. He is not easily reduced to one label—street rapper, melodic artist, motivational speaker, controversial personality, and diaristic songwriter all fit, but none alone is sufficient. His best music helped normalize a style of masculine vulnerability in which toughness and emotional exposure were not opposites but companions.</p>
-              <p>His legacy rests on emotional honesty, mixtape-era consistency, regional pride, and the ability to make deeply personal struggle feel universal. For many listeners, Kevin Gates became the voice of pain with discipline, trauma with ambition, and confession without apology.</p>
+              <h3>Legacy</h3>
+              <p>Kevin Gates’ legacy rests on emotional honesty, regional identity, and sheer intensity. He helped prove that Southern street rap could be brutally confessional without losing force. His music remains important because it gave many listeners something more than swagger: it gave them struggle, self-analysis, and a voice that sounded unafraid to admit the damage beneath the image.</p>
             </section>
 
-            
-<section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1986 — Birth</strong>
-                  <p>Born Kevin Jerome Gilyard in Louisiana, with roots in both New Orleans and Baton Rouge.</p>
+                  <strong>2000s — Early Grind</strong>
+                  <p>Built his name through local work, mixtapes, and a hard-earned reputation in the Southern rap circuit.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Early Recording Years</strong>
-                  <p>Began building a reputation through local work, collaborations, and the Southern mixtape circuit.</p>
+                  <strong>2010s — Breakthrough Momentum</strong>
+                  <p>Reached a wider audience through intensely personal street records and strong fan loyalty.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2013–2014 — Luca Brasi Breakthrough</strong>
-                  <p>The <em>Luca Brasi</em> mixtape era expanded his audience and established his confessional, pain-driven style.</p>
+                  <strong>2010s — National Recognition</strong>
+                  <p>Became one of the most recognizable emotional street-rap voices in mainstream Southern hip-hop.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2016 — Mainstream Peak</strong>
-                  <p><em>Islah</em> pushed Kevin Gates into the national spotlight and confirmed him as a major Southern rap voice.</p>
+                  <strong>2020s — Veteran Presence</strong>
+                  <p>Maintained relevance through consistency, identity, and a catalog built on real-life weight.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2010s–Present — Endurance and Reinvention</strong>
-                  <p>Continued releasing music while balancing controversy, legal setbacks, family life, and personal reinvention.</p>
+                  <strong>Current Era</strong>
+                  <p>Remains an influential artist whose honesty and intensity continue to resonate with listeners.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Kevin Jerome Gilyard</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Kevin Gates</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">Louisiana, United States</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Kevin Jerome Gilyard</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Baton Rouge, Louisiana</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Southern Hip-Hop / Trap / Melodic Rap</div>
+                  <div class="info-value">Hip-Hop / Southern Rap / Street Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active artist with enduring cult and mainstream reach</div>
+                  <div class="info-value">Established Southern rap artist with a deeply loyal audience</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Pain Rap</span>
                 <span class="tag">Baton Rouge</span>
-                <span class="tag">Incarceration</span>
+                <span class="tag">Pain</span>
                 <span class="tag">Loyalty</span>
-                <span class="tag">Self-Reflection</span>
                 <span class="tag">Survival</span>
+                <span class="tag">Reflection</span>
+                <span class="tag">Southern Rap</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Mixtape Ascent</strong>
-                  <span>The years when relentless mixtapes and regional momentum built his reputation.</span>
+                  <strong>Mixtape Survival Era</strong>
+                  <span>The early phase where Kevin Gates built credibility through hunger, realism, and relentless output.</span>
                 </div>
                 <div class="album">
-                  <strong>Luca Brasi to Islah</strong>
-                  <span>The breakthrough stretch that transformed him from local name into national force.</span>
+                  <strong>Emotional Street Breakthrough Era</strong>
+                  <span>The period where his confessional writing and intense delivery made him a major Southern voice.</span>
                 </div>
                 <div class="album">
-                  <strong>Reflection and Reinvention</strong>
-                  <span>The later era defined by resilience, family, discipline, controversy, and artistic endurance.</span>
+                  <strong>Veteran Baton Rouge Voice Era</strong>
+                  <span>A mature phase defined by consistency, identity, and continued emotional resonance.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Kevin Gates.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Kevin Gates on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Kevin%20Gates" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Kevin Gates.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Kevin Gates on Spotify and explore the records that made him one of Southern rap’s most emotionally intense voices.</p>
+                  <a href="https://open.spotify.com/search/Kevin%20Gates" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live performances, and major Kevin Gates releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Kevin+Gates+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Kevin Gates on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Kevin+Gates+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">2 Phones</span>
+                  <span class="track-tag">Really Really</span>
+                  <span class="track-tag">Satellites</span>
+                  <span class="track-tag">I Don't Get Tired</span>
+                  <span class="track-tag">Time for That</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">2 Phones</span>
-                <span class="track-tag">Really Really</span>
-                <span class="track-tag">Satellites</span>
-                <span class="track-tag">I Don’t Get Tired</span>
-              </div>
-            </div>
-          </section>
-
-
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="lil-durk.html" class="related-card">
-                  <h4>Lil Durk</h4>
-                  <p>Another modern rap figure whose pain, loss, loyalty, and legal pressure shaped an emotionally charged career.</p>
+                <a href="boosie-badazz.html" class="related-card">
+                  <h4>Boosie Badazz</h4>
+                  <p>A fellow Baton Rouge voice whose music also carries pain, struggle, and deep regional identity.</p>
                 </a>
-                <a href="nba-youngboy.html" class="related-card">
+                <a href="youngboy-never-broke-again.html" class="related-card">
                   <h4>NBA YoungBoy</h4>
-                  <p>A fellow Louisiana star whose intensity, nonstop output, and personal turmoil echo adjacent themes.</p>
+                  <p>Another Louisiana artist whose emotionally open street music reflects a later generation’s version of similar intensity.</p>
                 </a>
                 <a href="future.html" class="related-card">
                   <h4>Future</h4>
-                  <p>A major Southern architect whose melodic darkness and emotional distance offer a different but related lane.</p>
+                  <p>A Southern rap giant whose music also helped normalize vulnerability, exhaustion, and emotional darkness in mainstream rap.</p>
                 </a>
               </div>
             </section>
@@ -973,55 +947,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
+    rail.innerHTML = "";
 
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+      rail.appendChild(dot);
+    });
 
-  let lastScrollY = window.pageYOffset;
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
