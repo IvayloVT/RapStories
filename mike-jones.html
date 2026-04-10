@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mike Jones | Rap Stories</title>
-  <meta name="description" content="A breakout Houston star of the mid-2000s, Mike Jones turned repetition, hustle, and local identity into a nationally recognized brand." />
+  <meta name="description" content="A Rap Stories premium profile on Mike Jones, covering his Houston roots, Swishahouse-era rise, ringtone-era breakthrough, unforgettable self-branding, and lasting place in Southern rap culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,195 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover { transform: translateY(-2px); }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden { transform: translateY(-100%); }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +658,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +683,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Mike Jones</h2>
-              <p>A breakout Houston star of the mid-2000s, Mike Jones turned repetition, hustle, and local identity into a nationally recognized brand.</p>
+              <p>Houston rapper whose relentless self-promotion, city-wide pride, and ringtone-era breakthrough made him one of Southern rap’s most unforgettable personalities.</p>
             </div>
           </aside>
 
@@ -735,13 +691,13 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Mike Jones</span></h1>
             <p class="summary">
-              Mike Jones became one of the most memorable faces of Houston’s commercial explosion in the mid-2000s. His success was built on grassroots promotion, relentless branding, Southern pride, and a style designed to be instantly recognizable.
+              Mike Jones became a defining face of mid-2000s Houston rap by turning repetition into branding and branding into fame. His rise came out of a regional scene already rich with identity, but he found a way to make himself impossible to ignore. From club records to radio hooks to one of the most memorable self-marketing campaigns in rap history, Mike Jones represented a moment when Southern rap, mobile culture, and mass visibility collided.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>November 18, 1981</strong>
+                <strong>Michael Allen Jones</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -749,11 +705,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Houston breakout hits</strong>
+                <strong>Who Is Mike Jones?, Swishahouse, ringtone-era branding</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Southern Rap Icon</strong>
               </div>
             </div>
 
@@ -761,22 +717,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1981</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Houston, Texas</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2000s–Present</div>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Independent self-branding</div>
+                <div class="value">Self-branding mastery</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Houston mainstream crossover</div>
               </div>
             </div>
           </section>
@@ -784,148 +741,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Grinding for Attention</h3>
-              <p>Mike Jones came from Houston’s local rap economy, where self-promotion mattered almost as much as music. He developed a public image built around repetition, accessibility, and hustle, understanding that memorability was a competitive weapon.</p>
-              <p>His name became a catchphrase because he pushed it everywhere. That branding instinct helped him cut through a crowded rap market.</p>
-              <h3>Mid-2000s Breakthrough</h3>
-              <p>As Houston rap surged into the national spotlight, Mike Jones became one of the city’s best-known ambassadors. His records carried regional flavor while still being built for broad recognition. He made Southern identity marketable on a huge scale without hiding where he came from.</p>
-              <p>His rise also represented a shift in rap promotion, where direct contact, local grind, and self-created visibility could become mainstream momentum.</p>
+              <h3>Houston Roots and Local Identity</h3>
+              <p>Mike Jones came out of Houston at a time when the city’s rap scene already had a powerful regional identity. Screwed-up production, slab culture, neighborhood pride, and independent hustle were central to the city’s sound and business model. Jones did not try to hide that background or smooth it out for national acceptance. Instead, he amplified it. His music, cadence, and public image all carried the unmistakable stamp of Houston.</p>
+
+              <h3>Grinding Before the Breakout</h3>
+              <p>Before major visibility, Mike Jones spent years building his name through local circuits, collaborations, and persistence. That grind became part of his mythology. He was not presented as an overnight industry invention, but as someone who had fought to make himself visible. His career was built on relentless repetition, not only in songs but in marketing. He understood early that recognition was not just about talent. It was about staying in people’s minds long enough that your name became unavoidable.</p>
+
+              <h3>The Genius of Repetition</h3>
+              <p>What separated Mike Jones from many of his peers was his absolute commitment to self-branding. He repeated his name constantly. He made his phone number part of his image. He turned what could have looked like overexposure into a strategy. In doing so, he anticipated the logic of later internet-era personal branding: be simple, memorable, quotable, and impossible to forget. He was not just selling songs. He was selling recall.</p>
+
+              <h3>Who Is Mike Jones? and the Mainstream Moment</h3>
+              <p>His biggest commercial moment came when that local momentum expanded outward and connected with national rap audiences. <em>Who Is Mike Jones?</em> captured a particular era in hip-hop and pop culture, when radio, mixtapes, ringtones, and personality-driven visibility all reinforced each other. Mike Jones fit that moment perfectly. His records were catchy, his persona was clear, and his image was easy to transmit across clubs, cars, phones, and TV.</p>
+
+              <div class="quote">Mike Jones turned a question into a slogan, a slogan into a brand, and a brand into one of the most recognizable rap identities of the 2000s.</div>
+
+              <h3>Houston Ambassador and Cultural Memory</h3>
+              <p>Even beyond chart success, Mike Jones mattered because he helped bring Houston’s scene into wider mainstream focus. He was part of a broader Southern expansion, but his role felt distinct. He represented a version of rap celebrity built less on mystery and more on accessibility, repetition, and local pride. He felt like a neighborhood figure scaled up to national recognition without losing the directness that made him compelling in the first place.</p>
+
               <h3>Legacy</h3>
-              <p>Mike Jones remains an emblem of the mid-2000s Houston wave. His impact lies in branding, regional pride, and a model of promotion that turned repetition into power.</p>
+              <p>Mike Jones remains a memorable and important figure in Southern rap because his career captured more than just hit records. It captured a change in how rappers could market themselves, how regional stars could become national brands, and how identity could be simplified into unforgettable shorthand. His legacy lives in Houston rap history, ringtone-era nostalgia, and the broader story of artists who understood that attention itself could be turned into an art form.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1981 — Birth</strong>
-                  <p>Born Michael Allen Jones in Houston, Texas.</p>
+                  <strong>Early 2000s — Houston Grind</strong>
+                  <p>Built momentum through local releases, collaborations, and a growing reputation inside Houston’s independent rap network.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 2000s — Local Hustle</strong>
-                  <p>Built visibility through grassroots promotion and regional momentum.</p>
+                  <strong>Mid-2000s — Breakout Visibility</strong>
+                  <p>Turned his name, voice, and branding approach into national attention during one of Southern rap’s biggest expansion periods.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2000s — National Breakthrough</strong>
-                  <p>Became one of Houston’s most visible commercial rap stars.</p>
+                  <strong>2005 — Who Is Mike Jones?</strong>
+                  <p>Reached peak mainstream recognition with a project that made him one of the most visible rap personalities of the era.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2000s — Recognition</strong>
-                  <p>Remained tied to the era that pushed Houston further into mainstream rap.</p>
+                  <strong>Late 2000s — Cultural Staying Power</strong>
+                  <p>Remained tied to the memory of Houston’s major crossover years and the ringtone-driven commercial rap moment.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Present — Legacy Presence</strong>
-                  <p>Continues to be remembered as a symbol of Houston’s breakout moment.</p>
+                  <strong>2010s / 2020s — Legacy Recognition</strong>
+                  <p>Continued to be remembered as a defining Houston figure whose branding strategy and personality left a lasting mark.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Michael Allen Jones</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Mike Jones</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Michael Allen Jones</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Houston, Texas</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Southern Rap</div>
+                  <div class="info-value">Hip-Hop / Southern Rap / Houston Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; remembered for Houston breakout era</div>
+                  <div class="info-value">Widely remembered as a signature voice of Houston’s 2000s mainstream breakthrough</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Hustle</span>
+                <span class="tag">Houston</span>
+                <span class="tag">Swishahouse</span>
                 <span class="tag">Branding</span>
-                <span class="tag">Regional Pride</span>
-                <span class="tag">Visibility</span>
-                <span class="tag">Independence</span>
-                <span class="tag">Catchphrases</span>
+                <span class="tag">Ringtone Era</span>
+                <span class="tag">Southern Rap</span>
+                <span class="tag">Repetition</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Grassroots Grind</strong>
-                  <span>The local stage where visibility and hustle drove his rise.</span>
+                  <strong>Local Hustle Era</strong>
+                  <span>The phase where Mike Jones built his name inside Houston through persistence and regional visibility.</span>
                 </div>
                 <div class="album">
-                  <strong>Houston Crossover</strong>
-                  <span>The national phase where the city’s sound reached a wider audience.</span>
+                  <strong>Mainstream Breakthrough Era</strong>
+                  <span>The period where his branding and singles turned him into one of rap’s most instantly recognizable personalities.</span>
                 </div>
                 <div class="album">
-                  <strong>Regional Legacy</strong>
-                  <span>His continuing place as a recognizable symbol of mid-2000s Southern rap.</span>
+                  <strong>Legacy Memory Era</strong>
+                  <span>A later phase where his name became permanently tied to Houston’s 2000s crossover story.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Mike Jones on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Mike%20Jones" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Mike Jones.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Mike Jones on Spotify and explore the records that defined his Houston breakout.</p>
+                  <a href="https://open.spotify.com/search/Mike%20Jones" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, classic performances, and major Mike Jones releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Mike+Jones+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Mike Jones on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Mike+Jones+official+music" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Still Tippin'</span>
+                  <span class="track-tag">Back Then</span>
+                  <span class="track-tag">Flossin'</span>
+                  <span class="track-tag">Turning Lane</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Still Tippin’</span>
-                <span class="track-tag">Back Then</span>
-                <span class="track-tag">Flossin’</span>
-                <span class="track-tag">Mr. Jones</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="z-ro.html" class="related-card">
-                  <h4>Z-Ro</h4>
-                  <p>Another Houston artist whose music represented a deeper emotional side of the city.</p>
+                <a href="paul-wall.html" class="related-card">
+                  <h4>Paul Wall</h4>
+                  <p>A fellow Houston figure whose rise helped define the city’s major crossover years.</p>
                 </a>
-                <a href="dr-dre.html" class="related-card">
-                  <h4>Dr. Dre</h4>
-                  <p>A figure from another coast who also understood the power of sonic identity and branding.</p>
+                <a href="chamillionaire.html" class="related-card">
+                  <h4>Chamillionaire</h4>
+                  <p>Another Southern rap strategist who turned strong branding and regional identity into mainstream visibility.</p>
                 </a>
-                <a href="snoop-dogg.html" class="related-card">
-                  <h4>Snoop Dogg</h4>
-                  <p>A rap icon whose name, voice, and image became their own enduring brand.</p>
+                <a href="trae-tha-truth.html" class="related-card">
+                  <h4>Trae Tha Truth</h4>
+                  <p>A powerful comparison point in Houston rap’s broader story of local respect and long-term cultural presence.</p>
                 </a>
               </div>
             </section>
@@ -952,95 +920,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

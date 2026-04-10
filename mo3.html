@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MO3 | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on MO3, covering his Dallas upbringing, melodic street music, regional rise, major records, tragic killing, and posthumous legacy." />
+  <meta name="description" content="A Rap Stories premium profile on MO3, covering his Dallas roots, melodic street-rap style, Shottaz run, Boosie collaboration era, and lasting legacy in Southern rap." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,195 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover { transform: translateY(-2px); }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden { transform: translateY(-100%); }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +658,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +683,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>MO3</h2>
-              <p>Dallas storyteller whose pain-heavy melodies, street narratives, and regional authenticity made him one of Texas rap's most distinct voices.</p>
+              <p>Dallas rapper and singer whose raw street storytelling, melodic pain, and emotionally direct records made him one of his city’s most unforgettable voices.</p>
             </div>
           </aside>
 
@@ -735,13 +691,13 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>MO3</span></h1>
             <p class="summary">
-              Born Melvin Abdul Noble Jr., MO3 emerged from North Dallas with music that blended confessional singing, raw street detail, and emotional realism. His rise turned him into one of the most recognizable voices in modern Texas rap, while his 2020 killing froze a fast-moving career and turned his story into one of talent, pain, violence, and posthumous legacy.
+              MO3 emerged from Dallas with a style that felt both hard and deeply vulnerable. He could rap from the perspective of street survival while also sounding wounded, reflective, and spiritually restless. That emotional openness, combined with Southern melody and realism, gave his music unusual weight. His rise was built on authenticity, regional loyalty, and the ability to turn personal struggle into songs that felt painfully close to real life.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>May 31, 1992</strong>
+                <strong>Melvin Abdul Noble Jr.</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -749,11 +705,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Melodic street rap</strong>
+                <strong>Shottaz series, melodic street rap, Broken Love</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Deceased</strong>
+                <strong>Dallas Rap Figure</strong>
               </div>
             </div>
 
@@ -761,22 +717,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1992</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Dallas</div>
+                <span class="label">Origin</span>
+                <div class="value">Dallas, Texas</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2010s</div>
+                <div class="value">2010s–2020</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Pain-driven melodies</div>
+                <div class="value">Melodic pain rap</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Modern Dallas street voice</div>
               </div>
             </div>
           </section>
@@ -784,165 +741,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and North Dallas Roots</h3>
-              <p>MO3 was born Melvin Abdul Noble Jr. on May 31, 1992, in McKinney, Texas, and was raised in North Dallas. His music would later reflect the instability, pressure, grief, and survival instincts of that environment. Unlike artists who built their appeal primarily through image, MO3 built his audience through emotional directness. He sounded wounded, defiant, reflective, and urgent all at once.</p>
-              <p>That combination became central to his identity. His records often felt less like polished industry product and more like testimony. He was able to merge singing and rapping in a way that gave even aggressive songs a sense of vulnerability. For listeners in Dallas and across the South, that honesty was part of what made him believable.</p>
+              <h3>Dallas Roots and Early Pain</h3>
+              <p>MO3, born Melvin Abdul Noble Jr., came out of North Dallas with music shaped by instability, grief, loyalty, and survival. His records often felt like conversations with pressure itself. He did not hide the trauma, paranoia, or spiritual conflict inside his world. Instead, he let those things sit at the center of the music. That honesty helped make him more than a regional rapper. It made him someone listeners believed.</p>
 
-              <h3>Regional Buzz and the Rise of a Texas Voice</h3>
-              <p>MO3 began gaining serious traction in the mid-2010s with releases such as <em>Shottaz</em> and <em>Shottaz Reloaded</em>. Songs like “Hold Ya Tongue” helped establish him as a regional name, but his larger breakthrough came when his catalog started circulating beyond Dallas through YouTube, streaming, and street-level word of mouth. His music carried the melodic instinct of modern Southern rap while remaining rooted in local Texas realities.</p>
-              <p>He stood out because he could move between pain records, street records, and reflective records without sounding manufactured. That made him more than a local rapper with buzz. He began to feel like a full artist with a real emotional register, someone whose audience believed him because the records sounded lived-in.</p>
+              <h3>The Shottaz Rise</h3>
+              <p>One of the key building blocks of his career was the <em>Shottaz</em> run, which helped establish his identity in Texas rap and beyond. Those releases gave fans the core of the MO3 sound: pain-filled melodies, hard-earned street detail, and a voice that could move from confrontation to heartbreak in the space of a single song. He sounded local in the best sense — deeply connected to Dallas — but emotionally broad enough to travel far beyond it.</p>
 
-              <div class="quote">MO3’s best music sounded like confession under pressure: melodic, wounded, streetwise, and unmistakably Texan.</div>
+              <h3>Melody, Street Realism, and Distinction</h3>
+              <p>What made MO3 special was the way he blended singing and rapping without smoothing out the pain. His music was melodic, but it was not soft. It was full of danger, memory, and emotional collapse. He could sound like someone confessing, warning, mourning, and praying at the same time. That made his songs feel more intimate than much of the harder-edged street rap around him.</p>
 
-              <h3>Mainstream Growth and Major Records</h3>
-              <p>By the late 2010s and into 2020, MO3 had become one of the strongest emerging voices from Dallas. His collaborations expanded his reach, including high-profile work with Boosie Badazz. The joint project <em>BadAzz MO3</em> helped elevate him nationally, while songs such as “Broken Love” and “Errybody” strengthened his crossover recognition. He was not yet at the commercial ceiling of his career, but the trajectory was clear: he was moving from regional force to nationally recognized Southern artist.</p>
-              <p>What made that rise compelling was that it never seemed disconnected from his core fanbase. He still sounded like Dallas. He still sounded like a man translating pressure into melody. Even as the audience widened, his appeal remained tied to pain, memory, and local authenticity rather than polish alone.</p>
+              <h3>Broader Recognition and Collaboration</h3>
+              <p>As his audience expanded, key releases and collaborations pushed him into a larger Southern rap conversation. His partnership with Boosie Badazz helped bring even more attention to his catalog, while songs like “Broken Love” showed how strongly his vulnerability connected with listeners. He represented a kind of modern street artist whose pain was never hidden behind image. It was the image.</p>
 
-              <h3>Death and the Violent End of a Rising Career</h3>
-              <p>On November 11, 2020, MO3 was shot and killed in Dallas after a highway confrontation on Interstate 35E. His death, at just 28 years old, shocked fans and the wider rap world. It instantly transformed his story from one of fast-moving ascent into one of unfinished potential. In the years that followed, the killing remained a major subject of investigation and legal proceedings.</p>
-              <p>The tragedy deepened the emotional weight of his catalog. Many listeners returned to his songs hearing not just struggle, but foreshadowing. His music, already full of pain and mortality, began to feel even more haunting after his death.</p>
+              <div class="quote">MO3’s music carried the sound of somebody trying to survive emotionally, spiritually, and physically at the same time — and refusing to fake strength he did not feel.</div>
 
-              <h3>Posthumous Legacy</h3>
-              <p>MO3’s legacy continued after his death through streaming growth, renewed attention to his back catalog, and the posthumous success of <em>Shottaz 4Eva</em>. His music remained important to fans who saw him as one of the clearest voices to emerge from Dallas rap in his era. He was not simply a regional rapper who briefly went viral; he became part of a longer Texas rap lineage shaped by pain, melody, and street testimony.</p>
-              <p>His story now sits at the intersection of talent and tragedy. He is remembered as an artist who seemed to be approaching a bigger national breakthrough, but whose career was cut short before its full scale could be measured. That unfinished quality is part of what keeps his music alive: the sense that his best years may still have been ahead of him.</p>
+              <h3>Loss and Legacy</h3>
+              <p>MO3’s story is inseparable from tragedy, but reducing him only to that would miss the deeper truth of his work. What made him matter was the way he documented pain while still making it musical, memorable, and human. He helped define a modern Dallas sound rooted in melody, confession, and tension. His absence deepened the meaning of the catalog he left behind.</p>
+
+              <h3>Legacy</h3>
+              <p>MO3 remains one of the most important late voices in modern Texas rap. His influence lives in artists who combine melody with hard realism, and in listeners who connected to the emotional honesty running through his music. He stands as a reminder that street rap can be brutally direct without giving up vulnerability, and that some of the most powerful voices in hip-hop are the ones that sound closest to breaking.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1992 — Birth</strong>
-                  <p>Born Melvin Abdul Noble Jr. in McKinney, Texas, before being raised in North Dallas.</p>
+                  <strong>2014 — Shottaz Emergence</strong>
+                  <p>Began gaining real regional attention through early <em>Shottaz</em> releases and a highly personal Dallas-rooted style.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2014 — Shottaz Era Begins</strong>
-                  <p>Released early breakout work that helped establish his local and regional profile.</p>
+                  <strong>2016 — Shottaz Reloaded Momentum</strong>
+                  <p>Expanded his reach with a stronger street following and growing recognition across Southern rap circles.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2016 — Growing Dallas Buzz</strong>
-                  <p><em>Shottaz Reloaded</em> and online momentum strengthened his reputation as a serious Texas voice.</p>
+                  <strong>2020 — BadAzz MO3</strong>
+                  <p>Released a collaborative project with Boosie Badazz that pushed his name further into the mainstream rap conversation.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020 — National Momentum</strong>
-                  <p>Built broader recognition through major collaborations and the project <em>BadAzz MO3</em>.</p>
+                  <strong>2020 — Broken Love Era</strong>
+                  <p>Reached a broader audience with emotionally heavy records that highlighted his gift for melodic pain rap.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>November 11, 2020 — Death</strong>
-                  <p>Was killed in Dallas in a shooting that ended one of the city's fastest-rising rap careers.</p>
-                </div>
-                <div class="timeline-item">
-                  <strong>2021 — Posthumous Success</strong>
-                  <p><em>Shottaz 4Eva</em> extended his reach and reinforced his place in modern Texas rap memory.</p>
+                  <strong>2021 and Beyond — Lasting Legacy</strong>
+                  <p>His music continued to resonate after his death, cementing him as one of Dallas rap’s most powerful modern voices.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Melvin Abdul Noble Jr.</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">MO3</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">McKinney / North Dallas, Texas</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Melvin Abdul Noble Jr.</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Dallas, Texas</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Southern Hip-Hop / Melodic Rap</div>
+                  <div class="info-value">Hip-Hop / Southern Rap / Melodic Street Rap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Legacy</span>
-                  <div class="info-value">Dallas rap standout</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Remembered as a defining modern Dallas rap voice</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Dallas Rap</span>
-                <span class="tag">Pain Music</span>
-                <span class="tag">Street Testimony</span>
-                <span class="tag">Melodic Rap</span>
-                <span class="tag">Southern Hip-Hop</span>
-                <span class="tag">Posthumous Legacy</span>
+                <span class="tag">Dallas</span>
+                <span class="tag">Shottaz</span>
+                <span class="tag">Pain</span>
+                <span class="tag">Melody</span>
+                <span class="tag">Street Realism</span>
+                <span class="tag">Southern Rap</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Local Emergence</strong>
-                  <span>The years in which MO3 built his name through Dallas records and raw online momentum.</span>
+                  <strong>Shottaz Era</strong>
+                  <span>The phase where MO3 built his identity through local pressure, raw emotion, and Dallas authenticity.</span>
                 </div>
                 <div class="album">
-                  <strong>Regional to National Rise</strong>
-                  <span>A period of expanding collaborations, stronger numbers, and broader recognition outside Texas.</span>
+                  <strong>BadAzz MO3 Era</strong>
+                  <span>The period where high-profile collaboration helped expand his audience while keeping his core sound intact.</span>
                 </div>
                 <div class="album">
-                  <strong>Legacy After Death</strong>
-                  <span>The phase in which his posthumous music and story deepened his cultural weight.</span>
+                  <strong>Legacy Era</strong>
+                  <span>A lasting chapter where his catalog came to represent one of modern Texas rap’s most emotional voices.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for MO3.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for MO3 on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/MO3" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for MO3.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for MO3 on Spotify and explore the records that defined his Dallas rise.</p>
+                  <a href="https://open.spotify.com/search/MO3" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, live clips, and major MO3 releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=MO3+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to MO3 on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=MO3+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Broken Love</span>
+                  <span class="track-tag">Outside</span>
+                  <span class="track-tag">Errybody</span>
+                  <span class="track-tag">I'm the Truth</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Outside</span>
-                <span class="track-tag">Broken Love</span>
-                <span class="track-tag">Everybody</span>
-                <span class="track-tag">Mop Wit It</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="juice-wrld.html" class="related-card">
-                  <h4>Juice WRLD</h4>
-                  <p>A strong emotional pairing through pain-heavy melodies and confessional storytelling.</p>
+                <a href="boosie-badazz.html" class="related-card">
+                  <h4>Boosie Badazz</h4>
+                  <p>A major collaborator whose chemistry with MO3 helped bring his music to a wider Southern audience.</p>
                 </a>
-                <a href="quando-rondo.html" class="related-card">
-                  <h4>Quando Rondo</h4>
-                  <p>A close vault match through Southern realism, melody, trauma, and public controversy.</p>
+                <a href="kevin-gates.html" class="related-card">
+                  <h4>Kevin Gates</h4>
+                  <p>Another Southern artist known for mixing vulnerability, street survival, and melodic intensity.</p>
                 </a>
                 <a href="young-dolph.html" class="related-card">
                   <h4>Young Dolph</h4>
-                  <p>Another Southern story rooted in regional grind, loyalty, and a tragic ending.</p>
+                  <p>A comparison point in independent Southern identity, regional loyalty, and emotionally grounded street storytelling.</p>
                 </a>
               </div>
             </section>
@@ -969,95 +920,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
