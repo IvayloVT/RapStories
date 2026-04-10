@@ -1,0 +1,6 @@
+﻿# Replace https://example.com with your live production domain before deployment.
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+
+Sitemap: https://example.com/sitemap.xml
