@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LL Cool J | Rap Stories</title>
-  <meta name="description" content="A Rap Stories premium profile on LL Cool J, covering background, rise, impact, controversy, major works, and legacy." />
+  <meta name="description" content="A Rap Stories premium profile on LL Cool J, covering his Queens roots, Def Jam breakthrough, rap superstardom, crossover success, and lasting influence on hip-hop culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -18,8 +18,10 @@
       --radius: 20px;
       --max: 1260px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
@@ -29,9 +31,12 @@
       color: var(--text);
       line-height: 1.7;
     }
+
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
+
     .container { width: min(92%, var(--max)); margin: 0 auto; }
+
     .glass {
       background: var(--panel);
       border: 1px solid var(--panel-border);
@@ -40,18 +45,18 @@
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
+
     header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
+      position: sticky;
+      top: 0;
       z-index: 1000;
       background: rgba(5, 5, 8, 0.76);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-      transition: transform 0.3s ease;
     }
-    header.hidden { transform: translateY(-100%); }
+
     .nav {
       min-height: 82px;
       display: flex;
@@ -59,182 +64,618 @@
       align-items: center;
       gap: 24px;
     }
+
     .brand {
-      display: flex; align-items: center; gap: 12px;
-      font-weight: 900; letter-spacing: 0.6px; font-size: 1.02rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
     }
+
     .brand-mark {
-      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      color: #111; font-weight: 900; box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
     }
+
     .brand-text {
-      font-weight: 900; letter-spacing: 0.5px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
       background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .nav-links { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-    .nav-links a { position:relative; color: var(--muted); transition: color 0.25s ease; font-size:0.96rem; }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
     .nav-links a::after {
-      content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
       background: linear-gradient(135deg, #d4af37, #fff0a5);
-      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
     }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
     .nav-btn {
-      padding: 12px 20px; border-radius: 999px; background: linear-gradient(135deg, #d4af37, #f5df8f);
-      color: #111; font-weight: 800; border:none; box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(212,175,55,0.28); }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
     .hero { padding: 42px 0 28px; }
-    .breadcrumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 18px; }
-    .hero-layout { display:grid; grid-template-columns:370px 1fr; gap:28px; align-items:stretch; }
-    .artist-image { overflow:hidden; position:relative; min-height:560px; }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .artist-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+    }
+
     .artist-image::before {
-      content:""; position:absolute; inset:0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/ll-cool-j.jpg") center/cover no-repeat;
     }
+
     .artist-image-content {
-      position:relative; z-index:1; height:100%; display:flex; flex-direction:column;
-      justify-content:flex-end; padding:28px;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
     }
+
     .artist-tag {
-      align-self:flex-start; padding:8px 12px; border-radius:999px;
-      background: rgba(10,10,15,0.76); border:1px solid rgba(255,255,255,0.10);
-      font-size:0.8rem; font-weight:800; margin-bottom:14px;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(10,10,15,0.76);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
-    .artist-image h2 { font-size:2rem; margin-bottom:8px; }
-    .artist-image p { color:#d7d7df; font-size:0.95rem; }
-    .hero-info { padding:28px; }
+
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
+
+    .hero-info { padding: 28px; }
+
     .eyebrow {
-      display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
-      background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
+
     .hero-info h1 {
-      font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 0.98; letter-spacing: -2px; margin-bottom: 14px; font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+      font-weight: 900;
     }
+
     .hero-info h1 span {
       background: linear-gradient(135deg, var(--accent), #fff0a5, #ffffff);
-      -webkit-background-clip:text; background-clip:text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .summary { color: var(--muted); font-size:1.05rem; margin-bottom:22px; max-width:760px; }
-    .quick-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:22px; }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
     .fact {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .fact span { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .fact strong { font-size:1rem; color: var(--text); }
-    .hero-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .fact strong { font-size: 1rem; color: var(--text); }
+
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
     .btn {
-      padding:14px 18px; border-radius:14px; border:1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04); color: var(--text); font-weight: 800; transition:0.25s ease; cursor:pointer;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+      cursor: pointer;
     }
+
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
-    main { padding-bottom:50px; }
-    .content-layout { display:grid; grid-template-columns:1.6fr 0.9fr; gap:24px; margin-top:26px; }
-    .content-stack, .side-stack { display:grid; gap:22px; }
-    .side-stack { align-self:start; position:sticky; top:96px; }
-    .panel { padding:28px; }
-    .panel h2 { font-size:1.7rem; margin-bottom:16px; letter-spacing:-0.5px; }
-    .panel h3 { font-size:1.15rem; margin:22px 0 10px; color: var(--text); }
-    .panel p { color:#dadade; margin-bottom:14px; }
-    .quote {
-      margin-top:14px; padding:18px 20px; border-left:3px solid var(--accent);
-      border-radius:14px; background: rgba(255,255,255,0.03); color:#e5e5ea; font-style:italic;
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
     }
-    .timeline { position:relative; padding-left:18px; }
+
+    main { padding-bottom: 50px; }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .content-stack, .side-stack { display: grid; gap: 22px; }
+
+    .side-stack {
+      align-self: start;
+      position: sticky;
+      top: 96px;
+    }
+
+    .panel { padding: 28px; }
+
+    .panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    .panel p {
+      color: #dadade;
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #e5e5ea;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
     .timeline::before {
-      content:""; position:absolute; top:6px; left:5px; bottom:6px; width:2px;
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      bottom: 6px;
+      width: 2px;
       background: linear-gradient(var(--accent), rgba(255,255,255,0.06));
     }
-    .timeline-item { position:relative; padding-left:24px; margin-bottom:20px; }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
     .timeline-item::before {
-      content:""; position:absolute; left:-1px; top:7px; width:12px; height:12px; border-radius:50%;
-      background: var(--accent); box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.12);
     }
-    .timeline-item strong { display:block; margin-bottom:6px; font-size:1rem; }
-    .timeline-item p { color: var(--muted); margin:0; font-size:0.95rem; }
-    .info-list, .discography, .related-list { display:grid; gap:14px; }
-    .info-row { padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .info-row:last-child { border-bottom:none; padding-bottom:0; }
-    .info-label { display:block; color: var(--muted); font-size:0.84rem; margin-bottom:4px; }
-    .info-value { color: var(--text); font-weight:700; }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
+
+    .info-row {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 4px;
+    }
+
+    .info-value { color: var(--text); font-weight: 700; }
+
     .album, .related-card {
-      padding:16px; border-radius:16px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .album strong, .related-card h4 { display:block; margin-bottom:6px; }
-    .album span, .related-card p { color: var(--muted); font-size:0.92rem; }
-    .related-card:hover { transform: translateY(-3px); border-color: rgba(212,175,55,0.25); }
-    .tags { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .album strong, .related-card h4 {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .album span, .related-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .tag {
-      padding:9px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.85rem; font-weight:700;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 1150px) {
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
+      .side-stack { position: static; }
+    }
+
+    @media (max-width: 820px) {
+      .quick-facts { grid-template-columns: 1fr 1fr; }
+      .nav { flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: center; }
+      .artist-image { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .quick-facts { grid-template-columns: 1fr; }
+      .panel, .hero-info { padding: 22px; }
+      .hero { padding-top: 34px; }
+      .hero-info h1 { letter-spacing: -1px; }
+    }
+
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
+
     .artist-stats {
-      display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:14px; margin-top:20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
     }
     .stat-panel {
-      padding:16px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .stat-panel .label { display:block; color: var(--muted); font-size:0.82rem; margin-bottom:6px; }
-    .stat-panel .value { color: var(--text); font-weight:800; line-height:1.3; }
-    .music-panel { margin-top:24px; }
-    .music-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .music-panel {
+      margin-top: 24px;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
     .music-card {
-      padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .music-card h3 { margin-bottom:10px; font-size:1rem; }
-    .music-card p { margin-bottom:14px; }
+
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .music-card p {
+      margin-bottom: 14px;
+    }
+
     .music-link-btn {
-      display:inline-flex; align-items:center; justify-content:center; padding:13px 16px; border-radius:14px;
-      border:1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.05); color: var(--text); font-weight:800; transition:0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
     }
-    .music-link-btn:hover { transform: translateY(-2px); border-color: rgba(212,175,55,0.35); }
-    .music-link-btn.primary { background: linear-gradient(135deg, var(--accent), #f5df8f); color:#111; border:none; }
+
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+
     .essential-tracks {
-      margin-top:20px; padding:18px; border-radius:18px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .track-list { display:flex; flex-wrap:wrap; gap:10px; }
+
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .track-tag {
-      padding:10px 12px; border-radius:999px; background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.09); color:#ededf1; font-size:0.86rem; font-weight:700;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
     }
-    footer { padding:24px 0 50px; color: var(--muted); }
-    .footer-wrap {
-      border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
     }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
-    .footer-links a:hover { color: var(--text); }
-    @media (max-width:1150px) {
-      .hero-layout, .content-layout { grid-template-columns:1fr; }
-      .side-stack { position:static; }
+
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
     }
-    @media (max-width:980px) {
-      .artist-stats { grid-template-columns:1fr 1fr; }
+
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
     }
-    @media (max-width:860px) {
-      .music-grid { grid-template-columns:1fr; }
-    }
-    @media (max-width:820px) {
-      .quick-facts { grid-template-columns:1fr 1fr; }
-      .nav { flex-direction:column; padding:14px 0; }
-      .nav-links { justify-content:center; }
-      .artist-image { min-height:420px; }
-    }
-    @media (max-width:560px) {
-      .quick-facts, .artist-stats { grid-template-columns:1fr; }
-      .panel, .hero-info { padding:22px; }
-      .hero { padding-top:34px; }
-      .hero-info h1 { letter-spacing:-1px; }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
     }
   </style>
 </head>
 <body>
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -243,10 +684,11 @@
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -254,7 +696,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero story-section" data-story-title="Intro">
       <div class="container">
         <div class="breadcrumb">
           <a href="index.html">Home</a> /
@@ -267,20 +709,34 @@
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>LL Cool J</h2>
-              <p>Foundational rap star who proved charisma, skill, and crossover appeal could coexist.</p>
+              <p>Queens rap pioneer whose swagger, lyrical confidence, crossover appeal, and longevity helped define what a hip-hop superstar could become.</p>
             </div>
           </aside>
 
           <section class="glass hero-info">
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>LL Cool J</span></h1>
-            <p class="summary">LL Cool J is one of the foundational superstars of hip-hop. He helped define what a rap celebrity could be: lyrical, commercially successful, stylish, and durable across decades.</p>
+            <p class="summary">
+              LL Cool J stands among the foundational architects of rap stardom. Emerging from Queens in the early days of Def Jam, he helped prove that hip-hop could produce a true superstar — one who was battle-ready, commercially powerful, charismatic, and culturally magnetic. His career bridged street credibility and crossover success in a way that permanently changed the future of rap.
+            </p>
 
             <div class="quick-facts">
-              <div class="fact"><span>Born</span><strong>January 14, 1968</strong></div>
-              <div class="fact"><span>From</span><strong>Queens, New York</strong></div>
-              <div class="fact"><span>Known For</span><strong>Pioneer, lyricism, crossover longevity</strong></div>
-              <div class="fact"><span>Status</span><strong>Active</strong></div>
+              <div class="fact">
+                <span>Born</span>
+                <strong>January 14, 1968</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Queens, New York</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Def Jam, rap superstardom, crossover records, longevity</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>Hip-hop icon</strong>
+              </div>
             </div>
 
             <div class="hero-buttons">
@@ -289,94 +745,186 @@
             </div>
 
             <div class="artist-stats">
-              <div class="stat-panel"><span class="label">Era</span><div class="value">1980s–2000s</div></div>
-              <div class="stat-panel"><span class="label">Home</span><div class="value">Queens</div></div>
-              <div class="stat-panel"><span class="label">Style</span><div class="value">Pioneer, lyricism, crossover longevity</div></div>
-              <div class="stat-panel"><span class="label">Legacy</span><div class="value">Pioneer</div></div>
+              <div class="stat-panel">
+                <span class="label">Birth Name</span>
+                <div class="value">James Todd Smith</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Era</span>
+                <div class="value">1980s–present</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Home Scene</span>
+                <div class="value">Queens / New York</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">One of rap’s first true superstars</div>
+              </div>
             </div>
           </section>
         </div>
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
-              <h3>Early Significance</h3><p>LL Cool J emerged during hip-hop’s early commercial formation and quickly proved that rap could produce true individual stars. He had technical ability, self-confidence, and mainstream magnetism at a time when the genre itself was still securing legitimacy.</p>
-<h3>Range</h3><p>He was important not only for battle-ready charisma but for showing that rappers could make records centered on romance and crossover appeal without losing star power. That flexibility expanded the idea of what rap performance could include.</p>
-<h3>Long Career</h3><p>LL’s durability is part of his legacy. He remained visible across music, entertainment, and television, becoming one of hip-hop’s earliest examples of multi-platform longevity.</p>
-<h3>Legacy</h3><p>He stands near the roots of rap stardom as we now understand it. Without figures like LL Cool J, later pathways to celebrity in hip-hop would have looked very different.</p>
-              <div class="quote">LL Cool J represents a distinct lane in rap and popular music: a figure whose story joins talent, pressure, image, and cultural timing.</div>
+
+              <h3>Queens Origins</h3>
+              <p>Born James Todd Smith, LL Cool J came out of Queens, New York, during the formative years of hip-hop culture. This was a period when rap was still proving its staying power and artists were helping invent the rules in real time. Growing up in New York meant proximity to the genre’s early energy, but LL Cool J did more than participate in that world — he emerged as one of the figures who helped define its next level.</p>
+
+              <h3>The Meaning of the Name</h3>
+              <p>His stage name, Ladies Love Cool James, captured something essential about his image from the beginning. LL Cool J was not only a rapper who could command respect on the mic; he was also charismatic, stylish, and clearly aware of performance as identity. That combination mattered because it expanded what a rap star could be. He was tough, lyrical, and competitive, but also accessible, attractive, and highly marketable. In an era when hip-hop was still shaping its relationship to mainstream fame, that was revolutionary.</p>
+
+              <h3>Def Jam and Early Breakthrough</h3>
+              <p>LL Cool J became one of the earliest major stars associated with Def Jam, a label that would become central to hip-hop history. His rise was closely tied to the moment when rap began shifting from local movement to national commercial force. He had the voice, confidence, and hit-making ability to help push that change forward. His records carried battle energy and street attitude, but they were also sharp enough to break into wider pop awareness.</p>
+
+              <h3>Street Strength and Crossover Appeal</h3>
+              <p>One of LL Cool J’s greatest achievements was balancing hard rap credibility with crossover success. He could make songs that satisfied rap audiences looking for lyrical authority, then turn around and create records that expanded his audience dramatically. That versatility made him a model for later artists who wanted both respect and scale. He showed that hip-hop did not have to choose between authenticity and broad appeal if the artist had enough command.</p>
+
+              <div class="quote">LL Cool J helped invent the idea of the rap superstar: not just a great MC, but a full cultural figure with presence, style, and range.</div>
+
+              <h3>Longevity in a Fast-Changing Genre</h3>
+              <p>Another reason LL Cool J remains so important is longevity. Hip-hop changes quickly, and many early stars were unable to sustain relevance as the genre evolved. LL endured. He adapted across generations, maintained cultural visibility, and proved that rap careers could have real length and second acts. That durability made him more than a pioneer; it made him evidence that hip-hop itself had matured into a lasting art form.</p>
+
+              <h3>Influence Beyond Music</h3>
+              <p>LL Cool J’s impact also extends beyond recording. He became a broader entertainment figure, helping normalize the idea that a rapper could move across music, television, film, and larger celebrity culture without abandoning their original significance. That path has since become common, but it was not always guaranteed. LL was one of the artists who helped make it feel possible and legitimate.</p>
+
+              <h3>Legacy</h3>
+              <p>LL Cool J’s legacy is foundational because he helped shape multiple layers of hip-hop’s development at once. He was an early Def Jam cornerstone, a lyrical force, a crossover success story, and a model for superstar longevity. He proved that a rapper could be stylish, commercially powerful, respected, and enduring without losing command of the microphone. In the story of rap, LL Cool J stands as one of the first artists to fully embody the size and possibility of hip-hop as mass culture.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
-                <div class="timeline-item"><strong>1968</strong><p>Born in Queens.</p></div>
-<div class="timeline-item"><strong>1980s</strong><p>Rose as one of hip-hop’s earliest major stars.</p></div>
-<div class="timeline-item"><strong>1990s</strong><p>Sustained relevance through crossover success.</p></div>
-<div class="timeline-item"><strong>2000s and beyond</strong><p>Expanded into broader entertainment longevity.</p></div>
-<div class="timeline-item"><strong>Legacy</strong><p>Remains one of rap’s foundational mainstream icons.</p></div>
+                <div class="timeline-item">
+                  <strong>1968 — Birth</strong>
+                  <p>James Todd Smith was born on January 14, 1968, in Queens, New York.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1980s — Def Jam Rise</strong>
+                  <p>Became one of the earliest stars of Def Jam and one of the key artists in rap’s expansion into mainstream culture.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 1980s / 1990s — Superstar Era</strong>
+                  <p>Balanced hard-edged rap credibility with crossover hits, becoming one of hip-hop’s defining mainstream figures.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2000s — Cultural Longevity</strong>
+                  <p>Maintained public relevance and broadened his influence beyond music into entertainment more widely.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2010s / 2020s — Legacy Icon</strong>
+                  <p>Remained recognized as one of rap’s pioneering superstars and one of the genre’s most important long-term figures.</p>
+                </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row"><span class="info-label">Full Name / Credit</span><div class="info-value">LL Cool J</div></div>
-                <div class="info-row"><span class="info-label">Birthplace / Origin</span><div class="info-value">Queens, New York</div></div>
-                <div class="info-row"><span class="info-label">Genres</span><div class="info-value">Hip-Hop / Rap / R&amp;B</div></div>
-                <div class="info-row"><span class="info-label">Known For</span><div class="info-value">Pioneer, lyricism, crossover longevity</div></div>
-                <div class="info-row"><span class="info-label">Current Status</span><div class="info-value">Active</div></div>
+                <div class="info-row">
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">LL Cool J</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">James Todd Smith</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Queens, New York</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / Golden Era Rap / Mainstream Rap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">One of hip-hop’s foundational crossover icons</div>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
-              <div class="tags"><span class="tag">Pioneer</span><span class="tag">Charisma</span><span class="tag">Longevity</span><span class="tag">Crossover</span><span class="tag">Queens</span><span class="tag">Legacy</span></div>
+              <div class="tags">
+                <span class="tag">Queens</span>
+                <span class="tag">Def Jam</span>
+                <span class="tag">Superstardom</span>
+                <span class="tag">Longevity</span>
+                <span class="tag">Crossover</span>
+                <span class="tag">Hip-Hop History</span>
+              </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
-                <div class="album"><strong>Origins</strong><span>How LL Cool J emerged and built an identity.</span></div>
-                <div class="album"><strong>Breakthrough</strong><span>The phase that turned regional momentum into wider recognition.</span></div>
-                <div class="album"><strong>Legacy</strong><span>Why LL Cool J remains important in the wider story of rap and modern music.</span></div>
+                <div class="album">
+                  <strong>Def Jam Pioneer Era</strong>
+                  <span>The early phase where LL Cool J helped establish rap’s commercial and cultural legitimacy.</span>
+                </div>
+                <div class="album">
+                  <strong>Mainstream Rap Superstar Phase</strong>
+                  <span>The period where his charisma, hits, and lyrical authority made him one of music’s biggest names.</span>
+                </div>
+                <div class="album">
+                  <strong>Legacy and Entertainment Expansion</strong>
+                  <span>A later phase defined by longevity, broad influence, and status as one of hip-hop’s enduring public figures.</span>
+                </div>
               </div>
             </section>
 
-            <section class="glass panel music-panel">
+            <section class="glass panel music-panel story-section" data-story-title="Music">
               <h2>Music Integration</h2>
-              <p>Move from reading to listening with direct artist music links and a quick essential-listening guide for LL Cool J.</p>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for LL Cool J.
+              </p>
+
               <div class="music-grid">
                 <div class="music-card">
                   <h3>Spotify</h3>
-                  <p>Open a curated search for LL Cool J on Spotify and keep the story moving with the music.</p>
+                  <p>Open a curated search for LL Cool J on Spotify and explore the records that helped define rap superstardom.</p>
                   <a href="https://open.spotify.com/search/LL%20Cool%20J" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
                 </div>
+
                 <div class="music-card">
                   <h3>YouTube</h3>
-                  <p>Jump into official videos, performances, and major records related to LL Cool J on YouTube.</p>
+                  <p>Watch official music videos, performances, and classic LL Cool J releases on YouTube.</p>
                   <a href="https://www.youtube.com/results?search_query=LL+Cool+J+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
                 </div>
               </div>
+
               <div class="essential-tracks">
                 <h3>Essential Listening</h3>
                 <div class="track-list">
-                  <span class="track-tag">Greatest Hits</span>
-                  <span class="track-tag">Breakthrough Era</span>
-                  <span class="track-tag">Fan Favorites</span>
-                  <span class="track-tag">Deep Cuts</span>
+                  <span class="track-tag">I Can't Live Without My Radio</span>
+                  <span class="track-tag">Rock the Bells</span>
+                  <span class="track-tag">Mama Said Knock You Out</span>
+                  <span class="track-tag">Around the Way Girl</span>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
-              <div class="related-list"><a href="jay-z.html" class="related-card"><h4>Jay-Z</h4><p>A later New York icon who inherited and expanded the template of rap celebrity.</p></a>
-<a href="nas.html" class="related-card"><h4>Nas</h4><p>Another Queens giant, though from a different generation and style.</p></a>
-<a href="ice-cube.html" class="related-card"><h4>Ice Cube</h4><p>A foundational artist who likewise crossed from rap into larger media culture.</p></a></div>
+              <div class="related-list">
+                <a href="run-dmc.html" class="related-card">
+                  <h4>Run-D.M.C.</h4>
+                  <p>Another foundational New York force whose early success helped establish rap as a national cultural movement.</p>
+                </a>
+                <a href="jay-z.html" class="related-card">
+                  <h4>Jay-Z</h4>
+                  <p>A later New York superstar who benefited from the crossover pathway artists like LL Cool J helped create.</p>
+                </a>
+                <a href="rakim.html" class="related-card">
+                  <h4>Rakim</h4>
+                  <p>A comparison in how different New York pioneers expanded rap’s lyrical authority and long-term artistic seriousness.</p>
+                </a>
+              </div>
             </section>
           </aside>
         </div>
@@ -399,38 +947,141 @@
     </div>
   </footer>
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-  let lastScrollY = window.pageYOffset;
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
+
+    if (!rail || !toggle || !progressBar || !sections.length) return;
+
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
+
+    rail.innerHTML = "";
+
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
+
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
-    lastScrollY = currentScrollY;
-  }
-  offset();
-  handleScroll();
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
+
     offset();
-    if(window.innerWidth > 768) header.classList.remove("hidden");
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

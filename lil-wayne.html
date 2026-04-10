@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lil Wayne | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on Lil Wayne, covering his upbringing, political roots, rise in hip-hop, legal controversies, Death Row era, death, and enduring cultural legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Lil Wayne, covering his New Orleans roots, Cash Money rise, mixtape dominance, lyrical genius, and enduring influence on modern hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,221 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +684,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +709,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Lil Wayne</h2>
-              <p>New Orleans rapper whose lyrical creativity, influence, and longevity made him one of the most important figures in modern hip-hop.</p>
+              <p>New Orleans rap genius whose child-star beginnings, mixtape dominance, and unmatched wordplay helped reshape the sound and ambition of modern hip-hop.</p>
             </div>
           </aside>
 
@@ -735,7 +717,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Lil Wayne</span></h1>
             <p class="summary">
-              Born Dwayne Michael Carter Jr., Lil Wayne became one of the most influential and intensely discussed artists in rap history. His music fused street realism, political consciousness, vulnerability, anger, and charisma, allowing him to become both a cultural symbol and a central figure in one of hip-hop’s most turbulent eras.
+              Lil Wayne is one of the most important and inventive artists in hip-hop history. Rising from New Orleans as a child under the Cash Money system, he evolved from a regional prodigy into a generational icon whose punchlines, work ethic, voice, and creative freedom transformed rap. His influence stretches across mixtape culture, Southern rap, melodic rap, superstar branding, and the artistic DNA of countless modern artists.
             </p>
 
             <div class="quick-facts">
@@ -749,11 +731,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Lyricism, mixtapes, and mainstream dominance</strong>
+                <strong>Wordplay, mixtapes, Cash Money, generational influence</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Rap legend</strong>
               </div>
             </div>
 
@@ -761,22 +743,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1982</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">New Orleans</div>
+                <span class="label">Birth Name</span>
+                <div class="value">Dwayne Michael Carter Jr.</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2000s–Present</div>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Known For</span>
-                <div class="value">Rap innovator</div>
+                <span class="label">Home Base</span>
+                <div class="value">New Orleans</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">One of rap’s most influential artists</div>
               </div>
             </div>
           </section>
@@ -784,144 +767,162 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            
-<section class="glass panel" id="biography">
-<h2>Biography</h2>
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
+              <h2>Biography</h2>
 
-<h3>Early Life and Cash Money Origins</h3>
-<p>Lil Wayne, born Dwayne Michael Carter Jr. on September 27, 1982, in New Orleans, Louisiana, emerged from one of the most culturally rich yet economically challenged environments in America. Raised in the Hollygrove neighborhood, he was surrounded by hardship but also by music. His talent was discovered early, and by the age of just nine, he was signed to Cash Money Records, placing him on a path that would define an entire era of hip-hop.</p>
+              <h3>New Orleans Beginnings</h3>
+              <p>Born Dwayne Michael Carter Jr., Lil Wayne came out of New Orleans with extraordinary talent at an unusually young age. His story begins in one of the most culturally rich cities in America, but also one marked by poverty, pressure, and hard realities for many young Black boys growing up in its neighborhoods. Wayne’s gift for writing and rapping emerged early enough that he did not simply enter the rap industry — he grew up inside it.</p>
 
-<h3>The Hot Boys and Early Success</h3>
-<p>Wayne first gained national attention as part of the Hot Boys alongside Juvenile, B.G., and Turk. The group’s success introduced him to a wider audience, but it was clear even then that Wayne possessed something unique: an ability to evolve. While others stayed rooted in one style, he constantly reshaped his delivery, voice, and lyrical approach.</p>
+              <h3>The Cash Money Child Prodigy</h3>
+              <p>Wayne’s association with Cash Money Records changed his life and the shape of Southern rap. While still a child, he became one of the label’s most visible young artists, developing under a system that mixed family-like loyalty, business ambition, and intense public pressure. Many artists spend their youth trying to become rappers; Wayne spent his youth already being one. That unusual beginning gave him experience, discipline, and instinct long before many of his peers had recorded a serious song.</p>
 
-<div class="quote">Lil Wayne didn’t just succeed in rap—he reinvented how rappers could sound, think, and create.</div>
+              <h3>From Regional Star to Elite Rapper</h3>
+              <p>Early fame did not automatically make Lil Wayne a great artist. What made his story remarkable was the evolution. Over time, he transformed from promising young Cash Money rapper into one of the most technically sharp and creatively restless voices in hip-hop. His flow became more elastic, his metaphors more inventive, and his confidence more radical. He moved from participating in hits to redefining what a rap star could sound like when fully in command of language.</p>
 
-<h3>Mixtape Era and Transformation</h3>
-<p>In the mid-2000s, Wayne transformed himself through an unprecedented mixtape run. Projects like <em>Dedication</em> and <em>Da Drought</em> turned him into the most talked-about rapper alive. He rapped over other artists’ beats, outperformed them, and flooded the market with creativity, helping define the modern mixtape era.</p>
+              <h3>The Mixtape Revolution</h3>
+              <p>One of the most important chapters in Lil Wayne’s career is the mixtape era. This was the period where he seemed to rap on everything, out-rhyme everybody, and turn nonstop work into myth. Wayne’s mixtapes did more than keep his name buzzing — they changed expectations around artistic output. He made the mixtape feel like a site of greatness rather than a side product. In doing so, he helped create the blueprint for the modern rapper who dominates through volume, hunger, and constant reinvention.</p>
 
-<h3>Tha Carter Series and Global Stardom</h3>
-<p>The <em>Tha Carter</em> album series cemented his legacy. By the time <em>Tha Carter III</em> was released, Lil Wayne had become a global superstar, selling millions and dominating the charts. His wordplay, metaphors, and unpredictable flow made him one of the most quoted and studied rappers of his generation.</p>
+              <div class="quote">Lil Wayne did not just become a rap star — he helped reprogram rap’s imagination about how much skill, style, and work one artist could contain.</div>
 
-<h3>Influence and Legacy</h3>
-<p>Lil Wayne’s influence extends across generations. He shaped artists like Drake, Nicki Minaj, and an entire wave of modern rappers who adopted his freeform style and melodic experimentation. His legacy is not just in sales or awards, but in how he changed the sound and mindset of hip-hop itself.</p>
-</section>
+              <h3>The Carter Era and Mainstream Dominance</h3>
+              <p>As Wayne’s artistry matured, so did his commercial reach. The <em>Carter</em> series helped cement him as both a lyrical technician and a mainstream force. This was a rare combination. He could deliver dazzling punchlines for rap purists while still creating records that defined radio, clubs, and mass culture. By the late 2000s, Wayne had become one of the unquestioned central figures in music, not merely in rap. His voice, presence, and influence were everywhere.</p>
 
+              <h3>Influence on a New Generation</h3>
+              <p>Few artists have influenced the next generations of rappers as broadly as Lil Wayne. His fingerprints are everywhere: in punchline-heavy lyricism, melodic looseness, tattooed visual identity, fearless stylistic experimentation, and the blurred line between rapper and rockstar. Artists across very different subgenres have drawn from Wayne because he expanded rap’s possibilities in multiple directions at once. He made eccentricity, vulnerability, excess, technical brilliance, and nonstop output all feel compatible.</p>
 
-<section class="glass panel" id="timeline">
-<h2>Career Timeline</h2>
-<div class="timeline">
-<div class="timeline-item"><strong>1982 — Birth</strong><p>Born in New Orleans, Louisiana.</p></div>
-<div class="timeline-item"><strong>1990s — Cash Money Era</strong><p>Joined Cash Money Records and rose with the Hot Boys.</p></div>
-<div class="timeline-item"><strong>2005–2008 — Mixtape Domination</strong><p>Became the most influential rapper through mixtapes.</p></div>
-<div class="timeline-item"><strong>2008 — Carter III</strong><p>Reached global superstardom.</p></div>
-<div class="timeline-item"><strong>2010s–Present — Legacy</strong><p>Continues influencing generations of artists.</p></div>
-</div>
-</section>
-</div>
+              <h3>Legacy</h3>
+              <p>Lil Wayne’s legacy is monumental because he excelled in more than one rap role. He was a child prodigy, a Southern icon, a mixtape god, a chart-dominating superstar, and a master technician. He helped legitimize Southern rap at the highest level while also shaping the sound, image, and ambition of the artists who followed. In the story of hip-hop, Lil Wayne stands not only as a legend, but as one of the core architects of the modern rap world.</p>
+            </section>
 
-<aside class="side-stack">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
+              <h2>Career Timeline</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <strong>1982 — Birth</strong>
+                  <p>Dwayne Michael Carter Jr. was born on September 27, 1982, in New Orleans, Louisiana.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1990s — Cash Money Emergence</strong>
+                  <p>Became a teenage standout under Cash Money Records, developing into one of Southern rap’s most promising young artists.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Early / Mid-2000s — Mixtape Ascension</strong>
+                  <p>Dominated rap culture through relentless mixtape releases and a rapidly growing reputation for elite lyricism.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>Late 2000s — Mainstream Peak</strong>
+                  <p>Reached a historic level of success and influence, becoming one of the biggest and most respected artists in hip-hop.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2010s / 2020s — Legacy Era</strong>
+                  <p>Remained one of rap’s most revered figures, with influence continuing across generations of artists and styles.</p>
+                </div>
+              </div>
+            </section>
+          </div>
 
-            <section class="glass panel">
+          <aside class="side-stack">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">Lil Wayne</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birth Name</span>
                   <div class="info-value">Dwayne Michael Carter Jr.</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
-                  <div class="info-value">Lil Wayne / Tupac Shakur</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">East Harlem, New York</div>
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">New Orleans, Louisiana</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / West Coast Rap</div>
+                  <div class="info-value">Hip-Hop / Southern Rap / Mixtape Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Deceased; legacy remains global</div>
+                  <div class="info-value">One of the most influential and celebrated rappers of all time</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Poetry</span>
-                <span class="tag">Politics</span>
-                <span class="tag">Street Reality</span>
-                <span class="tag">Contradiction</span>
-                <span class="tag">Fame</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">New Orleans</span>
+                <span class="tag">Cash Money</span>
+                <span class="tag">Mixtapes</span>
+                <span class="tag">Wordplay</span>
+                <span class="tag">Innovation</span>
+                <span class="tag">Influence</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Political Emergence</strong>
-                  <span>The early period where poetry, activism, and social commentary shaped his voice.</span>
+                  <strong>Cash Money Prodigy Era</strong>
+                  <span>The early phase where Lil Wayne rose from a teenage New Orleans talent into a nationally visible Southern rap figure.</span>
                 </div>
                 <div class="album">
-                  <strong>Mainstream Ascension</strong>
-                  <span>The years that turned him into one of the biggest and most complex stars in rap.</span>
+                  <strong>Mixtape Monster Phase</strong>
+                  <span>The period where his relentless output and lyrical brilliance made him rap’s most feared and discussed artist.</span>
                 </div>
                 <div class="album">
-                  <strong>Death Row and Myth</strong>
-                  <span>The intense final era that transformed Tupac from superstar into cultural legend.</span>
+                  <strong>Global Icon Legacy</strong>
+                  <span>A later phase defined by immense cultural influence, artistic respect, and multigenerational impact.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Lil Wayne.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Lil Wayne on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Lil Wayne" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Lil Wayne.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Lil Wayne on Spotify and explore the records that made him one of hip-hop’s all-time greats.</p>
+                  <a href="https://open.spotify.com/search/Lil%20Wayne" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official music videos, live performances, and classic Lil Wayne releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Lil+Wayne+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Lil Wayne on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Lil Wayne+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">A Milli</span>
+                  <span class="track-tag">Go DJ</span>
+                  <span class="track-tag">6 Foot 7 Foot</span>
+                  <span class="track-tag">Mr. Carter</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">California Love</span>
-                <span class="track-tag">Dear Mama</span>
-                <span class="track-tag">Changes</span>
-                <span class="track-tag">Ambitionz Az a Ridah</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="biggie.html" class="related-card">
-                  <h4>The Notorious B.I.G.</h4>
-                  <p>A defining companion story from the same era of East Coast–West Coast tension and 1990s rap dominance.</p>
+                <a href="birdman.html" class="related-card">
+                  <h4>Birdman</h4>
+                  <p>The Cash Money mogul whose label helped shape Lil Wayne’s early career and the rise of a Southern rap empire.</p>
                 </a>
-                <a href="dmx.html" class="related-card">
-                  <h4>DMX</h4>
-                  <p>Another larger-than-life New York voice whose intensity, pain, and legacy shaped rap’s emotional core.</p>
+                <a href="drake.html" class="related-card">
+                  <h4>Drake</h4>
+                  <p>One of the biggest artists ever to emerge from the larger Wayne orbit and a key example of his lasting influence.</p>
                 </a>
-                <a href="pop-smoke.html" class="related-card">
-                  <h4>Pop Smoke</h4>
-                  <p>A later New York figure whose rise shows how legacy and regional identity kept evolving after the 1990s.</p>
+                <a href="nicki-minaj.html" class="related-card">
+                  <h4>Nicki Minaj</h4>
+                  <p>Another major star deeply connected to Wayne’s artistic world and the broader Young Money legacy.</p>
                 </a>
               </div>
             </section>
@@ -948,95 +949,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lil Durk | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on Lil Durk, covering his upbringing in Chicago, drill music rise, commercial breakthrough, losses, OTF era, and ongoing federal murder-for-hire case." />
+  <meta name="description" content="A Rap Stories premium profile on Lil Durk, covering his Chicago roots, drill-era rise, pain-filled music, commercial evolution, and lasting influence on modern hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -171,7 +171,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.82)),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.78)),
         url("images/lil-durk.jpg") center/cover no-repeat;
     }
 
@@ -461,240 +461,221 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    .music-panel {
+      margin-top: 24px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +684,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +709,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Lil Durk</h2>
-              <p>Chicago drill pioneer whose rise from Englewood to rap stardom has been shaped by loss, loyalty, mainstream success, and a major federal case.</p>
+              <p>Chicago’s melodic street poet whose music turned trauma, loyalty, ambition, and loss into one of modern rap’s most emotionally powerful careers.</p>
             </div>
           </aside>
 
@@ -735,7 +717,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Lil Durk</span></h1>
             <p class="summary">
-              Born Durk Devontay Banks, Lil Durk emerged from Chicago’s South Side as one of drill music’s defining voices. He turned street memoir into melody-heavy rap, built Only The Family into a powerful brand, and eventually became one of the most commercially successful artists to come out of the drill era. His story now sits at the intersection of music, trauma, fame, grief, and a serious federal murder-for-hire prosecution.
+              Lil Durk emerged from Chicago as one of the defining voices of the drill era, but his story grew far beyond local street rap. Through years of loss, controversy, reinvention, and commercial growth, he built a catalog rooted in pain and realism while evolving into one of the most recognizable and influential artists of his generation.
             </p>
 
             <div class="quick-facts">
@@ -749,11 +731,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Drill / melodic street rap</strong>
+                <strong>Melodic drill, pain rap, street storytelling</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Awaiting federal trial</strong>
+                <strong>Modern rap heavyweight</strong>
               </div>
             </div>
 
@@ -761,22 +743,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1992</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Chicago</div>
+                <span class="label">Birth Name</span>
+                <div class="value">Durk Derrick Banks</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2010s</div>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
-                <span class="label">Known For</span>
-                <div class="value">Melodic drill leadership</div>
+                <span class="label">Scene</span>
+                <div class="value">Chicago Drill</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Pain-driven melodic rap leader</div>
               </div>
             </div>
           </section>
@@ -784,165 +767,162 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life in Chicago</h3>
-              <p>Durk Devontay Banks was born on October 19, 1992, in Chicago, Illinois, and grew up in Englewood on the city’s South Side. His childhood was shaped by poverty, instability, and the long shadow of incarceration: his father, Dontay Banks Sr., spent years in prison while Durk was still young. In interviews and in his music, Durk has described an upbringing defined by scarcity, neighborhood violence, and the constant pressure to survive.</p>
-              <p>Those conditions became central to his artistic identity. Unlike many rappers who approached drill with pure aggression, Durk developed a style that mixed street detail with melody, pain, and emotional vulnerability. That combination would eventually make him one of the genre’s most recognizable voices.</p>
+              <h3>Chicago Origins and Early Hardship</h3>
+              <p>Born Durk Derrick Banks, Lil Durk grew up in Chicago’s Englewood area, a place long shaped by poverty, instability, gang conflict, and structural neglect. His early life was marked by hardship, including the absence of his father, who spent years in prison. In that environment, survival often came before comfort, and loyalty could matter as much as opportunity. Those realities would later become central to his music, not as performance, but as lived experience.</p>
 
-              <h3>The Rise of Drill and Early Momentum</h3>
-              <p>Lil Durk first built momentum in Chicago’s early-2010s drill wave, releasing local tracks and mixtapes that spread online as the city’s rap scene gained national attention. Projects like <em>Life Ain’t No Joke</em> and the <em>Signed to the Streets</em> series helped establish him as a major street voice. At the same time, he founded Only The Family, or OTF, a collective and label identity that became central to both his career and public image.</p>
-              <p>His early music stood out because it balanced menace with reflection. Durk could rap about conflict, loyalty, and loss, but also about guilt, grief, and family pressure. That emotional range allowed him to outlast many of his contemporaries and evolve beyond a regional movement.</p>
+              <h3>From Local Voice to Drill Figure</h3>
+              <p>As Chicago’s drill movement began to attract attention in the early 2010s, Lil Durk emerged as one of its most compelling young artists. He had the street credibility and intensity associated with drill, but he also brought something more melodic and emotionally expressive. He could sound threatening, exhausted, reflective, and wounded in the same verse. That combination made him stand out in a scene often reduced by outsiders to only violence.</p>
 
-              <div class="quote">Lil Durk’s career has always carried two narratives at once: the success story of a drill pioneer and the darker story of how street conflict can follow artists into the mainstream.</div>
+              <h3>The Sound of Pain and Loyalty</h3>
+              <p>What separated Lil Durk from many of his peers was his ability to make raw street rap feel intimate. His music often revolved around betrayal, grief, ambition, family, and paranoia. Instead of only narrating conflict, he conveyed the emotional cost of living inside it. His voice carried pain in a way that listeners could hear immediately, and that quality helped him build one of the deepest emotional connections with fans in modern rap.</p>
 
-              <h3>Mainstream Success and Commercial Breakthrough</h3>
-              <p>After early label setbacks, Durk rebuilt his career and found a much larger commercial audience in the late 2010s and early 2020s. A string of successful releases, high-profile collaborations, and streaming-era hits transformed him from a Chicago street star into a mainstream rap headliner. Albums such as <em>The Voice</em>, <em>The Voice of the Heroes</em> with Lil Baby, <em>7220</em>, and <em>Almost Healed</em> pushed him to the top tier of modern rap.</p>
-              <p>By that stage, he was no longer simply associated with drill. He had become one of the genre’s most commercially successful descendants, crossing into radio, major festival circuits, and award recognition. His 2023 single “All My Life” with J. Cole became one of the biggest songs of his career and helped earn him a Grammy win in 2024.</p>
+              <h3>Commercial Growth Without Losing Identity</h3>
+              <p>As his career expanded, Lil Durk did not abandon the core themes that built his audience. Instead, he refined them. He moved from local Chicago figure to national star while keeping the same emotional texture that made his music resonate in the first place. He became more polished, more strategic, and more versatile, but the foundation remained the same: personal truth filtered through melody, toughness, and memory.</p>
 
-              <h3>Loss, OTF, and the Burden of Public Tragedy</h3>
-              <p>Durk’s public story has also been defined by repeated personal loss. The deaths of close friends, affiliates, and especially King Von became central to his image and music. Von’s 2020 killing in Atlanta deepened the sense that Durk’s world was shaped as much by mourning as by success. His songs increasingly blended fame with trauma, survival, and the emotional weight of funerals, retaliation, and public grief.</p>
-              <p>That grief became part of his brand, but also part of the scrutiny surrounding him. Because Durk’s music often reflected real tensions and real losses, fans and prosecutors alike have viewed parts of his catalog through a lens that goes beyond entertainment.</p>
+              <div class="quote">Lil Durk built his legacy by turning survival into melody and grief into one of the most recognizable voices in modern rap.</div>
 
-              <h3>Federal Case and Legal Crisis</h3>
-              <p>In 2024, federal prosecutors charged Lil Durk in a murder-for-hire case tied to the 2022 killing of Saviay’a Robinson during a shooting in Los Angeles that allegedly targeted rapper Quando Rondo. Prosecutors later filed a superseding indictment that added counts accusing Durk of conspiracy, using interstate facilities to commit murder-for-hire resulting in death, and firearms-related offenses. Durk has pleaded not guilty.</p>
-              <p>As of early 2026, the case remains pending in federal court in Los Angeles. Court reporting indicates the trial was postponed again in February 2026, moving from spring to August 2026, while Durk remains in custody. The case has become the most serious legal threat of his career and now overshadows his musical future.</p>
+              <h3>Loss, Brotherhood, and Public Image</h3>
+              <p>A major part of Lil Durk’s public story has been shaped by loss. Friends, collaborators, and people close to his world became part of the emotional backdrop of his music. That recurring grief gave his records a haunted quality and reinforced the sense that his songs were not detached entertainment. They often felt like dispatches from someone carrying heavy personal and communal history. His connection with figures like King Von further intensified how fans understood his role as both artist and witness.</p>
 
-              <h3>Legacy in Real Time</h3>
-              <p>Lil Durk’s legacy is still being written. Musically, he stands as one of the most important artists to emerge from Chicago drill, and arguably the movement’s biggest long-term commercial success. He helped bring emotional honesty into a genre often reduced to violence alone, and his influence can be heard across modern melodic street rap.</p>
-              <p>But his story cannot be separated from the legal and social realities surrounding it. For supporters, he is a survivor who turned pain into art and built an empire from one of America’s hardest environments. For critics, his career raises difficult questions about how rap mythology, street allegiance, and real-world violence intersect. In that sense, Lil Durk is no longer just a rap star profile. He is a case study in how fame, trauma, and federal prosecution can collide.</p>
+              <h3>Evolution Into a Mainstream Force</h3>
+              <p>By the late 2010s and early 2020s, Lil Durk had firmly become one of rap’s major names. Chart success, collaborations, and streaming power confirmed his commercial strength, but his rise never felt like a total reinvention. Instead, it felt like the mainstream finally adjusting to a voice that had already proven itself over years of work. He became a central figure in the era of melodic street rap and helped shape its emotional vocabulary.</p>
+
+              <h3>Legacy</h3>
+              <p>Lil Durk’s legacy lies in how powerfully he translated pain into popular music. He stands as one of the key bridges between drill’s local intensity and rap’s global mainstream. His story is not simply one of success, but of endurance — surviving environments, losses, and pressures that might have silenced others. In modern hip-hop, he remains one of the clearest examples of how vulnerability, loyalty, and street realism can coexist in a lasting artistic identity.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
                   <strong>1992 — Birth</strong>
-                  <p>Born Durk Devontay Banks in Chicago, Illinois.</p>
+                  <p>Durk Derrick Banks was born on October 19, 1992, in Chicago, Illinois.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2012–2014 — Drill Breakthrough</strong>
-                  <p>Built his name through Chicago drill and the <em>Signed to the Streets</em> era.</p>
+                  <strong>Early 2010s — Drill Rise</strong>
+                  <p>Became one of the breakout names in Chicago drill, building momentum through emotionally raw street music.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020–2023 — Mainstream Peak</strong>
-                  <p>Expanded into major-chart success with <em>The Voice</em>, <em>7220</em>, <em>Almost Healed</em>, and crossover hits.</p>
+                  <strong>Mid-2010s — National Recognition</strong>
+                  <p>Expanded beyond local drill fame and developed into a major national rap voice with growing industry visibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2024 — Grammy Win and Arrest</strong>
-                  <p>Won Best Melodic Rap Performance for “All My Life,” then was arrested on federal murder-for-hire charges later that year.</p>
+                  <strong>Late 2010s / Early 2020s — Major Stardom</strong>
+                  <p>Reached a new commercial level through hit records, collaborations, and a stronger mainstream presence.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2026 — Trial Delayed Again</strong>
-                  <p>Federal trial remained pending after another postponement into August 2026.</p>
+                  <strong>2020s — Established Influence</strong>
+                  <p>Solidified his position as one of modern rap’s most important artists and one of the leading voices of pain-driven melodic street rap.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Durk Devontay Banks</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Lil Durk</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Durk Derrick Banks</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Chicago, Illinois</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Drill / Trap / Hip-Hop</div>
+                  <div class="info-value">Hip-Hop / Drill / Melodic Street Rap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Collective</span>
-                  <div class="info-value">Only The Family (OTF)</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">One of the defining voices of modern rap</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Chicago Drill</span>
-                <span class="tag">Street Memoir</span>
-                <span class="tag">OTF</span>
-                <span class="tag">Loss &amp; Loyalty</span>
-                <span class="tag">Mainstream Success</span>
-                <span class="tag">Federal Case</span>
+                <span class="tag">Chicago</span>
+                <span class="tag">Drill</span>
+                <span class="tag">Pain</span>
+                <span class="tag">Loyalty</span>
+                <span class="tag">Loss</span>
+                <span class="tag">Survival</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Chicago Rise</strong>
-                  <span>Mixtapes, early drill influence, and the growth of his local following.</span>
+                  <strong>Chicago Drill Emergence</strong>
+                  <span>The era where Lil Durk became one of the most emotionally distinct voices in the city’s new rap movement.</span>
                 </div>
                 <div class="album">
-                  <strong>The Voice Era</strong>
-                  <span>The period where Durk became a major mainstream rap figure.</span>
+                  <strong>Pain Rap Expansion</strong>
+                  <span>The phase where his melodic style and personal storytelling gave him a larger national following.</span>
                 </div>
                 <div class="album">
-                  <strong>Legal Reckoning</strong>
-                  <span>The ongoing federal case that now frames the current phase of his public story.</span>
+                  <strong>Mainstream Heavyweight Era</strong>
+                  <span>A later period defined by major commercial success, influence, and cultural staying power.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Lil Durk.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Lil Durk on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Lil+Durk" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Lil Durk.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Lil Durk on Spotify and explore the records that made him one of rap’s most emotionally recognizable voices.</p>
+                  <a href="https://open.spotify.com/search/Lil%20Durk" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official music videos, live performances, and major Lil Durk releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Lil+Durk+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Lil Durk on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Lil+Durk+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Dis Ain't What U Want</span>
+                  <span class="track-tag">Laugh Now Cry Later</span>
+                  <span class="track-tag">Backdoor</span>
+                  <span class="track-tag">All My Life</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Backdoor</span>
-                <span class="track-tag">The Voice</span>
-                <span class="track-tag">3 Headed Goat</span>
-                <span class="track-tag">All My Life</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
-              <h2>Related Sections</h2>
+            <section class="glass panel story-section" data-story-title="Related">
+              <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="timeline.html" class="related-card">
-                  <h4>Rap History Timeline</h4>
-                  <p>See where Lil Durk fits into the wider arc of drill, trap, and modern rap.</p>
+                <a href="chief-keef.html" class="related-card">
+                  <h4>Chief Keef</h4>
+                  <p>A defining Chicago drill figure whose rise helped shape the same era that introduced Lil Durk.</p>
                 </a>
-                <a href="category.html" class="related-card">
-                  <h4>Story Categories</h4>
-                  <p>Browse biographies, controversies, movements, and label histories.</p>
+                <a href="king-von.html" class="related-card">
+                  <h4>King Von</h4>
+                  <p>A close associate and major rap figure whose story became deeply connected to Durk’s public and musical world.</p>
                 </a>
-                <a href="about.html" class="related-card">
-                  <h4>About Rap Stories</h4>
-                  <p>Learn how the archive is structured and how these profiles are built.</p>
+                <a href="polo-g.html" class="related-card">
+                  <h4>Polo G</h4>
+                  <p>Another Chicago artist whose melodic pain rap continued a tradition Lil Durk helped bring into the mainstream.</p>
                 </a>
               </div>
             </section>
@@ -969,95 +949,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
