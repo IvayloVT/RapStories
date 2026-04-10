@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quando Rondo | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on Quando Rondo, covering his difficult upbringing, rise from Savannah, melodic rap breakthrough, neighborhood ties, controversy, and legacy in modern Southern rap." />
+  <meta name="description" content="A Rap Stories premium profile on Quando Rondo, covering his Savannah roots, melodic street sound, rapid breakout, Southern authenticity, and lasting place in modern rap." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,236 +461,222 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel {
+      margin-top: 24px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-/* Mobile header: hide on scroll down, show on scroll up */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -699,10 +685,11 @@ header#mainHeader {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -723,7 +710,7 @@ header#mainHeader {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Quando Rondo</h2>
-              <p>Melodic Southern rapper whose pain-filled delivery, street realism, and controversy made him one of the most discussed voices of his generation.</p>
+              <p>Savannah rapper whose melodic pain, street realism, and emotionally raw delivery made him one of the most distinctive young voices of his era.</p>
             </div>
           </aside>
 
@@ -731,7 +718,7 @@ header#mainHeader {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Quando Rondo</span></h1>
             <p class="summary">
-              Born Tyquian Terrel Bowman, Quando Rondo emerged as a distinctive voice in modern Southern rap through emotionally raw songs that blended melody, pain, street survival, and reflection. His rise from a turbulent upbringing in Savannah to national rap visibility made him both a breakout artist and a polarizing figure within the wider culture of hip-hop.
+              Quando Rondo emerged from Savannah with a style built on melody, pain, and lived experience. He rose quickly in the late 2010s with songs that sounded personal and unfiltered, balancing Southern street rap with emotional openness. His music connected because it felt direct, wounded, and real, giving him a distinct place in the generation of artists who blurred the line between rap and confession.
             </p>
 
             <div class="quick-facts">
@@ -745,11 +732,11 @@ header#mainHeader {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Melodic street rap</strong>
+                <strong>Melodic street rap, emotional realism</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active / Controversial</strong>
+                <strong>Southern Rap Standout</strong>
               </div>
             </div>
 
@@ -757,22 +744,23 @@ header#mainHeader {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1999</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Savannah</div>
+                <span class="label">Origin</span>
+                <div class="value">Savannah, Georgia</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">Late 2010s</div>
+                <div class="value">2017–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Melodic Southern rap</div>
+                <div class="value">Melodic pain-rap storytelling</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Emotion-driven Southern rap</div>
               </div>
             </div>
           </section>
@@ -780,165 +768,159 @@ header#mainHeader {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Hardship</h3>
-              <p>Tyquian Terrel Bowman, known professionally as Quando Rondo, was born on March 23, 1999, in Savannah, Georgia. His early life was shaped by instability, family hardship, and repeated contact with environments marked by violence, poverty, and disruption. Like many young artists who emerged from difficult Southern neighborhoods, his music would later draw heavily from lived experience rather than image-building alone.</p>
-              <p>That background became central to his artistic identity. His songs often carried the sound of someone documenting real emotional damage—loss, distrust, loyalty, paranoia, and survival. Even when he leaned into melody, the emotional core of the music remained rooted in street trauma and personal reflection.</p>
+              <h3>Savannah Roots</h3>
+              <p>Born Tyquian Terrel Bowman in Savannah, Georgia, Quando Rondo came from an environment that shaped both the pain and the toughness in his music. His story has often been framed through hardship, instability, and the realities of survival. That background mattered because it gave his songs an emotional weight that listeners could hear immediately. He did not sound like he was inventing struggle for effect. He sounded like he was reporting from inside it.</p>
 
-              <h3>Rise Through Melody and Pain Rap</h3>
-              <p>Quando Rondo began attracting attention online with songs that blended singing and rapping into a style that felt intimate, wounded, and direct. At a time when melodic street rap was reshaping the South, he carved out a lane built on confessional delivery and unfiltered storytelling. His ability to sound vulnerable without losing credibility helped him stand out quickly.</p>
-              <p>As his audience grew, he became associated with a newer generation of rappers whose music blurred the line between diary entry and street anthem. His records often felt less polished than emotionally urgent, which made them resonate with listeners who were drawn to authenticity over perfection.</p>
+              <h3>Early Breakthrough</h3>
+              <p>Quando Rondo began to gain major attention with “I Remember,” a breakout record that helped introduce him to a national audience. The song, along with early releases such as “Motivation,” positioned him as a young artist with a different kind of energy. He was not relying only on aggression or lyrical technique. He leaned into feeling, melody, and a cracked-open honesty that made even street-centered records sound vulnerable.</p>
 
-              <div class="quote">Quando Rondo’s appeal came from emotional realism: he sounded like someone reporting from inside the damage, not performing safely outside it.</div>
+              <h3>A Style Built on Pain and Melody</h3>
+              <p>What separated Quando Rondo from many peers was the emotional quality of his delivery. He could rap in a forceful Southern style, but much of his identity came from singing through pain, frustration, loyalty, grief, and distrust. His music often felt like a running diary from a life under pressure. That approach made him especially resonant with listeners drawn to artists who turned trauma and survival into songs rather than hiding behind pure bravado.</p>
 
-              <h3>Breakthrough and Expanding Profile</h3>
-              <p>His breakout period established him as one of the more recognizable names in melodic Southern rap. Mixtapes, collaborations, and streaming traction gave him a growing fan base, while his voice and cadence made him instantly identifiable. He was part of a broader wave of artists who pushed pain, melody, and regional street storytelling into the center of internet-era rap.</p>
-              <p>Unlike rappers who relied mainly on flashy branding, Quando Rondo’s catalog drew attention because it felt emotionally close to the world he described. Fans connected with songs about betrayal, pressure, family struggle, and the costs of trying to survive long enough to become successful.</p>
+              <div class="quote">Quando Rondo’s music often felt less like performance and more like testimony—melodic, wounded, and deeply tied to the life he came from.</div>
 
-              <h3>Controversy, Violence, and Public Scrutiny</h3>
-              <p>As his name grew, so did the controversy surrounding it. Quando Rondo became deeply entangled in the culture of rap conflict, neighborhood loyalty, and public feud dynamics that often blur the line between music and real-world danger. This scrutiny intensified after high-profile incidents linked his name to some of the most emotionally charged conflicts in modern rap.</p>
-              <p>That visibility changed how his career was discussed. He was no longer seen only as an emerging melodic rapper, but as a figure positioned inside a much darker public narrative about retaliation, image, street identity, and the pressures young artists face when their personal worlds and celebrity worlds collide.</p>
+              <h3>Momentum and Mixtape Era</h3>
+              <p>His early run of projects helped build a loyal audience. Mixtapes such as <em>Life B4 Fame</em>, <em>Life After Fame</em>, and <em>From the Neighborhood to the Stage</em> established him as more than a viral artist. They showed range, consistency, and a clear perspective. He became associated with a lane of Southern rap that was emotionally exposed without losing its street grounding.</p>
 
-              <h3>Artistic Identity</h3>
-              <p>Musically, Quando Rondo helped represent a version of Southern rap driven less by lyrical exhibition and more by emotional confession. His strengths lay in mood, honesty, and the ability to make songs feel close to real pain. He often sounded like an artist trying to process the weight of his circumstances while still speaking to an audience that expected toughness.</p>
-              <p>That tension—between vulnerability and hardness, melody and danger, reflection and conflict—became one of the defining features of his work. It is also what makes his story compelling within contemporary rap history.</p>
+              <h3>Street Narrative and Public Attention</h3>
+              <p>As his visibility grew, so did the scrutiny around his life and affiliations. That tension between music and real-world conflict became part of his public image. For some listeners, it deepened the authenticity of his records. For others, it added controversy to a career that already carried heavy emotional intensity. Either way, his story remained closely tied to the sense that his music came from ongoing circumstances, not a distant past.</p>
 
               <h3>Legacy</h3>
-              <p>Quando Rondo’s legacy is still being written, but his importance within modern street rap is already clear. He belongs to a generation of artists who made emotional openness central to Southern rap without separating it from violence, grief, and neighborhood reality. His music captured a specific atmosphere of young fame under pressure.</p>
-              <p>Whether discussed for his songs, his controversies, or the conflicts surrounding his public life, he remains part of the story of how modern rap evolved in the streaming era: more melodic, more intimate, and often more exposed to real-world consequences than ever before.</p>
+              <p>Quando Rondo’s place in modern rap rests on the rawness of his voice and the emotional directness of his music. He became one of the more recognizable artists in the wave of melodic street rappers who made pain central rather than secondary. His records carry the sound of survival, loyalty, grief, and pressure, giving him a lasting identity in the landscape of emotionally driven Southern rap.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1999 — Birth</strong>
-                  <p>Born Tyquian Terrel Bowman in Savannah, Georgia.</p>
+                  <strong>2017 — Early Rise</strong>
+                  <p>Begins building online momentum with raw songs and freestyles that introduce his melodic street style. </p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s — Early Struggles and Local Momentum</strong>
-                  <p>Built his perspective through difficult life experiences before beginning to gain attention through music online.</p>
+                  <strong>2018 — “I Remember” Breakthrough</strong>
+                  <p>Finds national attention through a breakout record and quickly becomes one of rap’s notable young new voices.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2010s — Breakthrough</strong>
-                  <p>Rose as a melodic street rapper with emotionally direct songs and a rapidly growing fan base.</p>
+                  <strong>2018–2019 — Mixtape Momentum</strong>
+                  <p>Strengthens his fan base with a steady run of projects built on pain, melody, and Southern realism.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 2020s — Fame and Controversy</strong>
-                  <p>Became a nationally discussed figure as music success increasingly intersected with public conflict and scrutiny.</p>
+                  <strong>2020s — Growth and Scrutiny</strong>
+                  <p>Continues releasing music while his public image becomes increasingly shaped by real-world conflict and pressure.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Present Legacy</strong>
-                  <p>Remains part of the conversation around pain rap, Southern street music, and the pressures of young celebrity in hip-hop.</p>
+                  <strong>Legacy Phase — Emotional Street Voice</strong>
+                  <p>Remains identified as one of the era’s key pain-driven Southern rappers with a distinctive melodic perspective.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Tyquian Terrel Bowman</div>
-                </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
                   <div class="info-value">Quando Rondo</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Real Name</span>
+                  <div class="info-value">Tyquian Terrel Bowman</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Savannah, Georgia</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Southern Rap</div>
+                  <div class="info-value">Southern Hip-Hop / Trap / Melodic Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active artist; legacy still evolving</div>
+                  <div class="info-value">Recognized voice in emotionally driven Southern rap</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Savannah</span>
                 <span class="tag">Pain</span>
                 <span class="tag">Melody</span>
-                <span class="tag">Street Survival</span>
-                <span class="tag">Controversy</span>
                 <span class="tag">Loyalty</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">Street Realism</span>
+                <span class="tag">Survival</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Hardship to Voice</strong>
-                  <span>The early period where pain, instability, and real-life pressure shaped his artistic identity.</span>
+                  <strong>Breakout Pain-Rap Era</strong>
+                  <span>The early phase where Quando Rondo built his name through emotionally raw melodic street records.</span>
                 </div>
                 <div class="album">
-                  <strong>Streaming Breakthrough</strong>
-                  <span>The rise that turned him into a major melodic street rap name.</span>
+                  <strong>Mixtape Growth Era</strong>
+                  <span>The period where his project run established him as a distinct Southern voice with loyal support.</span>
                 </div>
                 <div class="album">
-                  <strong>Conflict and Visibility</strong>
-                  <span>The era in which music, fame, and public controversy became inseparable parts of his story.</span>
+                  <strong>Pressure and Legacy Era</strong>
+                  <span>A later phase defined by public scrutiny, continued releases, and the durability of his emotional style.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Quando Rondo.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Quando Rondo on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Quando+Rondo" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Quando Rondo.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Quando Rondo on Spotify and explore the records that defined his melodic street sound.</p>
+                  <a href="https://open.spotify.com/search/Quando%20Rondo" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Quando Rondo releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Quando+Rondo+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Quando Rondo on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Quando+Rondo+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">I Remember</span>
+                  <span class="track-tag">Motivation</span>
+                  <span class="track-tag">ABG</span>
+                  <span class="track-tag">Paradise</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">ABG</span>
-                <span class="track-tag">I Remember</span>
-                <span class="track-tag">Scarred From Love</span>
-                <span class="track-tag">Bad Vibe</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="king-von.html" class="related-card">
-                  <h4>King Von</h4>
-                  <p>One of the most important linked stories because of the public conflict that shaped both narratives.</p>
+                <a href="nba-youngboy.html" class="related-card">
+                  <h4>NBA YoungBoy</h4>
+                  <p>A key comparison in emotionally intense Southern rap built on pain, loyalty, and relentless output.</p>
                 </a>
                 <a href="lil-durk.html" class="related-card">
                   <h4>Lil Durk</h4>
-                  <p>A connected story through the aftermath, public tension, and wider legal and cultural fallout.</p>
+                  <p>Another major figure in the modern pain-rap space where melody and trauma shape the core identity.</p>
                 </a>
-                <a href="mo3.html" class="related-card">
-                  <h4>MO3</h4>
-                  <p>A strong melodic Southern pairing built around pain, realism, and turbulent public attention.</p>
+                <a href="rod-wave.html" class="related-card">
+                  <h4>Rod Wave</h4>
+                  <p>A parallel in how Southern artists turned emotional honesty into a defining musical strength.</p>
                 </a>
               </div>
             </section>
@@ -965,51 +947,139 @@ header#mainHeader {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

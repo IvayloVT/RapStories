@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Game | Rap Stories</title>
-  <meta name="description" content="A premium Rap Stories profile on The Game, covering his Compton roots, aftermath of 1990s gang culture, G-Unit breakthrough, major albums, feuds, independence, and lasting West Coast legacy." />
+  <meta name="description" content="A Rap Stories premium profile on The Game, covering his Compton roots, Dr. Dre and G-Unit breakthrough, West Coast revival role, documentary-style storytelling, and lasting legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,236 +461,222 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel {
+      margin-top: 24px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-/* Mobile header: hide on scroll down, show on scroll up */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -699,10 +685,11 @@ header#mainHeader {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -723,7 +710,7 @@ header#mainHeader {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>The Game</h2>
-              <p>Compton rapper whose raw storytelling, West Coast loyalty, and larger-than-life feuds made him one of the defining voices of 2000s California rap.</p>
+              <p>Compton rapper whose gritty storytelling, name-dropping lyricism, and West Coast mission helped bring California rap back to the center of the mainstream in the 2000s.</p>
             </div>
           </aside>
 
@@ -731,7 +718,7 @@ header#mainHeader {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>The Game</span></h1>
             <p class="summary">
-              Born Jayceon Terrell Taylor, 2Pac became one of the most influential and intensely discussed artists in rap history. His music fused street realism, political consciousness, vulnerability, anger, and charisma, allowing him to become both a cultural symbol and a central figure in one of hip-hop’s most turbulent eras.
+              The Game emerged from Compton with a style built on intensity, memory, and regional pride. At a time when many believed the West Coast had lost its dominant place in rap, he arrived as a loud reminder that California still had mythology, street credibility, and star power. His career became defined by blockbuster beginnings, major feuds, deep loyalty to the West, and an identity built around documentary-style rap storytelling.
             </p>
 
             <div class="quick-facts">
@@ -745,11 +732,11 @@ header#mainHeader {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>West Coast street rap</strong>
+                <strong>West Coast revival, storytelling, major feuds</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>West Coast Rap Veteran</strong>
               </div>
             </div>
 
@@ -757,22 +744,23 @@ header#mainHeader {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1979</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Compton</div>
+                <span class="label">Origin</span>
+                <div class="value">Compton, California</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2000s–Present</div>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">West Coast torchbearer</div>
+                <div class="value">Documentary-style rap</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">West Coast resurgence</div>
               </div>
             </div>
           </section>
@@ -780,80 +768,71 @@ header#mainHeader {
 
         <div class="content-layout">
           <div class="content-stack">
-            
-<section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life in Compton</h3>
-              <p>Jayceon Terrell Taylor, known professionally as The Game, was born on November 29, 1979, and came of age in Compton, California, during a period when the city’s identity was inseparable from gang politics, police pressure, poverty, and the lingering cultural force of N.W.A. and Death Row. His upbringing was marked by instability, family struggle, and the violence that shaped many young men in Los Angeles neighborhoods during the 1990s.</p>
-              <p>Those realities later became central to his music. The Game built his public identity around authenticity, biography, and an almost obsessive commitment to documenting the West Coast world that formed him. He did not present himself as detached from his environment. Instead, he made Compton one of the central characters in his catalog, turning place into mythology and memory into narrative fuel.</p>
+              <h3>Compton Roots</h3>
+              <p>The Game, born Jayceon Terrell Taylor, came out of Compton with a biography that already carried the weight of gang culture, family dysfunction, and neighborhood reputation. His upbringing helped shape the autobiographical quality that later defined his music. He did not present himself as abstract or mysterious. He made his story central, turning personal history into one of his strongest artistic tools.</p>
 
-              <h3>Turning to Rap After Survival</h3>
-              <p>Before rap success, The Game’s life seemed headed firmly toward the street economy around him. A major turning point came after he was shot and seriously injured, an event that has often been described as the catalyst for his focused pursuit of music. In the aftermath, he immersed himself in rap history, studying classic albums and using that knowledge to shape a style that mixed autobiography with homage.</p>
-              <p>This phase mattered because it established one of the most recognizable traits in his work: he rapped like both participant and fan, someone who wanted not only to tell his own story but also to place himself inside the larger history of hip-hop. That self-positioning would later become one of his strengths and one of the things critics most often debated about him.</p>
+              <h3>The Turning Point</h3>
+              <p>A major turning point in his life came after he was shot in 2001. During recovery, he reportedly immersed himself in classic rap albums and studied the craft closely. That period helped form his strategy as an artist. Instead of simply chasing regional notoriety, he aimed to place himself inside the larger rap canon by mastering references, narrative framing, and the history of the genre.</p>
 
-              <div class="quote">The Game built his career by turning Compton biography into spectacle, confession, rivalry, and revival all at once.</div>
+              <h3>Dr. Dre, Aftermath, and G-Unit</h3>
+              <p>The Game’s rise accelerated when Dr. Dre discovered him and brought him into the Aftermath system. His association with Aftermath, Interscope, and G-Unit gave him a powerful launch platform and connected him to some of the biggest names in rap. This combination mattered because it gave him both West Coast legitimacy and East Coast-era commercial momentum. He was presented as the artist who could restore California’s place in mainstream rap without sounding nostalgic or outdated.</p>
 
-              <h3>Dr. Dre, G-Unit, and Breakthrough</h3>
-              <p>The Game’s major rise accelerated when he aligned with Dr. Dre and later G-Unit, giving him access to the most visible power structure in rap at the time. This co-sign transformed him from a promising West Coast newcomer into a national figure with immediate momentum. His debut era carried a sense of mission: he was not just introducing himself, he was helping carry the West Coast back into mainstream focus.</p>
-              <p>That momentum peaked with <em>The Documentary</em>, a breakthrough album that became one of the defining rap releases of the mid-2000s. The project combined heavyweight production, confessional writing, street narratives, and a cinematic sense of West Coast identity. It established The Game as a star and made clear that California rap still had commercial and cultural force.</p>
+              <div class="quote">The Game arrived as both a new rapper and a regional mission: a reminder that the West Coast still had unfinished business in hip-hop’s mainstream story.</div>
 
-              <h3>Feuds, Fame, and Contradiction</h3>
-              <p>Almost from the beginning, The Game’s career was inseparable from conflict. His feud with 50 Cent and separation from G-Unit became one of the biggest rap storylines of the 2000s, and from there rivalry became a recurring part of his public persona. Diss records, interviews, provocations, and public disputes kept him in the spotlight and made him one of rap’s most combustible personalities.</p>
-              <p>These feuds complicated his image. On one hand, they reinforced his reputation as fearless, emotional, and deeply committed to rap competition. On the other, they sometimes overshadowed the quality of his catalog. That contradiction became a defining part of The Game’s story: an artist capable of major records and sharp storytelling, but often just as famous for the chaos around him.</p>
+              <h3><em>The Documentary</em> and Instant Impact</h3>
+              <p>His 2005 major-label debut, <em>The Documentary</em>, made that mission real. The album debuted at number one on the Billboard 200 and immediately positioned him as one of rap’s biggest new stars. It blended Dr. Dre polish with Game’s heavy use of name-checking, memory, gang narrative, and emotional detail. More than just a hit album, it became a symbolic statement for the West Coast at a moment when Southern rap and New York rap often seemed to dominate the larger conversation.</p>
 
-              <h3>Catalog, Independence, and Longevity</h3>
-              <p>After his initial breakthrough, The Game sustained a long career through multiple albums, shifting label situations, and a remarkable ability to remain culturally visible. He repeatedly returned to West Coast themes, often positioning himself as both historian and participant in California rap’s ongoing narrative. His catalog reflects loyalty to region, fascination with rap lineage, and a talent for autobiographical detail.</p>
-              <p>He also survived the era when many 2000s stars faded quickly. Part of that longevity came from his willingness to adapt without abandoning the core of his identity. Even when trends changed, The Game continued to present himself as a Compton rapper first—a figure rooted in place, memory, and rivalry rather than purely in trend cycles.</p>
+              <h3>Conflict, Reinvention, and Staying Power</h3>
+              <p>The Game’s career was never only about music. Feuds, alliances, and public conflict became central to his identity, especially his fallout with 50 Cent and G-Unit. But that volatility also became part of what kept him visible. Even after major industry ruptures, he remained capable of releasing important projects, sustaining a fan base, and reinforcing his status as a committed West Coast voice.</p>
 
               <h3>Legacy</h3>
-              <p>The Game’s legacy rests on his role in carrying the West Coast through a new commercial era after the dominance of the 1990s had faded. He helped prove that a California rapper could still build major albums, command headlines, and turn local identity into national relevance in the 2000s. His best work remains central to the story of West Coast rap’s modern revival.</p>
-              <p>He is remembered as a vivid narrator, a controversial personality, and one of the most visible custodians of Compton mythology in 21st-century hip-hop. Whether discussed through music, feuds, or cultural symbolism, The Game remains one of rap’s most recognizable West Coast figures.</p>
+              <p>The Game’s legacy rests on revival as much as achievement. He helped return mainstream attention to West Coast rap in the mid-2000s, delivered one of the era’s defining debut albums, and built a catalog rooted in regional pride and personal storytelling. His place in rap history is tied to Compton, to conflict, and to the sense that he approached each record like testimony from the front lines of California hip-hop.</p>
             </section>
 
-            
-<section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1979 — Birth</strong>
-                  <p>Born Jayceon Terrell Taylor in Compton, California.</p>
+                  <strong>2001–2003 — Transformation and Early Mixtapes</strong>
+                  <p>After surviving a shooting, The Game studies rap intensely and begins building momentum through mixtapes and local releases.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 2000s — Rap Emergence</strong>
-                  <p>Turned seriously to music after surviving violence and began building a local name through mixtapes and buzz.</p>
+                  <strong>2003–2004 — Aftermath and G-Unit Launch</strong>
+                  <p>Gets discovered by Dr. Dre and is pushed forward through the Aftermath / G-Unit / Interscope machine.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2004–2005 — Dre and G-Unit Era</strong>
-                  <p>Aligned with Dr. Dre and G-Unit, then broke through nationally with <em>The Documentary</em>.</p>
+                  <strong>2005 — <em>The Documentary</em></strong>
+                  <p>Releases his major-label debut, which opens at No. 1 and becomes a defining West Coast statement of the era.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2000s–2010s — Feuds and Longevity</strong>
-                  <p>Maintained visibility through albums, rivalries, and a sustained role in West Coast rap culture.</p>
+                  <strong>Mid-2000s — Fallout and Solo Identity</strong>
+                  <p>Public feuds and label ruptures reshape his career, but he remains one of the most visible California rappers of the decade.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s–Present — Legacy Phase</strong>
-                  <p>Remains one of the most recognizable Compton voices of the modern era, balancing music, controversy, and regional symbolism.</p>
+                  <strong>2010s–2020s — Veteran Legacy Phase</strong>
+                  <p>Continues releasing projects and remains tied to the image of uncompromising West Coast pride and long-form rap memory.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Jayceon Terrell Taylor</div>
-                </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
                   <div class="info-value">The Game</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Real Name</span>
+                  <div class="info-value">Jayceon Terrell Taylor</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Compton, California</div>
                 </div>
                 <div class="info-row">
@@ -862,87 +841,86 @@ header#mainHeader {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active artist and enduring West Coast figure</div>
+                  <div class="info-value">Veteran West Coast rapper and key 2000s revival figure</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Compton</span>
                 <span class="tag">West Coast</span>
-                <span class="tag">Street Reality</span>
-                <span class="tag">Feuds</span>
                 <span class="tag">Revival</span>
+                <span class="tag">Storytelling</span>
+                <span class="tag">Feuds</span>
                 <span class="tag">Legacy</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Compton Emergence</strong>
-                  <span>The early phase when biography, survival, and local identity shaped The Game’s voice.</span>
+                  <strong>Aftermath / G-Unit Breakthrough Era</strong>
+                  <span>The early chapter where Game became the chosen face of a new West Coast push into the mainstream.</span>
                 </div>
                 <div class="album">
-                  <strong>Documentary Breakthrough</strong>
-                  <span>The era that made him a central figure in the 2000s West Coast revival.</span>
+                  <strong>West Coast Revival Era</strong>
+                  <span>The period where <em>The Documentary</em> and its aftermath re-centered California in rap’s national conversation.</span>
                 </div>
                 <div class="album">
-                  <strong>Conflict and Endurance</strong>
-                  <span>The long-running phase defined by feuds, reinvention, and sustained cultural visibility.</span>
+                  <strong>Veteran Legacy Era</strong>
+                  <span>A later phase defined by longevity, conflict, catalog depth, and permanent identification with Compton rap.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for The Game.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for The Game on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/The%20Game" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for The Game.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for The Game on Spotify and explore the records that helped reignite mainstream West Coast rap.</p>
+                  <a href="https://open.spotify.com/search/The%20Game" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major The Game releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=The+Game+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to The Game on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=The+Game+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Westside Story</span>
+                  <span class="track-tag">How We Do</span>
+                  <span class="track-tag">Hate It or Love It</span>
+                  <span class="track-tag">Dreams</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Hate It or Love It</span>
-                <span class="track-tag">Dreams</span>
-                <span class="track-tag">How We Do</span>
-                <span class="track-tag">Westside Story</span>
-              </div>
-            </div>
-          </section>
-
-
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="yg.html" class="related-card">
-                  <h4>YG</h4>
-                  <p>Another modern Compton voice whose work carried forward West Coast street identity in a later era.</p>
+                <a href="dr-dre.html" class="related-card">
+                  <h4>Dr. Dre</h4>
+                  <p>The essential companion story for understanding The Game’s launch, co-sign, and early momentum.</p>
                 </a>
-                <a href="slim-400.html" class="related-card">
-                  <h4>Slim 400</h4>
-                  <p>A fellow Los Angeles-area street rapper whose legacy also rests on local identity, danger, and authenticity.</p>
+                <a href="50-cent.html" class="related-card">
+                  <h4>50 Cent</h4>
+                  <p>A major counterpart in The Game’s story through alliance, conflict, and one of rap’s defining mid-2000s feuds.</p>
                 </a>
-                <a href="tupac.html" class="related-card">
-                  <h4>2Pac</h4>
-                  <p>A foundational California icon whose mythology and emotional force deeply shaped the West Coast tradition The Game inherited.</p>
+                <a href="kendrick-lamar.html" class="related-card">
+                  <h4>Kendrick Lamar</h4>
+                  <p>Another Compton giant whose success helps frame different generations of California rap leadership.</p>
                 </a>
               </div>
             </section>
@@ -969,51 +947,139 @@ header#mainHeader {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

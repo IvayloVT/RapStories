@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Notorious B.I.G. | Rap Stories</title>
-<meta content="A detailed Rap Stories profile on The Notorious B.I.G., covering his Brooklyn upbringing, rise through Bad Boy Records, dominance in New York rap, the East Coast-West Coast rivalry, death, and legacy." name="description"/>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Notorious B.I.G. | Rap Stories</title>
+  <meta name="description" content="A Rap Stories premium profile on The Notorious B.I.G., covering his Brooklyn roots, Bad Boy rise, Ready to Die and Life After Death eras, lyrical greatness, and lasting East Coast legacy." />
+  <style>
     :root {
       --bg: #0a0a0f;
       --panel: rgba(255, 255, 255, 0.06);
@@ -36,10 +35,7 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
 
     .glass {
       background: var(--panel);
@@ -114,9 +110,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
+    .nav-links a.active { color: var(--text); }
 
     .nav-links a::after {
       content: "";
@@ -133,9 +127,7 @@
     }
 
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-      transform: scaleX(1);
-    }
+    .nav-links a.active::after { transform: scaleX(1); }
 
     .nav-btn {
       padding: 12px 20px;
@@ -153,17 +145,13 @@
       box-shadow: 0 14px 28px rgba(212,175,55,0.28);
     }
 
-    .hero {
-      padding: 42px 0 28px;
-    }
+    .hero { padding: 42px 0 28px; }
 
     .breadcrumb {
       color: var(--muted);
       font-size: 0.92rem;
       margin-bottom: 18px;
     }
-
-    .breadcrumb a:hover { color: var(--text); }
 
     .hero-layout {
       display: grid;
@@ -208,15 +196,8 @@
       margin-bottom: 14px;
     }
 
-    .artist-image h2 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .artist-image p {
-      color: #d7d7df;
-      font-size: 0.95rem;
-    }
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
 
     .hero-info { padding: 28px; }
 
@@ -275,16 +256,9 @@
       margin-bottom: 6px;
     }
 
-    .fact strong {
-      font-size: 1rem;
-      color: var(--text);
-    }
+    .fact strong { font-size: 1rem; color: var(--text); }
 
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 
     .btn {
       padding: 14px 18px;
@@ -314,10 +288,7 @@
       margin-top: 26px;
     }
 
-    .content-stack, .side-stack {
-      display: grid;
-      gap: 22px;
-    }
+    .content-stack, .side-stack { display: grid; gap: 22px; }
 
     .side-stack {
       align-self: start;
@@ -399,10 +370,7 @@
       font-size: 0.95rem;
     }
 
-    .info-list, .discography, .related-list {
-      display: grid;
-      gap: 14px;
-    }
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
 
     .info-row {
       padding-bottom: 12px;
@@ -418,10 +386,7 @@
       margin-bottom: 4px;
     }
 
-    .info-value {
-      color: var(--text);
-      font-weight: 700;
-    }
+    .info-value { color: var(--text); font-weight: 700; }
 
     .album, .related-card {
       padding: 16px;
@@ -475,17 +440,11 @@
       flex-wrap: wrap;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
     .footer-links a:hover { color: var(--text); }
 
     @media (max-width: 1150px) {
-      .hero-layout,
-      .content-layout { grid-template-columns: 1fr; }
+      .hero-layout, .content-layout { grid-template-columns: 1fr; }
       .side-stack { position: static; }
     }
 
@@ -502,628 +461,625 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(5, 5, 8, 0.76);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-}
-.nav {
-  min-height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-  font-size: 1.02rem;
-}
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  color: #111;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
-}
-.brand-text {
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.nav-links a {
-  position: relative;
-  color: var(--muted);
-  transition: color 0.25s ease;
-  font-size: 0.96rem;
-}
-.nav-links a:hover,
-.nav-links a.active { color: var(--text); }
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-.nav-links a:hover::after,
-.nav-links a.active::after { transform: scaleX(1); }
-.nav-btn {
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #f5df8f);
-  color: #111;
-  font-weight: 800;
-  border: none;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.nav-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
-}
-footer {
-  padding: 24px 0 50px;
-  color: var(--muted);
-}
-.footer-wrap {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-.footer-links a:hover { color: var(--text); }
-@media (max-width: 820px) {
-  .nav { flex-direction: column; padding: 14px 0; }
-  .nav-links { justify-content: center; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel {
+      margin-top: 24px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
-<header id="mainHeader">
-<div class="container nav">
-<a class="brand" href="index.html">
-<div class="brand-mark">RS</div>
-<span class="brand-text">RAP STORIES</span>
-</a>
-<nav class="nav-links">
-<a href="index.html">Home</a>
-<a href="artist-archive.html">Archive</a>
-<a href="artist.html">Artist</a>
-<a href="category.html">Categories</a>
-<a href="timeline.html">Timeline</a>
-<a href="map.html">Map</a>
-<a href="contact.html">Contact</a>
-</nav>
-<a class="nav-btn" href="artist.html">Back to Artists</a>
-</div>
-</header>
-<main>
-<section class="hero">
-<div class="container">
-<div class="breadcrumb">
-<a href="index.html">Home</a> /
+  <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
+  <header id="mainHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">RS</div>
+        <span class="brand-text">RAP STORIES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
+        <a href="artist.html" class="active">Artist</a>
+        <a href="category.html">Categories</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="map.html">Map</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artist.html" class="nav-btn">Back to Artists</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero story-section" data-story-title="Intro">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> /
           <a href="artist.html">Artists</a> /
           <span>The Notorious B.I.G.</span>
-</div>
-<div class="hero-layout">
-<aside class="glass artist-image">
-<div class="artist-image-content">
-<span class="artist-tag">Legend Profile</span>
-<h2>The Notorious B.I.G.</h2>
-<p>Brooklyn storyteller, Bad Boy star, and one of the greatest lyricists in hip-hop history.</p>
-</div>
-</aside>
-<section class="glass hero-info">
-<span class="eyebrow">Rap Stories Profile</span>
-<h1>The Story of <span>Biggie</span></h1>
-<p class="summary">
-              Born Christopher George Latore Wallace, The Notorious B.I.G. rose from Bedford-Stuyvesant to become the central voice of East Coast rap in the 1990s. His flow, storytelling, and presence made him one of the most important figures the genre has ever produced.
+        </div>
+
+        <div class="hero-layout">
+          <aside class="glass artist-image">
+            <div class="artist-image-content">
+              <span class="artist-tag">Artist Profile</span>
+              <h2>The Notorious B.I.G.</h2>
+              <p>Brooklyn rap icon whose storytelling, flow, and charisma helped restore East Coast dominance and define lyrical greatness in hip-hop.</p>
+            </div>
+          </aside>
+
+          <section class="glass hero-info">
+            <span class="eyebrow">Rap Stories Profile</span>
+            <h1>The Story of <span>The Notorious B.I.G.</span></h1>
+            <p class="summary">
+              The Notorious B.I.G. emerged from Brooklyn with one of the most commanding voices and complete skill sets rap had ever seen. In only a few years, he became the defining star of Bad Boy, a central figure in East Coast hip-hop’s resurgence, and one of the most revered lyricists in the history of the genre. His story is one of talent, ambition, myth, violence, and an artistic legacy that grew even larger after death.
             </p>
-<div class="quick-facts">
-<div class="fact">
-<span>Born</span>
-<strong>May 21, 1972</strong>
-</div>
-<div class="fact">
-<span>From</span>
-<strong>Brooklyn, New York</strong>
-</div>
-<div class="fact">
-<span>Known For</span>
-<strong>Storytelling &amp; flow</strong>
-</div>
-<div class="fact">
-<span>Breakthrough</span>
-<strong><em>Ready to Die</em></strong>
-</div>
-</div>
-<div class="hero-buttons">
-<a class="btn btn-primary" href="#biography">Read Biography</a>
-<a class="btn" href="#timeline">View Timeline</a>
-</div>
-<div class="artist-stats">
-<div class="stat-panel">
-<span class="label">Born</span>
-<div class="value">1972</div>
-</div>
-<div class="stat-panel">
-<span class="label">Home</span>
-<div class="value">Brooklyn</div>
-</div>
-<div class="stat-panel">
-<span class="label">Era</span>
-<div class="value">1990s</div>
-</div>
-<div class="stat-panel">
-<span class="label">Known For</span>
-<div class="value">East Coast lyricism</div>
-</div>
-</div>
-</section>
-</div>
-<div class="content-layout">
-<div class="content-stack">
-<section class="glass panel" id="biography">
-<h2>Biography</h2>
-<h3>Early Life: Brooklyn Beginnings</h3>
-<p>Christopher George Latore Wallace, later known as The Notorious B.I.G., was born on May 21, 1972, in Brooklyn, New York. Raised in the Bedford-Stuyvesant neighborhood, Biggie grew up in an environment shaped by economic hardship, crime, and limited opportunity. His mother, Voletta Wallace, was a Jamaican immigrant and schoolteacher who worked tirelessly to provide stability in a neighborhood where instability was the norm.</p>
-<p>Despite his surroundings, Wallace showed early signs of intelligence and potential. He attended the prestigious George Westinghouse Career and Technical Education High School, where he crossed paths with future hip-hop figures such as Jay-Z and Busta Rhymes. However, his academic path was disrupted, and he eventually dropped out, turning instead toward the streets.</p>
-<h3>The Streets and Early Reputation</h3>
-<p>As a teenager, Biggie became involved in drug dealing, a decision shaped as much by environment as by necessity. He quickly developed a reputation for intelligence and composure, qualities that allowed him to navigate the risks of street life. At the same time, he began to experiment with rap, using it as both expression and escape.</p>
-<p>His early recordings, distributed as demo tapes, showcased a rare lyrical ability. Unlike many rappers of the time, Biggie had a conversational flow combined with detailed storytelling. His voice carried authority, but also nuance. He could describe street life with realism while injecting humor, reflection, and charisma.</p>
-<h3>Discovery and Rise to Fame</h3>
-<p>Biggie’s breakthrough came when his demo reached Sean “Diddy” Combs, who was in the process of building Bad Boy Records. Recognizing his talent immediately, Diddy signed him and began shaping his introduction to the industry.</p>
-<p>In 1994, Biggie released his debut album, <em>Ready to Die</em>, a project that would become one of the most important albums in hip-hop history. The album told the story of his life in stark, unfiltered detail, from poverty and crime to ambition and survival.</p>
-<p>Tracks such as <em>Juicy</em>, <em>Big Poppa</em>, and <em>Gimme the Loot</em> demonstrated his range. He could create radio hits, tell cinematic street stories, and deliver introspective narratives, all while maintaining a unique voice and perspective.</p>
-<div class="quote">Biggie did not just rap about the streets — he narrated them with the detail of a novelist and the rhythm of a master performer.</div>
-<h3>Dominance and Cultural Impact</h3>
-<p>Following the success of <em>Ready to Die</em>, Biggie became the central figure in the resurgence of East Coast hip-hop. At a time when West Coast artists were dominating the scene, he restored New York’s prominence with a sound that was both modern and deeply rooted in the city’s identity.</p>
-<p>His ability to balance commercial success with lyrical depth made him one of the most respected artists of his time. He was not just popular; he was critically acclaimed, admired by both fans and fellow musicians.</p>
-<h3>East Coast–West Coast Rivalry</h3>
-<p>Biggie’s rise coincided with growing tensions between East Coast and West Coast hip-hop scenes. His association with Bad Boy Records placed him in opposition to artists affiliated with Death Row Records, including Tupac Shakur.</p>
-<p>The rivalry, fueled by media coverage, personal disputes, and industry competition, escalated into one of the most notorious conflicts in music history. Biggie’s relationship with Tupac, once friendly, deteriorated into public hostility, with both artists releasing diss tracks that intensified the divide.</p>
-<h3>Life at the Top</h3>
-<p>As his fame grew, Biggie’s life became increasingly complex. He was balancing success, business responsibilities, personal relationships, and the pressures of being a central figure in a highly charged cultural moment. His image evolved from street hustler to global star, but the transition was not without tension.</p>
-<p>Despite these pressures, he continued to refine his craft. His lyrical precision, storytelling ability, and effortless flow set a standard that continues to influence hip-hop today.</p>
-<h3>Life After Tupac’s Death</h3>
-<p>After Tupac Shakur’s death in September 1996, the hip-hop community entered a period of reflection and uncertainty. Many hoped that the violence associated with the rivalry would come to an end. Biggie himself expressed a desire to move beyond the conflict and focus on his music and career.</p>
-<p>During this time, he completed work on his second album, <em>Life After Death</em>, a project that showcased both artistic growth and commercial ambition. The album featured hits such as <em>Hypnotize</em> and <em>Mo Money Mo Problems</em>, highlighting his ability to evolve while maintaining his core identity.</p>
-<h3>The Night of His Death</h3>
-<p>On March 9, 1997, Biggie was in Los Angeles attending industry events when he was shot in a drive-by shooting. He was transported to a nearby hospital but was pronounced dead shortly after. He was just 24 years old.</p>
-<p>His death came less than six months after Tupac’s, deepening the sense of tragedy surrounding the era. Like Tupac’s case, Biggie’s murder remains officially unsolved, contributing to ongoing speculation and investigation.</p>
-<h3>Legacy</h3>
-<p>The Notorious B.I.G.’s influence on hip-hop is immeasurable. His storytelling, flow, and charisma set a benchmark that continues to shape the genre. <em>Life After Death</em>, released shortly after his passing, debuted at number one and became one of the best-selling rap albums of all time.</p>
-<p>He is remembered not only as one of the greatest rappers ever, but as a voice that captured the complexity of street life with honesty, intelligence, and artistry. His music continues to resonate across generations, proving that his impact extends far beyond his brief career.</p>
-</section>
-<section class="glass panel" id="timeline">
-<h2>Career Timeline</h2>
-<div class="timeline">
-<div class="timeline-item">
-<strong>1972 — Birth</strong>
-<p>Born Christopher George Latore Wallace in Brooklyn, New York.</p>
-</div>
-<div class="timeline-item">
-<strong>Teenage Years — Demo Tapes</strong>
-<p>Began building a reputation through street life and early rap recordings.</p>
-</div>
-<div class="timeline-item">
-<strong>1994 — Breakthrough</strong>
-<p><em>Ready to Die</em> made him the defining new voice of East Coast rap.</p>
-</div>
-<div class="timeline-item">
-<strong>1996–1997 — Peak Fame</strong>
-<p>Recorded <em>Life After Death</em> while navigating intense industry pressure and rivalry.</p>
-</div>
-<div class="timeline-item">
-<strong>1997 — Death in Los Angeles</strong>
-<p>Killed in a drive-by shooting at age 24.</p>
-</div>
-</div>
-</section>
-</div>
-<aside class="side-stack">
-<section class="glass panel">
-<h2>Profile Details</h2>
-<div class="info-list">
-<div class="info-row">
-<span class="info-label">Full Name</span>
-<div class="info-value">Christopher George Latore Wallace</div>
-</div>
-<div class="info-row">
-<span class="info-label">Stage Name</span>
-<div class="info-value">The Notorious B.I.G.</div>
-</div>
-<div class="info-row">
-<span class="info-label">Neighborhood</span>
-<div class="info-value">Bedford-Stuyvesant, Brooklyn</div>
-</div>
-<div class="info-row">
-<span class="info-label">Label</span>
-<div class="info-value">Bad Boy Records</div>
-</div>
-<div class="info-row">
-<span class="info-label">Genre</span>
-<div class="info-value">East Coast Hip-Hop</div>
-</div>
-</div>
-</section>
-<section class="glass panel">
-<h2>Key Themes</h2>
-<div class="tags">
-<span class="tag">Brooklyn</span>
-<span class="tag">Storytelling</span>
-<span class="tag">Bad Boy</span>
-<span class="tag">East Coast Rap</span>
-<span class="tag">Rivalry Era</span>
-<span class="tag">Legacy</span>
-</div>
-</section>
-<section class="glass panel">
-<h2>Highlighted Works</h2>
-<div class="discography">
-<div class="album">
-<strong>Ready to Die</strong>
-<span>The breakthrough classic that established his legend.</span>
-</div>
-<div class="album">
-<strong>Life After Death</strong>
-<span>A monumental second album released shortly after his death.</span>
-</div>
-<div class="album">
-<strong>Juicy / Big Poppa</strong>
-<span>Records that showed his crossover power and personality.</span>
-</div>
-</div>
-</section>
-<section class="glass panel music-panel">
-<h2>Music Integration</h2>
-<p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for The Notorious B.I.G..
-            </p>
-<div class="music-grid">
-<div class="music-card">
-<h3>Spotify</h3>
-<p>Open a curated search for The Notorious B.I.G. on Spotify and keep the story moving with the music.</p>
-<a class="music-link-btn primary" href="https://open.spotify.com/search/The+Notorious+B.I.G." rel="noopener noreferrer" target="_blank">Open on Spotify →</a>
-</div>
-<div class="music-card">
-<h3>YouTube</h3>
-<p>Jump into official videos, performances, and major records related to The Notorious B.I.G. on YouTube.</p>
-<a class="music-link-btn" href="https://www.youtube.com/results?search_query=The+Notorious+B.I.G.+official+music+videos" rel="noopener noreferrer" target="_blank">Watch on YouTube →</a>
-</div>
-</div>
-<div class="essential-tracks">
-<h3>Essential Listening</h3>
-<div class="track-list">
-<span class="track-tag">Juicy</span>
-<span class="track-tag">Big Poppa</span>
-<span class="track-tag">Hypnotize</span>
-<span class="track-tag">Sky's the Limit</span>
-</div>
-</div>
-</section>
-<section class="glass panel">
-<h2>Related Stories</h2>
-<div class="related-list">
-<a class="related-card" href="tupac.html">
-<h4>2Pac</h4>
-<p>The most essential linked story from the same 1990s era, rivalry history, and cultural mythology.</p>
-</a>
-<a class="related-card" href="dmx.html">
-<h4>DMX</h4>
-<p>A fellow New York titan whose rise helped keep East Coast rap at the center of the culture.</p>
-</a>
-<a class="related-card" href="pop-smoke.html">
-<h4>Pop Smoke</h4>
-<p>A modern Brooklyn continuation of the city energy and presence Biggie helped immortalize.</p>
-</a>
-</div>
-</section>
-</aside>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<div class="container footer-wrap">
-<div>
-<strong style="color:white;">Rap Stories</strong>
-<p>Preserving the stories behind the legends.</p>
-</div>
-<div class="footer-links">
-<a href="about.html">About</a>
-<a href="artist.html">Artists</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-</div>
-</div>
-</footer>
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
 
-  let lastScrollY = window.pageYOffset;
+            <div class="quick-facts">
+              <div class="fact">
+                <span>Born</span>
+                <strong>May 21, 1972</strong>
+              </div>
+              <div class="fact">
+                <span>From</span>
+                <strong>Brooklyn, New York</strong>
+              </div>
+              <div class="fact">
+                <span>Known For</span>
+                <strong>Storytelling, flow, East Coast rap revival</strong>
+              </div>
+              <div class="fact">
+                <span>Status</span>
+                <strong>Hip-Hop Legend</strong>
+              </div>
+            </div>
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+            <div class="hero-buttons">
+              <a href="#biography" class="btn btn-primary">Read Biography</a>
+              <a href="#timeline" class="btn">View Timeline</a>
+            </div>
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+            <div class="artist-stats">
+              <div class="stat-panel">
+                <span class="label">Origin</span>
+                <div class="value">Brooklyn, New York</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Era</span>
+                <div class="value">1990s</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Known For</span>
+                <div class="value">Elite storytelling</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">East Coast canon</div>
+              </div>
+            </div>
+          </section>
+        </div>
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
-        header.classList.remove("hidden");
-      }
-    } else {
-      header.classList.remove("hidden");
+        <div class="content-layout">
+          <div class="content-stack">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
+              <h2>Biography</h2>
+
+              <h3>Brooklyn Beginnings</h3>
+              <p>Born Christopher Wallace in Brooklyn, The Notorious B.I.G. grew up in a world shaped by economic pressure, neighborhood survival, and sharp intelligence. He came from Clinton Hill near Bedford-Stuyvesant, an environment that later became central to his imagery and storytelling. What made him stand out was not only what he had lived through, but how vividly he could narrate it. Even before stardom, there was a sense that he could turn memory into cinema.</p>
+
+              <h3>Bad Boy and the Rise of Biggie</h3>
+              <p>Biggie’s career changed when Sean Combs signed him to Bad Boy in 1993. That relationship gave him a powerful launch platform and placed him at the center of a new East Coast movement. At a time when West Coast rap seemed dominant commercially and culturally, Biggie became the face of a New York resurgence—one rooted in lyrical precision, street realism, glossy production, and undeniable star power. :contentReference[oaicite:1]{index=1}</p>
+
+              <h3><em>Ready to Die</em></h3>
+              <p>Released on September 13, 1994, <em>Ready to Die</em> immediately established him as more than just a promising rapper. It was a full artistic statement: dark, funny, reflective, violent, vulnerable, and masterfully written. Songs like “Juicy,” “Big Poppa,” and “Warning” showed different sides of his craft, from autobiographical triumph to radio-ready confidence to crime-story suspense. The album quickly became one of the most important rap debuts ever made. :contentReference[oaicite:2]{index=2}</p>
+
+              <div class="quote">Biggie’s greatness came from total control: voice, rhythm, detail, humor, menace, and the rare ability to make street narratives feel literary without losing their rawness.</div>
+
+              <h3>Flow, Storytelling, and Greatness</h3>
+              <p>What separated Biggie from many peers was how complete he sounded. His flow was relaxed but exact, his breath control was extraordinary, and his writing could move between intimidation, introspection, wit, and luxury with no loss of credibility. He could rap as a hustler, a dreamer, a narrator, a celebrity, or a doomed man looking at his own reflection. That range is a major reason he is so often placed among the greatest rappers ever. :contentReference[oaicite:3]{index=3}</p>
+
+              <h3><em>Life After Death</em> and Tragedy</h3>
+              <p>Biggie was killed in Los Angeles on March 9, 1997, at just 24 years old. Sixteen days later, <em>Life After Death</em> was released and became a monumental posthumous statement, debuting at No. 1 and helping cement his legend. Songs such as “Hypnotize,” “Mo Money Mo Problems,” and “Sky’s the Limit” expanded his image from elite street rapper to full-scale rap superstar. :contentReference[oaicite:4]{index=4}</p>
+
+              <h3>Legacy</h3>
+              <p>The Notorious B.I.G.’s legacy has only grown with time. He is widely regarded as one of the greatest rappers ever, and his influence can be heard in generations of artists who borrowed from his storytelling, cadence, and larger-than-life presence. His induction into the Rock &amp; Roll Hall of Fame in 2020 formalized what hip-hop had long believed: Biggie was not simply a rap star of the 1990s. He was one of the permanent architects of the form. :contentReference[oaicite:5]{index=5}</p>
+            </section>
+
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
+              <h2>Career Timeline</h2>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <strong>1993 — Signed to Bad Boy</strong>
+                  <p>Sean Combs signs Biggie and helps position him as the centerpiece of a new East Coast commercial push. :contentReference[oaicite:6]{index=6}</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1994 — <em>Ready to Die</em></strong>
+                  <p>Releases his debut album on September 13, 1994, instantly becoming one of rap’s most acclaimed new stars. :contentReference[oaicite:7]{index=7}</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1995 — Bad Boy Expansion</strong>
+                  <p>Builds further momentum through features, Junior M.A.F.I.A., and growing dominance in East Coast hip-hop. :contentReference[oaicite:8]{index=8}</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1997 — Death in Los Angeles</strong>
+                  <p>Is killed on March 9, 1997, cutting short one of the most extraordinary rises in rap history. :contentReference[oaicite:9]{index=9}</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>1997–2020 — Posthumous Canon</strong>
+                  <p><em>Life After Death</em> expands his legend, and later Rock Hall induction confirms his historic status. :contentReference[oaicite:10]{index=10}</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="side-stack">
+            <section class="glass panel story-section" data-story-title="Details">
+              <h2>Profile Details</h2>
+              <div class="info-list">
+                <div class="info-row">
+                  <span class="info-label">Stage Name</span>
+                  <div class="info-value">The Notorious B.I.G.</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Real Name</span>
+                  <div class="info-value">Christopher George Latore Wallace</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Brooklyn, New York</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Hardcore Hip-Hop</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Revered as one of the greatest rappers in history</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Themes">
+              <h2>Key Themes</h2>
+              <div class="tags">
+                <span class="tag">Brooklyn</span>
+                <span class="tag">Storytelling</span>
+                <span class="tag">Bad Boy</span>
+                <span class="tag">East Coast</span>
+                <span class="tag">Flow</span>
+                <span class="tag">Legacy</span>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Eras">
+              <h2>Highlighted Eras</h2>
+              <div class="discography">
+                <div class="album">
+                  <strong>Bad Boy Breakthrough Era</strong>
+                  <span>The early chapter where Biggie became the defining voice of a new East Coast commercial revival.</span>
+                </div>
+                <div class="album">
+                  <strong><em>Ready to Die</em> Era</strong>
+                  <span>The period where his debut established him as an all-time rap writer and star.</span>
+                </div>
+                <div class="album">
+                  <strong>Posthumous Legend Era</strong>
+                  <span>A lasting phase defined by <em>Life After Death</em>, canon status, and permanent cultural reverence.</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for The Notorious B.I.G.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for The Notorious B.I.G. on Spotify and explore one of the most respected catalogs in rap history.</p>
+                  <a href="https://open.spotify.com/search/The%20Notorious%20B.I.G." target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Notorious B.I.G. releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=The+Notorious+B.I.G.+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
+              </div>
+
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Juicy</span>
+                  <span class="track-tag">Big Poppa</span>
+                  <span class="track-tag">Warning</span>
+                  <span class="track-tag">Hypnotize</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="glass panel story-section" data-story-title="Related">
+              <h2>Related Stories</h2>
+              <div class="related-list">
+                <a href="2pac.html" class="related-card">
+                  <h4>2Pac</h4>
+                  <p>The most essential counterpart for understanding Biggie’s era, mythology, and the wider East Coast–West Coast story.</p>
+                </a>
+                <a href="jay-z.html" class="related-card">
+                  <h4>Jay-Z</h4>
+                  <p>Another Brooklyn giant whose rise helps frame Biggie’s influence on New York lyricism and ambition.</p>
+                </a>
+                <a href="nas.html" class="related-card">
+                  <h4>Nas</h4>
+                  <p>A key East Coast comparison in storytelling, technical mastery, and the golden-age New York canon.</p>
+                </a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong style="color:white;">Rap Stories</strong>
+        <p>Preserving the stories behind the legends.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="artist.html">Artists</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
+  <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
+
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
+
+    if (!rail || !toggle || !progressBar || !sections.length) return;
+
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
+
+    rail.innerHTML = "";
+
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
+
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
     }
 
-    lastScrollY = currentScrollY;
-  }
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-  offset();
-  handleScroll();
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
 
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
+        header.classList.remove("hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    handleScroll();
 
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const current = window.location.pathname.split("/").pop() || "index.html";
-  const links = document.querySelectorAll(".nav-links a");
-  links.forEach(link => {
-    link.classList.remove("active");
-    const href = link.getAttribute("href");
-    if (current === href) {
-      link.classList.add("active");
-    }
-  });
-  if (!Array.from(links).some(link => link.classList.contains("active"))) {
-    if (current.endsWith(".html")) {
-      const isArtistPage = !["index.html","artist-archive.html","artist.html","category.html","timeline.html","map.html","contact.html","thank-you.html","thank-you-premium.html","intro.html"].includes(current);
-      if (isArtistPage) {
-        const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
-        if (artistLink) artistLink.classList.add("active");
-      }
-    }
-  }
-});
-</script></body>
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
+</body>
 </html>

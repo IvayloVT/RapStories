@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snoop Dogg | Rap Stories</title>
-  <meta name="description" content="Laid-back, charismatic, and instantly recognizable, Snoop Dogg became one of the most enduring personalities in rap history." />
+  <meta name="description" content="A Rap Stories premium profile on Snoop Dogg, covering his Long Beach roots, Death Row breakthrough, G-funk legacy, reinvention, and lasting impact on hip-hop culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,222 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel {
+      margin-top: 24px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +685,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +710,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Snoop Dogg</h2>
-              <p>Laid-back, charismatic, and instantly recognizable, Snoop Dogg became one of the most enduring personalities in rap history.</p>
+              <p>Long Beach icon whose laid-back drawl, G-funk charisma, and nonstop reinvention made him one of the most recognizable figures in hip-hop history.</p>
             </div>
           </aside>
 
@@ -735,7 +718,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Snoop Dogg</span></h1>
             <p class="summary">
-              Born Calvin Broadus Jr., Snoop Dogg rose from Long Beach into global celebrity through a combination of unmistakable voice, effortless flow, West Coast style, and unusual longevity. Few rappers have remained as visible across as many eras.
+              Snoop Dogg emerged from Long Beach with one of the most distinctive voices rap had ever heard. Through Death Row, G-funk, solo superstardom, and decades of reinvention, he became more than a rapper. He became a permanent cultural presence: a symbol of West Coast cool, mainstream crossover power, and unusual longevity in a genre that often changes quickly.
             </p>
 
             <div class="quick-facts">
@@ -749,11 +732,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>West Coast style and iconic persona</strong>
+                <strong>G-funk, West Coast rap, crossover longevity</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Hip-Hop Legend</strong>
               </div>
             </div>
 
@@ -761,22 +744,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1971</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Long Beach, California</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">1990s–Present</div>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">West Coast icon</div>
+                <div class="value">G-funk charisma</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">West Coast culture icon</div>
               </div>
             </div>
           </section>
@@ -784,149 +768,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
               <h3>Long Beach Beginnings</h3>
-              <p>Snoop Dogg grew up in Long Beach, California, where neighborhood life, gang culture, music, and local identity all fed into his worldview. His personality would later feel unique in rap because he combined street credibility with humor, smoothness, and natural star quality.</p>
-              <h3>Discovery and Explosion</h3>
-              <p>His breakthrough came through association with Dr. Dre, whose production and platform placed Snoop directly at the center of West Coast rap’s early 1990s takeover. Snoop’s delivery sounded unlike anyone else: elastic, calm, melodic, and instantly memorable.</p>
-              <p>That voice, along with his charisma, made him a natural standout. He did not need to shout to dominate a track. He seemed to float across beats, turning cool into power.</p>
-              <h3>From Rap Star to Cultural Fixture</h3>
-              <p>Over time, Snoop expanded beyond records into television, film, endorsements, commentary, and broader entertainment. He became more than a rapper; he became a personality recognizable well beyond hip-hop. Yet he maintained ties to the sound and imagery that made him famous.</p>
+              <p>Snoop Dogg was born Calvin Cordozar Broadus Jr. in Long Beach, California, and grew up in an environment that shaped both his street identity and his musical instincts. His early years included church involvement, neighborhood influence, and periods of trouble with the law, all of which became part of the mythology around his rise. What made him stand out early was not just his personality, but his voice: smooth, instantly recognizable, conversational, and rhythmic without ever sounding forced.</p>
+
+              <h3>Dr. Dre and the Death Row Breakthrough</h3>
+              <p>Snoop’s rise accelerated when Dr. Dre brought him into the Death Row orbit in the early 1990s. His appearances on “Deep Cover” and then on <em>The Chronic</em> introduced him to the world as a new kind of West Coast star. He sounded relaxed where others sounded tense, melodic where others sounded rigid, and effortlessly cool in a way that became central to G-funk’s appeal.</p>
+
+              <h3><em>Doggystyle</em> and Instant Stardom</h3>
+              <p>In 1993, Snoop released <em>Doggystyle</em>, a debut that immediately confirmed he was not just Dr. Dre’s protégé but a superstar in his own right. The album entered the Billboard 200 at number one and became one of the defining West Coast rap statements of the decade. Songs like “Gin and Juice” and “What’s My Name?” made him a household name and helped cement the commercial power of West Coast rap in the 1990s.</p>
+
+              <div class="quote">Snoop Dogg did not just help popularize West Coast rap—he gave it one of its most enduring personalities, voices, and visual identities.</div>
+
+              <h3>Beyond Death Row</h3>
+              <p>What makes Snoop’s career so unusual is how long he stayed relevant after the first explosion of fame. He moved beyond Death Row, worked with different labels, experimented with different sounds, and remained visible through changing eras of rap. While many artists are trapped by the decade that made them, Snoop kept adapting—sometimes as a rapper, sometimes as a media figure, sometimes as an entrepreneur, always as a recognizable brand.</p>
+
+              <h3>Reinvention and Cultural Reach</h3>
+              <p>Snoop’s legacy is bigger than records alone. He became an actor, TV personality, commercial presence, businessman, and pop-culture institution. That reach mattered because he managed to expand without losing the core traits that made people connect with him in the first place: humor, ease, style, and a distinctly Californian aura. Few rappers have crossed into mainstream culture so broadly while still remaining believable as rap icons.</p>
+
               <h3>Legacy</h3>
-              <p>Snoop Dogg’s legacy rests on durability, tone, and cultural reach. He helped define the West Coast mainstream era and then outlived that moment by reinventing himself repeatedly without losing the essence of who audiences recognized.</p>
+              <p>Snoop Dogg’s legacy rests on both musical and cultural dominance. He helped define the sound and image of G-funk, gave West Coast rap one of its clearest ambassadors, and showed that a hip-hop artist could survive multiple generations of change without becoming irrelevant. His story is one of breakout brilliance, reinvention, and permanence. In rap history, Snoop is not just famous—he is foundational.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1971 — Birth</strong>
-                  <p>Born Calvin Cordozar Broadus Jr. in Long Beach, California.</p>
+                  <strong>1992 — Breakthrough with Dr. Dre</strong>
+                  <p>Appears on “Deep Cover” and <em>The Chronic</em>, quickly becoming one of rap’s most exciting new voices.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 1990s — Breakthrough</strong>
-                  <p>Discovered through Dr. Dre and quickly became a major rap star.</p>
+                  <strong>1993 — <em>Doggystyle</em></strong>
+                  <p>Releases a landmark debut album that enters the Billboard 200 at number one and defines a major G-funk era.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1993–1994 — Stardom</strong>
-                  <p>Established himself as one of the faces of West Coast hip-hop.</p>
+                  <strong>Late 1990s / 2000s — Reinvention</strong>
+                  <p>Moves beyond the Death Row era and remains a major name through changing labels, styles, and public roles.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Reinvention</strong>
-                  <p>Expanded into entertainment beyond music.</p>
+                  <strong>2010s — Global Cultural Figure</strong>
+                  <p>Expands even further into television, branding, entrepreneurship, and cross-genre visibility.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s–Present — Global Celebrity</strong>
-                  <p>Maintained one of the most durable brands in rap history.</p>
+                  <strong>2020s — Legacy and Ownership Era</strong>
+                  <p>Continues performing and building on a legacy that stretches far beyond music into full cultural permanence.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Calvin Cordozar Broadus Jr.</div>
-                </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
                   <div class="info-value">Snoop Dogg</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Real Name</span>
+                  <div class="info-value">Calvin Cordozar Broadus Jr.</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Long Beach, California</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / West Coast Rap</div>
+                  <div class="info-value">West Coast Hip-Hop / G-Funk / Gangsta Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; global entertainment figure</div>
+                  <div class="info-value">One of hip-hop’s most recognizable and enduring cultural icons</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Cool</span>
+                <span class="tag">Long Beach</span>
+                <span class="tag">G-Funk</span>
+                <span class="tag">Death Row</span>
+                <span class="tag">Reinvention</span>
                 <span class="tag">Charisma</span>
                 <span class="tag">Longevity</span>
-                <span class="tag">West Coast</span>
-                <span class="tag">Reinvention</span>
-                <span class="tag">Celebrity</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Dre Discovery</strong>
-                  <span>The breakthrough chapter that launched Snoop as a defining new voice.</span>
+                  <strong>Death Row Breakthrough Era</strong>
+                  <span>The explosive opening chapter where Snoop became the laid-back face of G-funk and West Coast rap superstardom.</span>
                 </div>
                 <div class="album">
-                  <strong>West Coast Superstardom</strong>
-                  <span>The peak era of classic albums, major features, and iconic status.</span>
+                  <strong>Reinvention Era</strong>
+                  <span>The period where he proved he could survive beyond one label, one sound, or one decade.</span>
                 </div>
                 <div class="album">
-                  <strong>Entertainment Icon</strong>
-                  <span>The long phase where Snoop became bigger than music alone.</span>
+                  <strong>Legacy Icon Era</strong>
+                  <span>A later phase defined by cross-generational fame, business power, and permanent cultural status.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Snoop Dogg on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Snoop%20Dogg" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Snoop Dogg.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Snoop Dogg on Spotify and explore the records that helped define West Coast hip-hop.</p>
+                  <a href="https://open.spotify.com/search/Snoop%20Dogg" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Snoop Dogg releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Snoop+Dogg+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Snoop Dogg on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Snoop+Dogg+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Gin and Juice</span>
+                  <span class="track-tag">What’s My Name?</span>
+                  <span class="track-tag">Murder Was the Case</span>
+                  <span class="track-tag">Drop It Like It’s Hot</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Gin and Juice</span>
-                <span class="track-tag">Who Am I? (What’s My Name?)</span>
-                <span class="track-tag">Drop It Like It’s Hot</span>
-                <span class="track-tag">Beautiful</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="dr-dre.html" class="related-card">
                   <h4>Dr. Dre</h4>
-                  <p>The producer-mentor whose role was central to Snoop’s early breakthrough.</p>
+                  <p>The essential companion story for understanding Snoop’s breakthrough, G-funk, and Death Row-era rise.</p>
+                </a>
+                <a href="2pac.html" class="related-card">
+                  <h4>2Pac</h4>
+                  <p>Another major Death Row figure whose era overlaps with Snoop’s most defining early years.</p>
                 </a>
                 <a href="ice-cube.html" class="related-card">
                   <h4>Ice Cube</h4>
-                  <p>Another West Coast giant who turned rap identity into long-term cultural power.</p>
-                </a>
-                <a href="bow-wow.html" class="related-card">
-                  <h4>Bow Wow</h4>
-                  <p>A later mainstream figure whose entertainment crossover echoes Snoop’s adaptability.</p>
+                  <p>A fellow West Coast legend whose career helps frame the larger California legacy Snoop belongs to.</p>
                 </a>
               </div>
             </section>
@@ -953,95 +947,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

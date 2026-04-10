@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Z-Ro | Rap Stories</title>
-  <meta name="description" content="Houston’s &#x27;Mo City Don&#x27; built a cult legacy through pain-soaked songwriting, Southern realism, and one of rap’s most emotionally raw voices." />
+  <meta name="description" content="A Rap Stories premium profile on Z-Ro, covering his Houston roots, emotional street realism, independent grind, signature melodic pain-rap style, and enduring Southern legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,201 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +664,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +689,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Z-Ro</h2>
-              <p>Houston’s 'Mo City Don' built a cult legacy through pain-soaked songwriting, Southern realism, and one of rap’s most emotionally raw voices.</p>
+              <p>Houston’s “Mo City Don,” revered for turning pain, survival, melody, and street realism into one of Southern rap’s most emotionally powerful catalogs.</p>
             </div>
           </aside>
 
@@ -735,7 +697,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Z-Ro</span></h1>
             <p class="summary">
-              Born Joseph Wayne McVey, Z-Ro became one of Southern rap’s most respected and emotionally uncompromising artists. His music blended Houston street perspective, melodic melancholy, and hard-earned survival, giving him a singular place in Texas rap history.
+              Z-Ro built one of hip-hop’s most respected underground legacies by making pain sound unforgettable. Emerging from Houston with a style that fused rap, melody, confessional writing, and raw street perspective, he became a defining voice of Southern introspection—an artist admired for honesty, durability, and emotional weight rather than trend-chasing.
             </p>
 
             <div class="quick-facts">
@@ -748,12 +710,12 @@ header#mainHeader.hidden {
                 <strong>Houston, Texas</strong>
               </div>
               <div class="fact">
-                <span>Known For</span>
-                <strong>Pain music and Houston realism</strong>
+                <span>Also Known As</span>
+                <strong>The Mo City Don</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Southern Rap Legend</strong>
               </div>
             </div>
 
@@ -761,21 +723,22 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1977</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Houston, Texas</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">1990s–Present</div>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
+                <div class="value">Pain rap & melodic realism</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Identity</span>
                 <div class="value">Mo City Don</div>
               </div>
             </div>
@@ -784,148 +747,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Hardship and Isolation</h3>
-              <p>Z-Ro was born in Houston and raised amid instability, loss, and pressure. Much of his music drew power from lived pain rather than performance of pain. His records often sounded like confession, warning, therapy, and street testimony all at once.</p>
-              <p>That emotional honesty became his signature. While many rappers projected invulnerability, Z-Ro often leaned into loneliness, betrayal, trauma, and depression without softening his toughness.</p>
-              <h3>Houston Identity</h3>
-              <p>Emerging from the Houston rap ecosystem, Z-Ro became tied to the city’s slower, heavier, emotionally resonant style. He was part of a regional culture that prized trunk-rattling production, local authenticity, and independent grind.</p>
-              <p>His music gained a devoted following because it felt personal and unfiltered. Even when he never reached the commercial ceiling of some stars, he built deep respect among listeners who saw him as one of the most real voices in Southern rap.</p>
-              <h3>Legacy</h3>
-              <p>Z-Ro’s place in hip-hop history comes from emotional rawness and consistency. He showed that Southern rap could be deeply vulnerable without losing grit, and he helped shape a lineage of artists who treated pain as central subject matter rather than side note.</p>
+              <h3>Houston Pain Music With Depth</h3>
+              <p>Z-Ro, born Joseph Wayne McVey, emerged from Houston as one of the city’s most emotionally revealing and stylistically distinctive voices. While many rappers built careers on image, bravado, or radio polish, Z-Ro carved his lane by sounding deeply human. His music carried grief, paranoia, loyalty, anger, depression, resilience, and faith all at once. That emotional density became his signature.</p>
+
+              <h3>A Voice Built on Survival</h3>
+              <p>What made Z-Ro different was not simply that he rapped about hardship—it was the way he did it. His records often felt like confessions from someone living inside the pressure rather than retelling it from a distance. He could sound reflective, wounded, threatening, isolated, and melodic in the same song. That made him a cult favorite among listeners who wanted authenticity rather than performance.</p>
+
+              <h3>Missouri City, Houston, and Southern Identity</h3>
+              <p>Known widely as the “Mo City Don,” Z-Ro became one of the defining figures attached to Missouri City and the broader Houston rap ecosystem. His work belongs to the lineage of Southern street music, but it also pushed beyond regional formulas. He brought Houston’s slowed-down emotional gravity together with sharp songwriting and a singing-rapping blend that later generations would lean on heavily.</p>
+
+              <h3>Independent Respect and Rap-A-Lot Era Visibility</h3>
+              <p>Z-Ro’s catalog grew through relentless output and a reputation for consistency. Albums such as <em>Let the Truth Be Told</em> and <em>I'm Still Livin'</em> helped expand his audience, while later projects including <em>Heroin</em>, <em>Meth</em>, and <em>The Crown</em> reinforced his place as one of the South’s most durable album artists. He never needed to become a mainstream pop figure to become essential. His strength was depth, not compromise.</p>
+
+              <div class="quote">Z-Ro’s greatest power was turning pain into structure—making deeply personal music that still felt larger than one life.</div>
+
+              <h3>Melody Before It Became Standard</h3>
+              <p>Long before melody became the default language of rap, Z-Ro was using singing, pain-soaked hooks, and emotionally charged cadences to expand what Southern street music could sound like. He helped prove that vulnerability could live inside toughness without weakening it. In his music, emotion was not softness—it was evidence.</p>
+
+              <h3>Why He Endures</h3>
+              <p>Z-Ro remains revered because he built trust with listeners. He sounded consistent, lived-in, and unmistakably himself. For many fans, he is one of rap’s great underrated writers: a bridge between Houston tradition, confessional rap, and the emotionally melodic direction hip-hop would increasingly move toward in the years that followed.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1977 — Birth</strong>
-                  <p>Born Joseph Wayne McVey in Houston, Texas.</p>
+                  <strong>1990s — Houston Underground Rise</strong>
+                  <p>Z-Ro built his name in Houston’s rap world, developing a reputation for emotionally heavy street records and a uniquely melodic style.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — Local Emergence</strong>
-                  <p>Built a name in Houston’s independent rap scene.</p>
+                  <strong>2004–2006 — Breakthrough Album Run</strong>
+                  <p>Projects such as <em>The Life of Joseph W. McVey</em>, <em>Let the Truth Be Told</em> (2005), and <em>I'm Still Livin'</em> (2006) elevated him from regional mainstay to nationally respected Southern lyricist.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Regional Authority</strong>
-                  <p>Released influential projects and became a cult hero in Southern rap.</p>
+                  <strong>2010–2012 — Drug Series Era</strong>
+                  <p>Albums like <em>Heroin</em> (2010), <em>Meth</em> (2011), and <em>Angel Dust</em> (2012) reinforced his identity as a prolific artist with a deep, pain-centered catalog.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s — Veteran Respect</strong>
-                  <p>Continued recording and maintained strong regional loyalty.</p>
+                  <strong>2014 — The Crown</strong>
+                  <p><em>The Crown</em> further cemented Z-Ro’s legacy as a veteran Houston voice with staying power and loyal support.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Present — Enduring Influence</strong>
-                  <p>Remains a respected voice in Texas hip-hop.</p>
+                  <strong>Legacy Phase — Southern Rap Institution</strong>
+                  <p>Over time, Z-Ro became recognized not just as a Houston artist, but as one of rap’s most respected underground storytellers and melodic street poets.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
+                  <span class="info-label">Real Name</span>
                   <div class="info-value">Joseph Wayne McVey</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
-                  <div class="info-value">Z-Ro</div>
+                  <span class="info-label">Stage Names</span>
+                  <div class="info-value">Z-Ro, The Mo City Don</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Houston, Texas</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Southern Rap</div>
+                  <div class="info-value">Southern Hip-Hop / Gangsta Rap / Melodic Street Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; respected Houston veteran</div>
+                  <div class="info-value">Respected Southern rap veteran with a major underground legacy</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Pain</span>
-                <span class="tag">Betrayal</span>
-                <span class="tag">Survival</span>
                 <span class="tag">Houston</span>
-                <span class="tag">Isolation</span>
-                <span class="tag">Truth</span>
+                <span class="tag">Pain</span>
+                <span class="tag">Survival</span>
+                <span class="tag">Melody</span>
+                <span class="tag">Street Realism</span>
+                <span class="tag">Loyalty</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Street Confession</strong>
-                  <span>The early period where pain and local realism shaped his identity.</span>
+                  <strong>Underground Foundation</strong>
+                  <span>The formative stretch where Z-Ro established his Houston identity and emotionally direct style.</span>
                 </div>
                 <div class="album">
-                  <strong>Houston Cult Status</strong>
-                  <span>The phase where he became one of Texas rap’s most respected voices.</span>
+                  <strong>Truth & Pain Peak</strong>
+                  <span>The mid-2000s period where albums like <em>Let the Truth Be Told</em> and <em>I'm Still Livin'</em> expanded his audience and reputation.</span>
                 </div>
                 <div class="album">
-                  <strong>Enduring Veteran</strong>
-                  <span>A long-running era of consistency, survival, and emotional authority.</span>
+                  <strong>Veteran Legacy Run</strong>
+                  <span>The later stage where his deep catalog and influence secured his place as a Southern cult icon.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Z-Ro on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Z-Ro" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Z-Ro.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Z-Ro on Spotify and explore the Houston records that defined his cult following and lasting Southern influence.</p>
+                  <a href="https://open.spotify.com/search/Z-Ro" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official songs, fan favorites, and major releases from one of Houston’s most emotionally powerful rap voices.</p>
+                  <a href="https://www.youtube.com/results?search_query=Z-Ro+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Z-Ro on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Z-Ro+official+music" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Mo City Don</span>
+                  <span class="track-tag">I Hate U Bitch</span>
+                  <span class="track-tag">Let the Truth Be Told</span>
+                  <span class="track-tag">I'm Still Livin'</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Mo City Don</span>
-                <span class="track-tag">I Hate U B****</span>
-                <span class="track-tag">Help Me Please</span>
-                <span class="track-tag">No Help</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="mike-jones.html" class="related-card">
-                  <h4>Mike Jones</h4>
-                  <p>A fellow Houston figure who rose through a different, more commercial Southern lane.</p>
+                <a href="trae-tha-truth.html" class="related-card">
+                  <h4>Trae Tha Truth</h4>
+                  <p>A fellow Houston figure whose music and regional legacy connect closely to the emotional depth of Texas street rap.</p>
                 </a>
-                <a href="snoop-dogg.html" class="related-card">
-                  <h4>Snoop Dogg</h4>
-                  <p>Another artist whose voice and persona became instantly recognizable beyond singles.</p>
+                <a href="scarface.html" class="related-card">
+                  <h4>Scarface</h4>
+                  <p>Another Texas giant whose introspection, pain, and realism helped shape the emotional lane Z-Ro mastered.</p>
                 </a>
-                <a href="nas.html" class="related-card">
-                  <h4>Nas</h4>
-                  <p>A very different rapper, but one similarly respected for emotional honesty and craft.</p>
+                <a href="bun-b.html" class="related-card">
+                  <h4>Bun B</h4>
+                  <p>A Southern pillar whose career helps frame the wider Houston and Texas rap ecosystem Z-Ro belongs to.</p>
                 </a>
               </div>
             </section>
@@ -952,95 +926,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Young Dolph | Rap Stories</title>
-  <meta name="description" content="A detailed Rap Stories profile on Young Dolph, covering his Memphis upbringing, independent rise, Paper Route Empire, survival through violence, mentorship, death, and legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Young Dolph, covering his Memphis roots, independent grind, Paper Route Empire rise, major releases, and lasting Southern rap legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -35,10 +35,7 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
+    .container { width: min(92%, var(--max)); margin: 0 auto; }
 
     .glass {
       background: var(--panel);
@@ -113,9 +110,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
+    .nav-links a.active { color: var(--text); }
 
     .nav-links a::after {
       content: "";
@@ -132,9 +127,7 @@
     }
 
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-      transform: scaleX(1);
-    }
+    .nav-links a.active::after { transform: scaleX(1); }
 
     .nav-btn {
       padding: 12px 20px;
@@ -152,17 +145,13 @@
       box-shadow: 0 14px 28px rgba(212,175,55,0.28);
     }
 
-    .hero {
-      padding: 42px 0 28px;
-    }
+    .hero { padding: 42px 0 28px; }
 
     .breadcrumb {
       color: var(--muted);
       font-size: 0.92rem;
       margin-bottom: 18px;
     }
-
-    .breadcrumb a:hover { color: var(--text); }
 
     .hero-layout {
       display: grid;
@@ -207,15 +196,8 @@
       margin-bottom: 14px;
     }
 
-    .artist-image h2 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .artist-image p {
-      color: #d7d7df;
-      font-size: 0.95rem;
-    }
+    .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
+    .artist-image p { color: #d7d7df; font-size: 0.95rem; }
 
     .hero-info { padding: 28px; }
 
@@ -274,16 +256,9 @@
       margin-bottom: 6px;
     }
 
-    .fact strong {
-      font-size: 1rem;
-      color: var(--text);
-    }
+    .fact strong { font-size: 1rem; color: var(--text); }
 
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 
     .btn {
       padding: 14px 18px;
@@ -313,10 +288,7 @@
       margin-top: 26px;
     }
 
-    .content-stack, .side-stack {
-      display: grid;
-      gap: 22px;
-    }
+    .content-stack, .side-stack { display: grid; gap: 22px; }
 
     .side-stack {
       align-self: start;
@@ -398,10 +370,7 @@
       font-size: 0.95rem;
     }
 
-    .info-list, .discography, .related-list {
-      display: grid;
-      gap: 14px;
-    }
+    .info-list, .discography, .related-list { display: grid; gap: 14px; }
 
     .info-row {
       padding-bottom: 12px;
@@ -417,10 +386,7 @@
       margin-bottom: 4px;
     }
 
-    .info-value {
-      color: var(--text);
-      font-weight: 700;
-    }
+    .info-value { color: var(--text); font-weight: 700; }
 
     .album, .related-card {
       padding: 16px;
@@ -474,12 +440,7 @@
       flex-wrap: wrap;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
     .footer-links a:hover { color: var(--text); }
 
     @media (max-width: 1150px) {
@@ -500,351 +461,222 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(5, 5, 8, 0.76);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-}
-.nav {
-  min-height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-  font-size: 1.02rem;
-}
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  color: #111;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
-}
-.brand-text {
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.nav-links a {
-  position: relative;
-  color: var(--muted);
-  transition: color 0.25s ease;
-  font-size: 0.96rem;
-}
-.nav-links a:hover,
-.nav-links a.active { color: var(--text); }
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-.nav-links a:hover::after,
-.nav-links a.active::after { transform: scaleX(1); }
-.nav-btn {
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #f5df8f);
-  color: #111;
-  font-weight: 800;
-  border: none;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.nav-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
-}
-footer {
-  padding: 24px 0 50px;
-  color: var(--muted);
-}
-.footer-wrap {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-.footer-links a:hover { color: var(--text); }
-@media (max-width: 820px) {
-  .nav { flex-direction: column; padding: 14px 0; }
-  .nav-links { justify-content: center; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
 
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    .music-panel {
+      margin-top: 24px;
+    }
 
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -853,10 +685,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -875,9 +708,9 @@ header#mainHeader.hidden {
         <div class="hero-layout">
           <aside class="glass artist-image">
             <div class="artist-image-content">
-              <span class="artist-tag">Legend Profile</span>
+              <span class="artist-tag">Artist Profile</span>
               <h2>Young Dolph</h2>
-              <p>Independent Memphis star whose music, business mindset, and resilience made him one of the most respected figures of his era.</p>
+              <p>Memphis rap star and independent mogul whose Paper Route Empire grind, confident delivery, and street-centered storytelling made him one of the defining Southern voices of his era.</p>
             </div>
           </aside>
 
@@ -885,7 +718,7 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Young Dolph</span></h1>
             <p class="summary">
-              Born Adolph Robert Thornton Jr., Young Dolph built his reputation through Memphis grit, independent thinking, and an unwavering commitment to ownership. His rise showed that commercial success could be built outside traditional industry systems.
+              Young Dolph built his name through independence, consistency, and absolute belief in his own value. In an era when many artists still sought validation through major-label systems, Dolph made self-reliance part of his identity. He turned Memphis street energy, sharp punchlines, and relentless hustle into a brand that felt larger than music alone, becoming both a rap star and a symbol of ownership.
             </p>
 
             <div class="quick-facts">
@@ -895,15 +728,15 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Memphis, Tennessee</strong>
+                <strong>Chicago-born, raised in Memphis</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Independence & ownership</strong>
+                <strong>Independent rap, Paper Route Empire, Memphis street music</strong>
               </div>
               <div class="fact">
-                <span>Label</span>
-                <strong>Paper Route Empire</strong>
+                <span>Status</span>
+                <strong>Memphis Legend</strong>
               </div>
             </div>
 
@@ -911,22 +744,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1985</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Memphis</div>
+                <span class="label">Origin</span>
+                <div class="value">Memphis, Tennessee</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2010s</div>
+                <div class="value">2008–2021</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Independent empire</div>
+                <div class="value">Independent empire building</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Modern Memphis leadership</div>
               </div>
             </div>
           </section>
@@ -934,175 +768,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Upbringing</h3>
-              <p>Adolph Robert Thornton Jr., known to the world as Young Dolph, was born on July 27, 1985, in Chicago, Illinois, but was raised in Memphis, Tennessee — a city that would later become central to both his identity and his music. Growing up in Memphis, Dolph was exposed early to the realities of poverty, instability, and street life. His upbringing was marked by challenges that shaped his outlook on survival, loyalty, and independence.</p>
-              <p>He was raised primarily by his grandmother, as his parents struggled with substance abuse. Dolph has spoken in interviews about witnessing the impact of addiction within his family, experiences that left a lasting impression on him. Rather than romanticizing the environment he came from, his later music often reflected the harsh realities of it, emphasizing both struggle and resilience.</p>
+              <h3>From Chicago to Memphis</h3>
+              <p>Young Dolph, born Adolph Robert Thornton Jr., entered the world in Chicago but was raised in Memphis, the city that truly shaped his identity and music. Memphis gave him the street perspective, survival mentality, and cultural grounding that became central to everything he later represented. His story was never about trying to sound polished or universal first. It was about making his city’s energy feel undeniable on a national scale.</p>
 
-              <h3>Turning to Music</h3>
-              <p>Young Dolph did not initially plan to become a rapper. Music became a serious pursuit after the death of his grandmother, an event that deeply affected him and pushed him toward expressing himself creatively. What began as a personal outlet quickly evolved into a career path.</p>
-              <p>His early releases began circulating in the Memphis underground scene, where his authenticity and confident delivery helped him stand out. Dolph’s voice carried a sense of authority, but also clarity — he was not simply telling stories; he was documenting lived experiences.</p>
+              <h3>The Independent Mentality</h3>
+              <p>What separated Dolph from many peers was his refusal to build his identity around dependence on major-label structures. He turned independence into philosophy. That mindset did not just affect the business side of his career; it shaped how fans understood him. He came across as self-made, stubborn, entrepreneurial, and willing to bet on himself over and over again. That made his success feel earned in a particularly direct way.</p>
 
-              <h3>Rise Through Independence</h3>
-              <p>Unlike many artists who rely on major label backing, Young Dolph built his career largely independently. This decision became one of the defining aspects of his identity. Through his label, Paper Route Empire, he maintained control over his music, finances, and brand.</p>
-              <p>His breakthrough came with a series of mixtapes, including <em>High Class Street Music</em>, which built a strong regional following. He later gained national recognition with projects like <em>King of Memphis</em>, which debuted in the top 50 of the Billboard 200.</p>
-              <p>Dolph’s independence was not just a business strategy — it was a philosophy. He often spoke about ownership, self-reliance, and financial literacy, positioning himself as an artist who succeeded without compromising control.</p>
+              <h3>Paper Route Empire</h3>
+              <p>Dolph founded Paper Route Empire and used it as more than an imprint. It became a symbol of ownership and legacy. Through Paper Route Empire, he built a brand that extended beyond his own music and helped create a lane for artists coming from his orbit, most notably Key Glock. The label reflected Dolph’s larger message: control your work, own your narrative, and keep the value of your success close to home.</p>
 
-              <div class="quote">Young Dolph’s success was not built on industry co-signs, but on independence, consistency, and an unwavering belief in ownership.</div>
+              <div class="quote">Young Dolph made independence feel aspirational. He turned self-belief, ownership, and Memphis loyalty into a full artistic identity.</div>
 
-              <h3>Musical Style and Message</h3>
-              <p>Dolph’s music was rooted in Southern hip-hop traditions but carried a modern edge. His delivery was confident, sometimes playful, yet always grounded in realism. He often rapped about wealth, success, and street experiences, but his approach differed from many of his peers.</p>
-              <p>Beneath the surface, his music emphasized themes of independence, resilience, and strategic thinking. He frequently referenced business decisions, investments, and long-term vision — subjects that reflected a mindset focused on growth rather than short-term gain.</p>
+              <h3>Memphis Voice, National Reach</h3>
+              <p>Dolph’s music was rooted in Memphis rap traditions, but his confidence and consistency helped him reach far beyond his local base. His delivery was blunt, self-assured, and often funny in a dry, effortless way. He could sound threatening, reflective, or celebratory without losing the core quality that made his records hit: authenticity. Even when the songs were built around wealth, ambition, or flexing, there was always an undertone of survival and grind.</p>
 
-              <h3>Challenges, Violence, and Survival</h3>
-              <p>As his profile grew, so did the dangers surrounding him. Young Dolph survived multiple violent incidents throughout his life, including shootings that could have ended his career or his life much earlier. One of the most notable incidents occurred in 2017, when his vehicle was shot at numerous times in Charlotte, North Carolina.</p>
-              <p>These events became part of his public narrative. Rather than retreating, Dolph continued to release music, often addressing these experiences directly. His ability to survive and continue moving forward contributed to his image as both resilient and unshaken.</p>
-              <p>While discussions around rivalries and conflicts often circulated in media and online spaces, many of these narratives remained complex and not always fully verified. What remained clear was that Dolph operated in an environment where success did not eliminate risk.</p>
+              <h3>Major Projects and Growth</h3>
+              <p>As his catalog expanded, Young Dolph moved from mixtape standout to one of the most respected independent rappers in Southern hip-hop. Projects like <em>King of Memphis</em>, <em>Role Model</em>, and <em>Rich Slave</em> showed a rapper who understood how to scale up without becoming generic. By the end of his career, he had become both a hometown hero and a national example of how far an artist could go without surrendering control.</p>
 
-              <h3>Mentorship and Influence</h3>
-              <p>Beyond his own career, Young Dolph played a significant role in mentoring emerging artists. He helped launch the career of his cousin, Key Glock, among others, providing opportunities and guidance through his label.</p>
-              <p>His approach to mentorship reflected his broader philosophy: ownership, independence, and loyalty. He was not only building his own success but creating pathways for others to follow.</p>
-
-              <h3>The Day He Lost His Life</h3>
-              <p>On November 17, 2021, Young Dolph was shot and killed in Memphis, Tennessee, while visiting a local business. The incident occurred in broad daylight and shocked both the local community and the global music industry.</p>
-              <p>He was 36 years old at the time of his death. The loss was particularly significant given his role not only as an artist but as a community figure and entrepreneur. His passing sparked widespread mourning, with tributes highlighting his generosity, independence, and impact.</p>
-
-              <h3>Legacy</h3>
-              <p>Young Dolph’s legacy is defined by more than music. He represents a model of independence in an industry often dominated by major labels. His commitment to ownership, financial awareness, and self-determination set him apart as both an artist and a businessman.</p>
-              <p>His music continues to resonate, but his broader influence lies in the example he set: that it is possible to build success on your own terms, even in the face of adversity. For many, Dolph is remembered not just as a rapper, but as a symbol of resilience, strategy, and independence.</p>
+              <h3>Death and Legacy</h3>
+              <p>Young Dolph was killed in Memphis on November 17, 2021, a loss that shocked rap fans and hit his hometown especially hard. His death deepened the legend of an artist already associated with resilience, risk, and loyalty to his city. His legacy now lives not only in his songs, but in the model he offered: independent, self-directed, Memphis-centered, and unapologetically his own.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1985 — Birth</strong>
-                  <p>Born Adolph Robert Thornton Jr. in Chicago and raised in Memphis.</p>
+                  <strong>2008 — Mixtape Beginnings</strong>
+                  <p>Launches his early recording run and begins building a name through Memphis-rooted street music.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Memphis Underground</strong>
-                  <p>Began building a reputation through underground releases and regional buzz.</p>
+                  <strong>2010 — Paper Route Empire</strong>
+                  <p>Establishes the label identity that would become central to his business model and artistic brand.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Independent Rise</strong>
-                  <p>Built his name with mixtapes such as <em>High Class Street Music</em>.</p>
+                  <strong>Mid-2010s — National Breakout</strong>
+                  <p>Expands from regional force to nationally recognized artist through a relentless run of tapes, singles, and albums.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>National Recognition</strong>
-                  <p><em>King of Memphis</em> and later projects expanded his influence and audience.</p>
+                  <strong>2020 — <em>Rich Slave</em></strong>
+                  <p>Reaches one of the commercial peaks of his career while reinforcing his status as an elite independent rapper.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2021 — Death in Memphis</strong>
-                  <p>Killed in broad daylight at age 36, leaving a major impact on rap culture.</p>
+                  <strong>2021 — Legacy Sealed</strong>
+                  <p>His death in Memphis transforms an already strong career into one of Southern rap’s most emotionally resonant legacies.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Adolph Robert Thornton Jr.</div>
-                </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
                   <div class="info-value">Young Dolph</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Base</span>
-                  <div class="info-value">Memphis, Tennessee</div>
+                  <span class="info-label">Real Name</span>
+                  <div class="info-value">Adolph Robert Thornton Jr.</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Label</span>
-                  <div class="info-value">Paper Route Empire</div>
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Raised in Memphis, Tennessee</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Genre</span>
-                  <div class="info-value">Southern Hip-Hop</div>
+                  <span class="info-label">Genres</span>
+                  <div class="info-value">Southern Hip-Hop / Memphis Rap / Trap</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Remembered as a Memphis icon and independent rap pioneer</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Memphis</span>
-                <span class="tag">Ownership</span>
                 <span class="tag">Independence</span>
+                <span class="tag">Ownership</span>
                 <span class="tag">Paper Route Empire</span>
-                <span class="tag">Resilience</span>
+                <span class="tag">Hustle</span>
                 <span class="tag">Legacy</span>
               </div>
             </section>
 
-            <section class="glass panel">
-              <h2>Highlighted Works</h2>
+            <section class="glass panel story-section" data-story-title="Eras">
+              <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>High Class Street Music</strong>
-                  <span>The mixtape series that helped build his foundation.</span>
+                  <strong>Memphis Build-Up Era</strong>
+                  <span>The early phase where Dolph sharpened his style through mixtapes and local credibility.</span>
                 </div>
                 <div class="album">
-                  <strong>King of Memphis</strong>
-                  <span>The project that expanded his national profile.</span>
+                  <strong>Paper Route Empire Era</strong>
+                  <span>The period where independence and ownership became inseparable from his music and image.</span>
                 </div>
                 <div class="album">
-                  <strong>Paper Route Legacy</strong>
-                  <span>His influence as an independent artist and label founder.</span>
+                  <strong>Legacy and Leadership Era</strong>
+                  <span>A later phase defined by hometown hero status, national respect, and a lasting blueprint for independent rap success.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Young Dolph.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Young Dolph on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Young+Dolph" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Young Dolph.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Young Dolph on Spotify and explore the records that built his independent Memphis empire.</p>
+                  <a href="https://open.spotify.com/search/Young%20Dolph" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Young Dolph releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Young+Dolph+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Young Dolph on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Young+Dolph+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Preach</span>
+                  <span class="track-tag">100 Shots</span>
+                  <span class="track-tag">Major</span>
+                  <span class="track-tag">RNB</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Preach</span>
-                <span class="track-tag">100 Shots</span>
-                <span class="track-tag">Major</span>
-                <span class="track-tag">By Mistake</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="mo3.html" class="related-card">
-                  <h4>MO3</h4>
-                  <p>A close Southern pairing through pain, regional loyalty, and a story cut short by violence.</p>
+                <a href="key-glock.html" class="related-card">
+                  <h4>Key Glock</h4>
+                  <p>The most essential companion story for understanding Dolph’s label legacy and Memphis family network.</p>
                 </a>
-                <a href="future.html" class="related-card">
-                  <h4>Future</h4>
-                  <p>A broader 2010s Southern connection through influence, independence of vision, and regional power.</p>
+                <a href="yo-gotti.html" class="related-card">
+                  <h4>Yo Gotti</h4>
+                  <p>Another major Memphis figure whose career helps frame the city’s modern rap ecosystem.</p>
                 </a>
-                <a href="nba-youngboy.html" class="related-card">
-                  <h4>NBA YoungBoy</h4>
-                  <p>A modern-era vault link through prolific output, Southern identity, and audience intensity.</p>
+                <a href="gucci-mane.html" class="related-card">
+                  <h4>Gucci Mane</h4>
+                  <p>A Southern independence comparison in how ownership, street credibility, and branding shaped a rap empire.</p>
                 </a>
               </div>
             </section>
@@ -1129,95 +947,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

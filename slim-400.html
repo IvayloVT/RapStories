@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Slim 400 | Rap Stories</title>
-  <meta name="description" content="A premium Rap Stories profile on Slim 400, covering his Compton roots, Bompton identity, street reputation, music rise, survival after violence, death, and lasting West Coast legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Slim 400, covering his Compton roots, YG ties, West Coast street rap identity, survival story, and lasting legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,236 +461,222 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel {
+      margin-top: 24px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-/* Mobile header: hide on scroll down, show on scroll up */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -699,10 +685,11 @@ header#mainHeader {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -723,7 +710,7 @@ header#mainHeader {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Slim 400</h2>
-              <p>Compton rapper whose Bompton identity, survival story, and uncompromising street realism made him a respected West Coast figure.</p>
+              <p>Compton rapper whose Blood-affiliated street realism, YG collaborations, and unfiltered West Coast style made him a respected voice in modern California rap.</p>
             </div>
           </aside>
 
@@ -731,25 +718,25 @@ header#mainHeader {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Slim 400</span></h1>
             <p class="summary">
-              Born Vincent Cohran, 2Pac became one of the most influential and intensely discussed artists in rap history. His music fused street realism, political consciousness, vulnerability, anger, and charisma, allowing him to become both a cultural symbol and a central figure in one of hip-hop’s most turbulent eras.
+              Slim 400 represented a modern Compton rap lineage built on gang identity, local authenticity, and aggressive West Coast energy. Though he never became a mainstream crossover star, he earned deep respect through his ties to the Bompton side of the YG movement, his vivid street records, and the sense that his music came directly from lived experience rather than image-making.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>March 21, 1988</strong>
+                <strong>June 21, 1988</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Compton, California</strong>
+                <strong>Frankfurt, Germany / raised in Compton</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Bompton street rap</strong>
+                <strong>West Coast street rap, YG collaborations</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Deceased (2021)</strong>
+                <strong>West Coast Cult Figure</strong>
               </div>
             </div>
 
@@ -757,14 +744,11 @@ header#mainHeader {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1988</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Compton</div>
+                <span class="label">Origin</span>
+                <div class="value">Compton, California</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
@@ -772,7 +756,11 @@ header#mainHeader {
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Bompton survivor</div>
+                <div class="value">Bompton street realism</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Modern West Coast authenticity</div>
               </div>
             </div>
           </section>
@@ -780,169 +768,159 @@ header#mainHeader {
 
         <div class="content-layout">
           <div class="content-stack">
-            
-<section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Bompton Identity</h3>
-              <p>Vincent Cohran, known professionally as Slim 400, was born on March 21, 1988, and became closely associated with Compton, California—more specifically with Bompton, a local identity and street reality that shaped both his public image and his music. Like many artists from Los Angeles neighborhoods marked by gang politics, poverty, and constant pressure, Slim 400’s life story was inseparable from the environment that produced it.</p>
-              <p>He emerged not as a polished mainstream figure, but as a rapper whose appeal came from credibility, lived experience, and directness. His music often reflected the codes, dangers, and loyalties of the world he came from. That gave him a particular place in West Coast rap: not necessarily as a crossover pop star, but as a respected street voice whose authenticity mattered deeply to his audience.</p>
+              <h3>Born Abroad, Raised in Compton</h3>
+              <p>Slim 400 was born Vincent Cohran Jr. in Frankfurt, Germany, where his father was stationed in the U.S. Army, but his identity was formed in Compton. That distinction matters because while his birth was overseas, his music, slang, affiliations, and worldview were rooted in Southern California street life. He became associated with the Blood side of Compton and carried that identity openly in both his public image and his music. :contentReference[oaicite:1]{index=1}</p>
 
-              <h3>Rise in West Coast Street Rap</h3>
-              <p>Slim 400 began building a profile through local records, collaborations, and connections within the wider network of California street rap. His name grew through association with the modern West Coast wave and through a reputation that reached beyond music alone. He represented a branch of rap culture where regional identity, neighborhood affiliation, and biography still carried enormous weight.</p>
-              <p>As his catalog expanded, he became known for music that felt unfiltered and rooted in firsthand experience. Rather than trying to smooth out his story for commercial comfort, Slim 400 leaned into the harshness of it. That gave his records a rawness that resonated with listeners who saw him as a real product of the streets he described.</p>
+              <h3>West Coast Street Voice</h3>
+              <p>Slim 400’s appeal came from authenticity rather than crossover polish. He was not marketed as a pop star or genre-blender. He sounded like a local street rapper who understood exactly what lane he occupied. His records leaned on direct gang references, blunt aggression, and the muscular production associated with modern West Coast rap. That made him especially respected in California rap circles where credibility still carried serious value. :contentReference[oaicite:2]{index=2}</p>
 
-              <div class="quote">Slim 400’s story was never built on distance from danger—it was built on surviving it, documenting it, and carrying it into the music.</div>
+              <h3>Ties to YG and Bompton Culture</h3>
+              <p>Much of Slim 400’s public visibility came through his association with YG and their shared Bompton identity. Songs such as “Goapele,” “Piru,” “Bruisin,” and “Word Is Bond” helped define his place inside a newer generation of West Coast artists carrying forward regional gang-based street rap into the streaming era. Through those collaborations, he became part of a wider ecosystem rather than a fully isolated solo act. :contentReference[oaicite:3]{index=3}</p>
 
-              <h3>Violence, Survival, and Public Resilience</h3>
-              <p>One of the most defining chapters of Slim 400’s life was his survival after being shot multiple times in 2019. That incident reinforced the image many already had of him: not just a rapper talking about danger, but someone living inside it. In rap culture, survival stories can become mythic, and Slim 400’s recovery added a dramatic layer to an identity already shaped by toughness and endurance.</p>
-              <p>His survival also gave his music a different emotional charge. He was not simply narrating violence from memory or performance. He became a figure whose body itself seemed to carry proof of the risks he rapped about. That reality deepened the respect many supporters had for him and made his story feel especially intense, even within a genre already full of hardship narratives.</p>
+              <div class="quote">Slim 400 did not build his name through crossover ambition. He built it through affiliation, survival, and the kind of Compton realism that could not be faked.</div>
 
-              <h3>Relationships, Reputation, and West Coast Presence</h3>
-              <p>Slim 400’s career was also tied to the broader world of Los Angeles rap relationships, rivalries, affiliations, and public perception. He was part of a scene where artists were often read not only through songs, but through street politics, alliances, and coded references. This made his public life more charged than that of many artists operating in safer commercial spaces.</p>
-              <p>Even so, Slim 400 maintained a recognizable place in the culture. He became a known Bompton representative and a figure linked to the continuing evolution of West Coast street rap in the streaming era. His impact was grounded less in massive mainstream visibility than in identity, location, and the sense that he stood for something real to the people who followed him.</p>
+              <h3>Survival and Real-World Violence</h3>
+              <p>In 2019, Slim 400 survived a shooting in Compton after being shot multiple times. That incident deepened the sense that his music and public identity were inseparable from real danger. For listeners, it reinforced what his records already suggested: his story was not a performance detached from consequence. Survival itself became part of his mythology. :contentReference[oaicite:4]{index=4}</p>
 
-              <h3>Death and Loss</h3>
-              <p>On December 8, 2021, Slim 400 was killed in Inglewood, California. His death added his name to the long and painful history of rap artists whose lives ended in violence despite talent, momentum, and survival through earlier danger. For fans and peers, the loss felt especially cruel because his public identity had already become tied to endurance—he had survived before, and many believed he might keep surviving.</p>
-              <p>His death underscored a hard truth that runs through many hip-hop biographies: escaping one violent chapter does not guarantee escape from the next. In Slim 400’s case, that reality became part of the tragedy of his story and part of what makes his legacy feel so unresolved.</p>
+              <h3>Death and Legacy</h3>
+              <p>On December 8, 2021, Slim 400 was fatally shot in Inglewood. Reporting at the time noted that he had released a music video for “Caviar Gold” only hours earlier. His death fit into a painful run of losses in rap that year and cemented his story as one of talent, local respect, survival, and tragedy. In 2024, the Los Angeles Times reported that his killer was sentenced to prison, closing one chapter of the legal aftermath. :contentReference[oaicite:5]{index=5}</p>
 
               <h3>Legacy</h3>
-              <p>Slim 400’s legacy lives in his role as a respected West Coast street voice and a symbolic Bompton figure. He represented a type of rap presence that remains central to hip-hop even when it is not always rewarded with the largest charts: local, real, dangerous, regionally rooted, and deeply tied to lived identity.</p>
-              <p>He is remembered for resilience, for credibility, and for carrying Los Angeles street experience directly into his art. In that sense, Slim 400 remains part of the ongoing story of West Coast rap, where survival, place, and authenticity still shape who matters.</p>
+              <p>Slim 400’s legacy is not based on massive chart numbers. It rests on regional importance, cultural credibility, and the role he played in sustaining a line of Compton street rap tied to real neighborhoods and real affiliations. He remains remembered as a tough, unfiltered West Coast voice whose story carried both the pride and the danger of the environment he represented. :contentReference[oaicite:6]{index=6}</p>
             </section>
 
-            
-<section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1988 — Birth</strong>
-                  <p>Born Vincent Cohran in California and later became strongly identified with Compton and Bompton.</p>
+                  <strong>Late 2000s / Early 2010s — Local Emergence</strong>
+                  <p>Builds his reputation in California rap circles as a Compton street artist with clear gang identity and local credibility. :contentReference[oaicite:7]{index=7}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s — West Coast Rise</strong>
-                  <p>Built recognition through street records, collaborations, and growing local credibility in Los Angeles rap.</p>
+                  <strong>2010s — YG-Affiliated Visibility</strong>
+                  <p>Gains broader attention through collaborations with YG and records tied to the Bompton side of modern West Coast rap. :contentReference[oaicite:8]{index=8}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2019 — Survival</strong>
-                  <p>Survived a high-profile shooting, becoming an even more symbolic figure of resilience in West Coast street rap.</p>
+                  <strong>2019 — Survival Story</strong>
+                  <p>Survives being shot multiple times in Compton, adding another layer of real-world gravity to his image and music. :contentReference[oaicite:9]{index=9}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020–2021 — Continued Presence</strong>
-                  <p>Remained a known Bompton voice and visible personality within California rap circles.</p>
+                  <strong>2021 — Final Releases and Death</strong>
+                  <p>Continues releasing music before being fatally shot in Inglewood on December 8, 2021. :contentReference[oaicite:10]{index=10}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2021 — Death</strong>
-                  <p>Killed in Inglewood, California, leaving behind a legacy rooted in authenticity, survival, and street identity.</p>
+                  <strong>2024 — Aftermath</strong>
+                  <p>His murder case reached a sentencing milestone when the killer received a prison term, according to the Los Angeles Times. :contentReference[oaicite:11]{index=11}</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Vincent Cohran</div>
-                </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
                   <div class="info-value">Slim 400</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">California, United States</div>
+                  <span class="info-label">Real Name</span>
+                  <div class="info-value">Vincent Cohran Jr.</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Raised in Compton, California</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">West Coast Hip-Hop / Street Rap</div>
+                  <div class="info-value">West Coast Hip-Hop / Gangsta Rap / Street Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Deceased; legacy remains tied to Bompton and West Coast street rap</div>
+                  <div class="info-value">Respected Compton rap figure remembered after his 2021 killing</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Compton</span>
                 <span class="tag">Bompton</span>
-                <span class="tag">Survival</span>
-                <span class="tag">Street Reality</span>
-                <span class="tag">Violence</span>
                 <span class="tag">West Coast</span>
-                <span class="tag">Authenticity</span>
+                <span class="tag">Street Realism</span>
+                <span class="tag">Survival</span>
+                <span class="tag">Legacy</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Street Emergence</strong>
-                  <span>The years when Slim 400 built local recognition through raw West Coast records and neighborhood identity.</span>
+                  <strong>Compton Build-Up Era</strong>
+                  <span>The early stage where Slim 400 became known locally through raw street music and affiliation-based credibility.</span>
                 </div>
                 <div class="album">
-                  <strong>Survival and Symbolism</strong>
-                  <span>The period when survival after violence deepened his public image and intensified his story.</span>
+                  <strong>YG / Bompton Era</strong>
+                  <span>The period where his collaborations and visibility tied him closely to a modern West Coast movement.</span>
                 </div>
                 <div class="album">
-                  <strong>Loss and Legacy</strong>
-                  <span>The final chapter that turned Slim 400 into a lasting symbol of West Coast street resilience.</span>
+                  <strong>Survival and Legacy Era</strong>
+                  <span>A later chapter defined by surviving violence, continuing to record, and being memorialized after his death.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Slim 400.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Slim 400 on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Slim%20400" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Slim 400.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Slim 400 on Spotify and explore the records that built his reputation in West Coast rap.</p>
+                  <a href="https://open.spotify.com/search/Slim%20400" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Slim 400 releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Slim+400+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Slim 400 on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Slim+400+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Goapele</span>
+                  <span class="track-tag">Piru</span>
+                  <span class="track-tag">Bruisin</span>
+                  <span class="track-tag">Word Is Bond</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Bruisin</span>
-                <span class="track-tag">Piru</span>
-                <span class="track-tag">Goapele</span>
-                <span class="track-tag">How I’m Livin</span>
-              </div>
-            </div>
-          </section>
-
-
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="yg.html" class="related-card">
                   <h4>YG</h4>
-                  <p>A fellow modern Compton figure whose music also reflects Los Angeles street identity and West Coast continuity.</p>
+                  <p>The clearest companion story for understanding Slim 400’s lane, affiliations, and role in the Bompton movement.</p>
                 </a>
-                <a href="pop-smoke.html" class="related-card">
-                  <h4>Pop Smoke</h4>
-                  <p>Another artist whose rise and violent death underscored the fragility of momentum in modern rap.</p>
+                <a href="the-game.html" class="related-card">
+                  <h4>The Game</h4>
+                  <p>A broader Compton comparison for how neighborhood identity has shaped different generations of West Coast rap.</p>
                 </a>
-                <a href="chief-keef.html" class="related-card">
-                  <h4>Chief Keef</h4>
-                  <p>A different regional street-rap pioneer whose authenticity and local symbolism reshaped modern hip-hop.</p>
+                <a href="nipsey-hussle.html" class="related-card">
+                  <h4>Nipsey Hussle</h4>
+                  <p>Another California figure whose music, community identity, and death are central to modern West Coast legacy conversations.</p>
                 </a>
               </div>
             </section>
@@ -969,51 +947,139 @@ header#mainHeader {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

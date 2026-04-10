@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Young Buck | Rap Stories</title>
-  <meta name="description" content="A premium Rap Stories profile on Young Buck, covering his Nashville roots, Cash Money beginnings, G-Unit breakthrough, solo rise, legal troubles, and lasting Southern rap legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Young Buck, covering his Nashville roots, Cash Money beginnings, G-Unit breakout, Cashville identity, and Southern street-rap legacy." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,236 +461,222 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover {
+      transform: translateY(-2px);
+    }
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .artist-stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel {
+      margin-top: 24px;
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-.music-card p {
-  margin-bottom: 14px;
-}
+    .music-card p {
+      margin-bottom: 14px;
+    }
 
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
 
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
 
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
 
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
 
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
 
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 860px) {
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
+    @media (max-width: 768px) {
+      header#mainHeader.hidden {
+        transform: translateY(-100%);
+      }
+    }
 
-/* Mobile header: hide on scroll down, show on scroll up */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-</style>
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -699,10 +685,11 @@ header#mainHeader {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -723,7 +710,7 @@ header#mainHeader {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Young Buck</h2>
-              <p>Nashville rapper whose Southern grit, G-Unit fame, and hard-lived biography made him one of the most recognizable street voices of the 2000s.</p>
+              <p>Nashville rapper whose Cashville identity, G-Unit-era breakout, and raw Southern street perspective made him one of the most distinctive voices of 2000s gangsta rap.</p>
             </div>
           </aside>
 
@@ -731,7 +718,7 @@ header#mainHeader {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Young Buck</span></h1>
             <p class="summary">
-              Born David Darnell Brown, 2Pac became one of the most influential and intensely discussed artists in rap history. His music fused street realism, political consciousness, vulnerability, anger, and charisma, allowing him to become both a cultural symbol and a central figure in one of hip-hop’s most turbulent eras.
+              Young Buck emerged from Nashville with a style that mixed Southern toughness, street realism, and emotional intensity. While many fans first encountered him through G-Unit, his identity was always bigger than being someone else’s crew member. He represented Cashville with urgency and pride, bringing a Tennessee voice into a national rap conversation often dominated by New York, Los Angeles, and Atlanta.
             </p>
 
             <div class="quick-facts">
@@ -745,11 +732,11 @@ header#mainHeader {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Southern street rap</strong>
+                <strong>Cashville, G-Unit, Southern street rap</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Southern Rap Veteran</strong>
               </div>
             </div>
 
@@ -757,22 +744,23 @@ header#mainHeader {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1981</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Nashville</div>
+                <span class="label">Origin</span>
+                <div class="value">Nashville, Tennessee</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2000s–Present</div>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Southern street veteran</div>
+                <div class="value">Cashville street realism</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Southern rap force</div>
               </div>
             </div>
           </section>
@@ -780,169 +768,159 @@ header#mainHeader {
 
         <div class="content-layout">
           <div class="content-stack">
-            
-<section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life in Nashville</h3>
-              <p>David Darnell Brown, known professionally as Young Buck, was born on March 15, 1981, in Nashville, Tennessee. Long before Nashville became widely discussed as an important rap city, Young Buck was representing a Southern environment defined by poverty, street politics, and survival pressure. His life story was shaped by instability from an early age, and those realities later became central to the blunt, emotional, and often volatile quality of his music.</p>
-              <p>Unlike artists who emerged from more established rap capitals, Young Buck came from a place that had to fight harder for national recognition. That helped shape his identity. He rapped with the urgency of someone carrying both his own biography and the need to prove that his city and region mattered inside a rap industry often focused elsewhere.</p>
+              <h3>Nashville Roots</h3>
+              <p>Born David Darnell Brown in Nashville, Young Buck came from a city not always given full recognition in national rap history, especially during the years when other Southern markets received more attention. That helped shape his drive. He carried himself like someone determined to put Cashville on the map and prove that Tennessee could produce a rapper every bit as hard, vivid, and commercially viable as artists from more established scenes. :contentReference[oaicite:1]{index=1}</p>
 
-              <h3>Early Industry Movement and Cash Money Ties</h3>
-              <p>Young Buck entered the rap world unusually early and gained exposure through connections that brought him into the orbit of Cash Money Records while still young. Those experiences gave him his first direct look at the rap business and showed him how Southern artists could build momentum on a national scale. Even before his biggest success, he was already moving within circles that would later define major shifts in hip-hop power.</p>
-              <p>Still, his path was never straightforward. He developed a reputation for intensity, loyalty, and unpredictability—traits that would later help build his image but also complicate his career. His appeal came not from polish, but from the sense that he was speaking directly from lived experience, without much filtering between the street world and the microphone.</p>
+              <h3>Cash Money and Early Affiliations</h3>
+              <p>Before G-Unit fame, Buck had already passed through important Southern rap circles. He had early affiliation with Cash Money in the late 1990s, then later moved into Juvenile’s UTP orbit. Those years mattered because they placed him close to the machinery of Southern street rap before his own national breakthrough. He was learning not only how to rap, but how to position himself inside a competitive regional and commercial world. :contentReference[oaicite:2]{index=2}</p>
 
-              <div class="quote">Young Buck’s music carried the sound of pressure—street loyalty, anger, pride, pain, and Southern identity delivered with very little distance from the life behind it.</div>
+              <h3>Joining G-Unit</h3>
+              <p>Young Buck’s national breakout came after he joined G-Unit in 2003. Within that crew, he brought something distinct: a Southern voice inside a group otherwise defined by New York energy and 50 Cent’s rise. Buck added a different kind of aggression and emotional temperature to the group’s chemistry. He sounded more openly wounded, more volatile, and more rooted in Southern street texture than his counterparts. :contentReference[oaicite:3]{index=3}</p>
 
-              <h3>G-Unit Breakthrough</h3>
-              <p>Young Buck’s biggest rise came through his association with 50 Cent and G-Unit. During the early-to-mid 2000s, G-Unit became one of the most dominant forces in rap, and Young Buck played a crucial role in giving the group a Southern edge and a different kind of street energy. His presence broadened G-Unit’s geography and helped connect New York-centered dominance with Southern credibility.</p>
-              <p>He quickly became a fan favorite within the crew, in part because his music felt especially personal and aggressive. Young Buck’s verses often carried a sense of real consequence—he sounded less like someone playing a role and more like someone actively carrying the tensions he described. That gave him a distinct identity inside a star-filled collective.</p>
+              <div class="quote">Young Buck stood out because he was never just the Southern member of G-Unit. He sounded like an artist carrying his own city, his own scars, and his own urgency into every verse.</div>
 
-              <h3>Solo Success and Southern Voice</h3>
-              <p>His solo work, especially during the <em>Straight Outta Cashville</em> era, confirmed that he was more than just a supporting member of G-Unit. The project helped position him as one of the most important Southern street rappers of the 2000s, blending Tennessee pride, hard realism, and a wider commercial reach. He became one of the rare artists who could move between crew loyalty and individual identity without losing the force of either.</p>
-              <p>Young Buck’s strongest material often balanced toughness with confession. He could sound explosive, wounded, paranoid, loyal, and reflective within the same body of work. That emotional roughness gave him staying power even when the commercial spotlight shifted elsewhere.</p>
+              <h3><em>Straight Outta Cashville</em></h3>
+              <p>That individuality became unmistakable on <em>Straight Outta Cashville</em>, released on August 24, 2004. The album title itself was a declaration of local pride, a Nashville remix of rap’s great place-based branding traditions. The project gave Buck a defining solo statement and confirmed that he was more than an affiliate with a few good guest verses. He could carry an album, shape a world, and make Cashville feel mythic on a national scale. :contentReference[oaicite:4]{index=4}</p>
 
-              <h3>Conflict, Legal Trouble, and Career Interruptions</h3>
-              <p>As with many artists whose biographies remain tightly connected to the street world, Young Buck’s rise was repeatedly disrupted by conflict. His split with G-Unit became one of the more public and damaging chapters of his career, and legal and financial problems further complicated his momentum. Instead of moving smoothly from breakthrough into long-term dominance, his career became marked by interruptions, controversy, and a recurring struggle to stabilize success.</p>
-              <p>These troubles became part of his public identity. To some, they reinforced the sense that Young Buck was too real, too emotionally unguarded, and too tied to a dangerous lifestyle to fit neatly into corporate rap success. To others, they symbolized missed opportunity. Either way, they became inseparable from his story.</p>
+              <h3>Conflict and Aftermath</h3>
+              <p>Like much of the G-Unit story, Buck’s career also became entangled with conflict, public fallouts, and personal instability. His disputes with 50 Cent and the group became part of his public narrative and at times overshadowed the music. Yet even in that tension, his core identity remained consistent: a street rapper with a powerful voice, deep pride in his hometown, and a style rooted in emotional honesty as much as toughness. :contentReference[oaicite:5]{index=5}</p>
 
               <h3>Legacy</h3>
-              <p>Young Buck’s legacy rests on his role as one of the most visible Southern street rappers of the 2000s and one of the artists who helped widen the national map of rap. He brought Nashville into conversations where it had rarely appeared before and gave G-Unit a harder Southern dimension during one of the group’s most dominant periods.</p>
-              <p>He is remembered for emotional intensity, regional pride, crew-era impact, and a catalog that still reflects the rawness of his life story. In the broader history of rap, Young Buck remains a symbol of Southern grit, major-era momentum, and the difficulty of sustaining success when biography and conflict never stop colliding.</p>
+              <p>Young Buck’s legacy rests on more than chart positions. He remains important as one of the artists who helped widen Southern rap’s geography and visibility, giving Nashville a durable presence in mainstream hip-hop. His music carries grit, loyalty, anger, and vulnerability in equal measure. In the story of 2000s street rap, Buck remains one of the most distinctive and underappreciated voices. :contentReference[oaicite:6]{index=6}</p>
             </section>
 
-            
-<section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1981 — Birth</strong>
-                  <p>Born David Darnell Brown in Nashville, Tennessee.</p>
+                  <strong>Late 1990s — Cash Money Affiliation</strong>
+                  <p>Begins building his rap identity through early ties to Cash Money and Southern rap circles. :contentReference[oaicite:7]{index=7}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s–Early 2000s — Early Industry Movement</strong>
-                  <p>Built ties in Southern rap circles and gained early exposure through Cash Money-associated opportunities.</p>
+                  <strong>2000–2002 — UTP Era</strong>
+                  <p>Moves through Juvenile’s UTP orbit before leaving in 2003 for a larger breakout opportunity. :contentReference[oaicite:8]{index=8}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2003–2005 — G-Unit Rise</strong>
-                  <p>Became a nationally recognized figure through G-Unit, helping give the group a Southern street identity.</p>
+                  <strong>2003 — G-Unit Breakthrough</strong>
+                  <p>Joins G-Unit and becomes one of the crew’s standout voices during its commercial peak. :contentReference[oaicite:9]{index=9}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2004–2007 — Solo Breakthrough</strong>
-                  <p>Released major solo work, including <em>Straight Outta Cashville</em>, and established himself as a major Southern rap voice.</p>
+                  <strong>2004 — <em>Straight Outta Cashville</em></strong>
+                  <p>Releases his major solo breakthrough album and turns Cashville into a national rap identity. :contentReference[oaicite:10]{index=10}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2000s–Present — Conflict and Endurance</strong>
-                  <p>Faced public disputes, legal setbacks, and career interruptions while remaining a recognizable figure in Southern street rap.</p>
+                  <strong>Late 2000s / 2010s — Fallout and Veteran Phase</strong>
+                  <p>Continues releasing music while navigating the public aftermath of G-Unit conflicts and solo reinvention. :contentReference[oaicite:11]{index=11}</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
-                <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">David Darnell Brown</div>
-                </div>
                 <div class="info-row">
                   <span class="info-label">Stage Name</span>
                   <div class="info-value">Young Buck</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Real Name</span>
+                  <div class="info-value">David Darnell Brown</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Nashville, Tennessee</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Southern Hip-Hop / Street Rap</div>
+                  <div class="info-value">Southern Hip-Hop / Gangsta Rap / Street Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active artist and enduring Southern rap figure</div>
+                  <div class="info-value">Veteran Southern rapper identified with Cashville and the G-Unit era</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Cashville</span>
                 <span class="tag">Nashville</span>
                 <span class="tag">G-Unit</span>
-                <span class="tag">Street Reality</span>
-                <span class="tag">Loyalty</span>
-                <span class="tag">Conflict</span>
                 <span class="tag">Southern Rap</span>
+                <span class="tag">Street Realism</span>
+                <span class="tag">Loyalty</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Southern Emergence</strong>
-                  <span>The early years when Young Buck developed his identity through regional struggle and industry exposure.</span>
+                  <strong>Southern Apprentice Era</strong>
+                  <span>The early chapter where Buck developed through Cash Money and UTP-related Southern rap circles.</span>
                 </div>
                 <div class="album">
-                  <strong>G-Unit and Cashville Peak</strong>
-                  <span>The breakthrough era that made him one of the most visible Southern street rappers of the 2000s.</span>
+                  <strong>G-Unit / Cashville Breakthrough Era</strong>
+                  <span>The period where he became a nationally visible street rapper and gave Nashville a signature rap statement.</span>
                 </div>
                 <div class="album">
-                  <strong>Conflict and Survival</strong>
-                  <span>The later phase marked by public disputes, setbacks, and a stubborn continued presence in rap culture.</span>
+                  <strong>Veteran Cashville Era</strong>
+                  <span>A later phase defined by survival, solo persistence, and long-term identity beyond crew politics.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Young Buck.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Young Buck on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Young%20Buck" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Young Buck.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Young Buck on Spotify and explore the records that defined his Cashville and G-Unit-era run.</p>
+                  <a href="https://open.spotify.com/search/Young%20Buck" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Young Buck releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Young+Buck+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Young Buck on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Young+Buck+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Let Me In</span>
+                  <span class="track-tag">Shorty Wanna Ride</span>
+                  <span class="track-tag">Look at Me Now</span>
+                  <span class="track-tag">Get Buck</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Let Me In</span>
-                <span class="track-tag">Shorty Wanna Ride</span>
-                <span class="track-tag">Bonafide Hustler</span>
-                <span class="track-tag">Bang Bang</span>
-              </div>
-            </div>
-          </section>
-
-
-            
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="the-game.html" class="related-card">
-                  <h4>The Game</h4>
-                  <p>Another 2000s rapper whose breakthrough and career were deeply shaped by major rap crews and public conflict.</p>
+                <a href="50-cent.html" class="related-card">
+                  <h4>50 Cent</h4>
+                  <p>The essential companion story for understanding Buck’s rise, G-Unit breakthrough, and later public fallout.</p>
                 </a>
-                <a href="lil-wayne.html" class="related-card">
-                  <h4>Lil Wayne</h4>
-                  <p>A Southern star connected to the same broader era of regional power shifts that helped artists like Young Buck rise.</p>
+                <a href="g-unit.html" class="related-card">
+                  <h4>G-Unit</h4>
+                  <p>A broader group story that frames Buck’s role during one of the most powerful crew eras of the 2000s.</p>
                 </a>
-                <a href="birdman.html" class="related-card">
-                  <h4>Birdman</h4>
-                  <p>A key mogul figure from the Southern rap system Young Buck briefly moved through early in his career.</p>
+                <a href="juvenile.html" class="related-card">
+                  <h4>Juvenile</h4>
+                  <p>A key Southern connection that helps explain Buck’s path before his national breakout with G-Unit.</p>
                 </a>
               </div>
             </section>
@@ -969,51 +947,139 @@ header#mainHeader {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
