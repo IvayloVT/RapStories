@@ -1,13 +1,75 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Artist Archive | Rap Stories</title><meta name="description" content="Browse the full Rap Stories vault with live search, category filters, tags, and sorting." /><link rel="stylesheet" href="vault-system.css" /></head><body><header id="mainHeader">
-  <div class="container nav">
-    <a href="index.html" class="brand"><div class="brand-mark">RS</div><span class="brand-text">RAP STORIES</span></a>
-    <nav class="nav-links"><a href="index.html" class="">Home</a>
-<a href="artist-archive.html" class="active">Archive</a>
+﻿<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Artist Archive | Rap Stories</title><meta content="Browse the full Rap Stories vault with live search, category filters, tags, and sorting." name="description"/><link href="vault-system.css" rel="stylesheet"/></head><body><header id="mainHeader">
+<div class="container nav">
+<a class="brand" href="index.html"><div class="brand-mark">RS</div><span class="brand-text">RAP STORIES</span></a>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="artist-archive.html">Archive</a>
 <a href="artist.html">Artist</a>
-<a href="category.html" class="">Categories</a>
-<a href="timeline.html" class="">Timeline</a>
+<a href="category.html">Categories</a>
+<a href="timeline.html">Timeline</a>
 <a href="map.html">Map</a>
-<a href="contact.html" class="">Contact</a></nav>
-    <a href="artist-archive.html" class="nav-btn">Explore Stories</a>
-  </div>
-</header><main data-vault-page="archive"><section class="hero"><div class="container"><div class="glass hero-card"><span class="eyebrow">Archive Browser</span><h1>Artist <span>Archive</span></h1><p>Use live search, tags, categories, city filters, and sort tools to move through the vault like a real archive platform.</p></div><div class="search-toolbar"><div class="glass search-bar"><input type="text" id="vaultSearch" placeholder="Search artist names, cities, tags, story themes..." /><select id="vaultEra"><option>All Eras</option><option>90s Golden Era</option><option>90s–2000s</option><option>1990s–2000s</option><option>Late 90s</option><option>2000s</option><option>2010s</option><option>Late 2010s</option></select><select id="vaultCategory"><option>All Categories</option><option>Biography</option><option>Rise to Fame</option><option>Discography</option><option>Beefs &amp; Rivalries</option><option>Labels &amp; Crews</option><option>Controversies</option><option>Legacy</option><option>Regional Scenes</option></select><select id="vaultSort"><option value="a-z">Sort: A–Z</option><option value="era">Sort: Era</option><option value="city">Sort: City</option></select></div><div class="glass chip-row" id="tagChips"></div></div></div></section><section class="section"><div class="container"><div class="section-head"><div><h2>All Connected Stories</h2><p id="resultCount">16 artists found</p></div></div><div class="artist-grid" id="artistGrid"></div><div class="glass empty-state" id="emptyState">No artists matched your search.</div></div></section></main><footer><div class="container footer-wrap"><div><strong style="color:white;">Rap Stories Archive</strong><p>Search, sort, filter, and connect the vault.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="category.html">Categories</a><a href="timeline.html">Timeline</a><a href="contact.html">Contact</a></div></div></footer><script src="vault-data.js"></script><script src="vault-system.js"></script></body></html>
+<a href="contact.html">Contact</a>
+</nav>
+<a class="nav-btn" href="artist-archive.html">Explore Stories</a>
+</div>
+</header><main data-vault-page="archive"><section class="hero"><div class="container"><div class="glass hero-card"><span class="eyebrow">Archive Browser</span><h1>Artist <span>Archive</span></h1><p>Use live search, tags, categories, city filters, and sort tools to move through the vault like a real archive platform.</p></div><div class="search-toolbar"><div class="glass search-bar"><input id="vaultSearch" placeholder="Search artist names, cities, tags, story themes..." type="text"/><select id="vaultEra"><option>All Eras</option><option>90s Golden Era</option><option>90s–2000s</option><option>1990s–2000s</option><option>Late 90s</option><option>2000s</option><option>2010s</option><option>Late 2010s</option></select><select id="vaultCategory"><option>All Categories</option><option>Biography</option><option>Rise to Fame</option><option>Discography</option><option>Beefs &amp; Rivalries</option><option>Labels &amp; Crews</option><option>Controversies</option><option>Legacy</option><option>Regional Scenes</option></select><select id="vaultSort"><option value="a-z">Sort: A–Z</option><option value="era">Sort: Era</option><option value="city">Sort: City</option></select></div><div class="glass chip-row" id="tagChips"></div></div></div></section><section class="section"><div class="container"><div class="section-head"><div><h2>All Connected Stories</h2><p id="resultCount">16 artists found</p></div></div><div class="artist-grid" id="artistGrid"></div><div class="glass empty-state" id="emptyState">No artists matched your search.</div></div></section></main><footer><div class="container footer-wrap"><div><strong style="color:white;">Rap Stories Archive</strong><p>Search, sort, filter, and connect the vault.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="category.html">Categories</a><a href="timeline.html">Timeline</a><a href="contact.html">Contact</a></div></div></footer><script src="vault-data.js"></script><script src="vault-system.js"></script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const current = window.location.pathname.split("/").pop() || "index.html";
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(link => {
+    link.classList.remove("active");
+    const href = link.getAttribute("href");
+    if (current === href) {
+      link.classList.add("active");
+    }
+  });
+  if (!Array.from(links).some(link => link.classList.contains("active"))) {
+    if (current.endsWith(".html")) {
+      const isArtistPage = !["index.html","artist-archive.html","artist.html","category.html","timeline.html","map.html","contact.html","thank-you.html","thank-you-premium.html","intro.html"].includes(current);
+      if (isArtistPage) {
+        const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
+        if (artistLink) artistLink.classList.add("active");
+      }
+    }
+  }
+});
+</script><script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+  let lastScrollY = window.pageYOffset;
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+  function handleScroll(){
+    const currentScrollY = window.pageYOffset;
+    if(window.innerWidth <= 768){
+      if(currentScrollY <= 8){
+        header.classList.remove("hidden");
+      } else if(currentScrollY > lastScrollY + 4){
+        header.classList.add("hidden");
+      } else if(currentScrollY < lastScrollY - 4){
+        header.classList.remove("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+    lastScrollY = currentScrollY;
+  }
+  offset();
+  handleScroll();
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", () => {
+    offset();
+    if(window.innerWidth > 768){
+      header.classList.remove("hidden");
+    }
+  });
+  window.addEventListener("scroll", handleScroll, { passive: true });
+})();
+</script>  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+</body></html>
+
+
+
