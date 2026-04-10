@@ -253,6 +253,9 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     const header = document.getElementById("mainHeader");
     if (!header) return;
 
+    const currentPage = getCurrentPage();
+    const isArtistFlowPage = currentPage === "artist.html" || !CORE_PAGES.has(currentPage);
+    const mobileRevealDelta = isArtistFlowPage ? 44 : 4;
     let lastScrollY = window.pageYOffset;
 
     function offset() {
@@ -267,7 +270,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
           header.classList.remove("hidden");
         } else if (currentScrollY > lastScrollY + 4) {
           header.classList.add("hidden");
-        } else if (currentScrollY < lastScrollY - 4) {
+        } else if (currentScrollY < lastScrollY - mobileRevealDelta) {
           header.classList.remove("hidden");
         }
       } else {
