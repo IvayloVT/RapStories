@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pooh Shiesty | Rap Stories</title>
-  <meta name="description" content="A premium Rap Stories profile on Pooh Shiesty, covering his Memphis roots, rapid rise through street rap, breakthrough with Shiesty Season, legal troubles, incarceration, and his place in modern Southern hip-hop." />
+  <meta name="description" content="A Rap Stories premium profile on Pooh Shiesty, covering his Memphis roots, breakout rise, Shiesty Season era, street-rap intensity, and lasting influence on modern Southern hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,195 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover { transform: translateY(-2px); }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden { transform: translateY(-100%); }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +658,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +683,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Pooh Shiesty</h2>
-              <p>Memphis rapper whose raw delivery, street-heavy storytelling, and breakout momentum turned him into one of the most talked-about Southern artists of the early 2020s.</p>
+              <p>Memphis rapper whose icy delivery, street intensity, and breakout rise through 1017 made him one of the most talked-about new Southern voices of the early 2020s.</p>
             </div>
           </aside>
 
@@ -735,13 +691,13 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Pooh Shiesty</span></h1>
             <p class="summary">
-              Born Lontrell Donell Williams Jr., Pooh Shiesty built his name through raw honesty, melodic pain rap, and a persona shaped by hardship, prison, hustle, and self-analysis. His music blends Southern street realism with introspection, spirituality, and blunt emotional confession, helping him become one of the most recognizable Louisiana artists of the modern mixtape era.
+              Pooh Shiesty emerged from Memphis with a voice that sounded cold, direct, and immediately threatening. His music carried the weight of local street culture, but it also felt modern enough to explode nationally at the exact moment rap audiences were drawn to darker beats, stark realism, and unfiltered aggression. His rise was fast, intense, and tied closely to a wider Memphis resurgence in mainstream hip-hop.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>November 8, 1999</strong>
+                <strong>Lontrell Denell Williams Jr.</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -749,11 +705,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Street rap and Memphis trap</strong>
+                <strong>Back in Blood, Shiesty Season, 1017 rise</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Modern Memphis Rap Figure</strong>
               </div>
             </div>
 
@@ -761,22 +717,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1999</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Memphis</div>
+                <span class="label">Origin</span>
+                <div class="value">Memphis, Tennessee</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2020s</div>
+                <div class="value">2019–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Raw breakout street energy</div>
+                <div class="value">Cold street delivery</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Early-2020s Memphis wave</div>
               </div>
             </div>
           </section>
@@ -784,172 +741,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            
-
-<section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Memphis Background</h3>
-              <p>Pooh Shiesty, born Lontrell Donell Williams Jr. on November 8, 1999, came out of Memphis, Tennessee, a city with one of the most distinctive rap identities in America. Memphis rap has long been defined by darkness, urgency, regional slang, and street realism, and Pooh Shiesty arrived carrying that tradition into a new generation. His voice, delivery, and image fit the city’s hard-edged lineage while also sounding current enough to break nationally.</p>
-              <p>Like many fast-rising street rappers, his story was shaped by instability, neighborhood pressures, and the realities of survival in environments where reputation, loyalty, and danger often overlap. Those conditions became central to his music. He did not build his identity around polish or crossover softness. Instead, he came forward with force, making records that sounded tense, direct, and uncompromising.</p>
+              <h3>Memphis Roots</h3>
+              <p>Pooh Shiesty, born Lontrell Denell Williams Jr., came out of Memphis with a style deeply connected to the city’s dark, menacing rap tradition. Memphis has long produced artists who make danger sound atmospheric as much as lyrical, and Shiesty fit that lineage naturally. His voice carried a sense of pressure without needing to exaggerate. He sounded like somebody speaking from inside the life he described, not from a distance.</p>
 
-              <h3>Breakout Momentum</h3>
-              <p>Pooh Shiesty’s rise happened quickly. He began building regional attention through a string of street records and videos that spread online, then accelerated into a broader national conversation when major rap audiences started responding to his intensity and charisma. His breakthrough coincided with a moment when Memphis was once again asserting itself as a key center of rap innovation, and he became one of the artists symbolizing that wave.</p>
-              <p>A major part of his visibility came through his connection to Gucci Mane and 1017, a co-sign that immediately placed him in a serious Southern rap lineage. That affiliation helped expand his reach, but his appeal was not dependent on it. What made listeners remember him was the energy of the records themselves: aggressive delivery, stripped-down menace, and a style that felt genuinely connected to where he came from.</p>
+              <h3>Early Releases and Local Momentum</h3>
+              <p>Before the major spotlight arrived, Pooh Shiesty built early attention through songs like <em>Hell Night</em>, <em>Shiesty Summer</em>, and collaborations with Big30. These records helped establish the core of his identity: low-temperature menace, clipped confidence, and a Memphis drawl that made threats sound casual and memorable. That local momentum mattered because when the industry found him, the voice was already formed.</p>
 
-              <div class="quote">Pooh Shiesty’s appeal came from impact and immediacy—his records often felt like pure momentum captured in real time.</div>
+              <h3>1017 and the Breakthrough</h3>
+              <p>Signing to Gucci Mane’s 1017 label accelerated Shiesty’s rise and placed him inside one of rap’s best-known pipelines for hard-edged trap stars. But the breakout moment came when his music itself became impossible to ignore. <em>Back in Blood</em>, featuring Lil Durk, turned him into a national name and gave him one of the defining street records of the period. It was aggressive, catchy, and culturally unavoidable.</p>
 
-              <h3>Shiesty Season and National Recognition</h3>
-              <p>The project <em>Shiesty Season</em> helped confirm that his early buzz was not a fluke. By that point, Pooh Shiesty had become one of the most visible young street rappers in the country, with songs circulating heavily online and a persona that translated into major audience interest. He represented a kind of new-era Southern rap star: regional to the core, but scalable at national level.</p>
-              <p>His music leaned on intimidation, urgency, and pressure, but there was also a sharp instinct for memorable hooks and momentum-building phrasing. That combination helped him cross from street attention into mainstream conversation without losing the roughness that made him stand out in the first place.</p>
+              <h3>Shiesty Season</h3>
+              <p>His debut commercial mixtape, <em>Shiesty Season</em>, arrived in 2021 and confirmed that his buzz was larger than a single track. The project showed that he could hold a full release with a consistent atmosphere: eerie production, direct threats, neighborhood realism, and a persona built around intimidation rather than overcomplicated storytelling. It gave him a signature body of work at the exact moment his visibility peaked. :contentReference[oaicite:1]{index=1}</p>
 
-              <h3>Legal Trouble and Interruption</h3>
-              <p>As his fame increased, legal trouble became one of the defining interruptions in his career. What had looked like the beginning of a long commercial ascent was sharply disrupted by incarceration, and that shift changed the public narrative around him. Instead of being discussed only as a breakout star, he became part of a familiar modern rap storyline in which momentum, street reputation, success, and legal consequence collide.</p>
-              <p>This interruption did not erase his impact, but it did freeze part of his rise in a specific historical moment. For many fans, Pooh Shiesty came to represent both the explosive possibilities of fast digital-era rap fame and the fragility of that rise when legal pressure enters the picture.</p>
+              <div class="quote">Pooh Shiesty’s music works because it feels emotionally frozen — cold, controlled, dangerous, and stripped of anything unnecessary.</div>
 
-              <h3>Style and Identity</h3>
-              <p>Pooh Shiesty’s style is built around directness. He rarely sounded overcomplicated or abstract. His best material worked by hitting hard, fast, and memorably. That quality made him highly effective in an era where short-form attention, quotable lines, and instantly recognizable delivery all matter. At the same time, his music stayed anchored to Memphis tradition rather than flattening itself into generic streaming-era rap.</p>
-              <p>He became closely associated with a kind of raw young-star presence—someone whose music felt like a live transmission from a local scene that had suddenly broken wide open. That is part of why his run remains memorable even though it was interrupted. The impact was concentrated, but real.</p>
+              <h3>Legal Trouble and Interrupted Momentum</h3>
+              <p>Part of Pooh Shiesty’s story is also how quickly momentum met interruption. Serious legal troubles became inseparable from public discussion around his career and altered the trajectory of what looked like one of rap’s fastest-rising new runs. That interruption changed the way his early catalog is remembered: not only as the arrival of a new star, but as the record of a moment that felt abruptly cut short. Public reporting has also tracked later developments after his sentence and release, keeping his story tied to both music and legal turbulence. :contentReference[oaicite:2]{index=2}</p>
 
-              <h3>Legacy and Position in Modern Rap</h3>
-              <p>Pooh Shiesty’s legacy is tied to the early 2020s Memphis surge and to the way regional rap can still reshape the mainstream when the voice is strong enough. He became one of the central names in that period, helping push Memphis energy into broader national circulation. Even with legal setbacks, his breakout remains a key part of the story of modern Southern rap.</p>
-              <p>He stands as a symbol of rapid ascent, undeniable local identity, and a career path shaped as much by interruption as by momentum. In that sense, Pooh Shiesty’s story is not just about success—it is about how quickly rap can elevate a voice, and how quickly outside pressures can change the direction of that rise.</p>
+              <h3>Legacy</h3>
+              <p>Pooh Shiesty’s legacy already matters because he helped define a specific mood in early-2020s rap: cold Memphis realism, minimal emotional softness, and songs built on intimidation and atmosphere. Even with a career interrupted, his influence remains visible in the wave of artists who followed similar tonal lanes. He stands as one of the clearest symbols of Memphis rap’s renewed national power in that period.</p>
             </section>
 
-            
-<section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1999 — Birth</strong>
-                  <p>Born Lontrell Donell Williams Jr. in Memphis, Tennessee.</p>
+                  <strong>2019 — Early Singles</strong>
+                  <p>Began building local recognition through songs like <em>Hell Night</em>, <em>Shiesty Summer</em>, and collaborations with Big30. :contentReference[oaicite:3]{index=3}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2010s — Early Rise</strong>
-                  <p>Began gaining attention through Memphis street records and online momentum.</p>
+                  <strong>2020 — 1017 Rise</strong>
+                  <p>Signed with Gucci Mane’s 1017 label and became a central new voice in the label’s expanding roster. :contentReference[oaicite:4]{index=4}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020 — Breakout Visibility</strong>
-                  <p>Built major buzz with a run of songs and visuals that pushed him into national rap conversation.</p>
+                  <strong>2020–2021 — Back in Blood Breakthrough</strong>
+                  <p>Exploded nationally with <em>Back in Blood</em>, the song that pushed him into mainstream hip-hop conversation. :contentReference[oaicite:5]{index=5}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2021 — Shiesty Season Era</strong>
-                  <p>Reached a new level of prominence with <em>Shiesty Season</em> and his wider 1017 association.</p>
+                  <strong>2021 — Shiesty Season</strong>
+                  <p>Released his debut commercial mixtape, which cemented his place in the early-2020s Memphis wave. :contentReference[oaicite:6]{index=6}</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020s — Legal Interruption and Ongoing Interest</strong>
-                  <p>Legal troubles interrupted his rise, but his breakout remains a defining part of the modern Memphis wave.</p>
+                  <strong>2022–2025 — Legal Interruption</strong>
+                  <p>His rapid ascent was interrupted by federal legal issues, followed later by release in October 2025. :contentReference[oaicite:7]{index=7}</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            
-
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Lontrell Donell Williams Jr.</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Pooh Shiesty</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Lontrell Denell Williams Jr.</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Memphis, Tennessee</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Southern Hip-Hop / Memphis Trap / Street Rap</div>
+                  <div class="info-value">Hip-Hop / Southern Hip-Hop / Trap / Drill</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active artist whose breakout legacy remains highly visible</div>
+                  <div class="info-value">Best known as a breakout Memphis rapper whose early-2020s rise left a major impression on modern street rap</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">Memphis</span>
-                <span class="tag">Street Rap</span>
-                <span class="tag">Momentum</span>
-                <span class="tag">Incarceration</span>
-                <span class="tag">Regional Identity</span>
-                <span class="tag">Breakout Era</span>
+                <span class="tag">1017</span>
+                <span class="tag">Back in Blood</span>
+                <span class="tag">Shiesty Season</span>
+                <span class="tag">Street Realism</span>
+                <span class="tag">Cold Delivery</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Memphis Build-Up</strong>
-                  <span>The local rise that introduced his voice and image to a wider rap audience.</span>
+                  <strong>Breakout Era</strong>
+                  <span>The phase where Pooh Shiesty turned Memphis momentum into one of the hardest breakout runs of the early 2020s.</span>
                 </div>
                 <div class="album">
-                  <strong>Breakout and Shiesty Season</strong>
-                  <span>The explosive period that turned him into one of the most discussed young street rappers.</span>
+                  <strong>Shiesty Season Era</strong>
+                  <span>The period where his signature sound fully crystallized into a major commercial project. :contentReference[oaicite:8]{index=8}</span>
                 </div>
                 <div class="album">
-                  <strong>Interrupted Momentum</strong>
-                  <span>The period where legal trouble complicated what looked like a major long-term ascent.</span>
+                  <strong>Interrupted Legacy Era</strong>
+                  <span>A later chapter where legal troubles complicated but did not erase his impact on modern Southern rap.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Pooh Shiesty.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Pooh Shiesty on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Pooh%20Shiesty" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Pooh Shiesty.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Pooh Shiesty on Spotify and revisit the records that defined his rapid breakout.</p>
+                  <a href="https://open.spotify.com/search/Pooh%20Shiesty" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major Pooh Shiesty releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Pooh+Shiesty+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Pooh Shiesty on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Pooh+Shiesty+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Back in Blood</span>
+                  <span class="track-tag">Guard Up</span>
+                  <span class="track-tag">Monday to Sunday</span>
+                  <span class="track-tag">Neighbors</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Back in Blood</span>
-                <span class="track-tag">Neighbors</span>
-                <span class="track-tag">Twerksum</span>
-                <span class="track-tag">Guard Up</span>
-              </div>
-            </div>
-          </section>
-
-
-            
-
-<section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="young-dolph.html" class="related-card">
-                  <h4>Young Dolph</h4>
-                  <p>A Memphis figure whose independent presence and city identity shaped the lane Pooh Shiesty entered.</p>
+                <a href="gucci-mane.html" class="related-card">
+                  <h4>Gucci Mane</h4>
+                  <p>The label head whose 1017 platform helped accelerate Pooh Shiesty’s rise into the mainstream.</p>
                 </a>
-                <a href="chief-keef.html" class="related-card">
-                  <h4>Chief Keef</h4>
-                  <p>Another artist whose regional sound broke nationally with a raw, uncompromising street aesthetic.</p>
+                <a href="lil-durk.html" class="related-card">
+                  <h4>Lil Durk</h4>
+                  <p>A crucial collaborator on “Back in Blood,” the song that defined Pooh Shiesty’s breakthrough moment.</p>
                 </a>
-                <a href="nba-youngboy.html" class="related-card">
-                  <h4>NBA YoungBoy</h4>
-                  <p>A similarly intense modern Southern star whose momentum and legal pressure defined parallel themes.</p>
+                <a href="big30.html" class="related-card">
+                  <h4>Big30</h4>
+                  <p>A fellow Memphis rapper whose early collaborations with Pooh Shiesty helped establish his local identity.</p>
                 </a>
               </div>
             </section>
@@ -976,55 +920,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
+    rail.innerHTML = "";
 
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+      rail.appendChild(dot);
+    });
 
-  let lastScrollY = window.pageYOffset;
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
+
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
+        header.classList.remove("hidden");
+      }
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>P. Diddy | Rap Stories</title>
-  <meta name="description" content="Producer, executive, showman, and entrepreneur, P. Diddy helped build Bad Boy into a defining force of 1990s rap and pop culture." />
+  <meta name="description" content="A Rap Stories premium profile on P. Diddy, covering his Harlem and Mount Vernon roots, Bad Boy rise, producer era, mogul expansion, and complicated legacy in hip-hop culture." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,195 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover { transform: translateY(-2px); }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden { transform: translateY(-100%); }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +658,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +683,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>P. Diddy</h2>
-              <p>Producer, executive, showman, and entrepreneur, P. Diddy helped build Bad Boy into a defining force of 1990s rap and pop culture.</p>
+              <p>Producer, executive, and artist whose Bad Boy empire helped define a major era of hip-hop, success, spectacle, and controversy.</p>
             </div>
           </aside>
 
@@ -735,25 +691,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>P. Diddy</span></h1>
             <p class="summary">
-              Born Sean Combs, P. Diddy became one of the most recognizable executives in hip-hop by combining artist development, branding instinct, production vision, and relentless ambition. His influence stretched from hit records and label power to fashion, television, and corporate partnerships.
+              P. Diddy became one of the most powerful and visible figures in rap by understanding that music could be expanded into image, lifestyle, business, and cultural dominance. More than a rapper, he emerged as an architect of an era — building stars, shaping sound, and turning Bad Boy into one of the most important brands in 1990s and 2000s hip-hop. His legacy is massive, influential, and deeply complicated.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>November 4, 1969</strong>
+                <strong>Sean Combs</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Harlem, New York</strong>
+                <strong>Harlem / Mount Vernon, New York</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Bad Boy Records and mogul branding</strong>
+                <strong>Bad Boy, mogul era, producer success</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Legacy figure</strong>
+                <strong>Influential and highly controversial figure</strong>
               </div>
             </div>
 
@@ -761,22 +717,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1969</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Harlem / New York</div>
+                <span class="label">Origin</span>
+                <div class="value">New York</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">1990s–Present</div>
+                <div class="value">1990s–present legacy</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Executive showman</div>
+                <div class="value">Bad Boy empire</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Music, fashion, branding</div>
               </div>
             </div>
           </section>
@@ -784,150 +741,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and Drive</h3>
-              <p>Sean Combs was born in Harlem and raised partly in Mount Vernon, New York. Ambition defined his public image from early in his career. He understood the value of energy, presentation, networking, and timing, and he brought those instincts into the music business before he became a household name.</p>
-              <p>He attended Howard University before entering the record industry, where he quickly developed a reputation as a driven talent scout and organizer. His personality was not quiet or secondary; he seemed built to command attention and create momentum.</p>
-              <h3>Bad Boy and the 1990s Boom</h3>
-              <p>Combs rose to power by building Bad Boy Records into one of the signature labels of the 1990s. He played a central role in crafting a polished, radio-dominant sound that connected rap with R&B, glamour, and crossover appeal. Under Bad Boy, artists became brands as much as recording acts.</p>
-              <p>His work as an executive and producer helped shape the careers of major stars, while his own performances and ad-libs made him instantly recognizable. He embodied a version of hip-hop success tied to luxury, celebration, spectacle, and relentless self-promotion.</p>
-              <h3>Beyond Music</h3>
-              <p>P. Diddy’s influence expanded well beyond records. Fashion, television, beverages, and broader celebrity branding turned him into a symbol of hip-hop entrepreneurship in the 2000s and beyond. He helped prove that rap moguls could compete in mainstream corporate culture rather than remain confined to music alone.</p>
+              <h3>New York Beginnings</h3>
+              <p>Born Sean Combs, the figure later known by names including Puff Daddy, P. Diddy, and Diddy emerged from New York with a sharp understanding of ambition, image, and music business power. Long before he became a global celebrity, he was already building a reputation as someone who knew how to create momentum around artists, records, and public attention. That instinct became central to his entire career.</p>
+
+              <h3>From Uptown to Bad Boy</h3>
+              <p>One of the most important turning points in Combs’s career was his transition from working at Uptown Records to founding Bad Boy Entertainment. With Bad Boy, he did not just launch a label. He built a cultural machine. The imprint helped define the glossy, high-stakes feel of a major era in East Coast hip-hop and became central to the rise of artists whose names would shape rap history.</p>
+
+              <h3>Producer, Curator, and Star-Maker</h3>
+              <p>Combs’s influence was never only about his own songs. He was a curator of sound, a presenter of artists, and a master of commercial framing. He helped turn records into events and artists into brands. That was especially visible in the way Bad Boy operated: sleek visuals, polished production, crossover ambition, and a sense that success itself could be part of the aesthetic. He understood spectacle before many of his peers fully embraced it.</p>
+
+              <h3>Solo Success and Mogul Identity</h3>
+              <p>As a recording artist, Combs turned executive visibility into pop-level stardom. He became one of the few label heads who could also dominate mainstream attention as a performer and public personality. Over time, he expanded beyond music into fashion, alcohol branding, television, and lifestyle entrepreneurship. That mogul image became inseparable from his name. He represented a version of hip-hop success built around scale, polish, and business reach.</p>
+
+              <div class="quote">P. Diddy helped redefine rap power by making the executive as visible as the artist and the brand as important as the record.</div>
+
+              <h3>Success, Spectacle, and Complication</h3>
+              <p>What makes Sean Combs such a significant figure is not only that he succeeded, but how completely he embodied a certain model of success: luxury, control, celebrity, and strategic reinvention. At the same time, his legacy has become far more complicated over the years. Admiration for his role in building artists and companies now exists alongside intense public scrutiny and serious controversy, making any honest assessment of his story necessarily conflicted.</p>
+
               <h3>Legacy</h3>
-              <p>Sean Combs remains one of the most consequential business figures in rap history. His legacy is tied to artist development, executive ambition, and the transformation of hip-hop into a full-spectrum entertainment business. Few figures were more important in turning label power into cultural lifestyle power.</p>
+              <p>P. Diddy remains one of the most consequential figures in hip-hop history because his impact extends far beyond his own catalog. He helped shape the sound and commercial logic of an era, influenced the business imagination of rap, and showed how music, fashion, and celebrity could be fused into one powerful identity. His legacy is undeniable, but it is no longer simple. It now sits at the intersection of achievement, influence, controversy, and public reassessment.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1969 — Birth</strong>
-                  <p>Born Sean John Combs in Harlem, New York.</p>
+                  <strong>Early 1990s — Uptown Years</strong>
+                  <p>Began building industry power through executive work and artist development in New York’s music world.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Early 1990s — Industry Climb</strong>
-                  <p>Built a reputation inside the music business as a young executive and hitmaker.</p>
+                  <strong>1993 — Bad Boy Founded</strong>
+                  <p>Launched Bad Boy Entertainment and helped create one of the defining labels of 1990s hip-hop and R&amp;B.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-1990s — Bad Boy Era</strong>
-                  <p>Helped turn Bad Boy Records into one of rap’s defining labels.</p>
+                  <strong>Late 1990s — Solo and Label Peak</strong>
+                  <p>Expanded into major solo stardom while Bad Boy’s artist roster and productions shaped rap culture.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 1990s–2000s — Celebrity Expansion</strong>
-                  <p>Became a visible artist, producer, and entrepreneur across multiple industries.</p>
+                  <strong>2000s–2010s — Mogul Expansion</strong>
+                  <p>Moved deeper into fashion, television, branding, and broader celebrity-business empire building.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s–Present — Corporate Legacy</strong>
-                  <p>Remained a major symbol of hip-hop mogul culture and branding influence.</p>
+                  <strong>Legacy Phase</strong>
+                  <p>His public image entered a new period of intense reassessment, leaving a legacy both influential and heavily disputed.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Sean John Combs</div>
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">P. Diddy</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
-                  <div class="info-value">P. Diddy / Puff Daddy / Diddy</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Sean Combs</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">Harlem, New York</div>
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Harlem and Mount Vernon, New York</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Rap / Hip-Hop Soul</div>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Pop Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Legacy figure in music and business</div>
+                  <div class="info-value">One of hip-hop’s most influential and most controversial mogul figures</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
-                <span class="tag">Ambition</span>
+                <span class="tag">Bad Boy</span>
+                <span class="tag">New York</span>
+                <span class="tag">Mogul Era</span>
+                <span class="tag">Producer Power</span>
                 <span class="tag">Luxury</span>
-                <span class="tag">Branding</span>
-                <span class="tag">Executive Power</span>
-                <span class="tag">Showmanship</span>
-                <span class="tag">Influence</span>
+                <span class="tag">Controversy</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Industry Ascent</strong>
-                  <span>The period where he emerged as a bold and highly visible executive.</span>
+                  <strong>Bad Boy Founding Era</strong>
+                  <span>The phase where Combs helped build one of rap’s most important labels and a defining East Coast identity.</span>
                 </div>
                 <div class="album">
-                  <strong>Bad Boy Dominance</strong>
-                  <span>The era that made his label central to 1990s rap and pop culture.</span>
+                  <strong>Mogul Expansion Era</strong>
+                  <span>The period where music, fashion, branding, and executive power all merged into one massive public image.</span>
                 </div>
                 <div class="album">
-                  <strong>Mogul Expansion</strong>
-                  <span>The phase where music fame expanded into lifestyle and corporate branding.</span>
+                  <strong>Legacy Reassessment Era</strong>
+                  <span>A later chapter in which his cultural influence remains large, but public judgment has become far more contested.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for P. Diddy on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/P%20Diddy" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for P. Diddy.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for P. Diddy and Sean Combs on Spotify and revisit the records tied to the Bad Boy era.</p>
+                  <a href="https://open.spotify.com/search/P%20Diddy" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, interviews, and major P. Diddy releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=P+Diddy+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to P. Diddy on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=P+Diddy+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">I'll Be Missing You</span>
+                  <span class="track-tag">Can't Nobody Hold Me Down</span>
+                  <span class="track-tag">Bad Boy for Life</span>
+                  <span class="track-tag">Victory</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">I’ll Be Missing You</span>
-                <span class="track-tag">Can’t Nobody Hold Me Down</span>
-                <span class="track-tag">Bad Boy for Life</span>
-                <span class="track-tag">Victory</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
+                <a href="notorious-big.html" class="related-card">
+                  <h4>The Notorious B.I.G.</h4>
+                  <p>The artist most closely tied to Bad Boy’s myth and one of the central figures in Combs’s rise.</p>
+                </a>
+                <a href="ma$e.html" class="related-card">
+                  <h4>Ma$e</h4>
+                  <p>Another defining Bad Boy-era artist whose success helped shape the label’s late-1990s identity.</p>
+                </a>
                 <a href="jay-z.html" class="related-card">
                   <h4>Jay-Z</h4>
-                  <p>Another mogul whose career shows how rap power can extend into business leadership.</p>
-                </a>
-                <a href="nas.html" class="related-card">
-                  <h4>Nas</h4>
-                  <p>A contrasting New York icon who built his legacy more through lyricism than spectacle.</p>
-                </a>
-                <a href="dr-dre.html" class="related-card">
-                  <h4>Dr. Dre</h4>
-                  <p>A fellow architect of rap’s executive era, built through production and label vision.</p>
+                  <p>A useful comparison point in mogul ambition, branding, and the broader business expansion of hip-hop.</p>
                 </a>
               </div>
             </section>
@@ -954,95 +920,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
