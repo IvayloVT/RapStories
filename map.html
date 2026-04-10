@@ -1,16 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Hip-Hop Map | Rap Stories</title>
-<meta name="description" content="Interactive Hip-Hop map with zoom, pan, filters, and artist links." />
+<meta content="Interactive Hip-Hop map with zoom, pan, filters, and artist links." name="description"/>
 <style>
   :root {
-    --bg:#0a0a0f; --panel:rgba(255,255,255,0.06); --panel-border:rgba(255,255,255,0.10);
-    --text:#f4f4f5; --muted:#a5a5b1; --accent:#d4af37; --accent-soft:rgba(212,175,55,0.15);
-    --shadow:0 20px 50px rgba(0,0,0,0.45); --radius:20px; --max:1260px;
+    --bg:#0a0a0f;
+    --panel:rgba(255,255,255,0.06);
+    --panel-border:rgba(255,255,255,0.10);
+    --text:#f4f4f5;
+    --muted:#a5a5b1;
+    --accent:#d4af37;
+    --accent-soft:rgba(212,175,55,0.15);
+    --shadow:0 20px 50px rgba(0,0,0,0.45);
+    --radius:20px;
+    --max:1260px;
   }
+
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body {
@@ -19,1109 +28,515 @@
       radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 28%),
       radial-gradient(circle at top right, rgba(212, 175, 55, 0.15), transparent 28%),
       linear-gradient(180deg,#09090d,#0a0a0f 52%,#050507 100%);
-    color:var(--text); line-height:1.6; overflow-x:hidden;
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
   }
   a { color:inherit; text-decoration:none; }
   .container { width:min(92%, var(--max)); margin:0 auto; }
-  .glass { background:var(--panel); border:1px solid var(--panel-border); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:var(--shadow); border-radius:var(--radius); }
-  header#mainHeader{ position:fixed; top:0; left:0; width:100%; z-index:1000; background:rgba(5,5,8,0.76); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,0.08); box-shadow:0 10px 30px rgba(0,0,0,0.22); transition:transform .3s ease; }
-  header#mainHeader.hidden{ transform:translateY(-100%); }
-  .nav{ min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+
+  .glass {
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:var(--shadow);
+    border-radius:var(--radius);
+  }
+
+  header#mainHeader{
+    position:fixed; top:0; left:0; width:100%; z-index:1000;
+    background:rgba(5,5,8,0.76);
+    backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,0.22);
+    transition:transform .3s ease;
+  }
+  .nav{
+    min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:24px;
+  }
   .brand{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.6px; font-size:1.02rem;}
-  .brand-mark{ width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg,#d4af37,#fff0a5); color:#111; font-weight:900; box-shadow:0 10px 24px rgba(212,175,55,.35); }
-  .brand-text{ font-weight:900; letter-spacing:.5px; background:linear-gradient(135deg,#d4af37,#fff0a5,#fff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .brand-mark{
+    width:40px; height:40px; border-radius:12px; display:grid; place-items:center;
+    background:linear-gradient(135deg,#d4af37,#fff0a5); color:#111; font-weight:900;
+    box-shadow:0 10px 24px rgba(212,175,55,.35);
+  }
+  .brand-text{
+    font-weight:900; letter-spacing:.5px;
+    background:linear-gradient(135deg,#d4af37,#fff0a5,#fff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
   .nav-links{display:flex; align-items:center; gap:24px; flex-wrap:wrap;}
   .nav-links a{position:relative; color:var(--muted); transition:color .25s ease; font-size:.96rem;}
   .nav-links a:hover,.nav-links a.active{color:var(--text);}
-  .nav-links a::after{content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#fff0a5); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;}
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px;
+    background:linear-gradient(135deg,#d4af37,#fff0a5); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
   .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
-  .nav-btn{ padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#f5df8f); color:#111; font-weight:800; border:none; box-shadow:0 10px 24px rgba(212,175,55,.22); }
+  .nav-btn{
+    padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#f5df8f);
+    color:#111; font-weight:800; border:none; box-shadow:0 10px 24px rgba(212,175,55,.22);
+  }
 
   .hero { padding:128px 0 20px; }
   .hero-card { padding:30px; }
-  .eyebrow{ display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px; background:var(--accent-soft); color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.5px; }
-  .hero-card h1{ font-size:clamp(2.3rem,5vw,4.4rem); line-height:.98; letter-spacing:-2px; margin-bottom:14px; font-weight:900; }
-  .hero-card h1 span{ background:linear-gradient(135deg,var(--accent),#fff0a5,#fff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .eyebrow{
+    display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
+    background:var(--accent-soft); color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.5px;
+  }
+  .hero-card h1{
+    font-size:clamp(2.3rem,5vw,4.4rem); line-height:.98; letter-spacing:-2px; margin-bottom:14px; font-weight:900;
+  }
+  .hero-card h1 span{
+    background:linear-gradient(135deg,var(--accent),#fff0a5,#fff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
   .hero-card p{ color:var(--muted); max-width:850px; font-size:1.04rem; }
 
   .toolbar-wrap { padding:8px 0 20px; }
-  .toolbar { padding:16px; display:grid; grid-template-columns: 1.5fr repeat(4, minmax(120px, 1fr)); gap:12px; align-items:center; }
-  .toolbar input, .toolbar select, .toolbar button { background:rgba(20,20,30,.95); border:1px solid rgba(255,255,255,.12); color:#f5f5f5; border-radius:14px; padding:14px 16px; outline:none; font:inherit; }
-  .toolbar select { appearance:none; -webkit-appearance:none; -moz-appearance:none; background-image:url("data:image/svg+xml,%3Csvg fill='%23d4af37' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5H5z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; background-size:16px; padding-right:40px; }
+  .toolbar {
+    padding:16px;
+    display:grid;
+    grid-template-columns: 1.5fr repeat(4, minmax(120px, 1fr));
+    gap:12px;
+    align-items:center;
+  }
+  .toolbar input, .toolbar select, .toolbar button {
+    background:rgba(20,20,30,.95);
+    border:1px solid rgba(255,255,255,.12);
+    color:#f5f5f5;
+    border-radius:14px;
+    padding:14px 16px;
+    outline:none;
+    font:inherit;
+  }
+  .toolbar select {
+    appearance:none; -webkit-appearance:none; -moz-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg fill='%23d4af37' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5H5z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 12px center; background-size:16px; padding-right:40px;
+  }
   .toolbar input::placeholder{ color:#8d8d96; }
-  .toolbar button { background:linear-gradient(135deg,#d4af37,#f5df8f); color:#111; font-weight:800; cursor:pointer; }
+  .toolbar button {
+    background:linear-gradient(135deg,#d4af37,#f5df8f);
+    color:#111; font-weight:800; cursor:pointer;
+  }
 
   .map-section { padding: 8px 0 50px; }
-  .map-shell { display:grid; grid-template-columns: minmax(0, 1fr) 320px; gap:20px; align-items:start; }
-  .map-panel { padding:14px; overflow:hidden; }
+  .map-shell {
+    display:grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap:20px;
+    align-items:start;
+  }
+
+  .map-panel {
+    padding:14px;
+    overflow:hidden;
+  }
+
   .map-stage {
-    position:relative; height:72vh; min-height:560px; border-radius:18px; overflow:hidden;
-    background: radial-gradient(circle at 20% 20%, rgba(139,92,246,0.18), transparent 20%),
-                radial-gradient(circle at 80% 15%, rgba(212,175,55,0.14), transparent 18%),
-                linear-gradient(180deg,#0e1017,#09090d 55%,#06070b 100%);
-    border:1px solid rgba(255,255,255,0.08); cursor: grab; touch-action:none;
+    position:relative;
+    height:72vh;
+    min-height:560px;
+    border-radius:18px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(139,92,246,0.18), transparent 20%),
+      radial-gradient(circle at 80% 15%, rgba(212,175,55,0.14), transparent 18%),
+      linear-gradient(180deg,#0e1017,#09090d 55%,#06070b 100%);
+    border:1px solid rgba(255,255,255,0.08);
+    cursor: grab;
+    touch-action:none;
   }
   .map-stage.dragging { cursor: grabbing; }
-  .map-world { position:absolute; inset:0; transform-origin:center center; will-change:transform; }
-  .grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:64px 64px; mask-image:radial-gradient(circle at center, black 52%, transparent 100%); opacity:.55; pointer-events:none; }
-  .region { position:absolute; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:999px; filter:blur(.2px); pointer-events:none; }
-  .city {
-    position:absolute; width:18px; height:18px; margin-left:-9px; margin-top:-9px; border-radius:50%;
-    background:linear-gradient(135deg,#d4af37,#fff0a5);
-    box-shadow:0 0 0 6px rgba(212,175,55,0.08), 0 0 24px rgba(212,175,55,0.55);
-    cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+
+  .map-world {
+    position:absolute;
+    inset:0;
+    transform-origin: center center;
+    will-change: transform;
   }
-  .city::after{ content:""; position:absolute; inset:-10px; border-radius:50%; border:1px solid rgba(212,175,55,0.22); animation:pulse 2.4s infinite ease-out; }
-  .city:hover,.city.active{ transform:scale(1.18); box-shadow:0 0 0 8px rgba(212,175,55,0.12), 0 0 28px rgba(212,175,55,0.75); }
-  .city.hidden{ opacity:.12; pointer-events:none; }
-  @keyframes pulse { 0% { transform:scale(.72); opacity:.9; } 80% { transform:scale(1.7); opacity:0; } 100% { transform:scale(1.7); opacity:0; } }
-  .city-label { position:absolute; top:22px; left:12px; background:rgba(10,10,15,0.92); border:1px solid rgba(255,255,255,0.1); padding:8px 10px; border-radius:12px; white-space:nowrap; font-size:.86rem; color:#ececf0; opacity:0; transform:translateY(4px); pointer-events:none; transition:.2s ease; }
-  .city:hover .city-label, .city.active .city-label { opacity:1; transform:translateY(0); }
-  .zoom-controls { position:absolute; right:14px; top:14px; z-index:4; display:grid; gap:8px; }
-  .zoom-controls button, .focus-controls button { width:44px; height:44px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(10,10,15,.88); color:#fff; font-size:1.2rem; cursor:pointer; backdrop-filter: blur(10px); }
-  .focus-controls { position:absolute; left:14px; top:14px; z-index:4; display:flex; gap:8px; flex-wrap:wrap; }
-  .focus-controls button { width:auto; padding:0 14px; font-size:.9rem; font-weight:700; }
-  .sidebar { padding:18px; min-height:72vh; display:flex; flex-direction:column; gap:16px; }
+
+  .grid-bg {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at center, black 52%, transparent 100%);
+    opacity:.55;
+    pointer-events:none;
+  }
+
+  .region {
+    position:absolute;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:999px;
+    filter:blur(.2px);
+    pointer-events:none;
+  }
+
+  .city {
+    position:absolute;
+    width:18px; height:18px;
+    margin-left:-9px; margin-top:-9px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#d4af37,#fff0a5);
+    box-shadow:
+      0 0 0 6px rgba(212,175,55,0.08),
+      0 0 24px rgba(212,175,55,0.55);
+    cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+  .city::after{
+    content:"";
+    position:absolute; inset:-10px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.22);
+    animation:pulse 2.4s infinite ease-out;
+  }
+  .city:hover, .city.active {
+    transform:scale(1.18);
+    box-shadow:
+      0 0 0 8px rgba(212,175,55,0.12),
+      0 0 28px rgba(212,175,55,0.75);
+  }
+  .city.hidden { opacity:.12; pointer-events:none; }
+
+  @keyframes pulse {
+    0% { transform:scale(.72); opacity:.9; }
+    80% { transform:scale(1.7); opacity:0; }
+    100% { transform:scale(1.7); opacity:0; }
+  }
+
+  .city-label {
+    position:absolute;
+    top:22px; left:12px;
+    background:rgba(10,10,15,0.92);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:8px 10px;
+    border-radius:12px;
+    white-space:nowrap;
+    font-size:.86rem;
+    color:#ececf0;
+    opacity:0;
+    transform:translateY(4px);
+    pointer-events:none;
+    transition:.2s ease;
+  }
+  .city:hover .city-label, .city.active .city-label {
+    opacity:1; transform:translateY(0);
+  }
+
+  .zoom-controls {
+    position:absolute; right:14px; top:14px; z-index:4;
+    display:grid; gap:8px;
+  }
+  .zoom-controls button, .focus-controls button {
+    width:44px; height:44px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(10,10,15,.88);
+    color:#fff;
+    font-size:1.2rem;
+    cursor:pointer;
+    backdrop-filter: blur(10px);
+  }
+  .focus-controls {
+    position:absolute; left:14px; top:14px; z-index:4;
+    display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .focus-controls button {
+    width:auto; padding:0 14px; font-size:.9rem; font-weight:700;
+  }
+
+  .sidebar {
+    padding:18px;
+    min-height:72vh;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
   .sidebar h2 { font-size:1.35rem; }
   .sidebar p { color:var(--muted); }
-  .sidebar .count { color:var(--accent); font-weight:800; font-size:.95rem; }
-  .city-card { padding:16px; border-radius:16px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); }
+  .sidebar .count {
+    color:var(--accent);
+    font-weight:800;
+    font-size:.95rem;
+  }
+
+  .city-card {
+    padding:16px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+  }
   .city-card h3 { margin-bottom:8px; font-size:1.1rem; }
-  .city-card .meta { color:var(--muted); font-size:.9rem; margin-bottom:12px; }
-  .artist-links { display:grid; gap:10px; max-height:52vh; overflow:auto; padding-right:4px; }
+  .city-card .meta {
+    color:var(--muted);
+    font-size:.9rem;
+    margin-bottom:12px;
+  }
+  .city-actions {
+    display:grid;
+    gap:10px;
+    margin-bottom:12px;
+  }
+  .artist-links {
+    display:grid;
+    gap:10px;
+    max-height:52vh;
+    overflow:auto;
+    padding-right:4px;
+  }
   .artist-links::-webkit-scrollbar { width:8px; }
-  .artist-links::-webkit-scrollbar-thumb { background:rgba(212,175,55,.35); border-radius:999px; }
-  .artist-link { padding:12px 14px; border-radius:14px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); transition:.2s ease; }
-  .artist-link:hover { transform:translateY(-2px); border-color:rgba(212,175,55,.35); }
-  .artist-link strong { display:block; margin-bottom:4px; }
-  .artist-link span { color:var(--muted); font-size:.88rem; }
-  .legend { display:flex; gap:10px; flex-wrap:wrap; }
-  .legend span { padding:8px 12px; border-radius:999px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); font-size:.82rem; color:#ebebef; }
-  footer { padding:24px 0 50px; color:var(--muted); }
-  .footer-wrap{ border-top:1px solid rgba(255,255,255,.08); padding-top:24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  .artist-links::-webkit-scrollbar-thumb {
+    background:rgba(212,175,55,.35);
+    border-radius:999px;
+  }
+  .artist-link {
+    padding:12px 14px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    transition:.2s ease;
+  }
+  .artist-link:hover {
+    transform:translateY(-2px);
+    border-color:rgba(212,175,55,.35);
+  }
+  .artist-link strong {
+    display:block;
+    margin-bottom:4px;
+  }
+  .artist-link span {
+    color:var(--muted);
+    font-size:.88rem;
+  }
+
+  .legend {
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .legend span {
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:.82rem;
+    color:#ebebef;
+  }
+
+  footer {
+    padding:24px 0 50px;
+    color:var(--muted);
+  }
+  .footer-wrap{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:24px;
+    display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
   .footer-links{display:flex; gap:18px; flex-wrap:wrap;}
   .footer-links a:hover{color:var(--text);}
-  @media (max-width: 1100px) { .toolbar { grid-template-columns:1fr 1fr 1fr; } .map-shell { grid-template-columns:1fr; } .sidebar { min-height:auto; } }
-  @media (max-width: 820px) { .nav { flex-direction:column; padding:14px 0; } .nav-links { justify-content:center; } }
-  @media (max-width: 768px) { header#mainHeader.hidden { transform:translateY(-100%); } .toolbar { grid-template-columns:1fr; } .map-stage { min-height:520px; height:62vh; } .focus-controls { max-width:70%; } }
+
+  @media (max-width: 1100px) {
+    .toolbar { grid-template-columns:1fr 1fr 1fr; }
+    .map-shell { grid-template-columns:1fr; }
+    .sidebar { min-height:auto; }
+  }
+  @media (max-width: 820px) {
+    .nav { flex-direction:column; padding:14px 0; }
+    .nav-links { justify-content:center; }
+  }
+  @media (max-width: 768px) {
+    header#mainHeader.hidden { transform:translateY(-100%); }
+    .toolbar { grid-template-columns:1fr; }
+    .map-stage { min-height:520px; height:62vh; }
+    .focus-controls { max-width:70%; }
+  }
 </style>
 </head>
 <body>
 <header id="mainHeader">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <div class="brand-mark">RS</div>
-      <span class="brand-text">RAP STORIES</span>
-    </a>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="artist-archive.html">Archive</a>
-      <a href="artist.html">Artist</a>
-      <a href="category.html">Categories</a>
-      <a href="timeline.html">Timeline</a>
-      <a href="map.html" class="active">Map</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a href="artist.html" class="nav-btn">Explore Stories</a>
-  </div>
+<div class="container nav">
+<a class="brand" href="index.html">
+<div class="brand-mark">RS</div>
+<span class="brand-text">RAP STORIES</span>
+</a>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="artist-archive.html">Archive</a>
+<a href="artist.html">Artist</a>
+<a href="category.html">Categories</a>
+<a href="timeline.html">Timeline</a>
+<a href="map.html">Map</a>
+<a href="contact.html">Contact</a>
+</nav>
+<a class="nav-btn" href="artist.html">Explore Stories</a>
+</div>
 </header>
-
 <main>
-  <section class="hero">
-    <div class="container">
-      <div class="glass hero-card">
-        <span class="eyebrow">Interactive Discovery</span>
-        <h1>The <span>Map</span> of Hip-Hop</h1>
-        <p>
-          Explore the synced artist vault by city, region, era, and scene. Every glowing map point now pulls from your current artist archive and links straight into the full story pages.
+<section class="hero">
+<div class="container">
+<div class="glass hero-card">
+<span class="eyebrow">Interactive Discovery</span>
+<h1>The <span>Map</span> of Hip-Hop</h1>
+<p>
+          Explore the full artist vault by city and movement. Every artist from the archive is now connected to the map, with richer city clusters, West Coast support, and direct story links.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="toolbar-wrap">
-    <div class="container">
-      <div class="glass toolbar">
-        <input id="searchInput" type="text" placeholder="Search city, artist, region..." />
-        <select id="eraFilter">
-          <option value="all">All Eras</option>
-          <option value="90s">90s</option>
-          <option value="2000s">2000s</option>
-          <option value="2010s">2010s</option>
-          <option value="late2010s">Late 2010s</option>
-          <option value="2020s">2020s</option>
-          <option value="intl">International</option>
-        </select>
-        <select id="regionFilter">
-          <option value="all">All Regions</option>
-          <option value="west">West Coast</option>
-          <option value="midwest">Midwest</option>
-          <option value="south">South</option>
-          <option value="east">East Coast</option>
-          <option value="intl">International</option>
-        </select>
-        <select id="sceneFilter">
-          <option value="all">All Scenes</option>
-          <option value="drill">Drill</option>
-          <option value="trap">Trap</option>
-          <option value="legacy">Legacy</option>
-          <option value="melodic">Melodic</option>
-          <option value="mainstream">Mainstream</option>
-          <option value="rnb">R&B</option>
-          <option value="mogul">Mogul</option>
-          <option value="crossover">Crossover</option>
-        </select>
-        <button id="resetBtn" type="button">Reset</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="map-section">
-    <div class="container">
-      <div class="map-shell">
-        <div class="glass map-panel">
-          <div class="map-stage" id="mapStage">
-            <div class="focus-controls">
-              <button type="button" data-focus="usa">USA</button>
-              <button type="button" data-focus="west">West</button>
-              <button type="button" data-focus="midwest">Midwest</button>
-              <button type="button" data-focus="south">South</button>
-              <button type="button" data-focus="east">East Coast</button>
-              <button type="button" data-focus="intl">International</button>
-            </div>
-
-            <div class="zoom-controls">
-              <button type="button" id="zoomIn">+</button>
-              <button type="button" id="zoomOut">−</button>
-            </div>
-
-            <div class="map-world" id="mapWorld">
-              <div class="grid-bg"></div>
-              <div class="region" style="left:10%; top:16%; width:60%; height:60%;"></div>
-              <div class="region" style="left:68%; top:16%; width:20%; height:22%;"></div>
-              <div class="region" style="left:84%; top:70%; width:10%; height:16%;"></div>
-              <div class="city" data-city="Chicago" data-region="midwest" data-era="2000s 2010s 2020s 90s late2010s" data-scene="drill legacy mainstream melodic rnb" style="left:42%; top:33%;">
-                <div class="city-label">Chicago</div>
-              </div><div class="city" data-city="Brooklyn / New York" data-region="east" data-era="2000s 2010s 90s late2010s" data-scene="drill legacy mainstream melodic mogul" style="left:63%; top:28%;">
-                <div class="city-label">Brooklyn / New York</div>
-              </div><div class="city" data-city="Toronto" data-region="intl" data-era="intl" data-scene="mainstream melodic" style="left:55%; top:22%;">
-                <div class="city-label">Toronto</div>
-              </div><div class="city" data-city="Atlanta" data-region="south" data-era="2000s 2010s 90s" data-scene="group legacy mainstream mogul rnb trap" style="left:47%; top:49%;">
-                <div class="city-label">Atlanta</div>
-              </div><div class="city" data-city="Harlem / New York" data-region="east" data-era="2000s 2010s 90s" data-scene="legacy mainstream melodic mogul" style="left:62%; top:27%;">
-                <div class="city-label">Harlem / New York</div>
-              </div><div class="city" data-city="New Orleans" data-region="south" data-era="2000s 2010s 90s" data-scene="legacy mainstream melodic mogul rnb" style="left:33%; top:63%;">
-                <div class="city-label">New Orleans</div>
-              </div><div class="city" data-city="Philadelphia" data-region="east" data-era="2010s" data-scene="mainstream melodic" style="left:61%; top:30%;">
-                <div class="city-label">Philadelphia</div>
-              </div><div class="city" data-city="Boston" data-region="east" data-era="2020s" data-scene="mainstream" style="left:66%; top:24%;">
-                <div class="city-label">Boston</div>
-              </div><div class="city" data-city="Memphis" data-region="south" data-era="2010s 2020s late2010s" data-scene="legacy mainstream mogul trap" style="left:38%; top:52%;">
-                <div class="city-label">Memphis</div>
-              </div><div class="city" data-city="Houston" data-region="south" data-era="2000s 2020s" data-scene="legacy mainstream melodic" style="left:30%; top:57%;">
-                <div class="city-label">Houston</div>
-              </div><div class="city" data-city="Los Angeles / California" data-region="west" data-era="2010s 90s" data-scene="legacy mainstream mogul" style="left:16%; top:34%;">
-                <div class="city-label">Los Angeles / California</div>
-              </div><div class="city" data-city="Queens / New York" data-region="east" data-era="2000s 2010s 2020s 90s" data-scene="group legacy mainstream melodic" style="left:64%; top:28%;">
-                <div class="city-label">Queens / New York</div>
-              </div><div class="city" data-city="Florida" data-region="south" data-era="2000s 2010s" data-scene="mainstream trap" style="left:41%; top:69%;">
-                <div class="city-label">Florida</div>
-              </div><div class="city" data-city="Texas" data-region="south" data-era="2020s" data-scene="crossover mainstream" style="left:26%; top:56%;">
-                <div class="city-label">Texas</div>
-              </div><div class="city" data-city="Miami" data-region="south" data-era="2000s 2010s" data-scene="mainstream mogul rnb" style="left:44%; top:74%;">
-                <div class="city-label">Miami</div>
-              </div><div class="city" data-city="Fayetteville" data-region="south" data-era="2010s" data-scene="legacy mainstream" style="left:55%; top:47%;">
-                <div class="city-label">Fayetteville</div>
-              </div><div class="city" data-city="Washington, D.C." data-region="east" data-era="2000s 90s" data-scene="rnb" style="left:58%; top:34%;">
-                <div class="city-label">Washington, D.C.</div>
-              </div><div class="city" data-city="Bronx / New York" data-region="east" data-era="2000s 2010s" data-scene="mainstream melodic" style="left:63%; top:27.5%;">
-                <div class="city-label">Bronx / New York</div>
-              </div><div class="city" data-city="Louisville" data-region="south" data-era="2020s" data-scene="mainstream" style="left:45%; top:42%;">
-                <div class="city-label">Louisville</div>
-              </div><div class="city" data-city="London" data-region="intl" data-era="intl" data-scene="mainstream melodic rnb" style="left:74%; top:24%;">
-                <div class="city-label">London</div>
-              </div><div class="city" data-city="Nashville" data-region="south" data-era="2000s 2020s" data-scene="crossover legacy mainstream" style="left:41.5%; top:47%;">
-                <div class="city-label">Nashville</div>
-              </div><div class="city" data-city="Compton / Los Angeles" data-region="west" data-era="2000s 2010s 90s late2010s" data-scene="legacy mainstream mogul" style="left:15%; top:39%;">
-                <div class="city-label">Compton / Los Angeles</div>
-              </div><div class="city" data-city="El Paso / Texas" data-region="south" data-era="2020s" data-scene="crossover rnb" style="left:22%; top:56%;">
-                <div class="city-label">El Paso / Texas</div>
-              </div><div class="city" data-city="Cleveland" data-region="midwest" data-era="2010s" data-scene="legacy melodic" style="left:49%; top:29%;">
-                <div class="city-label">Cleveland</div>
-              </div><div class="city" data-city="Sydney" data-region="intl" data-era="intl" data-scene="crossover melodic" style="left:88%; top:78%;">
-                <div class="city-label">Sydney</div>
-              </div><div class="city" data-city="South Florida" data-region="south" data-era="2010s" data-scene="mainstream melodic trap" style="left:44%; top:72%;">
-                <div class="city-label">South Florida</div>
-              </div><div class="city" data-city="Dallas" data-region="south" data-era="2010s 2020s" data-scene="legacy melodic trap" style="left:29%; top:53%;">
-                <div class="city-label">Dallas</div>
-              </div><div class="city" data-city="Detroit" data-region="midwest" data-era="2000s 2010s" data-scene="legacy mainstream" style="left:43%; top:31%;">
-                <div class="city-label">Detroit</div>
-              </div><div class="city" data-city="Oakland / Bay Area" data-region="west" data-era="2010s 90s" data-scene="legacy mainstream rnb" style="left:13%; top:33%;">
-                <div class="city-label">Oakland / Bay Area</div>
-              </div><div class="city" data-city="New Jersey" data-region="east" data-era="2010s" data-scene="mainstream melodic" style="left:62%; top:30%;">
-                <div class="city-label">New Jersey</div>
-              </div><div class="city" data-city="Mississippi" data-region="south" data-era="2010s" data-scene="legacy" style="left:36%; top:54%;">
-                <div class="city-label">Mississippi</div>
-              </div><div class="city" data-city="St. Louis" data-region="midwest" data-era="2000s" data-scene="legacy mainstream" style="left:39%; top:44%;">
-                <div class="city-label">St. Louis</div>
-              </div><div class="city" data-city="Charlotte" data-region="south" data-era="2010s" data-scene="mainstream" style="left:53%; top:49%;">
-                <div class="city-label">Charlotte</div>
-              </div><div class="city" data-city="Baton Rouge" data-region="south" data-era="2010s" data-scene="legacy mainstream melodic" style="left:35%; top:60%;">
-                <div class="city-label">Baton Rouge</div>
-              </div><div class="city" data-city="Yonkers / New York" data-region="east" data-era="90s" data-scene="legacy" style="left:61%; top:26%;">
-                <div class="city-label">Yonkers / New York</div>
-              </div><div class="city" data-city="Sofia" data-region="intl" data-era="intl" data-scene="legacy" style="left:78%; top:32%;">
-                <div class="city-label">Sofia</div>
-              </div><div class="city" data-city="Savannah" data-region="south" data-era="late2010s" data-scene="melodic" style="left:54%; top:58%;">
-                <div class="city-label">Savannah</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="glass sidebar">
-          <div>
-            <h2 id="sidebarTitle">Hip-Hop Cities</h2>
-            <p id="sidebarText">Click a glowing city to reveal its connected artist stories and vault lane.</p>
-          </div>
-
-          <div class="legend">
-            <span>112 archive artists</span>
-            <span>38 city nodes</span>
-            <span>Zoom + Pan</span>
-            <span>Direct Story Links</span>
-          </div>
-
-          <div class="count" id="resultCount">38 active map points</div>
-
-          <div class="city-card" id="cityCard">
-            <h3>Start Exploring</h3>
-            <div class="meta">Choose a city node on the map.</div>
-            <div class="artist-links">
-              <a class="artist-link" href="artist.html">
-                <strong>Open the full archive</strong>
-                <span>Browse all synced artist stories if you want the full list first.</span>
-              </a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
+</section>
+<section class="toolbar-wrap">
+<div class="container">
+<div class="glass toolbar">
+<input id="searchInput" placeholder="Search city, artist, region..." type="text"/>
+<select id="eraFilter">
+<option value="all">All Eras</option>
+<option value="90s">90s</option>
+<option value="2000s">2000s</option>
+<option value="2010s">2010s</option>
+<option value="late2010s">Late 2010s</option>
+<option value="intl">International</option>
+</select>
+<select id="regionFilter">
+<option value="all">All Regions</option>
+<option value="west">West Coast</option>
+<option value="midwest">Midwest</option>
+<option value="south">South</option>
+<option value="east">East Coast</option>
+<option value="intl">International</option>
+</select>
+<select id="sceneFilter">
+<option value="all">All Scenes</option>
+<option value="drill">Drill</option>
+<option value="trap">Trap</option>
+<option value="legacy">Legacy</option>
+<option value="melodic">Melodic</option>
+<option value="mainstream">Mainstream</option>
+</select>
+<button id="resetBtn" type="button">Reset</button>
+</div>
+</div>
+</section>
+<section class="map-section">
+<div class="container">
+<div class="map-shell">
+<div class="glass map-panel">
+<div class="map-stage" id="mapStage">
+<div class="focus-controls">
+<button data-focus="usa" type="button">USA</button>
+<button data-focus="west" type="button">West</button>
+<button data-focus="midwest" type="button">Midwest</button>
+<button data-focus="south" type="button">South</button>
+<button data-focus="east" type="button">East Coast</button>
+<button data-focus="intl" type="button">International</button>
+</div>
+<div class="zoom-controls">
+<button id="zoomIn" type="button">+</button>
+<button id="zoomOut" type="button">−</button>
+</div>
+<div class="map-world" id="mapWorld">
+<div class="grid-bg"></div>
+<div class="region" style="left:10%; top:16%; width:60%; height:60%;"></div>
+<div class="region" style="left:68%; top:16%; width:18%; height:22%;"></div>
+<div class="region" style="left:7%; top:26%; width:14%; height:28%;"></div>
+<div class="city" data-city="Chicago" data-era="2010s late2010s 2000s" data-region="midwest" data-scene="drill legacy melodic mainstream" style="left:42%; top:33%;">
+<div class="city-label">Chicago</div>
+</div>
+<div class="city" data-city="Atlanta" data-era="2010s" data-region="south" data-scene="trap mainstream melodic" style="left:47%; top:49%;">
+<div class="city-label">Atlanta</div>
+</div>
+<div class="city" data-city="Brooklyn / New York" data-era="90s late2010s" data-region="east" data-scene="legacy drill mainstream" style="left:62%; top:28%;">
+<div class="city-label">Brooklyn / New York</div>
+</div>
+<div class="city" data-city="Yonkers" data-era="90s" data-region="east" data-scene="legacy" style="left:60.5%; top:26%;">
+<div class="city-label">Yonkers</div>
+</div>
+<div class="city" data-city="Memphis" data-era="2010s late2010s" data-region="south" data-scene="legacy trap melodic" style="left:38%; top:52%;">
+<div class="city-label">Memphis</div>
+</div>
+<div class="city" data-city="Baton Rouge" data-era="2010s late2010s" data-region="south" data-scene="melodic mainstream trap" style="left:35%; top:60%;">
+<div class="city-label">Baton Rouge</div>
+</div>
+<div class="city" data-city="New Orleans" data-era="2000s 2010s" data-region="south" data-scene="legacy mainstream" style="left:33%; top:63%;">
+<div class="city-label">New Orleans</div>
+</div>
+<div class="city" data-city="Dallas" data-era="2010s" data-region="south" data-scene="melodic legacy" style="left:29%; top:53%;">
+<div class="city-label">Dallas</div>
+</div>
+<div class="city" data-city="St. Louis" data-era="2000s" data-region="midwest" data-scene="mainstream legacy" style="left:39%; top:44%;">
+<div class="city-label">St. Louis</div>
+</div>
+<div class="city" data-city="Nashville" data-era="2000s" data-region="south" data-scene="legacy mainstream" style="left:41.5%; top:47%;">
+<div class="city-label">Nashville</div>
+</div>
+<div class="city" data-city="Savannah" data-era="late2010s" data-region="south" data-scene="melodic" style="left:54%; top:58%;">
+<div class="city-label">Savannah</div>
+</div>
+<div class="city" data-city="Compton / Bompton" data-era="2000s 2010s" data-region="west" data-scene="legacy mainstream" style="left:15%; top:39%;">
+<div class="city-label">Compton / Bompton</div>
+</div>
+<div class="city" data-city="California / West Coast" data-era="90s" data-region="west" data-scene="legacy" style="left:16%; top:34%;">
+<div class="city-label">California / West Coast</div>
+</div>
+<div class="city" data-city="London" data-era="2010s intl" data-region="intl" data-scene="melodic mainstream" style="left:74%; top:24%;">
+<div class="city-label">London</div>
+</div>
+<div class="city" data-city="Sofia" data-era="intl" data-region="intl" data-scene="legacy" style="left:78%; top:32%;">
+<div class="city-label">Sofia</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="glass sidebar">
+<div>
+<h2 id="sidebarTitle">Hip-Hop Cities</h2>
+<p id="sidebarText">Click a glowing city to reveal its connected artist stories and cultural lane.</p>
+</div>
+<div class="legend">
+<span>All Archive Artists</span>
+<span>Zoom + Pan</span>
+<span>City Filters</span>
+<span>Direct Story Links</span>
+</div>
+<div class="count" id="resultCount">15 active map points</div>
+<div class="city-card" id="cityCard">
+<h3>Start Exploring</h3>
+<div class="meta">Choose a city node on the map.</div>
+<div class="artist-links">
+<a class="artist-link" href="artist.html">
+<strong>Open the full archive</strong>
+<span>Browse all stories if you want the full artist list first.</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
 </main>
-
 <footer>
-  <div class="container footer-wrap">
-    <div>
-      <strong style="color:white;">Rap Stories</strong>
-      <p>Interactive city-based exploration for the synced vault.</p>
-    </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="artist.html">Artists</a>
-      <a href="timeline.html">Timeline</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
+<div class="container footer-wrap">
+<div>
+<strong style="color:white;">Rap Stories</strong>
+<p>Interactive city-based exploration for the vault.</p>
+</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="artist.html">Artists</a>
+<a href="timeline.html">Timeline</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
 </footer>
-
 <script>
-  const cityData = {
-  "Chicago": {
-    "meta": "Midwest • 2000s / 2010s / 2020s / 90s / Late 2010s • 14 artists",
-    "text": "Chicago connects 14 archive artists across drill, legacy, mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "chief-keef.html",
-        "name": "Chief Keef",
-        "desc": "Architect of drill whose raw digital-era rise changed rap globally."
-      },
-      {
-        "href": "da-brat.html",
-        "name": "Da Brat",
-        "desc": "Trailblazing female MC who broke barriers in 90s hip-hop."
-      },
-      {
-        "href": "donell-jones.html",
-        "name": "Donell Jones",
-        "desc": "Smooth R&B voice who defined late 90s and early 2000s soul with timeless hits."
-      },
-      {
-        "href": "doodie-lo.html",
-        "name": "Doodie Lo",
-        "desc": "OTF affiliate whose rise reflects loyalty, street ties, and modern Chicago rap culture."
-      },
-      {
-        "href": "g-herbo.html",
-        "name": "G Herbo",
-        "desc": "Chicago voice bringing trauma and realism to drill."
-      },
-      {
-        "href": "juice-wrld.html",
-        "name": "Juice WRLD",
-        "desc": "A generation's emotional voice whose songs made vulnerability central to modern rap."
-      },
-      {
-        "href": "kanye-west.html",
-        "name": "Kanye West",
-        "desc": "Visionary producer and artist who reshaped hip-hop culture."
-      },
-      {
-        "href": "king-von.html",
-        "name": "King Von",
-        "desc": "Chicago drill storyteller, O'Block figure, and one of the most compelling voices of his generation."
-      },
-      {
-        "href": "la-capone.html",
-        "name": "LA Capone",
-        "desc": "Chicago drill figure remembered for raw impact."
-      },
-      {
-        "href": "lil-durk.html",
-        "name": "Lil Durk",
-        "desc": "Melodic drill star whose music, grief, and legal scrutiny shaped a defining modern rap story."
-      },
-      {
-        "href": "lil-reese.html",
-        "name": "Lil Reese",
-        "desc": "Foundational voice in Chicago drill movement."
-      },
-      {
-        "href": "lupe-fiasco.html",
-        "name": "Lupe Fiasco",
-        "desc": "Elite lyricist known for deep, intellectual storytelling."
-      },
-      {
-        "href": "polo-g.html",
-        "name": "Polo G",
-        "desc": "Melodic Chicago star blending pain and storytelling."
-      },
-      {
-        "href": "r-kelly.html",
-        "name": "R. Kelly",
-        "desc": "R&B superstar whose musical influence was overshadowed by criminal convictions and one of the most controversial downfalls in music history."
-      }
-    ]
-  },
-  "Brooklyn / New York": {
-    "meta": "East Coast • 2000s / 2010s / 90s / Late 2010s • 6 artists",
-    "text": "Brooklyn / New York connects 6 archive artists across drill, legacy, mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "fabolous.html",
-        "name": "Fabolous",
-        "desc": "Brooklyn rapper known for smooth punchlines, mixtape dominance, and longevity."
-      },
-      {
-        "href": "fivio-foreign.html",
-        "name": "Fivio Foreign",
-        "desc": "Brooklyn drill leader who helped bring the sound to global attention."
-      },
-      {
-        "href": "jay-z.html",
-        "name": "Jay-Z",
-        "desc": "From Brooklyn’s Marcy Projects to billionaire mogul, redefining success in hip-hop and business."
-      },
-      {
-        "href": "ji-the-prince-of-ny.html",
-        "name": "JI the Prince",
-        "desc": "Brooklyn artist blending melody and street emotion."
-      },
-      {
-        "href": "pop-smoke.html",
-        "name": "Pop Smoke",
-        "desc": "Brooklyn drill star whose rise reshaped New York rap and left an outsized legacy."
-      },
-      {
-        "href": "biggie.html",
-        "name": "The Notorious B.I.G.",
-        "desc": "Brooklyn narrator and lyrical giant who restored New York's dominance in rap."
-      }
-    ]
-  },
-  "Toronto": {
-    "meta": "International • International • 1 artist",
-    "text": "Toronto connects 1 archive artist across mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "drake.html",
-        "name": "Drake",
-        "desc": "Global superstar who blurred rap and R&B, dominating charts for over a decade."
-      }
-    ]
-  },
-  "Atlanta": {
-    "meta": "South • 2000s / 2010s / 90s • 11 artists",
-    "text": "Atlanta connects 11 archive artists across group, legacy, mainstream, mogul lanes.",
-    "artists": [
-      {
-        "href": "21-savage.html",
-        "name": "21 Savage",
-        "desc": "Atlanta rapper known for cold delivery, street realism, and evolution into mainstream success."
-      },
-      {
-        "href": "bow-wow.html",
-        "name": "Bow Wow",
-        "desc": "Child star turned mainstream figure who defined an era of early 2000s hip-hop youth culture."
-      },
-      {
-        "href": "future.html",
-        "name": "Future",
-        "desc": "Atlanta trap pioneer whose dark melodies, prolific output, and influence helped define modern hip-hop."
-      },
-      {
-        "href": "gucci-mane.html",
-        "name": "Gucci Mane",
-        "desc": "Trap pioneer who shaped Atlanta’s dominance and mentored a new generation."
-      },
-      {
-        "href": "gunna.html",
-        "name": "Gunna",
-        "desc": "Melodic Atlanta star who defined modern luxury trap."
-      },
-      {
-        "href": "jagged-edge.html",
-        "name": "Jagged Edge",
-        "desc": "R&B group known for timeless harmonies and love songs."
-      },
-      {
-        "href": "lil-baby.html",
-        "name": "Lil Baby",
-        "desc": "Atlanta superstar dominating modern trap."
-      },
-      {
-        "href": "metro-boomin.html",
-        "name": "Metro Boomin",
-        "desc": "Producer shaping the sound of modern trap music."
-      },
-      {
-        "href": "migos.html",
-        "name": "Migos",
-        "desc": "Atlanta trio that changed rap flow worldwide."
-      },
-      {
-        "href": "offset.html",
-        "name": "Offset",
-        "desc": "Migos member turned solo superstar and trendsetter."
-      },
-      {
-        "href": "outkast.html",
-        "name": "OutKast",
-        "desc": "Legendary duo that reshaped Southern hip-hop forever."
-      }
-    ]
-  },
-  "Harlem / New York": {
-    "meta": "East Coast • 2000s / 2010s / 90s • 4 artists",
-    "text": "Harlem / New York connects 4 archive artists across legacy, mainstream, melodic, mogul lanes.",
-    "artists": [
-      {
-        "href": "asap-rocky.html",
-        "name": "A$AP Rocky",
-        "desc": "Harlem artist who blended fashion, psychedelia, and Southern influence into a global sound."
-      },
-      {
-        "href": "mase.html",
-        "name": "Ma$e",
-        "desc": "Harlem icon of the shiny-suit era and smooth flows."
-      },
-      {
-        "href": "max-b.html",
-        "name": "Max B",
-        "desc": "Harlem icon whose melodic style influenced a generation despite incarceration."
-      },
-      {
-        "href": "p-diddy.html",
-        "name": "P. Diddy",
-        "desc": "Bad Boy founder who shaped an era, built an empire, and became one of hip-hop’s most controversial figures."
-      }
-    ]
-  },
-  "New Orleans": {
-    "meta": "South • 2000s / 2010s / 90s • 4 artists",
-    "text": "New Orleans connects 4 archive artists across legacy, mainstream, melodic, mogul lanes.",
-    "artists": [
-      {
-        "href": "august-alsina.html",
-        "name": "August Alsina",
-        "desc": "R&B voice shaped by pain, loss, and raw emotional storytelling."
-      },
-      {
-        "href": "birdman.html",
-        "name": "Birdman",
-        "desc": "Cash Money mogul who built a rap empire, launched superstars, and reshaped the business of hip-hop."
-      },
-      {
-        "href": "lil-wayne.html",
-        "name": "Lil Wayne",
-        "desc": "New Orleans icon whose lyrical genius, mixtape dominance, and influence shaped modern hip-hop."
-      },
-      {
-        "href": "master-p.html",
-        "name": "Master P",
-        "desc": "No Limit mogul who revolutionized independent rap."
-      }
-    ]
-  },
-  "Philadelphia": {
-    "meta": "East Coast • 2010s • 2 artists",
-    "text": "Philadelphia connects 2 archive artists across mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "lil-uzi-vert.html",
-        "name": "Lil Uzi Vert",
-        "desc": "Genre-bending superstar redefining modern rap style."
-      },
-      {
-        "href": "meek-mill.html",
-        "name": "Meek Mill",
-        "desc": "Philly rapper defined by hunger, pain, and resilience."
-      }
-    ]
-  },
-  "Boston": {
-    "meta": "East Coast • 2020s • 1 artist",
-    "text": "Boston connects 1 archive artist across mainstream lanes.",
-    "artists": [
-      {
-        "href": "millyz.html",
-        "name": "Millyz",
-        "desc": "Bars-focused rapper built on grind and consistency."
-      }
-    ]
-  },
-  "Memphis": {
-    "meta": "South • 2010s / 2020s / Late 2010s • 5 artists",
-    "text": "Memphis connects 5 archive artists across legacy, mainstream, mogul, trap lanes.",
-    "artists": [
-      {
-        "href": "finesse2tymes.html",
-        "name": "Finesse2Tymes",
-        "desc": "Memphis rapper whose comeback story reflects resilience and street authenticity."
-      },
-      {
-        "href": "glorilla.html",
-        "name": "GloRilla",
-        "desc": "Memphis breakout star bringing raw energy and authenticity to modern rap."
-      },
-      {
-        "href": "moneybagg-yo.html",
-        "name": "Moneybagg Yo",
-        "desc": "Memphis star dominating modern trap with consistency."
-      },
-      {
-        "href": "pooh-shiesty.html",
-        "name": "Pooh Shiesty",
-        "desc": "Memphis rapper whose explosive rise and raw street energy defined a new era of Southern rap."
-      },
-      {
-        "href": "young-dolph.html",
-        "name": "Young Dolph",
-        "desc": "Independent Memphis mogul remembered for ownership, resilience, and loyalty."
-      }
-    ]
-  },
-  "Houston": {
-    "meta": "South • 2000s / 2020s • 3 artists",
-    "text": "Houston connects 3 archive artists across legacy, mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "megan-thee-stallion.html",
-        "name": "Megan Thee Stallion",
-        "desc": "Houston superstar redefining women in hip-hop."
-      },
-      {
-        "href": "mike-jones.html",
-        "name": "Mike Jones",
-        "desc": "Houston rapper who turned simplicity into dominance during the mid-2000s Southern explosion."
-      },
-      {
-        "href": "z-ro.html",
-        "name": "Z-Ro",
-        "desc": "Houston legend known as the “Mo City Don,” blending pain, melody, and street realism."
-      }
-    ]
-  },
-  "Los Angeles / California": {
-    "meta": "West Coast • 2010s / 90s • 6 artists",
-    "text": "Los Angeles / California connects 6 archive artists across legacy, mainstream, mogul lanes.",
-    "artists": [
-      {
-        "href": "tupac.html",
-        "name": "2Pac",
-        "desc": "Poet, rebel, actor, and cultural icon whose message transcended music."
-      },
-      {
-        "href": "blueface.html",
-        "name": "Blueface",
-        "desc": "Unconventional West Coast artist who broke norms with offbeat flow and viral energy."
-      },
-      {
-        "href": "cypress-hill.html",
-        "name": "Cypress Hill",
-        "desc": "Legendary group blending Latin identity, dark production, and cultural influence."
-      },
-      {
-        "href": "dj-mustard.html",
-        "name": "DJ Mustard",
-        "desc": "West Coast producer behind countless club hits."
-      },
-      {
-        "href": "ice-cube.html",
-        "name": "Ice Cube",
-        "desc": "From N.W.A rebel to Hollywood figure, a voice of truth, resistance, and evolution."
-      },
-      {
-        "href": "nipsey-hussle.html",
-        "name": "Nipsey Hussle",
-        "desc": "Visionary leader of independence and community power."
-      }
-    ]
-  },
-  "Long Beach / Los Angeles": {
-    "meta": "West Coast • 2010s / 90s • 3 artists",
-    "text": "Long Beach / Los Angeles connects 3 archive artists across legacy, mainstream, rnb lanes.",
-    "artists": [
-      {
-        "href": "nate-dogg.html",
-        "name": "Nate Dogg",
-        "desc": "Legendary hook king of West Coast hip-hop."
-      },
-      {
-        "href": "ot-genasis.html",
-        "name": "O.T. Genasis",
-        "desc": "High-energy hitmaker known for viral anthems."
-      },
-      {
-        "href": "snoop-dogg.html",
-        "name": "Snoop Dogg",
-        "desc": "West Coast icon whose laid-back style and longevity made him a global cultural figure."
-      }
-    ]
-  },
-  "Queens / New York": {
-    "meta": "East Coast • 2000s / 2010s / 2020s / 90s • 6 artists",
-    "text": "Queens / New York connects 6 archive artists across group, legacy, mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "g-unit.html",
-        "name": "G-Unit",
-        "desc": "Influential collective led by 50 Cent that dominated 2000s hip-hop culture."
-      },
-      {
-        "href": "ja-rule.html",
-        "name": "Ja Rule",
-        "desc": "2000s hitmaker who fused rap with pop hooks."
-      },
-      {
-        "href": "lil-tecca.html",
-        "name": "Lil Tecca",
-        "desc": "Youth-driven melodic rapper of the streaming era."
-      },
-      {
-        "href": "ll-cool-j.html",
-        "name": "LL Cool J",
-        "desc": "Pioneer who helped shape hip-hop superstardom."
-      },
-      {
-        "href": "nas.html",
-        "name": "Nas",
-        "desc": "Queensbridge poet whose lyrical mastery and storytelling set the gold standard for hip-hop."
-      },
-      {
-        "href": "nicki-minaj.html",
-        "name": "Nicki Minaj",
-        "desc": "Global superstar who redefined female rap dominance."
-      }
-    ]
-  },
-  "Florida": {
-    "meta": "South • 2000s / 2010s • 3 artists",
-    "text": "Florida connects 3 archive artists across mainstream, trap lanes.",
-    "artists": [
-      {
-        "href": "fl-dusa.html",
-        "name": "FL Dusa",
-        "desc": "Emerging artist representing the next wave of underground street music."
-      },
-      {
-        "href": "khia.html",
-        "name": "Khia",
-        "desc": "Bold Southern rapper with unapologetic presence."
-      },
-      {
-        "href": "plies.html",
-        "name": "Plies",
-        "desc": "Florida rapper known for raw emotion and street energy."
-      }
-    ]
-  },
-  "Texas": {
-    "meta": "South • 2020s • 1 artist",
-    "text": "Texas connects 1 archive artist across crossover, mainstream lanes.",
-    "artists": [
-      {
-        "href": "post-malone.html",
-        "name": "Post Malone",
-        "desc": "Genre-bending superstar crossing rap, pop, and rock."
-      }
-    ]
-  },
-  "Miami": {
-    "meta": "South • 2000s / 2010s • 2 artists",
-    "text": "Miami connects 2 archive artists across mainstream, mogul, rnb lanes.",
-    "artists": [
-      {
-        "href": "dj-khaled.html",
-        "name": "DJ Khaled",
-        "desc": "Hitmaker and curator known for anthems, collaborations, and larger-than-life presence."
-      },
-      {
-        "href": "pretty-ricky.html",
-        "name": "Pretty Ricky",
-        "desc": "R&B group behind iconic 2000s sensual hits."
-      }
-    ]
-  },
-  "Fayetteville": {
-    "meta": "South • 2010s • 1 artist",
-    "text": "Fayetteville connects 1 archive artist across legacy, mainstream lanes.",
-    "artists": [
-      {
-        "href": "j-cole.html",
-        "name": "J. Cole",
-        "desc": "Lyrical powerhouse blending introspection with mainstream success."
-      }
-    ]
-  },
-  "Washington, D.C.": {
-    "meta": "East Coast • 2000s / 90s • 2 artists",
-    "text": "Washington, D.C. connects 2 archive artists across rnb lanes.",
-    "artists": [
-      {
-        "href": "ginuwine.html",
-        "name": "Ginuwine",
-        "desc": "R&B icon known for smooth vocals, performance, and timeless records."
-      },
-      {
-        "href": "j-holiday.html",
-        "name": "J. Holiday",
-        "desc": "Late-2000s R&B voice known for emotional slow jams."
-      }
-    ]
-  },
-  "Bronx / New York": {
-    "meta": "East Coast • 2000s / 2010s • 5 artists",
-    "text": "Bronx / New York connects 5 archive artists across mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "a-boogie.html",
-        "name": "A Boogie wit da Hoodie",
-        "desc": "Melodic Bronx star blending rap and R&B into modern hit-making formulas."
-      },
-      {
-        "href": "cardi-b.html",
-        "name": "Cardi B",
-        "desc": "Bronx superstar whose charisma and success reshaped female rap dominance."
-      },
-      {
-        "href": "fat-joe.html",
-        "name": "Fat Joe",
-        "desc": "Bronx legend bridging eras from street rap to mainstream hits."
-      },
-      {
-        "href": "french-montana.html",
-        "name": "French Montana",
-        "desc": "Hitmaker known for collaborations, global influence, and consistent chart success."
-      },
-      {
-        "href": "lil-tjay.html",
-        "name": "Lil Tjay",
-        "desc": "Melodic Bronx star with pain-driven storytelling."
-      }
-    ]
-  },
-  "Louisville": {
-    "meta": "South • 2020s • 1 artist",
-    "text": "Louisville connects 1 archive artist across mainstream lanes.",
-    "artists": [
-      {
-        "href": "jack-harlow.html",
-        "name": "Jack Harlow",
-        "desc": "Charismatic crossover rapper with global appeal."
-      }
-    ]
-  },
-  "London": {
-    "meta": "International • International • 2 artists",
-    "text": "London connects 2 archive artists across mainstream, melodic, rnb lanes.",
-    "artists": [
-      {
-        "href": "d-block-europe.html",
-        "name": "D-Block Europe",
-        "desc": "UK rap collective blending trap, melody, and lifestyle storytelling."
-      },
-      {
-        "href": "jay-sean.html",
-        "name": "Jay Sean",
-        "desc": "Global R&B-pop artist bridging UK and US markets."
-      }
-    ]
-  },
-  "Nashville": {
-    "meta": "South • 2000s / 2020s • 2 artists",
-    "text": "Nashville connects 2 archive artists across crossover, legacy, mainstream lanes.",
-    "artists": [
-      {
-        "href": "jelly-roll.html",
-        "name": "Jelly Roll",
-        "desc": "Genre-blending artist telling stories of pain and redemption."
-      },
-      {
-        "href": "young-buck.html",
-        "name": "Young Buck",
-        "desc": "Nashville rapper whose G-Unit era, Southern grit, and turbulent journey defined a major 2000s rap story."
-      }
-    ]
-  },
-  "Compton / Los Angeles": {
-    "meta": "West Coast • 2000s / 2010s / 90s / Late 2010s • 5 artists",
-    "text": "Compton / Los Angeles connects 5 archive artists across legacy, mainstream, mogul lanes.",
-    "artists": [
-      {
-        "href": "dr-dre.html",
-        "name": "Dr. Dre",
-        "desc": "Architect of West Coast sound, producer mastermind, and founder of multiple rap dynasties."
-      },
-      {
-        "href": "kendrick-lamar.html",
-        "name": "Kendrick Lamar",
-        "desc": "Compton lyricist redefining storytelling and artistry."
-      },
-      {
-        "href": "slim-400.html",
-        "name": "Slim 400",
-        "desc": "Bompton rapper whose life, survival, and raw authenticity made him a respected West Coast street voice."
-      },
-      {
-        "href": "the-game.html",
-        "name": "The Game",
-        "desc": "Compton rapper who led the 2000s West Coast revival with cinematic storytelling and headline-making feuds."
-      },
-      {
-        "href": "yg.html",
-        "name": "YG",
-        "desc": "Compton rapper who helped revive the West Coast sound with street realism, club energy, and political edge."
-      }
-    ]
-  },
-  "El Paso / Texas": {
-    "meta": "South • 2020s • 1 artist",
-    "text": "El Paso / Texas connects 1 archive artist across crossover, rnb lanes.",
-    "artists": [
-      {
-        "href": "khalid.html",
-        "name": "Khalid",
-        "desc": "Modern voice of emotional, youth-driven R&B-pop."
-      }
-    ]
-  },
-  "Cleveland": {
-    "meta": "Midwest • 2010s • 1 artist",
-    "text": "Cleveland connects 1 archive artist across legacy, melodic lanes.",
-    "artists": [
-      {
-        "href": "kid-cudi.html",
-        "name": "Kid Cudi",
-        "desc": "Influential artist who brought mental health into hip-hop."
-      }
-    ]
-  },
-  "Sydney": {
-    "meta": "International • International • 1 artist",
-    "text": "Sydney connects 1 archive artist across crossover, melodic lanes.",
-    "artists": [
-      {
-        "href": "the-kid-laroi.html",
-        "name": "The Kid LAROI",
-        "desc": "Global rap-pop star driven by emotional storytelling."
-      }
-    ]
-  },
-  "South Florida": {
-    "meta": "South • 2010s • 3 artists",
-    "text": "South Florida connects 3 archive artists across mainstream, melodic, trap lanes.",
-    "artists": [
-      {
-        "href": "ace-hood.html",
-        "name": "Ace Hood",
-        "desc": "Florida rapper whose hunger, independence, and resilience defined his career."
-      },
-      {
-        "href": "kodak-black.html",
-        "name": "Kodak Black",
-        "desc": "Raw Florida voice with unpredictable storytelling."
-      },
-      {
-        "href": "lil-pump.html",
-        "name": "Lil Pump",
-        "desc": "SoundCloud-era icon of viral chaos and energy."
-      }
-    ]
-  },
-  "Dallas": {
-    "meta": "South • 2010s / 2020s • 2 artists",
-    "text": "Dallas connects 2 archive artists across legacy, melodic, trap lanes.",
-    "artists": [
-      {
-        "href": "lil-loaded.html",
-        "name": "Lil Loaded",
-        "desc": "Dallas rapper whose viral rise ended tragically."
-      },
-      {
-        "href": "mo3.html",
-        "name": "MO3",
-        "desc": "Dallas artist whose raw honesty, pain, and vulnerability made him a singular Southern voice."
-      }
-    ]
-  },
-  "Detroit": {
-    "meta": "Midwest • 2000s / 2010s • 2 artists",
-    "text": "Detroit connects 2 archive artists across legacy, mainstream lanes.",
-    "artists": [
-      {
-        "href": "big-sean.html",
-        "name": "Big Sean",
-        "desc": "Detroit rapper whose introspection and success defined a major 2010s run."
-      },
-      {
-        "href": "eminem.html",
-        "name": "Eminem",
-        "desc": "One of the greatest lyricists ever, redefining technical rap and global influence."
-      }
-    ]
-  },
-  "Oakland / Bay Area": {
-    "meta": "West Coast • 2010s / 90s • 2 artists",
-    "text": "Oakland / Bay Area connects 2 archive artists across legacy, mainstream, rnb lanes.",
-    "artists": [
-      {
-        "href": "en-vogue.html",
-        "name": "En Vogue",
-        "desc": "Legendary R&B group whose harmonies and style shaped an era of music."
-      },
-      {
-        "href": "g-eazy.html",
-        "name": "G-Eazy",
-        "desc": "West Coast artist blending pop appeal with rap identity and lifestyle branding."
-      }
-    ]
-  },
-  "New Jersey": {
-    "meta": "East Coast • 2010s • 1 artist",
-    "text": "New Jersey connects 1 archive artist across mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "fetty-wap.html",
-        "name": "Fetty Wap",
-        "desc": "New Jersey star whose melodic wave took over mid-2010s hip-hop."
-      }
-    ]
-  },
-  "Mississippi": {
-    "meta": "South • 2010s • 1 artist",
-    "text": "Mississippi connects 1 archive artist across legacy lanes.",
-    "artists": [
-      {
-        "href": "big-krit.html",
-        "name": "Big K.R.I.T.",
-        "desc": "Southern purist blending soul, storytelling, and independence into a timeless sound."
-      }
-    ]
-  },
-  "St. Louis": {
-    "meta": "Midwest • 2000s • 2 artists",
-    "text": "St. Louis connects 2 archive artists across legacy, mainstream lanes.",
-    "artists": [
-      {
-        "href": "chingy.html",
-        "name": "Chingy",
-        "desc": "St. Louis rapper who dominated early 2000s charts with club-driven hits."
-      },
-      {
-        "href": "nelly.html",
-        "name": "Nelly",
-        "desc": "St. Louis rap icon whose crossover hits and Country Grammar era helped define mainstream hip-hop in the early 2000s."
-      }
-    ]
-  },
-  "Charlotte": {
-    "meta": "South • 2010s • 1 artist",
-    "text": "Charlotte connects 1 archive artist across mainstream lanes.",
-    "artists": [
-      {
-        "href": "da-baby.html",
-        "name": "DaBaby",
-        "desc": "Charlotte rapper whose rapid rise and controversies defined a modern era."
-      }
-    ]
-  },
-  "Baton Rouge": {
-    "meta": "South • 2010s • 2 artists",
-    "text": "Baton Rouge connects 2 archive artists across legacy, mainstream, melodic lanes.",
-    "artists": [
-      {
-        "href": "kevin-gates.html",
-        "name": "Kevin Gates",
-        "desc": "Baton Rouge artist known for emotional honesty, pain-driven lyrics, and introspective street storytelling."
-      },
-      {
-        "href": "nba-youngboy.html",
-        "name": "NBA YoungBoy",
-        "desc": "Prolific Baton Rouge star whose emotional intensity and nonstop output dominate modern rap."
-      }
-    ]
-  },
-  "Yonkers / New York": {
-    "meta": "East Coast • 90s • 1 artist",
-    "text": "Yonkers / New York connects 1 archive artist across legacy lanes.",
-    "artists": [
-      {
-        "href": "dmx.html",
-        "name": "DMX",
-        "desc": "A historic voice of pain, faith, rage, and survival whose impact reached far beyond rap."
-      }
-    ]
-  },
-  "Sofia": {
-    "meta": "International • International • 1 artist",
-    "text": "Sofia connects 1 archive artist across legacy lanes.",
-    "artists": [
-      {
-        "href": "dj-stancho.html",
-        "name": "DJ Stancho",
-        "desc": "The “Godfather” of Bulgarian hip-hop who helped build the scene from level zero—founder of Sniper Records and architect of the underground movement."
-      }
-    ]
-  },
-  "Savannah": {
-    "meta": "South • Late 2010s • 1 artist",
-    "text": "Savannah connects 1 archive artist across melodic lanes.",
-    "artists": [
-      {
-        "href": "quando-rondo.html",
-        "name": "Quando Rondo",
-        "desc": "Melodic Southern rapper whose pain-driven storytelling and controversy shaped his rise."
-      }
-    ]
-  }
-};
-  const focusMap = {"usa": {"scale": 1, "x": 0, "y": 0}, "west": {"scale": 1.55, "x": 170, "y": 55}, "midwest": {"scale": 1.7, "x": 50, "y": 55}, "south": {"scale": 1.5, "x": 55, "y": -15}, "east": {"scale": 1.9, "x": -185, "y": 65}, "intl": {"scale": 1.55, "x": -280, "y": 20}};
-
   (function(){
     const header = document.getElementById("mainHeader");
     if(!header) return;
     let lastScrollY = window.pageYOffset;
+
     function offset(){ document.body.style.paddingTop = header.offsetHeight + "px"; }
     function onScroll(){
       const currentScrollY = window.pageYOffset;
@@ -1134,7 +549,8 @@
       }
       lastScrollY = currentScrollY;
     }
-    offset(); onScroll();
+    offset();
+    onScroll();
     window.addEventListener("load", offset);
     window.addEventListener("resize", () => {
       offset();
@@ -1143,55 +559,290 @@
     window.addEventListener("scroll", onScroll, {passive:true});
   })();
 
-  const mapStage = document.getElementById("mapStage");
-  const mapWorld = document.getElementById("mapWorld");
-  const cityEls = Array.from(document.querySelectorAll(".city"));
+  const cityData = {
+    "Chicago": {
+      meta: "Midwest • Drill + Legacy • 5 artists",
+      text: "Chicago is the biggest node in this vault, linking drill, mainstream crossovers, emotional rap, and legacy controversy.",
+      artists: [
+        { href: "chief-keef.html", name: "Chief Keef", desc: "Architect of drill whose rise changed rap globally." },
+        { href: "juice-wrld.html", name: "Juice WRLD", desc: "Melodic and emotionally raw voice of a generation." },
+        { href: "king-von.html", name: "King Von", desc: "O'Block storyteller with a vivid, cinematic drill style." },
+        { href: "lil-durk.html", name: "Lil Durk", desc: "Mainstream melodic drill leader shaped by grief and scrutiny." },
+        { href: "r-kelly.html", name: "R. Kelly", desc: "Earlier Chicago giant whose legacy became deeply controversial." }
+      ]
+    },
+    "Atlanta": {
+      meta: "South • Trap • 1 artist",
+      text: "Atlanta remains one of hip-hop’s core innovation hubs, and here it anchors the trap lane through one of its defining stars.",
+      artists: [
+        { href: "future.html", name: "Future", desc: "Trap pioneer whose dark melodies and output helped define the era." }
+      ]
+    },
+    "Brooklyn / New York": {
+      meta: "East Coast • Legacy + Drill • 3 artists",
+      text: "New York connects golden-era greatness, modern drill energy, and the early biographical roots of one of rap’s most mythic figures.",
+      artists: [
+        { href: "biggie.html", name: "The Notorious B.I.G.", desc: "Brooklyn narrator and East Coast giant." },
+        { href: "pop-smoke.html", name: "Pop Smoke", desc: "Modern face of Brooklyn drill’s breakout." },
+        { href: "tupac.html", name: "2Pac", desc: "Born in New York before becoming tied to the West Coast story." }
+      ]
+    },
+    "Yonkers": {
+      meta: "East Coast • Legacy • 1 artist",
+      text: "Yonkers gave rap one of its most unforgettable voices—intense, spiritual, and emotionally explosive.",
+      artists: [
+        { href: "dmx.html", name: "DMX", desc: "Pain, prayer, rage, and one of rap’s rawest catalogues." }
+      ]
+    },
+    "Memphis": {
+      meta: "South • Legacy + Street Energy • 2 artists",
+      text: "Memphis in this vault represents independent power, street charisma, and local identity that traveled nationally.",
+      artists: [
+        { href: "pooh-shiesty.html", name: "Pooh Shiesty", desc: "Explosive Memphis breakout with raw street momentum." },
+        { href: "young-dolph.html", name: "Young Dolph", desc: "Independent mogul built on loyalty, resilience, and ownership." }
+      ]
+    },
+    "Baton Rouge": {
+      meta: "South • Melodic + Mainstream • 2 artists",
+      text: "Baton Rouge supplies pain-driven storytelling, emotional volatility, and some of the most relentless output in modern rap.",
+      artists: [
+        { href: "kevin-gates.html", name: "Kevin Gates", desc: "Introspective Baton Rouge voice known for emotional honesty." },
+        { href: "nba-youngboy.html", name: "NBA YoungBoy", desc: "Streaming-era powerhouse with nonstop output and intensity." }
+      ]
+    },
+    "New Orleans": {
+      meta: "South • Legacy + Mainstream • 2 artists",
+      text: "New Orleans represents a music-business empire and a generational lyrical force that pushed Southern rap to global prominence.",
+      artists: [
+        { href: "birdman.html", name: "Birdman", desc: "Cash Money mogul who built a rap empire." },
+        { href: "lil-wayne.html", name: "Lil Wayne", desc: "Mixtape titan and lyrical icon of modern hip-hop." }
+      ]
+    },
+    "Dallas": {
+      meta: "South • Melodic Street Rap • 1 artist",
+      text: "Dallas adds a pain-heavy, deeply personal lane to the map through one of the city’s most resonant voices.",
+      artists: [
+        { href: "mo3.html", name: "MO3", desc: "Vulnerable, raw Dallas artist defined by pain and realism." }
+      ]
+    },
+    "St. Louis": {
+      meta: "Midwest • Mainstream Crossover • 1 artist",
+      text: "St. Louis shows how regional rap could go fully mainstream while still sounding local and recognizable.",
+      artists: [
+        { href: "nelly.html", name: "Nelly", desc: "Crossover hitmaker who defined part of the early 2000s." }
+      ]
+    },
+    "Nashville": {
+      meta: "South • Legacy • 1 artist",
+      text: "Nashville’s place in the vault runs through Southern grit, G-Unit-era fame, and a turbulent solo path.",
+      artists: [
+        { href: "young-buck.html", name: "Young Buck", desc: "Southern force whose G-Unit years left a lasting mark." }
+      ]
+    },
+    "Savannah": {
+      meta: "South • Melodic • 1 artist",
+      text: "Savannah’s contribution here is emotionally charged, controversial, and tightly bound to street narratives and survival.",
+      artists: [
+        { href: "quando-rondo.html", name: "Quando Rondo", desc: "Pain-driven Southern melodic rapper shaped by controversy." }
+      ]
+    },
+    "Compton / Bompton": {
+      meta: "West Coast • Street Legacy • 3 artists",
+      text: "Compton and Bompton anchor the West Coast section of the vault with revival energy, survival stories, and era-defining street realism.",
+      artists: [
+        { href: "slim-400.html", name: "Slim 400", desc: "Bompton voice known for raw authenticity and survival." },
+        { href: "the-game.html", name: "The Game", desc: "West Coast revivalist with cinematic storytelling and big feuds." },
+        { href: "yg.html", name: "YG", desc: "Compton rapper who brought modern West Coast energy back to the front." }
+      ]
+    },
+    "California / West Coast": {
+      meta: "West Coast • 90s Legacy • 2 artists",
+      text: "The broad West Coast node holds the most mythic, cinematic, and politically charged stories in the archive.",
+      artists: [
+        { href: "tupac.html", name: "2Pac", desc: "Defining icon of rap’s most mythologized era." },
+        { href: "snoop-dummy.html", name: "West Coast Legacy", desc: "Reserved for future West Coast archive expansion." }
+      ]
+    },
+    "London": {
+      meta: "International • UK Rap • 2 artists",
+      text: "London extends the map beyond the U.S. through chart-moving UK rap and crossover melody, showing how the archive connects British artists to the wider hip-hop story.",
+      artists: [
+        { href: "d-block-europe.html", name: "D-Block Europe", desc: "London duo whose melodic street rap helped define a new era of UK rap." },
+        { href: "jay-sean.html", name: "Jay Sean", desc: "London-born crossover artist who connected UK talent to global mainstream success." }
+      ]
+    },
+    "Sofia": {
+      meta: "International • Bulgarian Hip-Hop • 1 artist",
+      text: "Sofia shows the vault expanding beyond the U.S., connecting hip-hop to local underground history and scene-building abroad.",
+      artists: [
+        { href: "dj-stancho.html", name: "DJ Stancho", desc: "Foundational architect of Bulgarian hip-hop culture." }
+      ]
+    }
+  };
+
+  cityData["California / West Coast"].artists = cityData["California / West Coast"].artists.filter(a => a.href !== "snoop-dummy.html");
+
+  const stage = document.getElementById("mapStage");
+  const world = document.getElementById("mapWorld");
+  const cities = Array.from(document.querySelectorAll(".city"));
   const searchInput = document.getElementById("searchInput");
   const eraFilter = document.getElementById("eraFilter");
   const regionFilter = document.getElementById("regionFilter");
   const sceneFilter = document.getElementById("sceneFilter");
   const resetBtn = document.getElementById("resetBtn");
   const resultCount = document.getElementById("resultCount");
+  const cityCard = document.getElementById("cityCard");
   const sidebarTitle = document.getElementById("sidebarTitle");
   const sidebarText = document.getElementById("sidebarText");
-  const cityCard = document.getElementById("cityCard");
 
-  let scale = 1, x = 0, y = 0;
-  let dragging = false, startX = 0, startY = 0;
+  let scale = 1;
+  let x = 0;
+  let y = 0;
+  let startX = 0;
+  let startY = 0;
+  let isDragging = false;
 
-  function renderTransform() {
-    mapWorld.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+  function applyTransform() {
+    world.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
   }
-  renderTransform();
 
-  function setSidebar(cityName) {
-    const entry = cityData[cityName];
-    if(!entry) return;
-    sidebarTitle.textContent = cityName;
-    sidebarText.textContent = entry.text;
-    cityCard.innerHTML = `
-      <h3>${cityName}</h3>
-      <div class="meta">${entry.meta}</div>
+  function clampScale(next) {
+    return Math.min(2.8, Math.max(1, next));
+  }
+
+  function buildExplorerUrl(filters) {
+    const params = new URLSearchParams();
+    if (filters.q) params.set("q", filters.q);
+    if (filters.era && filters.era !== "all" && filters.era !== "intl") {
+      const mappedEra = filters.era === "90s" ? "1990s" : filters.era === "late2010s" ? "2010s" : filters.era;
+      params.set("era", mappedEra);
+    }
+    return "explorer.html" + (params.toString() ? "?" + params.toString() : "");
+  }
+
+  function getCurrentExplorerUrl(cityName) {
+    const queryParts = [];
+    if (cityName) queryParts.push(cityName.split(" / ")[0]);
+    if (searchInput.value.trim()) queryParts.push(searchInput.value.trim());
+    if (sceneFilter.value !== "all") queryParts.push(sceneFilter.options[sceneFilter.selectedIndex].text);
+    return buildExplorerUrl({
+      q: queryParts.join(" ").trim(),
+      era: eraFilter.value
+    });
+  }
+
+  function getDefaultCityCardHtml() {
+    return `
+      <h3>Start Exploring</h3>
+      <div class="meta">Choose a city node on the map.</div>
+      <div class="city-actions">
+        <a class="artist-link" href="${getCurrentExplorerUrl('')}">
+          <strong>Open current map view in Explorer</strong>
+          <span>Send your active map search into the advanced explorer filters.</span>
+        </a>
+      </div>
       <div class="artist-links">
-        ${entry.artists.map(a => `
-          <a class="artist-link" href="${a.href}">
-            <strong>${a.name}</strong>
-            <span>${a.desc}</span>
-          </a>
-        `).join('')}
+        <a class="artist-link" href="artist.html">
+          <strong>Open the full archive</strong>
+          <span>Browse all stories if you want the full artist list first.</span>
+        </a>
       </div>
     `;
   }
 
-  cityEls.forEach(el => {
-    el.addEventListener("pointerdown", (e) => {
+  function setCityCard(cityName) {
+    cities.forEach(c => c.classList.toggle("active", c.dataset.city === cityName));
+    const data = cityData[cityName];
+    if (!data) return;
+    sidebarTitle.textContent = cityName;
+    sidebarText.textContent = data.text;
+    cityCard.innerHTML = `
+      <h3>${cityName}</h3>
+      <div class="meta">${data.meta}</div>
+      <div class="city-actions">
+        <a class="artist-link" href="${getCurrentExplorerUrl(cityName)}">
+          <strong>Open ${cityName} in Explorer</strong>
+          <span>Jump into a prefiltered explorer view built from this map node.</span>
+        </a>
+      </div>
+      <div class="artist-links">
+        ${data.artists.map(a => `
+          <a class="artist-link" href="${a.href}">
+            <strong>${a.name}</strong>
+            <span>${a.desc}</span>
+          </a>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  cities.forEach(city => {
+    city.addEventListener("click", (e) => {
       e.stopPropagation();
+      setCityCard(city.dataset.city);
     });
-    el.addEventListener("click", (e) => {
-      e.stopPropagation();
-      cityEls.forEach(c => c.classList.remove("active"));
-      el.classList.add("active");
-      setSidebar(el.dataset.city);
+  });
+
+  stage.addEventListener("click", (e) => {
+    if (e.target === stage) {
+      cities.forEach(c => c.classList.remove("active"));
+      sidebarTitle.textContent = "Hip-Hop Cities";
+      sidebarText.textContent = "Click a glowing city to reveal its connected artist stories and cultural lane.";
+      cityCard.innerHTML = getDefaultCityCardHtml();
+    }
+  });
+
+  stage.addEventListener("pointerdown", (e) => {
+    if (e.target.closest(".city") || e.target.closest("button")) return;
+    isDragging = true;
+    stage.classList.add("dragging");
+    startX = e.clientX - x;
+    startY = e.clientY - y;
+  });
+
+  window.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    x = e.clientX - startX;
+    y = e.clientY - startY;
+    applyTransform();
+  });
+
+  window.addEventListener("pointerup", () => {
+    isDragging = false;
+    stage.classList.remove("dragging");
+  });
+
+  stage.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.12 : 0.12;
+    scale = clampScale(scale + delta);
+    applyTransform();
+  }, { passive: false });
+
+  document.getElementById("zoomIn").addEventListener("click", () => {
+    scale = clampScale(scale + 0.18);
+    applyTransform();
+  });
+
+  document.getElementById("zoomOut").addEventListener("click", () => {
+    scale = clampScale(scale - 0.18);
+    applyTransform();
+  });
+
+  const focusPresets = {
+    usa: { scale: 1, x: 0, y: 0 },
+    west: { scale: 1.9, x: 220, y: 40 },
+    midwest: { scale: 1.75, x: 70, y: 30 },
+    south: { scale: 1.75, x: 90, y: -70 },
+    east: { scale: 1.85, x: -160, y: 60 },
+    intl: { scale: 2.15, x: -310, y: 40 }
+  };
+
+  document.querySelectorAll("[data-focus]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const p = focusPresets[btn.dataset.focus];
+      scale = p.scale; x = p.x; y = p.y;
+      applyTransform();
     });
   });
 
@@ -1200,101 +851,110 @@
     const era = eraFilter.value;
     const region = regionFilter.value;
     const scene = sceneFilter.value;
+
     let visible = 0;
+    cities.forEach(city => {
+      const cityName = city.dataset.city.toLowerCase();
+      const data = cityData[city.dataset.city];
+      const artistNames = data ? data.artists.map(a => a.name.toLowerCase()).join(" ") : "";
+      const regionData = city.dataset.region;
+      const eraData = city.dataset.era;
+      const sceneData = city.dataset.scene;
 
-    cityEls.forEach(el => {
-      const cityName = el.dataset.city.toLowerCase();
-      const regionData = el.dataset.region.toLowerCase();
-      const eraData = el.dataset.era.toLowerCase();
-      const sceneData = el.dataset.scene.toLowerCase();
+      const matchesQ = !q || cityName.includes(q) || artistNames.includes(q) || regionData.includes(q);
+      const matchesEra = era === "all" || eraData.includes(era);
+      const matchesRegion = region === "all" || regionData === region;
+      const matchesScene = scene === "all" || sceneData.includes(scene);
 
-      const entry = cityData[el.dataset.city];
-      const artistBlob = entry ? entry.artists.map(a => a.name.toLowerCase() + " " + a.desc.toLowerCase()).join(" ") : "";
-      const searchMatch = !q || cityName.includes(q) || regionData.includes(q) || artistBlob.includes(q);
-      const eraMatch = era === "all" || eraData.includes(era);
-      const regionMatch = region === "all" || regionData.includes(region);
-      const sceneMatch = scene === "all" || sceneData.includes(scene);
-
-      const show = searchMatch && eraMatch && regionMatch && sceneMatch;
-      el.classList.toggle("hidden", !show);
-      if(show) visible++;
+      const show = matchesQ && matchesEra && matchesRegion && matchesScene;
+      city.classList.toggle("hidden", !show);
+      if (show) visible++;
     });
 
     resultCount.textContent = `${visible} active map point${visible === 1 ? "" : "s"}`;
+    if (!cities.some(city => city.classList.contains("active"))) {
+      cityCard.innerHTML = getDefaultCityCardHtml();
+    }
   }
 
-  searchInput.addEventListener("input", applyFilters);
-  eraFilter.addEventListener("change", applyFilters);
-  regionFilter.addEventListener("change", applyFilters);
-  sceneFilter.addEventListener("change", applyFilters);
+  [searchInput, eraFilter, regionFilter, sceneFilter].forEach(el => {
+    el.addEventListener("input", applyFilters);
+    el.addEventListener("change", applyFilters);
+  });
+
   resetBtn.addEventListener("click", () => {
     searchInput.value = "";
     eraFilter.value = "all";
     regionFilter.value = "all";
     sceneFilter.value = "all";
-    cityEls.forEach(c => c.classList.remove("active"));
-    sidebarTitle.textContent = "Hip-Hop Cities";
-    sidebarText.textContent = "Click a glowing city to reveal its connected artist stories and vault lane.";
-    cityCard.innerHTML = `
-      <h3>Start Exploring</h3>
-      <div class="meta">Choose a city node on the map.</div>
-      <div class="artist-links">
-        <a class="artist-link" href="artist.html">
-          <strong>Open the full archive</strong>
-          <span>Browse all synced artist stories if you want the full list first.</span>
-        </a>
-      </div>
-    `;
+    scale = 1; x = 0; y = 0;
+    applyTransform();
     applyFilters();
   });
 
-  document.getElementById("zoomIn").addEventListener("click", () => {
-    scale = Math.min(2.4, scale + 0.15); renderTransform();
-  });
-  document.getElementById("zoomOut").addEventListener("click", () => {
-    scale = Math.max(0.8, scale - 0.15); renderTransform();
-  });
-
-  document.querySelectorAll(".focus-controls button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const key = btn.dataset.focus;
-      const f = focusMap[key];
-      if(!f) return;
-      scale = f.scale; x = f.x; y = f.y;
-      renderTransform();
-    });
-  });
-
-  mapStage.addEventListener("pointerdown", e => {
-    if (e.target.closest(".city")) return;
-    dragging = true;
-    mapStage.classList.add("dragging");
-    startX = e.clientX - x;
-    startY = e.clientY - y;
-    mapStage.setPointerCapture(e.pointerId);
-  });
-  mapStage.addEventListener("pointermove", e => {
-    if(!dragging) return;
-    x = e.clientX - startX;
-    y = e.clientY - startY;
-    renderTransform();
-  });
-  mapStage.addEventListener("pointerup", () => {
-    dragging = false;
-    mapStage.classList.remove("dragging");
-  });
-  mapStage.addEventListener("pointerleave", () => {
-    dragging = false;
-    mapStage.classList.remove("dragging");
-  });
-  mapStage.addEventListener("wheel", e => {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? -0.08 : 0.08;
-    scale = Math.max(0.8, Math.min(2.4, scale + delta));
-    renderTransform();
-  }, {passive:false});
-
+  applyTransform();
+  cityCard.innerHTML = getDefaultCityCardHtml();
   applyFilters();
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const current = window.location.pathname.split("/").pop() || "index.html";
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(link => {
+    link.classList.remove("active");
+    const href = link.getAttribute("href");
+    if (current === href) {
+      link.classList.add("active");
+    }
+  });
+  if (!Array.from(links).some(link => link.classList.contains("active"))) {
+    if (current.endsWith(".html")) {
+      const isArtistPage = !["index.html","artist-archive.html","artist.html","category.html","timeline.html","map.html","contact.html","thank-you.html","thank-you-premium.html","intro.html"].includes(current);
+      if (isArtistPage) {
+        const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
+        if (artistLink) artistLink.classList.add("active");
+      }
+    }
+  }
+});
+</script><script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+  let lastScrollY = window.pageYOffset;
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+  function handleScroll(){
+    const currentScrollY = window.pageYOffset;
+    if(window.innerWidth <= 768){
+      if(currentScrollY <= 8){
+        header.classList.remove("hidden");
+      } else if(currentScrollY > lastScrollY + 4){
+        header.classList.add("hidden");
+      } else if(currentScrollY < lastScrollY - 4){
+        header.classList.remove("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+    lastScrollY = currentScrollY;
+  }
+  offset();
+  handleScroll();
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", () => {
+    offset();
+    if(window.innerWidth > 768){
+      header.classList.remove("hidden");
+    }
+  });
+  window.addEventListener("scroll", handleScroll, { passive: true });
+})();
+</script>  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
 </body>
 </html>
+
+
+
+
