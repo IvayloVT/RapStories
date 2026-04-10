@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nas | Rap Stories</title>
-  <meta name="description" content="Queensbridge poet and master storyteller, Nas turned vivid street writing and social reflection into one of the most respected catalogs in rap." />
+  <meta name="description" content="A Rap Stories premium profile on Nas, covering his Queensbridge roots, Illmatic breakthrough, lyrical legacy, business evolution, and lasting place in hip-hop history." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,195 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover { transform: translateY(-2px); }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden { transform: translateY(-100%); }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +658,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +683,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Nas</h2>
-              <p>Queensbridge poet and master storyteller, Nas turned vivid street writing and social reflection into one of the most respected catalogs in rap.</p>
+              <p>Queensbridge poet whose street realism, literary detail, and generational influence made him one of hip-hop’s greatest lyricists.</p>
             </div>
           </aside>
 
@@ -735,25 +691,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Nas</span></h1>
             <p class="summary">
-              Born Nasir Jones, Nas emerged from Queensbridge with one of the most celebrated writing styles in hip-hop. His work fused cinematic storytelling, introspection, social commentary, and street realism, making him one of the core lyricists of rap’s modern canon.
+              Nas emerged from Queensbridge Houses with a voice that sounded older than its years and sharper than almost anything around it. His writing fused street realism, memory, ambition, pain, and imagination into something that felt almost novelistic. From the moment he arrived, he was treated not just as a talented rapper, but as an artist capable of turning lived experience into lasting literature. His career became a bridge between raw New York survival and hip-hop’s highest poetic aspirations.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>September 14, 1973</strong>
+                <strong>Nasir bin Olu Dara Jones</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Queens, New York</strong>
+                <strong>Queensbridge, Queens, New York</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Storytelling and lyricism</strong>
+                <strong>Illmatic, lyricism, storytelling</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active</strong>
+                <strong>Hip-Hop Legend</strong>
               </div>
             </div>
 
@@ -761,22 +717,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1973</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
+                <span class="label">Origin</span>
                 <div class="value">Queensbridge, New York</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">1990s–Present</div>
+                <div class="value">1990s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Poet of Queensbridge</div>
+                <div class="value">Elite lyricism</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Redefined rap writing</div>
               </div>
             </div>
           </section>
@@ -784,150 +741,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Queensbridge Foundations</h3>
-              <p>Nasir Jones was born into a musical family and raised in Queensbridge Houses, one of the most famous public housing complexes in America. His father, Olu Dara, was a jazz musician, and that artistic background sat beside the hard realities of the neighborhood. Nas absorbed both: musical intelligence and street observation.</p>
-              <p>His lyrics would later feel distinctive because they were precise without sounding academic, poetic without sounding detached. He wrote like someone standing inside the environment, not summarizing it from a distance.</p>
-              <h3>Illmatic and Canonization</h3>
-              <p>Nas exploded into public view through guest verses and then transformed expectation with <em>Illmatic</em> in 1994. The album became one of the most revered debuts in hip-hop history. It was short, focused, deeply visual, and packed with a level of writing that immediately placed him in elite company.</p>
-              <p>Rather than relying on one image or mood, Nas built songs out of atmosphere, memory, and sharply drawn scenes. He turned urban life into literature without losing authenticity or rhythm.</p>
-              <h3>Longevity and Reinvention</h3>
-              <p>Across later albums, public debates, rivalries, and generational shifts, Nas remained a benchmark for serious MCs. He balanced introspective work, social critique, and veteran perspective while continuing to record at a high level long after many peers peaked.</p>
+              <h3>Queensbridge Origins</h3>
+              <p>Nas was born Nasir bin Olu Dara Jones and raised in Queensbridge Houses, one of the most storied public-housing environments in hip-hop history. That setting gave him more than subject matter. It gave him atmosphere. His music would later feel dense with hallways, corners, memory, danger, dreams, and the psychic pressure of trying to survive inside a system that offered very little mercy. From the beginning, Nas wrote like someone observing everything.</p>
+
+              <h3>The Arrival of a Young Poet</h3>
+              <p>Even before his debut album, Nas carried a reputation that felt mythic. He was young, but his writing sounded fully formed: cinematic, reflective, and sharply detailed. He was able to describe street life without flattening it into cliché. His verses had patience. He let images breathe. That alone made him stand out in a genre already filled with gifted lyricists. He sounded like a documentarian, a novelist, and a street kid all at once.</p>
+
+              <h3>Illmatic and Permanent Canon</h3>
+              <p><em>Illmatic</em> changed everything. More than a classic debut, it became one of the central texts of hip-hop itself. The album distilled New York realism into something precise, elegant, and emotionally rich. It was not only technically brilliant; it was human. Nas did not just rap well. He created a world and made listeners feel trapped inside it with him. Few albums in any genre have had that kind of long-term authority.</p>
+
+              <h3>Growth, Conflict, and Evolution</h3>
+              <p>Nas’s career after <em>Illmatic</em> was never static. He evolved across commercial expectations, changing industry eras, and public rivalries. His feud with Jay-Z became one of rap’s defining conflicts, but even that chapter reinforced his stature by placing lyricism, pride, and legacy at the center of public conversation. Across successes, uneven periods, reinventions, and late-career surges, he remained one of the culture’s most respected writers.</p>
+
+              <div class="quote">Nas made rap feel literary without taking it away from the street. He showed that realism, poetry, and survival could live in the same breath.</div>
+
+              <h3>Business, Maturity, and Late-Career Authority</h3>
+              <p>Over time, Nas also expanded beyond the image of the young street poet. He became a businessman, investor, elder statesman, and artist capable of reflecting on history without losing sharpness. His later work showed that maturity in rap did not have to mean softness or irrelevance. It could mean deeper control. He remained intellectually curious while staying rooted in the voice that made him essential in the first place.</p>
+
               <h3>Legacy</h3>
-              <p>Nas represents the intellectual and literary side of hip-hop at its highest form. His legacy lies not just in influence but in standards: how to write with depth, how to narrate place, and how to grow older in rap without losing authority.</p>
+              <p>Nas stands among the greatest rappers ever because he changed the standard for what rap writing could be. His influence lives in storytellers, introspective lyricists, street poets, and any artist who believes a rap verse can hold the complexity of a full short story. He is not only a New York icon. He is one of the clearest examples of hip-hop as literature, memory, and art.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1973 — Birth</strong>
-                  <p>Born Nasir bin Olu Dara Jones in Brooklyn and raised in Queensbridge.</p>
-                </div>
-                <div class="timeline-item">
-                  <strong>Early 1990s — Breakout</strong>
-                  <p>Built early acclaim through standout appearances and underground buzz.</p>
+                  <strong>Early 1990s — Emergence</strong>
+                  <p>Began gaining major attention as one of New York’s most gifted young lyricists through early appearances and growing word of mouth.</p>
                 </div>
                 <div class="timeline-item">
                   <strong>1994 — Illmatic</strong>
-                  <p>Released a debut album widely regarded as one of the greatest in hip-hop history.</p>
+                  <p>Released a landmark debut that became one of the most celebrated and influential rap albums ever made.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000s — Veteran Authority</strong>
-                  <p>Maintained relevance through rivalry, commentary, and continued lyric excellence.</p>
+                  <strong>Late 1990s / Early 2000s — Expansion and Conflict</strong>
+                  <p>Navigated commercial success, artistic evolution, and one of hip-hop’s most famous rivalries.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2010s–Present — Elder Statesman</strong>
-                  <p>Extended his catalog and influence as one of rap’s most respected veterans.</p>
+                  <strong>2010s — Elder Statesman Phase</strong>
+                  <p>Strengthened his role as a respected veteran artist, cultural voice, and increasingly visible businessman.</p>
+                </div>
+                <div class="timeline-item">
+                  <strong>2020s — Late-Career Renaissance</strong>
+                  <p>Entered a new acclaimed phase that reaffirmed his place as one of rap’s most enduring and elite artists.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Nasir bin Olu Dara Jones</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Stage Name</span>
+                  <span class="info-label">Artist Name</span>
                   <div class="info-value">Nas</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Birthplace</span>
-                  <div class="info-value">Brooklyn, New York</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Nasir bin Olu Dara Jones</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Origin</span>
+                  <div class="info-value">Queensbridge, Queens, New York</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / East Coast Rap</div>
+                  <div class="info-value">Hip-Hop / East Coast Rap / Conscious Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active; highly respected veteran artist</div>
+                  <div class="info-value">One of hip-hop’s most respected and influential lyricists</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Queensbridge</span>
+                <span class="tag">Illmatic</span>
                 <span class="tag">Storytelling</span>
                 <span class="tag">Poetry</span>
-                <span class="tag">Memory</span>
-                <span class="tag">Street Life</span>
-                <span class="tag">Reflection</span>
-                <span class="tag">Longevity</span>
+                <span class="tag">Legacy</span>
+                <span class="tag">New York Rap</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Queensbridge Poet</strong>
-                  <span>The early phase where place, imagery, and youth perspective defined his voice.</span>
+                  <strong>Illmatic Era</strong>
+                  <span>The phase where Nas established himself as a generational talent and created one of rap’s defining albums.</span>
                 </div>
                 <div class="album">
-                  <strong>Canonical Greatness</strong>
-                  <span>The era of elite lyricism, competition, and long-term respect.</span>
+                  <strong>Stillmatic / Comeback Era</strong>
+                  <span>The period where he reasserted his dominance and reminded the culture of his lyrical authority.</span>
                 </div>
                 <div class="album">
-                  <strong>Mature Reflection</strong>
-                  <span>The veteran period built on perspective, endurance, and prestige.</span>
+                  <strong>Renaissance Era</strong>
+                  <span>A later chapter marked by maturity, renewed critical acclaim, and elite long-term relevance.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for 2Pac.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Nas on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Nas" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Nas.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Nas on Spotify and explore the albums and songs that shaped rap history.</p>
+                  <a href="https://open.spotify.com/search/Nas" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, interviews, and major Nas releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Nas+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Nas on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Nas+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">N.Y. State of Mind</span>
+                  <span class="track-tag">The World Is Yours</span>
+                  <span class="track-tag">If I Ruled the World</span>
+                  <span class="track-tag">One Mic</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">N.Y. State of Mind</span>
-                <span class="track-tag">The World Is Yours</span>
-                <span class="track-tag">If I Ruled the World</span>
-                <span class="track-tag">One Mic</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="jay-z.html" class="related-card">
                   <h4>Jay-Z</h4>
-                  <p>A fellow New York giant whose career often formed a parallel and contrasting legacy.</p>
+                  <p>A defining counterpart in one of hip-hop’s most important rivalries and one of the clearest comparisons in rap greatness.</p>
                 </a>
-                <a href="ice-cube.html" class="related-card">
-                  <h4>Ice Cube</h4>
-                  <p>Another writer-first rap icon who fused sharp social observation with force.</p>
+                <a href="wu-tang-clan.html" class="related-card">
+                  <h4>Wu-Tang Clan</h4>
+                  <p>Another essential New York force whose writing, atmosphere, and street philosophy shaped the same golden era.</p>
                 </a>
-                <a href="dr-dre.html" class="related-card">
-                  <h4>Dr. Dre</h4>
-                  <p>A producer titan whose work helped shape the broader rap landscape Nas operated in.</p>
+                <a href="notorious-big.html" class="related-card">
+                  <h4>The Notorious B.I.G.</h4>
+                  <p>A fellow East Coast giant whose storytelling brilliance and street detail defined 1990s rap excellence.</p>
                 </a>
               </div>
             </section>
@@ -954,95 +920,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

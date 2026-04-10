@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nelly | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on Nelly, covering his St. Louis rise, Country Grammar breakthrough, crossover success, influence, and legacy." />
+  <meta name="description" content="A Rap Stories premium profile on Nelly, covering his St. Louis roots, Country Grammar breakthrough, crossover dominance, melodic rap influence, and lasting legacy in hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,195 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover { transform: translateY(-2px); }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden { transform: translateY(-100%); }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +658,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +683,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>Nelly</h2>
-              <p>St. Louis rap star whose crossover sound, singalong hooks, and chart success made him one of the biggest artists of the 2000s.</p>
+              <p>St. Louis superstar whose melodic flow, crossover instincts, and hitmaking power turned Midwest rap into a mainstream force.</p>
             </div>
           </aside>
 
@@ -735,25 +691,25 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>Nelly</span></h1>
             <p class="summary">
-              Born Cornell Iral Haynes Jr., Nelly rose from the St. Lunatics scene in St. Louis to become a solo superstar with <em>Country Grammar</em>. His mix of melody, pop rap, and Midwestern identity helped reshape mainstream rap in the early 2000s.
+              Nelly arrived at a moment when hip-hop was expanding rapidly across regions, and he helped prove that St. Louis could stand at the center of that expansion. With a style that blended melody, swagger, pop instincts, and regional identity, he became one of the biggest rap stars of the 2000s. His music felt accessible without losing its hometown character, and his success changed how the industry viewed Midwestern rap on a national level.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>November 2, 1974</strong>
+                <strong>Cornell Iral Haynes Jr.</strong>
               </div>
               <div class="fact">
                 <span>From</span>
-                <strong>Austin / St. Louis</strong>
+                <strong>St. Louis, Missouri</strong>
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Pop rap crossover</strong>
+                <strong>Country Grammar, crossover hits, melodic rap</strong>
               </div>
               <div class="fact">
-                <span>Breakthrough</span>
-                <strong><em>Country Grammar</em></strong>
+                <span>Status</span>
+                <strong>Hip-Hop Crossover Icon</strong>
               </div>
             </div>
 
@@ -761,22 +717,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1974</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">St. Louis</div>
+                <span class="label">Origin</span>
+                <div class="value">St. Louis, Missouri</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2000s</div>
+                <div class="value">2000s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Crossover hits</div>
+                <div class="value">Melodic crossover rap</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Midwest mainstream breakthrough</div>
               </div>
             </div>
           </section>
@@ -784,78 +741,68 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life and St. Louis Roots</h3>
-              <p>Nelly was born Cornell Iral Haynes Jr. on November 2, 1974, in Austin, Texas. After his parents divorced when he was young, he eventually moved with his mother to the St. Louis area, where he grew up and developed the regional identity that would later define his music.</p>
-              <p>Before becoming a solo star, he came up with the St. Lunatics, a Midwestern rap group that built local buzz in the 1990s. That local foundation proved important: Nelly’s later success never sounded detached from St. Louis, and his rise helped push the city into the national rap conversation.</p>
+              <h3>St. Louis Roots</h3>
+              <p>Born Cornell Iral Haynes Jr., Nelly came out of St. Louis with a voice and style that did not sound easily confined to one regional template. That worked in his favor. At a time when coastal rap identities still dominated the conversation, Nelly represented a different center of gravity — one rooted in the Midwest, but flexible enough to travel nationally. His music carried local pride without sounding boxed in by it.</p>
 
-              <h3>St. Lunatics and the Road to a Solo Deal</h3>
-              <p>Nelly began his recorded career as part of the St. Lunatics in the early 1990s. The group developed regional momentum but struggled to secure a national breakthrough. Eventually, the group agreed that Nelly should pursue a solo deal first, with the expectation that his success could open doors for everyone else.</p>
-              <p>That decision proved decisive. In 1999, he signed with Universal as a solo artist, setting the stage for one of the biggest mainstream breakthroughs of the era.</p>
+              <h3>From Group Beginnings to Solo Breakthrough</h3>
+              <p>Before solo superstardom, Nelly built early momentum as part of the St. Lunatics, a crew that helped establish his local presence and sharpen his sense of audience connection. But once his solo career began, it was immediately clear that he had star instincts. He understood hooks, bounce, pacing, and the power of sounding relaxed on records that were carefully engineered to stay in people’s heads.</p>
 
-              <h3>The <em>Country Grammar</em> Breakthrough</h3>
-              <p>Nelly’s debut album, <em>Country Grammar</em>, was released on June 27, 2000. The title track became a major hit, and the album quickly established him as one of rap’s most commercially powerful new stars. Its success also introduced a distinct style: melodic hooks, clear regional flavor, radio-friendly writing, and a delivery that could shift easily between rapping and sing-song phrasing.</p>
-              <p>The album’s success turned Nelly into a national phenomenon and made him the defining mainstream rap voice out of St. Louis. It also helped prove that Midwestern rap could compete at the highest commercial level.</p>
+              <h3>Country Grammar and the Explosion</h3>
+              <p><em>Country Grammar</em> changed the scale of his career and the perception of St. Louis rap overnight. The album fused singable phrasing, radio readiness, street references, and club energy in a way that felt new for mainstream rap at the time. Nelly did not simply score a hit. He built an entire lane where melodic phrasing and crossover ambition could live inside a rap identity without apology.</p>
 
-              <div class="quote">Nelly helped make melodic, crossover-friendly rap feel central to the mainstream rather than peripheral to it.</div>
+              <h3>Pop Reach Without Losing Rap Identity</h3>
+              <p>As his star grew, Nelly became one of the defining crossover artists of his era. He could make club songs, romantic hits, neighborhood records, and polished pop collaborations while still being recognized as a rapper first. That balance mattered. He expanded hip-hop’s commercial possibilities while keeping enough swagger and regional grounding to remain believable to a broad audience.</p>
 
-              <h3>Mainstream Dominance</h3>
-              <p>His second album, <em>Nellyville</em>, pushed him even further. Songs like “Hot in Herre” and “Dilemma” became era-defining records, expanding his audience beyond rap listeners and into pop radio, clubs, and global charts. Nelly’s music was catchy, accessible, and commercially engineered without losing all of its rap identity.</p>
-              <p>That ability to live in both rap and pop spaces made him one of the defining crossover artists of the 2000s. He became a major hitmaker, and his catalog helped shape how mainstream rap would sound during that decade.</p>
+              <div class="quote">Nelly helped make melody a mainstream rap advantage, not a compromise — and in doing so, he changed the shape of 2000s hip-hop stardom.</div>
 
-              <h3>Style and Influence</h3>
-              <p>Nelly’s sound mattered because it arrived at a transition point in rap. He was less rigidly traditional than many earlier stars and more openly melodic than much of the mainstream rap that came before him. His records emphasized hooks, chant-ready phrasing, and crossover polish while still carrying regional slang and local identity.</p>
-              <p>That balance influenced later generations of artists who moved fluidly between rap, singing, radio formats, and pop-friendly production. In that sense, Nelly helped normalize a style that became increasingly common in the years after his peak.</p>
-
-              <h3>Awards, Acting, and Longevity</h3>
-              <p>Nelly’s success extended beyond albums and singles. He won multiple Grammy Awards and maintained visibility through collaborations, television, and acting work. His career broadened well beyond his initial breakout, showing a kind of mainstream durability that many rap stars never achieve.</p>
-              <p>Even after his commercial peak, he remained recognizable as a major figure of the 2000s rap era and a symbol of how hip-hop expanded into broader popular culture.</p>
+              <h3>Fashion, Branding, and Era Dominance</h3>
+              <p>Nelly’s influence also extended beyond music. His style, image, and commercial instincts helped define the broader feel of the early 2000s. He understood celebrity in a holistic way: records, visuals, fashion, and personality all reinforcing one another. That made him more than a hitmaker. He became one of the faces of a specific hip-hop era, especially as rap moved deeper into pop culture’s center.</p>
 
               <h3>Legacy</h3>
-              <p>Nelly’s legacy rests on both sales and influence. He was one of the central crossover rap stars of the early 2000s, and his records helped define the era’s sound. He gave St. Louis one of its biggest national music success stories and showed how melody, regional identity, and commercial instinct could coexist at the top of rap.</p>
-              <p>In music history, he stands as a major mainstream figure whose work helped bridge rap and pop for a mass audience without abandoning the identity that made him distinctive in the first place.</p>
+              <p>Nelly’s legacy is significant because he helped open mainstream rap to a softer melodic edge without losing the energy that made rap dominant in the first place. He proved that a Midwestern artist could lead the culture nationally, and his success helped expand the possibilities for crossover rap in the decades that followed. His catalog remains tied to one of hip-hop’s biggest commercial eras, but his influence stretches far beyond nostalgia.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1974 — Birth</strong>
-                  <p>Born Cornell Iral Haynes Jr. in Austin, Texas.</p>
+                  <strong>Late 1990s — St. Lunatics Period</strong>
+                  <p>Built early momentum in St. Louis and laid the foundation for a solo breakout through local recognition and group chemistry.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1990s — St. Lunatics Era</strong>
-                  <p>Began building his reputation in St. Louis as a member of the St. Lunatics.</p>
+                  <strong>2000 — Country Grammar</strong>
+                  <p>Released a massively successful debut that turned him into one of rap’s biggest stars and put St. Louis on the map.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>1999 — Solo Deal</strong>
-                  <p>Signed with Universal as a solo artist after local and regional buzz.</p>
+                  <strong>Early-to-Mid 2000s — Crossover Peak</strong>
+                  <p>Became one of the most commercially dominant artists in music through club hits, pop records, and major collaborations.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2000 — Breakthrough</strong>
-                  <p><em>Country Grammar</em> made him one of the biggest new stars in rap.</p>
+                  <strong>Late 2000s / 2010s — Veteran Presence</strong>
+                  <p>Remained a recognizable cultural figure as his earlier run became one of the defining stories of 2000s rap success.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2002 — Global Peak</strong>
-                  <p><em>Nellyville</em> and major singles such as “Hot in Herre” and “Dilemma” cemented his crossover dominance.</p>
+                  <strong>Legacy Phase — Lasting Recognition</strong>
+                  <p>Continued to be remembered as one of the key crossover artists who helped reshape rap’s commercial reach.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
-                  <div class="info-value">Cornell Iral Haynes Jr.</div>
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">Nelly</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
-                  <div class="info-value">Nelly</div>
+                  <span class="info-label">Birth Name</span>
+                  <div class="info-value">Cornell Iral Haynes Jr.</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Origin</span>
@@ -863,90 +810,90 @@ header#mainHeader.hidden {
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Pop Rap / R&amp;B</div>
+                  <div class="info-value">Hip-Hop / Midwest Rap / Pop Rap</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">GRAMMY Wins</span>
-                  <div class="info-value">3</div>
+                  <span class="info-label">Current Status</span>
+                  <div class="info-value">Widely recognized as one of the biggest crossover rap stars of the 2000s</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
                 <span class="tag">St. Louis</span>
-                <span class="tag">Pop Rap</span>
+                <span class="tag">Country Grammar</span>
                 <span class="tag">Melody</span>
-                <span class="tag">Crossover Success</span>
-                <span class="tag">2000s Era</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">Crossover</span>
+                <span class="tag">Midwest Rap</span>
+                <span class="tag">2000s</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>St. Lunatics Rise</strong>
-                  <span>The regional foundation that led to his solo breakthrough.</span>
+                  <strong>Country Grammar Era</strong>
+                  <span>The phase where Nelly exploded nationally and redefined what a Midwestern rap star could look like.</span>
                 </div>
                 <div class="album">
-                  <strong><em>Country Grammar</em></strong>
-                  <span>The debut era that made him a national star.</span>
+                  <strong>Crossover Dominance Era</strong>
+                  <span>The period where he became one of the most commercially successful rap artists of the 2000s.</span>
                 </div>
                 <div class="album">
-                  <strong><em>Nellyville</em></strong>
-                  <span>The period of full crossover dominance and global hits.</span>
+                  <strong>Legacy Era</strong>
+                  <span>A later chapter where his catalog and style became emblematic of rap’s crossover expansion.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for Nelly.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for Nelly on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/Nelly" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for Nelly.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for Nelly on Spotify and explore the records that made him a defining 2000s rap star.</p>
+                  <a href="https://open.spotify.com/search/Nelly" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and classic Nelly releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=Nelly+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to Nelly on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=Nelly+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Country Grammar</span>
+                  <span class="track-tag">Ride wit Me</span>
+                  <span class="track-tag">Hot in Herre</span>
+                  <span class="track-tag">Dilemma</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Country Grammar</span>
-                <span class="track-tag">Ride Wit Me</span>
-                <span class="track-tag">Hot in Herre</span>
-                <span class="track-tag">Dilemma</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
-                <a href="tupac.html" class="related-card">
-                  <h4>2Pac</h4>
-                  <p>A useful contrast in how earlier rap icons built mass cultural reach and crossover recognition.</p>
+                <a href="chingy.html" class="related-card">
+                  <h4>Chingy</h4>
+                  <p>Another St. Louis-linked artist whose rise reflects the city’s major moment in 2000s mainstream rap.</p>
                 </a>
-                <a href="future.html" class="related-card">
-                  <h4>Future</h4>
-                  <p>A strong archive comparison between two very different eras of commercial rap dominance.</p>
+                <a href="ludacris.html" class="related-card">
+                  <h4>Ludacris</h4>
+                  <p>A fellow 2000s rap star who combined charisma, crossover ability, and commercial consistency.</p>
                 </a>
-                <a href="young-dolph.html" class="related-card">
-                  <h4>Young Dolph</h4>
-                  <p>Another artist from outside the traditional coastal centers who built major regional power.</p>
+                <a href="ja-rule.html" class="related-card">
+                  <h4>Ja Rule</h4>
+                  <p>A useful comparison point in how melody, hooks, and crossover instincts reshaped rap stardom in the early 2000s.</p>
                 </a>
               </div>
             </section>
@@ -973,95 +920,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NBA YoungBoy | Rap Stories</title>
-  <meta name="description" content="A Rap Stories profile on NBA YoungBoy, covering his Baton Rouge upbringing, prolific rise, chart success, legal troubles, isolation, and modern rap legacy." />
+  <meta name="description" content="A Rap Stories premium profile on NBA YoungBoy, covering his Baton Rouge roots, prolific rise, emotional street rap style, legal turbulence, and lasting influence on modern hip-hop." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -461,240 +461,195 @@
       .hero { padding-top: 34px; }
       .hero-info h1 { letter-spacing: -1px; }
     }
-  
-/* Story Mode */
-.story-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: rgba(255,255,255,0.05);
-}
-.story-progress-bar {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  box-shadow: 0 0 18px rgba(212,175,55,0.35);
-}
-.story-rail {
-  position: fixed;
-  top: 120px;
-  right: 18px;
-  z-index: 1200;
-  display: grid;
-  gap: 10px;
-}
-.story-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-.story-dot.active {
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  border-color: transparent;
-  transform: scale(1.2);
-}
-.story-mode-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 1200;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(10,10,15,0.88);
-  color: #f4f4f5;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-.story-mode-toggle:hover {
-  transform: translateY(-2px);
-}
-body.story-mode .story-section {
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
-  filter: saturate(0.8);
-}
-body.story-mode .story-section.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: saturate(1);
-}
-body.story-mode .story-section .glass {
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-.story-kicker {
-  display:inline-block;
-  margin-bottom:12px;
-  padding:7px 11px;
-  border-radius:999px;
-  background: rgba(212,175,55,0.12);
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-@media (max-width: 920px) {
-  .story-rail { display:none; }
-}
 
+    .story-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2000;
+      background: rgba(255,255,255,0.05);
+    }
+    .story-progress-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      box-shadow: 0 0 18px rgba(212,175,55,0.35);
+    }
+    .story-rail {
+      position: fixed;
+      top: 120px;
+      right: 18px;
+      z-index: 1200;
+      display: grid;
+      gap: 10px;
+    }
+    .story-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.10);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .story-dot.active {
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      border-color: transparent;
+      transform: scale(1.2);
+    }
+    .story-mode-toggle {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1200;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,15,0.88);
+      color: #f4f4f5;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+    .story-mode-toggle:hover { transform: translateY(-2px); }
 
-/* Stats Panels */
-.artist-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-.stat-panel {
-  padding: 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.stat-panel .label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-.stat-panel .value {
-  color: var(--text);
-  font-weight: 800;
-  line-height: 1.3;
-}
-@media (max-width: 980px) {
-  .artist-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 560px) {
-  .artist-stats {
-    grid-template-columns: 1fr;
-  }
-}
+    body.story-mode .story-section {
+      opacity: 0.45;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.8);
+    }
+    body.story-mode .story-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1);
+    }
+    body.story-mode .story-section .glass {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
+    }
+    @media (max-width: 920px) {
+      .story-rail { display:none; }
+    }
 
+    .artist-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-panel {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-panel .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+    .stat-panel .value {
+      color: var(--text);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .artist-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .artist-stats { grid-template-columns: 1fr; }
+    }
 
-/* Music Integration */
-.music-panel {
-  margin-top: 24px;
-}
+    .music-panel { margin-top: 24px; }
+    .music-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .music-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .music-card p {
+      margin-bottom: 14px;
+    }
+    .music-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+    .music-link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .music-link-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #f5df8f);
+      color: #111;
+      border: none;
+    }
+    .essential-tracks {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .essential-tracks h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .track-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .track-tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #ededf1;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+    @media (max-width: 860px) {
+      .music-grid { grid-template-columns: 1fr; }
+    }
 
-.music-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.music-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.music-card h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.music-card p {
-  margin-bottom: 14px;
-}
-
-.music-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.music-link-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,0.35);
-}
-
-.music-link-btn.primary {
-  background: linear-gradient(135deg, var(--accent), #f5df8f);
-  color: #111;
-  border: none;
-}
-
-.essential-tracks {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.essential-tracks h3 {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.track-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.track-tag {
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: #ededf1;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@media (max-width: 860px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-
-/* Mobile header: fixed and hide/show on scroll */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-header#mainHeader.hidden {
-  transform: translateY(-100%);
-}
-
-</style>
+    @media (max-width: 768px) {
+      header#mainHeader.hidden { transform: translateY(-100%); }
+    }
+    header#mainHeader {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    header#mainHeader.hidden { transform: translateY(-100%); }
+  </style>
 </head>
 <body>
   <div class="story-progress"><div class="story-progress-bar" id="storyProgressBar"></div></div>
+
   <header id="mainHeader">
     <div class="container nav">
       <a href="index.html" class="brand">
@@ -703,10 +658,11 @@ header#mainHeader.hidden {
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
+        <a href="artist-archive.html">Archive</a>
         <a href="artist.html" class="active">Artist</a>
         <a href="category.html">Categories</a>
         <a href="timeline.html">Timeline</a>
-        <a href="map.html">Hip-Hop Map</a>
+        <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artist.html" class="nav-btn">Back to Artists</a>
@@ -727,7 +683,7 @@ header#mainHeader.hidden {
             <div class="artist-image-content">
               <span class="artist-tag">Artist Profile</span>
               <h2>NBA YoungBoy</h2>
-              <p>Prolific Baton Rouge rapper whose emotional intensity, relentless output, and legal turbulence made him one of the defining artists of his generation.</p>
+              <p>Baton Rouge star whose relentless output, emotional intensity, and street-rooted honesty made him one of modern rap’s most powerful and polarizing voices.</p>
             </div>
           </aside>
 
@@ -735,13 +691,13 @@ header#mainHeader.hidden {
             <span class="eyebrow">Rap Stories Profile</span>
             <h1>The Story of <span>NBA YoungBoy</span></h1>
             <p class="summary">
-              Born Kentrell DeSean Gaulden, NBA YoungBoy became one of the most commercially powerful and emotionally raw rappers of the streaming era. His music fused pain, paranoia, street survival, vulnerability, and relentless productivity, turning him from a troubled Baton Rouge teenager into one of the most consumed rap artists in modern music.
+              NBA YoungBoy emerged from Baton Rouge with a style built on pressure, pain, and total emotional exposure. His music often feels less like performance and more like direct transmission — raw, wounded, aggressive, paranoid, loving, and self-destructive sometimes all within the same song. He became one of the defining artists of his era not by sounding polished or calculated, but by sounding unfiltered enough that millions of listeners believed every word.
             </p>
 
             <div class="quick-facts">
               <div class="fact">
                 <span>Born</span>
-                <strong>October 20, 1999</strong>
+                <strong>Kentrell DeSean Gaulden</strong>
               </div>
               <div class="fact">
                 <span>From</span>
@@ -749,11 +705,11 @@ header#mainHeader.hidden {
               </div>
               <div class="fact">
                 <span>Known For</span>
-                <strong>Pain rap and street confession</strong>
+                <strong>Prolific releases, emotional street rap, devoted fanbase</strong>
               </div>
               <div class="fact">
                 <span>Status</span>
-                <strong>Active / Legally scrutinized</strong>
+                <strong>Modern Rap Superstar</strong>
               </div>
             </div>
 
@@ -761,22 +717,23 @@ header#mainHeader.hidden {
               <a href="#biography" class="btn btn-primary">Read Biography</a>
               <a href="#timeline" class="btn">View Timeline</a>
             </div>
+
             <div class="artist-stats">
               <div class="stat-panel">
-                <span class="label">Born</span>
-                <div class="value">1999</div>
-              </div>
-              <div class="stat-panel">
-                <span class="label">Home</span>
-                <div class="value">Baton Rouge</div>
+                <span class="label">Origin</span>
+                <div class="value">Baton Rouge, Louisiana</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Era</span>
-                <div class="value">2010s</div>
+                <div class="value">2010s–present</div>
               </div>
               <div class="stat-panel">
                 <span class="label">Known For</span>
-                <div class="value">Prolific output</div>
+                <div class="value">Raw emotional intensity</div>
+              </div>
+              <div class="stat-panel">
+                <span class="label">Impact</span>
+                <div class="value">Redefined digital-era rap fandom</div>
               </div>
             </div>
           </section>
@@ -784,165 +741,159 @@ header#mainHeader.hidden {
 
         <div class="content-layout">
           <div class="content-stack">
-            <section class="glass panel" id="biography">
+            <section class="glass panel story-section" id="biography" data-story-title="Biography">
               <h2>Biography</h2>
 
-              <h3>Early Life in Baton Rouge</h3>
-              <p>Kentrell DeSean Gaulden, known professionally as NBA YoungBoy and also as YoungBoy Never Broke Again, was born on October 20, 1999, in Baton Rouge, Louisiana. His early life unfolded in a city long associated with poverty, violence, and deep neighborhood divisions, and those pressures became central to the emotional world of his music. Raised largely by his grandmother while his father was serving a long prison sentence, he grew up inside instability rather than outside it.</p>
-              <p>From a young age, YoungBoy’s life reflected the same mixture of trauma, ambition, and danger that later defined many of his records. His songs would become known for sounding less like polished performances and more like direct emotional release—fear, anger, loyalty, guilt, isolation, and survival delivered with unusual intensity.</p>
+              <h3>Baton Rouge Beginnings</h3>
+              <p>Born Kentrell DeSean Gaulden, NBA YoungBoy came out of Baton Rouge, a city with one of the most intense and emotionally charged rap traditions in the South. His early life was shaped by instability, violence, legal trouble, and the constant sense that survival was never guaranteed. Those conditions became central to his art. He did not rap about pain as background texture. Pain was often the engine of the music itself.</p>
 
-              <h3>Rise Through Mixtapes and Internet Momentum</h3>
-              <p>YoungBoy began building a following while still a teenager, releasing a stream of mixtapes and videos that spread rapidly online. Unlike artists who depended on major-industry packaging before finding an audience, he built his reputation through consistency, raw feeling, and an unmistakable sense of lived experience. His records often sounded like confession under pressure, and that emotional realism helped him stand out in a crowded rap landscape.</p>
-              <p>As his catalog grew, so did his audience. He became one of the clearest examples of how streaming-era rap could turn relentless output into cultural dominance. His fan base did not simply consume occasional singles; it followed an ongoing emotional diary, one project after another, each deepening the sense that listeners were witnessing a life in real time.</p>
+              <h3>The Rise Through Volume</h3>
+              <p>One of the most important parts of YoungBoy’s story is his work rate. He built his rise through sheer volume, flooding the internet with mixtapes, videos, singles, and emotionally direct records that made listeners feel close to him. This relentless output helped create a relationship with fans that felt almost continuous. He did not appear only at carefully scheduled moments. He seemed always present, always releasing, always speaking.</p>
 
-              <div class="quote">NBA YoungBoy turned emotional overload into a career formula: constant music, constant pressure, and a voice that sounded trapped between vulnerability and threat.</div>
+              <h3>Emotion as Identity</h3>
+              <p>What made NBA YoungBoy stand apart from many of his peers was how exposed he sounded. His music could be threatening and intimate, defensive and desperate, cold and grieving. Rather than hide contradiction, he made contradiction his signature. That quality gave his records unusual power among listeners who heard not just a rapper, but someone documenting emotional instability in real time.</p>
 
-              <h3>Mainstream Success and Prolific Dominance</h3>
-              <p>By the late 2010s and early 2020s, NBA YoungBoy had become one of the most commercially successful rappers in the United States. His streaming numbers, chart presence, and nonstop release schedule made him a defining figure of internet-era rap consumption. He succeeded without always following the traditional celebrity model; much of his power came from direct fan loyalty rather than broad mainstream institutional approval.</p>
-              <p>Musically, his appeal lay in emotional contradiction. He could sound broken, aggressive, reflective, possessive, detached, and desperate within the same project. That made him deeply relatable to a generation drawn to rap that felt psychologically exposed rather than carefully controlled. His work also helped solidify Baton Rouge as one of the most influential emotional centers in modern Southern rap.</p>
+              <h3>Legal Pressure and Public Turbulence</h3>
+              <p>YoungBoy’s career has been shaped heavily by legal problems, surveillance, confinement, and controversy. In another artist’s career, those forces might have completely interrupted momentum. In his case, they became part of the public drama surrounding the music and deepened the image of him as both star and trapped figure. The tension between enormous popularity and constant restriction became one of the defining themes of his career.</p>
 
-              <h3>Legal Trouble and Public Scrutiny</h3>
-              <p>At the same time, his career was repeatedly interrupted and shaped by arrests, court supervision, weapons cases, and broader legal scrutiny. These issues became inseparable from his public image, reinforcing the sense that YoungBoy’s life and music were unfolding under permanent pressure. Even when he remained commercially dominant, the question of legal vulnerability hovered over his career.</p>
-              <p>That tension between success and restriction became one of the defining features of his story. He was a superstar whose visibility often seemed inseparable from confinement, whether physical, legal, or emotional. In that sense, his public identity came to represent not only rap fame, but rap fame under siege.</p>
+              <div class="quote">NBA YoungBoy turned vulnerability into force. His music does not ask to be understood from a distance — it pulls listeners directly into the pressure.</div>
 
-              <h3>Isolation, Image, and Artistic Identity</h3>
-              <p>As his fame expanded, YoungBoy also cultivated an image of distance from the traditional entertainment system. He often appeared more interested in releasing music than in participating in celebrity rituals. That separation strengthened his mystique. He became an artist who could dominate conversation while seeming deeply withdrawn from it.</p>
-              <p>His music continued to revolve around pain, betrayal, family strain, paranoia, revenge, love, and emotional exhaustion. More than many of his peers, YoungBoy helped define the sound of rap as internal warfare—a form where the emotional battle mattered as much as the external one.</p>
+              <h3>Fanbase, Influence, and Digital Power</h3>
+              <p>YoungBoy also changed assumptions about how rap fame works in the streaming era. His fanbase became one of the most intense and loyal in modern music, helping him dominate online spaces even when mainstream industry narratives seemed unable to fully explain his scale. He showed that direct connection, constant output, and emotional honesty could create a different kind of superstar — one less dependent on traditional gatekeepers and more rooted in audience devotion.</p>
 
               <h3>Legacy</h3>
-              <p>NBA YoungBoy’s legacy is already substantial. He helped define the emotional grammar of 2010s and 2020s street rap, showing how vulnerability, fury, and nonstop digital presence could coexist in a commercially dominant form. His influence can be heard across younger rappers who treat raw confession, melodic pain, and intense productivity as a normal part of the genre.</p>
-              <p>Whether discussed as a chart force, a symbol of Baton Rouge rap, or one of the key voices of the streaming era, he remains central to the story of modern hip-hop. His career is not just about hits. It is about the transformation of personal turmoil into one of the most powerful engines in contemporary rap culture.</p>
+              <p>NBA YoungBoy’s legacy is still unfolding, but his influence is already clear. He helped define a generation of emotionally volatile street rap and proved that melody, confession, rage, and pain could coexist inside a single dominating artistic voice. He stands as one of the central figures of modern rap’s internet-driven era: polarizing, prolific, deeply influential, and impossible to ignore.</p>
             </section>
 
-            <section class="glass panel" id="timeline">
+            <section class="glass panel story-section" id="timeline" data-story-title="Timeline">
               <h2>Career Timeline</h2>
               <div class="timeline">
                 <div class="timeline-item">
-                  <strong>1999 — Birth</strong>
-                  <p>Born Kentrell DeSean Gaulden in Baton Rouge, Louisiana.</p>
+                  <strong>Mid-2010s — Early Baton Rouge Rise</strong>
+                  <p>Began building attention through local momentum, early mixtapes, and a growing reputation for raw emotional street music.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Mid-2010s — Mixtape Rise</strong>
-                  <p>Began building a large following through independent releases, videos, and relentless online momentum.</p>
+                  <strong>Late 2010s — National Breakthrough</strong>
+                  <p>Expanded rapidly into one of rap’s biggest young names through nonstop releases and a deeply engaged fanbase.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Late 2010s — Breakthrough</strong>
-                  <p>Emerged as one of the most emotionally distinctive and commercially fast-rising rappers of his generation.</p>
+                  <strong>2019–2021 — Superstar Pressure Era</strong>
+                  <p>Became one of the most streamed and talked-about rappers in the genre while navigating intense public and legal scrutiny.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>2020s — Streaming Dominance</strong>
-                  <p>Became one of the most consumed artists in rap through nonstop releases and intense fan loyalty.</p>
+                  <strong>Early 2020s — Dominance Through Confinement</strong>
+                  <p>Maintained massive audience attention and cultural relevance even during periods of restriction and controversy.</p>
                 </div>
                 <div class="timeline-item">
-                  <strong>Ongoing — Fame Under Pressure</strong>
-                  <p>Continued shaping modern rap while legal scrutiny and personal turbulence remained part of his story.</p>
+                  <strong>2020s — Established Modern Icon</strong>
+                  <p>Solidified his place as one of the defining artists of his generation through volume, influence, and emotional impact.</p>
                 </div>
               </div>
             </section>
           </div>
 
           <aside class="side-stack">
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Details">
               <h2>Profile Details</h2>
               <div class="info-list">
                 <div class="info-row">
-                  <span class="info-label">Full Name</span>
+                  <span class="info-label">Artist Name</span>
+                  <div class="info-value">NBA YoungBoy</div>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Birth Name</span>
                   <div class="info-value">Kentrell DeSean Gaulden</div>
                 </div>
                 <div class="info-row">
-                  <span class="info-label">Stage Name</span>
-                  <div class="info-value">NBA YoungBoy / YoungBoy Never Broke Again</div>
-                </div>
-                <div class="info-row">
-                  <span class="info-label">Birthplace</span>
+                  <span class="info-label">Origin</span>
                   <div class="info-value">Baton Rouge, Louisiana</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Genres</span>
-                  <div class="info-value">Hip-Hop / Southern Rap</div>
+                  <div class="info-value">Hip-Hop / Southern Rap / Melodic Street Rap</div>
                 </div>
                 <div class="info-row">
                   <span class="info-label">Current Status</span>
-                  <div class="info-value">Active artist; legal issues shaped career</div>
+                  <div class="info-value">One of the most influential and prolific rappers of the modern streaming era</div>
                 </div>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Themes">
               <h2>Key Themes</h2>
               <div class="tags">
+                <span class="tag">Baton Rouge</span>
                 <span class="tag">Pain</span>
-                <span class="tag">Isolation</span>
                 <span class="tag">Street Survival</span>
-                <span class="tag">Productivity</span>
-                <span class="tag">Legal Pressure</span>
-                <span class="tag">Legacy</span>
+                <span class="tag">Prolific Output</span>
+                <span class="tag">Legal Turbulence</span>
+                <span class="tag">Fan Loyalty</span>
               </div>
             </section>
 
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Eras">
               <h2>Highlighted Eras</h2>
               <div class="discography">
                 <div class="album">
-                  <strong>Baton Rouge Hardship</strong>
-                  <span>The formative years that shaped his emotional style and street-centered worldview.</span>
+                  <strong>Mixtape Hunger Era</strong>
+                  <span>The phase where YoungBoy built his name through constant releases and intensely personal street records.</span>
                 </div>
                 <div class="album">
-                  <strong>Mixtape to Mainstream</strong>
-                  <span>The breakout era where relentless output turned him into a major rap force.</span>
+                  <strong>AI YoungBoy / Breakthrough Era</strong>
+                  <span>The period where he became one of rap’s most visible and emotionally distinct new stars.</span>
                 </div>
                 <div class="album">
-                  <strong>Dominance Under Scrutiny</strong>
-                  <span>The period in which huge success and recurring legal pressure became inseparable parts of his image.</span>
+                  <strong>Streaming Domination Era</strong>
+                  <span>A later chapter defined by relentless output, huge fan engagement, and major influence across modern rap.</span>
                 </div>
               </div>
             </section>
-          <section class="glass panel music-panel">
-            <h2>Music Integration</h2>
-            <p>
-              Move from reading to listening with direct artist music links and a quick essential-listening guide for NBA YoungBoy.
-            </p>
 
-            <div class="music-grid">
-              <div class="music-card">
-                <h3>Spotify</h3>
-                <p>Open a curated search for NBA YoungBoy on Spotify and keep the story moving with the music.</p>
-                <a href="https://open.spotify.com/search/NBA+YoungBoy" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+            <section class="glass panel music-panel story-section" data-story-title="Music">
+              <h2>Music Integration</h2>
+              <p>
+                Move from reading to listening with direct artist music links and a quick essential-listening guide for NBA YoungBoy.
+              </p>
+
+              <div class="music-grid">
+                <div class="music-card">
+                  <h3>Spotify</h3>
+                  <p>Open a curated search for NBA YoungBoy on Spotify and explore the records that built his massive modern following.</p>
+                  <a href="https://open.spotify.com/search/NBA%20YoungBoy" target="_blank" rel="noopener noreferrer" class="music-link-btn primary">Open on Spotify →</a>
+                </div>
+
+                <div class="music-card">
+                  <h3>YouTube</h3>
+                  <p>Watch official videos, performances, and major NBA YoungBoy releases on YouTube.</p>
+                  <a href="https://www.youtube.com/results?search_query=NBA+YoungBoy+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+                </div>
               </div>
 
-              <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Jump into official videos, performances, and major records related to NBA YoungBoy on YouTube.</p>
-                <a href="https://www.youtube.com/results?search_query=NBA+YoungBoy+official+music+videos" target="_blank" rel="noopener noreferrer" class="music-link-btn">Watch on YouTube →</a>
+              <div class="essential-tracks">
+                <h3>Essential Listening</h3>
+                <div class="track-list">
+                  <span class="track-tag">Outside Today</span>
+                  <span class="track-tag">No Smoke</span>
+                  <span class="track-tag">Lonely Child</span>
+                  <span class="track-tag">Make No Sense</span>
+                </div>
               </div>
-            </div>
+            </section>
 
-            <div class="essential-tracks">
-              <h3>Essential Listening</h3>
-              <div class="track-list">
-                <span class="track-tag">Outside Today</span>
-                <span class="track-tag">No Smoke</span>
-                <span class="track-tag">Make No Sense</span>
-                <span class="track-tag">Lonely Child</span>
-              </div>
-            </div>
-          </section>
-
-
-            <section class="glass panel">
+            <section class="glass panel story-section" data-story-title="Related">
               <h2>Related Stories</h2>
               <div class="related-list">
                 <a href="lil-durk.html" class="related-card">
                   <h4>Lil Durk</h4>
-                  <p>A modern rap power match shaped by nonstop visibility, legal issues, and major audience reach.</p>
-                </a>
-                <a href="future.html" class="related-card">
-                  <h4>Future</h4>
-                  <p>A broader 2010s connection through influence, volume, and the streaming-era takeover.</p>
+                  <p>Another emotionally intense street-rap figure whose music turns trauma, pressure, and survival into major cultural force.</p>
                 </a>
                 <a href="quando-rondo.html" class="related-card">
                   <h4>Quando Rondo</h4>
-                  <p>A close Southern link through era, affiliations, public conflict, and emotional songwriting.</p>
+                  <p>A closely linked Southern artist whose story overlaps with the same world of loyalty, conflict, and melodic street rap.</p>
+                </a>
+                <a href="kevin-gates.html" class="related-card">
+                  <h4>Kevin Gates</h4>
+                  <p>A strong comparison point in Baton Rouge-rooted intensity, emotional confession, and Southern rap authenticity.</p>
                 </a>
               </div>
             </section>
@@ -969,95 +920,139 @@ header#mainHeader.hidden {
 
   <div class="story-rail" id="storyRail" aria-label="Story chapters"></div>
   <button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>
-  <script src="story-mode.js"></script>
 
+  <script>
+  (function(){
+    const body = document.body;
+    const rail = document.getElementById("storyRail");
+    const toggle = document.getElementById("storyModeToggle");
+    const progressBar = document.getElementById("storyProgressBar");
+    const sections = Array.from(document.querySelectorAll(".story-section"));
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+    if (!rail || !toggle || !progressBar || !sections.length) return;
 
-  let lastScrollY = window.pageYOffset;
+    const STORAGE_KEY = "rapStoriesStoryMode";
+    let storyMode = localStorage.getItem(STORAGE_KEY);
+    storyMode = storyMode === null ? true : storyMode === "on";
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+    rail.innerHTML = "";
 
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
+    sections.forEach((section, index) => {
+      const title = section.dataset.storyTitle || `Section ${index + 1}`;
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "story-dot";
+      dot.setAttribute("aria-label", title);
+      dot.title = title;
 
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+      dot.addEventListener("click", () => {
+        const y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      });
+
+      rail.appendChild(dot);
+    });
+
+    const dots = Array.from(rail.querySelectorAll(".story-dot"));
+
+    function applyMode() {
+      body.classList.toggle("story-mode", storyMode);
+      toggle.textContent = `Story Mode: ${storyMode ? "On" : "Off"}`;
+      localStorage.setItem(STORAGE_KEY, storyMode ? "on" : "off");
+    }
+
+    function updateProgress() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    function updateActiveSection() {
+      let activeIndex = 0;
+      let bestDistance = Infinity;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 140);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      sections.forEach((section, index) => {
+        section.classList.toggle("active", index === activeIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+    }
+
+    toggle.addEventListener("click", () => {
+      storyMode = !storyMode;
+      applyMode();
+      updateActiveSection();
+    });
+
+    applyMode();
+    updateProgress();
+    updateActiveSection();
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveSection();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      updateProgress();
+      updateActiveSection();
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+
+    function handleScroll(){
+      const currentScrollY = window.pageYOffset;
+
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8){
+          header.classList.remove("hidden");
+        } else if(currentScrollY > lastScrollY + 4){
+          header.classList.add("hidden");
+        } else if(currentScrollY < lastScrollY - 4){
+          header.classList.remove("hidden");
+        }
+      } else {
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
+
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
     offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
+    handleScroll();
 
-
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
-
-  let lastScrollY = window.pageYOffset;
-
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
-
-  function handleScroll(){
-    const currentScrollY = window.pageYOffset;
-
-    if(window.innerWidth <= 768){
-      if(currentScrollY <= 8){
-        header.classList.remove("hidden");
-      } else if(currentScrollY > lastScrollY + 4){
-        header.classList.add("hidden");
-      } else if(currentScrollY < lastScrollY - 4){
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768){
         header.classList.remove("hidden");
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  offset();
-  handleScroll();
-
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", () => {
-    offset();
-    if(window.innerWidth > 768){
-      header.classList.remove("hidden");
-    }
-  });
-  window.addEventListener("scroll", handleScroll, {passive:true});
-})();
-</script>
-
+    });
+    window.addEventListener("scroll", handleScroll, {passive:true});
+  })();
+  </script>
 </body>
 </html>
