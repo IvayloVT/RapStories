@@ -421,10 +421,10 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     if (!header) return;
 
     const currentPage = getCurrentPage();
-    const isArtistFlowPage = currentPage === "artist.html" || !CORE_PAGES.has(currentPage);
-    const mobileRevealDelta = isArtistFlowPage ? 44 : 4;
     let lastScrollY = window.pageYOffset;
     const siteNav = header.querySelector("#site-nav");
+    const topRevealThreshold = 8;
+    const hideDelta = currentPage === "artist.html" || !CORE_PAGES.has(currentPage) ? 10 : 4;
 
     function offset() {
       updateHeaderOffset(header);
@@ -440,12 +440,10 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       }
 
       if (window.innerWidth <= 768) {
-        if (currentScrollY <= 8) {
+        if (currentScrollY <= topRevealThreshold) {
           header.classList.remove("hidden");
-        } else if (currentScrollY > lastScrollY + 4) {
+        } else if (currentScrollY > lastScrollY + hideDelta) {
           header.classList.add("hidden");
-        } else if (currentScrollY < lastScrollY - mobileRevealDelta) {
-          header.classList.remove("hidden");
         }
       } else {
         header.classList.remove("hidden");
