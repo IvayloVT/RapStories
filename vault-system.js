@@ -487,6 +487,7 @@ function setupGraph(){
 function setupArchive(){
   const root = document.querySelector("[data-vault-page='archive']");
   if(!root) return;
+  const TAG_PREVIEW_COUNT = 36;
   const grid = document.getElementById("artistGrid");
   const empty = document.getElementById("emptyState");
   const count = document.getElementById("resultCount");
@@ -496,8 +497,31 @@ function setupArchive(){
   const sort = document.getElementById("vaultSort");
   const chips = document.getElementById("tagChips");
   let activeTag = "all";
+  let tagsExpanded = false;
 
   const tags = ["all", ...Array.from(new Set(data.artists.flatMap(a => a.tags))).sort()];
+  const toggleButton = make("button","chip-row-toggle", "More tags <span aria-hidden=\"true\">→</span>");
+  toggleButton.type = "button";
+  toggleButton.setAttribute("aria-expanded", "false");
+
+  function updateTagVisibility(){
+    const buttons = chips.querySelectorAll(".chip");
+    buttons.forEach((button, index) => {
+      const shouldShow = tagsExpanded || index < TAG_PREVIEW_COUNT;
+      button.classList.toggle("chip-hidden", !shouldShow);
+    });
+
+    const hasOverflow = buttons.length > TAG_PREVIEW_COUNT;
+    if(!hasOverflow){
+      toggleButton.hidden = true;
+      return;
+    }
+
+    toggleButton.hidden = false;
+    toggleButton.innerHTML = tagsExpanded ? "Show fewer tags <span aria-hidden=\"true\">→</span>" : "More tags <span aria-hidden=\"true\">→</span>";
+    toggleButton.setAttribute("aria-expanded", String(tagsExpanded));
+  }
+
   tags.forEach(tag => {
     const btn = make("button","chip" + (tag==="all" ? " active" : ""), tag==="all" ? "All Tags" : tag);
     btn.type = "button";
@@ -509,6 +533,12 @@ function setupArchive(){
     });
     chips.appendChild(btn);
   });
+  chips.appendChild(toggleButton);
+  toggleButton.addEventListener("click", () => {
+    tagsExpanded = !tagsExpanded;
+    updateTagVisibility();
+  });
+  updateTagVisibility();
 
   function apply(){
     let list = [...data.artists];
