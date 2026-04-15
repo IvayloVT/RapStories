@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy | Rap Stories</title>
-  <meta name="description" content="Privacy information for Rap Stories." />
+  <meta name="description" content="Privacy Policy for Rap Stories." />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -25,6 +25,7 @@
       --max: 1100px;
       --shadow: 0 20px 50px rgba(0,0,0,0.45);
     }
+
     html[data-theme="dawn"] {
       --panel: rgba(247,237,219,0.84);
       --border: rgba(176,132,51,0.2);
@@ -41,6 +42,7 @@
       --header-border: rgba(176,132,51,0.18);
       --shadow: 0 20px 54px rgba(96,68,20,0.18);
     }
+
     html[data-theme="midnight"] {
       --panel: rgba(217,240,255,0.06);
       --border: rgba(109,199,255,0.16);
@@ -56,6 +58,7 @@
       --header-border: rgba(109,199,255,0.14);
       --shadow: 0 20px 54px rgba(0,10,30,0.52);
     }
+
     html[data-theme="ember"] {
       --panel: rgba(255,244,232,0.07);
       --border: rgba(242,180,90,0.16);
@@ -71,7 +74,9 @@
       --header-border: rgba(242,180,90,0.14);
       --shadow: 0 20px 54px rgba(22,10,3,0.52);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: Inter, Arial, sans-serif;
       background:
@@ -81,8 +86,10 @@
       color: var(--text);
       line-height: 1.7;
     }
+
     a { color: inherit; text-decoration: none; }
     .container { width: min(92%, var(--max)); margin: 0 auto; }
+
     .glass {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -90,281 +97,279 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+
     header {
-      position: sticky; top: 0; z-index: 20;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
       background: var(--header-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--header-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      transition: transform 0.3s ease;
     }
-    .nav { min-height: 78px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 1px; }
-    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, var(--accent), #fff0a5); color: #111; font-weight: 900; }
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
-    .hero { padding: 48px 0 24px; }
-    .hero-card, .panel { padding: 30px; }
-    .eyebrow { display:inline-block; margin-bottom: 12px; padding: 8px 12px; border-radius: 999px; background: rgba(212,175,55,0.15); color: var(--accent); font-size: 0.82rem; font-weight: 800; }
-    h1 { font-size: clamp(2.3rem, 5vw, 4rem); line-height: 1; margin-bottom: 14px; }
-    h1 span, h2 { color: var(--accent); }
-    p, li { color: var(--reading-text); }
-    main section { padding-bottom: 26px; }
-    ul { padding-left: 20px; margin-top: 10px; }
-    footer { padding: 24px 0 50px; color: var(--muted); }
-    .footer-wrap { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      font-size: 1.02rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
+
+    .brand-text {
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.25s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #fff0a5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 24px rgba(212,175,55,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212,175,55,0.28);
+    }
+
+    .hero {
+      padding: 48px 0 24px;
+    }
+
+    .hero-card,
+    .panel {
+      padding: 30px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.15);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    h1 span,
+    h2 {
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    p,
+    li {
+      color: var(--reading-text);
+    }
+
+    main section {
+      padding-bottom: 26px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
     .footer-links a:hover { color: var(--text); }
-    @media (max-width:760px){ .nav { flex-direction: column; padding: 14px 0; } .nav-links { justify-content:center; } .hero-card,.panel{padding:22px;} }
-  
-/* Premium header */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--header-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-}
+    .footer-brand { color: white; }
+    html[data-theme="dawn"] .footer-brand { color: var(--text); }
 
-.nav {
-  min-height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
+    #cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(92%, 900px);
+      background: rgba(10,10,15,0.96);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      color: #fff;
+      padding: 16px 18px;
+      z-index: 2000;
+      display: none;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-  font-size: 1.02rem;
-}
+    #cookie-banner .cookie-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  color: #111;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
-}
+    #cookie-banner p {
+      margin: 0;
+      color: #dbdbe2;
+      flex: 1 1 540px;
+      font-size: 0.95rem;
+    }
 
-.brand-text {
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+    #cookie-banner .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
+    .cookie-btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
 
-.nav-links a {
-  position: relative;
-  color: var(--muted);
-  transition: color 0.25s ease, transform 0.25s ease;
-  font-size: 0.96rem;
-}
+    .cookie-btn:hover {
+      transform: translateY(-1px);
+    }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--text);
-}
+    .cookie-btn.accept {
+      background: linear-gradient(135deg, #d4af37, #f5df8f);
+      color: #111;
+    }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
+    .cookie-btn.decline {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  transform: scaleX(1);
-}
+    @media (max-width: 820px) {
+      .nav {
+        flex-direction: column;
+        padding: 14px 0;
+      }
 
-.nav-btn {
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #f5df8f);
-  color: #111;
-  font-weight: 800;
-  border: none;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+      .nav-links {
+        justify-content: center;
+      }
+    }
 
-.nav-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
-}
+    @media (max-width: 768px) {
+      header.hidden {
+        transform: translateY(-100%);
+      }
 
-@media (max-width: 760px) {
-  .nav {
-    flex-direction: column;
-    padding: 14px 0;
-  }
+      .hero-card,
+      .panel {
+        padding: 22px;
+      }
 
-  .nav-links {
-    justify-content: center;
-    gap: 18px;
-  }
+      .nav-links {
+        gap: 18px;
+      }
 
-  .nav-links a::after {
-    bottom: -5px;
-  }
-}
-
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--header-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-}
-.nav {
-  min-height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-  font-size: 1.02rem;
-}
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  color: #111;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.35);
-}
-.brand-text {
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5, #ffffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.nav-links a {
-  position: relative;
-  color: var(--muted);
-  transition: color 0.25s ease;
-  font-size: 0.96rem;
-}
-.nav-links a:hover,
-.nav-links a.active { color: var(--text); }
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #fff0a5);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-.nav-links a:hover::after,
-.nav-links a.active::after { transform: scaleX(1); }
-.nav-btn {
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #d4af37, #f5df8f);
-  color: #111;
-  font-weight: 800;
-  border: none;
-  box-shadow: 0 10px 24px rgba(212,175,55,0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.nav-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(212,175,55,0.28);
-}
-footer {
-  padding: 24px 0 50px;
-  color: var(--muted);
-}
-.footer-wrap {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-.footer-links a:hover { color: var(--text); }
-.footer-brand { color: white; }
-html[data-theme="dawn"] .footer-brand { color: var(--text); }
-@media (max-width: 820px) {
-  .nav { flex-direction: column; padding: 14px 0; }
-  .nav-links { justify-content: center; }
-}
-
-
-/* Mobile header: show only at top */
-header#mainHeader {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header#mainHeader.hidden {
-    transform: translateY(-100%);
-  }
-}
-
-</style>
+      .nav-links a::after {
+        bottom: -5px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header id="mainHeader">
@@ -373,6 +378,7 @@ header#mainHeader {
         <div class="brand-mark">RS</div>
         <span class="brand-text">RAP STORIES</span>
       </a>
+
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="artist-archive.html">Archive</a>
@@ -382,42 +388,151 @@ header#mainHeader {
         <a href="map.html">Map</a>
         <a href="contact.html">Contact</a>
       </nav>
+
       <a href="index.html" class="nav-btn">Back to Home</a>
     </div>
   </header>
+
   <main>
     <section class="hero">
       <div class="container">
         <div class="glass hero-card">
           <span class="eyebrow">Site Policy</span>
           <h1>Your <span>Privacy</span> Matters</h1>
-          <p>Rap Stories is a content website and archive. This sample privacy page explains what basic information may be collected when visitors browse the site or contact the team.</p>
+          <p>
+            Rap Stories respects your privacy and is committed to protecting any personal information
+            you may provide while using the website.
+          </p>
         </div>
       </div>
     </section>
+
     <section>
       <div class="container glass panel">
-        <h2>What we collect</h2>
-        <p>This site may collect basic details you choose to submit, such as your name, email address, and message through the contact form. Standard technical data such as browser type, device type, and page visits may also be collected by hosting providers or analytics tools.</p>
-        <h2 style="margin-top:18px;">How information is used</h2>
+        <h2>Introduction</h2>
+        <p>
+          Welcome to Rap Stories. This Privacy Policy explains how we collect, use, and protect
+          information when you visit our website, browse our content, or contact us through forms
+          and other features.
+        </p>
+
+        <h2 style="margin-top:18px;">Information We Collect</h2>
+        <p>We may collect personal information that you voluntarily provide, including:</p>
         <ul>
-          <li>To respond to contact requests and story submissions.</li>
-          <li>To improve website performance and user experience.</li>
-          <li>To maintain site security and prevent abuse.</li>
+          <li>Your name</li>
+          <li>Your email address</li>
+          <li>Messages, story submissions, or other information you send through the contact form</li>
         </ul>
-        <h2 style="margin-top:18px;">Third-party services</h2>
-        <p>If you add analytics, forms, fonts, embeds, or newsletters later, those services may process visitor data under their own privacy terms. Update this page whenever new tools are added.</p>
+
+        <p>We may also automatically collect certain technical information, such as:</p>
+        <ul>
+          <li>IP address</li>
+          <li>Browser type</li>
+          <li>Device type</li>
+          <li>Pages visited</li>
+          <li>Time spent on the site</li>
+          <li>Referring website or source</li>
+        </ul>
+
+        <h2 style="margin-top:18px;">How We Use Information</h2>
+        <p>We may use collected information to:</p>
+        <ul>
+          <li>Respond to your inquiries, submissions, and messages</li>
+          <li>Improve website performance, design, and user experience</li>
+          <li>Monitor and protect the website against spam, abuse, and security threats</li>
+          <li>Understand how visitors use the site and improve content strategy</li>
+        </ul>
+
+        <h2 style="margin-top:18px;">Advertising & Cookies</h2>
+        <p>
+          Rap Stories may use <strong>Google AdSense</strong> and other third-party advertising
+          services to display ads. These services may use cookies, web beacons, and similar
+          technologies to provide advertisements based on your visit to this website and other websites.
+        </p>
+
+        <p>
+          Third-party vendors, including Google, use cookies to serve ads based on a user's prior
+          visits to this website or other websites. These cookies help provide more relevant advertising
+          based on your interests and browsing behavior.
+        </p>
+
+        <p>
+          Google may use the DoubleClick cookie and related advertising technologies. Users may opt out
+          of personalized advertising by visiting Google Ads Settings.
+        </p>
+
+        <p>
+          By using this website, you understand and agree that cookies and similar technologies may be
+          used for analytics, functionality, and advertising purposes.
+        </p>
+
+        <h2 style="margin-top:18px;">Third-Party Services</h2>
+        <p>
+          We may use third-party services such as form providers, analytics tools, embedded media,
+          fonts, hosting services, and advertising partners. These services may collect, process,
+          and store data according to their own privacy policies.
+        </p>
+
+        <p>
+          We encourage you to review the privacy policies of any third-party services that may interact
+          with your data through this website.
+        </p>
+
+        <h2 style="margin-top:18px;">Data Protection</h2>
+        <p>
+          We take reasonable technical and organizational measures to protect information from unauthorized
+          access, misuse, or disclosure. However, no method of online transmission or storage is completely
+          secure, and we cannot guarantee absolute security.
+        </p>
+
+        <h2 style="margin-top:18px;">Your Rights (UK & EU Users)</h2>
+        <p>
+          If you are located in the United Kingdom or the European Economic Area, you may have rights
+          under applicable data protection laws, including the right to:
+        </p>
+        <ul>
+          <li>Request access to the personal data we hold about you</li>
+          <li>Request correction of inaccurate or incomplete data</li>
+          <li>Request deletion of your personal data where appropriate</li>
+          <li>Object to or restrict certain types of processing</li>
+          <li>Withdraw consent where processing is based on consent</li>
+        </ul>
+
+        <p>
+          To make a privacy-related request, please contact us through the contact page.
+        </p>
+
+        <h2 style="margin-top:18px;">Children’s Privacy</h2>
+        <p>
+          Rap Stories is not intended to knowingly collect personal information from children under the
+          age of 13. If you believe a child has submitted personal information through the website,
+          please contact us so we can review and remove it if necessary.
+        </p>
+
+        <h2 style="margin-top:18px;">Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes in our site, services,
+          legal requirements, or advertising partners. Any updates will be posted on this page with the
+          latest version available here.
+        </p>
+
         <h2 style="margin-top:18px;">Contact</h2>
-        <p>For privacy-related questions, use the <a href="contact.html" style="color: var(--accent);">contact page</a>.</p>
+        <p>
+          If you have any questions about this Privacy Policy or would like to make a privacy-related
+          request, please use the
+          <a href="contact.html" style="color: var(--accent);">contact page</a>.
+        </p>
       </div>
     </section>
   </main>
+
   <footer>
     <div class="container footer-wrap">
       <div>
         <strong class="footer-brand">Rap Stories</strong>
         <p>Preserving the stories behind the legends.</p>
       </div>
+
       <div class="footer-links">
         <a href="about.html">About</a>
         <a href="artist.html">Artists</a>
@@ -427,39 +542,77 @@ header#mainHeader {
     </div>
   </footer>
 
-<script>
-(function(){
-  const header = document.getElementById("mainHeader");
-  if(!header) return;
+  <div id="cookie-banner">
+    <div class="cookie-inner">
+      <p>
+        This site uses cookies for functionality, analytics, and advertising. By clicking
+        “Accept”, you agree to our use of cookies.
+      </p>
+      <div class="cookie-actions">
+        <button class="cookie-btn decline" id="cookieDecline">Decline</button>
+        <button class="cookie-btn accept" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
 
-  function offset(){
-    document.body.style.paddingTop = header.offsetHeight + "px";
-  }
+  <script>
+    (function () {
+      const header = document.getElementById("mainHeader");
+      if (!header) return;
 
-  function scroll(){
-    if(window.innerWidth <= 768){
-      if(window.pageYOffset <= 5){
-        header.classList.remove("hidden");
-      } else {
-        header.classList.add("hidden");
+      function offset() {
+        document.body.style.paddingTop = header.offsetHeight + "px";
       }
-    } else {
-      header.classList.remove("hidden");
-    }
-  }
 
-  offset();
-  scroll();
+      function scrollHandler() {
+        if (window.innerWidth <= 768) {
+          if (window.pageYOffset <= 5) {
+            header.classList.remove("hidden");
+          } else {
+            header.classList.add("hidden");
+          }
+        } else {
+          header.classList.remove("hidden");
+        }
+      }
 
-  window.addEventListener("load", offset);
-  window.addEventListener("resize", offset);
-  window.addEventListener("scroll", scroll, {passive:true});
-})();
-</script>
+      offset();
+      scrollHandler();
 
-  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+      window.addEventListener("load", offset);
+      window.addEventListener("resize", offset);
+      window.addEventListener("scroll", scrollHandler, { passive: true });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const banner = document.getElementById("cookie-banner");
+      const acceptBtn = document.getElementById("cookieAccept");
+      const declineBtn = document.getElementById("cookieDecline");
+      const storageKey = "rapstories_cookie_choice";
+
+      if (!banner || !acceptBtn || !declineBtn) return;
+
+      const savedChoice = localStorage.getItem(storageKey);
+
+      if (!savedChoice) {
+        banner.style.display = "block";
+      }
+
+      acceptBtn.addEventListener("click", function () {
+        localStorage.setItem(storageKey, "accepted");
+        banner.style.display = "none";
+      });
+
+      declineBtn.addEventListener("click", function () {
+        localStorage.setItem(storageKey, "declined");
+        banner.style.display = "none";
+      });
+    })();
+  </script>
+
+  <script src="site-config.js"></script>
+  <script src="site-enhancements.js"></script>
 </body>
 </html>
-
-
-
