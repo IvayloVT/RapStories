@@ -488,6 +488,7 @@ function setupArchive(){
   const root = document.querySelector("[data-vault-page='archive']");
   if(!root) return;
   const TAG_PREVIEW_COUNT = 36;
+  const MOBILE_TAG_PREVIEW_COUNT = 19;
   const grid = document.getElementById("artistGrid");
   const empty = document.getElementById("emptyState");
   const count = document.getElementById("resultCount");
@@ -504,14 +505,19 @@ function setupArchive(){
   toggleButton.type = "button";
   toggleButton.setAttribute("aria-expanded", "false");
 
+  function getTagPreviewCount(){
+    return window.innerWidth <= 760 ? MOBILE_TAG_PREVIEW_COUNT : TAG_PREVIEW_COUNT;
+  }
+
   function updateTagVisibility(){
+    const previewCount = getTagPreviewCount();
     const buttons = chips.querySelectorAll(".chip");
     buttons.forEach((button, index) => {
-      const shouldShow = tagsExpanded || index < TAG_PREVIEW_COUNT;
+      const shouldShow = tagsExpanded || index < previewCount;
       button.classList.toggle("chip-hidden", !shouldShow);
     });
 
-    const hasOverflow = buttons.length > TAG_PREVIEW_COUNT;
+    const hasOverflow = buttons.length > previewCount;
     if(!hasOverflow){
       toggleButton.hidden = true;
       return;
@@ -538,6 +544,7 @@ function setupArchive(){
     tagsExpanded = !tagsExpanded;
     updateTagVisibility();
   });
+  window.addEventListener("resize", updateTagVisibility);
   updateTagVisibility();
 
   function apply(){
