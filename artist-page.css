@@ -315,6 +315,27 @@
     .artist-image h2 { font-size: 2rem; margin-bottom: 8px; }
     .artist-image p { color: var(--reading-text); font-size: 0.95rem; }
 
+    html[data-theme="dawn"] .artist-image::before {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 48%, rgba(244,234,216,0.48) 76%, rgba(244,234,216,0.86) 100%),
+        var(--artist-image, url("images/21-savage.jpg")) center/cover no-repeat;
+    }
+
+    html[data-theme="dawn"] .artist-tag {
+      background: rgba(18, 14, 10, 0.82);
+      border-color: rgba(255,255,255,0.04);
+      color: #bf8f2d;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+    }
+
+    html[data-theme="dawn"] .artist-image h2,
+    html[data-theme="dawn"] .artist-image p,
+    html[data-theme="dawn"] .artist-image .info-label,
+    html[data-theme="dawn"] .artist-image .info-value {
+      color: #7a5818;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.18);
+    }
+
     .hero-info { padding: 28px; }
     .hero-info,
     .panel,
@@ -752,6 +773,8 @@
 
     .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
     .footer-links a:hover { color: var(--text); }
+    .footer-brand { color: white; }
+    html[data-theme="dawn"] .footer-brand { color: var(--text); }
 
     @media (max-width: 1150px) {
       .hero-layout, .content-layout { grid-template-columns: 1fr; }

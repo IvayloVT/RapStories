@@ -336,7 +336,7 @@
       "</div>",
       "</section>",
       "</main>",
-      '<footer><div class="container footer-wrap"><div><strong style="color:white;">Rap Stories</strong><p>Preserving the stories behind the legends.</p></div><div class="footer-links"><a href="about.html">About</a><a href="artist.html">Artists</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div></div></footer>',
+      '<footer><div class="container footer-wrap"><div><strong class="footer-brand">Rap Stories</strong><p>Preserving the stories behind the legends.</p></div><div class="footer-links"><a href="about.html">About</a><a href="artist.html">Artists</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></footer>',
       '<div class="story-rail" id="storyRail" aria-label="Story chapters"></div>',
       '<button class="story-mode-toggle" id="storyModeToggle" type="button">Story Mode: On</button>',
       nextStoryButton
