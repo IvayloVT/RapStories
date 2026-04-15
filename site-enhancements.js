@@ -40,6 +40,22 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     { id: "midnight", label: "Midnight" },
     { id: "ember", label: "Ember" }
   ];
+  const STANDARD_NAV_LINKS = [
+    { href: "index.html", label: "Home" },
+    { href: "artist-archive.html", label: "Archive" },
+    { href: "artist.html", label: "Artist" },
+    { href: "category.html", label: "Categories" },
+    { href: "timeline.html", label: "Timeline" },
+    { href: "map.html", label: "Map" },
+    { href: "contact.html", label: "Contact" }
+  ];
+  const STANDARD_FOOTER_LINKS = [
+    { href: "about.html", label: "About" },
+    { href: "artist.html", label: "Artists" },
+    { href: "contact.html", label: "Contact" },
+    { href: "privacy.html", label: "Privacy" },
+    { href: "terms.html", label: "Terms" }
+  ];
 
   function cleanText(value) {
     if (!value) return value;
@@ -94,6 +110,22 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
 
   function getTheme(themeId) {
     return THEMES.find(function (theme) { return theme.id === themeId; }) || THEMES[0];
+  }
+
+  function buildLinkMarkup(links) {
+    return links.map(function (link) {
+      return '<a href="' + link.href + '">' + link.label + "</a>";
+    }).join("");
+  }
+
+  function normalizeHeaderFooterLinks() {
+    document.querySelectorAll(".nav-links").forEach(function (nav) {
+      nav.innerHTML = buildLinkMarkup(STANDARD_NAV_LINKS);
+    });
+
+    document.querySelectorAll(".footer-links").forEach(function (footer) {
+      footer.innerHTML = buildLinkMarkup(STANDARD_FOOTER_LINKS);
+    });
   }
 
   function applyTheme(themeId) {
@@ -688,6 +720,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
 
   document.addEventListener("DOMContentLoaded", function () {
     cleanTree(document.body);
+    normalizeHeaderFooterLinks();
     setupSkipLink();
     setupHeaderMenu();
     setActiveNav();
