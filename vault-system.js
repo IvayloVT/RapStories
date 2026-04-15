@@ -500,7 +500,7 @@ function setupArchive(){
   let tagsExpanded = false;
 
   const tags = ["all", ...Array.from(new Set(data.artists.flatMap(a => a.tags))).sort()];
-  const toggleButton = make("button","chip-row-toggle", "More tags <span aria-hidden=\"true\">→</span>");
+  const toggleButton = make("button","chip-row-toggle", "More Tags");
   toggleButton.type = "button";
   toggleButton.setAttribute("aria-expanded", "false");
 
@@ -518,7 +518,7 @@ function setupArchive(){
     }
 
     toggleButton.hidden = false;
-    toggleButton.innerHTML = tagsExpanded ? "Show fewer tags <span aria-hidden=\"true\">→</span>" : "More tags <span aria-hidden=\"true\">→</span>";
+    toggleButton.textContent = tagsExpanded ? "Show Fewer Tags" : "More Tags";
     toggleButton.setAttribute("aria-expanded", String(tagsExpanded));
   }
 
