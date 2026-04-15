@@ -36,6 +36,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
   const THEME_STORAGE_KEY = "rapStoriesTheme";
   const THEMES = [
     { id: "obsidian", label: "Obsidian" },
+    { id: "dawn", label: "Dawn" },
     { id: "midnight", label: "Midnight" },
     { id: "ember", label: "Ember" }
   ];
@@ -98,7 +99,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
   function applyTheme(themeId) {
     const theme = getTheme(themeId);
     document.documentElement.setAttribute("data-theme", theme.id);
-    document.documentElement.style.colorScheme = "dark";
+    document.documentElement.style.colorScheme = theme.id === "dawn" ? "light" : "dark";
     return theme;
   }
 
@@ -142,9 +143,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       "header#mainHeader .nav-toggle:focus-visible{outline:2px solid rgba(212,175,55,0.7);outline-offset:3px}",
       "header#mainHeader #site-nav{display:none;width:100%;margin:0}",
       "header#mainHeader #site-nav.nav-open{display:block}",
-      "header#mainHeader #site-nav .nav-panel{display:grid;gap:12px;padding:14px;border-radius:22px;background:rgba(8,10,16,0.96);border:1px solid rgba(255,255,255,0.09);box-shadow:0 20px 50px rgba(0,0,0,.34)}",
-      "html[data-theme='midnight'] header#mainHeader #site-nav .nav-panel{background:rgba(6,12,24,0.96);border-color:rgba(109,199,255,0.14)}",
-      "html[data-theme='ember'] header#mainHeader #site-nav .nav-panel{background:rgba(22,13,6,0.96);border-color:rgba(242,180,90,0.16)}",
+      "header#mainHeader #site-nav .nav-panel{display:grid;gap:12px;padding:14px;border-radius:22px;background:var(--header-bg,rgba(8,10,16,0.96));border:1px solid var(--header-border,rgba(255,255,255,0.09));box-shadow:0 20px 50px rgba(0,0,0,.34)}",
       "header#mainHeader #site-nav .nav-links{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;width:100%}",
       "header#mainHeader #site-nav .nav-links a{display:flex!important;align-items:center;justify-content:center;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--muted,#a5a5b1);text-align:center;min-height:48px}",
       "header#mainHeader #site-nav .nav-links a:hover,header#mainHeader #site-nav .nav-links a.active{color:var(--text,#f4f4f5);border-color:rgba(212,175,55,0.28);background:rgba(255,255,255,0.08)}",
