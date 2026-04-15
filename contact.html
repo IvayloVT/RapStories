@@ -485,6 +485,9 @@
       font-weight: 700;
     }
 
+    .footer-brand { color: white; }
+    html[data-theme="dawn"] .footer-brand { color: var(--text); }
+
     footer { padding: 24px 0 50px; color: var(--muted); }
     .footer-wrap {
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -676,7 +679,7 @@
   <footer>
     <div class="container footer-wrap">
       <div>
-        <strong style="color:white;">Rap Stories</strong>
+        <strong class="footer-brand">Rap Stories</strong>
         <p>Preserving the stories behind the legends.</p>
       </div>
       <div class="footer-links">
