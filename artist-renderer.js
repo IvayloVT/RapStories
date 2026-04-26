@@ -354,7 +354,15 @@
 
   function getOrderedStorySlugs() {
     const stories = window.ARTIST_STORIES || {};
+    const pinnedFirst = ["21-savage"];
     return Object.keys(stories).sort(function (leftSlug, rightSlug) {
+      const leftPinned = pinnedFirst.indexOf(leftSlug);
+      const rightPinned = pinnedFirst.indexOf(rightSlug);
+
+      if (leftPinned !== -1 || rightPinned !== -1) {
+        return (leftPinned === -1 ? 999 : leftPinned) - (rightPinned === -1 ? 999 : rightPinned);
+      }
+
       const leftStory = stories[leftSlug] || {};
       const rightStory = stories[rightSlug] || {};
       const leftName = (leftStory.name || leftSlug).trim();
