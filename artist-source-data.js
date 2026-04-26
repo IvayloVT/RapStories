@@ -1382,7 +1382,154 @@
       { label: 'Rock & Roll Hall of Fame', href: 'https://www.rockhall.com/inductees/tupac-shakur', note: 'Strong reference for influence, canon status, and long-term cultural impact.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/2Pac/', note: 'Useful for release history, chart context, and retrospective reporting.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=2Pac&type=all', note: 'Helpful for checking catalog and release details.' }
-    ]
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Early Life and Political Roots</h3>
+      <p>Tupac Amaru Shakur was born on June 16, 1971, in East Harlem, New York. His early life was shaped by family history, political awareness, poverty, movement, and pressure. His mother, Afeni Shakur, had been connected to the Black Panther Party, and that background gave Tupac a direct relationship to ideas about race, resistance, policing, survival, and community power before he ever became famous.</p>
+
+      <p>That political inheritance mattered because Tupac never sounded like an artist who discovered social issues only after success. The language of injustice, anger, pride, and protection was already part of his emotional world. Even when his songs were personal, they often carried a larger social frame. He could describe family struggle, street danger, or inner conflict while also pointing toward the conditions that created those realities.</p>
+
+      <h3>Education, Performance, and Artistic Discipline</h3>
+      <p>Before the global fame, Tupac studied performance, poetry, dance, and theater. That training is one of the keys to understanding why his music still feels alive. He did not only write lyrics; he performed feeling. His voice could sound wounded, furious, charming, sarcastic, tender, or defiant depending on the record. That emotional control gave his catalog unusual range.</p>
+
+      <p>His artistic education also helped him move between music and film with rare confidence. Tupac had a natural screen presence because he understood timing, character, and tension. In rap, that same instinct allowed him to make songs feel like scenes. A 2Pac verse often sounds like a person speaking from inside a crisis rather than someone simply reporting what happened.</p>
+
+      <h3>Digital Underground and the First Steps Into Rap</h3>
+      <p>Tupac's entry into the industry came through Digital Underground, where he learned inside a creative collective rather than arriving fully formed as a solo star. That period gave him exposure to touring, recording, stagecraft, and the business of music. It also placed him near artists who understood humor, funk, performance, and alternative rap energy.</p>
+
+      <p>When he stepped forward as a solo artist, however, his voice felt more urgent and confrontational. Early records such as <em>2Pacalypse Now</em> presented him as a young rapper willing to talk about poverty, police violence, teen pregnancy, and social abandonment. The album was not polished in the way later superstar records would be, but it announced his purpose: Tupac wanted rap to carry testimony, not just entertainment.</p>
+
+      <h3>The Emotional Range That Made Him Different</h3>
+      <p>2Pac's greatness came from contradiction. He could be militant and vulnerable, poetic and aggressive, celebratory and paranoid, deeply compassionate and openly reckless. That complexity made him feel human. He did not offer listeners a clean hero image. He gave them a person wrestling with loyalty, fame, fear, pride, desire, revenge, grief, and hope all at once.</p>
+
+      <p>This is why songs like "Dear Mama", "Keep Ya Head Up", "Brenda's Got a Baby", "So Many Tears", "Ambitionz Az a Ridah", and "Changes" can sit in the same legacy. They show different sides of the same artist: son, activist, survivor, actor, friend, rival, public target, and young man under extraordinary pressure. Few rappers have ever made contradiction feel so central to their power.</p>
+
+      <h3>Fame, Conflict, and the Cost of Visibility</h3>
+      <p>As Tupac became more famous, his life became harder to separate from controversy. Legal cases, public feuds, media narratives, violence, and industry conflict surrounded him. A responsible biography should not turn those events into entertainment. They matter because they show how quickly fame can intensify existing pressures, especially for an artist whose image was built from honesty, pain, and confrontation.</p>
+
+      <p>The East Coast and West Coast rivalry became the most famous frame around his final years, but Tupac's story is bigger than that conflict. Reducing him only to rivalry misses the writer, actor, thinker, and cultural witness at the center of the story. The conflict shaped his final public image, but it did not create his talent. His artistry was already visible before the mythology took over.</p>
+
+      <h3>Death Row Era and Final Creative Burst</h3>
+      <p>After prison, Tupac joined Death Row Records and entered the most commercially explosive period of his career. <em>All Eyez on Me</em> captured a larger-than-life version of 2Pac: confident, wounded, celebratory, angry, and fully aware that the world was watching. It became one of rap's defining double albums because it carried both blockbuster energy and personal urgency.</p>
+
+      <p>The Makaveli period added another layer. <em>The Don Killuminati: The 7 Day Theory</em> sounded darker, more suspicious, and more symbolic, released after his death but recorded in the shadow of his final months. That project strengthened the sense that Tupac was not only making songs; he was building a myth in real time, whether intentionally or through the speed and intensity of his life.</p>
+
+      <h3>Why His Biography Still Matters</h3>
+      <p>Tupac's biography remains important because it explains why his music continues to reach new generations. He was not simply a successful rapper. He became a language for people trying to express anger at injustice, love for family, distrust of systems, ambition in hostile conditions, and grief that does not disappear. His life was short, but the emotional scale of his work made it feel much larger.</p>
+
+      <p>For Rap Stories, 2Pac is one of the archive's central figures because his career connects so many parts of hip-hop culture: activism, poetry, street realism, film, media pressure, regional identity, conflict, posthumous legacy, and the question of how much one artist can represent for millions of people.</p>
+
+      <div class="quote">2Pac's power was not perfection. It was urgency: he made contradiction, pain, and hope feel impossible to ignore.</div>
+    `,
+    riseToFameHtml: `
+      <p>2Pac's rise began with creative training and industry proximity before turning into one of the fastest ascents in rap history. Digital Underground gave him an early platform, but his solo work quickly separated him from the group setting. He sounded more urgent, more political, and more emotionally exposed than many of his peers.</p>
+      <p><em>2Pacalypse Now</em> introduced him as a socially aware voice. <em>Strictly 4 My N.I.G.G.A.Z...</em> expanded his reach with records that balanced protest, empathy, and street tension. By the time <em>Me Against the World</em> arrived, Tupac had become more than a promising rapper. He was a major cultural figure whose life, art, and public image were all moving at dangerous speed.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1971 - Birth</strong>
+          <p>Born Tupac Amaru Shakur in East Harlem, New York.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1980s - Artistic Development</strong>
+          <p>Studied poetry, acting, dance, and performance, building the expressive foundation that later shaped his music and film work.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Early 1990s - Digital Underground and Solo Debut</strong>
+          <p>Entered the industry through Digital Underground, then released <em>2Pacalypse Now</em>, establishing himself as a politically charged solo voice.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1993 - Wider Recognition</strong>
+          <p><em>Strictly 4 My N.I.G.G.A.Z...</em> broadened his audience while songs such as "Keep Ya Head Up" showed his ability to combine toughness with empathy.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1995 - Me Against the World</strong>
+          <p>Released one of his most personal albums, strengthening his reputation as a writer of pain, paranoia, reflection, and survival.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1996 - Death Row Peak</strong>
+          <p><em>All Eyez on Me</em> made him the dominant rap figure of the moment, combining commercial force with emotional intensity.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1996 - Final Chapter</strong>
+          <p>Was fatally shot in Las Vegas, turning an already major career into one of hip-hop's most debated and mourned legacies.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>After 1996 - Posthumous Influence</strong>
+          <p>Posthumous releases, films, books, scholarship, and cultural memory kept his work central to hip-hop history.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>2Pacalypse Now</strong>
+          <span>The debut that introduced Tupac as a political and socially conscious voice willing to address injustice directly.</span>
+        </div>
+        <div class="album">
+          <strong>Strictly 4 My N.I.G.G.A.Z...</strong>
+          <span>A breakthrough step that combined protest, personal storytelling, and songs with wider radio reach.</span>
+        </div>
+        <div class="album">
+          <strong>Me Against the World</strong>
+          <span>One of his most reflective works, built around pressure, isolation, vulnerability, and survival.</span>
+        </div>
+        <div class="album">
+          <strong>All Eyez on Me</strong>
+          <span>The blockbuster Death Row double album that captured Tupac's superstar force and larger-than-life public image.</span>
+        </div>
+        <div class="album">
+          <strong>The Don Killuminati: The 7 Day Theory</strong>
+          <span>The Makaveli-era project that deepened his mythology with darker, urgent, and symbolic writing.</span>
+        </div>
+        <div class="album">
+          <strong>Essential Songs</strong>
+          <span>"Dear Mama", "Keep Ya Head Up", "Changes", "California Love", "Hail Mary", and "Ambitionz Az a Ridah" show the range of his voice.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Public Pressure and Legal Trouble</h3>
+      <p>Tupac's career was repeatedly shaped by legal cases, media scrutiny, and public controversy. Those events should be handled carefully because they are part of the historical record, but they should not be treated as the whole story. They show the pressure surrounding him, not the full measure of his artistry.</p>
+
+      <h3>Violence and Industry Conflict</h3>
+      <p>The violence around Tupac's final years, including the East Coast-West Coast rivalry, became one of the most discussed subjects in hip-hop history. A useful archive page has to give that context without turning tragedy into spectacle. The conflict mattered, but it should not erase the deeper work he made before and during that period.</p>
+
+      <h3>The Problem of Myth</h3>
+      <p>Because Tupac died young, his image became mythic. That creates a challenge for readers: it is easy to see only the legend and miss the person. His legacy is strongest when both are held together: the icon who changed culture and the young artist still developing under extraordinary pressure.</p>
+    `,
+    culturalImpactHtml: `
+      <p>2Pac's cultural impact reaches far beyond rap charts. He became a symbol for people who saw their own anger, love, pain, and contradictions in his music. His songs are studied because they connect personal storytelling to social conditions: poverty, racism, policing, family struggle, masculinity, and survival.</p>
+      <p>He also changed what a rapper could represent. Tupac was not only a recording artist. He was an actor, poet, interview subject, political symbol, style figure, and public personality whose words moved through music, film, classrooms, documentaries, murals, and community memory. That range is why his influence still feels active rather than frozen in the 1990s.</p>
+    `,
+    legacyHtml: `
+      <p>2Pac's legacy is built on emotional truth. His catalog remains powerful because it does not present a single clean identity. It shows tenderness beside rage, hope beside despair, political awareness beside personal recklessness. That human complexity is why listeners continue to return to him.</p>
+      <p>In hip-hop history, he stands as one of the clearest examples of rap as testimony. His life was brief, but his work helped prove that rap could carry poetry, protest, confession, contradiction, and mass appeal at the same time. For many listeners, 2Pac is not only an artist from the past; he is a permanent reference point for what rap can mean.</p>
+    `,
+    relatedHtml: `<div class="related-list">
+      <a href="biggie.html" class="related-card">
+        <h4>The Notorious B.I.G.</h4>
+        <p>The East Coast giant forever connected to the era, rivalry, and mythology surrounding 2Pac's final years.</p>
+      </a>
+      <a href="snoop-dogg.html" class="related-card">
+        <h4>Snoop Dogg</h4>
+        <p>A Death Row contemporary whose career helps frame the West Coast sound and media power of the 1990s.</p>
+      </a>
+      <a href="dr-dre.html" class="related-card">
+        <h4>Dr. Dre</h4>
+        <p>A West Coast architect whose production legacy shaped the ecosystem around Tupac's Death Row period.</p>
+      </a>
+      <a href="ice-cube.html" class="related-card">
+        <h4>Ice Cube</h4>
+        <p>A key comparison for political anger, Los Angeles rap identity, film crossover, and cultural authority.</p>
+      </a>
+      <a href="dmx.html" class="related-card">
+        <h4>DMX</h4>
+        <p>Another emotionally intense rap icon whose pain, faith, and raw delivery reached millions.</p>
+      </a>
+    </div>`
   },
   'yg': {
     reviewDate: '2026-04-10',

@@ -166,7 +166,7 @@
     var formattedDate = formatReviewDate(reviewDate);
     var sourceLinks = getSourceLinks(story).filter(function (source) {
       return !/Britannica/i.test(source.label || "");
-    });
+    }).slice(0, 4);
     var sourceTier = story.sourceTier || "generated";
     var sourceBadge = sourceTier === "curated" ? "Curated Source Set" : "Reference Reviewed";
     var editorialStandard = sourceTier === "curated"
@@ -332,7 +332,7 @@
       "</div>",
       '<aside class="side-stack">',
       '<div class="artist-layout-column">',
-      '<section class="glass panel story-section" data-story-title="Details"><h2>Profile Details</h2>' + (story.detailsHtml || "") + buildSectionCitationHtml(story, "details", "Profile Details") + "</section>",
+      '<section class="glass panel story-section" data-story-title="Details"><h2>Profile Details</h2>' + (story.detailsHtml || "") + "</section>",
       '<section class="glass panel story-section" data-story-title="Eras"><h2>Highlighted Eras</h2>' + (story.erasHtml || "") + "</section>",
       '<section class="glass panel music-panel story-section" data-story-title="Music"><h2>Music Integration</h2>' + (story.musicHtml || "") + "</section>",
       "</div>",
