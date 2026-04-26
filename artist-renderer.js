@@ -164,12 +164,14 @@
   function buildCredibilityHtml(story) {
     var reviewDate = story.reviewDate || REVIEW_DATE;
     var formattedDate = formatReviewDate(reviewDate);
-    var sourceLinks = getSourceLinks(story);
+    var sourceLinks = getSourceLinks(story).filter(function (source) {
+      return !/Britannica/i.test(source.label || "");
+    });
     var sourceTier = story.sourceTier || "generated";
-    var sourceBadge = sourceTier === "curated" ? "Curated Source Set" : "Source Check Enabled";
+    var sourceBadge = sourceTier === "curated" ? "Curated Source Set" : "Reference Reviewed";
     var editorialStandard = sourceTier === "curated"
       ? "Hand-curated reference pack for this artist profile"
-      : "Narrative summary with recommended source verification";
+      : "Original editorial overview with reference links for verification";
     var reviewNotes = story.reviewNotes
       ? '<p class="credibility-note">' + escapeHtml(story.reviewNotes) + "</p>"
       : "";
@@ -181,7 +183,7 @@
       '<span class="credibility-badge">Reviewed ' + escapeHtml(formattedDate) + "</span>",
       '<span class="credibility-badge">' + escapeHtml(sourceBadge) + "</span>",
       "</div>",
-      '<p>This page is an editorial summary designed for discovery and context. For exact release dates, legal details, chart history, or credit-level accuracy, cross-check the reference links below.</p>',
+      '<p>This page is written as an original editorial profile for discovery, context, and cultural learning. Release dates, chart milestones, awards, and public-record details are supported with reference links where useful.</p>',
       reviewNotes,
       "</div>",
       '<div class="credibility-meta">',
@@ -199,6 +201,11 @@
       }).join(""),
       "</div>"
     ].join("");
+  }
+
+  function buildOptionalStorySection(id, title, html) {
+    if (!html) return "";
+    return '<section class="glass panel story-section" id="' + escapeHtml(id) + '" data-story-title="' + escapeHtml(title) + '"><h2>' + escapeHtml(title) + "</h2>" + html + "</section>";
   }
 
   function updateStructuredData(story, slug) {
@@ -259,17 +266,6 @@
     ].join("") : "";
 
 
-    const ecosystemSection = [
-      '<section class="glass panel story-section" data-story-title="Explore">',
-      "<h2>Explore Category & Stories</h2>",
-      '<div class="related-list">',
-      '<a class="related-card" href="stories.html"><h4>Editorial Stories</h4><p>Read culture guides, rankings, beef explainers, and album features connected to the artist vault.</p></a>',
-      '<a class="related-card" href="category.html"><h4>Explore Category</h4><p>Browse biographies, discography, labels, controversies, legacy, and regional scenes.</p></a>',
-      '<a class="related-card" href="timeline.html"><h4>Timeline Network</h4><p>Place this artist inside the wider movement of hip-hop eras and regional shifts.</p></a>',
-      '<a class="related-card" href="top-20-influential-rappers.html"><h4>Influence Guide</h4><p>Compare this profile with the artists who changed rap language, sound, and business.</p></a>',
-      "</div>",
-      "</section>"
-    ].join("");
     const nextStoryButton = navigation && navigation.next ? (
       '<a class="mobile-next-story" href="' + escapeHtml(navigation.next.file) + '" aria-label="Next story: ' + escapeHtml(navigation.next.name) + '">' +
       '<span class="mobile-next-label">Next Story</span>' +
@@ -326,19 +322,23 @@
       "</div>",
       '<div class="content-layout">',
       '<div class="content-stack">',
-      '<section class="glass panel story-section" id="biography" data-story-title="Biography"><h2>Biography</h2>' + (story.biographyHtml || "") + buildSectionCitationHtml(story, "biography", "Biography") + "</section>",
+      '<section class="glass panel story-section" id="biography" data-story-title="Full Biography"><h2>' + escapeHtml(story.biographyTitle || "Biography") + "</h2>" + (story.biographyHtml || "") + buildSectionCitationHtml(story, "biography", story.biographyTitle || "Biography") + "</section>",
+      buildOptionalStorySection("rise", "Rise to Fame", story.riseToFameHtml),
       '<section class="glass panel story-section" id="timeline" data-story-title="Timeline"><h2>Career Timeline</h2>' + (story.timelineHtml || "") + buildSectionCitationHtml(story, "timeline", "Career Timeline") + "</section>",
+      buildOptionalStorySection("key-works", "Key Albums & Songs", story.keyWorksHtml),
+      buildOptionalStorySection("challenges", "Challenges & Controversies", story.challengesHtml),
+      buildOptionalStorySection("impact", "Cultural Impact", story.culturalImpactHtml),
+      buildOptionalStorySection("legacy", "Legacy", story.legacyHtml),
       "</div>",
       '<aside class="side-stack">',
       '<div class="artist-layout-column">',
       '<section class="glass panel story-section" data-story-title="Details"><h2>Profile Details</h2>' + (story.detailsHtml || "") + buildSectionCitationHtml(story, "details", "Profile Details") + "</section>",
       '<section class="glass panel story-section" data-story-title="Eras"><h2>Highlighted Eras</h2>' + (story.erasHtml || "") + "</section>",
-      '<section class="glass panel music-panel story-section" data-story-title="Music"><h2>Music Integration</h2>' + (story.musicHtml || "") + buildSectionCitationHtml(story, "music", "Music Integration") + "</section>",
+      '<section class="glass panel music-panel story-section" data-story-title="Music"><h2>Music Integration</h2>' + (story.musicHtml || "") + "</section>",
       "</div>",
       '<div class="artist-layout-column">',
       '<section class="glass panel story-section" data-story-title="Sources"><h2>Sources & Review</h2>' + buildCredibilityHtml(story) + "</section>",
       relatedSection,
-      ecosystemSection,
       "</div>",
       "</aside>",
       "</div>",
@@ -431,7 +431,7 @@
   }
 
   function getStoryModeSections() {
-    const storyOrder = ["Intro", "Biography", "Timeline", "Details", "Sources", "Eras", "Related", "Music", "Explore"];
+    const storyOrder = ["Intro", "Full Biography", "Biography", "Rise to Fame", "Timeline", "Key Albums & Songs", "Challenges & Controversies", "Cultural Impact", "Legacy", "Details", "Sources", "Eras", "Related", "Music", "Explore"];
     return Array.from(document.querySelectorAll(".story-section")).filter(function (section) {
       return section.isConnected && section.getClientRects().length;
     }).sort(function (a, b) {

@@ -7,9 +7,160 @@
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/21_Savage', note: 'Canonical biography and career overview for 21 Savage.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/21-Savage', note: 'Useful for concise background and mainstream significance.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/21%20Savage/', note: 'Best source for chart milestones, release cycles, and industry reporting.' },
+      { label: 'GRAMMY 2020 report', href: 'https://www.grammy.com/news/21-savage-featuring-j-cole-wins-best-rap-song-lot-2020-grammys', note: 'Confirms the Best Rap Song win for "a lot" with J. Cole.' },
+      { label: 'Pitchfork album coverage', href: 'https://pitchfork.com/news/21-savage-announces-new-album-what-happened-to-the-streets', note: 'Reference point for the 2025 album announcement and release cycle.' },
       { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/21%20Savage/', note: 'Useful for interviews, reviews, and broader cultural framing.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=21%20Savage&type=all', note: 'Helpful for checking releases and credits.' }
-    ]
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Early Life and Identity</h3>
+      <p>21 Savage was born Shéyaa Bin Abraham-Joseph on October 22, 1992. To most listeners, he is understood through Atlanta: the accents, production choices, local relationships, street references, and dry sense of humor that run through his music all connect him to the city. At the same time, his personal background is more complicated than the simple label of "Atlanta rapper" suggests. His public immigration case later made his British birth part of the wider story, but his music had already been shaped by displacement, pressure, and the need to build an identity in a difficult environment.</p>
+
+      <p>That tension is one reason his story has lasted. 21 Savage does not only represent one city or one rap lane. He represents the way modern hip-hop biographies can be layered: local belonging, family history, migration, trauma, public misunderstanding, and gradual personal growth can all exist in the same artist. For Rap Stories, that makes his page more than a list of releases. His career is a useful case study in how an artist can turn a narrow public image into a broader cultural narrative.</p>
+
+      <h3>East Atlanta Formation</h3>
+      <p>His artistic identity grew out of Atlanta street rap, especially the colder and more minimal side of the city's trap tradition. Unlike artists who used speed, melody, or explosive performance as their main tools, 21 Savage built power through restraint. His early records used short lines, clipped phrasing, patient pockets, and a voice that often sounded emotionally distant even when the subject matter was serious. That approach made him stand out in an era when many rappers were chasing maximum energy.</p>
+
+      <p>Atlanta had already become one of rap's most important creative centers by the time he broke through. Producers, mixtape culture, local crews, and regional slang had helped turn the city into a global engine for hip-hop. 21 Savage entered that ecosystem with a sound that felt stripped back. Where some Atlanta records felt bright, melodic, or celebratory, his music often felt nocturnal and controlled. That contrast helped him become one of the defining voices of a darker Atlanta mood.</p>
+
+      <h3>Trauma as Storytelling</h3>
+      <p>What separated him from many street rappers was the way he made trauma feel quiet rather than theatrical. His songs often treat danger, grief, and distrust as conditions people survive inside, not as images added for decoration. The emotional numbness in his delivery became part of the storytelling. He did not always sound shocked by what he described; he sounded like someone who had already learned to live with it.</p>
+
+      <p>This is important when reading his work responsibly. The value of his music is not that it glamorizes harm. The value is that it shows how environment can shape personality, language, humor, and emotional defense. In his strongest songs, the coldness is not empty. It becomes a way of showing what happens when a person has to keep functioning after loss. That is why 21 Savage's minimalism often feels heavier than a more dramatic performance.</p>
+
+      <h3>Breakthrough Sound</h3>
+      <p>The partnership with Metro Boomin was central to making that identity clear. Metro's production gave 21 Savage space: eerie loops, heavy drums, and uncluttered arrangements allowed the voice to sit in the center. On <em>Savage Mode</em>, the chemistry between rapper and producer felt unusually complete. The beats did not soften him, and the rapping did not overcrowd the beats. Together, they created a sound world that was sparse, threatening, and instantly recognizable.</p>
+
+      <p>That sound helped 21 Savage reach listeners who might not have connected with a traditional lyrical showcase. His skill was not always about complex rhyme density. It was about timing, tone, repetition, and the ability to make simple phrases feel memorable. A song like "No Heart" works because of atmosphere and control. "Bank Account" works because the hook is plain, direct, and impossible to miss. Those choices made his music accessible without making it feel polished in a safe or generic way.</p>
+
+      <h3>Growth Beyond the Persona</h3>
+      <p>As his career developed, 21 Savage became a more rounded writer. The cold delivery remained, but his work added humor, self-awareness, financial reflection, social commentary, and sharper song structure. <em>I Am &gt; I Was</em> was especially important because it showed that he could carry a major album with more emotional range than many listeners expected. "a lot", featuring J. Cole, became a turning point because it connected his personal story to a broader reflection on success, pain, and responsibility.</p>
+
+      <p>His later projects expanded the frame again. <em>Savage Mode II</em> turned his Metro Boomin chemistry into a more cinematic sequel. <em>Her Loss</em> placed him next to Drake and proved that his dry delivery could work inside a superstar collaboration without disappearing. <em>American Dream</em> brought his immigration story and American identity into the foreground, while <em>What Happened to the Streets?</em> continued the question that sits underneath much of his career: what changes when an artist who came from survival becomes wealthy, famous, and watched by the world?</p>
+
+      <h3>Public Maturity and Responsibility</h3>
+      <p>Another major part of 21 Savage's biography is the way his public image has matured. Early in his career, he was often discussed mainly through fear, street credibility, and shock. Over time, the conversation widened. His financial literacy work, public comments, collaborations, and quieter interviews helped show an artist thinking about consequences, growth, and the people listening to him.</p>
+
+      <p>That does not erase the darker parts of the music, and it should not. A trustworthy biography has to hold both sides at once: 21 Savage built his name through music rooted in violence, pain, and street experience, but he also became an example of artistic development. His career shows that growth in hip-hop does not always mean abandoning the sound that made an artist important. Sometimes it means adding perspective to it.</p>
+
+      <h3>Why His Story Matters</h3>
+      <p>21 Savage matters because he helped define a modern rap archetype: the minimalist survivor who says less but makes the silence count. His best work is direct enough for casual listeners and layered enough for deeper reading. It connects Atlanta trap, producer-led album worlds, immigrant identity, mainstream collaboration, and the long process of turning private pain into public art.</p>
+
+      <div class="quote">21 Savage's strongest quality is control: he can make a quiet bar feel heavier than a shouted one.</div>
+    `,
+    riseToFameHtml: `
+      <p>21 Savage's rise began in Atlanta's underground and accelerated through his chemistry with Metro Boomin. The 2016 project <em>Savage Mode</em> gave his voice a perfect sound world: sparse, dark, patient, and threatening without needing to chase chaos.</p>
+      <p>Singles such as "X" and "No Heart" brought wider attention, while <em>Issa Album</em> and "Bank Account" turned him into a mainstream name. From there, he avoided being boxed in as a short-lived trap figure. <em>I Am &gt; I Was</em> proved he could carry a full major album with maturity, and "a lot" with J. Cole gave him a Grammy-winning moment that reframed him as a serious writer, not only a street narrator.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1992 - Birth</strong>
+          <p>Born Shéyaa Bin Abraham-Joseph on October 22, 1992.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2000s - Atlanta Upbringing</strong>
+          <p>Grew up publicly associated with East Atlanta, where hardship, loss, and street life later became central to his music.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2015 - Early Mixtape Breakthrough</strong>
+          <p>Built momentum with early releases including <em>The Slaughter Tape</em> and <em>Slaughter King</em>, establishing his cold delivery and street-focused writing.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2016 - Savage Mode</strong>
+          <p>Partnered with Metro Boomin for <em>Savage Mode</em>, the project that made his minimalist trap identity feel fully formed.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2017 - Mainstream Arrival</strong>
+          <p>Released <em>Issa Album</em>, scored a major hit with "Bank Account", and strengthened his run with <em>Without Warning</em> alongside Offset and Metro Boomin.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2018-2020 - Critical Growth</strong>
+          <p><em>I Am &gt; I Was</em> expanded his emotional range, and "a lot" won Best Rap Song at the 2020 Grammy Awards.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2020-2022 - Collaborative Dominance</strong>
+          <p><em>Savage Mode II</em> with Metro Boomin and <em>Her Loss</em> with Drake showed his ability to thrive in cinematic and superstar settings.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2024-2025 - Established Headliner</strong>
+          <p><em>American Dream</em> debuted at number one in 2024, followed by <em>What Happened to the Streets?</em> in 2025, extending his run as a major rap figure.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>Savage Mode</strong>
+          <span>The Metro Boomin collaboration that defined his early dark, minimal sound and included "X" and "No Heart".</span>
+        </div>
+        <div class="album">
+          <strong>Issa Album / "Bank Account"</strong>
+          <span>The 2017 breakthrough period that pushed him from cult street figure into mainstream visibility.</span>
+        </div>
+        <div class="album">
+          <strong>I Am &gt; I Was / "a lot"</strong>
+          <span>The album and Grammy-winning song that showed more reflection, maturity, and emotional range.</span>
+        </div>
+        <div class="album">
+          <strong>Savage Mode II</strong>
+          <span>A polished sequel with Metro Boomin that turned their chemistry into a full cinematic event.</span>
+        </div>
+        <div class="album">
+          <strong>Her Loss</strong>
+          <span>The Drake collaboration that placed 21 Savage in a superstar rap setting while keeping his dry, controlled style intact.</span>
+        </div>
+        <div class="album">
+          <strong>American Dream / "redrum"</strong>
+          <span>The 2024 solo return that reinforced his chart power and sharpened the immigrant-identity theme around his public story.</span>
+        </div>
+        <div class="album">
+          <strong>What Happened to the Streets?</strong>
+          <span>A 2025 chapter that returned to questions of street memory, loss, and what changes when survival becomes success.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Violence, Loss, and Public Image</h3>
+      <p>21 Savage's music is inseparable from hardship, including violence and personal loss. The challenge has always been turning that pain into art without letting the public reduce him to a one-dimensional street image.</p>
+
+      <h3>Immigration Case</h3>
+      <p>In 2019, he was detained by U.S. immigration authorities, bringing attention to his British birth, his life in Atlanta, and the wider reality of immigration enforcement. The case changed how many listeners understood his identity: not simply as an Atlanta rapper, but as someone whose life crossed borders, systems, and public assumptions.</p>
+
+      <h3>Controversial Content</h3>
+      <p>Like many artists working from street rap traditions, his catalog includes violent imagery and blunt language. The strongest reading of his work places that content inside a larger story of trauma, survival, masculinity, and emotional defense rather than treating it only as shock value.</p>
+    `,
+    culturalImpactHtml: `
+      <p>21 Savage helped make understatement feel dominant in modern rap. His influence is not only in subject matter, but in pacing, tone, and the idea that a rapper can sound calm while still carrying threat, pain, and authority.</p>
+      <p>He also represents a key Atlanta-to-mainstream pathway: local credibility, producer chemistry, viral hooks, major collaborations, and then a broader cultural role. His best records helped shape the darker, more minimal side of late-2010s and 2020s trap, while his public story added conversations about immigration, identity, maturity, and survival.</p>
+    `,
+    legacyHtml: `
+      <p>21 Savage's legacy is the evolution from feared street minimalist to respected mainstream rap author. He kept the core of his sound while becoming more thoughtful, more adaptable, and more culturally visible.</p>
+      <p>His catalog gives future artists a blueprint for how restraint can become style, how pain can become structure, and how a rapper can grow without abandoning the voice that made people listen in the first place.</p>
+    `,
+    relatedHtml: `<div class="related-list">
+      <a href="metro-boomin.html" class="related-card">
+        <h4>Metro Boomin</h4>
+        <p>The producer most closely tied to 21 Savage's darkest and most cinematic work.</p>
+      </a>
+      <a href="future.html" class="related-card">
+        <h4>Future</h4>
+        <p>An Atlanta giant whose emotional distance and trap dominance helped shape the world around 21 Savage.</p>
+      </a>
+      <a href="drake.html" class="related-card">
+        <h4>Drake</h4>
+        <p>A superstar collaborator whose <em>Her Loss</em> project showed 21 Savage's ability to hold his own in a global rap arena.</p>
+      </a>
+      <a href="lil-baby.html" class="related-card">
+        <h4>Lil Baby</h4>
+        <p>Another Atlanta star whose rise shows how street-rooted credibility can turn into long-term mainstream power.</p>
+      </a>
+      <a href="offset.html" class="related-card">
+        <h4>Offset</h4>
+        <p>A collaborator on <em>Without Warning</em>, linking 21 Savage to another major branch of Atlanta rap history.</p>
+      </a>
+    </div>`
   },
   '6ix9ine': {
     reviewDate: '2026-04-10',
