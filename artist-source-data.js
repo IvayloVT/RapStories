@@ -170,9 +170,153 @@
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/6ix9ine', note: 'Canonical overview for Daniel Hernandez’s rise, legal trouble, and public profile.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/6ix9ine', note: 'Useful for concise biographical framing and controversy context.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/6ix9ine/', note: 'Helpful for chart-era milestones, release coverage, and industry context.' },
+      { label: 'AP legal coverage', href: 'https://apnews.com/article/29f4ba73919def269f165f5ba77c2ad8', note: 'Reference point for later supervised-release and legal-history context.' },
       { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/6ix9ine/', note: 'Useful for interviews, profiles, and controversy-related commentary.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=6ix9ine&type=all', note: 'Helpful for checking releases and credits.' }
-    ]
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Brooklyn Roots and Early Identity</h3>
+      <p>6ix9ine, born Daniel Hernandez on May 8, 1996, came out of Brooklyn at a moment when rap fame was being reshaped by streaming platforms, social media, visual branding, and constant online conflict. His background was rooted in New York, but his rise did not follow the older New York model of lyrical reputation, neighborhood cosigns, and slow mixtape credibility. He arrived as a figure built for instant recognition.</p>
+
+      <p>The rainbow hair, face tattoos, loud clothing, shouted delivery, and aggressive video style were not small details around the music. They were part of the package. 6ix9ine understood that in the late 2010s, an artist could become unavoidable by making every image, argument, and release feel like a public event. That made him one of the clearest examples of how internet-era rap could turn attention itself into a career engine.</p>
+
+      <h3>Sound, Image, and Viral Shock</h3>
+      <p>Musically, 6ix9ine became known for harsh energy, simple hooks, shouted vocals, and songs designed to hit quickly. Records like "GUMMO" did not rely on subtlety. They were blunt, loud, and visually tied to street imagery that created immediate controversy. For some listeners, that aggression was exciting. For others, it felt calculated and reckless. Either way, it worked as a visibility strategy.</p>
+
+      <p>His early success showed how the song and the spectacle could become inseparable. The videos, feuds, comments, threats, interviews, and social media posts often traveled as far as the music itself. This is important for understanding 6ix9ine's biography: he was not only competing in rap as a sound. He was competing in a wider attention economy where outrage could function like promotion.</p>
+
+      <h3>Breakthrough and Mainstream Reach</h3>
+      <p>"GUMMO" pushed 6ix9ine into national attention and helped establish the formula: explosive visuals, confrontational delivery, and constant public conversation. Follow-up records such as "KOODA", "KEKE", and "GOTTI" kept him visible, while his 2018 mixtape <em>Day69</em> turned that viral presence into a full commercial moment.</p>
+
+      <p>The major crossover came with "FEFE", his collaboration with Nicki Minaj and Murda Beatz. The record softened some of the harshness without removing the colorful, provocative identity that made him famous. It showed that 6ix9ine could move from shock rap into mainstream hitmaking, at least for a period. His debut album <em>Dummy Boy</em> then arrived as both a music release and a public drama, surrounded by legal issues and intense media coverage.</p>
+
+      <h3>Controversy as Career Structure</h3>
+      <p>6ix9ine's story cannot be told honestly without addressing controversy, but the goal is not to glorify it. His career became a case study in what happens when provocation becomes the main structure around an artist. Public feuds, legal trouble, online trolling, and conflict were not occasional distractions. They became central to how many people understood his brand.</p>
+
+      <p>That made him polarizing in a deeper way than a normal divisive rapper. Fans could argue that he was exposing the mechanics of modern fame by using controversy better than his rivals. Critics could argue that his career rewarded harmful behavior and lowered the line between entertainment and danger. Both reactions are part of his cultural importance, because they show how unstable rap celebrity had become in the social-media era.</p>
+
+      <h3>Legal Collapse and Public Reputation</h3>
+      <p>His legal case involving the Nine Trey Gangsta Bloods changed the direction of his career permanently. After facing serious federal charges, he cooperated with prosecutors and testified, which led to one of the most debated reputation shifts in modern rap. In hip-hop culture, where authenticity, loyalty, and street credibility often carry enormous symbolic weight, that cooperation became the central lens through which many listeners judged him.</p>
+
+      <p>The case did not simply interrupt his career. It changed the meaning of everything around it. Songs that had once sounded like aggressive performance were re-read through questions of image, protection, fear, survival, and opportunism. After his release, his return to music with records such as "GOOBA" and "TROLLZ" showed that he could still command attention, but the conversation around him had become even more complicated.</p>
+
+      <h3>Post-Scandal Visibility</h3>
+      <p>In the 2020s, 6ix9ine remained famous, but the nature of that fame shifted. He was still able to generate headlines, views, and debate, yet his position inside rap culture became more unstable. Some of the shock value that once made him feel new became harder to sustain. The industry, audiences, and platforms had also changed, making it more difficult for controversy alone to create the same level of momentum.</p>
+
+      <p>His later career shows the limits of viral fame. Attention can create a breakthrough, but it does not always create trust, musical growth, or long-term cultural respect. That tension makes his story useful for a hip-hop archive. 6ix9ine is not only a rapper with hits. He is a warning and a case study about how quickly internet fame can rise, mutate, and become difficult to control.</p>
+
+      <h3>Why His Story Matters</h3>
+      <p>6ix9ine matters because he exposed a specific era of rap with unusual clarity. His career sits at the intersection of streaming metrics, online outrage, street imagery, legal consequences, meme culture, celebrity feuds, and the collapse of boundaries between music and real-time public spectacle. Whether someone sees him as entertaining, damaging, fascinating, or exhausting, his impact on the conversation around modern rap is difficult to ignore.</p>
+
+      <p>For Rap Stories, his page belongs in the archive because hip-hop history is not only made by universally respected artists. It is also shaped by disruptive figures who reveal how the culture, media, and audience behavior are changing. 6ix9ine's legacy is uncomfortable, but it is valuable to study because it shows what the viral era rewarded, what it punished, and what it left unresolved.</p>
+
+      <div class="quote">6ix9ine's career is a study in attention: how it is built, how it is monetized, and how quickly it can become heavier than the music itself.</div>
+    `,
+    riseToFameHtml: `
+      <p>6ix9ine's rise was unusually fast because it was built for the internet from the beginning. He paired aggressive music with instantly recognizable visuals, creating a public identity that could spread even before listeners knew much about him. "GUMMO" became the breakthrough because it delivered a complete shock package: sound, image, controversy, and replayable spectacle.</p>
+      <p>After that, each release became part of a larger attention cycle. "KOODA", "KEKE", "GOTTI", and <em>Day69</em> kept the momentum going, while "FEFE" with Nicki Minaj and Murda Beatz proved he could cross into mainstream pop-rap visibility. His rise was not traditional artist development. It was escalation, and for a short period that escalation made him one of rap's most watched figures.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1996 - Birth</strong>
+          <p>Born Daniel Hernandez in New York City on May 8, 1996.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Mid-2010s - Early Online Emergence</strong>
+          <p>Began building visibility through aggressive music, extreme visual branding, and internet-driven attention.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2017 - GUMMO Breakthrough</strong>
+          <p>"GUMMO" pushed him into mainstream awareness and established the loud, confrontational style that defined his early run.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2018 - Day69 and FEFE</strong>
+          <p><em>Day69</em> extended his viral momentum, while "FEFE" with Nicki Minaj became his biggest crossover hit of the period.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2018-2019 - Federal Case</strong>
+          <p>His racketeering case and cooperation with prosecutors radically changed public perception of his image, credibility, and career.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2020 - Return and TattleTales</strong>
+          <p>Returned with "GOOBA" and "TROLLZ", then released <em>TattleTales</em>, proving he could still command attention after prison.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2020s - Polarizing Legacy</strong>
+          <p>Remained visible through controversy, debate, and international headlines, while his long-term place in rap culture became increasingly contested.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>GUMMO</strong>
+          <span>The breakout single that introduced his aggressive sound, visual shock, and controversy-driven rise.</span>
+        </div>
+        <div class="album">
+          <strong>Day69</strong>
+          <span>The 2018 mixtape that collected his early viral momentum and positioned him as a streaming-era disruptor.</span>
+        </div>
+        <div class="album">
+          <strong>FEFE</strong>
+          <span>The Nicki Minaj and Murda Beatz collaboration that showed his ability to reach mainstream pop-rap audiences.</span>
+        </div>
+        <div class="album">
+          <strong>Dummy Boy</strong>
+          <span>His debut studio album, released during the period when legal drama and music became almost impossible to separate.</span>
+        </div>
+        <div class="album">
+          <strong>GOOBA</strong>
+          <span>The post-release comeback single that turned his legal controversy into a direct part of the public spectacle.</span>
+        </div>
+        <div class="album">
+          <strong>TROLLZ / TattleTales</strong>
+          <span>The 2020 phase that proved he could still generate major attention, even as his reputation remained deeply divided.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Legal History</h3>
+      <p>6ix9ine's legal history is one of the defining parts of his public story. His federal racketeering case, cooperation with authorities, sentencing, supervised release, and later legal issues all shaped how audiences understood him. These events should be treated as serious context, not as entertainment decoration.</p>
+
+      <h3>Authenticity and Loyalty Debate</h3>
+      <p>After his cooperation with prosecutors, 6ix9ine became a central figure in debates about loyalty, credibility, and survival in rap culture. Some people viewed his choices through self-preservation. Others saw them as destroying the street image he had used to build fame. That debate remains central to his legacy.</p>
+
+      <h3>Shock Value and Sustainability</h3>
+      <p>His career also shows the limits of shock value. Controversy can create huge early visibility, but it can also make artistic growth harder. When an artist becomes known mainly for escalation, every new moment has to be louder than the last, which is difficult to maintain over time.</p>
+    `,
+    culturalImpactHtml: `
+      <p>6ix9ine's cultural impact is not based on universal respect. It is based on disruption. He showed how a rapper could use memes, public feuds, visual branding, and controversy to dominate attention in a streaming environment. His career became a symbol of an era when online conversation could be as important as radio play or critical approval.</p>
+      <p>He also forced hip-hop audiences to confront uncomfortable questions about authenticity. How much of a public image is performance? What happens when real legal consequences collide with a character built for provocation? Can attention alone create lasting value? Those questions make his career important to document, even for readers who do not admire the choices behind it.</p>
+    `,
+    legacyHtml: `
+      <p>6ix9ine's legacy is unstable by design. He is remembered as a viral hitmaker, a controversy machine, a legal cautionary tale, and one of the most polarizing figures of late-2010s rap. His music created moments, but his larger legacy comes from the way his career exposed the mechanics of attention in modern hip-hop.</p>
+      <p>In the archive, he represents a specific shift: the point where rap celebrity, social media conflict, streaming performance, and legal drama became fully intertwined. His story is not a model of artistic stability. It is a case study in the power and danger of becoming famous through spectacle.</p>
+    `,
+    relatedHtml: `<div class="related-list">
+      <a href="nicki-minaj.html" class="related-card">
+        <h4>Nicki Minaj</h4>
+        <p>A major collaborator whose work on "FEFE" and "TROLLZ" helped connect 6ix9ine's chaos to mainstream chart power.</p>
+      </a>
+      <a href="chief-keef.html" class="related-card">
+        <h4>Chief Keef</h4>
+        <p>A figure connected to the wider conversation around internet-era street rap, conflict, and influence.</p>
+      </a>
+      <a href="kodak-black.html" class="related-card">
+        <h4>Kodak Black</h4>
+        <p>Another controversial modern rapper whose public life and music are often discussed together.</p>
+      </a>
+      <a href="fivio-foreign.html" class="related-card">
+        <h4>Fivio Foreign</h4>
+        <p>A New York artist from a different lane, useful for comparing 6ix9ine's viral spectacle with Brooklyn drill visibility.</p>
+      </a>
+      <a href="blueface.html" class="related-card">
+        <h4>Blueface</h4>
+        <p>Another artist whose fame was shaped by viral personality, controversy, and internet-era audience attention.</p>
+      </a>
+    </div>`
   },
   'a-boogie': {
     reviewDate: '2026-04-10',
