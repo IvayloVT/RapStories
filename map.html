@@ -1,0 +1,1123 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head><script>
+(function () {
+  if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+
+  if (document.querySelector('script[data-rapstories-adsense]')) {
+    return;
+  }
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6406860901026617';
+  script.crossOrigin = 'anonymous';
+  script.setAttribute('data-rapstories-adsense', 'true');
+  document.head.appendChild(script);
+})();
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hip-Hop Map | Rap Stories</title>
+<meta content="Interactive Hip-Hop map with zoom, pan, filters, and artist links." name="description"/>
+<style>
+  :root {
+    --bg:#0a0a0f;
+    --panel:rgba(255,255,255,0.06);
+    --panel-border:rgba(255,255,255,0.10);
+    --text:#f4f4f5;
+    --muted:#a5a5b1;
+    --reading-text:#dadade;
+    --soft-text:#ededf1;
+    --accent:#d4af37;
+    --accent-soft:rgba(212,175,55,0.15);
+    --bg-accent-1:rgba(139,92,246,0.16);
+    --bg-accent-2:rgba(212,175,55,0.15);
+    --bg-surface-1:#09090d;
+    --bg-surface-2:#0a0a0f;
+    --bg-surface-3:#050507;
+    --header-bg:rgba(5,5,8,0.76);
+    --header-border:rgba(255,255,255,0.08);
+    --input-bg:rgba(20,20,30,.95);
+    --input-border:rgba(255,255,255,.12);
+    --input-text:#f5f5f5;
+    --input-placeholder:#8d8d96;
+    --input-option-bg:#0a0a0f;
+    --shadow:0 20px 50px rgba(0,0,0,0.45);
+    --radius:20px;
+    --max:1260px;
+  }
+
+  html[data-theme="dawn"]{
+    --panel:rgba(247,237,219,0.84);
+    --panel-border:rgba(176,132,51,0.2);
+    --text:#2d2216;
+    --muted:#6d593f;
+    --reading-text:#4f402d;
+    --soft-text:#5f4d37;
+    --accent:#bf8f2d;
+    --accent-soft:rgba(191,143,45,0.16);
+    --bg-accent-1:rgba(230,187,110,0.34);
+    --bg-accent-2:rgba(235,211,165,0.62);
+    --bg-surface-1:#f4ead8;
+    --bg-surface-2:#e8d5b5;
+    --bg-surface-3:#dbc197;
+    --header-bg:rgba(244,234,216,0.96);
+    --header-border:rgba(176,132,51,0.18);
+    --input-bg:rgba(250,242,228,0.96);
+    --input-border:rgba(176,132,51,0.2);
+    --input-text:#2d2216;
+    --input-placeholder:#846c50;
+    --input-option-bg:#f4ead8;
+    --shadow:0 20px 54px rgba(96,68,20,0.18);
+  }
+
+  html[data-theme="midnight"]{
+    --panel:rgba(217,240,255,0.06);
+    --panel-border:rgba(109,199,255,0.16);
+    --text:#eef6ff;
+    --muted:#9db2c9;
+    --reading-text:#d7e4f2;
+    --soft-text:#e6f0fa;
+    --bg-accent-1:rgba(59,130,246,0.22);
+    --bg-accent-2:rgba(34,211,238,0.12);
+    --bg-surface-1:#050913;
+    --bg-surface-2:#09101d;
+    --bg-surface-3:#04070f;
+    --header-bg:rgba(6,12,24,0.82);
+    --header-border:rgba(109,199,255,0.14);
+    --input-bg:rgba(8,16,30,0.94);
+    --input-border:rgba(109,199,255,0.18);
+    --input-text:#eef6ff;
+    --input-placeholder:#9db2c9;
+    --input-option-bg:#08101c;
+    --shadow:0 20px 54px rgba(0,10,30,0.52);
+  }
+
+  html[data-theme="ember"]{
+    --panel:rgba(255,244,232,0.07);
+    --panel-border:rgba(242,180,90,0.16);
+    --text:#fbf2e6;
+    --muted:#cab49b;
+    --reading-text:#e6d6c4;
+    --soft-text:#f1e6d9;
+    --bg-accent-1:rgba(180,83,9,0.2);
+    --bg-accent-2:rgba(245,158,11,0.12);
+    --bg-surface-1:#120a06;
+    --bg-surface-2:#17100b;
+    --bg-surface-3:#090604;
+    --header-bg:rgba(22,13,6,0.82);
+    --header-border:rgba(242,180,90,0.14);
+    --input-bg:rgba(28,18,10,0.94);
+    --input-border:rgba(242,180,90,0.2);
+    --input-text:#fbf2e6;
+    --input-placeholder:#cab49b;
+    --input-option-bg:#1a0f09;
+    --shadow:0 20px 54px rgba(22,10,3,0.52);
+  }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    background:
+      radial-gradient(circle at top left, var(--bg-accent-1), transparent 28%),
+      radial-gradient(circle at top right, var(--bg-accent-2), transparent 28%),
+      linear-gradient(180deg,var(--bg-surface-1),var(--bg-surface-2) 52%,var(--bg-surface-3) 100%);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a { color:inherit; text-decoration:none; }
+  .container { width:min(92%, var(--max)); margin:0 auto; }
+
+  .glass {
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:var(--shadow);
+    border-radius:var(--radius);
+  }
+
+  header#mainHeader{
+    position:fixed; top:0; left:0; width:100%; z-index:1000;
+    background:var(--header-bg);
+    backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--header-border);
+    box-shadow:0 10px 30px rgba(0,0,0,0.22);
+    transition:transform .3s ease;
+  }
+  .nav{
+    min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:24px;
+  }
+  .brand{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.6px; font-size:1.02rem;}
+  .brand-mark{
+    width:40px; height:40px; border-radius:12px; display:grid; place-items:center;
+    background:linear-gradient(135deg,#d4af37,#fff0a5); color:#111; font-weight:900;
+    box-shadow:0 10px 24px rgba(212,175,55,.35);
+  }
+  .brand-text{
+    font-weight:900; letter-spacing:.5px;
+    background:linear-gradient(135deg,#d4af37,#fff0a5,#fff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .nav-links{display:flex; align-items:center; gap:24px; flex-wrap:wrap;}
+  .nav-links a{position:relative; color:var(--muted); transition:color .25s ease; font-size:.96rem;}
+  .nav-links a:hover,.nav-links a.active{color:var(--text);}
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-8px; width:100%; height:2px; border-radius:999px;
+    background:linear-gradient(135deg,#d4af37,#fff0a5); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+  .nav-btn{
+    padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,#d4af37,#f5df8f);
+    color:#111; font-weight:800; border:none; box-shadow:0 10px 24px rgba(212,175,55,.22);
+  }
+
+  .hero { padding:128px 0 20px; }
+  .hero-card { padding:30px; }
+  .eyebrow{
+    display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
+    background:var(--accent-soft); color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.5px;
+  }
+  .hero-card h1{
+    font-size:clamp(2.3rem,5vw,4.4rem); line-height:.98; letter-spacing:-2px; margin-bottom:14px; font-weight:900;
+  }
+  .hero-card h1 span{
+    background:linear-gradient(135deg,var(--accent),#fff0a5,#fff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-card p{ color:var(--muted); max-width:850px; font-size:1.04rem; }
+
+  .toolbar-wrap { padding:8px 0 20px; }
+  .toolbar {
+    padding:16px;
+    display:grid;
+    grid-template-columns: 1.5fr repeat(4, minmax(120px, 1fr));
+    gap:12px;
+    align-items:center;
+  }
+  .toolbar input, .toolbar select, .toolbar button {
+    background:var(--input-bg);
+    border:1px solid var(--input-border);
+    color:var(--input-text);
+    border-radius:14px;
+    padding:14px 16px;
+    outline:none;
+    font:inherit;
+  }
+  .toolbar select {
+    appearance:none; -webkit-appearance:none; -moz-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg fill='%23d4af37' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5H5z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 12px center; background-size:16px; padding-right:40px;
+  }
+  .toolbar select option{ background:var(--input-option-bg); color:var(--input-text); }
+  .toolbar input::placeholder{ color:var(--input-placeholder); }
+  .toolbar button {
+    background:linear-gradient(135deg,#d4af37,#f5df8f);
+    color:#111; font-weight:800; cursor:pointer;
+  }
+
+  .map-section { padding: 8px 0 50px; }
+  .map-shell {
+    display:grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap:20px;
+    align-items:start;
+  }
+
+  .map-panel {
+    padding:14px;
+    overflow:hidden;
+  }
+
+  .map-stage {
+    position:relative;
+    height:72vh;
+    min-height:560px;
+    border-radius:18px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(139,92,246,0.18), transparent 20%),
+      radial-gradient(circle at 80% 15%, rgba(212,175,55,0.14), transparent 18%),
+      linear-gradient(180deg,#0e1017,#09090d 55%,#06070b 100%);
+    border:1px solid rgba(255,255,255,0.08);
+    cursor: grab;
+    touch-action:none;
+  }
+  .map-stage.dragging { cursor: grabbing; }
+
+  .map-world {
+    position:absolute;
+    inset:0;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  .grid-bg {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at center, black 52%, transparent 100%);
+    opacity:.55;
+    pointer-events:none;
+  }
+
+  .region {
+    position:absolute;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:999px;
+    filter:blur(.2px);
+    pointer-events:none;
+  }
+
+  .city {
+    position:absolute;
+    width:18px; height:18px;
+    margin-left:-9px; margin-top:-9px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#d4af37,#fff0a5);
+    box-shadow:
+      0 0 0 6px rgba(212,175,55,0.08),
+      0 0 24px rgba(212,175,55,0.55);
+    cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+  .city::after{
+    content:"";
+    position:absolute; inset:-10px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.22);
+    animation:pulse 2.4s infinite ease-out;
+  }
+  .city:hover, .city.active {
+    transform:scale(1.18);
+    box-shadow:
+      0 0 0 8px rgba(212,175,55,0.12),
+      0 0 28px rgba(212,175,55,0.75);
+  }
+  .city.hidden { opacity:.12; pointer-events:none; }
+
+  @keyframes pulse {
+    0% { transform:scale(.72); opacity:.9; }
+    80% { transform:scale(1.7); opacity:0; }
+    100% { transform:scale(1.7); opacity:0; }
+  }
+
+  .city-label {
+    position:absolute;
+    top:22px; left:12px;
+    background:rgba(10,10,15,0.92);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:8px 10px;
+    border-radius:12px;
+    white-space:nowrap;
+    font-size:.86rem;
+    color:#ececf0;
+    opacity:0;
+    transform:translateY(4px);
+    pointer-events:none;
+    transition:.2s ease;
+  }
+  .city:hover .city-label, .city.active .city-label {
+    opacity:1; transform:translateY(0);
+  }
+
+  .zoom-controls {
+    position:absolute; right:14px; top:14px; z-index:4;
+    display:grid; gap:8px;
+  }
+  .zoom-controls button, .focus-controls button {
+    width:44px; height:44px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(10,10,15,.88);
+    color:#fff;
+    font-size:1.2rem;
+    cursor:pointer;
+    backdrop-filter: blur(10px);
+  }
+  .focus-controls {
+    position:absolute; left:14px; top:14px; z-index:4;
+    display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .focus-controls button {
+    width:auto; padding:0 14px; font-size:.9rem; font-weight:700;
+  }
+
+  .sidebar {
+    padding:18px;
+    min-height:72vh;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .sidebar h2 { font-size:1.35rem; }
+  .sidebar p { color:var(--reading-text); }
+  .sidebar .count {
+    color:var(--accent);
+    font-weight:800;
+    font-size:.95rem;
+  }
+
+  .city-card {
+    padding:16px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .city-card h3 { margin-bottom:8px; font-size:1.1rem; }
+  .city-card .meta {
+    color:var(--reading-text);
+    font-size:.9rem;
+    margin-bottom:12px;
+  }
+  .city-actions {
+    display:grid;
+    gap:10px;
+    margin-bottom:12px;
+  }
+  .artist-links {
+    display:grid;
+    gap:10px;
+    max-height:52vh;
+    overflow:auto;
+    padding-right:4px;
+  }
+  .artist-links::-webkit-scrollbar { width:8px; }
+  .artist-links::-webkit-scrollbar-thumb {
+    background:rgba(212,175,55,.35);
+    border-radius:999px;
+  }
+  .artist-link {
+    padding:12px 14px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    transition:.2s ease;
+  }
+  .artist-link:hover {
+    transform:translateY(-2px);
+    border-color:rgba(212,175,55,.35);
+  }
+  .artist-link strong {
+    display:block;
+    margin-bottom:4px;
+  }
+  .artist-link span {
+    color:var(--reading-text);
+    font-size:.88rem;
+  }
+
+  .legend {
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .legend span {
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:.82rem;
+    color:var(--soft-text);
+  }
+
+  .footer-brand { color:white; }
+  html[data-theme="dawn"] .footer-brand { color:var(--text); }
+
+  footer {
+    padding:24px 0 50px;
+    color:var(--muted);
+  }
+  .footer-wrap{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:24px;
+    display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .footer-links{display:flex; gap:18px; flex-wrap:wrap;}
+  .footer-links a:hover{color:var(--text);}
+
+  @media (max-width: 1100px) {
+    .toolbar { grid-template-columns:1fr 1fr 1fr; }
+    .map-shell { grid-template-columns:1fr; }
+    .sidebar { min-height:auto; }
+  }
+  @media (max-width: 820px) {
+    .nav { flex-direction:column; padding:14px 0; }
+    .nav-links { justify-content:center; }
+  }
+  @media (max-width: 768px) {
+    header#mainHeader.hidden { transform:translateY(-100%); }
+    .toolbar { grid-template-columns:1fr; }
+    .map-stage { min-height:520px; height:62vh; }
+    .focus-controls { max-width:70%; }
+  }
+</style></head>
+<body>
+<header id="mainHeader">
+  <div class="container nav">
+    <a class="brand" href="index.html"><div class="brand-mark">RS</div><span class="brand-text">RAP STORIES</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="artist-archive.html">Archive</a>
+      <a href="stories.html">Stories</a>
+      <a href="artist.html">Artists</a>
+      <a href="category.html">Categories</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="map.html">Map</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="nav-btn" href="stories.html">Read Stories</a>
+  </div>
+</header>
+<main>
+<section class="hero">
+<div class="container">
+<div class="glass hero-card">
+<span class="eyebrow">Interactive Discovery</span>
+<h1>The <span>Map</span> of Hip-Hop</h1>
+<p>
+          Explore the full artist vault by city and movement. Every artist from the archive is now connected to the map, with richer city clusters, West Coast support, and direct story links.
+        </p>
+</div>
+</div>
+</section>
+<section class="toolbar-wrap">
+<div class="container">
+<div class="glass toolbar">
+<input id="searchInput" placeholder="Search city, artist, region..." type="text"/>
+<select id="eraFilter">
+<option value="all">All Eras</option>
+<option value="90s">90s</option>
+<option value="2000s">2000s</option>
+<option value="2010s">2010s</option>
+<option value="late2010s">Late 2010s</option>
+<option value="intl">International</option>
+</select>
+<select id="regionFilter">
+<option value="all">All Regions</option>
+<option value="west">West Coast</option>
+<option value="midwest">Midwest</option>
+<option value="south">South</option>
+<option value="east">East Coast</option>
+<option value="intl">International</option>
+</select>
+<select id="sceneFilter">
+<option value="all">All Scenes</option>
+<option value="drill">Drill</option>
+<option value="trap">Trap</option>
+<option value="legacy">Legacy</option>
+<option value="melodic">Melodic</option>
+<option value="mainstream">Mainstream</option>
+</select>
+<button id="resetBtn" type="button">Reset</button>
+</div>
+</div>
+</section>
+<section class="map-section">
+<div class="container">
+<div class="map-shell">
+<div class="glass map-panel">
+<div class="map-stage" id="mapStage">
+<div class="focus-controls">
+<button data-focus="usa" type="button">USA</button>
+<button data-focus="west" type="button">West</button>
+<button data-focus="midwest" type="button">Midwest</button>
+<button data-focus="south" type="button">South</button>
+<button data-focus="east" type="button">East Coast</button>
+<button data-focus="intl" type="button">International</button>
+</div>
+<div class="zoom-controls">
+<button id="zoomIn" type="button">+</button>
+<button id="zoomOut" type="button">-</button>
+</div>
+<div class="map-world" id="mapWorld">
+<div class="grid-bg"></div>
+<div class="region" style="left:10%; top:16%; width:60%; height:60%;"></div>
+<div class="region" style="left:68%; top:16%; width:18%; height:22%;"></div>
+<div class="region" style="left:7%; top:26%; width:14%; height:28%;"></div>
+<div class="city" data-city="Chicago" data-era="2010s late2010s 2000s" data-region="midwest" data-scene="drill legacy melodic mainstream" style="left:42%; top:33%;">
+<div class="city-label">Chicago</div>
+</div>
+<div class="city" data-city="Atlanta" data-era="2010s" data-region="south" data-scene="trap mainstream melodic" style="left:47%; top:49%;">
+<div class="city-label">Atlanta</div>
+</div>
+<div class="city" data-city="Brooklyn / New York" data-era="90s late2010s" data-region="east" data-scene="legacy drill mainstream" style="left:62%; top:28%;">
+<div class="city-label">Brooklyn / New York</div>
+</div>
+<div class="city" data-city="Yonkers" data-era="90s" data-region="east" data-scene="legacy" style="left:60.5%; top:26%;">
+<div class="city-label">Yonkers</div>
+</div>
+<div class="city" data-city="Memphis" data-era="2010s late2010s" data-region="south" data-scene="legacy trap melodic" style="left:38%; top:52%;">
+<div class="city-label">Memphis</div>
+</div>
+<div class="city" data-city="Baton Rouge" data-era="2010s late2010s" data-region="south" data-scene="melodic mainstream trap" style="left:35%; top:60%;">
+<div class="city-label">Baton Rouge</div>
+</div>
+<div class="city" data-city="New Orleans" data-era="2000s 2010s" data-region="south" data-scene="legacy mainstream" style="left:33%; top:63%;">
+<div class="city-label">New Orleans</div>
+</div>
+<div class="city" data-city="Dallas" data-era="2010s" data-region="south" data-scene="melodic legacy" style="left:29%; top:53%;">
+<div class="city-label">Dallas</div>
+</div>
+<div class="city" data-city="St. Louis" data-era="2000s" data-region="midwest" data-scene="mainstream legacy" style="left:39%; top:44%;">
+<div class="city-label">St. Louis</div>
+</div>
+<div class="city" data-city="Nashville" data-era="2000s" data-region="south" data-scene="legacy mainstream" style="left:41.5%; top:47%;">
+<div class="city-label">Nashville</div>
+</div>
+<div class="city" data-city="Savannah" data-era="late2010s" data-region="south" data-scene="melodic" style="left:54%; top:58%;">
+<div class="city-label">Savannah</div>
+</div>
+<div class="city" data-city="Compton / Bompton" data-era="2000s 2010s" data-region="west" data-scene="legacy mainstream" style="left:15%; top:39%;">
+<div class="city-label">Compton / Bompton</div>
+</div>
+<div class="city" data-city="California / West Coast" data-era="90s" data-region="west" data-scene="legacy" style="left:16%; top:34%;">
+<div class="city-label">California / West Coast</div>
+</div>
+<div class="city" data-city="London" data-era="2010s intl" data-region="intl" data-scene="melodic mainstream" style="left:74%; top:24%;">
+<div class="city-label">London</div>
+</div>
+<div class="city" data-city="Sofia" data-era="intl" data-region="intl" data-scene="legacy" style="left:78%; top:32%;">
+<div class="city-label">Sofia</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="glass sidebar">
+<div>
+<h2 id="sidebarTitle">Hip-Hop Cities</h2>
+<p id="sidebarText">Click a glowing city to reveal its connected artist stories and cultural lane.</p>
+</div>
+<div class="legend">
+<span>All Archive Artists</span>
+<span>Zoom + Pan</span>
+<span>City Filters</span>
+<span>Direct Story Links</span>
+</div>
+<div class="count" id="resultCount">Loading vault map...</div>
+<div class="city-card" id="cityCard">
+<h3>Start Exploring</h3>
+<div class="meta">Choose a city node on the map.</div>
+<div class="artist-links">
+<a class="artist-link" href="artist.html">
+<strong>Open the full archive</strong>
+<span>Browse all stories if you want the full artist list first.</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+</main>
+<script src="vault-data.js"></script>
+<footer>
+<div class="container footer-wrap">
+<div>
+<strong class="footer-brand">Rap Stories</strong><p>A premium digital vault for hip-hop culture, artist stories, timelines, rankings, and editorial guides.</p>
+</div>
+<div class="footer-links">
+  <a href="stories.html">Stories</a>
+  <a href="artist-archive.html">Archive</a>
+  <a href="category.html">Categories</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="about.html">About</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+</div>
+</div>
+</footer>
+<script>
+  (function(){
+    const header = document.getElementById("mainHeader");
+    if(!header) return;
+    let lastScrollY = window.pageYOffset;
+
+    function offset(){ document.body.style.paddingTop = header.offsetHeight + "px"; }
+    function onScroll(){
+      const currentScrollY = window.pageYOffset;
+      if(window.innerWidth <= 768){
+        if(currentScrollY <= 8) header.classList.remove("hidden");
+        else if(currentScrollY > lastScrollY + 4) header.classList.add("hidden");
+        else if(currentScrollY < lastScrollY - 4) header.classList.remove("hidden");
+      } else {
+        header.classList.remove("hidden");
+      }
+      lastScrollY = currentScrollY;
+    }
+    offset();
+    onScroll();
+    window.addEventListener("load", offset);
+    window.addEventListener("resize", () => {
+      offset();
+      if(window.innerWidth > 768) header.classList.remove("hidden");
+    });
+    window.addEventListener("scroll", onScroll, {passive:true});
+  })();
+
+  const cityCoordinates = {
+    "Atlanta": { left: 47, top: 49 },
+    "Baton Rouge": { left: 35, top: 60 },
+    "Benin City, Nigeria": { left: 78, top: 55 },
+    "Birmingham / London, England": { left: 73.5, top: 25.5 },
+    "Birmingham, England": { left: 73.5, top: 24.5 },
+    "Brighton, England": { left: 74, top: 27 },
+    "Bronx": { left: 61.5, top: 26.5 },
+    "Brooklyn": { left: 62, top: 28 },
+    "Cambridge": { left: 74.4, top: 24.2 },
+    "Charlotte": { left: 51, top: 46 },
+    "Chicago": { left: 42, top: 33 },
+    "Cleveland": { left: 49, top: 32 },
+    "Columbus": { left: 47.5, top: 35 },
+    "Compton": { left: 15, top: 39 },
+    "Coventry, England": { left: 73.6, top: 25 },
+    "Croydon, South London": { left: 74, top: 26.5 },
+    "Dallas": { left: 29, top: 53 },
+    "Deerfield Beach": { left: 55, top: 66 },
+    "Detroit": { left: 45.5, top: 30.5 },
+    "El Paso": { left: 23, top: 54 },
+    "Fayetteville": { left: 50, top: 47 },
+    "Florida": { left: 54, top: 65 },
+    "Fort Myers": { left: 54, top: 68 },
+    "Guernsey, Channel Islands": { left: 72.5, top: 27.2 },
+    "Harlem": { left: 61, top: 26 },
+    "Houston": { left: 31, top: 57 },
+    "Jacksonville": { left: 54, top: 60 },
+    "Kaduna, Nigeria": { left: 78, top: 50 },
+    "Konongo, Ghana": { left: 73.5, top: 55 },
+    "Ladbroke Grove, West London": { left: 73.5, top: 26 },
+    "London": { left: 74, top: 24 },
+    "Long Beach": { left: 15.5, top: 40 },
+    "Los Angeles": { left: 15.7, top: 38.5 },
+    "Louisville": { left: 42.5, top: 43 },
+    "Memphis": { left: 38, top: 52 },
+    "Meridian": { left: 39, top: 57 },
+    "Miami": { left: 56, top: 68 },
+    "Nashville": { left: 41.5, top: 47 },
+    "New Orleans": { left: 33, top: 63 },
+    "New York / California": { left: 62, top: 27 },
+    "Oakland": { left: 12.5, top: 34 },
+    "Paterson": { left: 61.2, top: 27 },
+    "Philadelphia": { left: 59, top: 31 },
+    "Philadelphia, Pennsylvania": { left: 59, top: 31 },
+    "Pompano Beach": { left: 55.5, top: 66.5 },
+    "Port Harcourt, Nigeria": { left: 78.2, top: 57 },
+    "Queen's Park, West London": { left: 73.4, top: 26 },
+    "Queens": { left: 62.5, top: 27.5 },
+    "Queensbridge": { left: 62.3, top: 27.4 },
+    "Savannah": { left: 54, top: 58 },
+    "Shepherd's Bush, West London": { left: 73.5, top: 26.2 },
+    "Sofia": { left: 78, top: 32 },
+    "South Central LA": { left: 15.8, top: 39.5 },
+    "South London, England": { left: 74, top: 26.3 },
+    "St. Louis": { left: 39, top: 44 },
+    "St. Louis / Atlanta": { left: 43, top: 47 },
+    "St. Thomas, Jamaica": { left: 56, top: 59 },
+    "Streatham, South London": { left: 74.1, top: 26.4 },
+    "Sydney": { left: 91, top: 72 },
+    "Texas": { left: 30, top: 55 },
+    "Toronto": { left: 49, top: 21 },
+    "Toronto, Canada": { left: 49, top: 21 },
+    "Tottenham, North London": { left: 74, top: 25.5 },
+    "Washington, D.C.": { left: 56, top: 36 },
+    "Yonkers": { left: 60.5, top: 26 }
+  };
+
+
+  const cityAliases = {
+    "Toronto": "Toronto, Canada",
+    "Philadelphia": "Philadelphia, Pennsylvania",
+    "Ladbroke Grove, West London": "London",
+    "Queen's Park, West London": "London",
+    "Shepherd's Bush, West London": "London",
+    "South London, England": "London",
+    "Streatham, South London": "London",
+    "Tottenham, North London": "London",
+    "Croydon, South London": "London"
+  };
+
+  function normalizeCityName(city) {
+    return cityAliases[city] || city || "Unknown";
+  }
+  const cityRegions = {
+    "Atlanta": "south", "Baton Rouge": "south", "Charlotte": "south", "Dallas": "south", "Fayetteville": "south", "Florida": "south", "Fort Myers": "south", "Houston": "south", "Jacksonville": "south", "Louisville": "south", "Memphis": "south", "Meridian": "south", "Miami": "south", "Nashville": "south", "New Orleans": "south", "Pompano Beach": "south", "Savannah": "south", "Texas": "south",
+    "Chicago": "midwest", "Cleveland": "midwest", "Columbus": "midwest", "Detroit": "midwest", "St. Louis": "midwest", "St. Louis / Atlanta": "midwest",
+    "Bronx": "east", "Brooklyn": "east", "Harlem": "east", "New York / California": "east", "Paterson": "east", "Philadelphia": "east", "Philadelphia, Pennsylvania": "east", "Queens": "east", "Queensbridge": "east", "Washington, D.C.": "east", "Yonkers": "east",
+    "Compton": "west", "El Paso": "west", "Long Beach": "west", "Los Angeles": "west", "Oakland": "west", "South Central LA": "west"
+  };
+
+  function escapeHtml(value) {
+    return String(value || "").replace(/[&<>\"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[char]));
+  }
+
+  function eraTokens(era) {
+    const text = String(era || "").toLowerCase();
+    const tokens = [];
+    if (/90s|1990/.test(text)) tokens.push("90s");
+    if (/2000/.test(text)) tokens.push("2000s");
+    if (/2010|2020|present/.test(text)) tokens.push("2010s", "late2010s");
+    return tokens.length ? [...new Set(tokens)] : ["2010s"];
+  }
+
+  function sceneTokens(artist) {
+    const text = `${artist.name || ""} ${artist.category || ""} ${(artist.tags || []).join(" ")} ${artist.summary || ""}`.toLowerCase();
+    const tokens = [];
+    if (/drill/.test(text)) tokens.push("drill");
+    if (/trap|atlanta|memphis|street/.test(text)) tokens.push("trap");
+    if (/melodic|r&b|afro|dancehall|emo|pain/.test(text)) tokens.push("melodic");
+    if (/mainstream|chart|crossover|global|star/.test(text)) tokens.push("mainstream");
+    tokens.push("legacy");
+    return [...new Set(tokens)];
+  }
+
+  function regionForCity(city) {
+    return cityRegions[city] || "intl";
+  }
+
+  function getCityDescription(city, artists, region) {
+    const names = artists.slice(0, 4).map(a => a.name).join(", ");
+    const suffix = artists.length > 4 ? ` and ${artists.length - 4} more` : "";
+    const regionLabel = region === "intl" ? "global" : `${region} region`;
+    return `${city} connects ${artists.length} artist${artists.length === 1 ? "" : "s"} in the Rap Stories vault, including ${names}${suffix}. This node is generated from the live artist archive.`;
+  }
+
+  const vaultArtists = (window.VAULT_DATA && Array.isArray(window.VAULT_DATA.artists)) ? window.VAULT_DATA.artists : [];
+  const groupedByCity = vaultArtists.reduce((groups, artist) => {
+    const city = normalizeCityName(artist.city);
+    if (!groups[city]) groups[city] = [];
+    groups[city].push(artist);
+    return groups;
+  }, {});
+
+  const markerWorld = document.getElementById("mapWorld");
+  if (markerWorld) {
+    markerWorld.querySelectorAll(".city").forEach(marker => marker.remove());
+  }
+
+  const cityData = {};
+  const cityNames = Object.keys(groupedByCity).sort();
+  const initialCount = document.getElementById("resultCount");
+  if (initialCount) initialCount.textContent = `${vaultArtists.length} artists / ${cityNames.length} map points`;
+
+  cityNames.forEach((city, index) => {
+    const artists = groupedByCity[city].sort((a, b) => a.name.localeCompare(b.name));
+    const region = regionForCity(city);
+    const coords = cityCoordinates[city] || { left: 12 + ((index * 11) % 76), top: 18 + ((index * 7) % 54) };
+    const eras = [...new Set(artists.flatMap(a => eraTokens(a.era)).concat(region === "intl" ? ["intl"] : []))];
+    const scenes = [...new Set(artists.flatMap(sceneTokens))];
+    cityData[city] = {
+      meta: `${region === "intl" ? "International" : region.charAt(0).toUpperCase() + region.slice(1)} - ${artists.length} artist${artists.length === 1 ? "" : "s"}`,
+      text: getCityDescription(city, artists, region),
+      artists: artists.map(artist => ({
+        href: artist.file || `${artist.slug}.html`,
+        name: artist.name,
+        desc: artist.summary || artist.timeline || `Open the ${artist.name} artist profile.`
+      }))
+    };
+
+    if (markerWorld) {
+      const marker = document.createElement("div");
+      marker.className = "city";
+      marker.dataset.city = city;
+      marker.dataset.era = eras.join(" ");
+      marker.dataset.region = region;
+      marker.dataset.scene = scenes.join(" ");
+      marker.style.left = `${coords.left}%`;
+      marker.style.top = `${coords.top}%`;
+      marker.innerHTML = `<div class="city-label">${escapeHtml(city)} <span>${artists.length}</span></div>`;
+      markerWorld.appendChild(marker);
+    }
+  });
+
+const stage = document.getElementById("mapStage");
+  const world = document.getElementById("mapWorld");
+  let cities = Array.from(document.querySelectorAll(".city"));
+  const searchInput = document.getElementById("searchInput");
+  const eraFilter = document.getElementById("eraFilter");
+  const regionFilter = document.getElementById("regionFilter");
+  const sceneFilter = document.getElementById("sceneFilter");
+  const resetBtn = document.getElementById("resetBtn");
+  const resultCount = document.getElementById("resultCount");
+  const cityCard = document.getElementById("cityCard");
+  const sidebarTitle = document.getElementById("sidebarTitle");
+  const sidebarText = document.getElementById("sidebarText");
+
+  let scale = 1;
+  let x = 0;
+  let y = 0;
+  let startX = 0;
+  let startY = 0;
+  let isDragging = false;
+
+  function applyTransform() {
+    world.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+  }
+
+  function clampScale(next) {
+    return Math.min(2.8, Math.max(1, next));
+  }
+
+  function buildExplorerUrl(filters) {
+    const params = new URLSearchParams();
+    if (filters.q) params.set("q", filters.q);
+    if (filters.era && filters.era !== "all" && filters.era !== "intl") {
+      const mappedEra = filters.era === "90s" ? "1990s" : filters.era === "late2010s" ? "2010s" : filters.era;
+      params.set("era", mappedEra);
+    }
+    return "explorer.html" + (params.toString() ? "?" + params.toString() : "");
+  }
+
+  function getCurrentExplorerUrl(cityName) {
+    const queryParts = [];
+    if (cityName) queryParts.push(cityName.split(" / ")[0]);
+    if (searchInput.value.trim()) queryParts.push(searchInput.value.trim());
+    if (sceneFilter.value !== "all") queryParts.push(sceneFilter.options[sceneFilter.selectedIndex].text);
+    return buildExplorerUrl({
+      q: queryParts.join(" ").trim(),
+      era: eraFilter.value
+    });
+  }
+
+  function getDefaultCityCardHtml() {
+    return `
+      <h3>Start Exploring</h3>
+      <div class="meta">Choose a city node on the map.</div>
+      <div class="city-actions">
+        <a class="artist-link" href="${getCurrentExplorerUrl('')}">
+          <strong>Open current map view in Explorer</strong>
+          <span>Send your active map search into the advanced explorer filters.</span>
+        </a>
+      </div>
+      <div class="artist-links">
+        <a class="artist-link" href="artist.html">
+          <strong>Open the full archive</strong>
+          <span>Browse all stories if you want the full artist list first.</span>
+        </a>
+      </div>
+    `;
+  }
+
+  function setCityCard(cityName) {
+    cities.forEach(c => c.classList.toggle("active", c.dataset.city === cityName));
+    const data = cityData[cityName];
+    if (!data) return;
+    sidebarTitle.textContent = cityName;
+    sidebarText.textContent = data.text;
+    cityCard.innerHTML = `
+      <h3>${cityName}</h3>
+      <div class="meta">${data.meta}</div>
+      <div class="city-actions">
+        <a class="artist-link" href="${getCurrentExplorerUrl(cityName)}">
+          <strong>Open ${cityName} in Explorer</strong>
+          <span>Jump into a prefiltered explorer view built from this map node.</span>
+        </a>
+      </div>
+      <div class="artist-links">
+        ${data.artists.map(a => `
+          <a class="artist-link" href="${a.href}">
+            <strong>${a.name}</strong>
+            <span>${a.desc}</span>
+          </a>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  cities.forEach(city => {
+    city.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setCityCard(city.dataset.city);
+    });
+  });
+
+  stage.addEventListener("click", (e) => {
+    if (e.target === stage) {
+      cities.forEach(c => c.classList.remove("active"));
+      sidebarTitle.textContent = "Hip-Hop Cities";
+      sidebarText.textContent = "Click a glowing city to reveal its connected artist stories and cultural lane.";
+      cityCard.innerHTML = getDefaultCityCardHtml();
+    }
+  });
+
+  stage.addEventListener("pointerdown", (e) => {
+    if (e.target.closest(".city") || e.target.closest("button")) return;
+    isDragging = true;
+    stage.classList.add("dragging");
+    startX = e.clientX - x;
+    startY = e.clientY - y;
+  });
+
+  window.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    x = e.clientX - startX;
+    y = e.clientY - startY;
+    applyTransform();
+  });
+
+  window.addEventListener("pointerup", () => {
+    isDragging = false;
+    stage.classList.remove("dragging");
+  });
+
+  stage.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.12 : 0.12;
+    scale = clampScale(scale + delta);
+    applyTransform();
+  }, { passive: false });
+
+  document.getElementById("zoomIn").addEventListener("click", () => {
+    scale = clampScale(scale + 0.18);
+    applyTransform();
+  });
+
+  document.getElementById("zoomOut").addEventListener("click", () => {
+    scale = clampScale(scale - 0.18);
+    applyTransform();
+  });
+
+  const focusPresets = {
+    usa: { scale: 1, x: 0, y: 0 },
+    west: { scale: 1.9, x: 220, y: 40 },
+    midwest: { scale: 1.75, x: 70, y: 30 },
+    south: { scale: 1.75, x: 90, y: -70 },
+    east: { scale: 1.85, x: -160, y: 60 },
+    intl: { scale: 2.15, x: -310, y: 40 }
+  };
+
+  document.querySelectorAll("[data-focus]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const p = focusPresets[btn.dataset.focus];
+      scale = p.scale; x = p.x; y = p.y;
+      applyTransform();
+    });
+  });
+
+  function applyFilters() {
+    const q = searchInput.value.trim().toLowerCase();
+    const era = eraFilter.value;
+    const region = regionFilter.value;
+    const scene = sceneFilter.value;
+
+    let visible = 0;
+    cities.forEach(city => {
+      const cityName = city.dataset.city.toLowerCase();
+      const data = cityData[city.dataset.city];
+      const artistNames = data ? data.artists.map(a => a.name.toLowerCase()).join(" ") : "";
+      const regionData = city.dataset.region;
+      const eraData = city.dataset.era;
+      const sceneData = city.dataset.scene;
+
+      const matchesQ = !q || cityName.includes(q) || artistNames.includes(q) || regionData.includes(q);
+      const matchesEra = era === "all" || eraData.includes(era);
+      const matchesRegion = region === "all" || regionData === region;
+      const matchesScene = scene === "all" || sceneData.includes(scene);
+
+      const show = matchesQ && matchesEra && matchesRegion && matchesScene;
+      city.classList.toggle("hidden", !show);
+      if (show) visible++;
+    });
+
+    resultCount.textContent = `${visible} active map point${visible === 1 ? "" : "s"}`;
+    if (!cities.some(city => city.classList.contains("active"))) {
+      cityCard.innerHTML = getDefaultCityCardHtml();
+    }
+  }
+
+  [searchInput, eraFilter, regionFilter, sceneFilter].forEach(el => {
+    el.addEventListener("input", applyFilters);
+    el.addEventListener("change", applyFilters);
+  });
+
+  resetBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    eraFilter.value = "all";
+    regionFilter.value = "all";
+    sceneFilter.value = "all";
+    scale = 1; x = 0; y = 0;
+    applyTransform();
+    applyFilters();
+  });
+
+  applyTransform();
+  cityCard.innerHTML = getDefaultCityCardHtml();
+  applyFilters();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const current = window.location.pathname.split("/").pop() || "index.html";
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(link => {
+    link.classList.remove("active");
+    const href = link.getAttribute("href");
+    if (current === href) {
+      link.classList.add("active");
+    }
+  });
+  if (!Array.from(links).some(link => link.classList.contains("active"))) {
+    if (current.endsWith(".html")) {
+      const isArtistPage = !["index.html","artist-archive.html","artist.html","category.html","timeline.html","map.html","contact.html","thank-you.html","thank-you-premium.html","intro.html"].includes(current);
+      if (isArtistPage) {
+        const artistLink = document.querySelector('.nav-links a[href="artist.html"]');
+        if (artistLink) artistLink.classList.add("active");
+      }
+    }
+  }
+});
+</script><script>
+(function(){
+  const header = document.getElementById("mainHeader");
+  if(!header) return;
+  let lastScrollY = window.pageYOffset;
+  function offset(){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+  function handleScroll(){
+    const currentScrollY = window.pageYOffset;
+    if(window.innerWidth <= 768){
+      if(currentScrollY <= 8){
+        header.classList.remove("hidden");
+      } else if(currentScrollY > lastScrollY + 4){
+        header.classList.add("hidden");
+      } else if(currentScrollY < lastScrollY - 4){
+        header.classList.remove("hidden");
+      }
+    } else {
+      header.classList.remove("hidden");
+    }
+    lastScrollY = currentScrollY;
+  }
+  offset();
+  handleScroll();
+  window.addEventListener("load", offset);
+  window.addEventListener("resize", () => {
+    offset();
+    if(window.innerWidth > 768){
+      header.classList.remove("hidden");
+    }
+  });
+  window.addEventListener("scroll", handleScroll, { passive: true });
+})();
+</script>  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

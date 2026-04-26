@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="file:///C:/Derby%20University/Scripting%20and%20Web%20Technologies/RapStories/">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2Pac Layout Preview | Rap Stories</title>
+  <meta name="description" content="Layout preview for the 2Pac artist page."/>
+  <link href="artist-page.css" rel="stylesheet"/>
+  <style>
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .side-stack {
+      align-self: stretch;
+      position: static;
+      top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .artist-preview-column {
+      display: grid;
+      flex: 1 1 calc(50% - 11px);
+      gap: 22px;
+      min-width: 0;
+    }
+
+    .side-stack > .panel,
+    .artist-preview-column > .panel {
+      min-height: 0;
+    }
+
+    .side-stack [data-story-title="Related"] .related-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .side-stack [data-story-title="Related"] .related-card {
+      min-height: 0;
+      padding: 16px;
+    }
+
+    .side-stack [data-story-title="Related"] .related-card h4 {
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+    }
+
+    .side-stack [data-story-title="Related"] .related-card p {
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .side-stack .music-panel .music-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .side-stack .music-panel {
+      margin-top: 0;
+    }
+
+    .side-stack .music-panel .music-card {
+      padding: 18px;
+    }
+
+    .side-stack .music-panel .music-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .side-stack .music-panel .track-tag {
+      min-height: 38px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+    }
+
+    .side-stack > section[data-story-title="Explore"] {
+      flex: 1 1 calc(50% - 11px);
+      grid-column: auto;
+    }
+
+    @media (max-width: 820px) {
+      .side-stack {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .side-stack > section[data-story-title] {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .artist-preview-column {
+        display: grid;
+        flex-basis: auto;
+      }
+
+      .side-stack [data-story-title="Related"] .related-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="artistApp">
+    <main class="page-loading">
+      <section class="glass loading-card">
+        <span class="eyebrow">Loading Story</span>
+        <h1>2Pac</h1>
+        <p>Building the artist profile from the Rap Stories vault.</p>
+      </section>
+    </main>
+  </div>
+  <script>window.ARTIST_PAGE = { slug: "tupac" };</script>
+  <script src="artist-stories.js"></script>
+  <script src="artist-source-data.js"></script>
+  <script src="artist-renderer.js"></script>
+  <script src="site-config.js"></script>
+  <script src="site-enhancements.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var stack = document.querySelector(".side-stack");
+      if (!stack) return;
+
+      var continueSection = stack.querySelector('[data-story-title="Continue"]');
+      if (continueSection) continueSection.remove();
+
+      var details = stack.querySelector('[data-story-title="Details"]');
+      var themes = stack.querySelector('[data-story-title="Themes"]');
+      var sources = stack.querySelector('[data-story-title="Sources"]');
+      var eras = stack.querySelector('[data-story-title="Eras"]');
+      var related = stack.querySelector('[data-story-title="Related"]');
+      var music = stack.querySelector('[data-story-title="Music"]');
+      var explore = stack.querySelector('[data-story-title="Explore"]');
+
+      if (themes) themes.remove();
+
+      var leftColumn = document.createElement("div");
+      var rightColumn = document.createElement("div");
+      leftColumn.className = "artist-preview-column";
+      rightColumn.className = "artist-preview-column";
+
+      [details, eras, music].forEach(function (section) {
+        if (section) leftColumn.appendChild(section);
+      });
+
+      [sources, related, explore].forEach(function (section) {
+        if (section) rightColumn.appendChild(section);
+      });
+
+      stack.prepend(rightColumn);
+      stack.prepend(leftColumn);
+
+      function lineUpColumnBottoms() {
+        if (window.innerWidth <= 820) return;
+
+        var leftLast = leftColumn.lastElementChild;
+        var rightLast = rightColumn.lastElementChild;
+        if (!leftLast || !rightLast) return;
+
+        leftLast.style.marginTop = "";
+        rightLast.style.marginTop = "";
+        leftLast.style.minHeight = "";
+        rightLast.style.minHeight = "";
+
+        var leftBottom = leftColumn.getBoundingClientRect().bottom;
+        var rightBottom = rightColumn.getBoundingClientRect().bottom;
+        var difference = Math.round(Math.abs(leftBottom - rightBottom));
+        var extraHeight = Math.min(difference, 120);
+
+        if (difference < 6) return;
+
+        if (leftBottom < rightBottom) {
+          leftLast.style.minHeight = (leftLast.offsetHeight + extraHeight) + "px";
+        } else {
+          rightLast.style.minHeight = (rightLast.offsetHeight + extraHeight) + "px";
+        }
+      }
+
+      requestAnimationFrame(lineUpColumnBottoms);
+      window.addEventListener("resize", lineUpColumnBottoms);
+
+      var previewStoryModeUpdate = null;
+      var previewStoryModeEventsBound = false;
+
+      function refreshStoryModeSequence() {
+        var rail = document.getElementById("storyRail");
+        var progressBar = document.getElementById("storyProgressBar");
+        if (!rail || !progressBar) return;
+
+        var visibleSections = Array.from(document.querySelectorAll(".story-section")).filter(function (section) {
+          return section.isConnected && section.getClientRects().length;
+        });
+        var storyOrder = ["Intro", "Biography", "Timeline", "Details", "Sources", "Eras", "Related", "Music", "Explore"];
+        var sections = visibleSections.sort(function (a, b) {
+          var aTitle = a.dataset.storyTitle || "";
+          var bTitle = b.dataset.storyTitle || "";
+          var aIndex = storyOrder.indexOf(aTitle);
+          var bIndex = storyOrder.indexOf(bTitle);
+
+          if (aIndex !== -1 || bIndex !== -1) {
+            return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+          }
+
+          var aRect = a.getBoundingClientRect();
+          var bRect = b.getBoundingClientRect();
+          var aTop = Math.round(aRect.top + window.pageYOffset);
+          var bTop = Math.round(bRect.top + window.pageYOffset);
+
+          if (Math.abs(aTop - bTop) < 40) {
+            return aRect.left - bRect.left;
+          }
+
+          return aTop - bTop;
+        });
+
+        rail.innerHTML = "";
+
+        sections.forEach(function (section) {
+          var title = section.dataset.storyTitle || "Section";
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "story-dot";
+          dot.setAttribute("aria-label", title);
+          dot.title = title;
+          dot.addEventListener("click", function () {
+            var y = section.getBoundingClientRect().top + window.pageYOffset - 110;
+            window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+          });
+          rail.appendChild(dot);
+        });
+
+        previewStoryModeUpdate = function () {
+          var activeIndex = 0;
+          var bestDistance = Infinity;
+          var dots = Array.from(rail.querySelectorAll(".story-dot"));
+          var scrollTop = window.pageYOffset;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+          progressBar.style.width = Math.max(0, Math.min(100, progress)) + "%";
+
+          if (docHeight - scrollTop < 12) {
+            activeIndex = sections.length - 1;
+            bestDistance = 0;
+          }
+
+          sections.forEach(function (section, index) {
+            var rect = section.getBoundingClientRect();
+            var distance = Math.abs(rect.top - 140);
+            if (distance < bestDistance) {
+              bestDistance = distance;
+              activeIndex = index;
+            }
+          });
+
+          sections.forEach(function (section, index) {
+            section.classList.toggle("active", index === activeIndex);
+          });
+
+          dots.forEach(function (dot, index) {
+            dot.classList.toggle("active", index === activeIndex);
+          });
+        };
+
+        previewStoryModeUpdate();
+
+        if (!previewStoryModeEventsBound) {
+          previewStoryModeEventsBound = true;
+          window.addEventListener("scroll", function () {
+            if (previewStoryModeUpdate) previewStoryModeUpdate();
+          }, { passive: true });
+          window.addEventListener("resize", function () {
+            requestAnimationFrame(function () {
+              lineUpColumnBottoms();
+              refreshStoryModeSequence();
+            });
+          });
+        }
+      }
+
+      requestAnimationFrame(refreshStoryModeSequence);
+    });
+  </script>
+</body>
+</html>
