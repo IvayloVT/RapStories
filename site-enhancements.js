@@ -226,7 +226,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     injectCookieConsentStyles();
     loadAdSenseAfterConsent();
 
-    var banner = document.getElementById("cookie-banner") || document.getElementById("cookieConsent");
+    var banner = document.getElementById("cookieConsent");
     if (!banner) {
       banner = document.createElement("section");
       banner.id = "cookieConsent";
@@ -252,16 +252,10 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
 
     function showCookieBanner() {
       banner.hidden = false;
-      if (banner.id === "cookie-banner") {
-        banner.style.display = "block";
-      }
     }
 
     function hideCookieBanner() {
       banner.hidden = true;
-      if (banner.id === "cookie-banner") {
-        banner.style.display = "none";
-      }
     }
 
     var choice = getCookieChoice();
