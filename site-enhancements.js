@@ -250,8 +250,26 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       banner.setAttribute("aria-label", "Cookie consent");
     }
 
+    function showCookieBanner() {
+      banner.hidden = false;
+      if (banner.id === "cookie-banner") {
+        banner.style.display = "block";
+      }
+    }
+
+    function hideCookieBanner() {
+      banner.hidden = true;
+      if (banner.id === "cookie-banner") {
+        banner.style.display = "none";
+      }
+    }
+
     var choice = getCookieChoice();
-    banner.hidden = Boolean(choice);
+    if (choice) {
+      hideCookieBanner();
+    } else {
+      showCookieBanner();
+    }
 
     document.querySelectorAll(".footer-links").forEach(function (footer) {
       if (footer.querySelector(".cookie-settings-link")) return;
@@ -260,7 +278,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       settings.className = "cookie-settings-link";
       settings.textContent = "Cookie Settings";
       settings.addEventListener("click", function () {
-        banner.hidden = false;
+        showCookieBanner();
       });
       footer.appendChild(settings);
     });
@@ -271,7 +289,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
         var nextChoice = button.getAttribute("data-cookie-choice")
           || (button.id === "cookieAccept" ? "accepted" : "declined");
         saveCookieChoice(nextChoice);
-        banner.hidden = true;
+        hideCookieBanner();
         if (nextChoice === "accepted") {
           loadAdSenseAfterConsent();
         }
