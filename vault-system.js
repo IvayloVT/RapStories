@@ -499,6 +499,7 @@ function setupArchive(){
   const chips = document.getElementById("tagChips");
   let activeTag = "all";
   let tagsExpanded = false;
+  let renderToken = 0;
 
   const tags = ["all", ...Array.from(new Set(data.artists.flatMap(a => a.tags))).sort()];
   const toggleButton = make("button","chip-row-toggle", "More Tags");
@@ -548,6 +549,7 @@ function setupArchive(){
   updateTagVisibility();
 
   function apply(){
+    const currentToken = ++renderToken;
     let list = [...data.artists];
     const q = (search.value || "").toLowerCase().trim();
     if(q){
@@ -558,9 +560,23 @@ function setupArchive(){
     if(activeTag !== "all") list = list.filter(a => a.tags.includes(activeTag));
     list = sortArtists(list, sort.value);
     grid.innerHTML = "";
-    list.forEach(a => grid.appendChild(card(a)));
     count.textContent = `${list.length} artist${list.length === 1 ? "" : "s"} found`;
     empty.style.display = list.length ? "none" : "block";
+
+    function renderBatch(start){
+      if(currentToken !== renderToken) return;
+      const fragment = document.createDocumentFragment();
+      const end = Math.min(start + 18, list.length);
+      for(let index = start; index < end; index += 1){
+        fragment.appendChild(card(list[index]));
+      }
+      grid.appendChild(fragment);
+      if(end < list.length){
+        window.setTimeout(() => renderBatch(end), 0);
+      }
+    }
+
+    renderBatch(0);
   }
 
   const params = new URLSearchParams(location.search);

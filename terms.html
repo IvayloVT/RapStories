@@ -1,10 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
     return;
   }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
+    return;
+  }
+
 
   if (document.querySelector('script[data-rapstories-adsense]')) {
     return;
@@ -209,7 +220,8 @@
       box-shadow: 0 14px 28px rgba(212,175,55,0.28);
     }
 
-    .hero { padding: 100px 0 30px; }
+    .hero { padding: 72px 0 30px; }
+
 
     .hero-card, .panel { padding: 30px; }
 
@@ -478,7 +490,7 @@
 })();
 </script>
 <script src="site-config.js"></script>
-<script src="site-enhancements.js"></script>
+<script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 
 </body>
 </html>

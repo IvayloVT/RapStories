@@ -1,8 +1,18 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
     return;
   }
 
@@ -25,13 +35,13 @@
   <meta property="og:site_name" content="Rap Stories"/>
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="Big 30 | Rap Stories"/>
-  <meta property="og:description" content="A Rap Stories premium profile on Big 30, covering his Memphis roots, heavy street-rap style, rise through the cityâ€™s modern scene, ties to Bread Gang and Pooh Shiesty, and the legal controversies that shaped his public story."/>
+  <meta property="og:description" content="A Rap Stories premium profile on Big 30, covering his Memphis roots, heavy street-rap style, rise through the city’s modern scene, ties to Bread Gang and Pooh Shiesty, and the legal controversies that shaped his public story."/>
   <meta property="og:url" content="https://rapstories.com/big-30.html"/>
   <meta property="og:image" content="https://rapstories.com/images/big-30.webp"/>
   <meta property="og:image:alt" content="Big 30 profile image"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Big 30 | Rap Stories"/>
-  <meta name="twitter:description" content="A Rap Stories premium profile on Big 30, covering his Memphis roots, heavy street-rap style, rise through the cityâ€™s modern scene, ties to Bread Gang and Pooh Shiesty, and the legal controversies that shaped his public story."/>
+  <meta name="twitter:description" content="A Rap Stories premium profile on Big 30, covering his Memphis roots, heavy street-rap style, rise through the city’s modern scene, ties to Bread Gang and Pooh Shiesty, and the legal controversies that shaped his public story."/>
   <meta name="twitter:image" content="https://rapstories.com/images/big-30.webp"/>
   <link href="artist-page.css" rel="stylesheet"/></head>
 <body>
@@ -48,7 +58,7 @@
   <script src="artist-stories.js"></script>
   <script src="artist-source-data.js"></script>
   <script src="artist-renderer.js"></script>
-  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 </body>
 </html>
 

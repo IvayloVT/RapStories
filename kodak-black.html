@@ -5,6 +5,16 @@
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
     return;
   }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
+    return;
+  }
 
   if (document.querySelector('script[data-rapstories-adsense]')) {
     return;
@@ -48,7 +58,7 @@
   <script src="artist-stories.js"></script>
   <script src="artist-source-data.js"></script>
   <script src="artist-renderer.js"></script>
-  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 </body>
 </html>
 

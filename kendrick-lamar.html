@@ -1,8 +1,18 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
     return;
   }
 
@@ -25,13 +35,13 @@
   <meta property="og:site_name" content="Rap Stories"/>
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="Kendrick Lamar | Rap Stories"/>
-  <meta property="og:description" content="A Rap Stories premium profile on Kendrick Lamar, covering his Compton roots, lyrical rise, conceptual artistry, cultural impact, and lasting place as one of hip-hopâ€™s defining voices."/>
+  <meta property="og:description" content="A Rap Stories premium profile on Kendrick Lamar, covering his Compton roots, lyrical rise, conceptual artistry, cultural impact, and lasting place as one of hip-hop’s defining voices."/>
   <meta property="og:url" content="https://rapstories.com/kendrick-lamar.html"/>
   <meta property="og:image" content="https://rapstories.com/images/kendrick-lamar.jpg"/>
   <meta property="og:image:alt" content="Kendrick Lamar profile image"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Kendrick Lamar | Rap Stories"/>
-  <meta name="twitter:description" content="A Rap Stories premium profile on Kendrick Lamar, covering his Compton roots, lyrical rise, conceptual artistry, cultural impact, and lasting place as one of hip-hopâ€™s defining voices."/>
+  <meta name="twitter:description" content="A Rap Stories premium profile on Kendrick Lamar, covering his Compton roots, lyrical rise, conceptual artistry, cultural impact, and lasting place as one of hip-hop’s defining voices."/>
   <meta name="twitter:image" content="https://rapstories.com/images/kendrick-lamar.jpg"/>
   <link href="artist-page.css" rel="stylesheet"/></head>
 <body>
@@ -48,7 +58,7 @@
   <script src="artist-stories.js"></script>
   <script src="artist-source-data.js"></script>
   <script src="artist-renderer.js"></script>
-  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 </body>
 </html>
 

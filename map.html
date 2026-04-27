@@ -1,9 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
     return;
   }
 
@@ -178,7 +188,7 @@
     color:#111; font-weight:800; border:none; box-shadow:0 10px 24px rgba(212,175,55,.22);
   }
 
-  .hero { padding:128px 0 20px; }
+  .hero { padding:72px 0 20px; }
   .hero-card { padding:30px; }
   .eyebrow{
     display:inline-block; margin-bottom:12px; padding:8px 12px; border-radius:999px;
@@ -1105,7 +1115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   window.addEventListener("scroll", handleScroll, { passive: true });
 })();
-</script>  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+</script>  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 </body>
 </html>
 

@@ -1,8 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
     return;
   }
 
@@ -222,7 +233,7 @@
     }
 
     .hero {
-      padding: 48px 0 24px;
+      padding: 72px 0 24px;
     }
 
     .hero-card,
@@ -456,11 +467,11 @@
           <li>Understand how visitors use the site and improve content strategy</li>
         </ul>
 
-        <h2 style="margin-top:18px;">Advertising & Cookies</h2>
+        <h2 style="margin-top:18px;">Advertising, Google Ads & Cookies</h2>
         <p>
-          Rap Stories may use <strong>Google AdSense</strong> and other third-party advertising
-          services to display ads. These services may use cookies, web beacons, and similar
-          technologies to provide advertisements based on your visit to this website and other websites.
+          Rap Stories may use <strong>Google AdSense</strong>, Google Ads services, and other
+          third-party advertising services to display ads. We use third-party vendors, including
+          Google, to serve ads on this website.
         </p>
 
         <p>
@@ -470,13 +481,24 @@
         </p>
 
         <p>
-          Google may use the DoubleClick cookie and related advertising technologies. Users may opt out
-          of personalized advertising by visiting Google Ads Settings.
+          Google uses cookies, including the DoubleClick cookie, and related advertising technologies.
+          These cookies may help Google and its partners serve ads to users based on visits to Rap
+          Stories and other sites on the internet.
         </p>
 
         <p>
-          By using this website, you understand and agree that cookies and similar technologies may be
-          used for analytics, functionality, and advertising purposes.
+          Users may opt out of personalized advertising by visiting
+          <a href="https://www.google.com/settings/ads" rel="noopener noreferrer" target="_blank" style="color: var(--accent);">Google Ads Settings</a>.
+          You can also learn more about how Google uses information from sites and apps that use its
+          services at
+          <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank" style="color: var(--accent);">Google's partner sites policy</a>.
+        </p>
+
+        <p>
+          Non-essential advertising cookies are only loaded after you accept cookies through the cookie
+          banner. If you reject cookies, Rap Stories will not intentionally load Google AdSense
+          advertising cookies for that visit, although essential site features may still use limited
+          storage where required.
         </p>
 
         <h2 style="margin-top:18px;">Third-Party Services</h2>
@@ -560,12 +582,13 @@
   <div id="cookie-banner">
     <div class="cookie-inner">
       <p>
-        This site uses cookies for functionality, analytics, and advertising. By clicking
-        "Accept", you agree to our use of cookies.
+        Rap Stories uses essential cookies for site features and, only if you accept, advertising
+        cookies from third-party vendors including Google. You can accept or reject non-essential
+        cookies. Read our <a href="privacy.html">Privacy Policy</a>.
       </p>
       <div class="cookie-actions">
-        <button class="cookie-btn decline" id="cookieDecline">Decline</button>
-        <button class="cookie-btn accept" id="cookieAccept">Accept</button>
+        <button class="cookie-btn decline" id="cookieDecline" data-cookie-choice="declined">Reject</button>
+        <button class="cookie-btn accept" id="cookieAccept" data-cookie-choice="accepted">Accept</button>
       </div>
     </div>
   </div>
@@ -628,9 +651,7 @@
   </script>
 
   <script src="site-config.js"></script>
-  <script src="site-enhancements.js"></script>
+  <script src="site-enhancements.js?v=2026-04-27-privacy-gap"></script>
 </body>
 </html>
-
-
 

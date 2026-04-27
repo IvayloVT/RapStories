@@ -1,9 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
     return;
   }
 
@@ -23,7 +33,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Message Sent | Rap Stories</title>
 <meta content="Your message has been sent successfully to Rap Stories." name="description"/>
-<link href="vault-system.css" rel="stylesheet"/>
+<link href="vault-system.css?v=2026-04-27-gap-fix" rel="stylesheet"/>
 <style>
     :root {
       --bg: #0a0a0f;
@@ -632,7 +642,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-</script>  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+</script>  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 </body>
 </html>
 

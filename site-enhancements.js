@@ -1,4 +1,8 @@
 ﻿(function () {
+  if (window.location.protocol === "file:") {
+    document.documentElement.classList.add("file-mode");
+  }
+
   const CORE_PAGES = new Set([
     "index.html",
     "artist-archive.html",
@@ -35,6 +39,8 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
   || (window.RAP_STORIES_CONFIG && window.RAP_STORIES_CONFIG.baseUrl)
   || "https://example.com";
   const THEME_STORAGE_KEY = "rapStoriesTheme";
+  const COOKIE_STORAGE_KEY = "rapstories_cookie_choice";
+  const ADSENSE_CLIENT_ID = "ca-pub-6406860901026617";
   const THEMES = [
     { id: "obsidian", label: "Obsidian" },
     { id: "dawn", label: "Dawn" },
@@ -162,6 +168,116 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       "@media (max-width:820px){.nav-actions{justify-content:center}.theme-toggle{width:100%;justify-content:center}}"
     ].join("");
     document.head.appendChild(style);
+  }
+
+  function getCookieChoice() {
+    try {
+      return window.localStorage.getItem(COOKIE_STORAGE_KEY);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveCookieChoice(choice) {
+    try {
+      window.localStorage.setItem(COOKIE_STORAGE_KEY, choice);
+    } catch (error) {
+      return;
+    }
+  }
+
+  function loadAdSenseAfterConsent() {
+    if (window.location.protocol !== "http:" && window.location.protocol !== "https:") return;
+    if (getCookieChoice() !== "accepted") return;
+    if (document.querySelector('script[data-rapstories-adsense]')) return;
+
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + ADSENSE_CLIENT_ID;
+    script.crossOrigin = "anonymous";
+    script.setAttribute("data-rapstories-adsense", "true");
+    document.head.appendChild(script);
+  }
+
+  function injectCookieConsentStyles() {
+    if (document.getElementById("cookieConsentStyles")) return;
+    var style = document.createElement("style");
+    style.id = "cookieConsentStyles";
+    style.textContent = [
+      ".cookie-consent{position:fixed;left:50%;bottom:20px;z-index:5000;width:min(94%,920px);transform:translateX(-50%);padding:18px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(8,8,12,.97);box-shadow:0 24px 70px rgba(0,0,0,.45);color:#f8f8fb}",
+      ".cookie-consent[hidden]{display:none!important}",
+      ".cookie-consent__inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center}",
+      ".cookie-consent h2{margin:0 0 6px;font-size:1.02rem;color:#fff}",
+      ".cookie-consent p{margin:0;color:#d7d7df;font-size:.95rem;line-height:1.55}",
+      ".cookie-consent a{color:#f5df8f;text-decoration:underline;text-underline-offset:3px}",
+      ".cookie-consent__actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}",
+      ".cookie-consent__button{min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);font:inherit;font-weight:800;cursor:pointer;transition:transform .2s ease,border-color .2s ease,background .2s ease}",
+      ".cookie-consent__button:hover{transform:translateY(-1px)}",
+      ".cookie-consent__button--reject{background:rgba(255,255,255,.07);color:#fff}",
+      ".cookie-consent__button--accept{background:linear-gradient(135deg,#d4af37,#f5df8f);color:#111;border-color:transparent}",
+      ".cookie-settings-link{padding:0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}",
+      ".cookie-settings-link:hover{color:var(--text,#f4f4f5)}",
+      "@media (max-width:700px){.cookie-consent{bottom:12px}.cookie-consent__inner{grid-template-columns:1fr}.cookie-consent__actions{display:grid;grid-template-columns:1fr 1fr}.cookie-consent__button{width:100%}}"
+    ].join("");
+    document.head.appendChild(style);
+  }
+
+  function setupCookieConsent() {
+    injectCookieConsentStyles();
+    loadAdSenseAfterConsent();
+
+    var banner = document.getElementById("cookie-banner") || document.getElementById("cookieConsent");
+    if (!banner) {
+      banner = document.createElement("section");
+      banner.id = "cookieConsent";
+      banner.className = "cookie-consent";
+      banner.setAttribute("aria-label", "Cookie consent");
+      banner.innerHTML = [
+        '<div class="cookie-consent__inner">',
+        '<div>',
+        '<h2>Cookie consent</h2>',
+        '<p>Rap Stories uses essential cookies for site features and, only if you accept, advertising cookies from third-party vendors including Google. You can accept or reject non-essential cookies. Read our <a href="privacy.html">Privacy Policy</a>.</p>',
+        '</div>',
+        '<div class="cookie-consent__actions">',
+        '<button class="cookie-consent__button cookie-consent__button--reject" type="button" data-cookie-choice="declined">Reject</button>',
+        '<button class="cookie-consent__button cookie-consent__button--accept" type="button" data-cookie-choice="accepted">Accept</button>',
+        '</div>',
+        '</div>'
+      ].join("");
+      document.body.appendChild(banner);
+    } else {
+      banner.classList.add("cookie-consent");
+      banner.setAttribute("aria-label", "Cookie consent");
+    }
+
+    var choice = getCookieChoice();
+    banner.hidden = Boolean(choice);
+
+    document.querySelectorAll(".footer-links").forEach(function (footer) {
+      if (footer.querySelector(".cookie-settings-link")) return;
+      var settings = document.createElement("button");
+      settings.type = "button";
+      settings.className = "cookie-settings-link";
+      settings.textContent = "Cookie Settings";
+      settings.addEventListener("click", function () {
+        banner.hidden = false;
+      });
+      footer.appendChild(settings);
+    });
+
+    banner.querySelectorAll("[data-cookie-choice], #cookieAccept, #cookieDecline").forEach(function (button) {
+      if (button.dataset.cookieBound) return;
+      button.addEventListener("click", function () {
+        var nextChoice = button.getAttribute("data-cookie-choice")
+          || (button.id === "cookieAccept" ? "accepted" : "declined");
+        saveCookieChoice(nextChoice);
+        banner.hidden = true;
+        if (nextChoice === "accepted") {
+          loadAdSenseAfterConsent();
+        }
+      });
+      button.dataset.cookieBound = "true";
+    });
   }
 
   function injectHeaderMenuStyles() {
@@ -677,6 +793,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
   }
 
   function setupRevealMotion() {
+    if (window.location.protocol === "file:") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const selectors = [
@@ -710,6 +827,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
   }
 
   function setupGlowTracking() {
+    if (window.location.protocol === "file:") return;
     if (!window.matchMedia("(pointer: fine)").matches) return;
 
     const targets = document.querySelectorAll(".artist-card, .category-card, .timeline-card, .panel, .hero-info, .story-pager-link, .related-card, .album");
@@ -724,9 +842,21 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     });
   }
 
-  applyTheme(getStoredTheme());
+  applyTheme(window.location.protocol === "file:" ? THEMES[0].id : getStoredTheme());
 
   document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.protocol === "file:") {
+      normalizeHeaderFooterLinks();
+      setupSkipLink();
+      setupHeaderMenu();
+      setActiveNav();
+      setupThemeToggle();
+      setupHeader();
+      applyCommonAriaLabels();
+      setupCookieConsent();
+      return;
+    }
+
     cleanTree(document.body);
     normalizeHeaderFooterLinks();
     setupSkipLink();
@@ -734,6 +864,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     setActiveNav();
     setupThemeToggle();
     setupHeader();
+    setupCookieConsent();
     applyCommonAriaLabels();
     updateHomeStats();
     updateTimelineStats();

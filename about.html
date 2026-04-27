@@ -1,10 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
     return;
   }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
+    return;
+  }
+
 
   if (document.querySelector('script[data-rapstories-adsense]')) {
     return;
@@ -728,7 +739,7 @@ header#mainHeader {
 })();
 </script>
 
-  <script src="site-config.js"></script><script src="site-enhancements.js"></script>
+  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 </body>
 </html>
 

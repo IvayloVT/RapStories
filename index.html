@@ -1,8 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head><script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
     return;
   }
 
@@ -22,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rap Stories | Premium Hip-Hop Culture Vault</title>
   <meta name="description" content="Rap Stories is a premium digital vault dedicated to hip-hop culture, artist profiles, editorial stories, timelines, categories, and connected rap history."/>
-  <link href="vault-system.css?v=2026-04-25-premium" rel="stylesheet"/>
+  <link href="vault-system.css?v=2026-04-27-gap-fix" rel="stylesheet"/>
 </head>
 <body class="home-page">
 <header id="mainHeader">
@@ -78,8 +88,9 @@
           <h2>Rap Stories is a premium hip-hop culture archive.</h2>
         </div>
         <div class="archive-identity-copy">
-          <p>Artist pages are only the entry point. Rap Stories connects biography, eras, cities, albums, rivalries, labels, movements, and legacy into one structured archive, so every profile sits inside the wider story of hip-hop culture.</p>
-          <p>The goal is to make the site feel closer to a modern cultural vault than a list of names: a place where fans can discover context, students can follow history, and curious readers can understand why each artist, scene, and moment matters.</p>
+          <p>Rap Stories explains hip-hop culture through artist profiles, long-form guides, scene timelines, rankings, and connected archive pages. Instead of treating each rapper as a separate card, the site shows how careers, cities, labels, albums, rivalries, and eras influence one another.</p>
+          <p>Readers can start with a familiar name, then move into the background that shaped the music: regional scenes, breakthrough records, business moves, collaborations, controversies, and the legacy left for later artists. The archive is designed for casual fans who want a quick path into the culture, and for students or writers who need a clearer structure for research.</p>
+          <p>Every section is built to add context. The Stories area covers major hip-hop moments and debates, the Artist Archive organizes profiles by era and category, the Timeline follows changes across decades, and the Map connects artists to the places that helped define their sound. Together, these pages make Rap Stories a readable guide to rap history rather than a simple gallery of names.</p>
           <a class="nav-btn ghost" href="about.html">Learn About Rap Stories</a>
         </div>
       </div>
@@ -139,9 +150,9 @@
   </div>
 </footer>
 <script src="vault-data.js?v=2026-04-10-2"></script>
-<script src="vault-system.js?v=2026-04-10-2"></script>
+<script src="vault-system.js?v=2026-04-27-gap-fix"></script>
 <script src="site-config.js"></script>
-<script src="site-enhancements.js?v=2026-04-25-premium"></script>
+<script src="site-enhancements.js?v=2026-04-27-gap-fix"></script>
 </body>
 </html>
 
