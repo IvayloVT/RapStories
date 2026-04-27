@@ -257,29 +257,23 @@
     ul { margin-left: 20px; }
 
     footer {
-      padding: 30px 0;
+      padding: 24px 0 50px;
       color: var(--muted);
     }
 
     .footer-wrap {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
     }
 
-    .footer-wrap > div:first-child {
-      flex: 1 1 280px;
-      min-width: 0;
-    }
-
     .footer-links {
       display: flex;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
-      min-width: 0;
     }
 
     .footer-links a:hover { color: var(--text); }
@@ -315,16 +309,6 @@
         overflow-wrap: break-word;
       }
 
-      .footer-wrap {
-        display: grid;
-        gap: 18px;
-      }
-
-      .footer-links {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 14px;
-      }
     }
 
     @media (max-width: 768px) {
@@ -336,7 +320,6 @@
     @media (max-width: 420px) {
       .container { width: min(94%, var(--max)); }
       .brand-text { font-size: 0.92rem; }
-      .footer-links { grid-template-columns: 1fr; }
     }
   </style></head>
 
@@ -551,7 +534,7 @@
 })();
 </script>
 <script src="site-config.js"></script>
-<script src="site-enhancements.js?v=2026-04-27-terms-mobile"></script>
+<script src="site-enhancements.js?v=2026-04-27-footer-match"></script>
 
 </body>
 </html>
