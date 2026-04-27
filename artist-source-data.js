@@ -785,6 +785,161 @@
       </a>
     </div>`
   },
+  'arrdee': {
+    reviewDate: '2026-04-10',
+    sourceTier: 'curated',
+    reviewNotes: 'ArrDee is in the curated wave because his page represents early-2020s UK rap virality, Brighton identity, and chart-facing youth energy.',
+    sources: [
+      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/ArrDee', note: 'Canonical biography and career overview for ArrDee.' },
+      { label: 'Official Charts - Pier Pressure', href: 'https://www.officialcharts.com/albums/arrdee-pier-pressure/', note: 'Useful chart reference for Pier Pressure and UK album performance.' },
+      { label: 'New Yorker feature', href: 'https://www.newyorker.com/culture/listening-booth/a-dizzy-record-of-newfound-fame', note: 'Helpful context for ArrDee, Body Remix, and his early fame.' },
+      { label: 'Billboard coverage', href: 'https://www.billboard.com/search/ArrDee/', note: 'Industry coverage and release-cycle reference for ArrDee.' },
+      { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=ArrDee&type=all', note: 'Helpful for checking releases and credits.' }
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Brighton Roots and an Unusual UK Rap Entry Point</h3>
+      <p>ArrDee, born Riley Davies on September 17, 2002, came from Brighton, a city not usually treated as one of UK rap's central power bases. That made his arrival feel different from the beginning. He was not another London artist entering through a familiar borough story. He came from outside the most obvious rap map and used personality, timing, and confidence to make that difference part of the appeal.</p>
+
+      <p>His Brighton background gave his public image a certain freshness. ArrDee sounded connected to the wider UK rap conversation, but he did not carry the same regional expectations as artists from London, Birmingham, or Manchester. That gave him room to build a style based on cheek, wit, and youthful energy rather than a heavier street image alone.</p>
+
+      <h3>Personality as a Signature</h3>
+      <p>ArrDee's strongest early weapon was personality. His delivery is animated, conversational, and full of punchline timing. He often sounds like he is enjoying the verse while delivering it, which makes his records feel lighter than many drill-influenced songs around him. That does not mean the rapping lacks focus. It means his confidence comes with a grin rather than only menace.</p>
+
+      <p>This made him easy to recognize. In a crowded UK rap environment, technical skill alone is not always enough. ArrDee's voice, accent, facial expressions, quotable lines, and playful energy helped him cut through quickly. His style was built for clips, freestyles, and social feeds, but it also had enough structure to move into chart records.</p>
+
+      <h3>Breakout Through Body Remix</h3>
+      <p>The "Body" remix became the major turning point. On a song packed with artists and energy, ArrDee's verse stood out because it was bright, memorable, and instantly shareable. For many listeners, it was the first time they noticed him. That kind of breakout is very specific to the modern UK rap era, where one guest verse can move an artist from promising newcomer to national talking point almost overnight.</p>
+
+      <p>His moment on "Body" showed how virality and rap skill could work together. The verse was not only popular because of the platform. It worked because ArrDee understood how to make a short appearance feel like a full introduction. He gave listeners a character, a cadence, and a reason to remember the name.</p>
+
+      <h3>Solo Momentum and Oliver Twist</h3>
+      <p>After that first wave of attention, ArrDee needed to prove he could stand alone. "Oliver Twist" became the key solo record because it captured his personality in a simple, hook-driven way. The song leaned into British reference points, cheeky delivery, and a structure that worked beyond core rap fans. It helped turn him from a feature breakout into a solo chart presence.</p>
+
+      <p>That mattered because viral success can disappear quickly if an artist cannot follow it with identity. ArrDee's early solo run showed that his appeal was not only attached to one remix. He had a clear voice and enough mainstream instinct to build records around it.</p>
+
+      <h3>Pier Pressure and the First Project Test</h3>
+      <p><em>Pier Pressure</em> became an important test of whether ArrDee could turn singles and personality into a longer project. The title played on his Brighton seaside identity while also hinting at the pressure of sudden fame. The project included chart-facing energy, drill influence, pop-rap hooks, and flashes of reflection about what happens when a young artist is pushed into public attention quickly.</p>
+
+      <p>The project performed strongly on the UK albums chart, showing that his audience was not limited to one viral song. It also revealed the challenge ahead: ArrDee had to keep the charm that made him famous while developing enough depth and range for long-term growth.</p>
+
+      <h3>Challenges of Youthful Fame</h3>
+      <p>ArrDee's rise happened quickly, and that speed created both opportunity and pressure. Young artists who break through through viral moments often have to mature in public. Every song becomes part of the question: is this a novelty, or is there a lasting artist underneath?</p>
+
+      <p>His best path forward depends on developing the personality-first style into something broader. The humor and bounce are strengths, but long-term legacy usually requires more emotional range, sharper projects, and a clearer sense of artistic evolution. That makes his story interesting because it is still unfolding.</p>
+
+      <h3>Why His Story Matters</h3>
+      <p>ArrDee matters because he represents a specific early-2020s UK rap moment: viral guest verses, TikTok-ready quotables, drill-influenced production, chart ambition, and regional expansion beyond the usual centers. His career shows how quickly the internet can amplify a young artist when personality and timing connect.</p>
+
+      <p>For Rap Stories, ArrDee belongs in the archive because UK rap history is not only made by the most serious or established voices. It is also shaped by artists who reveal how audience attention changes. ArrDee's rise shows how charisma, humor, and regional difference can become powerful tools in a fast-moving scene.</p>
+
+      <div class="quote">ArrDee's breakout was built on timing and personality: a young voice turning a guest verse into a national introduction.</div>
+    `,
+    riseToFameHtml: `
+      <p>ArrDee's rise accelerated through freestyles, online clips, and then the huge visibility of the "Body" remix. His verse cut through because it was catchy, confident, and easy to quote, making him one of the most memorable new voices from that moment.</p>
+      <p>He followed the feature attention with solo records such as "Oliver Twist" and "Flowers", proving that his appeal could work beyond one viral appearance. <em>Pier Pressure</em> then gave him a longer-format project and confirmed that he had a real UK chart audience.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>2002 - Birth</strong>
+          <p>Born Riley Davies in Brighton, England.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Late 2010s - Early Development</strong>
+          <p>Built a personality-driven rap style through local ambition, freestyles, and online momentum.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2021 - Body Remix</strong>
+          <p>Reached a much wider audience through his standout verse on the "Body" remix.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2021 - Oliver Twist</strong>
+          <p>Released the solo breakout that helped define his cheeky, hook-driven identity.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2021-2022 - Flowers and More Chart Momentum</strong>
+          <p>Continued building with catchy singles that kept him visible beyond the first viral wave.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2022 - Pier Pressure</strong>
+          <p>Released his debut mixtape, turning sudden fame into a fuller project era.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2020s - Career Development</strong>
+          <p>Continues working to turn early chart visibility into long-term artistic growth.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>Body Remix</strong>
+          <span>The breakout feature moment that introduced ArrDee to a national and international audience.</span>
+        </div>
+        <div class="album">
+          <strong>Oliver Twist</strong>
+          <span>The solo hit that captured his cheeky delivery, British references, and hook-driven personality.</span>
+        </div>
+        <div class="album">
+          <strong>Flowers</strong>
+          <span>A chart-facing record that helped prove his momentum could continue after the first viral breakthrough.</span>
+        </div>
+        <div class="album">
+          <strong>Come & Go</strong>
+          <span>A more reflective song that hinted at emotional range beneath the playful public image.</span>
+        </div>
+        <div class="album">
+          <strong>Pier Pressure</strong>
+          <span>The debut mixtape that turned his Brighton identity, chart energy, and early fame into a longer project.</span>
+        </div>
+        <div class="album">
+          <strong>War</strong>
+          <span>The Aitch collaboration that connected him to another major UK rap personality from the same era.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Moving Beyond First Impressions</h3>
+      <p>ArrDee's early success came from personality, humor, and quotable moments. The challenge is turning that first impression into a deeper catalog. A viral introduction creates attention, but long-term respect usually requires growth across projects.</p>
+
+      <h3>Balancing Playfulness and Depth</h3>
+      <p>His cheeky delivery is central to his appeal, but it can also make some listeners underestimate him. One of his key artistic challenges is showing more emotional and technical range without losing the lightness that made him recognizable.</p>
+
+      <h3>Fast Fame at a Young Age</h3>
+      <p>ArrDee entered national attention while still very young. That kind of speed can be difficult because the public starts judging the artist before the artist has fully developed. His career is partly about learning in public.</p>
+    `,
+    culturalImpactHtml: `
+      <p>ArrDee's cultural impact is tied to the speed of modern UK rap discovery. He showed how a standout guest verse, meme-ready personality, and a clear visual identity could turn a young regional artist into a national name almost instantly.</p>
+      <p>He also widened the map for UK rap visibility. Coming from Brighton, he helped show that the scene's next moments did not have to come only from London or the usual major hubs. His success made regional difference part of the story.</p>
+    `,
+    legacyHtml: `
+      <p>ArrDee's legacy is still in progress, but his early impact is clear. He represents the viral-era UK rap breakout: fast, personality-driven, chart-aware, and built through the connection between verses, videos, and social conversation.</p>
+      <p>In the archive, his story matters because it captures a changing moment in British rap. ArrDee shows how youth, humor, regional identity, and internet momentum can create real commercial movement when they arrive together.</p>
+    `,
+    relatedHtml: `<div class="related-list">
+      <a href="central-cee.html" class="related-card">
+        <h4>Central Cee</h4>
+        <p>A modern UK rap peer connected to viral growth, drill influence, and international visibility.</p>
+      </a>
+      <a href="aj-tracey.html" class="related-card">
+        <h4>AJ Tracey</h4>
+        <p>A UK rap comparison for charisma, hooks, and movement between underground and chart spaces.</p>
+      </a>
+      <a href="dave.html" class="related-card">
+        <h4>Dave</h4>
+        <p>A very different UK rap figure whose success helps frame the wider scene ArrDee entered.</p>
+      </a>
+      <a href="mist.html" class="related-card">
+        <h4>Mist</h4>
+        <p>A UK artist useful for comparing melody, personality, regional identity, and mainstream reach.</p>
+      </a>
+      <a href="chip.html" class="related-card">
+        <h4>Chip</h4>
+        <p>A grime-rooted MC whose competitive tradition helps frame the bar-focused side of UK rap.</p>
+      </a>
+    </div>`
+  },
   'asap-rocky': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
