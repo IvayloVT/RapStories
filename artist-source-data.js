@@ -1107,13 +1107,166 @@
   },
   'august-alsina': {
     reviewDate: '2026-04-10',
+    sourceTier: 'curated',
+    reviewNotes: 'August Alsina is in the curated tier because his page covers New Orleans R&B, trauma-shaped storytelling, health struggles, public scrutiny, and modern hip-hop soul.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/August_Alsina', note: 'Canonical biography and career overview for August Alsina.' },
       { label: 'AllMusic profile', href: 'https://www.allmusic.com/search/all/August%20Alsina', note: 'Discography context, credits, and style notes for August Alsina.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/August%20Alsina/', note: 'Chart milestones, release coverage, and industry reporting for August Alsina.' },
-      { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/August%20Alsina/', note: 'Long-form features, interviews, and cultural framing connected to August Alsina.' },
+      { label: 'Pitchfork review', href: 'https://pitchfork.com/reviews/albums/21341-this-thing-called-life/', note: 'Critical framing for This Thing Called Life and Alsina’s rap-influenced R&B style.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=August%20Alsina&type=all', note: 'Release history and credits starting point for August Alsina.' }
-    ]
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>New Orleans Roots</h3>
+      <p>August Alsina, born August Anthony Alsina Jr. on September 3, 1992, came from New Orleans with a voice shaped by instability, grief, and the pressure of growing up quickly. His story is not built around the fantasy of effortless stardom. It begins in a family environment marked by addiction, separation, and responsibility, where music became both escape and testimony.</p>
+
+      <p>New Orleans gave Alsina a cultural foundation, but his emotional language came from hardship. He was drawn to singing early, including church-rooted influence, yet his music never settled into clean gospel uplift or polished romantic R&B. Instead, he carried the city’s survival instinct into records that sounded wounded, street-aware, and spiritually restless.</p>
+
+      <p>That combination made him different from many mainstream R&B artists of the 2010s. August could sing with tenderness, but the stories underneath often came from hunger, distrust, family loss, and the need to protect himself. He sounded like an artist trying to turn private damage into something other people could recognize.</p>
+
+      <h3>Music as Survival</h3>
+      <p>Before becoming a national name, Alsina built momentum through mixtapes and online visibility. Projects such as <em>The Product</em> and <em>The Product 2</em> helped define his lane: confessional R&B with hip-hop posture, direct language, and Southern grit. He was not simply singing over rap-adjacent production. He was using melody the way many rappers use verses, as a way to narrate pressure, loyalty, temptation, and pain.</p>
+
+      <p>His breakthrough single "I Luv This Shit" became the first major public proof of that identity. The record worked because it carried both radio energy and lived-in roughness. It had a hook strong enough for clubs and playlists, but the voice behind it still sounded like someone who had not been softened by the industry. That tension became central to August Alsina’s appeal.</p>
+
+      <p>When <em>Testimony</em> arrived in 2014, the title made sense. The album was not just a debut; it was a personal statement. Songs such as "Make It Home", "Benediction", "No Love", and "Kissin' on My Tattoos" positioned him as an R&B artist who treated survival as the main subject. His vulnerability did not feel decorative. It felt like the foundation of the music.</p>
+
+      <h3>Mainstream Recognition</h3>
+      <p>August Alsina’s rise placed him inside a wider moment when R&B was becoming darker, more rhythmically flexible, and more open to rap’s emotional directness. He fit that landscape, but he also stood apart from it. Where some artists leaned into mystery or atmosphere, August often chose confession. His records were direct, plainspoken, and heavy with autobiography.</p>
+
+      <p>His collaborations also helped widen his profile. Working around figures such as DJ Khaled, Lil Wayne, Future, Nicki Minaj, and Rick Ross placed him near major hip-hop audiences without requiring him to abandon his own lane. He could stand beside rappers because his music already carried rap’s sense of testimony, pride, and emotional toughness.</p>
+
+      <p><em>This Thing Called Life</em>, released in 2015, showed a more developed artist trying to make sense of fame, trauma, faith, and responsibility. It was not only about romantic pain. It also explored ambition, family pressure, inner conflict, and the strange loneliness that can follow success. The album reinforced that Alsina’s strongest work came when he refused to separate the artist from the person.</p>
+
+      <h3>Health, Public Pressure, and Resilience</h3>
+      <p>As his career continued, August Alsina’s public story became more complicated. He spoke openly about serious health struggles, including autoimmune-related illness that affected his body and forced him to confront vulnerability in a very literal way. For an artist already known for emotional openness, those revelations deepened the public understanding of his music.</p>
+
+      <p>He also became a frequent subject of public conversation beyond songs and albums. Media attention around his personal life sometimes threatened to overpower the music, especially in an era where celebrity narratives can move faster than artistic ones. For August, the challenge has been preserving the meaning of the work while the public debates the details of the life around it.</p>
+
+      <p>Still, resilience remains the through line. Albums such as <em>The Product III: stateofEMERGEncy</em> and <em>Myself</em> continued his commitment to personal storytelling. Even when the commercial spotlight shifted, Alsina kept writing from the same emotional center: pain, reflection, loyalty, healing, and the search for peace after years of pressure.</p>
+
+      <h3>Why His Story Matters</h3>
+      <p>August Alsina matters because he expanded what mainstream R&B vulnerability could sound like. His voice made pain feel physical, not abstract. He helped define a lane where masculine honesty, street memory, family trauma, and melody could exist together without being softened into simple love songs.</p>
+
+      <p>For Rap Stories, his place in the archive is important because hip-hop culture is not only built by rappers. It is also shaped by singers who understand rap’s language of survival and translate it through melody. August Alsina’s career sits at that intersection: R&B as confession, hip-hop soul as witness, and personal history as the engine of the catalog.</p>
+
+      <div class="quote">August Alsina’s power comes from the short distance between the wound and the song: his best music sounds like survival before it sounds like performance.</div>
+    `,
+    riseToFameHtml: `
+      <p>August Alsina’s rise came through mixtapes, online attention, and a clear emotional identity. He did not enter the mainstream as a polished romantic singer. He arrived with a voice that sounded bruised, direct, and connected to real-life pressure.</p>
+      <p>"I Luv This Shit" became the defining breakout because it balanced radio appeal with rawness. From there, <em>Testimony</em> gave him a larger platform and proved that listeners were responding to more than one song. They were responding to an artist whose pain felt believable.</p>
+      <p>His rise was also helped by hip-hop proximity. Features, collaborations, and production choices placed him close to rap audiences, while his voice kept him rooted in R&B. That dual identity made him one of the most distinctive young R&B names of the mid-2010s.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1992 - Birth</strong>
+          <p>Born August Anthony Alsina Jr. in New Orleans, Louisiana.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Early 2010s - Mixtape Development</strong>
+          <p>Built early attention through projects including <em>The Product</em> and <em>The Product 2</em>, shaping a raw R&B identity tied to survival and street realism.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2013 - Breakout Single</strong>
+          <p>"I Luv This Shit" became his major breakthrough, introducing him as a New Orleans voice with club energy and emotional grit.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2014 - <em>Testimony</em></strong>
+          <p>Released his debut studio album, reaching a wider audience with songs centered on grief, ambition, romance, and endurance.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2015 - <em>This Thing Called Life</em></strong>
+          <p>Expanded his artistic profile with a second album that explored fame, faith, family responsibility, and emotional conflict.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2020 - <em>The Product III: stateofEMERGEncy</em></strong>
+          <p>Returned with a deeply personal project after years of health issues, public scrutiny, and personal transition.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2023 - <em>Myself</em></strong>
+          <p>Continued his independent-era reflection with a project focused on selfhood, healing, and emotional honesty.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>The Product / The Product 2</strong>
+          <span>The mixtape era that introduced his confessional R&B style and built the foundation for his mainstream breakthrough.</span>
+        </div>
+        <div class="album">
+          <strong>"I Luv This Shit"</strong>
+          <span>The breakout single that made his voice recognizable and connected raw New Orleans emotion with radio momentum.</span>
+        </div>
+        <div class="album">
+          <strong>Testimony</strong>
+          <span>The debut album that framed his career as a personal statement built around pain, faith, romance, and survival.</span>
+        </div>
+        <div class="album">
+          <strong>"No Love" / "Benediction"</strong>
+          <span>Key records showing both his romantic vulnerability and his ability to make struggle feel spiritual and direct.</span>
+        </div>
+        <div class="album">
+          <strong>This Thing Called Life</strong>
+          <span>A second album that deepened his themes of responsibility, ambition, fame, and emotional consequence.</span>
+        </div>
+        <div class="album">
+          <strong>The Product III: stateofEMERGEncy</strong>
+          <span>A later project shaped by illness, recovery, public pressure, and a return to personal testimony.</span>
+        </div>
+        <div class="album">
+          <strong>Myself</strong>
+          <span>A reflective independent-era chapter focused on identity, healing, and choosing self-definition after public turbulence.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Family Loss and Emotional Weight</h3>
+      <p>August Alsina’s music is tied to personal grief, family responsibility, and the pressure of turning trauma into art. That honesty made his work powerful, but it also meant the public often met him through pain before anything else.</p>
+
+      <h3>Health Struggles</h3>
+      <p>His serious health issues became part of his public story and affected his career rhythm. For an artist whose identity already centered on vulnerability, physical illness added another layer to how listeners understood his resilience.</p>
+
+      <h3>Celebrity Scrutiny</h3>
+      <p>Public attention around his personal life sometimes pulled focus away from the music. One of the ongoing challenges in his career has been keeping the artistic story visible when media conversation reduces him to headlines.</p>
+
+      <h3>Maintaining Momentum</h3>
+      <p>After a strong mid-2010s breakthrough, August faced the difficult task of sustaining commercial momentum while dealing with health, label shifts, and a changing R&B landscape. His later work reflects an artist choosing honesty over easy reinvention.</p>
+    `,
+    culturalImpactHtml: `
+      <p>August Alsina helped shape a modern R&B lane where vulnerability could feel tough, street-aware, and emotionally direct. He made songs that appealed to rap audiences without becoming a rapper, and he helped blur the line between R&B confession and hip-hop testimony.</p>
+      <p>His impact is especially clear in how he handled masculinity. Instead of presenting pain as weakness, he made it central to his strength. That mattered for listeners who wanted R&B that spoke to grief, family pressure, survival, and distrust as much as romance.</p>
+      <p>He also represents the 2010s shift where R&B artists could build credibility through mixtapes, collaborations, and direct emotional storytelling rather than only traditional radio polish. His career belongs to the same cultural conversation as rap-sung hybrids and pain-centered melodic music.</p>
+    `,
+    legacyHtml: `
+      <p>August Alsina’s legacy is still being written, but his core contribution is clear: he gave modern R&B one of its most emotionally exposed voices. His best work does not hide behind atmosphere or mystery. It speaks plainly, often painfully, and that directness is the point.</p>
+      <p>In the wider archive, he matters as an artist who connected New Orleans survival, hip-hop soul, and confessional songwriting. Whether through <em>Testimony</em>, <em>This Thing Called Life</em>, or his later independent work, he remains a figure whose catalog documents the cost of becoming visible while still carrying unresolved pain.</p>
+    `,
+    relatedHtml: `
+      <div class="related-list">
+        <a href="kevin-gates.html" class="related-card">
+          <h4>Kevin Gates</h4>
+          <p>A Southern artist whose emotional honesty, street memory, and spiritual conflict connect closely to Alsina's world.</p>
+        </a>
+        <a href="lil-wayne.html" class="related-card">
+          <h4>Lil Wayne</h4>
+          <p>A New Orleans giant whose influence helps frame the city, language, and rap proximity around August's music.</p>
+        </a>
+        <a href="dj-khaled.html" class="related-card">
+          <h4>DJ Khaled</h4>
+          <p>A collaborator and connector whose records placed August beside major hip-hop and R&B voices.</p>
+        </a>
+        <a href="future.html" class="related-card">
+          <h4>Future</h4>
+          <p>A melodic street-rap figure whose emotional darkness helps frame the era August Alsina rose within.</p>
+        </a>
+        <a href="tory-lanez.html" class="related-card">
+          <h4>Tory Lanez</h4>
+          <p>A comparison point for rap-adjacent R&B, melodic delivery, and the complicated link between music and public scrutiny.</p>
+        </a>
+      </div>`
   },
   'biggie': {
     reviewDate: '2026-04-10',
