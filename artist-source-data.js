@@ -476,13 +476,159 @@
   },
   'ace-hood': {
     reviewDate: '2026-04-10',
+    sourceTier: 'curated',
+    reviewNotes: 'Ace Hood is in the curated wave because his page represents Florida grind rap, We the Best-era visibility, and motivational hip-hop.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Ace_Hood', note: 'Canonical biography and career overview for Ace Hood.' },
       { label: 'AllMusic profile', href: 'https://www.allmusic.com/search/all/Ace%20Hood', note: 'Discography context, credits, and style notes for Ace Hood.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/Ace%20Hood/', note: 'Chart milestones, release coverage, and industry reporting for Ace Hood.' },
+      { label: 'Apple Music album page', href: 'https://music.apple.com/us/album/trials-tribulations-explicit-version/1443399414', note: 'Helpful context for Trials & Tribulations and its autobiographical framing.' },
       { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/Ace%20Hood/', note: 'Long-form features, interviews, and cultural framing connected to Ace Hood.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Ace%20Hood&type=all', note: 'Release history and credits starting point for Ace Hood.' }
-    ]
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Florida Roots and Early Drive</h3>
+      <p>Ace Hood, born Antoine Franklin McColister, came out of Florida with a style built around urgency, discipline, and survival-minded ambition. Raised in Deerfield Beach after being born in Port St. Lucie, he carried a perspective shaped by pressure and working-class motivation. His music often sounds like it was made for people trying to push through difficult circumstances without losing focus.</p>
+
+      <p>Before rap became the main path, Ace Hood had athletic dreams. A football injury helped redirect his future, pushing him toward music with a seriousness that later became part of his brand. That detail matters because his career has always sounded like a response to setback. His songs are rarely detached or casual. They are built around movement, grind, and the belief that success has to be chased daily.</p>
+
+      <h3>Meeting DJ Khaled and Entering We the Best</h3>
+      <p>Ace Hood's breakthrough story is closely connected to DJ Khaled. After meeting Khaled in Florida and getting the chance to prove himself, he became one of the early flagship artists on We the Best Music Group. That relationship placed him inside a powerful Southern rap network connected to radio, mixtapes, major collaborations, and the expanding Miami-centered industry of the late 2000s.</p>
+
+      <p>Being around Khaled mattered because it gave Ace access to a bigger stage, but it also required him to stand out among loud personalities and star collaborators. He did that through intensity. His delivery carried a sense of hunger that made him sound ready for the moment. Even when placed next to bigger names, Ace Hood often came across as the artist trying to prove he belonged every second he was on the record.</p>
+
+      <h3>Early Albums and National Visibility</h3>
+      <p>His debut album <em>Gutta</em> arrived in 2008 and introduced him as a young Florida rapper with mainstream ambition. Singles such as "Cash Flow" and "Ride" helped place him in the national conversation, while the We the Best connection gave his early career a recognizable platform. The music was polished enough for radio but still grounded in hunger and street motivation.</p>
+
+      <p><em>Ruthless</em> followed in 2009, continuing his push as a hard-working Southern rap voice. During this era, Ace Hood was not presented as a mysterious artist or a fashion figure. He was presented as a grinder: someone whose value came from energy, persistence, and direct motivational force. That identity became his strongest lane.</p>
+
+      <h3>Hustle Hard and the Motivational Rap Lane</h3>
+      <p>"Hustle Hard" became the record that best captured Ace Hood's core appeal. The song was simple in concept but powerful in function. It turned grind culture into a chant, something that could work in clubs, gyms, cars, sports settings, and personal routines. The remix with major names extended the record's reach and made it one of his defining moments.</p>
+
+      <p>What made "Hustle Hard" important was not only the hook. It clarified Ace Hood's purpose as an artist. His best music gives listeners a feeling of forward motion. It is not mainly about luxury after success; it is about the mental state required to keep chasing success before comfort arrives.</p>
+
+      <h3>Bugatti and Commercial Peak</h3>
+      <p>In 2013, "Bugatti" featuring Future and Rick Ross became Ace Hood's biggest mainstream single as a lead artist. Produced by Mike WiLL Made-It with DJ Khaled involved, the record captured the trap momentum of the early 2010s while still fitting Ace Hood's high-energy identity. Future's hook, Ross's presence, and Ace's urgency made the song feel built for impact.</p>
+
+      <p>The album <em>Trials & Tribulations</em> gave him one of his strongest commercial and personal statements. The project balanced anthems with more autobiographical writing, showing that Ace Hood's intensity was connected to real pressure, family pain, ambition, and responsibility. It helped show that motivational rap could still carry personal depth.</p>
+
+      <h3>Independence and Personal Evolution</h3>
+      <p>After his major-label and We the Best era, Ace Hood moved toward independence and self-definition. That shift changed the way his career was read. Instead of being only the rapper attached to Khaled's platform, he became an artist focused on discipline, fitness, spirituality, ownership, and internal growth. His later work often sounds more reflective, even when the energy remains high.</p>
+
+      <p>This evolution is important because it shows that Ace Hood's motivational image was not just branding. Over time, it became a lifestyle narrative. He leaned into health, personal control, and independence, giving longtime fans a different kind of inspiration from the one found in his early hustle anthems.</p>
+
+      <h3>Why His Story Matters</h3>
+      <p>Ace Hood matters because he represents a specific and valuable lane in hip-hop: grind music with conviction. His catalog is built for listeners who use rap as fuel. Whether through "Hustle Hard", "Bugatti", "We Outchea", or deeper album cuts, his music often turns pressure into momentum.</p>
+
+      <p>For Rap Stories, his page belongs in the archive because hip-hop culture is not only shaped by lyrical innovators and chart giants. It is also shaped by artists who give people language for discipline, struggle, ambition, and daily survival. Ace Hood's legacy sits in that space: not always the flashiest, but consistently tied to effort and refusal to quit.</p>
+
+      <div class="quote">Ace Hood's best music sounds like discipline under pressure: hunger before comfort, motion before applause, and belief before the breakthrough.</div>
+    `,
+    riseToFameHtml: `
+      <p>Ace Hood's rise began when DJ Khaled discovered him in Florida and brought him into the We the Best Music Group orbit. That co-sign gave him access to major collaborators and a wider industry platform, but Ace had to make the opportunity count through his own urgency and delivery.</p>
+      <p>His early albums <em>Gutta</em> and <em>Ruthless</em> introduced him nationally, but "Hustle Hard" became the true identity record. It turned his grind-focused energy into a recognizable anthem. "Bugatti" later pushed him to an even bigger mainstream moment, connecting him to Future, Rick Ross, and the early-2010s trap wave.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1988 - Birth</strong>
+          <p>Born Antoine Franklin McColister in Port St. Lucie, Florida, and later raised in Deerfield Beach.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2000s - Football Setback and Rap Focus</strong>
+          <p>After injury redirected his athletic ambitions, Ace Hood began taking rap more seriously as a path forward.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2007-2008 - DJ Khaled and We the Best</strong>
+          <p>Connected with DJ Khaled and became one of the early artists signed to We the Best Music Group.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2008 - Gutta</strong>
+          <p>Released his debut album, featuring records such as "Cash Flow" and "Ride".</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2011 - Hustle Hard</strong>
+          <p>Released the motivational anthem that became one of his signature records.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2013 - Bugatti and Trials & Tribulations</strong>
+          <p>Reached a major commercial peak with "Bugatti" and released one of his strongest album statements.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Late 2010s-2020s - Independent Growth</strong>
+          <p>Moved toward independence, self-discipline, fitness, spirituality, and a more personally controlled career path.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>Gutta</strong>
+          <span>The 2008 debut album that introduced Ace Hood through the We the Best and Def Jam platform.</span>
+        </div>
+        <div class="album">
+          <strong>Cash Flow / Ride</strong>
+          <span>Early singles that helped give him national visibility and show his commercial ambitions.</span>
+        </div>
+        <div class="album">
+          <strong>Blood, Sweat & Tears</strong>
+          <span>The album era that produced "Hustle Hard" and cemented his grind-focused identity.</span>
+        </div>
+        <div class="album">
+          <strong>Hustle Hard</strong>
+          <span>His defining motivational anthem, built around persistence, pressure, and daily ambition.</span>
+        </div>
+        <div class="album">
+          <strong>Bugatti</strong>
+          <span>The Future and Rick Ross collaboration that became his biggest mainstream single as a lead artist.</span>
+        </div>
+        <div class="album">
+          <strong>Trials & Tribulations</strong>
+          <span>A personal and commercially successful album that balanced trap anthems with autobiographical pressure.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Living Beyond One Anthem</h3>
+      <p>"Hustle Hard" gave Ace Hood a signature identity, but it also created a challenge: how to grow beyond one motivational lane without losing the reason fans connected. His career has often balanced anthem energy with deeper personal evolution.</p>
+
+      <h3>Label Identity and Independence</h3>
+      <p>Being associated with DJ Khaled and We the Best gave Ace Hood visibility, but it also meant many listeners first understood him through that platform. His later independent path became important because it allowed him to define himself outside of the label structure that introduced him.</p>
+
+      <h3>Changing Industry Conditions</h3>
+      <p>Ace Hood's career moved through major changes in rap distribution, from radio and label-driven singles into streaming and direct fan connection. Staying relevant required discipline, reinvention, and a willingness to build outside the old system.</p>
+    `,
+    culturalImpactHtml: `
+      <p>Ace Hood's cultural impact lives in motivational rap. He gave listeners records that could function as workout music, survival music, and ambition music. "Hustle Hard" became more than a single because it captured a mindset that many people could apply to their own lives.</p>
+      <p>He also represents Florida's contribution to Southern rap beyond one city or one sound. Through We the Best, Def Jam, Cash Money connections, and later independence, Ace Hood helped show how Florida artists could carry intensity, discipline, and personal hunger into the national rap conversation.</p>
+    `,
+    legacyHtml: `
+      <p>Ace Hood's legacy is built on persistence. He may not always be discussed as the biggest star of his era, but his lane is clear: he made music for people chasing a way out, trying to stay disciplined, or turning setbacks into fuel.</p>
+      <p>In hip-hop history, that matters. Rap has always been a culture of aspiration, pressure, and self-definition. Ace Hood's best work speaks directly to that tradition, making him an important figure in the archive's story of grind, resilience, and motivational Southern rap.</p>
+    `,
+    relatedHtml: `<div class="related-list">
+      <a href="dj-khaled.html" class="related-card">
+        <h4>DJ Khaled</h4>
+        <p>The executive and collaborator who helped introduce Ace Hood through the We the Best platform.</p>
+      </a>
+      <a href="meek-mill.html" class="related-card">
+        <h4>Meek Mill</h4>
+        <p>Another rapper known for intensity, hunger, and success-driven street motivation.</p>
+      </a>
+      <a href="lil-wayne.html" class="related-card">
+        <h4>Lil Wayne</h4>
+        <p>A Cash Money-era giant connected to the wider label ecosystem around Ace Hood's peak years.</p>
+      </a>
+      <a href="plies.html" class="related-card">
+        <h4>Plies</h4>
+        <p>A fellow Florida rap figure whose work also connects street realism, personality, and Southern identity.</p>
+      </a>
+      <a href="birdman.html" class="related-card">
+        <h4>Birdman</h4>
+        <p>A Cash Money executive and rap figure tied to the business network surrounding Ace Hood's early-2010s run.</p>
+      </a>
+    </div>`
   },
   'asap-rocky': {
     reviewDate: '2026-04-10',
