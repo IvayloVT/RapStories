@@ -1268,6 +1268,167 @@
         </a>
       </div>`
   },
+  'az-yet': {
+    reviewDate: '2026-04-10',
+    sourceTier: 'curated',
+    reviewNotes: 'Az Yet is in the curated tier because the page covers 1990s R&B vocal groups, Philadelphia harmony tradition, LaFace polish, soundtrack crossover, and quiet-storm legacy.',
+    sources: [
+      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Az_Yet', note: 'Canonical biography, group history, membership changes, and debut-era overview for Az Yet.' },
+      { label: 'MusicVF chart archive', href: 'https://www.musicvf.com/Az%2BYet.songs', note: 'Chart reference for Last Night, Hard to Say I’m Sorry, and Az Yet’s Hot 100/R&B performance.' },
+      { label: 'R&B Haven profile', href: 'https://www.rnbhaven.com/artists/Az-Yet/56', note: 'Useful background on the group’s Philadelphia formation and Babyface connection.' },
+      { label: 'GRAMMY reference', href: 'https://www.grammy.com/artists/az-yet/14072', note: 'Verification point for Az Yet’s Grammy nomination history.' },
+      { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Az%20Yet&type=all', note: 'Release history and credits starting point for Az Yet.' }
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Philadelphia Harmony Roots</h3>
+      <p>Az Yet formed out of Philadelphia, a city with one of America’s deepest soul and vocal-group traditions. That origin matters because the group’s identity was never built around flash first. It was built around voices: stacked harmonies, patient phrasing, smooth lead vocals, and the kind of emotional control that made 1990s R&B ballads feel cinematic.</p>
+
+      <p>The group’s story began before their mainstream breakthrough, through years of lineup movement, rehearsal, local development, and the search for the right industry connection. In a period when male R&B groups were highly competitive, Az Yet needed more than good voices. They needed songs, production, image, and a sound that could cut through an era already crowded with strong harmony acts.</p>
+
+      <p>Philadelphia gave them a useful foundation. The city’s musical memory stretches through classic soul, church-rooted singing, street-corner harmony, and polished adult R&B. Az Yet carried that lineage into the 1990s, but with a sound shaped for contemporary radio: cleaner production, dramatic ballad arrangements, and vocals designed for both quiet-storm programming and pop crossover.</p>
+
+      <h3>The LaFace and Babyface Connection</h3>
+      <p>Az Yet’s breakthrough became closely tied to the refined R&B world around LaFace Records and Babyface. That connection placed the group inside one of the most important hitmaking systems of the decade. Babyface’s writing and production style valued melody, restraint, emotional clarity, and radio-ready polish, all of which matched the group’s strengths.</p>
+
+      <p>This was not a small detail. In the 1990s, production context could define how an R&B group was understood. Az Yet did not arrive as a raw street group or a dance-heavy pop act. They arrived as a vocal group built for adult feeling, romance, apology, longing, and emotional performance. The LaFace connection helped frame them as part of a high-standard ballad tradition rather than a novelty act.</p>
+
+      <p>"Last Night" became the key proof. Produced by Babyface and Mervyn Warren, the song placed the group’s harmonies at the center while still giving the record enough drama to work on mainstream radio. It was intimate, but not small. It sounded like a private confession arranged for a large audience.</p>
+
+      <h3>Breakthrough Ballads</h3>
+      <p>"Last Night" became Az Yet’s signature record and one of the clearest examples of their appeal. The song reached major chart visibility because it carried a rare balance: controlled vocals, romantic tension, and an arrangement that built without becoming overdone. For many listeners, that record is the group’s defining statement.</p>
+
+      <p>Their cover of Chicago’s "Hard to Say I’m Sorry" pushed them even further into pop crossover territory. Featuring Peter Cetera, the song connected classic pop songwriting with 1990s R&B harmony. It also showed how Az Yet could reinterpret familiar material through vocal texture rather than simply copying the original. The performance had polish, but its success depended on the blend of voices.</p>
+
+      <p>The self-titled <em>Az Yet</em> album placed the group among the decade’s major romantic R&B conversations. Even if the group did not produce a long string of later blockbuster albums, the debut gave them a durable place in the memory of the era. Their strongest records became part of wedding playlists, late-night radio, slow-jam collections, and 1990s R&B nostalgia.</p>
+
+      <h3>Vocal Group Identity</h3>
+      <p>Az Yet’s importance is easier to understand when placed inside the male vocal-group wave of the 1990s. This was an era where harmony groups could still become mainstream names, and audiences cared deeply about vocal blend. The competition included groups with stronger catalogs, bigger personalities, or longer commercial runs, but Az Yet carved out a lane through elegance and emotional precision.</p>
+
+      <p>The group did not rely on aggressive image or dance spectacle. Their identity lived in the slow build of a song, the way background parts supported the lead, and the smoothness of transitions between singers. That made their music feel adult and formal compared with rougher R&B trends, but it also gave their best songs staying power.</p>
+
+      <p>Lineup changes and shifting industry attention made long-term consistency difficult. Like many vocal groups, Az Yet’s story includes the challenge of maintaining chemistry while members change and the commercial center of R&B moves elsewhere. By the 2000s, the mainstream had begun shifting toward solo stars, hip-hop collaborations, and more beat-driven R&B, making the classic vocal-group lane harder to sustain.</p>
+
+      <h3>Quiet-Storm Afterlife</h3>
+      <p>Az Yet’s legacy is not measured only by the number of albums released. It is measured by the way a few songs continued to live. "Last Night" and "Hard to Say I’m Sorry" remain recognizable because they capture a specific emotional style: polished, sincere, slow-burning, and vocally rich.</p>
+
+      <p>That afterlife matters. Some artists dominate an era through volume. Others become attached to a feeling. Az Yet belongs to the second category. Their music represents the 1990s R&B belief that a group could build a whole identity around a ballad if the singing was strong enough and the arrangement carried real feeling.</p>
+
+      <p>For Rap Stories, Az Yet matters because hip-hop culture’s archive also includes the R&B voices that shaped its emotional environment. Their songs sat beside rap records on radio, soundtracks, mixtapes, and late-night listening habits. They remind us that the culture was never only about bars and drums. It was also about harmonies, romance, vulnerability, and the soundtrack to everyday memory.</p>
+
+      <div class="quote">Az Yet’s legacy lives in the blend: voices arranged with patience, emotion delivered with polish, and ballads that still carry the atmosphere of 1990s R&B.</div>
+    `,
+    riseToFameHtml: `
+      <p>Az Yet’s rise came through the slow work of vocal development and the right industry connection. The group came from Philadelphia’s harmony tradition and eventually connected with the LaFace/Babyface world, giving them access to the kind of songwriting and production that could turn strong voices into national records.</p>
+      <p>"Last Night" became the breakthrough because it introduced the group in their strongest form: romantic, polished, and vocally precise. The song’s success gave Az Yet immediate visibility in a decade when R&B groups could still become major radio names through ballads.</p>
+      <p>The follow-up, "Hard to Say I’m Sorry", expanded their reach beyond core R&B audiences. By reworking a familiar pop ballad with Peter Cetera involved, Az Yet moved into crossover territory while keeping vocal harmony at the center of the record.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1989 - Formation Roots</strong>
+          <p>Az Yet began forming in Philadelphia, drawing from local vocal tradition and early member chemistry.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Early 1990s - Group Development</strong>
+          <p>The group developed through rehearsal, lineup movement, and industry searching while refining a smooth harmony identity.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Mid-1990s - LaFace Connection</strong>
+          <p>Az Yet connected with the Babyface and LaFace Records orbit, placing their sound inside one of the decade’s most polished R&B systems.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1996 - "Last Night"</strong>
+          <p>The group broke through with "Last Night", a major R&B and pop hit that became their signature record.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1996 - Debut Album</strong>
+          <p>The self-titled <em>Az Yet</em> album introduced the group’s ballad-driven sound to a wide mainstream audience.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>1997 - "Hard to Say I’m Sorry"</strong>
+          <p>Their Chicago cover, featuring Peter Cetera, became another major crossover moment and earned Grammy recognition.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2000s-2010s - Legacy Phase</strong>
+          <p>Later releases, performances, and lineup changes kept the name active while the group’s biggest songs remained part of classic R&B memory.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>"Last Night"</strong>
+          <span>The signature Babyface-produced breakthrough that placed Az Yet’s harmonies at the center of 1990s R&B radio.</span>
+        </div>
+        <div class="album">
+          <strong>Az Yet</strong>
+          <span>The self-titled debut album that framed the group as a polished LaFace-era vocal act built around ballads and harmony.</span>
+        </div>
+        <div class="album">
+          <strong>"Hard to Say I’m Sorry"</strong>
+          <span>The Chicago cover featuring Peter Cetera that pushed the group into pop crossover and Grammy-recognized territory.</span>
+        </div>
+        <div class="album">
+          <strong>"Saved for Someone Else"</strong>
+          <span>A deeper fan reference that shows the group’s romantic ballad style beyond the two biggest hits.</span>
+        </div>
+        <div class="album">
+          <strong>"Care for Me"</strong>
+          <span>A useful catalog cut for hearing the group’s softer quiet-storm side and vocal patience.</span>
+        </div>
+        <div class="album">
+          <strong>Back Home</strong>
+          <span>A later-era project connected to the group’s attempt to continue beyond the original 1990s commercial window.</span>
+        </div>
+        <div class="album">
+          <strong>She’s Magic</strong>
+          <span>A later chapter that reflects Az Yet’s long afterlife as a group still associated with classic R&B harmony.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Competing in a Crowded R&B Era</h3>
+      <p>Az Yet arrived during a golden period for male R&B groups. That gave them opportunity, but it also meant they were compared with acts that had larger catalogs, stronger branding, or longer commercial runs.</p>
+
+      <h3>Lineup Changes</h3>
+      <p>Like many vocal groups, Az Yet faced the challenge of keeping identity stable through membership changes. Vocal chemistry is central to this kind of group, so shifts in lineup can affect both sound and public recognition.</p>
+
+      <h3>Following Huge Ballads</h3>
+      <p>"Last Night" and "Hard to Say I’m Sorry" gave the group major visibility, but they also created a difficult standard. Once an act becomes strongly tied to two signature ballads, later records have to fight against nostalgia as much as compete for attention.</p>
+
+      <h3>Changing R&B Marketplace</h3>
+      <p>By the 2000s, mainstream R&B was moving toward solo stars, hip-hop features, and more beat-driven production. That shift made the classic harmony-group lane harder to sustain commercially.</p>
+    `,
+    culturalImpactHtml: `
+      <p>Az Yet’s cultural impact sits inside the broader memory of 1990s R&B, especially the era’s respect for harmony, romance, and vocal discipline. Their biggest songs helped define the slow-jam atmosphere of the decade, where ballads could move across R&B radio, pop radio, soundtracks, and personal playlists.</p>
+      <p>The group also shows how important production ecosystems were to R&B history. Their connection to Babyface and LaFace placed them inside a polished hitmaking tradition that shaped the sound of mainstream romance in the 1990s.</p>
+      <p>Even though their commercial peak was brief, Az Yet remains a useful archive piece because they represent the strength of a specific format: the male vocal group as emotional storyteller. Their records remind listeners how much drama could come from harmony alone.</p>
+    `,
+    legacyHtml: `
+      <p>Az Yet’s legacy is compact but durable. They are not remembered because they dominated for a decade; they are remembered because their best records still evoke a whole R&B era. "Last Night" and "Hard to Say I’m Sorry" continue to carry the mood of polished 1990s balladry.</p>
+      <p>In the Rap Stories archive, Az Yet helps widen the lens beyond rappers and into the R&B voices that shaped hip-hop culture’s emotional backdrop. Their story adds harmony, romance, and quiet-storm craft to the archive’s picture of the 1990s.</p>
+    `,
+    relatedHtml: `
+      <div class="related-list">
+        <a href="ginuwine.html" class="related-card">
+          <h4>Ginuwine</h4>
+          <p>A 1990s R&B peer whose catalog helps frame the same era of romance, radio ballads, and vocal identity.</p>
+        </a>
+        <a href="r-kelly.html" class="related-card">
+          <h4>R. Kelly</h4>
+          <p>A major but deeply controversial R&B figure whose 1990s dominance forms part of the wider context around Az Yet’s era.</p>
+        </a>
+        <a href="august-alsina.html" class="related-card">
+          <h4>August Alsina</h4>
+          <p>A later R&B voice useful for comparing how vulnerability changed from polished harmony to direct confession.</p>
+        </a>
+        <a href="tory-lanez.html" class="related-card">
+          <h4>Tory Lanez</h4>
+          <p>A modern melodic artist whose rap-adjacent R&B lane shows how the genre moved away from classic vocal-group formats.</p>
+        </a>
+      </div>`
+  },
   'biggie': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
