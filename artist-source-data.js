@@ -326,9 +326,153 @@
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/A_Boogie_wit_da_Hoodie', note: 'Canonical biography and career overview for A Boogie wit da Hoodie.' },
       { label: 'AllMusic profile', href: 'https://www.allmusic.com/search/all/A%20Boogie%20wit%20da%20Hoodie', note: 'Useful for discography orientation and style framing.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/A%20Boogie%20wit%20da%20Hoodie/', note: 'Best source for chart milestones and release-cycle reporting.' },
+      { label: 'Pitchfork album review', href: 'https://pitchfork.com/reviews/albums/a-boogie-wit-da-hoodie-hoodie-szn/', note: 'Reference point for Hoodie SZN-era reception and New York melodic rap framing.' },
       { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/A%20Boogie%20wit%20da%20Hoodie/', note: 'Useful for interviews, reviews, and broader cultural framing.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=A%20Boogie%20wit%20da%20Hoodie&type=all', note: 'Helpful for checking releases and credits.' }
-    ]
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Bronx Roots and Highbridge Identity</h3>
+      <p>A Boogie wit da Hoodie, born Artist Julius Dubose on December 6, 1995, comes from the Highbridge section of the Bronx, a place with deep New York character and a long relationship to hip-hop history. His story matters because he arrived at a moment when New York rap was changing. The city still carried the weight of lyricism, street identity, and local pride, but younger audiences were also listening through streaming platforms, melody, and emotional hooks.</p>
+
+      <p>A Boogie did not sound like a throwback New York rapper. He carried Bronx identity, but he filtered it through Auto-Tune, heartbreak, romantic confusion, street anxiety, and catchy melodic phrasing. That combination helped him speak to a generation that wanted rap to feel emotional without losing toughness. His music could be vulnerable and guarded at the same time, which became one of his defining strengths.</p>
+
+      <h3>The Name and the Persona</h3>
+      <p>His stage name came from a mix of cultural reference and neighborhood identity. "A Boogie" connected to the character Ace Boogie from <em>Paid in Full</em>, while "wit da Hoodie" came from the way friends identified him through his clothes and everyday presence. The name worked because it sounded local, memorable, and personal. It did not feel manufactured by a label; it felt like a nickname that carried a whole environment with it.</p>
+
+      <p>That local feeling became important as his career grew. A Boogie built Highbridge the Label with a sense of home-team ambition, turning his rise into something bigger than one artist. His success helped make Highbridge visible to a national audience and gave the Bronx a new streaming-era star who did not need to imitate older New York formulas to represent the city.</p>
+
+      <h3>Early Development and Emotional Writing</h3>
+      <p>Before the major chart success, A Boogie was already sharpening a sound built around melody and diary-like emotion. Early projects such as <em>Artist</em> showed his instinct for turning personal relationships into replayable hooks. Songs like "Still Think About You" and "My Shit" helped define his early appeal: the writing could be romantic, wounded, confident, and street-aware within the same project.</p>
+
+      <p>His melodic approach was not only about singing. It was about phrasing. A Boogie often writes in a way that feels conversational, as if the listener is hearing a late-night confession shaped into a hook. That quality made his records work especially well in the streaming era, where repeat listening, playlist placement, and emotional immediacy became major parts of rap success.</p>
+
+      <h3>Breakthrough With The Bigger Artist</h3>
+      <p>The 2017 album <em>The Bigger Artist</em> pushed A Boogie from rising local figure to national name. "Drowning", featuring Kodak Black, became his signature breakthrough record and showed how his style could move beyond New York. The song mixed luxury imagery, pain, melody, and flexing into a record that was easy to recognize and easy to replay.</p>
+
+      <p>That period established him as one of the strongest melodic rappers of his generation. He was not trying to be the most technical lyricist in New York, and that was part of the point. His value came from emotional access, hooks, tone, and the ability to make heartbreak sound like street music rather than separate from it.</p>
+
+      <h3>Hoodie SZN and Streaming Power</h3>
+      <p><em>Hoodie SZN</em> became the defining commercial moment of A Boogie's career. The album reached number one on the Billboard 200 and became a strong example of how streaming had changed the album chart. It proved that an artist with a deeply loyal digital audience could compete at the highest level without relying only on traditional sales.</p>
+
+      <p>The album also showed why his fanbase was so durable. A Boogie's songs often feel built for personal attachment. Listeners use them for breakups, late-night reflection, confidence, frustration, and mood. That emotional flexibility helped him become more than a singles artist. He became a soundtrack figure for a specific generation of young listeners.</p>
+
+      <h3>Growth, Pressure, and Consistency</h3>
+      <p>After <em>Hoodie SZN</em>, A Boogie continued building a catalog through <em>Artist 2.0</em>, <em>Me vs. Myself</em>, <em>Better Off Alone</em>, and other releases. The challenge became growth without losing the sound that made him powerful. For melodic rap artists, that balance is difficult: change too much and the core audience may feel disconnected; repeat too much and critics may say the music has become predictable.</p>
+
+      <p>A Boogie's career has lived inside that tension. His strongest records usually come when he leans into the emotional directness that made fans connect in the first place, while still finding new production, collaborators, and song structures to keep the formula alive. His catalog is not built on one dramatic reinvention. It is built on maintaining a recognizable emotional lane over time.</p>
+
+      <h3>Why His Story Matters</h3>
+      <p>A Boogie matters because he helped reshape what a New York rap star could sound like in the late 2010s. He represented the Bronx without sounding trapped by nostalgia. His success opened space for younger melodic New York artists and helped prove that the city's future did not have to look exactly like its golden-age past.</p>
+
+      <p>For Rap Stories, his page belongs in the premium archive because his career connects several important themes: Bronx identity, streaming-era fan loyalty, melodic rap, heartbreak writing, independent label ambition, and the shift from traditional rap gatekeeping to audience-driven digital success.</p>
+
+      <div class="quote">A Boogie wit da Hoodie made melody feel like a new Bronx language: emotional, guarded, replayable, and built for the streaming generation.</div>
+    `,
+    riseToFameHtml: `
+      <p>A Boogie's rise began with the 2016 project <em>Artist</em>, which introduced the melodic heartbreak style that would become his signature. "Still Think About You" and "My Shit" helped create early momentum, while Highbridge the Label gave his rise a strong local identity.</p>
+      <p>His major breakthrough came with <em>The Bigger Artist</em> and "Drowning" featuring Kodak Black. From there, <em>Hoodie SZN</em> turned him into a number-one album artist and confirmed that his streaming audience was powerful enough to shape the national rap conversation. His rise was not built around one viral stunt. It came from consistent emotional replay value.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1995 - Birth</strong>
+          <p>Born Artist Julius Dubose in the Bronx, New York.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>Early 2010s - Musical Development</strong>
+          <p>Developed a melodic rap style shaped by heartbreak, street perspective, and Bronx identity.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2016 - Artist Mixtape</strong>
+          <p>Released <em>Artist</em>, building buzz through emotional songs such as "Still Think About You" and "My Shit".</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2017 - The Bigger Artist</strong>
+          <p>Released his debut studio album, powered by "Drowning" featuring Kodak Black.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2018-2019 - Hoodie SZN</strong>
+          <p><em>Hoodie SZN</em> became his defining commercial peak and reached number one on the Billboard 200.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2020 - Artist 2.0</strong>
+          <p>Returned with a sequel-style project that reinforced his melodic identity and featured major collaborators.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2022-2024 - Continued Catalog</strong>
+          <p>Released projects including <em>Me vs. Myself</em> and <em>Better Off Alone</em>, continuing his role as a melodic rap mainstay.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>Artist</strong>
+          <span>The 2016 project that introduced his emotional melodic style and early fan-favorite records.</span>
+        </div>
+        <div class="album">
+          <strong>The Bigger Artist</strong>
+          <span>The debut studio album that pushed him into national visibility through "Drowning".</span>
+        </div>
+        <div class="album">
+          <strong>Drowning</strong>
+          <span>The Kodak Black-assisted hit that became his signature mainstream breakthrough.</span>
+        </div>
+        <div class="album">
+          <strong>Hoodie SZN</strong>
+          <span>The number-one album that proved his streaming-era fanbase could drive major commercial power.</span>
+        </div>
+        <div class="album">
+          <strong>Look Back at It</strong>
+          <span>A melodic hit from the Hoodie SZN era that showed his ability to turn nostalgia and heartbreak into pop-rap replay value.</span>
+        </div>
+        <div class="album">
+          <strong>Artist 2.0 / Me vs. Myself</strong>
+          <span>Later projects that continued the A Boogie and Artist identity split while keeping his emotional lane active.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Escaping One Sound</h3>
+      <p>A Boogie's greatest strength is also one of his biggest challenges. His melodic heartbreak style is immediately recognizable, but that recognition can create pressure to repeat familiar formulas. His career has often balanced fan expectations with the need to grow creatively.</p>
+
+      <h3>New York Expectations</h3>
+      <p>As a Bronx artist, A Boogie also faced the weight of New York rap history. Some listeners expect New York artists to sound hard, lyrical, or traditional. A Boogie's success challenged that expectation by proving that melody, emotion, and streaming instincts could still carry authentic city identity.</p>
+
+      <h3>Streaming-Era Criticism</h3>
+      <p>His biggest commercial wins also sparked debate about how music success is measured. <em>Hoodie SZN</em> became a major streaming-era example of audience loyalty driving chart dominance, even when traditional sales were modest. That made him part of a larger conversation about what popularity means in modern rap.</p>
+    `,
+    culturalImpactHtml: `
+      <p>A Boogie helped normalize a softer, more melodic kind of New York rap star. His influence can be heard in later artists who blend pain, melody, romance, and street context without treating those elements as separate lanes. He helped make emotional hooks feel natural inside Bronx and wider New York rap identity.</p>
+      <p>His impact is also tied to streaming culture. A Boogie built one of the clearest examples of a fanbase that returned to albums and songs repeatedly, making emotional replay value a commercial force. He showed that a rapper could become major not by chasing every trend, but by owning a mood that listeners wanted to live with.</p>
+    `,
+    legacyHtml: `
+      <p>A Boogie wit da Hoodie's legacy is still being written, but his importance is already clear. He stands as one of the central melodic rap artists of the late 2010s and early 2020s, especially within New York. His career helped move the city's mainstream identity beyond nostalgia and into a more emotionally fluid streaming era.</p>
+      <p>His strongest contribution is the way he made vulnerability feel commercially powerful without fully abandoning street perspective. That balance shaped his audience and influenced the artists who followed him. In the archive, A Boogie represents the moment when Bronx rap found a new melodic language for a new generation.</p>
+    `,
+    relatedHtml: `<div class="related-list">
+      <a href="lil-tjay.html" class="related-card">
+        <h4>Lil Tjay</h4>
+        <p>A Bronx melodic artist whose emotional street rap reflects the lane A Boogie helped open.</p>
+      </a>
+      <a href="roddy-ricch.html" class="related-card">
+        <h4>Roddy Ricch</h4>
+        <p>A melodic rap star whose hooks, pain, and commercial instincts connect to the same streaming-era shift.</p>
+      </a>
+      <a href="polo-g.html" class="related-card">
+        <h4>Polo G</h4>
+        <p>Another artist who blended melody, pain, and street storytelling into a durable mainstream sound.</p>
+      </a>
+      <a href="lil-durk.html" class="related-card">
+        <h4>Lil Durk</h4>
+        <p>A key comparison for melodic street rap, emotional honesty, and long-term catalog building.</p>
+      </a>
+      <a href="6ix9ine.html" class="related-card">
+        <h4>6ix9ine</h4>
+        <p>A very different New York figure from the same era, useful for comparing melody-driven growth with viral spectacle.</p>
+      </a>
+    </div>`
   },
   'ace-hood': {
     reviewDate: '2026-04-10',
@@ -348,9 +492,162 @@
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/ASAP_Rocky', note: 'Canonical biography and career chronology for A$AP Rocky.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/A-SAP-Rocky', note: 'Useful for concise biography and crossover significance.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/A%24AP%20Rocky/', note: 'Best source for release cycles, chart milestones, and industry reporting.' },
+      { label: 'AP legal coverage', href: 'https://apnews.com/article/29f4ba73919def269f165f5ba77c2ad8', note: 'Useful background for the 2019 Sweden case and public legal context.' },
       { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/A%24AP%20Rocky/', note: 'Useful for long-form profiles, interviews, and cultural framing.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=A%24AP%20Rocky&type=all', note: 'Helpful for checking releases and credits.' }
-    ]
+    ],
+    biographyTitle: 'Full Biography',
+    biographyHtml: `
+      <h3>Harlem Roots and Self-Invention</h3>
+      <p>A$AP Rocky, born Rakim Athelaston Mayers on October 3, 1988, came from Harlem, New York, a place with a deep relationship to style, confidence, street culture, and rap history. His upbringing included hardship, instability, and loss, but his public identity was never built only around struggle. Rocky became important because he turned survival into taste, taste into image, and image into a full artistic language.</p>
+
+      <p>From the beginning, Rocky felt different from many New York rappers of his era. He carried Harlem pride, but he did not sound trapped by traditional New York expectations. He drew from Southern rap, cloud rap, chopped-and-screwed textures, fashion photography, internet aesthetics, and luxury references. That mixture helped him represent a new kind of New York artist: local in origin, but global in taste.</p>
+
+      <h3>A$AP Mob and the Power of a Collective</h3>
+      <p>Rocky's rise is inseparable from A$AP Mob. The collective gave him a creative ecosystem, a shared visual identity, and a movement that felt bigger than one rapper. A$AP Yams, in particular, helped shape the taste-driven world around the group. The Mob blended Harlem confidence with internet fluency, Southern influence, high fashion, and youth-culture instinct.</p>
+
+      <p>That collective energy mattered because Rocky did not arrive as a traditional solo act. He arrived as the face of a scene. The styling, videos, production choices, slang, and visual direction all worked together. This made his breakthrough feel like a cultural event rather than just a new rapper getting attention.</p>
+
+      <h3>Breakthrough With Live. Love. A$AP</h3>
+      <p>The 2011 mixtape <em>Live. Love. A$AP</em> was the foundation. Songs like "Peso" and "Purple Swag" introduced a sound that felt hazy, stylish, and confidently detached from New York orthodoxy. Rocky rapped with charisma, but the atmosphere was just as important as the bars. The beats, pacing, fashion, and videos created a mood that listeners could recognize immediately.</p>
+
+      <p>At the time, some listeners were surprised that a Harlem rapper was leaning so heavily into Houston and Southern-influenced sonics. That risk became one of his strengths. Rocky helped normalize the idea that a rapper's influences could cross regional borders without erasing where they came from. His work showed that modern rap identity could be curated, hybrid, and internet-aware.</p>
+
+      <h3>Commercial Arrival and Star Image</h3>
+      <p><em>Long. Live. A$AP</em> turned the mixtape promise into mainstream success. The album debuted at number one on the Billboard 200 and included records such as "Goldie", "F**kin' Problems", and "Wild for the Night". It positioned Rocky as both a chart-level rapper and a style figure, someone who could stand next to major stars while still maintaining his own world.</p>
+
+      <p>The success was not only musical. Rocky became a fashion reference, a magazine presence, and a public figure whose outfits and videos were discussed almost as much as his verses. This broadened what people expected from a rap star in the 2010s. He did not treat fashion as an accessory to the music. He treated it as part of the same creative identity.</p>
+
+      <h3>Experimentation and Artistic Risk</h3>
+      <p>With <em>At. Long. Last. A$AP</em>, Rocky leaned further into psychedelic textures, slower pacing, and art-driven world-building. The album showed a more ambitious side of his work, balancing accessible records with moodier and stranger ideas. Songs like "L$D" made clear that Rocky was interested in visuals, atmosphere, and feeling as much as traditional rap dominance.</p>
+
+      <p><em>Testing</em> pushed that instinct even further. It was not designed as the safest commercial follow-up. It was fragmented, experimental, and sometimes divisive, but it fit Rocky's larger identity as someone willing to treat albums like visual and sonic experiments. Even when critics or fans disagreed on the results, the project reinforced his desire to move as an artist rather than simply repeat his early formula.</p>
+
+      <h3>Fashion, Celebrity, and Cultural Reach</h3>
+      <p>Rocky's cultural reach expanded far beyond albums. He became one of hip-hop's most visible fashion figures, working with luxury brands, shaping red-carpet conversation, and influencing how younger rappers approached personal style. His public relationship with fashion was not accidental. It reflected a belief that rap stars could be designers of taste, not just performers of songs.</p>
+
+      <p>That role also changed his place in the culture. Even during periods when he released less music, Rocky stayed visible through style, celebrity, visuals, collaborations, and public image. His influence became less dependent on constant singles and more connected to the broader idea of what modern cool looked like.</p>
+
+      <h3>Legal Scrutiny and Public Pressure</h3>
+      <p>Rocky's career has also included high-profile legal scrutiny, most notably the 2019 Sweden assault case, which became an international news story. The case pulled him into a public conversation involving celebrity, foreign legal systems, politics, and media attention. It was a reminder that global fame can make personal incidents much larger than the original event.</p>
+
+      <p>For an archive page, that context matters but should not define the entire artist. Rocky's legal controversies are part of his public biography, yet his larger cultural value comes from music, style, influence, and the way he changed the visual language of rap stardom.</p>
+
+      <h3>Why His Story Matters</h3>
+      <p>A$AP Rocky matters because he helped make rap feel more global, visual, and design-conscious. He showed that a Harlem rapper could borrow from Houston, work in high fashion, build cinematic videos, and still feel rooted in New York charisma. His career helped open the door for artists who treat sound, clothing, visuals, and lifestyle as one connected creative system.</p>
+
+      <p>For Rap Stories, Rocky's page belongs in the archive because he represents the point where hip-hop stardom became fully multimedia. His legacy is not only in albums or singles. It is in the way he helped redefine the image of the modern rapper as tastemaker, model, director, collaborator, and cultural designer.</p>
+
+      <div class="quote">A$AP Rocky turned rap style into world-building: the music, clothes, videos, and attitude all became part of one recognizable design language.</div>
+    `,
+    riseToFameHtml: `
+      <p>A$AP Rocky's rise began with the viral spread of "Peso" and "Purple Swag", records that introduced his hazy, stylish sound to a much wider audience. The release of <em>Live. Love. A$AP</em> made him one of the most talked-about new rappers of the early 2010s and positioned A$AP Mob as a movement with real cultural force.</p>
+      <p>His major-label arrival with <em>Long. Live. A$AP</em> turned that buzz into mainstream success. The album debuted at number one, and "F**kin' Problems" connected him with Drake, 2 Chainz, and Kendrick Lamar on a major hit. From there, Rocky was no longer only a Harlem breakout. He became a rap and fashion figure with global visibility.</p>
+    `,
+    timelineHtml: `
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1988 - Birth</strong>
+          <p>Born Rakim Athelaston Mayers in Harlem, New York.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2000s - Early Formation</strong>
+          <p>Developed his identity through Harlem culture, fashion awareness, underground rap, and A$AP Mob connections.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2011 - Live. Love. A$AP</strong>
+          <p>Released the breakthrough mixtape that made "Peso", "Purple Swag", and the A$AP aesthetic major internet-era moments.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2013 - Long. Live. A$AP</strong>
+          <p>Debut studio album arrived at number one and established Rocky as a mainstream rap star.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2015 - At. Long. Last. A$AP</strong>
+          <p>Expanded his sound into psychedelic, art-driven territory while scoring another number-one album.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2018 - Testing</strong>
+          <p>Released a more experimental project that emphasized texture, fragmentation, and risk.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2019 - Sweden Case</strong>
+          <p>Faced a high-profile assault case in Sweden that drew international media and political attention.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>2020s - Style Icon and Cultural Mainstay</strong>
+          <p>Remained visible as a fashion figure, celebrity, collaborator, and influential rap tastemaker.</p>
+        </div>
+      </div>
+    `,
+    keyWorksHtml: `
+      <div class="discography">
+        <div class="album">
+          <strong>Live. Love. A$AP</strong>
+          <span>The breakthrough mixtape that introduced Rocky's hazy, stylish sound and helped define the A$AP Mob aesthetic.</span>
+        </div>
+        <div class="album">
+          <strong>Peso / Purple Swag</strong>
+          <span>Early signature records that made him feel like a new kind of Harlem star for the internet era.</span>
+        </div>
+        <div class="album">
+          <strong>Long. Live. A$AP</strong>
+          <span>The number-one debut album that turned his early buzz into mainstream rap success.</span>
+        </div>
+        <div class="album">
+          <strong>F**kin' Problems</strong>
+          <span>The all-star hit that connected Rocky with Drake, 2 Chainz, and Kendrick Lamar at a commercial peak.</span>
+        </div>
+        <div class="album">
+          <strong>At. Long. Last. A$AP / L$D</strong>
+          <span>The psychedelic, art-driven era that showed Rocky's interest in mood, visuals, and experimentation.</span>
+        </div>
+        <div class="album">
+          <strong>Testing</strong>
+          <span>The divisive experimental project that pushed his taste-driven approach into a more fragmented sound.</span>
+        </div>
+      </div>
+    `,
+    challengesHtml: `
+      <h3>Balancing Music and Image</h3>
+      <p>Rocky's strength as a style icon can also create a challenge. Because his fashion and visual identity are so strong, some listeners debate whether the music receives enough focus. His career often lives between rapper, model, art director, and celebrity, which makes his public image powerful but sometimes difficult to separate from the albums themselves.</p>
+
+      <h3>Experimentation Versus Expectations</h3>
+      <p>Projects like <em>Testing</em> showed his willingness to take risks, but risk can divide audiences. Some fans want the direct energy of early Rocky, while others value the more experimental, psychedelic, and visual direction. That tension is central to his artistic path.</p>
+
+      <h3>Legal and Media Pressure</h3>
+      <p>The 2019 Sweden case became one of the most visible public challenges of his career. It showed how international celebrity, legal systems, politics, and media pressure can turn a single incident into a global story.</p>
+    `,
+    culturalImpactHtml: `
+      <p>A$AP Rocky's cultural impact is tied to the way he changed rap's visual language. He helped make fashion literacy, luxury references, experimental videos, and cross-regional sound feel central to modern hip-hop stardom. Many later artists inherited a world where image and sound are expected to work together because figures like Rocky helped prove the model.</p>
+      <p>He also widened New York rap's identity. Rocky showed that a Harlem artist could sound Southern-influenced, psychedelic, stylish, and global without losing charisma or local mythology. His impact is not only heard in music; it is seen in styling, art direction, brand partnerships, and the way rappers now present themselves as full creative worlds.</p>
+    `,
+    legacyHtml: `
+      <p>A$AP Rocky's legacy is the fusion of rap, fashion, and visual authorship. He may not be remembered only by chart totals or release frequency, but by how strongly he shaped the idea of the rapper as tastemaker. His influence lives in the artists who treat clothing, photography, videos, and sonic mood as part of the same creative statement.</p>
+      <p>In hip-hop history, Rocky stands as one of the artists who helped move rap further into the language of design and global youth culture. His career proves that cultural authority can come from sound, but also from the ability to build a world around that sound.</p>
+    `,
+    relatedHtml: `<div class="related-list">
+      <a href="kendrick-lamar.html" class="related-card">
+        <h4>Kendrick Lamar</h4>
+        <p>A peer from the same 2010s class who also pushed rap into broader artistic and conceptual territory.</p>
+      </a>
+      <a href="kanye-west.html" class="related-card">
+        <h4>Kanye West</h4>
+        <p>A major reference point for blending hip-hop, fashion, ego, production, and creative world-building.</p>
+      </a>
+      <a href="j-cole.html" class="related-card">
+        <h4>J. Cole</h4>
+        <p>A fellow 2010s-era star whose career offers a contrast between lyrical restraint and Rocky's visual world-building.</p>
+      </a>
+      <a href="drake.html" class="related-card">
+        <h4>Drake</h4>
+        <p>A collaborator and fellow 2010s superstar whose career also reflects rap's move into global lifestyle culture.</p>
+      </a>
+      <a href="kid-cudi.html" class="related-card">
+        <h4>Kid Cudi</h4>
+        <p>An important influence for mood, atmosphere, and emotionally stylized rap outside strict regional formulas.</p>
+      </a>
+    </div>`
   },
   'august-alsina': {
     reviewDate: '2026-04-10',
