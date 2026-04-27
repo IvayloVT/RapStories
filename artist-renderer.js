@@ -322,7 +322,7 @@
       "</div>",
       '<div class="content-layout">',
       '<div class="content-stack">',
-      '<section class="glass panel story-section" id="biography" data-story-title="Full Biography"><h2>' + escapeHtml(story.biographyTitle || "Biography") + "</h2>" + (story.biographyHtml || "") + buildSectionCitationHtml(story, "biography", story.biographyTitle || "Biography") + "</section>",
+      '<section class="glass panel story-section" id="biography" data-story-title="Full Biography"><h2>' + escapeHtml(story.biographyTitle || "Biography") + "</h2>" + (story.biographyHtml || "") + "</section>",
       buildOptionalStorySection("rise", "Rise to Fame", story.riseToFameHtml),
       '<section class="glass panel story-section" id="timeline" data-story-title="Timeline"><h2>Career Timeline</h2>' + (story.timelineHtml || "") + buildSectionCitationHtml(story, "timeline", "Career Timeline") + "</section>",
       buildOptionalStorySection("key-works", "Key Albums & Songs", story.keyWorksHtml),
