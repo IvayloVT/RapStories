@@ -263,23 +263,39 @@
     }
 
     .footer-wrap {
+      width: calc(100% - 96px);
+      max-width: none;
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 20px;
+      align-items: flex-start;
+    }
+
+    .footer-wrap > div:first-child {
+      min-width: 0;
+      max-width: 900px;
     }
 
     .footer-links {
       display: flex;
+      flex: 0 1 auto;
       gap: 18px;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      margin-left: auto;
+      margin-top: 34px;
+      white-space: nowrap;
     }
 
     .footer-links a {
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
       color: inherit;
+      line-height: inherit;
     }
 
     .footer-links a:hover { color: var(--text); }
@@ -303,6 +319,17 @@
         width: 100%;
         max-width: 280px;
         text-align: center;
+      }
+
+      .footer-wrap > div:first-child {
+        flex-basis: 100%;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-top: 0;
+        white-space: normal;
       }
 
       .hero-card,
@@ -498,10 +525,11 @@
     </div>
 
     <div class="footer-links">
-  <a href="about.html">About</a>
   <a href="stories.html">Stories</a>
-  <a href="artist.html">Artists</a>
-  <a href="contact.html">Contact</a>
+  <a href="artist-archive.html">Archive</a>
+  <a href="category.html">Categories</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="about.html">About</a>
   <a href="privacy.html">Privacy</a>
   <a href="terms.html">Terms</a>
 </div>
@@ -538,7 +566,7 @@
 })();
 </script>
 <script src="site-config.js"></script>
-<script src="site-enhancements.js?v=2026-04-28-index-footer-all-pages"></script>
+<script src="site-enhancements.js?v=2026-04-28-footer-baseline-align"></script>
 
 </body>
 </html>
