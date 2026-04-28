@@ -220,6 +220,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       ".footer-wrap>div:first-child{min-width:0;max-width:none}",
       ".footer-links{display:flex;align-items:center;justify-content:flex-end;margin-left:auto;margin-top:34px;white-space:nowrap}",
       ".footer-links a,.cookie-settings-link{display:inline-flex;align-items:center;line-height:inherit}",
+      ".footer-brand{font-weight:900;letter-spacing:.5px;background:linear-gradient(135deg,#d4af37,#fff0a5,#ffffff);-webkit-background-clip:text;background-clip:text;color:transparent!important}",
       ".cookie-settings-link{padding:0;border:0;margin:0;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}",
       ".cookie-settings-link:hover{color:var(--text,#f4f4f5)}",
       "@media (max-width:760px){footer .footer-wrap{width:min(92%,var(--max,1260px));display:flex}.footer-wrap>div:first-child{flex-basis:100%}.footer-links{justify-content:flex-start;margin-left:0;margin-top:0;white-space:normal}}",
