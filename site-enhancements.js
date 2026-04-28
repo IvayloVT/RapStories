@@ -215,7 +215,8 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       ".cookie-consent__button:hover{transform:translateY(-1px)}",
       ".cookie-consent__button--reject{background:rgba(255,255,255,.07);color:#fff}",
       ".cookie-consent__button--accept{background:linear-gradient(135deg,#d4af37,#f5df8f);color:#111;border-color:transparent}",
-      ".cookie-settings-link{padding:0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}",
+      ".footer-links{align-items:center}",
+      ".cookie-settings-link{flex:0 0 100%;display:inline-flex;align-items:center;justify-content:flex-start;padding:0;border:0;margin:0;background:transparent;color:inherit;font:inherit;line-height:inherit;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}",
       ".cookie-settings-link:hover{color:var(--text,#f4f4f5)}",
       "@media (max-width:700px){.cookie-consent{bottom:12px}.cookie-consent__inner{grid-template-columns:1fr}.cookie-consent__actions{display:grid;grid-template-columns:1fr 1fr}.cookie-consent__button{width:100%}}"
     ].join("");
