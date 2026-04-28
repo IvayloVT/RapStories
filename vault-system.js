@@ -83,8 +83,13 @@ const collectionDefinitions = [
 function setupHeader(){
   const header = document.getElementById("mainHeader");
   if(!header) return;
+  const stableMobileScroll = window.matchMedia("(max-width: 820px), (pointer: coarse)");
   function offset(){ document.body.style.paddingTop = header.offsetHeight + "px"; }
   function scroll(){
+    if(stableMobileScroll.matches){
+      header.classList.remove("hidden");
+      return;
+    }
     if(window.innerWidth <= 768){
       if(window.pageYOffset <= 5) header.classList.remove("hidden");
       else header.classList.add("hidden");

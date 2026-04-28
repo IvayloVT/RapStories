@@ -474,6 +474,14 @@
 
     if (!rail || !toggle || !progressBar || !sections.length) return;
 
+    if (window.matchMedia("(max-width: 820px), (pointer: coarse)").matches) {
+      rail.hidden = true;
+      toggle.hidden = true;
+      body.classList.remove("story-mode");
+      progressBar.style.width = "0%";
+      return;
+    }
+
     const storageKey = "rapStoriesStoryMode";
     let storyMode = localStorage.getItem(storageKey);
     storyMode = storyMode === null ? true : storyMode === "on";

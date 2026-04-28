@@ -599,12 +599,19 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     const siteNav = header.querySelector("#site-nav");
     const topRevealThreshold = 8;
     const hideDelta = currentPage === "artist.html" || !CORE_PAGES.has(currentPage) ? 10 : 4;
+    const stableMobileScroll = window.matchMedia("(max-width: 820px), (pointer: coarse)");
 
     function offset() {
       updateHeaderOffset(header);
     }
 
     function onScroll() {
+      if (stableMobileScroll.matches) {
+        header.classList.remove("hidden");
+        lastScrollY = window.pageYOffset;
+        return;
+      }
+
       const currentScrollY = window.pageYOffset;
 
       if (siteNav && siteNav.classList.contains("nav-open")) {
@@ -815,6 +822,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
   function setupRevealMotion() {
     if (window.location.protocol === "file:") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(max-width: 820px), (pointer: coarse)").matches) return;
 
     const selectors = [
       ".hero-card",
