@@ -58,10 +58,11 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     { href: "contact.html", label: "Contact" }
   ];
   const STANDARD_FOOTER_LINKS = [
-    { href: "about.html", label: "About" },
     { href: "stories.html", label: "Stories" },
-    { href: "artist.html", label: "Artists" },
-    { href: "contact.html", label: "Contact" },
+    { href: "artist-archive.html", label: "Archive" },
+    { href: "category.html", label: "Categories" },
+    { href: "timeline.html", label: "Timeline" },
+    { href: "about.html", label: "About" },
     { href: "privacy.html", label: "Privacy" },
     { href: "terms.html", label: "Terms" }
   ];
