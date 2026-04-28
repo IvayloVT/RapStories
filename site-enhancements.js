@@ -771,6 +771,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
 
   function setupParallax() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(max-width: 820px), (pointer: coarse)").matches) return;
 
     const heroImages = Array.from(document.querySelectorAll(".artist-image"));
     const heroCards = Array.from(document.querySelectorAll(".hero-card"));

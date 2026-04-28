@@ -546,9 +546,20 @@
     updateProgress();
     updateActiveSection();
 
+    let scrollTicking = false;
+
+    function requestStoryUpdate() {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      window.requestAnimationFrame(function () {
+        scrollTicking = false;
+        updateProgress();
+        updateActiveSection();
+      });
+    }
+
     window.addEventListener("scroll", function () {
-      updateProgress();
-      updateActiveSection();
+      requestStoryUpdate();
     }, { passive: true });
 
     window.addEventListener("resize", function () {
