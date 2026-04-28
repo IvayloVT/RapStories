@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("mainHeader");
   if(!header) return;
   let lastScrollY = window.pageYOffset;
+  let scrollTicking = false;
   function offset(){
     document.body.style.paddingTop = header.offsetHeight + "px";
   }
@@ -93,6 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     lastScrollY = currentScrollY;
   }
+  function requestScrollUpdate(){
+    if(scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(() => {
+      scrollTicking = false;
+      handleScroll();
+    });
+  }
   offset();
   handleScroll();
   window.addEventListener("load", offset);
@@ -102,9 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
       header.classList.remove("hidden");
     }
   });
-  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("scroll", requestScrollUpdate, { passive: true });
 })();
-</script>  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-28-mobile-scroll-stability"></script>
+</script>  <script src="site-config.js"></script><script src="site-enhancements.js?v=2026-04-28-archive-scroll-stability"></script>
 </body></html>
 
 
