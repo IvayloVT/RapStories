@@ -86,6 +86,23 @@
                         "timeline":  "A$AP Mob rise, fashion influence, global rap stardom."
                     },
                     {
+                        "name":  "Asake",
+                        "slug":  "asake",
+                        "file":  "asake.html",
+                        "image":  "images/asake.jpg",
+                        "city":  "Lagos",
+                        "era":  "2020s",
+                        "category":  "Regional Scenes",
+                        "tags":  [
+                                     "Afrobeats",
+                                     "Lagos",
+                                     "Fuji",
+                                     "Amapiano"
+                                 ],
+                        "summary":  "Lagos star blending Afrobeats, street pop, fuji texture, and amapiano bounce into a global sound.",
+                        "timeline":  "YBNL breakthrough, Mr. Money era, Work of Art, Lungu Boy expansion."
+                    },
+                    {
                         "name":  "Ace Hood",
                         "slug":  "ace-hood",
                         "file":  "ace-hood.html",
@@ -203,6 +220,23 @@
                                  ],
                         "summary":  "Child star turned mainstream figure who defined an era of early 2000s hip-hop youth culture.",
                         "timeline":  "Child-star rise, chart success, early-2000s youth icon."
+                    },
+                    {
+                        "name":  "Cadet",
+                        "slug":  "cadet",
+                        "file":  "cadet.html",
+                        "image":  "images/cadet.jpg",
+                        "city":  "South London",
+                        "era":  "2010s",
+                        "category":  "Legacy",
+                        "tags":  [
+                                     "UK Rap",
+                                     "South London",
+                                     "Storytelling",
+                                     "Legacy"
+                                 ],
+                        "summary":  "South London rapper remembered for emotional storytelling, freestyles, Advice, and a lasting UK rap legacy.",
+                        "timeline":  "Gipset roots, freestyle rise, The Commitment era, Advice breakthrough, Rated Legend legacy."
                     },
                     {
                         "name":  "Cardi B",
@@ -356,6 +390,23 @@
                                  ],
                         "summary":  "West Coast producer behind countless club hits.",
                         "timeline":  "West Coast bounce, hit production run, producer-brand dominance."
+                    },
+                    {
+                        "name":  "DJ Spinall",
+                        "slug":  "dj-spinall",
+                        "file":  "dj-spinall.html",
+                        "image":  "images/dj-spinall.webp",
+                        "city":  "Lagos",
+                        "era":  "2000s-present",
+                        "category":  "Labels \u0026 Crews",
+                        "tags":  [
+                                     "Afrobeats",
+                                     "DJ",
+                                     "Producer",
+                                     "TheCAP"
+                                 ],
+                        "summary":  "Lagos DJ-producer and curator whose TheCAP identity helped carry Afrobeats into global festival spaces.",
+                        "timeline":  "Radio roots, TheCAPMusic, album run, Top Boy era, global Afrobeats stages."
                     },
                     {
                         "name":  "DJ Stancho",
@@ -917,6 +968,23 @@
                                  ],
                         "summary":  "Genre-blending artist telling stories of pain and redemption.",
                         "timeline":  "Underground roots, genre crossover, redemption-themed stardom."
+                    },
+                    {
+                        "name":  "Jeshi",
+                        "slug":  "jeshi",
+                        "file":  "jeshi.html",
+                        "image":  "images/jeshi.jpg",
+                        "city":  "London",
+                        "era":  "2020s",
+                        "category":  "Regional Scenes",
+                        "tags":  [
+                                     "UK Rap",
+                                     "London",
+                                     "Social Realism",
+                                     "Alternative"
+                                 ],
+                        "summary":  "UK rapper whose Universal Credit turned austerity, welfare stigma, and everyday pressure into sharp alternative rap.",
+                        "timeline":  "Early EPs, Bad Taste, Universal Credit, Airbag Woke Me Up, club-oriented expansion."
                     },
                     {
                         "name":  "JI the Prince",
