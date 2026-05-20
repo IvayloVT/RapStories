@@ -320,6 +320,8 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
       "header#mainHeader #site-nav .nav-links a::after{display:none!important}",
       "header#mainHeader #site-nav .nav-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;width:100%}",
       "header#mainHeader #site-nav .nav-actions .nav-btn,header#mainHeader #site-nav .nav-actions .theme-toggle{width:100%;justify-content:center;text-align:center;display:flex;align-items:center}",
+      "@media (max-width:820px){header#mainHeader.hidden{transform:translateY(calc(-100% - 2px))}}",
+      "@media (min-width:821px){header#mainHeader.hidden{transform:none!important}}",
       "@media (min-width:821px){header#mainHeader .container.nav{max-width:none!important;width:100%!important;padding:0 clamp(28px,3.4vw,70px)!important}header#mainHeader .nav{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:24px;min-height:82px}header#mainHeader .header-top{display:flex!important;align-items:center;justify-content:flex-start!important;gap:0;width:auto}header#mainHeader .nav-toggle{display:none!important}header#mainHeader #site-nav{display:block!important;width:auto}header#mainHeader #site-nav .nav-panel{display:flex;align-items:center;gap:24px;padding:0;border-radius:0;background:transparent;border:none;box-shadow:none}header#mainHeader #site-nav .nav-links{display:flex!important;align-items:center;gap:clamp(16px,1.35vw,24px);width:auto;flex-wrap:nowrap!important}header#mainHeader #site-nav .nav-links a{position:relative;display:inline-flex!important;align-items:center;justify-content:flex-start;padding:0;border-radius:0;background:transparent;border:none;min-height:auto;color:var(--muted,#a5a5b1);text-align:left}header#mainHeader #site-nav .nav-links a:hover,header#mainHeader #site-nav .nav-links a.active{color:var(--text,#f4f4f5);background:transparent;border-color:transparent}header#mainHeader #site-nav .nav-links a::after{content:'';display:block!important;position:absolute;left:0;bottom:-8px;width:100%;height:2px;border-radius:999px;background:linear-gradient(135deg,#d4af37,#fff0a5);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}header#mainHeader #site-nav .nav-links a:hover::after,header#mainHeader #site-nav .nav-links a.active::after{transform:scaleX(1)}header#mainHeader #site-nav .nav-actions{display:flex;align-items:center;gap:12px;width:auto;flex-wrap:nowrap!important;flex-shrink:0}header#mainHeader #site-nav .nav-actions .nav-btn,header#mainHeader #site-nav .nav-actions .theme-toggle{width:auto;justify-content:center}}",
       "@media (max-width:640px){header#mainHeader .header-top{grid-template-columns:minmax(0,1fr) auto!important;gap:12px}header#mainHeader .header-top .brand{gap:10px}header#mainHeader .header-top .brand-mark{width:36px;height:36px}header#mainHeader .header-top .brand-text{font-size:.92rem;letter-spacing:.35px}header#mainHeader .nav-toggle{padding:11px 16px;justify-self:end!important}}"
     ].join("");
@@ -595,42 +597,31 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     if (!header) return;
 
     const currentPage = getCurrentPage();
-    let lastScrollY = window.pageYOffset;
     const siteNav = header.querySelector("#site-nav");
     const topRevealThreshold = 8;
-    const hideDelta = currentPage === "artist.html" || !CORE_PAGES.has(currentPage) ? 10 : 4;
-    const stableMobileScroll = window.matchMedia("(max-width: 820px), (pointer: coarse)");
+    const mobileHeaderScroll = window.matchMedia("(max-width: 820px)");
 
     function offset() {
       updateHeaderOffset(header);
     }
 
     function onScroll() {
-      if (stableMobileScroll.matches) {
-        header.classList.remove("hidden");
-        lastScrollY = window.pageYOffset;
-        return;
-      }
-
       const currentScrollY = window.pageYOffset;
 
       if (siteNav && siteNav.classList.contains("nav-open")) {
         header.classList.remove("hidden");
-        lastScrollY = currentScrollY;
         return;
       }
 
-      if (window.innerWidth <= 768) {
+      if (mobileHeaderScroll.matches) {
         if (currentScrollY <= topRevealThreshold) {
           header.classList.remove("hidden");
-        } else if (currentScrollY > lastScrollY + hideDelta) {
+        } else {
           header.classList.add("hidden");
         }
       } else {
         header.classList.remove("hidden");
       }
-
-      lastScrollY = currentScrollY;
     }
 
     offset();
@@ -639,7 +630,7 @@ window.RAP_STORIES_BASE_URL = window.RAP_STORIES_BASE_URL
     window.addEventListener("load", offset);
     window.addEventListener("resize", function () {
       offset();
-      if (window.innerWidth > 768) {
+      if (!mobileHeaderScroll.matches) {
         header.classList.remove("hidden");
       }
     });

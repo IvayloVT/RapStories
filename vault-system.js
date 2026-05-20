@@ -83,21 +83,27 @@ const collectionDefinitions = [
 function setupHeader(){
   const header = document.getElementById("mainHeader");
   if(!header) return;
-  const stableMobileScroll = window.matchMedia("(max-width: 820px), (pointer: coarse)");
+  const mobileHeaderScroll = window.matchMedia("(max-width: 820px)");
+  const topRevealThreshold = 8;
   function offset(){ document.body.style.paddingTop = header.offsetHeight + "px"; }
   function scroll(){
-    if(stableMobileScroll.matches){
+    const currentScrollY = window.pageYOffset;
+    const siteNav = header.querySelector("#site-nav");
+    if(siteNav && siteNav.classList.contains("nav-open")){
       header.classList.remove("hidden");
       return;
     }
-    if(window.innerWidth <= 768){
-      if(window.pageYOffset <= 5) header.classList.remove("hidden");
+    if(mobileHeaderScroll.matches){
+      if(currentScrollY <= topRevealThreshold) header.classList.remove("hidden");
       else header.classList.add("hidden");
     } else header.classList.remove("hidden");
   }
   offset(); scroll();
   window.addEventListener("load", offset);
-  window.addEventListener("resize", offset);
+  window.addEventListener("resize", function(){
+    offset();
+    if(!mobileHeaderScroll.matches) header.classList.remove("hidden");
+  });
   window.addEventListener("scroll", scroll, {passive:true});
 }
 
