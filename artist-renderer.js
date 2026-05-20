@@ -439,7 +439,7 @@
   }
 
   function getStoryModeSections() {
-    const storyOrder = ["Intro", "Full Biography", "Biography", "Rise to Fame", "Timeline", "Key Albums & Songs", "Challenges & Controversies", "Cultural Impact", "Legacy", "Details", "Sources", "Eras", "Related", "Music", "Explore"];
+    const storyOrder = ["Intro", "Full Biography", "Biography", "Rise to Fame", "Timeline", "Key Albums & Songs", "Challenges & Controversies", "Cultural Impact", "Legacy", "Details", "Sources", "Eras", "Music", "Related", "Explore"];
     return Array.from(document.querySelectorAll(".story-section")).filter(function (section) {
       return section.isConnected && section.getClientRects().length;
     }).sort(function (a, b) {

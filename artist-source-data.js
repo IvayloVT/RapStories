@@ -1822,9 +1822,9 @@ window.ARTIST_SOURCE_DATA = {
     reviewNotes: 'Cadet is in the curated tier because his page handles a major UK rap legacy with care: South London storytelling, freestyle culture, "Advice", and his posthumous impact.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Cadet_(rapper)', note: 'Canonical biography, discography, career timeline, and death overview for Cadet.' },
-      { label: 'BBC News report', href: 'https://www.bbc.co.uk/news/newsbeat-47176758', note: 'Primary mainstream UK news report on Cadet's death and public reaction.' },
+      { label: 'BBC News report', href: 'https://www.bbc.co.uk/news/newsbeat-47176758', note: "Primary mainstream UK news report on Cadet's death and public reaction." },
       { label: 'The Guardian news report', href: 'https://www.theguardian.com/music/2019/feb/09/british-rapper-cadet-dies-taxi-crash-on-way-to-staffordshire-gig', note: 'Useful for death context and tribute response.' },
-      { label: 'The Guardian album review', href: 'https://www.theguardian.com/music/2020/apr/12/cadet-the-rated-legend-review-open-hearted-honesty', note: 'Useful for framing The Rated Legend and Cadet's emotional honesty.' },
+      { label: 'The Guardian album review', href: 'https://www.theguardian.com/music/2020/apr/12/cadet-the-rated-legend-review-open-hearted-honesty', note: "Useful for framing The Rated Legend and Cadet's emotional honesty." },
       { label: 'Official Charts history', href: 'https://www.officialcharts.com/artist/54261/cadet/', note: 'Useful for UK chart performance including "Advice".' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Cadet&type=all', note: 'Helpful for checking releases and credits.' }
     ],

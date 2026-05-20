@@ -1004,21 +1004,21 @@
     body.story-mode .story-section.active {
       opacity: 1;
       transform: translateY(0);
-      filter: brightness(1.14) saturate(1.1);
+      filter: brightness(1.42) contrast(1.08) saturate(1.08);
     }
     body.story-mode .story-section.active.glass,
     body.story-mode .story-section.active .glass,
     body.story-mode .story-section.active.panel,
     body.story-mode .story-section.active.hero-info {
-      background: rgba(255,255,255,0.11);
-      border-color: rgba(255,255,255,0.2);
+      background: var(--panel);
+      border-color: rgba(255,255,255,0.28);
       box-shadow:
         0 28px 64px rgba(0,0,0,0.34),
         0 0 0 1px rgba(255,255,255,0.05),
         0 0 34px rgba(212,175,55,0.12);
     }
     body.story-mode .story-section.active {
-      color: var(--reading-text);
+      color: var(--text);
     }
     body.story-mode .story-section.active h2,
     body.story-mode .story-section.active h3,
@@ -1046,12 +1046,12 @@
     body.story-mode .story-section.active .timeline-item p,
     body.story-mode .story-section.active .credibility-intro p,
     body.story-mode .story-section.active .stat-panel .label {
-      color: var(--reading-text);
+      color: var(--text);
     }
     body.story-mode .story-section.active .quote,
     body.story-mode .story-section.active .tag,
     body.story-mode .story-section.active .track-tag {
-      color: var(--soft-text);
+      color: var(--text);
     }
     body.story-mode .story-section .glass {
       box-shadow: 0 24px 60px rgba(0,0,0,0.38);
