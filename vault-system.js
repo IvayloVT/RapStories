@@ -498,7 +498,7 @@ function setupGraph(){
 function setupArchive(){
   const root = document.querySelector("[data-vault-page='archive']");
   if(!root) return;
-  const TAG_PREVIEW_COUNT = 36;
+  const TAG_PREVIEW_COUNT = 35;
   const MOBILE_TAG_PREVIEW_COUNT = 19;
   const grid = document.getElementById("artistGrid");
   const empty = document.getElementById("emptyState");
