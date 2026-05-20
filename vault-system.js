@@ -498,7 +498,7 @@ function setupGraph(){
 function setupArchive(){
   const root = document.querySelector("[data-vault-page='archive']");
   if(!root) return;
-  const TAG_PREVIEW_COUNT = 35;
+  const TAG_PREVIEW_COUNT = 34;
   const MOBILE_TAG_PREVIEW_COUNT = 19;
   const grid = document.getElementById("artistGrid");
   const empty = document.getElementById("emptyState");
@@ -566,6 +566,9 @@ function setupArchive(){
   }
 
   tags.forEach(tag => {
+    if(tag === "Bronx"){
+      chips.appendChild(make("span","chip-row-line-break"));
+    }
     const btn = make("button","chip" + (tag==="all" ? " active" : ""), tag==="all" ? "All Tags" : tag);
     btn.type = "button";
     btn.addEventListener("click", () => {
