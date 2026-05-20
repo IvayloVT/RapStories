@@ -992,7 +992,7 @@
       }
 
       .mobile-next-story {
-        display: flex;
+        display: none;
       }
     }
     body.story-mode .story-section {
