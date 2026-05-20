@@ -15,7 +15,7 @@ window.ARTIST_SOURCE_DATA = {
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Early Life and Identity</h3>
-      <p>21 Savage was born Shéyaa Bin Abraham-Joseph on October 22, 1992. To most listeners, he is understood through Atlanta: the accents, production choices, local relationships, street references, and dry sense of humor that run through his music all connect him to the city. At the same time, his personal background is more complicated than the simple label of "Atlanta rapper" suggests. His public immigration case later made his British birth part of the wider story, but his music had already been shaped by displacement, pressure, and the need to build an identity in a difficult environment.</p>
+      <p>21 Savage was born ShÃ©yaa Bin Abraham-Joseph on October 22, 1992. To most listeners, he is understood through Atlanta: the accents, production choices, local relationships, street references, and dry sense of humor that run through his music all connect him to the city. At the same time, his personal background is more complicated than the simple label of "Atlanta rapper" suggests. His public immigration case later made his British birth part of the wider story, but his music had already been shaped by displacement, pressure, and the need to build an identity in a difficult environment.</p>
 
       <p>That tension is one reason his story has lasted. 21 Savage does not only represent one city or one rap lane. He represents the way modern hip-hop biographies can be layered: local belonging, family history, migration, trauma, public misunderstanding, and gradual personal growth can all exist in the same artist. For Rap Stories, that makes his page more than a list of releases. His career is a useful case study in how an artist can turn a narrow public image into a broader cultural narrative.</p>
 
@@ -57,7 +57,7 @@ window.ARTIST_SOURCE_DATA = {
       <div class="timeline">
         <div class="timeline-item">
           <strong>1992 - Birth</strong>
-          <p>Born Shéyaa Bin Abraham-Joseph on October 22, 1992.</p>
+          <p>Born ShÃ©yaa Bin Abraham-Joseph on October 22, 1992.</p>
         </div>
         <div class="timeline-item">
           <strong>2000s - Atlanta Upbringing</strong>
@@ -165,9 +165,9 @@ window.ARTIST_SOURCE_DATA = {
   '6ix9ine': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'This curated pack emphasizes biography, virality, and controversy because those dimensions are inseparable from 6ix9ine’s story.',
+    reviewNotes: 'This curated pack emphasizes biography, virality, and controversy because those dimensions are inseparable from 6ix9ineâ€™s story.',
     sources: [
-      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/6ix9ine', note: 'Canonical overview for Daniel Hernandez’s rise, legal trouble, and public profile.' },
+      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/6ix9ine', note: 'Canonical overview for Daniel Hernandezâ€™s rise, legal trouble, and public profile.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/6ix9ine', note: 'Useful for concise biographical framing and controversy context.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/6ix9ine/', note: 'Helpful for chart-era milestones, release coverage, and industry context.' },
       { label: 'AP legal coverage', href: 'https://apnews.com/article/29f4ba73919def269f165f5ba77c2ad8', note: 'Reference point for later supervised-release and legal-history context.' },
@@ -644,7 +644,7 @@ window.ARTIST_SOURCE_DATA = {
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>West London Roots</h3>
-      <p>AJ Tracey, born Ché Wolton Grant on March 4, 1994, comes from Ladbroke Grove in West London. His story matters because he arrived during a period when UK rap was moving from local scenes into global visibility. Grime had already proven its cultural force, but the next generation needed to show that British rap could be technically sharp, commercially flexible, and internationally fluent without losing its local identity.</p>
+      <p>AJ Tracey, born ChÃ© Wolton Grant on March 4, 1994, comes from Ladbroke Grove in West London. His story matters because he arrived during a period when UK rap was moving from local scenes into global visibility. Grime had already proven its cultural force, but the next generation needed to show that British rap could be technically sharp, commercially flexible, and internationally fluent without losing its local identity.</p>
 
       <p>AJ Tracey carried that balance from the beginning. His music has always sounded rooted in London, but not limited by one version of London. He could move through grime, UK rap, garage, drill, dancehall, and pop-facing production without sounding like he was chasing a costume. That genre movement became part of his identity: the confidence to switch lanes while keeping the same voice.</p>
 
@@ -688,7 +688,7 @@ window.ARTIST_SOURCE_DATA = {
       <div class="timeline">
         <div class="timeline-item">
           <strong>1994 - Birth</strong>
-          <p>Born Ché Wolton Grant in London, England.</p>
+          <p>Born ChÃ© Wolton Grant in London, England.</p>
         </div>
         <div class="timeline-item">
           <strong>Early 2010s - Grime Development</strong>
@@ -1158,7 +1158,7 @@ window.ARTIST_SOURCE_DATA = {
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/August_Alsina', note: 'Canonical biography and career overview for August Alsina.' },
       { label: 'AllMusic profile', href: 'https://www.allmusic.com/search/all/August%20Alsina', note: 'Discography context, credits, and style notes for August Alsina.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/August%20Alsina/', note: 'Chart milestones, release coverage, and industry reporting for August Alsina.' },
-      { label: 'Pitchfork review', href: 'https://pitchfork.com/reviews/albums/21341-this-thing-called-life/', note: 'Critical framing for This Thing Called Life and Alsina’s rap-influenced R&B style.' },
+      { label: 'Pitchfork review', href: 'https://pitchfork.com/reviews/albums/21341-this-thing-called-life/', note: 'Critical framing for This Thing Called Life and Alsinaâ€™s rap-influenced R&B style.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=August%20Alsina&type=all', note: 'Release history and credits starting point for August Alsina.' }
     ],
     biographyTitle: 'Full Biography',
@@ -1166,26 +1166,26 @@ window.ARTIST_SOURCE_DATA = {
       <h3>New Orleans Roots</h3>
       <p>August Alsina, born August Anthony Alsina Jr. on September 3, 1992, came from New Orleans with a voice shaped by instability, grief, and the pressure of growing up quickly. His story is not built around the fantasy of effortless stardom. It begins in a family environment marked by addiction, separation, and responsibility, where music became both escape and testimony.</p>
 
-      <p>New Orleans gave Alsina a cultural foundation, but his emotional language came from hardship. He was drawn to singing early, including church-rooted influence, yet his music never settled into clean gospel uplift or polished romantic R&B. Instead, he carried the city’s survival instinct into records that sounded wounded, street-aware, and spiritually restless.</p>
+      <p>New Orleans gave Alsina a cultural foundation, but his emotional language came from hardship. He was drawn to singing early, including church-rooted influence, yet his music never settled into clean gospel uplift or polished romantic R&B. Instead, he carried the cityâ€™s survival instinct into records that sounded wounded, street-aware, and spiritually restless.</p>
 
       <p>That combination made him different from many mainstream R&B artists of the 2010s. August could sing with tenderness, but the stories underneath often came from hunger, distrust, family loss, and the need to protect himself. He sounded like an artist trying to turn private damage into something other people could recognize.</p>
 
       <h3>Music as Survival</h3>
       <p>Before becoming a national name, Alsina built momentum through mixtapes and online visibility. Projects such as <em>The Product</em> and <em>The Product 2</em> helped define his lane: confessional R&B with hip-hop posture, direct language, and Southern grit. He was not simply singing over rap-adjacent production. He was using melody the way many rappers use verses, as a way to narrate pressure, loyalty, temptation, and pain.</p>
 
-      <p>His breakthrough single "I Luv This Shit" became the first major public proof of that identity. The record worked because it carried both radio energy and lived-in roughness. It had a hook strong enough for clubs and playlists, but the voice behind it still sounded like someone who had not been softened by the industry. That tension became central to August Alsina’s appeal.</p>
+      <p>His breakthrough single "I Luv This Shit" became the first major public proof of that identity. The record worked because it carried both radio energy and lived-in roughness. It had a hook strong enough for clubs and playlists, but the voice behind it still sounded like someone who had not been softened by the industry. That tension became central to August Alsinaâ€™s appeal.</p>
 
       <p>When <em>Testimony</em> arrived in 2014, the title made sense. The album was not just a debut; it was a personal statement. Songs such as "Make It Home", "Benediction", "No Love", and "Kissin' on My Tattoos" positioned him as an R&B artist who treated survival as the main subject. His vulnerability did not feel decorative. It felt like the foundation of the music.</p>
 
       <h3>Mainstream Recognition</h3>
-      <p>August Alsina’s rise placed him inside a wider moment when R&B was becoming darker, more rhythmically flexible, and more open to rap’s emotional directness. He fit that landscape, but he also stood apart from it. Where some artists leaned into mystery or atmosphere, August often chose confession. His records were direct, plainspoken, and heavy with autobiography.</p>
+      <p>August Alsinaâ€™s rise placed him inside a wider moment when R&B was becoming darker, more rhythmically flexible, and more open to rapâ€™s emotional directness. He fit that landscape, but he also stood apart from it. Where some artists leaned into mystery or atmosphere, August often chose confession. His records were direct, plainspoken, and heavy with autobiography.</p>
 
-      <p>His collaborations also helped widen his profile. Working around figures such as DJ Khaled, Lil Wayne, Future, Nicki Minaj, and Rick Ross placed him near major hip-hop audiences without requiring him to abandon his own lane. He could stand beside rappers because his music already carried rap’s sense of testimony, pride, and emotional toughness.</p>
+      <p>His collaborations also helped widen his profile. Working around figures such as DJ Khaled, Lil Wayne, Future, Nicki Minaj, and Rick Ross placed him near major hip-hop audiences without requiring him to abandon his own lane. He could stand beside rappers because his music already carried rapâ€™s sense of testimony, pride, and emotional toughness.</p>
 
-      <p><em>This Thing Called Life</em>, released in 2015, showed a more developed artist trying to make sense of fame, trauma, faith, and responsibility. It was not only about romantic pain. It also explored ambition, family pressure, inner conflict, and the strange loneliness that can follow success. The album reinforced that Alsina’s strongest work came when he refused to separate the artist from the person.</p>
+      <p><em>This Thing Called Life</em>, released in 2015, showed a more developed artist trying to make sense of fame, trauma, faith, and responsibility. It was not only about romantic pain. It also explored ambition, family pressure, inner conflict, and the strange loneliness that can follow success. The album reinforced that Alsinaâ€™s strongest work came when he refused to separate the artist from the person.</p>
 
       <h3>Health, Public Pressure, and Resilience</h3>
-      <p>As his career continued, August Alsina’s public story became more complicated. He spoke openly about serious health struggles, including autoimmune-related illness that affected his body and forced him to confront vulnerability in a very literal way. For an artist already known for emotional openness, those revelations deepened the public understanding of his music.</p>
+      <p>As his career continued, August Alsinaâ€™s public story became more complicated. He spoke openly about serious health struggles, including autoimmune-related illness that affected his body and forced him to confront vulnerability in a very literal way. For an artist already known for emotional openness, those revelations deepened the public understanding of his music.</p>
 
       <p>He also became a frequent subject of public conversation beyond songs and albums. Media attention around his personal life sometimes threatened to overpower the music, especially in an era where celebrity narratives can move faster than artistic ones. For August, the challenge has been preserving the meaning of the work while the public debates the details of the life around it.</p>
 
@@ -1194,12 +1194,12 @@ window.ARTIST_SOURCE_DATA = {
       <h3>Why His Story Matters</h3>
       <p>August Alsina matters because he expanded what mainstream R&B vulnerability could sound like. His voice made pain feel physical, not abstract. He helped define a lane where masculine honesty, street memory, family trauma, and melody could exist together without being softened into simple love songs.</p>
 
-      <p>For Rap Stories, his place in the archive is important because hip-hop culture is not only built by rappers. It is also shaped by singers who understand rap’s language of survival and translate it through melody. August Alsina’s career sits at that intersection: R&B as confession, hip-hop soul as witness, and personal history as the engine of the catalog.</p>
+      <p>For Rap Stories, his place in the archive is important because hip-hop culture is not only built by rappers. It is also shaped by singers who understand rapâ€™s language of survival and translate it through melody. August Alsinaâ€™s career sits at that intersection: R&B as confession, hip-hop soul as witness, and personal history as the engine of the catalog.</p>
 
-      <div class="quote">August Alsina’s power comes from the short distance between the wound and the song: his best music sounds like survival before it sounds like performance.</div>
+      <div class="quote">August Alsinaâ€™s power comes from the short distance between the wound and the song: his best music sounds like survival before it sounds like performance.</div>
     `,
     riseToFameHtml: `
-      <p>August Alsina’s rise came through mixtapes, online attention, and a clear emotional identity. He did not enter the mainstream as a polished romantic singer. He arrived with a voice that sounded bruised, direct, and connected to real-life pressure.</p>
+      <p>August Alsinaâ€™s rise came through mixtapes, online attention, and a clear emotional identity. He did not enter the mainstream as a polished romantic singer. He arrived with a voice that sounded bruised, direct, and connected to real-life pressure.</p>
       <p>"I Luv This Shit" became the defining breakout because it balanced radio appeal with rawness. From there, <em>Testimony</em> gave him a larger platform and proved that listeners were responding to more than one song. They were responding to an artist whose pain felt believable.</p>
       <p>His rise was also helped by hip-hop proximity. Features, collaborations, and production choices placed him close to rap audiences, while his voice kept him rooted in R&B. That dual identity made him one of the most distinctive young R&B names of the mid-2010s.</p>
     `,
@@ -1269,7 +1269,7 @@ window.ARTIST_SOURCE_DATA = {
     `,
     challengesHtml: `
       <h3>Family Loss and Emotional Weight</h3>
-      <p>August Alsina’s music is tied to personal grief, family responsibility, and the pressure of turning trauma into art. That honesty made his work powerful, but it also meant the public often met him through pain before anything else.</p>
+      <p>August Alsinaâ€™s music is tied to personal grief, family responsibility, and the pressure of turning trauma into art. That honesty made his work powerful, but it also meant the public often met him through pain before anything else.</p>
 
       <h3>Health Struggles</h3>
       <p>His serious health issues became part of his public story and affected his career rhythm. For an artist whose identity already centered on vulnerability, physical illness added another layer to how listeners understood his resilience.</p>
@@ -1286,7 +1286,7 @@ window.ARTIST_SOURCE_DATA = {
       <p>He also represents the 2010s shift where R&B artists could build credibility through mixtapes, collaborations, and direct emotional storytelling rather than only traditional radio polish. His career belongs to the same cultural conversation as rap-sung hybrids and pain-centered melodic music.</p>
     `,
     legacyHtml: `
-      <p>August Alsina’s legacy is still being written, but his core contribution is clear: he gave modern R&B one of its most emotionally exposed voices. His best work does not hide behind atmosphere or mystery. It speaks plainly, often painfully, and that directness is the point.</p>
+      <p>August Alsinaâ€™s legacy is still being written, but his core contribution is clear: he gave modern R&B one of its most emotionally exposed voices. His best work does not hide behind atmosphere or mystery. It speaks plainly, often painfully, and that directness is the point.</p>
       <p>In the wider archive, he matters as an artist who connected New Orleans survival, hip-hop soul, and confessional songwriting. Whether through <em>Testimony</em>, <em>This Thing Called Life</em>, or his later independent work, he remains a figure whose catalog documents the cost of becoming visible while still carrying unresolved pain.</p>
     `,
     relatedHtml: `
@@ -1319,54 +1319,54 @@ window.ARTIST_SOURCE_DATA = {
     reviewNotes: 'Az Yet is in the curated tier because the page covers 1990s R&B vocal groups, Philadelphia harmony tradition, LaFace polish, soundtrack crossover, and quiet-storm legacy.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Az_Yet', note: 'Canonical biography, group history, membership changes, and debut-era overview for Az Yet.' },
-      { label: 'MusicVF chart archive', href: 'https://www.musicvf.com/Az%2BYet.songs', note: 'Chart reference for Last Night, Hard to Say I’m Sorry, and Az Yet’s Hot 100/R&B performance.' },
-      { label: 'R&B Haven profile', href: 'https://www.rnbhaven.com/artists/Az-Yet/56', note: 'Useful background on the group’s Philadelphia formation and Babyface connection.' },
-      { label: 'GRAMMY reference', href: 'https://www.grammy.com/artists/az-yet/14072', note: 'Verification point for Az Yet’s Grammy nomination history.' },
+      { label: 'MusicVF chart archive', href: 'https://www.musicvf.com/Az%2BYet.songs', note: 'Chart reference for Last Night, Hard to Say Iâ€™m Sorry, and Az Yetâ€™s Hot 100/R&B performance.' },
+      { label: 'R&B Haven profile', href: 'https://www.rnbhaven.com/artists/Az-Yet/56', note: 'Useful background on the groupâ€™s Philadelphia formation and Babyface connection.' },
+      { label: 'GRAMMY reference', href: 'https://www.grammy.com/artists/az-yet/14072', note: 'Verification point for Az Yetâ€™s Grammy nomination history.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Az%20Yet&type=all', note: 'Release history and credits starting point for Az Yet.' }
     ],
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Philadelphia Harmony Roots</h3>
-      <p>Az Yet formed out of Philadelphia, a city with one of America’s deepest soul and vocal-group traditions. That origin matters because the group’s identity was never built around flash first. It was built around voices: stacked harmonies, patient phrasing, smooth lead vocals, and the kind of emotional control that made 1990s R&B ballads feel cinematic.</p>
+      <p>Az Yet formed out of Philadelphia, a city with one of Americaâ€™s deepest soul and vocal-group traditions. That origin matters because the groupâ€™s identity was never built around flash first. It was built around voices: stacked harmonies, patient phrasing, smooth lead vocals, and the kind of emotional control that made 1990s R&B ballads feel cinematic.</p>
 
-      <p>The group’s story began before their mainstream breakthrough, through years of lineup movement, rehearsal, local development, and the search for the right industry connection. In a period when male R&B groups were highly competitive, Az Yet needed more than good voices. They needed songs, production, image, and a sound that could cut through an era already crowded with strong harmony acts.</p>
+      <p>The groupâ€™s story began before their mainstream breakthrough, through years of lineup movement, rehearsal, local development, and the search for the right industry connection. In a period when male R&B groups were highly competitive, Az Yet needed more than good voices. They needed songs, production, image, and a sound that could cut through an era already crowded with strong harmony acts.</p>
 
-      <p>Philadelphia gave them a useful foundation. The city’s musical memory stretches through classic soul, church-rooted singing, street-corner harmony, and polished adult R&B. Az Yet carried that lineage into the 1990s, but with a sound shaped for contemporary radio: cleaner production, dramatic ballad arrangements, and vocals designed for both quiet-storm programming and pop crossover.</p>
+      <p>Philadelphia gave them a useful foundation. The cityâ€™s musical memory stretches through classic soul, church-rooted singing, street-corner harmony, and polished adult R&B. Az Yet carried that lineage into the 1990s, but with a sound shaped for contemporary radio: cleaner production, dramatic ballad arrangements, and vocals designed for both quiet-storm programming and pop crossover.</p>
 
       <h3>The LaFace and Babyface Connection</h3>
-      <p>Az Yet’s breakthrough became closely tied to the refined R&B world around LaFace Records and Babyface. That connection placed the group inside one of the most important hitmaking systems of the decade. Babyface’s writing and production style valued melody, restraint, emotional clarity, and radio-ready polish, all of which matched the group’s strengths.</p>
+      <p>Az Yetâ€™s breakthrough became closely tied to the refined R&B world around LaFace Records and Babyface. That connection placed the group inside one of the most important hitmaking systems of the decade. Babyfaceâ€™s writing and production style valued melody, restraint, emotional clarity, and radio-ready polish, all of which matched the groupâ€™s strengths.</p>
 
       <p>This was not a small detail. In the 1990s, production context could define how an R&B group was understood. Az Yet did not arrive as a raw street group or a dance-heavy pop act. They arrived as a vocal group built for adult feeling, romance, apology, longing, and emotional performance. The LaFace connection helped frame them as part of a high-standard ballad tradition rather than a novelty act.</p>
 
-      <p>"Last Night" became the key proof. Produced by Babyface and Mervyn Warren, the song placed the group’s harmonies at the center while still giving the record enough drama to work on mainstream radio. It was intimate, but not small. It sounded like a private confession arranged for a large audience.</p>
+      <p>"Last Night" became the key proof. Produced by Babyface and Mervyn Warren, the song placed the groupâ€™s harmonies at the center while still giving the record enough drama to work on mainstream radio. It was intimate, but not small. It sounded like a private confession arranged for a large audience.</p>
 
       <h3>Breakthrough Ballads</h3>
-      <p>"Last Night" became Az Yet’s signature record and one of the clearest examples of their appeal. The song reached major chart visibility because it carried a rare balance: controlled vocals, romantic tension, and an arrangement that built without becoming overdone. For many listeners, that record is the group’s defining statement.</p>
+      <p>"Last Night" became Az Yetâ€™s signature record and one of the clearest examples of their appeal. The song reached major chart visibility because it carried a rare balance: controlled vocals, romantic tension, and an arrangement that built without becoming overdone. For many listeners, that record is the groupâ€™s defining statement.</p>
 
-      <p>Their cover of Chicago’s "Hard to Say I’m Sorry" pushed them even further into pop crossover territory. Featuring Peter Cetera, the song connected classic pop songwriting with 1990s R&B harmony. It also showed how Az Yet could reinterpret familiar material through vocal texture rather than simply copying the original. The performance had polish, but its success depended on the blend of voices.</p>
+      <p>Their cover of Chicagoâ€™s "Hard to Say Iâ€™m Sorry" pushed them even further into pop crossover territory. Featuring Peter Cetera, the song connected classic pop songwriting with 1990s R&B harmony. It also showed how Az Yet could reinterpret familiar material through vocal texture rather than simply copying the original. The performance had polish, but its success depended on the blend of voices.</p>
 
-      <p>The self-titled <em>Az Yet</em> album placed the group among the decade’s major romantic R&B conversations. Even if the group did not produce a long string of later blockbuster albums, the debut gave them a durable place in the memory of the era. Their strongest records became part of wedding playlists, late-night radio, slow-jam collections, and 1990s R&B nostalgia.</p>
+      <p>The self-titled <em>Az Yet</em> album placed the group among the decadeâ€™s major romantic R&B conversations. Even if the group did not produce a long string of later blockbuster albums, the debut gave them a durable place in the memory of the era. Their strongest records became part of wedding playlists, late-night radio, slow-jam collections, and 1990s R&B nostalgia.</p>
 
       <h3>Vocal Group Identity</h3>
-      <p>Az Yet’s importance is easier to understand when placed inside the male vocal-group wave of the 1990s. This was an era where harmony groups could still become mainstream names, and audiences cared deeply about vocal blend. The competition included groups with stronger catalogs, bigger personalities, or longer commercial runs, but Az Yet carved out a lane through elegance and emotional precision.</p>
+      <p>Az Yetâ€™s importance is easier to understand when placed inside the male vocal-group wave of the 1990s. This was an era where harmony groups could still become mainstream names, and audiences cared deeply about vocal blend. The competition included groups with stronger catalogs, bigger personalities, or longer commercial runs, but Az Yet carved out a lane through elegance and emotional precision.</p>
 
       <p>The group did not rely on aggressive image or dance spectacle. Their identity lived in the slow build of a song, the way background parts supported the lead, and the smoothness of transitions between singers. That made their music feel adult and formal compared with rougher R&B trends, but it also gave their best songs staying power.</p>
 
-      <p>Lineup changes and shifting industry attention made long-term consistency difficult. Like many vocal groups, Az Yet’s story includes the challenge of maintaining chemistry while members change and the commercial center of R&B moves elsewhere. By the 2000s, the mainstream had begun shifting toward solo stars, hip-hop collaborations, and more beat-driven R&B, making the classic vocal-group lane harder to sustain.</p>
+      <p>Lineup changes and shifting industry attention made long-term consistency difficult. Like many vocal groups, Az Yetâ€™s story includes the challenge of maintaining chemistry while members change and the commercial center of R&B moves elsewhere. By the 2000s, the mainstream had begun shifting toward solo stars, hip-hop collaborations, and more beat-driven R&B, making the classic vocal-group lane harder to sustain.</p>
 
       <h3>Quiet-Storm Afterlife</h3>
-      <p>Az Yet’s legacy is not measured only by the number of albums released. It is measured by the way a few songs continued to live. "Last Night" and "Hard to Say I’m Sorry" remain recognizable because they capture a specific emotional style: polished, sincere, slow-burning, and vocally rich.</p>
+      <p>Az Yetâ€™s legacy is not measured only by the number of albums released. It is measured by the way a few songs continued to live. "Last Night" and "Hard to Say Iâ€™m Sorry" remain recognizable because they capture a specific emotional style: polished, sincere, slow-burning, and vocally rich.</p>
 
       <p>That afterlife matters. Some artists dominate an era through volume. Others become attached to a feeling. Az Yet belongs to the second category. Their music represents the 1990s R&B belief that a group could build a whole identity around a ballad if the singing was strong enough and the arrangement carried real feeling.</p>
 
-      <p>For Rap Stories, Az Yet matters because hip-hop culture’s archive also includes the R&B voices that shaped its emotional environment. Their songs sat beside rap records on radio, soundtracks, mixtapes, and late-night listening habits. They remind us that the culture was never only about bars and drums. It was also about harmonies, romance, vulnerability, and the soundtrack to everyday memory.</p>
+      <p>For Rap Stories, Az Yet matters because hip-hop cultureâ€™s archive also includes the R&B voices that shaped its emotional environment. Their songs sat beside rap records on radio, soundtracks, mixtapes, and late-night listening habits. They remind us that the culture was never only about bars and drums. It was also about harmonies, romance, vulnerability, and the soundtrack to everyday memory.</p>
 
-      <div class="quote">Az Yet’s legacy lives in the blend: voices arranged with patience, emotion delivered with polish, and ballads that still carry the atmosphere of 1990s R&B.</div>
+      <div class="quote">Az Yetâ€™s legacy lives in the blend: voices arranged with patience, emotion delivered with polish, and ballads that still carry the atmosphere of 1990s R&B.</div>
     `,
     riseToFameHtml: `
-      <p>Az Yet’s rise came through the slow work of vocal development and the right industry connection. The group came from Philadelphia’s harmony tradition and eventually connected with the LaFace/Babyface world, giving them access to the kind of songwriting and production that could turn strong voices into national records.</p>
-      <p>"Last Night" became the breakthrough because it introduced the group in their strongest form: romantic, polished, and vocally precise. The song’s success gave Az Yet immediate visibility in a decade when R&B groups could still become major radio names through ballads.</p>
-      <p>The follow-up, "Hard to Say I’m Sorry", expanded their reach beyond core R&B audiences. By reworking a familiar pop ballad with Peter Cetera involved, Az Yet moved into crossover territory while keeping vocal harmony at the center of the record.</p>
+      <p>Az Yetâ€™s rise came through the slow work of vocal development and the right industry connection. The group came from Philadelphiaâ€™s harmony tradition and eventually connected with the LaFace/Babyface world, giving them access to the kind of songwriting and production that could turn strong voices into national records.</p>
+      <p>"Last Night" became the breakthrough because it introduced the group in their strongest form: romantic, polished, and vocally precise. The songâ€™s success gave Az Yet immediate visibility in a decade when R&B groups could still become major radio names through ballads.</p>
+      <p>The follow-up, "Hard to Say Iâ€™m Sorry", expanded their reach beyond core R&B audiences. By reworking a familiar pop ballad with Peter Cetera involved, Az Yet moved into crossover territory while keeping vocal harmony at the center of the record.</p>
     `,
     timelineHtml: `
       <div class="timeline">
@@ -1380,7 +1380,7 @@ window.ARTIST_SOURCE_DATA = {
         </div>
         <div class="timeline-item">
           <strong>Mid-1990s - LaFace Connection</strong>
-          <p>Az Yet connected with the Babyface and LaFace Records orbit, placing their sound inside one of the decade’s most polished R&B systems.</p>
+          <p>Az Yet connected with the Babyface and LaFace Records orbit, placing their sound inside one of the decadeâ€™s most polished R&B systems.</p>
         </div>
         <div class="timeline-item">
           <strong>1996 - "Last Night"</strong>
@@ -1388,15 +1388,15 @@ window.ARTIST_SOURCE_DATA = {
         </div>
         <div class="timeline-item">
           <strong>1996 - Debut Album</strong>
-          <p>The self-titled <em>Az Yet</em> album introduced the group’s ballad-driven sound to a wide mainstream audience.</p>
+          <p>The self-titled <em>Az Yet</em> album introduced the groupâ€™s ballad-driven sound to a wide mainstream audience.</p>
         </div>
         <div class="timeline-item">
-          <strong>1997 - "Hard to Say I’m Sorry"</strong>
+          <strong>1997 - "Hard to Say Iâ€™m Sorry"</strong>
           <p>Their Chicago cover, featuring Peter Cetera, became another major crossover moment and earned Grammy recognition.</p>
         </div>
         <div class="timeline-item">
           <strong>2000s-2010s - Legacy Phase</strong>
-          <p>Later releases, performances, and lineup changes kept the name active while the group’s biggest songs remained part of classic R&B memory.</p>
+          <p>Later releases, performances, and lineup changes kept the name active while the groupâ€™s biggest songs remained part of classic R&B memory.</p>
         </div>
       </div>
     `,
@@ -1404,31 +1404,31 @@ window.ARTIST_SOURCE_DATA = {
       <div class="discography">
         <div class="album">
           <strong>"Last Night"</strong>
-          <span>The signature Babyface-produced breakthrough that placed Az Yet’s harmonies at the center of 1990s R&B radio.</span>
+          <span>The signature Babyface-produced breakthrough that placed Az Yetâ€™s harmonies at the center of 1990s R&B radio.</span>
         </div>
         <div class="album">
           <strong>Az Yet</strong>
           <span>The self-titled debut album that framed the group as a polished LaFace-era vocal act built around ballads and harmony.</span>
         </div>
         <div class="album">
-          <strong>"Hard to Say I’m Sorry"</strong>
+          <strong>"Hard to Say Iâ€™m Sorry"</strong>
           <span>The Chicago cover featuring Peter Cetera that pushed the group into pop crossover and Grammy-recognized territory.</span>
         </div>
         <div class="album">
           <strong>"Saved for Someone Else"</strong>
-          <span>A deeper fan reference that shows the group’s romantic ballad style beyond the two biggest hits.</span>
+          <span>A deeper fan reference that shows the groupâ€™s romantic ballad style beyond the two biggest hits.</span>
         </div>
         <div class="album">
           <strong>"Care for Me"</strong>
-          <span>A useful catalog cut for hearing the group’s softer quiet-storm side and vocal patience.</span>
+          <span>A useful catalog cut for hearing the groupâ€™s softer quiet-storm side and vocal patience.</span>
         </div>
         <div class="album">
           <strong>Back Home</strong>
-          <span>A later-era project connected to the group’s attempt to continue beyond the original 1990s commercial window.</span>
+          <span>A later-era project connected to the groupâ€™s attempt to continue beyond the original 1990s commercial window.</span>
         </div>
         <div class="album">
-          <strong>She’s Magic</strong>
-          <span>A later chapter that reflects Az Yet’s long afterlife as a group still associated with classic R&B harmony.</span>
+          <strong>Sheâ€™s Magic</strong>
+          <span>A later chapter that reflects Az Yetâ€™s long afterlife as a group still associated with classic R&B harmony.</span>
         </div>
       </div>
     `,
@@ -1440,19 +1440,19 @@ window.ARTIST_SOURCE_DATA = {
       <p>Like many vocal groups, Az Yet faced the challenge of keeping identity stable through membership changes. Vocal chemistry is central to this kind of group, so shifts in lineup can affect both sound and public recognition.</p>
 
       <h3>Following Huge Ballads</h3>
-      <p>"Last Night" and "Hard to Say I’m Sorry" gave the group major visibility, but they also created a difficult standard. Once an act becomes strongly tied to two signature ballads, later records have to fight against nostalgia as much as compete for attention.</p>
+      <p>"Last Night" and "Hard to Say Iâ€™m Sorry" gave the group major visibility, but they also created a difficult standard. Once an act becomes strongly tied to two signature ballads, later records have to fight against nostalgia as much as compete for attention.</p>
 
       <h3>Changing R&B Marketplace</h3>
       <p>By the 2000s, mainstream R&B was moving toward solo stars, hip-hop features, and more beat-driven production. That shift made the classic harmony-group lane harder to sustain commercially.</p>
     `,
     culturalImpactHtml: `
-      <p>Az Yet’s cultural impact sits inside the broader memory of 1990s R&B, especially the era’s respect for harmony, romance, and vocal discipline. Their biggest songs helped define the slow-jam atmosphere of the decade, where ballads could move across R&B radio, pop radio, soundtracks, and personal playlists.</p>
+      <p>Az Yetâ€™s cultural impact sits inside the broader memory of 1990s R&B, especially the eraâ€™s respect for harmony, romance, and vocal discipline. Their biggest songs helped define the slow-jam atmosphere of the decade, where ballads could move across R&B radio, pop radio, soundtracks, and personal playlists.</p>
       <p>The group also shows how important production ecosystems were to R&B history. Their connection to Babyface and LaFace placed them inside a polished hitmaking tradition that shaped the sound of mainstream romance in the 1990s.</p>
       <p>Even though their commercial peak was brief, Az Yet remains a useful archive piece because they represent the strength of a specific format: the male vocal group as emotional storyteller. Their records remind listeners how much drama could come from harmony alone.</p>
     `,
     legacyHtml: `
-      <p>Az Yet’s legacy is compact but durable. They are not remembered because they dominated for a decade; they are remembered because their best records still evoke a whole R&B era. "Last Night" and "Hard to Say I’m Sorry" continue to carry the mood of polished 1990s balladry.</p>
-      <p>In the Rap Stories archive, Az Yet helps widen the lens beyond rappers and into the R&B voices that shaped hip-hop culture’s emotional backdrop. Their story adds harmony, romance, and quiet-storm craft to the archive’s picture of the 1990s.</p>
+      <p>Az Yetâ€™s legacy is compact but durable. They are not remembered because they dominated for a decade; they are remembered because their best records still evoke a whole R&B era. "Last Night" and "Hard to Say Iâ€™m Sorry" continue to carry the mood of polished 1990s balladry.</p>
+      <p>In the Rap Stories archive, Az Yet helps widen the lens beyond rappers and into the R&B voices that shaped hip-hop cultureâ€™s emotional backdrop. Their story adds harmony, romance, and quiet-storm craft to the archiveâ€™s picture of the 1990s.</p>
     `,
     relatedHtml: `
       <div class="related-list">
@@ -1462,7 +1462,7 @@ window.ARTIST_SOURCE_DATA = {
         </a>
         <a href="r-kelly.html" class="related-card">
           <h4>R. Kelly</h4>
-          <p>A major but deeply controversial R&B figure whose 1990s dominance forms part of the wider context around Az Yet’s era.</p>
+          <p>A major but deeply controversial R&B figure whose 1990s dominance forms part of the wider context around Az Yetâ€™s era.</p>
         </a>
         <a href="august-alsina.html" class="related-card">
           <h4>August Alsina</h4>
@@ -1479,7 +1479,7 @@ window.ARTIST_SOURCE_DATA = {
     sourceTier: 'curated',
     reviewNotes: 'This profile is part of the first hand-curated source wave, with stronger legacy references added for high-interest artists.',
     sources: [
-      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/The_Notorious_B.I.G.', note: 'Canonical overview for Christopher Wallace’s biography, career arc, and death.' },
+      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/The_Notorious_B.I.G.', note: 'Canonical overview for Christopher Wallaceâ€™s biography, career arc, and death.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/The-Notorious-BIG', note: 'Useful for a concise legacy summary and historical framing.' },
       { label: 'Rock & Roll Hall of Fame', href: 'https://www.rockhall.com/inductees/notorious-big', note: 'Helpful for influence-era context and long-range significance.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/The%20Notorious%20B.I.G./', note: 'Useful for chart context and retrospective industry coverage.' },
@@ -1780,9 +1780,9 @@ window.ARTIST_SOURCE_DATA = {
     reviewNotes: 'Burna Boy is in the curated tier because his page covers Afro-fusion, Nigerian global crossover, Grammy recognition, and the worldwide expansion of African music.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Burna_Boy', note: 'Canonical biography, discography, awards, and career overview for Burna Boy.' },
-      { label: 'Pitchfork - Twice as Tall', href: 'https://pitchfork.com/reviews/albums/burna-boy-twice-as-tall/', note: 'Critical context for Twice as Tall and Burna Boy’s Afro-fusion mission.' },
+      { label: 'Pitchfork - Twice as Tall', href: 'https://pitchfork.com/reviews/albums/burna-boy-twice-as-tall/', note: 'Critical context for Twice as Tall and Burna Boyâ€™s Afro-fusion mission.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/Burna%20Boy/', note: 'Industry coverage, chart milestones, and awards context.' },
-      { label: 'GQ profile', href: 'https://www.gq.com/story/burna-boy-african-king-profile', note: 'Long-form cultural framing around Burna Boy’s global rise.' },
+      { label: 'GQ profile', href: 'https://www.gq.com/story/burna-boy-african-king-profile', note: 'Long-form cultural framing around Burna Boyâ€™s global rise.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Burna%20Boy&type=all', note: 'Release and credit reference for Burna Boy.' }
     ],
     biographyTitle: 'Full Biography',
@@ -1911,8 +1911,8 @@ window.ARTIST_SOURCE_DATA = {
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Central_Cee', note: 'Canonical biography and career overview for Central Cee.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/Central%20Cee/', note: 'Useful for U.S. crossover, chart milestones, and release reporting.' },
-      { label: 'Guardian review', href: 'https://www.theguardian.com/music/2025/jan/24/central-cee-cant-rush-greatness-review', note: 'Critical context for Can’t Rush Greatness and his UK rap position.' },
-      { label: 'Pitchfork review', href: 'https://pitchfork.com/reviews/albums/central-cee-cant-rush-greatness/', note: 'Critical framing for Central Cee’s debut album and global strategy.' },
+      { label: 'Guardian review', href: 'https://www.theguardian.com/music/2025/jan/24/central-cee-cant-rush-greatness-review', note: 'Critical context for Canâ€™t Rush Greatness and his UK rap position.' },
+      { label: 'Pitchfork review', href: 'https://pitchfork.com/reviews/albums/central-cee-cant-rush-greatness/', note: 'Critical framing for Central Ceeâ€™s debut album and global strategy.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Central%20Cee&type=all', note: 'Release and credit reference for Central Cee.' }
     ],
     biographyTitle: 'Full Biography',
@@ -1953,7 +1953,7 @@ window.ARTIST_SOURCE_DATA = {
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Chief_Keef', note: 'Canonical biography and career overview for a foundational drill figure.' },
       { label: 'AllMusic profile', href: 'https://www.allmusic.com/artist/chief-keef-mn0002971982', note: 'Useful for style framing, discography context, and credit-level orientation.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/Chief%20Keef/', note: 'Helpful for breakout-era milestones and later retrospective reporting.' },
-      { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/Chief%20Keef/', note: 'Useful for articles and commentary around his role in shaping drill’s wider visibility.' },
+      { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/Chief%20Keef/', note: 'Useful for articles and commentary around his role in shaping drillâ€™s wider visibility.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Chief%20Keef&type=all', note: 'Use this to cross-check release history and catalog details.' }
     ],
     biographyTitle: 'Full Biography',
@@ -2035,7 +2035,7 @@ window.ARTIST_SOURCE_DATA = {
     reviewNotes: 'Chip is in the curated tier because his page covers grime, UK rap longevity, teen breakthrough, independent return, clashes, and the Tottenham-to-mainstream arc.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Chip_(rapper)', note: 'Canonical biography, career overview, and discography for Chip.' },
-      { label: 'Official Charts search', href: 'https://www.officialcharts.com/search/singles/chip/', note: 'UK chart reference for Chip’s singles and albums.' },
+      { label: 'Official Charts search', href: 'https://www.officialcharts.com/search/singles/chip/', note: 'UK chart reference for Chipâ€™s singles and albums.' },
       { label: 'Billboard search', href: 'https://www.billboard.com/search/Chip%20rapper/', note: 'Industry coverage and release-cycle reference.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Chip%20Chipmunk&type=all', note: 'Release and credit reference for Chip.' },
       { label: 'Official site', href: 'https://www.officialchip.com/', note: 'Artist-controlled reference point for current activity.' }
@@ -2077,8 +2077,8 @@ window.ARTIST_SOURCE_DATA = {
     reviewNotes: 'CKay is in the curated tier because his page covers emo-afrobeats, Nigerian global crossover, TikTok virality, Love Nwantiti, and producer-artist identity.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/CKay', note: 'Canonical biography, career overview, and discography for CKay.' },
-      { label: 'Time profile', href: 'https://time.com/6174943/ckay-2/', note: 'Long-form context on CKay’s global rise and Love Nwantiti.' },
-      { label: 'Billboard coverage', href: 'https://www.billboard.com/search/CKay/', note: 'Chart and industry reporting around CKay’s global breakthrough.' },
+      { label: 'Time profile', href: 'https://time.com/6174943/ckay-2/', note: 'Long-form context on CKayâ€™s global rise and Love Nwantiti.' },
+      { label: 'Billboard coverage', href: 'https://www.billboard.com/search/CKay/', note: 'Chart and industry reporting around CKayâ€™s global breakthrough.' },
       { label: 'Pitchfork coverage', href: 'https://pitchfork.com/search/?query=CKay', note: 'Music news and release context for CKay.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=CKay&type=all', note: 'Release and credit reference for CKay.' }
     ],
@@ -2103,7 +2103,7 @@ window.ARTIST_SOURCE_DATA = {
       <p>He also belongs to a wider generation of African artists who are redefining crossover. Instead of waiting for Western pop to validate them, artists like CKay use digital platforms to let audiences find the music directly. That changes the power relationship. The song travels first, then the industry follows.</p>
       <p>CKay's rise also shows that softness can be disruptive. In a global market that often rewards volume, spectacle, and aggressive branding, he broke through with a song that felt intimate and almost weightless. That contrast is part of the achievement. He made quiet romance travel farther than many louder records.</p>
       <p>His place in African pop history will depend on how he continues building beyond the original viral wave, but the foundation is already important. He helped prove that producer-led Nigerian music could become global through emotion, not only through dancefloor force or superstar features.</p>
-      <p>For Rap Stories, CKay belongs in the archive because hip-hop and rap culture now live beside global African pop, alté, R&B, and melodic internet music. His story shows how African artists can cross borders through feeling, production, and digital culture without fitting old industry models. It is a modern blueprint for quiet global reach and lasting emotional connection worldwide today.</p>
+      <p>For Rap Stories, CKay belongs in the archive because hip-hop and rap culture now live beside global African pop, altÃ©, R&B, and melodic internet music. His story shows how African artists can cross borders through feeling, production, and digital culture without fitting old industry models. It is a modern blueprint for quiet global reach and lasting emotional connection worldwide today.</p>
       <div class="quote">CKay's rise is the sound of romance going global: emo-afrobeats, soft production, TikTok movement, and Nigerian feeling translated across borders.</div>
     `,
     riseToFameHtml: `<p>CKay rose through Nigerian industry work, production, and early releases before "Love Nwantiti" exploded globally through remixes and TikTok circulation.</p><p>"Emiliana" and <em>Sad Romance</em> helped prove that his appeal extended beyond one viral song and belonged to a wider romantic sound.</p>`,
@@ -2361,7 +2361,7 @@ window.ARTIST_SOURCE_DATA = {
   'dj-mustard': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'DJ Mustard is in the curated tier because producer influence is a major part of the site’s story graph, not just rapper biographies.',
+    reviewNotes: 'DJ Mustard is in the curated tier because producer influence is a major part of the siteâ€™s story graph, not just rapper biographies.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Los Angeles Minimalism and the Sound of a Decade</h3>
@@ -2454,7 +2454,7 @@ window.ARTIST_SOURCE_DATA = {
   'dmx': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'DMX is in the curated tier because his story blends spiritual intensity, mainstream dominance, and one of rap’s most distinctive public personas.',
+    reviewNotes: 'DMX is in the curated tier because his story blends spiritual intensity, mainstream dominance, and one of rapâ€™s most distinctive public personas.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Yonkers Pain and a Voice Like No One Else</h3>
@@ -2568,7 +2568,7 @@ window.ARTIST_SOURCE_DATA = {
   'drake': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'This curated pack prioritizes biography, chart-era context, and long-form coverage for one of the archive’s highest-interest artists.',
+    reviewNotes: 'This curated pack prioritizes biography, chart-era context, and long-form coverage for one of the archiveâ€™s highest-interest artists.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Toronto, Television, and the Emotional Mainstream</h3>
@@ -2596,7 +2596,7 @@ window.ARTIST_SOURCE_DATA = {
     legacyHtml: `<p>Drake's legacy is one of enormous influence and constant debate.</p><p>He stands as one of the defining artists of the streaming age, with a catalogue that changed rap's emotional and commercial center.</p>`,
     relatedHtml: `<div class="related-list"><a href="lil-wayne.html" class="related-card"><h4>Lil Wayne</h4><p>The mentor figure whose Young Money platform helped launch Drake globally.</p></a><a href="j-cole.html" class="related-card"><h4>J. Cole</h4><p>A generational peer in mainstream rap's introspective lane.</p></a><a href="kendrick-lamar.html" class="related-card"><h4>Kendrick Lamar</h4><p>A central rival and contrast in 2010s rap greatness debates.</p></a><a href="dj-khaled.html" class="related-card"><h4>DJ Khaled</h4><p>A frequent collaborator in Drake's feature and anthem history.</p></a></div>`,
     sources: [
-      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Drake_(musician)', note: 'Canonical biography and career timeline for Drake’s music and screen-era origins.' },
+      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Drake_(musician)', note: 'Canonical biography and career timeline for Drakeâ€™s music and screen-era origins.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/Drake-rapper', note: 'Useful for a concise mainstream biography and cultural summary.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/Drake/', note: 'Best starting point for chart milestones, release cycles, and industry headlines.' },
       { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/Drake/', note: 'Useful for interviews, reviews, and broader cultural framing.' },
@@ -2606,7 +2606,7 @@ window.ARTIST_SOURCE_DATA = {
   'dr-dre': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'This profile has a curated legacy pack focused on Dre’s production history, artist-building role, and long-term influence.',
+    reviewNotes: 'This profile has a curated legacy pack focused on Dreâ€™s production history, artist-building role, and long-term influence.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Compton, N.W.A., and the Architecture of West Coast Rap</h3>
@@ -2634,7 +2634,7 @@ window.ARTIST_SOURCE_DATA = {
     legacyHtml: `<p>Dre's legacy is enormous and complicated: one of hip-hop's greatest architects, with a public record that also demands accountability.</p><p>He remains essential to understanding production, G-funk, N.W.A., Death Row, Aftermath, and the business of rap power.</p>`,
     relatedHtml: `<div class="related-list"><a href="snoop-dogg.html" class="related-card"><h4>Snoop Dogg</h4><p>The signature voice of Dre's G-funk breakthrough.</p></a><a href="ice-cube.html" class="related-card"><h4>Ice Cube</h4><p>An N.W.A. peer central to West Coast rap history.</p></a><a href="eminem.html" class="related-card"><h4>Eminem</h4><p>A major artist whose global rise was shaped by Dre's co-sign and production.</p></a><a href="kendrick-lamar.html" class="related-card"><h4>Kendrick Lamar</h4><p>A later Compton-linked figure connected to Dre's executive legacy.</p></a></div>`,
     sources: [
-      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Dr._Dre', note: 'Canonical overview for Andre Young’s artist, producer, and executive career.' },
+      { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Dr._Dre', note: 'Canonical overview for Andre Youngâ€™s artist, producer, and executive career.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/Dr-Dre', note: 'Useful for a concise biography and impact summary.' },
       { label: 'Rock & Roll Hall of Fame', href: 'https://www.rockhall.com/inductees/dr-dre', note: 'Strong source for legacy framing across N.W.A., solo work, and production influence.' },
       { label: 'Billboard coverage', href: 'https://www.billboard.com/search/Dr.%20Dre/', note: 'Useful for release-era milestones and retrospective reporting.' },
@@ -3064,7 +3064,7 @@ window.ARTIST_SOURCE_DATA = {
   'future': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Future’s page is a high-value archive entry because it connects Atlanta, melodic trap, and long-run mainstream influence.',
+    reviewNotes: 'Futureâ€™s page is a high-value archive entry because it connects Atlanta, melodic trap, and long-run mainstream influence.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Atlanta, Dungeon Family Roots, and the New Trap Emotion</h3>
@@ -3450,7 +3450,7 @@ window.ARTIST_SOURCE_DATA = {
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Ice_Cube', note: 'Canonical biography and career overview for Ice Cube.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/Ice-Cube', note: 'Useful for concise biography and long-range cultural framing.' },
-      { label: 'Rock & Roll Hall of Fame', href: 'https://www.rockhall.com/inductees/nwa', note: 'Helpful for N.W.A.-era historical context that shapes Ice Cube’s legacy.' },
+      { label: 'Rock & Roll Hall of Fame', href: 'https://www.rockhall.com/inductees/nwa', note: 'Helpful for N.W.A.-era historical context that shapes Ice Cubeâ€™s legacy.' },
       { label: 'Rolling Stone features', href: 'https://www.rollingstone.com/search/Ice%20Cube/', note: 'Useful for interviews, reviews, and retrospective framing.' },
       { label: 'Discogs search', href: 'https://www.discogs.com/search/?q=Ice%20Cube&type=all', note: 'Helpful for checking releases and credits.' }
     ]
@@ -3539,7 +3539,7 @@ window.ARTIST_SOURCE_DATA = {
   'ja-rule': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Ja Rule is in the curated tier because his page captures the melodic New York crossover era and one of rap’s most cited feud histories.',
+    reviewNotes: 'Ja Rule is in the curated tier because his page captures the melodic New York crossover era and one of rapâ€™s most cited feud histories.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Queens Grit and Melodic Crossover</h3>
@@ -3578,7 +3578,7 @@ window.ARTIST_SOURCE_DATA = {
   'jay-sean': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Jay Sean is in the curated tier because UK crossover and South Asian representation are important parts of the archive’s broader scene map.',
+    reviewNotes: 'Jay Sean is in the curated tier because UK crossover and South Asian representation are important parts of the archiveâ€™s broader scene map.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>London R&B and British Asian Breakthrough</h3>
@@ -3988,7 +3988,7 @@ window.ARTIST_SOURCE_DATA = {
   'kevin-gates': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Kevin Gates is in the curated tier because his page helps anchor the archive’s pain-driven Southern lane.',
+    reviewNotes: 'Kevin Gates is in the curated tier because his page helps anchor the archiveâ€™s pain-driven Southern lane.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Baton Rouge Pain and Relentless Honesty</h3>
@@ -4028,7 +4028,7 @@ window.ARTIST_SOURCE_DATA = {
   'khalid': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Khalid is in the curated tier because the archive’s crossover and melodic ecosystem is broader than strict rap, and his page sits on that boundary.',
+    reviewNotes: 'Khalid is in the curated tier because the archiveâ€™s crossover and melodic ecosystem is broader than strict rap, and his page sits on that boundary.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>El Paso, Teenage Feeling, and Soft Crossover</h3>
@@ -4108,7 +4108,7 @@ window.ARTIST_SOURCE_DATA = {
   'kid-cudi': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Kid Cudi is in the curated tier because his page is central to the archive’s influence chain around mood, melody, and mental-health openness in rap.',
+    reviewNotes: 'Kid Cudi is in the curated tier because his page is central to the archiveâ€™s influence chain around mood, melody, and mental-health openness in rap.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Cleveland, Loneliness, and a New Emotional Vocabulary</h3>
@@ -4150,7 +4150,7 @@ window.ARTIST_SOURCE_DATA = {
   'king-von': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'King Von is in the curated wave because his page is central to the archive’s drill storytelling lane.',
+    reviewNotes: 'King Von is in the curated wave because his page is central to the archiveâ€™s drill storytelling lane.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Chicago Drill and Narrative Detail</h3>
@@ -4632,7 +4632,7 @@ window.ARTIST_SOURCE_DATA = {
   'lil-wayne': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'This pack was curated because Wayne’s page touches both catalog depth and broader generational influence.',
+    reviewNotes: 'This pack was curated because Wayneâ€™s page touches both catalog depth and broader generational influence.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>New Orleans Prodigy and Cash Money Foundation</h3>
@@ -4674,7 +4674,7 @@ window.ARTIST_SOURCE_DATA = {
   'll-cool-j': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'LL Cool J is in the curated tier because the archive needs stronger anchors for rap’s early mainstream era and long-range crossover history.',
+    reviewNotes: 'LL Cool J is in the curated tier because the archive needs stronger anchors for rapâ€™s early mainstream era and long-range crossover history.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Queens, Def Jam, and Rap's First Teen Superstar</h3>
@@ -4757,7 +4757,7 @@ window.ARTIST_SOURCE_DATA = {
   'mase': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Mase is in the curated tier because his page connects Harlem rap, Bad Boy history, and one of rap’s more unusual career arcs.',
+    reviewNotes: 'Mase is in the curated tier because his page connects Harlem rap, Bad Boy history, and one of rapâ€™s more unusual career arcs.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Harlem Smoothness and Bad Boy Shine</h3>
@@ -4842,7 +4842,7 @@ window.ARTIST_SOURCE_DATA = {
   'max-b': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Max B is in the curated tier because influence doesn’t always match chart scale, and his page matters for mixtape-era melody and New York lineage.',
+    reviewNotes: 'Max B is in the curated tier because influence doesnâ€™t always match chart scale, and his page matters for mixtape-era melody and New York lineage.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Harlem Wave and Mixtape Melody</h3>
@@ -5441,7 +5441,7 @@ window.ARTIST_SOURCE_DATA = {
   'nelly': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Nelly is in the curated tier because his page is one of the archive’s clearest early-2000s crossover stories.',
+    reviewNotes: 'Nelly is in the curated tier because his page is one of the archiveâ€™s clearest early-2000s crossover stories.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>St. Louis Crossover and Country Grammar</h3>
@@ -5663,7 +5663,7 @@ window.ARTIST_SOURCE_DATA = {
   'outkast': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'OutKast is in the curated tier because Southern innovation, duo dynamics, and long-range influence all make it one of the archive’s essential anchors.',
+    reviewNotes: 'OutKast is in the curated tier because Southern innovation, duo dynamics, and long-range influence all make it one of the archiveâ€™s essential anchors.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Atlanta Futurism and Southern Authority</h3>
@@ -5838,7 +5838,7 @@ window.ARTIST_SOURCE_DATA = {
   'pooh-shiesty': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Pooh Shiesty is in the curated wave because his page anchors one of the archive’s most visible modern Memphis storylines.',
+    reviewNotes: 'Pooh Shiesty is in the curated wave because his page anchors one of the archiveâ€™s most visible modern Memphis storylines.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Memphis Pressure and a Sudden Street-Rap Breakthrough</h3>
@@ -5872,7 +5872,7 @@ window.ARTIST_SOURCE_DATA = {
   'pop-smoke': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Pop Smoke is in the curated wave because his page is one of the archive’s most important modern drill crossover stories.',
+    reviewNotes: 'Pop Smoke is in the curated wave because his page is one of the archiveâ€™s most important modern drill crossover stories.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Brooklyn Drill and a Voice That Changed the Room</h3>
@@ -6328,7 +6328,7 @@ window.ARTIST_SOURCE_DATA = {
   'tupac': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'This profile is part of the curated legacy wave because 2Pac’s page is one of the archive’s central entry points.',
+    reviewNotes: 'This profile is part of the curated legacy wave because 2Pacâ€™s page is one of the archiveâ€™s central entry points.',
     sources: [
       { label: 'Wikipedia article', href: 'https://en.wikipedia.org/wiki/Tupac_Shakur', note: 'Canonical biography and career overview for Tupac Shakur.' },
       { label: 'Britannica biography', href: 'https://www.britannica.com/biography/Tupac-Shakur', note: 'Useful for concise background, legacy, and historical context.' },
@@ -6487,7 +6487,7 @@ window.ARTIST_SOURCE_DATA = {
   'yg': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'YG is in the curated tier because his page helps anchor the archive’s modern West Coast lane and Compton revival story.',
+    reviewNotes: 'YG is in the curated tier because his page helps anchor the archiveâ€™s modern West Coast lane and Compton revival story.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Bompton Voice and Modern West Coast Reality</h3>
@@ -6594,7 +6594,7 @@ window.ARTIST_SOURCE_DATA = {
   'z-ro': {
     reviewDate: '2026-04-10',
     sourceTier: 'curated',
-    reviewNotes: 'Z-Ro is in the curated tier because his page anchors Houston pain rap, singing-rap hybridity, regional loyalty, and one of Southern rap’s most emotionally durable catalogs.',
+    reviewNotes: 'Z-Ro is in the curated tier because his page anchors Houston pain rap, singing-rap hybridity, regional loyalty, and one of Southern rapâ€™s most emotionally durable catalogs.',
     biographyTitle: 'Full Biography',
     biographyHtml: `
       <h3>Houston Pain, Melody, and Regional Truth</h3>
