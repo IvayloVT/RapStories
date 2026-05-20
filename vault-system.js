@@ -508,9 +508,34 @@ function setupArchive(){
   const category = document.getElementById("vaultCategory");
   const sort = document.getElementById("vaultSort");
   const chips = document.getElementById("tagChips");
+  const pager = document.getElementById("archivePager");
+  const pageSize = 40;
+  const archivePage = Math.max(1, parseInt(root.dataset.archivePage || "1", 10) || 1);
   let activeTag = "all";
   let tagsExpanded = false;
   let renderToken = 0;
+
+  function getArchivePageUrl(page){
+    return page <= 1 ? "artist-archive.html" : `artist-archive-${page}.html`;
+  }
+
+  function renderPager(total){
+    if(!pager) return;
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    if(totalPages <= 1){
+      pager.innerHTML = "";
+      pager.style.display = "none";
+      return;
+    }
+
+    pager.style.display = "flex";
+    pager.innerHTML = Array.from({ length: totalPages }, function(_, index){
+      const page = index + 1;
+      const start = index * pageSize + 1;
+      const end = Math.min(total, page * pageSize);
+      return `<a class="${archivePage === page ? "active" : ""}" href="${getArchivePageUrl(page)}">Page ${page} (${start}-${end})</a>`;
+    }).join("");
+  }
 
   const tags = ["all", ...Array.from(new Set(data.artists.flatMap(a => a.tags))).sort()];
   const toggleButton = make("button","chip-row-toggle", "More Tags");
@@ -570,19 +595,25 @@ function setupArchive(){
     if(category.value !== "All Categories") list = list.filter(a => a.category === category.value);
     if(activeTag !== "all") list = list.filter(a => a.tags.includes(activeTag));
     list = sortArtists(list, sort.value);
+    const total = list.length;
+    const start = (archivePage - 1) * pageSize;
+    const visibleList = list.slice(start, start + pageSize);
     grid.innerHTML = "";
-    count.textContent = `${list.length} artist${list.length === 1 ? "" : "s"} found`;
-    empty.style.display = list.length ? "none" : "block";
+    count.textContent = visibleList.length
+      ? `${start + 1}-${start + visibleList.length} of ${total} artists found`
+      : `0 of ${total} artists found`;
+    empty.style.display = visibleList.length ? "none" : "block";
+    renderPager(total);
 
     function renderBatch(start){
       if(currentToken !== renderToken) return;
       const fragment = document.createDocumentFragment();
-      const end = Math.min(start + 18, list.length);
+      const end = Math.min(start + 18, visibleList.length);
       for(let index = start; index < end; index += 1){
-        fragment.appendChild(card(list[index]));
+        fragment.appendChild(card(visibleList[index]));
       }
       grid.appendChild(fragment);
-      if(end < list.length){
+      if(end < visibleList.length){
         window.setTimeout(() => renderBatch(end), 0);
       }
     }
@@ -646,7 +677,33 @@ function setupArtistDirectory(){
   const count = document.getElementById("artistDirectoryCount");
   const search = document.getElementById("artistDirectorySearch");
   const sort = document.getElementById("artistDirectorySort");
+  const pager = document.getElementById("artistDirectoryPager");
   if(!grid || !empty || !count || !search || !sort) return;
+
+  const pageSize = 40;
+  const directoryPage = Math.max(1, parseInt(root.dataset.artistDirectoryPage || "1", 10) || 1);
+
+  function getDirectoryPageUrl(page){
+    return page <= 1 ? "artist.html" : `artist-${page}.html`;
+  }
+
+  function renderPager(total, visible){
+    if(!pager) return;
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    if(totalPages <= 1){
+      pager.innerHTML = "";
+      pager.style.display = "none";
+      return;
+    }
+
+    pager.style.display = "flex";
+    pager.innerHTML = Array.from({ length: totalPages }, function(_, index){
+      const page = index + 1;
+      const start = index * pageSize + 1;
+      const end = Math.min(total, page * pageSize);
+      return `<a class="${directoryPage === page ? "active" : ""}" href="${getDirectoryPageUrl(page)}">Page ${page} (${start}-${end})</a>`;
+    }).join("");
+  }
 
   function apply(){
     let list = [...data.artists];
@@ -655,10 +712,16 @@ function setupArtistDirectory(){
       list = list.filter(a => (`${a.name} ${a.city} ${a.era} ${a.category} ${a.tags.join(" ")} ${a.summary}`).toLowerCase().includes(q));
     }
     list = sortArtists(list, sort.value);
+    const total = list.length;
+    const start = (directoryPage - 1) * pageSize;
+    const visibleList = list.slice(start, start + pageSize);
     grid.innerHTML = "";
-    list.forEach(a => grid.appendChild(card(a)));
-    count.textContent = `${list.length} artist${list.length === 1 ? "" : "s"} in the vault`;
-    empty.style.display = list.length ? "none" : "block";
+    visibleList.forEach(a => grid.appendChild(card(a)));
+    count.textContent = visibleList.length
+      ? `${start + 1}-${start + visibleList.length} of ${total} artists`
+      : `0 of ${total} artists`;
+    empty.style.display = visibleList.length ? "none" : "block";
+    renderPager(total, visibleList.length);
   }
 
   search.addEventListener("input", apply);

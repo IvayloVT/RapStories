@@ -37,10 +37,46 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://rapstories.com/artist-2.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rapstories.com/artist-3.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rapstories.com/artist-4.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rapstories.com/artist-archive.html</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rapstories.com/artist-archive-2.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rapstories.com/artist-archive-3.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rapstories.com/artist-archive-4.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapstories.com/asap-rocky.html</loc>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><script>
+(function () {
+  if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+  var cookieChoice = null;
+  try {
+    cookieChoice = window.localStorage.getItem('rapstories_cookie_choice');
+  } catch (error) {
+    cookieChoice = null;
+  }
+
+  if (cookieChoice !== 'accepted') {
+    return;
+  }
+
+  if (document.querySelector('script[data-rapstories-adsense]')) {
+    return;
+  }
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6406860901026617';
+  script.crossOrigin = 'anonymous';
+  script.setAttribute('data-rapstories-adsense', 'true');
+  document.head.appendChild(script);
+})();
+</script><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Artists Page 3 | Rap Stories</title><meta content="Browse Rap Stories artist directory profiles 81 to 120." name="description"/>  <link rel="canonical" href="https://rapstories.com/artist-3.html"/>
+  <meta property="og:site_name" content="Rap Stories"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Artists Page 3 | Rap Stories"/>
+  <meta property="og:description" content="Browse Rap Stories artist directory profiles 81 to 120."/>
+  <meta property="og:url" content="https://rapstories.com/artist-3.html"/>
+  <meta property="og:image" content="https://rapstories.com/images/Rapstories.jpg"/>
+  <meta property="og:image:secure_url" content="https://rapstories.com/images/Rapstories.jpg"/>
+  <meta property="og:image:width" content="2048"/>
+  <meta property="og:image:height" content="1170"/>
+  <meta property="og:image:alt" content="Rap Stories hip-hop culture preview artwork"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Artists Page 3 | Rap Stories"/>
+  <meta name="twitter:description" content="Browse Rap Stories artist directory profiles 81 to 120."/>
+  <meta name="twitter:image" content="https://rapstories.com/images/Rapstories.jpg"/>
+  <meta name="twitter:image:alt" content="Rap Stories hip-hop culture preview artwork"/>
+  <link href="vault-system.css?v=2026-05-21-compact-mobile-pagers" rel="stylesheet"/></head><body><header id="mainHeader">
+  <div class="container nav">
+    <a class="brand" href="index.html"><div class="brand-mark">RS</div><span class="brand-text">RAP STORIES</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="artist-archive.html">Archive</a>
+      <a href="stories.html">Stories</a>
+      <a href="artist.html">Artists</a>
+      <a href="category.html">Categories</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="map.html">Map</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="nav-btn" href="stories.html">Read Stories</a>
+  </div>
+</header><main data-vault-page="artists" data-artist-directory-page="3"><section class="hero"><div class="container"><div class="glass hero-card"><span class="eyebrow">Artist Directory</span><h1>Artists <span>Page 3</span></h1><p>Continue through the Rap Stories artist directory with profiles 81 to 120.</p><div class="stat-grid"><div class="glass stat-card"><h3 id="artistDirectoryCount">0 artists in the vault</h3><p>Shared source powering the directory</p></div><div class="glass stat-card"><h3>Live</h3><p>Generated from vault data</p></div><div class="glass stat-card"><h3>A-Z</h3><p>Sortable by name, era, or city</p></div><div class="glass stat-card"><h3>Fast</h3><p>Search across all artist records</p></div></div></div><div class="glass directory-toolbar"><input id="artistDirectorySearch" placeholder="Search artist names, cities, eras, categories, or tags..." type="text"/><select id="artistDirectorySort"><option value="a-z">Sort: A-Z</option><option value="era">Sort: Era</option><option value="city">Sort: City</option></select></div></div></section><section class="section"><div class="container"><div class="glass directory-pager" id="artistDirectoryPager" aria-label="Artist directory pages"></div><div class="artist-grid" id="artistDirectoryGrid"></div><div class="glass empty-state" id="artistDirectoryEmpty">No artists matched your search.</div></div></section></main><footer><div class="container footer-wrap"><div><strong class="footer-brand">Rap Stories</strong><p>A premium digital vault for hip-hop culture, artist stories, timelines, rankings, and editorial guides.</p></div><div class="footer-links">
+  <a href="stories.html">Stories</a>
+  <a href="artist-archive.html">Archive</a>
+  <a href="category.html">Categories</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="about.html">About</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+</div></div></footer><script src="vault-data.js"></script><script src="vault-system.js?v=2026-05-21-numbered-artist-pages"></script><script src="site-config.js"></script><script src="site-enhancements.js?v=2026-05-21-mobile-header-hide"></script></body></html>
